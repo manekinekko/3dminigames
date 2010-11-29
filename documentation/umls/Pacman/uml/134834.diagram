@@ -1,0 +1,43 @@
+format 76
+
+classcanvas 128050 class_ref 128050 // Pacman
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyzwh 45 69 2000 199 347
+end
+classcanvas 128178 class_ref 128178 // Map
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 336 151 2000
+end
+classcanvas 128306 class_ref 134962 // Ghost
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 676 158 2000
+end
+note 128690 "La classe Map sert a gérer la carte du jeu qui est stockée dans un tableau.
+Ce tableau est initialisé grace a un fichier json  qui est chargé dans la méthode init
+Le paramètre de type Objet de la méthode setPosition permet de savoir quel personnage (PNJ et PJ) qui doit être déplacé"
+  xyzwh 328 21 2000 241 121
+note 128818 "La classe pacman sert a gérer le personnage que le joueur controle.
+Elle a 4 méthodes de déplacements (haut, bas, gauche, droite).
+La méthode comportement gère la collision avec la prochaine case de déplacement
+Restart permet de réinitialiser le Pacman quand ce dernier perd une vie.
+"
+  xyzwh 30 422 2000 251 139
+note 128946 "La classe Gost gère le/les fantomes 
+L'état du fantome nous permet de savoir si le fantome est mangeable ou non par le Pacman
+"
+  xyzwh 649 347 2000 155 101
+note 129074 "Pour le lien entre map et fantome la cardinalité 1..4 s'explique par le fait que normalement il y a 4 fantomes dans le pacman classique et nous n'en avons implémentés qu'un seul.
+
+"
+  xyzwh 377 465 2000 231 101
+relationcanvas 128434 relation_ref 134578 // <association>
+  from ref 128050 z 2001 to ref 128178
+  no_role_a no_role_b
+  multiplicity_a_pos 319 249 3000 multiplicity_b_pos 253 249 3000
+end
+relationcanvas 128562 relation_ref 134706 // <association>
+  from ref 128178 z 2001 to ref 128306
+  no_role_a no_role_b
+  multiplicity_a_pos 647 250 3000 multiplicity_b_pos 576 250 3000
+end
+end

@@ -28,7 +28,8 @@ leurs règles et de façon plus générale leurs contenus afin d'en resortir dif
 
 \subsection{Présentation des mini-jeux}
 
-\note{c'est pour l'instant un bête copier coller de chacun, on retravaillera cette partie pour homogénéiser les différentes descriptions}
+\note{c'est pour l'instant un bête copier coller de chacun, les fautes n'ont pas été corrigés.
+On retravaillera cette sous-partie pour homogénéiser les différentes descriptions}
 
 \subsubsection{Pacman}
 
@@ -94,7 +95,14 @@ lecture de fichier pour configurer les paramètres des différentes courses.
 
 \subsubsection{Mario}
 
-A venir
+Ce mini-jeu de plateforme reprend le principe des jeux du style de mario bros.
+Un personnage, représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
+Il doit avancer au maximum, sans être touché par des ennemis, représentés par des triangles et sans tomber dans les trous du terrain.
+Le personnage peut faire perdre des points de vie aux ennemis jusqu'à les tuer en leur sautant dessus. S'il les touche sur les côté, 
+il meurt et la partie est terminée.
+La caméra avance lorsque le joueur avance suffisamment. Le joueur peut revenir à gauche jusqu'à la limite de l'écran.
+Le terrain est généré aléatoirement et est infini.
+Le but du jeu est d'obtenir le plus grand score. Le score diminue avec le temps et augmente lorsqu'un ennemi est tué ou que le personnage avance
 
 \subsubsection{Game \& Watch}
 
@@ -141,7 +149,21 @@ Le cadre bleu en bas de l’écran affiche la personne ayant gagné la partie !
 
 \subsubsection{Gestion}
 
-A venir
+Le jeu commissariat est  un jeu de gestion du style Farmville. 
+Vous aurez pour rôle de maintenir et améliorer votre commissariat en fonction des ressources disponibles.
+ Les ressources sont au nombre de quatre : le nombre de policier, l’argent, l’indice IGPN et l’alcool ! 
+Il y a trois actions disponibles pour le joueur. Il peut envoyer des policiers en missions dans un quartier 
+choisis pour ramener de l’argent ainsi qu’un prisonnier.  Si un prisonnier est ramené, le joueur a la possibilité 
+de libérer le prisonnier contre de l’argent ou de le tabasser (avec un fort risque de pénalité). 
+Il peut aussi acheter des équipements ainsi que de l’alcool avec son argent. L’alcool est une ressource qui diminue constamment, 
+le joueur doit ton veiller a toujours en avoir pour ne pas perdre. Il peut aussi perdre avec un indice d’IGPN trop élevé, cet indice 
+monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
+
+\begin{figure}
+ \includegraphics[width=\linewidth]{img/capturejeu_gestion2}
+ \caption{Capture du mini-jeu de gestion}
+ \label{fig:game_gestion}
+\end{figure}
 
 \subsection{Analyse des mini-jeux}
 

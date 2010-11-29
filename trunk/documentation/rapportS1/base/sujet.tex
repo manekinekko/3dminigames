@@ -1,0 +1,79 @@
+Le but de ce projet est de créer un outil auteur de mini-jeux 3D destiné au Web.
+En effet, les récentes arrivées de HTML 5 et d'outils 3D pour le Web comme WebGL permettent désormais l'affichage d'objets 3D dans les pages Web.
+Cependant, les contenus 3D intégrés dans les pages Web ne sont actuellement que très peu interactifs.
+Fort du succès des jeux flash, les contenus interactifs 3D comme les mini-jeux ont naturellement leur place sur le Web.
+Or s'il existe de nombreux outils tel que Google SketchUp pour créer et manipuler les objets 3D en eux-mêmes,
+il reste tout de même un effort important en ce qui concerne les interactions avec ceux-ci et en particulier la création de mini-jeux en 3D.
+
+\subsection{Présentation générale}
+
+La conception d'un outil de création de mini-jeux 3D pour le Web nécessite, d'une part, la description des objectifs, des règles, des interactions, 
+du scénario du jeu qui permettront de créer un script et d'autre part des élément 3D constitutifs. Un jeu peut également contenir
+une partie de gestion d'une base de données, par exemple dans le but de pouvoir sauvegarder une partie.
+
+\begin{figure}[h]
+ \framebox[\linewidth]{\parbox{\linewidth}{~ \vspace{7cm} Schéma à faire ~\\~\\}}
+ \caption{Schéma général du projet}
+ \label{fig:schemaprojet}
+\end{figure}
+
+Le schéma général du projet est donc présenté sur la Figure \ref{fig:schemaprojet}.
+La partie gauche représente un fichier écrit par l'utilisateur contenant les règles du jeu qu'il souhaite crée.
+Il s'agit d'un simple fichier texte respectant une grammaire de description.
+
+La partie centrale correspond à un compilateur.
+
+Il permet de convertir le fichier de description du jeu en un script javascript exécutable dans une page Web et permettant de jouer et 
+interagir avec l'environnement.
+Le lien avec la 3D et WebGL se fait via un éditeur 3D classique permettant de dessiner les objets.
+Dans certains cas, le script du jeu peut avoir recours à une base de données.
+
+Chacun de ces aspects est détaillé dans les parties suivantes.
+
+\subsection{Description d'un jeu}
+
+Il s'agit de créer un langage, à la fois suffisamment abstrait pour être utilisé par une personne quelconque, mais également suffisamment riche
+pour pouvoir décrire un maximum de jeux.
+Le langage est défini par une grammaire.
+Cette dernière doit permettre de décrire à la fois :
+\begin{itemize}
+ \item les objectifs ;
+ \item les règles ;
+ \item le scénario, les niveaux, la logique de score ;
+ \item les interactions avec le(s) joueur(s).
+\end{itemize}
+
+
+Le challenge est difficile car il existe de très nombreuses catégories de jeux : 
+par exemple, un jeu de gestion n'a, à première vue, aucun point commun avec un jeu de volley ou un jeu de plateforme.
+
+Il serait illusoire de vouloir décrire absolument tous les jeux à l'aide d'une seule et unique grammaire.
+En effet, les jeux décrits par une grammaire sont forcément restreints.
+
+Toutefois, de nombreuses similarités existent entre plusieurs jeux. Il s'agit donc de les exploiter afin de définir un langage général de description de jeux.
+
+\subsection{Compilation vers un script javascript}
+
+Une fois la grammaire créée, notre plateforme de création de mini-jeux 3D offrira la possiblité à l'utilisateur de définir son jeu via un fichier.
+L'écriture du fichier pourra se faire à l'aide d'un éditeur spécial par exemple créé via eclipse.
+
+Le fichier est ensuite lu et parsé à l'aide d'un compilateur qui pourra être écrit à l'aide d'outil tel que ANTLR.
+En sortie, des fichiers javascript seront produits.
+
+\subsection{Edition des objets 3D et utilisation d'une base de données}
+
+La création et l'édition des objets 3D se fera à l'aide d'outils déjà très complets tel que Google SketchUp.
+
+\note{PW : rajouter plus de détails, j'y connais pas grand chose alors j'ai du mal à dire quoique ce soit}
+
+\subsection{Remarque}
+
+\note{PW : Ceci est un copier coller de ce qui est attendu concernant la présentation du sujet : il manque donc beaucoup de trucs dans ce blabla ...}
+
+Rapport de présentation du projet (5 pages max). Il présente de manière synthétique  le projet et ses enjeux. Il doit comporter les éléments suivants :
+\begin{itemize}
+ \item Caractéristiques
+ \item Avantages
+ \item Bénéfices
+ \item Etat de l’art synthétique de l’existant (si ce point est applicable)
+\end{itemize}

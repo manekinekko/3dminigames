@@ -1,8 +1,9 @@
-Le contenu des mini-jeux peut être très varié : jeu de rôle, jeu de gestion, jeu de plateforme, etc.
+Le contenu des mini-jeux est très varié : jeu de rôle, jeu de gestion, jeu de plateforme, etc.
 L'analyse des différences et des ressemblances entre ceux-ci, afin de définir ensuite une grammaire de description de jeux, est d'autant plus complexe.
 
-Afin de nous confronter aux problèmes liés à l'implémentation de petits jeux vidéos et de faciliter l'analyse de la façon de décire un jeu, 
-nous avons développé un échantillon de 8 types de mini-jeux en 2D dans le langage javascript.
+Les difficultés d'implémentation des mini-jeux sont elles aussi différentes.
+8 exemples concrets de jeux sont développés par la suite.
+Cela permet d'appuyer l'analyse de ce que contient un mini-jeu.
 
 Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans la description de ses règles et son implémentation.
 
@@ -12,7 +13,7 @@ Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans l
  Jeu & Intérêt majeur \\
  \hline
  Pacman & ?? \\
- 1942 & Vague d'ennemis \\
+ 1942 & Vagues d'ennemis \\
  Volley & Logique de score \\
  Course & Intelligence artificielle \\
  Mario & Niveaux \\
@@ -23,8 +24,8 @@ Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans l
 
 \vspace{0.5cm}
 
-Nous allons désormais présenter chacun de ces mini-jeux, pour ensuite analyser leurs objectifs, 
-leurs règles et de façon plus générale leurs contenus afin d'en resortir différents aspects récurrents.
+Tout d'abord, chaque jeu est présenté succintement, illustré par une capture d'écran d'une implémentation effectuée.
+Dans un second temps, une analyse de leur contenu sera effectuée, appuyée par un tableau comparatif et les diagrammes UML de ces jeux.
 
 \subsection{Présentation des mini-jeux}
 
@@ -33,125 +34,140 @@ On retravaillera cette sous-partie pour homogénéiser les différentes descript
 
 \subsubsection{Pacman}
 
+
+\begin{minipage}{9cm}
 Ce jeu est une adaptation du jeu classique de Pacman. 
 Le joueur contrôle le TUX via les touches du clavier. 
 Son but est de manger toutes les pommes sur le terrain tout en évitant les Microsoft qui essayent de l’attraper. 
-Pour arriver a cet objectif, le joueur disposera de 3 vies. Le TUX pourra manger des pommes en or pour pouvoir détruire les Microsoft 
-un petit temps et marquer quelques points en plus. En ce qui concerne l’affichage, le joueur verra le nombre de vie restante, 
-son score ainsi que le temps ou les Microsoft restent vulnérables. Le Jeu est adaptable car il est facile d’initialiser 
-la carte a partir d’images et d’un fichier Json.
-
-\begin{figure}
+Pour arriver à cet objectif, le joueur dispose de 3 vies. Le TUX peut manger des pommes en or pour pouvoir détruire les Microsoft pendant
+une courte durée et marquer des points supplémentaires. Concernant l’affichage, le joueur voit le nombre de vies restantes, 
+son score ainsi que le temps durant lequel les Microsoft restent vulnérables. Le jeu est adaptable car il est facile d’initialiser 
+la carte à partir d’images et d’un fichier Json.
+\end{minipage}
+\hfill
+\begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_pacman}
- \caption{Capture du mini-jeu Pacman}
- \label{fig:game_pacman}
-\end{figure}
+\end{minipage}
+
 
 \subsubsection{1942}
 
+\begin{minipage}{6cm}
+\includegraphics[width=\linewidth]{img/capturejeu_1942}
+\end{minipage}
+\hfill
+\begin{minipage}{9cm}
 Dans ce shoot them up (jeu d’action où le joueur fait face à une multitude d’ennemis), 
-le joueur contrôlera un vaisseau armé de deux canons pour détruire tous les véhicules adverses pour gagner des points. 
-Le joueur aura 3 vies pour faire un maximum de point. Lorsque le joueur perd une vie, il devient invincible un petit moment pour reprendre la main ! 
-Le vaisseau sera contrôlable via le clavier. En ce qui concerne les ennemis, ils suivent des déplacements prédéfinis qui peuvent être paramétrés. 
-Le joueur n’est pas obligé de faire tuer tous les ennemis mais le but est quand même de faire le plus grand score !
-
-\begin{figure}
- \includegraphics[width=\linewidth]{img/capturejeu_1942}
- \caption{Capture du mini-jeu 1942}
- \label{fig:game_1942}
-\end{figure}
+le joueur contrôle un vaisseau armé de deux canons pour détruire tous les véhicules adverses et gagner ainsi des points. 
+Le joueur possède 3 vies pour faire le maximum de points. Lorsque le joueur perd une vie, il devient invincible durant une courte durée 
+pour reprendre la main. Le vaisseau est contrôlé via le clavier. En ce qui concerne les ennemis, 
+ils suivent des déplacements prédéfinis qui peuvent être paramétrés. 
+Le joueur n’est pas obligé de tuer tous les ennemis mais le but est quand même de faire le plus grand score.
+\end{minipage}
 
 \subsubsection{Volley}
 
-
-CowCow volley party  est un mini jeu humoristique mettant en scène deux vaches jouant au volley.
-On peut jouer à ce jeu en mode solo avec une IA ou en multijoueur. 
-Le but étant bien sur de gagner la partie en ayant 2 sets gagnants en premier. 
-Pour cela votre vache dispose de 3 coups différents : passe courte et longue ainsi que le fameux smash !
-Les règles de ce jeu sont les mêmes que les règles du volley classique. La vache sera contrôlée au clavier aussi bien  en mode multi qu’en mode solo.
-
-\begin{figure}
+\begin{minipage}{9cm}
+CowCow volley party est un mini jeu humoristique mettant en scène deux vaches jouant au volley.
+On peut jouer à ce jeu en mode solo contre une IA ou à deux joueurs. 
+Le but est de remporter 2 sets, sachant que remporter un set revient à marquer \note{xxx} points. 
+La vache dispose de 3 coups différents : passe courte, passe longue et un smash.
+Les règles de ce jeu sont les mêmes que celles du volley classique.
+La vache est contrôlée au clavier aussi bien en mode multijoueur qu’en mode solo.
+\end{minipage}
+\hfill
+\begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_volleycowcow}
- \caption{Capture du mini-jeu volley}
- \label{fig:game_volley}
-\end{figure}
+\end{minipage}
+
 
 \subsubsection{Course}
 
-Ce jeu de course futuriste pour le web est un jeu pour un joueur qui se frottera à des intelligences artificielles pour faire le meilleur temps. 
-Ce jeu de courses n’est pas un jeu de course classique, en effet sur le circuit vous trouverez des bonus 
-(un turbo, un bonus permettant d’augmenter le temps d’un des autres joueurs, de changer leur positions, etc) 
-et des zones de circuit différentes (inversion des commandes sur une zone, changement de vitesses, etc) 
-ainsi que des objets fixes (turbo au sol,…). Vous pourrez choisir votre véhicule parmi une sélection de 12 vaisseaux différents. 
- En ce qui concerne les contrôles, le joueur se dirigera grâce à son clavier. Ce jeu est adaptable, il est, en effet, 
-possible de créer facilement des circuits ainsi que des nouveaux bonus. Il serait aussi possible de mettre en place un système de 
-lecture de fichier pour configurer les paramètres des différentes courses.
-
-\begin{figure}
+\begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_course}
- \caption{Capture du mini-jeu de course}
- \label{fig:game_course}
-\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{9cm}
+Ce jeu de course futuriste pour le web permet au joueur de se frotter à des intelligences artificielles pour faire le meilleur temps. 
+Ce  n’est pas un jeu de course classique : en effet des bonus se trouvent sur le circuit :
+un turbo, un bonus permettant d’augmenter le temps d’un des autres joueurs, un autre changeant la position d'un adversaire, etc. 
+De plus, il existe différentes zones de circuit ayant des effets divers : inversion des commandes, changement de vitesses, etc.
+Le joueur peut choisir son véhicule parmi une sélection de 12 vaisseaux différents. 
+Le contrôle se fait au clavier. Ce jeu est adaptable : en effet, il est possible de créer facilement des circuits ainsi que des nouveaux bonus. 
+Il serait aussi possible de mettre en place un système de lecture de fichier pour configurer les paramètres des différentes courses.
+\end{minipage}
 
 \subsubsection{Mario}
 
+\begin{minipage}{9cm}
 Ce mini-jeu de plateforme reprend le principe des jeux du style de mario bros.
-Un personnage, représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
-Il doit avancer au maximum, sans être touché par des ennemis, représentés par des triangles et sans tomber dans les trous du terrain.
-Le personnage peut faire perdre des points de vie aux ennemis jusqu'à les tuer en leur sautant dessus. S'il les touche sur les côté, 
-il meurt et la partie est terminée.
+Un personnage, contrôlé au clavier et représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
+Il doit avancer au maximum, sans être touché par des ennemis, dessinés par des triangles, et sans tomber dans les trous du terrain.
+Le personnage peut faire perdre des points de vie aux ennemis jusqu'à les tuer en leur sautant dessus. 
+S'il les touche sur les côtés, il meurt et la partie est terminée.
 La caméra avance lorsque le joueur avance suffisamment. Le joueur peut revenir à gauche jusqu'à la limite de l'écran.
 Le terrain est généré aléatoirement et est infini.
-Le but du jeu est d'obtenir le plus grand score. Le score diminue avec le temps et augmente lorsqu'un ennemi est tué ou que le personnage avance
+Le but du jeu est d'obtenir le plus grand score. Le score diminue avec le temps et augmente lorsqu'un ennemi est tué ou que le personnage avance.
+\end{minipage}
+\hfill
+\begin{minipage}{6cm}
+ \framebox[\linewidth]{\parbox{\linewidth}{~ \vspace{4cm} Capture à venir ~\\~\\}}
+\end{minipage}
+
 
 \subsubsection{Game \& Watch}
 
+\begin{minipage}{6cm}
+ \includegraphics[width=\linewidth]{img/capturejeu_watchndroid}
+\end{minipage}
+\hfill
+\begin{minipage}{9cm}
 Watch’N’Droid est un mini-jeu du style Game \& Watch. 
 Le joueur doit chasser ses ennemis avant que ces derniers ne l’atteignent. 
-Les ennemis apparaissent un par un en bas de l’écran et montent pour atteindre le joueur à une certaine vitesse. La vitesse des ennemis varie en fonction du niveau dans lequel le joueur se trouve. 
+Les ennemis apparaissent un par un en bas de l’écran et montent pour atteindre le joueur à une certaine vitesse.
+Cette dernière varie en fonction du niveau dans lequel le joueur se trouve. 
 L’utilisateur est armé de deux marteaux pour détruire l’ennemi et donc marquer des points. 
-Lorsque l’ennemi atteint le joueur se dernier perd une vie. 
-Lorsqu’il ne lui reste que deux  vies, des vies bonus apparaissent sur l’écran et le joueur peut les ramasser. 
-Lorsque le nombre de vie arrive a zéro, le joueur a la possibilité d’enregistrer son score si ce dernier fait parti des cinq meilleurs scores qui sont actuellement enregistrés.
-
-\begin{figure}
- \includegraphics[width=\linewidth]{img/capturejeu_watchndroid}
- \caption{Capture du mini-jeu Game \& Watch}
- \label{fig:game_gamewatch}
-\end{figure}
+Lorsque l’ennemi atteint le joueur se dernier perd une vie.
+Lorsqu’il ne lui reste que deux vies, des vies bonus apparaissent sur l’écran et le joueur peut les ramasser. 
+Lorsque le nombre de vie arrive à zéro, le joueur a la possibilité d’enregistrer son score si ce dernier fait partie
+ des cinq meilleurs scores qui sont actuellement enregistrés.
+\end{minipage}
 
 \subsubsection{Billard}
 
-Ce mini-jeu de billard est un jeu multi-joueurs au tour par tour. 
+\begin{minipage}{9cm}
+Ce mini-jeu de billard est un jeu multijoueurs au tour par tour. 
 Il reprend les règles classiques du billard anglais (chaque joueur doit rentrer toutes les boules d’une couleur puis la noire). 
 D’un point de vue gameplay, le joueur contrôle la queue qui pointe automatiquement vers la boule blanche via sa souris. 
-Le joueur peut ainsi choisir l’angle avec lequel il compte frapper la boule blanche et en fonction du pendant lequel le joueur va cliquer le tir va être plus ou moins fort. 
-Pour l’affichage, chaque joueur voit combien de boules sont rentrés ainsi que sa couleur. Une icône verte apparait au niveau du joueur qui doit jouer. 
+Le joueur peut ainsi choisir l’angle avec lequel il compte frapper la boule blanche et en fonction du temps pendant lequel
+ le joueur laisse le clic de la souris enfoncé, le tir est plus ou moins fort. 
+Pour l’affichage, chaque joueur voit le nombre de boules rentrés ainsi que sa couleur. 
+Une icône verte apparait au niveau du joueur qui doit jouer. 
 Le cadre bleu en bas de l’écran affiche la personne ayant gagné la partie !
-
-\begin{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_billard}
- \caption{Capture du mini-jeu billard}
- \label{fig:game_billard}
-\end{figure}
+\end{minipage}
+
 
 \subsubsection{Gestion}
 
-Le jeu commissariat est  un jeu de gestion du style Farmville. 
-Vous aurez pour rôle de maintenir et améliorer votre commissariat en fonction des ressources disponibles.
- Les ressources sont au nombre de quatre : le nombre de policier, l’argent, l’indice IGPN et l’alcool ! 
-Il y a trois actions disponibles pour le joueur. Il peut envoyer des policiers en missions dans un quartier 
-choisis pour ramener de l’argent ainsi qu’un prisonnier.  Si un prisonnier est ramené, le joueur a la possibilité 
+\begin{minipage}{6cm}
+ \includegraphics[width=\linewidth]{img/capturejeu_gestion2}
+\end{minipage}
+\hfill
+\begin{minipage}{9cm}
+Le jeu commissariat est un jeu de gestion du style Farmville. 
+Le but est de maintenir et améliorer le commissariat en fonction des ressources disponibles.
+Les ressources sont au nombre de quatre : le nombre de policiers, l’argent, l’indice IGPN et l’alcool. 
+Il y a trois actions disponibles pour le joueur. Il peut envoyer des policiers en mission dans un quartier 
+choisi pour ramener de l’argent ainsi qu’un prisonnier. Si un prisonnier est ramené, le joueur a la possibilité 
 de libérer le prisonnier contre de l’argent ou de le tabasser (avec un fort risque de pénalité). 
 Il peut aussi acheter des équipements ainsi que de l’alcool avec son argent. L’alcool est une ressource qui diminue constamment, 
-le joueur doit ton veiller a toujours en avoir pour ne pas perdre. Il peut aussi perdre avec un indice d’IGPN trop élevé, cet indice 
+le joueur doit veiller à toujours en avoir pour ne pas perdre. Il peut aussi perdre avec un indice d’IGPN trop élevé, cet indice 
 monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
-
-\begin{figure}
- \includegraphics[width=\linewidth]{img/capturejeu_gestion2}
- \caption{Capture du mini-jeu de gestion}
- \label{fig:game_gestion}
-\end{figure}
+\end{minipage}
 
 \subsection{Analyse des mini-jeux}
 

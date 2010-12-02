@@ -1,3 +1,4 @@
+
 Le contenu des mini-jeux est très varié : jeu de rôle, jeu de gestion, jeu de plateforme, etc.
 L'analyse des différences et des ressemblances entre ceux-ci, afin de définir ensuite une grammaire de description de jeux, est d'autant plus complexe.
 
@@ -5,7 +6,7 @@ Les difficultés d'implémentation des mini-jeux sont elles aussi différentes.
 8 exemples concrets de jeux sont développés par la suite.
 Cela permet d'appuyer l'analyse de ce que contient un mini-jeu.
 
-Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans la description de ses règles et son implémentation.
+Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans la description de ses règles et son implémentation. \note{tableau à préciser}
 
 \vspace{0.5cm}
 
@@ -19,7 +20,7 @@ Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans l
  Mario & Niveaux \\
  Game\&Watch & ?? \\
  Billard & Collisions \\
- Jeu de Gestion & Ressources \\
+ Gestion & Ressources \\
 \end{tabular}
 
 \vspace{0.5cm}
@@ -27,14 +28,12 @@ Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans l
 Tout d'abord, chaque jeu est présenté succintement, illustré par une capture d'écran d'une implémentation effectuée.
 Dans un second temps, une analyse de leur contenu sera effectuée, appuyée par un tableau comparatif et les diagrammes UML de ces jeux.
 
+\clearpage
+
 \subsection{Présentation des mini-jeux}
 
-\note{c'est pour l'instant un bête copier coller de chacun, les fautes n'ont pas été corrigés.
-On retravaillera cette sous-partie pour homogénéiser les différentes descriptions}
 
-\subsubsection{Pacman}
-
-
+\titlegame{Pacman}
 \begin{minipage}{9cm}
 Ce jeu est une adaptation du jeu classique de Pacman. 
 Le joueur contrôle le TUX via les touches du clavier. 
@@ -50,8 +49,7 @@ la carte à partir d’images et d’un fichier Json.
 \end{minipage}
 
 
-\subsubsection{1942}
-
+\titlegame{1942}
 \begin{minipage}{6cm}
 \includegraphics[width=\linewidth]{img/capturejeu_1942}
 \end{minipage}
@@ -65,8 +63,7 @@ ils suivent des déplacements prédéfinis qui peuvent être paramétrés.
 Le joueur n’est pas obligé de tuer tous les ennemis mais le but est quand même de faire le plus grand score.
 \end{minipage}
 
-\subsubsection{Volley}
-
+\titlegame{Volley}
 \begin{minipage}{9cm}
 CowCow volley party est un mini jeu humoristique mettant en scène deux vaches jouant au volley.
 On peut jouer à ce jeu en mode solo contre une IA ou à deux joueurs. 
@@ -81,8 +78,7 @@ La vache est contrôlée au clavier aussi bien en mode multijoueur qu’en mode 
 \end{minipage}
 
 
-\subsubsection{Course}
-
+\titlegame{Course}
 \begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_course}
 \end{minipage}
@@ -97,8 +93,7 @@ Le contrôle se fait au clavier. Ce jeu est adaptable : en effet, il est possibl
 Il serait aussi possible de mettre en place un système de lecture de fichier pour configurer les paramètres des différentes courses.
 \end{minipage}
 
-\subsubsection{Mario}
-
+\titlegame{Mario}
 \begin{minipage}{9cm}
 Ce mini-jeu de plateforme reprend le principe des jeux du style de mario bros.
 Un personnage, contrôlé au clavier et représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
@@ -108,6 +103,8 @@ S'il les touche sur les côtés, il meurt et la partie est terminée.
 La caméra avance lorsque le joueur avance suffisamment. Le joueur peut revenir à gauche jusqu'à la limite de l'écran.
 Le terrain est généré aléatoirement et est infini.
 Le but du jeu est d'obtenir le plus grand score. Le score diminue avec le temps et augmente lorsqu'un ennemi est tué ou que le personnage avance.
+Il est facilement possible de changer le type de fonctionnement du jeu pour passer dans un mode où le but est de passer d'un niveau à un autre
+avec des niveaux prédéfinis au préalable.
 \end{minipage}
 \hfill
 \begin{minipage}{6cm}
@@ -115,8 +112,7 @@ Le but du jeu est d'obtenir le plus grand score. Le score diminue avec le temps 
 \end{minipage}
 
 
-\subsubsection{Game \& Watch}
-
+\titlegame{Game \& Watch}
 \begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_watchndroid}
 \end{minipage}
@@ -133,8 +129,7 @@ Lorsque le nombre de vie arrive à zéro, le joueur a la possibilité d’enregi
  des cinq meilleurs scores qui sont actuellement enregistrés.
 \end{minipage}
 
-\subsubsection{Billard}
-
+\titlegame{Billard}
 \begin{minipage}{9cm}
 Ce mini-jeu de billard est un jeu multijoueurs au tour par tour. 
 Il reprend les règles classiques du billard anglais (chaque joueur doit rentrer toutes les boules d’une couleur puis la noire). 
@@ -151,8 +146,7 @@ Le cadre bleu en bas de l’écran affiche la personne ayant gagné la partie !
 \end{minipage}
 
 
-\subsubsection{Gestion}
-
+\titlegame{Gestion}
 \begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_gestion2}
 \end{minipage}
@@ -171,41 +165,68 @@ monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
 
 \subsection{Analyse des mini-jeux}
 
-Suite au développement de ces mini-jeux, nous avons voulu analyser le contenu de ces différents jeux.
-Pour cela, le tableau suivant récapitule différents aspects des jeux.
-
-\note{inclure le tableau de google docs, en renvoyant peut être les colonnes pour mieux l'adapter à ce qu'on a fait dans la grammaire}
+Ces mini-jeux ont été développés et leurs diagrammes UML sont disponibles en annexe.
+De plus, ils permettent d'appuyer l'analyse de la description d'un mini-jeu.
+Le tableau suivant récapitule les différents objectifs des jeux et leur style de terrain.
 
 \vspace{0.5cm}
 
-\begin{tabular}{|l|l}
+\begin{tabular}{|l|| c|c|c|c|c|}
 \hline
- Jeu &   \\
+ Jeu &  Niveaux & Fin de niveau & Victoire & Score & Terrain \\
 \hline
- Pacman &  \\
+ Pacman & Oui & survie + tout ramassé & tous niveaux & Oui & Grille \\
 \hline
- 1942 &   \\
+ 1942 & Oui & survie + ligne d'arrivée & tous niveaux & Oui & Progression verticale \\
 \hline
- Volley &  \\
+ Volley &  Non & score & score & Oui & Plateau \\
 \hline
- Course &  \\
+ Course & Oui & survie + ligne d'arrivée & tous niveaux & Oui & circuit \\
 \hline
- Mario &  \\
+ Mario & Oui & survie + ligne d'arrivée & tous niveaux & Oui & Progression horizontale\\
 \hline
- Game\&Watch & \\
+ Game\&Watch & Oui & tout tué & tous niveaux & Oui  & Plateau et grille\\
 \hline
- Billard &  \\
+ Billard & Non & toute boule rentrée & score & Oui & Plateau \\
 \hline
- Jeu de Gestion & \\
+ Gestion & Non & & & Oui & Grille\\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
-Ce tableau permet de mieux identifier les différences et points communs entre les différents jeux.
+Le tableau suivant permet quant à lui de comparer les aspects concernant le contrôle et les personnages.
 
-On y voit par exemple que les objectifs au cours d'un niveau (ou pour un jeu sans niveau) revient souvent à atteindre une certaine zone
-appelée ligne d'arrivée, ou éventuellement remplir des conditions de temps ou de ressources. En effet, à la fois la vie et le score
+\vspace{0.5cm}
+
+\begin{tabular}{|l|| c|c|c|c|}
+\hline
+ Jeu & Personnage & Contrôle & Autres actions & PNJ \footnote{Personnage non joué} \\
+\hline
+ Pacman &  Oui & direct via clavier & &  Oui \\
+\hline
+ 1942 & Oui & direct via clavier & Tir & Oui  \\
+\hline
+ Volley & Oui & direct via clavier  & Tir, Saut & Oui \\
+\hline
+ Course & Oui & direct via clavier & Utilisation bonus & Oui \\
+\hline
+ Mario & Oui & direct via clavier &  Saut & Oui \\
+\hline
+ Game\&Watch & Oui & direct via clavier & Frappe & Oui  \\
+\hline 
+ Billard &  Oui {\small (si queue=joueur)} & direct via clavier & Force & Oui  \\
+\hline
+ Gestion &  Oui mais inutile & clic, sélection et action & Clic pour actions & Non \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+Ces tableaux permettent de mieux identifier les différences et points communs entre les différents jeux.
+
+Par exemple, les objectifs au cours d'un niveau (ou pour un jeu sans niveau) se limitent souvent à atteindre une certaine zone
+appelée ligne d'arrivée, ou éventuellement à remplir des conditions de temps ou de ressources. En effet, à la fois la vie et le score
 peuvent être vus comme une ressource : il s'agit d'un état, et une condition sur celui-ci est nécessaire à la victoire.
 En faisant des conjonctions et des disjonctions de ces différentes possiblités, il est possible de définir 
 les conditions de victoire pour tous les jeux (sauf le jeu de gestion).
@@ -213,15 +234,13 @@ les conditions de victoire pour tous les jeux (sauf le jeu de gestion).
 En revanche, si on regarde comment le monde est construit, il est très différent d'un jeu à l'autre.
 Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est défini via un anneau.
 
-Le tableau nous permet de voir assez clairement que le jeu de gestion est très différent des autres jeux.
-Nous avons donc décidé de ne pas prendre en compte ce type de jeux.
-Nous allons donc essayé de tirer des points communs entre les autres jeux, pour définir des concepts qui seront détaillés dans 
-les parties suivantes.
-Retirer de notre grammaire les jeux de gestion n'empêchent pas de couvrir un nombre important de jeux.
+Le tableau permet de distinguer clairement le jeu de gestion des autres jeux.
+La grammaire proposée par la suite ne prendra pas en compte ce type de jeux.
+La comparaison se base donc sur les autres jeux, pour définir des concepts qui seront détaillés dans les parties suivantes.
+Retirer du langage de description les jeux de gestion n'empêchent pas de couvrir un nombre important de jeux.
 Il serait possible par exemple de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir
-créer plusieurs types de jeux. Ainsi on pourrait créer une autre grammaire spécialement pour les jeux de gestion.
-De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants, et un jeu de rôle où par exemple le joueur
+créer plusieurs types de jeux. Ainsi on pourrait une autre grammaire pourrait spécialement être créee pour les jeux de gestion.
+De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants, et un jeu de rôle classique où le joueur
 doit réaliser plusieurs quetes.
-Cependant, nous nous sommes concentrés pour le moment sur une unique grammaire décrivrant les 7 mini-jeux.
 
 \note{Lister les concepts trouvés}

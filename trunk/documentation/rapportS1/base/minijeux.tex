@@ -163,7 +163,7 @@ le joueur doit veiller à toujours en avoir pour ne pas perdre. Il peut aussi pe
 monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
 \end{minipage}
 
-\subsection{Analyse des mini-jeux}
+\subsection{Comparaison des mini-jeux}
 
 Ces mini-jeux ont été développés et leurs diagrammes UML sont disponibles en annexe.
 De plus, ils permettent d'appuyer l'analyse de la description d'un mini-jeu.
@@ -181,7 +181,7 @@ Le tableau suivant récapitule les différents objectifs des jeux et leur style 
 \hline
  Volley &  Non & score & score & Oui & Plateau \\
 \hline
- Course & Oui & survie + ligne d'arrivée & tous niveaux & Oui & circuit \\
+ Course & Oui & survie + ligne d'arrivée & tous niveaux & Oui & Ruban \\
 \hline
  Mario & Oui & survie + ligne d'arrivée & tous niveaux & Oui & Progression horizontale\\
 \hline
@@ -232,7 +232,7 @@ En faisant des conjonctions et des disjonctions de ces différentes possiblités
 les conditions de victoire pour tous les jeux (sauf le jeu de gestion).
 
 En revanche, si on regarde comment le monde est construit, il est très différent d'un jeu à l'autre.
-Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est défini via un anneau.
+Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est défini via un ruban.
 
 Le tableau permet de distinguer clairement le jeu de gestion des autres jeux.
 La grammaire proposée par la suite ne prendra pas en compte ce type de jeux.
@@ -241,6 +241,17 @@ Retirer du langage de description les jeux de gestion n'empêchent pas de couvri
 Il serait possible par exemple de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir
 créer plusieurs types de jeux. Ainsi on pourrait une autre grammaire pourrait spécialement être créee pour les jeux de gestion.
 De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants, et un jeu de rôle classique où le joueur
-doit réaliser plusieurs quetes.
+doit réaliser plusieurs quêtes.
 
-\note{Lister les concepts trouvés}
+\subsection{Analyse des mini-jeux}
+
+On remarque tout d'abord que tous les mini-jeux possèdent une boucle de rafraîchissement.
+Cette dernière permet à la fois d'effectuer les différentes actions telles que le déplacement des personnages non joués et de gérer 
+les différents 'timer' du jeu.
+
+Ensuite, dans les mini-jeux se retrouvent souvent la notion d'un avatar, petit personnage que le joueur peut déplacer.
+Différentes actions peuvent se greffer à cet avatar selon les jeux.
+De même, dans de nombreux jeux se trouvent la notion d'ennemis : des personnages non joués, dont le comportement est prédéfini.
+
+Enfin, on constate que la notion de ressources est très utile. Il s'agit d'une variable qui définit un état par exemple sur les entiers tel que le score.
+Celle-ci peut être modifiée selon les évènements qu'il se passe dans le jeu.

@@ -239,20 +239,23 @@ La grammaire proposée par la suite ne prendra pas en compte ce type de jeux.
 La comparaison se base donc sur les autres jeux, pour définir des concepts qui seront détaillés dans les parties suivantes.
 Retirer du langage de description les jeux de gestion n'empêchent pas de couvrir un nombre important de jeux.
 Il serait possible par exemple de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir
-créer plusieurs types de jeux. Ainsi on pourrait une autre grammaire pourrait spécialement être créee pour les jeux de gestion.
-De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants, et un jeu de rôle classique où le joueur
+créer plusieurs types de jeux. Ainsi une autre grammaire pourrait spécialement être créee pour les jeux de gestion.
+De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants et un jeu de rôle classique où le joueur
 doit réaliser plusieurs quêtes.
 
 \subsection{Analyse des mini-jeux}
 
 On remarque tout d'abord que tous les mini-jeux possèdent une boucle de rafraîchissement.
-Cette dernière permet à la fois d'effectuer les différentes actions telles que le déplacement des personnages non joués et de gérer 
+Cette dernière permet à la fois d'effectuer les différentes actions telles que le déplacement des personnages non joueurs et de gérer 
 les différents 'timer' du jeu.
 
 Ensuite, dans les mini-jeux se retrouvent souvent la notion d'un avatar, petit personnage que le joueur peut déplacer.
-Différentes actions peuvent se greffer à cet avatar selon les jeux.
-Cet avatar a des caractéristiques que l'on retrouve dans plusieurs jeux comme la vie, d'autres plus rares comme des munitions spéciales pour une arme.
+Différentes actions peuvent se greffer à cet avatar selon les jeux, souvent le déplacement, le saut, le tir.
+Cet avatar a des caractéristiques que l'on retrouve dans plusieurs jeux comme la vie, d'autres plus rares comme une quantité de points de magie.
 De même, dans de nombreux jeux se trouvent la notion d'ennemis : des personnages non joués, dont le comportement est prédéfini.
 
-Enfin, on constate que la notion de ressources est très utile. Il s'agit d'une variable qui définit un état par exemple sur les entiers tel que le score.
+De plus, la notion de ressources est très utile. Il s'agit d'une variable qui définit un état par exemple sur les entiers tel que le score.
 Celle-ci peut être modifiée selon les évènements qu'il se passe dans le jeu.
+
+Enfin, dans tous les mini-jeux, le concept de collision est très utile. Celle-ci cause la plupart du temps de nombreuses conséquences (mort d'ennemis, de joueurs,
+incapacité de passer un obstacle, etc.)

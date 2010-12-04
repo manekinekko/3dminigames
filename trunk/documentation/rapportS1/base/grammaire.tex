@@ -9,7 +9,158 @@ Elle permet de manipuler chaque attribut et est beaucoup plus proche de l'implé
 C'est par exemple elle qui permettra de définir le comportement de l'intelligence artificielle, chose très difficile à mettre en oeurvre à haut-niveau.
 \end{itemize}
 
-Le schéma de compilation se complexifie alors : un fichier décrivant le jeu dans la grammaire de haut-niveau est compilée afin de donner un fichier
+Le schéma de compilation se complexifie alors : un fichier décrivant le jeu dans la grammaire de haut-niveau est compilé afin de donner un fichier
 respectant la grammaire de bas-niveau. A ce niveau là, l'utilisateur peut effectuer de nouveaux ajouts ou modifications. Le second compilateur
 produit alors le script final du jeu en javascript.
 
+\subsection{Grammaire haut-niveau}
+
+La description du jeu se déroule en plusieurs phases.
+Elle commence par les entités du jeu : personnage, ennemis, alliés et leurs attributs.
+Viennent ensuite les définitions d'actions de base et des commandes.
+Enfin, les règles du jeu sont spécifiées.
+
+\subsubsection{Définition des entités du jeu et de leurs attributs}
+
+Il s'agit de lister les différents personnages ou objets qui apparaissent dans le jeu.
+Pour faciliter le travail de l'utilisateur, diverses classes sont déjà créées pour définir les entités.
+La classe de base est la classe Object avec des attributs de base comme la position, l'orientation, la taille, etc.
+De celle-ci héritent de nombreuses autres classes comme Character, Vehicle ou Weapon chacun ayant des nouveaux attributs spécifiques.
+\note{Inclure le schéma des classes ?}
+
+La déclaration d'un nouveau personnage se fait alors via un identificateur et le mot-clef 'is'.
+Par exemple \code{Mario is Character} permet de déclarer Mario comme un personnage de classe Character, 
+et peut donc posséder tous les attributs de cette classe. Ces derniers sont initialisés à des valeurs par défaut.
+Pour modifier cette initialisation, par exemple pour changer l'attribut \code{lifeMax} de Mario, les mots clefs 'has' et 'at' sont utilisés : 
+\code{Mario has lifeMax at 3}.
+De même, il est nécessaire de pouvoir rajouter de nouveaux attributs à Mario.
+La syntaxe est la même. Ainsi, \code{Mario has energie at 8} ajoute un attribut énergie à Mario, initialisé à 8.
+Les nouveaux attributs doivent obligatoirement être initialisés grâce à 'at'.
+
+De plus, s'il existe divers personnages qui possèdent aussi cette énergie, il est souhaitable de ne pas avoir à répéter cette ligne.
+Ainsi, de nouveaux types peuvent être crées grâce au mot-clef 'type' :
+\code{type Plombier is character. Plombier has energie at 8. Mario is Plombier. Luigi is Plombier.}
+\note{a-t'on l'héritage multiple et si oui, comment ce la se passe en cas d'attributs du même nom ?}
+
+Ensuite, en même temps que la déclaration de la classe d'une nouvelle identité, il est possible de la définir comme jouée par le joueur, ennemi, allié ou neutre.
+(Si cela n'est pas précisé, la valeur est mise à neutre par défaut.
+% \code{Mario is Plombier player. Luigi is Plombier ally. type Boss is character ennemy. Bowser is Boss.}
+De plus, dans le cas où ce n'est pas un personnage joué, il peut être déclaré comme multiple.
+Cela signifie qu'il est possible d'en générer plusieurs avec la seule commande 'generate'.
+Par exemple \code{Koopa is character enemy multiple. generate 5 Koopa in zone}. Permet de créer 5 Koopa dans \code{zone} qui aura dû être définie
+auparavant. Outre 'in', les mots-clefs 'on' permet de placer des objets juste au-dessus de la zone définie par le mot suivant, et le mot-clef 'at' génère
+le premier objet à l'endroit indiqué et les autres proches de celui-ci, tout en évitant les collisions.
+\note{A confirmer que ce soit ça pour multiple}
+
+Enfin, il est possible de manipuler des listes de ces classes.
+\code{type humain is character. type elfe is character : type nain is character. type hobbit is character. type magicien is character. gandalf is magicien ally.
+CommunauteDeLAnneau is list of 1 elfe with 1 nain with 2 humain with gandalf with 4 hobbit.}
+
+\subsubsection{Autres classes prédéfinies}
+
+D'autres classes sont prédéfinies : une classe Game concernant l'ensemble général du jeu, une classe Camera contenant les informations sur les caméras :
+certains comportements classiques sont prédéfinies comme un suivi à la première ou troisième personne, ou une caméra libre.
+
+De plus, 2 clases permettent de gérer respectivement les compteurs et les ressources de type temporels.
+
+\subsubsection{Définition de nouvelles actions et assignation des commandes}
+
+Il est ensuite possible de définir de nouvelles actions via le mot-clef 'definition' et 'means'.
+Par exemple, en reprenant l'exemple de Mario : \code{Mario is character player. definition suicide means mario dies.}
+
+Les commandes sont ensuite définies après le mot-clef 'command'. Elles sont générées soit par l'appui d'une touche X du clavier ('key X') soit par 
+une action Y sur la souris ('mouse Y').
+\code{command mouse rClick for suicide} permet par exemple de causer l'action nommée suicide lorsque le joueur clique sur le bouton droit de la souris.
+
+De plus, de nombreuses actions sont prédéfinies pour les personnes du jeu comme jump ou move left ou concernant le jeu en général comme pause, save ou gameover.
+\code{command mario is key space for jump, key Z for move forward, key Y for move backward, key S for move left, key D for move right.}
+
+Il est possible de désactiver (respectivement d'activer) certaines touches du clavier ou action de la souris au cours du jeu.
+Pour cela, il faut utiliser le mot-clef 'desactive' (respectivement 'activate').
+\code{desactive key Z} désactive les actions lors de l'appui sur la touche Z.
+Il est également possible de désactiver toutes les commandes \code{desactive commands} ou toutes les commandes claviers \code{desactive key}.
+
+\subsubsection{Déclaration des règles du jeu}
+
+Les règles du jeu sont définies par le mot-clef 'rule' et 'then'.
+Par exemple \code{rule mario dies then gameover}.
+
+Il est également possible de manipuler les attributs des différentes entités. Prenons le cas où un ennemi a été défini \code{bowser is character ennemy}
+et que si mario entre en collision avec lui , alors il perd un point de vie, réduit son score de 100 et provoque un saut.
+\code{rule mario touches bowser then sub 1 for life of mario, sub 100 for score of game, mario jump}.
+
+Outre 'sub' d'autres mots clefs existent pour les autres opérations arithmétiques élémentaires, ainsi qu'un 'assign' qui change directement
+la valeur de l'attribut.
+
+Certains concepts sont déjà définies : ainsi 'touches' est causée par une entrée en collision entre les deux entités, dies signifient l'arrivée de l'attribut
+life à 0, kills se produit lorsque le premier personnage tue le second.
+\note{j'ai un peu de mal à voir tout comment marche les declencheur et les conséquences dans la grammaire, du coup, je veux bien que 
+quelqu'un nous explique tout ca, il doit manquer pas mal de choses là encore.}
+
+\subsubsection{Exemple de mini-jeu décrit dans la grammaire 'haut-niveau'}
+
+\note{Nous pensions éventuellement à un simple jeu à caméra fixe avec terrain prédéfini ou le personnage doit éviter certains ennemis
+et prendre toutes les pièces avant d'atteindre un point d'arrivée, en fait genre un pacman sans bonus quoi :p, parce que mario on a le problème
+des collisions par le haut ou pas, ainsi que la génération du terrain}
+
+\subsection{Grammaire bas-niveau}
+
+La grammaire bas-niveau est beaucoup plus proche de l'implémentation finale que la haut-niveau.
+Ainsi, toutes les ressources doivent avoir un identifiant unique, les évènements qu'ils proviennent du joueur (clavier, souris) ou de la moficiation
+de l'état d'un personnage sont gérés par des signaux.
+La description d'un jeu est constitué de ressources, d'entités, de caméra, d'une boucle de rafraîchissement, d'un gestionnaire d'évènements.
+Un moteur physique permettant de tester les collisions et contenant également les forces générales du jeu (gravitation, vent, etc.) est également disponible.
+
+\subsubsection{Définition des ressources}
+
+Une ressource est une variable du jeu qui pourra ensuite être attribuée à une entité.
+Elle est identifiée par un nom unique.
+
+\code{marioLife 1} permet de créer une ressource marioLife initialisée à 1.
+
+Il existe un type spécial de ressource : les ressources temporelles.
+Celles-ci sont mises à jour via la boucle de rafraîchissement générale du jeu.
+Pour la définir, cette fois 2 valeurs sont données suites à la ressource : le pas du timer, et sont initialisation :
+\code{timeStarBonus 10000 0} permet de créer une ressource de nom 'timerStarBonus' (pouvant correspondre à la durée du bonus donné par une étoile)
+avec un pas de 10 secondes, et initialisée à 0 milisecondes. 
+
+Il est également possible de faire des énumérations de ressources.
+\note{il faudrait un joli exemple}
+
+\subsubsection{Définition des entités et caméras}
+
+On considère que le terrain est représenté par exemple par une matrice de points dans l'espace surlaquelle est aplliquée une texture.
+La matrice pourra être remplacée selon le type de terrain pour un certain jeu. \note{Ca veut un peut rien dire ça, non ?}
+
+L'ensemble des entités d'un jeu est alors constitué d'un terrain et d'un ensemble d'objet.
+Chaque objet est identifié par un nom, ainsi que par deux fichiers créés par des outils de dessin d'objets 3D, un fichier .obj contenant l'ensemble
+des points de l'objet, et un ficier .mat contenant la texture appliquée sur les faces de l'objet.
+De plus chaque objet contient un ensemble de paramètre comme la vitesse, la position, etc. \note{vérifier le format de sortie de Sketchup}
+
+Les caméras sont définies de manière similaire aux entités : chaque caméra est définie par un nom, une position et une orientation.
+
+\note{comment on associe des ressources à une entité ?}
+
+\subsubsection{Boucle de rafraîchissement et gestionnaire d'évènements}
+
+Les divers évènements du jeu sont gérés via un système de signaux.
+
+Le jeu dispose d'une boucle de rafraîchissement principale. Celle-ci génère un signal
+signalUpdateCounter émettant un signal régulièrement.
+De même, il permet de vérifier les touches enfoncées et actions de la souris à chaque tic du timer.
+
+Enfin, chaque mise à jour de ressource nommée X émet un signal updateX.
+
+Les actions lors de la réception d'un signal sont gérées par un gestionnaire d'évènements.
+Ce dernier est défini par un ensemble de signaux et d'instructions.
+Les instructions sont données comme dans un langage classique.
+Elles sont composées des mises à jours de variable en utilisant les opérateurs arithmétiques classiques, les constantes, les autres ressources et des nombres
+aléatoires.
+Des instructions conditionnelles sont également disponibles, les booléens étant générés via des comparaisons d'expressions.
+
+Les instructions peuvent également reprendre des concepts classiques de mini-jeux : pause, nouvelle partie, fin de partie, sauvegarde de la partie.
+\note{insérer un petit exemple}
+
+\subsubsection{Exemple de mini-jeu dans la grammaire bas-niveau}
+
+\note{to do ...}

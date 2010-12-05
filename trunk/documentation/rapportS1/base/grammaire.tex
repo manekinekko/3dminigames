@@ -39,22 +39,29 @@ Les nouveaux attributs doivent obligatoirement être initialisés grâce à 'at'
 
 De plus, s'il existe divers personnages qui possèdent aussi cette énergie, il est souhaitable de ne pas avoir à répéter cette ligne.
 Ainsi, de nouveaux types peuvent être crées grâce au mot-clef 'type' :
-\code{type Plombier is character. Plombier has energie at 8. Mario is Plombier. Luigi is Plombier.}
+\code{type Plombier is Character. Plombier has energie at 8. Mario is Plombier. Luigi is Plombier.}
 \note{a-t'on l'héritage multiple et si oui, comment ce la se passe en cas d'attributs du même nom ?}
 
 Ensuite, en même temps que la déclaration de la classe d'une nouvelle identité, il est possible de la définir comme jouée par le joueur, ennemi, allié ou neutre.
 (Si cela n'est pas précisé, la valeur est mise à neutre par défaut.
-% \code{Mario is Plombier player. Luigi is Plombier ally. type Boss is character ennemy. Bowser is Boss.}
+\code{Mario is Plombier player. Luigi is Plombier ally. type Boss is Character ennemy. Bowser is Boss.}
 De plus, dans le cas où ce n'est pas un personnage joué, il peut être déclaré comme multiple.
 Cela signifie qu'il est possible d'en générer plusieurs avec la seule commande 'generate'.
-Par exemple \code{Koopa is character enemy multiple. generate 5 Koopa in zone}. Permet de créer 5 Koopa dans \code{zone} qui aura dû être définie
+Par exemple \code{Koopa is} \code{Character enemy multiple. generate 5 Koopa in zone}. Permet de créer 5 Koopa dans \code{zone} qui aura dû être définie
 auparavant. Outre 'in', les mots-clefs 'on' permet de placer des objets juste au-dessus de la zone définie par le mot suivant, et le mot-clef 'at' génère
 le premier objet à l'endroit indiqué et les autres proches de celui-ci, tout en évitant les collisions.
 \note{A confirmer que ce soit ça pour multiple}
 
 Enfin, il est possible de manipuler des listes de ces classes.
-\code{type humain is character. type elfe is character : type nain is character. type hobbit is character. type magicien is character. gandalf is magicien ally.
+\begin{lstlisting}[language=GameGrammar]
+type humain is Character. 
+type elfe is Character. 
+type nain is Character. 
+type hobbit is Character. 
+type magicien is Character. 
+gandalf is magicien ally.
 CommunauteDeLAnneau is list of 1 elfe with 1 nain with 2 humain with gandalf with 4 hobbit.}
+\end{lstlisting}
 
 \subsubsection{Autres classes prédéfinies}
 
@@ -66,7 +73,7 @@ De plus, 2 clases permettent de gérer respectivement les compteurs et les resso
 \subsubsection{Définition de nouvelles actions et assignation des commandes}
 
 Il est ensuite possible de définir de nouvelles actions via le mot-clef 'definition' et 'means'.
-Par exemple, en reprenant l'exemple de Mario : \code{Mario is character player. definition suicide means mario dies.}
+Par exemple, en reprenant l'exemple de Mario : \code{Mario is Character player. definition suicide means mario dies.}
 
 Les commandes sont ensuite définies après le mot-clef 'command'. Elles sont générées soit par l'appui d'une touche X du clavier ('key X') soit par 
 une action Y sur la souris ('mouse Y').
@@ -85,7 +92,7 @@ Il est également possible de désactiver toutes les commandes \code{desactive c
 Les règles du jeu sont définies par le mot-clef 'rule' et 'then'.
 Par exemple \code{rule mario dies then gameover}.
 
-Il est également possible de manipuler les attributs des différentes entités. Prenons le cas où un ennemi a été défini \code{bowser is character ennemy}
+Il est également possible de manipuler les attributs des différentes entités. Prenons le cas où un ennemi a été défini \code{bowser is Character ennemy}
 et que si mario entre en collision avec lui , alors il perd un point de vie, réduit son score de 100 et provoque un saut.
 \code{rule mario touches bowser then sub 1 for life of} \code{ mario, sub 100 for score of game, mario jump}.
 

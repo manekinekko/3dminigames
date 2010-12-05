@@ -73,7 +73,7 @@ une action Y sur la souris ('mouse Y').
 \code{command mouse rClick for suicide} permet par exemple de causer l'action nommée suicide lorsque le joueur clique sur le bouton droit de la souris.
 
 De plus, de nombreuses actions sont prédéfinies pour les personnes du jeu comme jump ou move left ou concernant le jeu en général comme pause, save ou gameover.
-\code{command mario is key space for jump, key Z for move forward, key Y for move backward, key S for move left, key D for move right.}
+\code{command mario is key space for jump,} \code{ key Z for move forward, key Y for move backward, key S for move left, key D for move right.}
 
 Il est possible de désactiver (respectivement d'activer) certaines touches du clavier ou action de la souris au cours du jeu.
 Pour cela, il faut utiliser le mot-clef 'desactive' (respectivement 'activate').
@@ -87,7 +87,7 @@ Par exemple \code{rule mario dies then gameover}.
 
 Il est également possible de manipuler les attributs des différentes entités. Prenons le cas où un ennemi a été défini \code{bowser is character ennemy}
 et que si mario entre en collision avec lui , alors il perd un point de vie, réduit son score de 100 et provoque un saut.
-\code{rule mario touches bowser then sub 1 for life of mario, sub 100 for score of game, mario jump}.
+\code{rule mario touches bowser then sub 1 for life of} \code{ mario, sub 100 for score of game, mario jump}.
 
 Outre 'sub' d'autres mots clefs existent pour les autres opérations arithmétiques élémentaires, ainsi qu'un 'assign' qui change directement
 la valeur de l'attribut.

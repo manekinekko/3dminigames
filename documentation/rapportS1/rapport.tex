@@ -19,20 +19,27 @@
 \newcommand{\titlegame}[1]{\subsubsection*{\begin{center}#1\end{center}}}
 
 %\newcommand{\code}[1]{\textit{\textbf{#1}}}
+
+
+\usepackage{listings}
+\lstdefinelanguage{GameGrammar}{
+  morekeywords=[1]{type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,desactivate,activate,definition,command,rule,then},
+  morekeywords=[2]{Object,Character}
+}
+
 \newcommand{\code}[1]{
 \lstset{
   language=GameGrammar,
   basicstyle=\scriptsize\ttfamily,
   commentstyle=\color{blue},
-  keywordstyle=\bfseries
+  keywordstyle=[1]\bfseries,
+  keywordstyle=[2]\itshape
 }
 \lstinline{#1}}
 
-\usepackage{listings}
-\lstdefinelanguage{GameGrammar}{
-  morekeywords={type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,desactivate,activate,definition,command,rule,then}
-}
 \lstnewenvironment{GameGrammar}[1][]{\lstset{language=GameGrammar}#1}{}
+
+
 
 \title{Plateforme de création de "mini" jeux 3D sur le WEB}
 

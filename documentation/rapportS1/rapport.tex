@@ -10,7 +10,6 @@
 \usepackage{verbatim}
 \usepackage{mathpazo}
 \usepackage{url}
-\usepackage{listings}
 \usepackage{palatino}
 
 \usepackage{fullpage}
@@ -19,28 +18,62 @@
 
 \newcommand{\titlegame}[1]{\subsubsection*{\begin{center}#1\end{center}}}
 
-\newcommand{\code}[1]{\textit{\textbf{#1}}}
+%\newcommand{\code}[1]{\textit{\textbf{#1}}}
+\newcommand{\code}[1]{
+\lstset{
+  language=GameGrammar,
+  basicstyle=\scriptsize\ttfamily,
+  commentstyle=\color{blue},
+  keywordstyle=\bfseries
+}
+\lstinline{#1}}
+
+\usepackage{listings}
+\lstdefinelanguage{GameGrammar}{
+  morekeywords={type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,desactivate,activate,definition,command,rule,then}
+}
+\lstnewenvironment{GameGrammar}[1][]{\lstset{language=GameGrammar}#1}{}
 
 \title{Plateforme de création de "mini" jeux 3D sur le WEB}
 
-\author{Berlon Antoine \and
-Bouzillard Jerôme \and
-Chegham Wassim \and
-Clergeau Thomas \and
-Faghihi Afshin \and
-Guichaoua Mathieu \and
-Israël Quentin \and
-Kien Emeric \and
-Lamine Gérald \and
-Le Corronc Thibault \and
-Le Galludec Benjamin \and
-Le Normand Erik \and
-Lubecki Aurélien \and
-Marginier David \and
-Sanvoisin Aurélien \and
-Tolba Mohamed Amine \and
-Weinzaepfel Philippe \and
-Zadith Ludovic}
+% \author{Berlon Antoine \and
+% Bouzillard Jerôme \and
+% Chegham Wassim \and
+% Clergeau Thomas \and
+% Faghihi Afshin \and
+% Guichaoua Mathieu \and
+% Israël Quentin \and
+% Kien Emeric \and
+% Lamine Gérald \and
+% Le Corronc Thibault \and
+% Le Galludec Benjamin \and
+% Le Normand Erik \and
+% Lubecki Aurélien \and
+% Marginier David \and
+% Sanvoisin Aurélien \and
+% Tolba Mohamed Amine \and
+% Weinzaepfel Philippe \and
+% Zadith Ludovic}
+
+\author{
+A. Berlon \and
+B. Bouzillard \and
+W. Chegham \and
+T. Clergeau \and
+A. Faghihi \and
+M. Guichaoua \and
+Q. Israël \and
+K. Kien \and
+G. Lamine \and
+T. Le Corron \and
+B. Le Galludec \and
+E. Le Normand \and
+A. Lubecki \and
+D. Marginier \and
+A. Sanvoisin \and
+A. Tolba Mohamed \and
+P. Weinzaepfel \and
+L. Zadith}
 
 \date{\today}
 

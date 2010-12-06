@@ -20,9 +20,16 @@
 
 \usepackage{listings}
 \lstdefinelanguage{GameGrammar}{
-  morekeywords=[1]{type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,desactivate,activate,definition,command,rule,then},
+  morekeywords=[1]{type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,desactivate,activate,definition,command,
+                   rule,then,generate,efface,wait,random}, % keywords
   morekeywords=[2]{Object,Character,Vehicle,SpaceCraft,Plane,Obstacle,Weapon,Projectile,Sword,Zone,Gound,Bonus,Checkpoint,Breakable,
-		   Construction,Room,Ball,Teleporter}
+		   Construction,Room,Ball,Teleporter}, % class
+  morekeywords=[3]{touches,dies,kills,killed,touched,jump,
+		   keys,commands,
+		   move,left,right,forward,backward,accelerate,brake,
+		   add,sub,assign,
+		   pause,mute,play,stop
+		  } % concept haut niveau
 }
 
 \newcommand{\code}[1]{
@@ -31,7 +38,8 @@
   basicstyle=\scriptsize\ttfamily,
   commentstyle=\color{blue},
   keywordstyle=[1]\bfseries,
-  keywordstyle=[2]\itshape
+  keywordstyle=[2]\itshape,
+  keywordstyle=[3]\itshape
 }
 \lstinline{#1}}
 

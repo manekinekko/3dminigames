@@ -1,5 +1,5 @@
 Trouver une grammaire riche, complète et accessible à n'importe quel utilisateur est difficile.
-C'est pourquoi, en réalité deux grammaires sont présentées.
+C'est pourquoi, deux grammaires sont présentées.
 
 \begin{itemize}
  \item La première est dite de 'haut-niveau'.
@@ -10,7 +10,7 @@ C'est par exemple elle qui permettra de définir le comportement de l'intelligen
 \end{itemize}
 
 Le schéma de compilation se complexifie alors : un fichier décrivant le jeu dans la grammaire de haut-niveau est compilé afin de donner un fichier
-respectant la grammaire de bas-niveau. A ce niveau là, l'utilisateur peut effectuer de nouveaux ajouts ou modifications. Le second compilateur
+respectant la grammaire de bas-niveau. A ce niveau-là, l'utilisateur peut effectuer de nouveaux ajouts ou modifications. Le second compilateur
 produit alors le script final du jeu en javascript.
 
 \subsection{Grammaire haut-niveau}
@@ -40,7 +40,7 @@ Les nouveaux attributs doivent obligatoirement être initialisés grâce à 'at'
 De plus, s'il existe divers personnages qui possèdent aussi cette énergie, il est souhaitable de ne pas avoir à répéter cette ligne.
 Ainsi, de nouveaux types peuvent être crées grâce au mot-clef 'type' :
 \code{type Plombier is Character. Plombier has energie at 8. Mario is Plombier. Luigi is Plombier.}
-\note{a-t'on l'héritage multiple et si oui, comment ce la se passe en cas d'attributs du même nom ?}
+\note{a-t'on l'héritage multiple et si oui, comment cela se passe en cas d'attributs du même nom ?}
 
 Ensuite, en même temps que la déclaration de la classe d'une nouvelle identité, il est possible de la définir comme jouée par le joueur, ennemi, allié ou neutre.
 (Si cela n'est pas précisé, la valeur est mise à neutre par défaut.
@@ -68,7 +68,9 @@ CommunauteDeLAnneau is list of 1 elfe with 1 nain with 2 humain with gandalf wit
 D'autres classes sont prédéfinies : une classe Game concernant l'ensemble général du jeu, une classe Camera contenant les informations sur les caméras :
 certains comportements classiques sont prédéfinies comme un suivi à la première ou troisième personne, ou une caméra libre.
 
-De plus, 2 clases permettent de gérer respectivement les compteurs et les ressources de type temporels.
+De plus, 2 classes permettent de gérer respectivement les compteurs et les ressources de type temporels.
+
+Enfin, une dernière classe permet de gérer les fichiers multimédias tel que les sons ou les vidéos qui peuvent intervenir au cours d'un jeu.
 
 \subsubsection{Définition de nouvelles actions et assignation des commandes}
 
@@ -85,7 +87,7 @@ De plus, de nombreuses actions sont prédéfinies pour les personnes du jeu comm
 Il est possible de désactiver (respectivement d'activer) certaines touches du clavier ou action de la souris au cours du jeu.
 Pour cela, il faut utiliser le mot-clef 'desactive' (respectivement 'activate').
 \code{desactive key Z} désactive les actions lors de l'appui sur la touche Z.
-Il est également possible de désactiver toutes les commandes \code{desactive commands} ou toutes les commandes claviers \code{desactive key}.
+Il est également possible de désactiver toutes les commandes \code{desactivate commands} ou toutes les commandes claviers \code{desactivate key}.
 
 \subsubsection{Déclaration des règles du jeu}
 
@@ -171,3 +173,5 @@ Les instructions peuvent également reprendre des concepts classiques de mini-je
 \subsubsection{Exemple de mini-jeu dans la grammaire bas-niveau}
 
 \note{to do ...}
+
+\subsection{Avantages et limites de ces langages}

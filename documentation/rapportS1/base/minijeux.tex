@@ -4,7 +4,7 @@ L'analyse des différences et des ressemblances entre ceux-ci, afin de définir 
 
 Les difficultés d'implémentation des mini-jeux sont elles aussi différentes.
 8 exemples concrets de jeux sont développés par la suite.
-Cela permet d'appuyer l'analyse de ce que contient un mini-jeu.
+Cela permet d'appuyer l'analyse du contenu d'un mini-jeu.
 
 Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans la description de ses règles et son implémentation. 
 
@@ -79,7 +79,7 @@ La vache est contrôlée au clavier aussi bien en mode multijoueur qu’en mode 
  \includegraphics[width=\linewidth]{img/capturejeu_volleycowcow}
 \end{minipage}
 
-
+\clearpage
 \titlegame{Course}
 \begin{minipage}{6cm}
  \includegraphics[width=\linewidth]{img/capturejeu_course}
@@ -87,7 +87,7 @@ La vache est contrôlée au clavier aussi bien en mode multijoueur qu’en mode 
 \hfill
 \begin{minipage}{9cm}
 Ce jeu de course futuriste pour le web permet au joueur de se frotter à des intelligences artificielles pour faire le meilleur temps. 
-Ce  n’est pas un jeu de course classique : en effet des bonus se trouvent sur le circuit :
+Ce  n’est pas un jeu de course classique, des bonus se trouvent sur le circuit :
 un turbo, un bonus permettant d’augmenter le temps d’un des autres joueurs, un autre changeant la position d'un adversaire, etc. 
 De plus, il existe différentes zones de circuit ayant des effets divers : inversion des commandes, changement de vitesses, etc.
 Le joueur peut choisir son véhicule parmi une sélection de 12 vaisseaux différents. 
@@ -97,9 +97,9 @@ Il serait aussi possible de mettre en place un système de lecture de fichier po
 
 \titlegame{Mario}
 \begin{minipage}{9cm}
-Ce mini-jeu de plateforme reprend le principe des jeux du style de mario bros.
+Ce mini-jeu de plateforme reprend le principe de jeux comme mario bros.
 Un personnage, contrôlé au clavier et représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
-Il doit avancer au maximum, sans être touché par des ennemis, dessinés par des triangles, et sans tomber dans les trous du terrain.
+Il doit avancer au maximum, sans être touché par des ennemis, dessinés par des triangles, et sans tomber dans les trous.
 Le personnage peut faire perdre des points de vie aux ennemis jusqu'à les tuer en leur sautant dessus. 
 S'il les touche sur les côtés, il meurt et la partie est terminée.
 La caméra avance lorsque le joueur avance suffisamment. Le joueur peut revenir à gauche jusqu'à la limite de l'écran.
@@ -165,6 +165,8 @@ le joueur doit veiller à toujours en avoir pour ne pas perdre. Il peut aussi pe
 monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
 \end{minipage}
 
+\vspace{0.8cm}
+
 \subsection{Comparaison des mini-jeux}
 
 Ces mini-jeux ont été développés et leurs diagrammes UML sont disponibles en annexe.
@@ -225,7 +227,7 @@ Le second tableau permet de comparer les aspects concernant le contrôle et les 
 
 \vspace{0.5cm}
 
-Ces tableaux permettent de mieux identifier les différences et points communs entre les différents jeux.
+Ces tableaux permettent de mieux identifier les différences et points communs entre les jeux proposés.
 
 Par exemple, les objectifs au cours d'un niveau (ou pour un jeu sans niveau) se limitent souvent à atteindre une certaine zone
 appelée ligne d'arrivée, ou éventuellement à remplir des conditions de temps ou de ressources. En effet, à la fois la vie et le score
@@ -257,7 +259,7 @@ Cet avatar a des caractéristiques que l'on retrouve dans plusieurs jeux comme l
 De même, dans de nombreux jeux se trouvent la notion d'ennemis : des personnages non joués, dont le comportement est prédéfini.
 
 De plus, la notion de ressources est très utile. Il s'agit d'une variable qui définit un état par exemple sur les entiers tel que le score.
-Celle-ci peut être modifiée selon les évènements qu'il se passe dans le jeu.
+Celle-ci peut être modifiée selon les évènements dans le jeu.
 
 Enfin, dans tous les mini-jeux, le concept de collision est très utile. Celle-ci cause la plupart du temps de nombreuses conséquences (mort d'ennemis, de joueurs,
 incapacité de passer un obstacle, etc.)

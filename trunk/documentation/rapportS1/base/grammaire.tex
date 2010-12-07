@@ -6,7 +6,7 @@ C'est pourquoi, deux grammaires sont présentées.
 Elle permet de décrire la majorité du contenu du jeu dans un langage simple et accessible pour les non-programmeurs.
  \item La seconde est dite de 'bas-niveau'.
 Elle permet de manipuler chaque attribut et est beaucoup plus proche de l'implémentation finale que la première grammaire.
-C'est par exemple elle qui permettra de définir le comportement de l'intelligence artificielle, chose très difficile à mettre en oeuvre pour en haut-niveau.
+C'est par exemple elle qui permettra de définir le comportement de l'intelligence artificielle, chose très difficile à mettre en oeuvre à haut-niveau.
 \end{itemize}
 
 Le schéma de compilation se complexifie alors : un fichier décrivant le jeu dans la grammaire de haut-niveau est compilé afin de donner un fichier
@@ -16,12 +16,13 @@ produit alors le script final du jeu en JavaScript.
 \subsection{Grammaire haut-niveau}
 
 La description du jeu se déroule en plusieurs phases.
-On peut spécifier au début les attributs du jeu puis par la déclarer ses entités : personnages, véhicules... et leurs attributs. 
+On peut spécifier au début les attributs du jeu puis déclarer ses entités : personnages, véhicules... et leurs attributs. 
 Viennent ensuite les définitions d'actions de base et des commandes.
 Enfin, les règles du jeu sont spécifiées.
 Il est possible d'ajouter un IA basique, utilisant les entités et les actions déjà définies.
 
 \subsubsection{Attributs du jeu}
+
 Les attributs du jeu sont gérés principalement par la grammaire haut-niveau, ce n'est donc pas obligatoire 
 de préciser cette partie lors de l'écriture du code. Cependant il peut être plus rapide d'en définir directement ici :
 \code{game has gravity at 9.81}.
@@ -32,7 +33,7 @@ Il s'agit de lister les différents personnages ou objets qui apparaissent dans 
 Pour faciliter le travail de l'utilisateur, diverses classes sont déjà créées pour définir les entités.
 La classe de base est la classe Object avec des attributs de base comme la position, l'orientation, la taille, etc.
 De celle-ci héritent de nombreuses autres classes comme Character, Vehicle ou Weapon, chacunes ayant de nouveaux attributs spécifiques.
-\note{Inclure le schéma des classes ?}
+\note{INCLURE LE SCHEMA DES CLASSES, au moins en annexe}
 
 La déclaration d'une nouvelle entité se fait alors via un identificateur et le mot-clé 'is'.
 Par exemple \code{Mario is Character} permet de déclarer Mario comme un personnage de classe Character, 
@@ -46,14 +47,14 @@ La syntaxe est la même. Ainsi, \code{Mario has energie at 8} ajoute un attribut
 Les nouveaux attributs doivent obligatoirement être initialisés avec 'at'.
 
 De plus, s'il existe divers personnages qui possèdent aussi cette énergie, il est souhaitable de ne pas avoir à répéter cette ligne.
-Ainsi, de nouveaux types peuvent être crées grâce au mot-clé 'type' :
+Ainsi, de nouveaux types peuvent être créés grâce au mot-clé 'type' :
 \code{type Plombier is Character. Plombier has energie at 8. Mario is Plombier. Luigi is Plombier.}
 L'héritage multiple est possible ainsi que l'héritage de nouveaux types déclarés par l'utilisateur. Il suffira d'écrire :
 \code{type BillBall is Character and Projectile.} \code{ type ennemiDangereux is BillBall}
 Si un nouveau type ou objet est fils de plusieurs classes ayant un même attribut, ils sont fusionnés en un seul.
 
 Ensuite, en même temps que la déclaration de la classe d'une nouvelle identité, il est possible de la définir comme commandée par le joueur, ennemie, alliée ou neutre.
-(Si cela n'est pas précisé, la valeur est mise à neutre par défaut.
+Si rien n'est précisé, la valeur est mise à neutre par défaut.
 \code{Mario is Plombier player. Luigi is Plombier ally. type Boss is Character ennemy.} \code{ Bowser is Boss.}
 De plus, dans le cas où ce n'est pas un personnage joué, il peut être déclaré comme multiple.
 Cela signifie qu'il est possible d'en générer plusieurs avec la seule commande 'generate'.
@@ -87,7 +88,7 @@ De plus, 2 classes permettent de gérer respectivement les compteurs et les ress
 
 Enfin, une dernière classe permet de gérer les fichiers multimédias tel que les sons ou les vidéos qui peuvent intervenir au cours d'un jeu 
 avec la possibilité de les jouer, les arrêter, les mettre en pause, activer le mode muet ainsi que de définir s'ils seront joués 
-une fois pour des sons, ou en boucle pour des musiques par exemple.
+une fois pour des sons (mot-clef 'once'), ou en boucle (mot-clef 'loop') pour des musiques par exemple.
 
 \subsubsection{Définition de nouvelles actions et assignation des commandes}
 
@@ -122,13 +123,11 @@ la valeur de l'attribut.
 
 Certains concepts sont déjà définis : ainsi 'touches' est causé par une entrée en collision entre les deux entités. 'dies' signifie l'arrivée de l'attribut
 'life' à 0 pour un objet de type Character, 'kills' se produit lorsque le premier personnage tue le second.
-\note{j'ai un peu de mal à voir tout comment marche les declencheur et les conséquences dans la grammaire, du coup, je veux bien que 
-quelqu'un nous explique tout ca, il doit manquer pas mal de choses là encore.}
 
 \subsubsection{IA}
 
-Une IA basique peut être crée à partir des éléments déjà existants et définis lors des lignes de codes précédentes. 
-La grammaire haut-niveau ne permet en aucun cas de créer une IA améliorée à moins d'écrire beaucoup de code. 
+Une IA basique peut être créée à partir des éléments déjà existants et définis lors des lignes de codes précédentes. 
+La grammaire haut-niveau ne permet en aucun cas de créer une IA améliorée à moins d'écrire un nombre important de lignes de code. 
 Mais là encore, les possibilitées resteraient limitées. Voici un exemple : 
 \begin{lstlisting}[language=GameGrammar]
 ia superGoomba is 
@@ -150,38 +149,38 @@ Supposons que l'utilisateur crée un mini-jeu avec les éléments suivants :
 Il décide que le but sera, pour un shériff contrôlé par le joueur, d'éviter tous les zombies et de récupérer toutes les pièces d'or 
 sur la carte. 
 Il gagne lorsque toutes les pièces d'or ont été ramassées et qu'il se place sur la zone d'arrivée.
-S'il parvient à la ligne d'arrivée avant d'avoir récupéré toutes les pièces une nouvelle nuée de zombie affamés apparaît.
+S'il parvient à la ligne d'arrivée avant d'avoir récupéré toutes les pièces, une nouvelle nuée de zombies affamés apparaît.
 Il perd lorsqu'un zombie parvient à le toucher.
 
 \begin{lstlisting}[language=GameGrammar]
 game has score at 0.
 
-cam1 is Camera free.         //le 'free' n'est pas obligatiore
+cam1 is Camera free.         //free is not necessary because it is the default behavior for a camera
 
 sol is Ground.
 
 zombie is Character enemy multiple. 
-zombie has attack at 1.                 //si un zombie ennemi touche le joueur, celui-ci perd 1 point de vie
+zombie has attack at 1.                 //if a zombie touche the player, he loses one life
 
 sheriff is Character player.
-sheriff has life at 1.                  //sa vie est a 1 alors au premiers coup, il meurt
+sheriff has life at 1.                  //he has only 1 life, so, at the first shot, he dies
 sheriff has position at 0 300 0.
 
 piece is Bonus multiple.
 piece has value at 10.
-piece has collectors at sheriff.        //le seul capable de collecter le bonus
+piece has collectors at sheriff.        // the only character able to collect the bonus
 
 arrivee is Zone.
 arrivee has position at 300 500 0.
 
-musiqueAngoissante is media loop.       //'loop' pour jouer en boucle et 'once' pour une seule fois lorsqu'elle est appelee
+musiqueAngoissante is media loop.
 musiqueVictoire is media once.
 musiqueDefaite is media once.
 
 
 definition generer10Zombies means
-	generate 9 zombie on sol,    //10 nouveaux zombies sont generes
-	generate 1 zombie in zone     //1 zombie en plus est genere a l'interieur de la zone que le joueur est en train de toucher
+	generate 9 zombie on sol,    //10 new zombies are generated
+	generate 1 zombie in zone     //1 more in the zone where the player is
 
 
 command sheriff is 
@@ -193,27 +192,27 @@ command sheriff is
 
 command key P for pause
 
-command key enter for generer10Zombies    //si le joueur veut corser la difficulte
+command key enter for generer10Zombies    //for more challenge
 
 
-rule game starts
-	then generate sol
-		 generate 30 zombie on sol,
-		 generate 10 piece on sol,
-		 generate sheriff,
-		 play musiqueAngoissante.
+rule game starts then 
+	generate sol
+	generate 30 zombie on sol,
+	generate 10 piece on sol,
+	generate sheriff,
+	play musiqueAngoissante.
 
-rule sheriff touches arrivee
-	then if score of game = 100             //10 pieces generees qui ont une valeur a 10
-		 then play musiqueVictoire,
-			  victory
-		 else generer10Zombies
-		 endIf.
+rule sheriff touches arrivee then 
+	if score of game = 100 then 
+		play musiqueVictoire,
+		victory
+	else generer10Zombies
+	endIf.
 
-rule zombie touches sheriff
-	then sheriff dies
-		 play musiqueDefaite,
-		 defeat.
+rule zombie touches sheriff then 
+	sheriff dies
+	play musiqueDefaite,
+	defeat.
 
 
 

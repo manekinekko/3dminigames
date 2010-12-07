@@ -3,8 +3,8 @@ En effet, les récentes arrivées de HTML 5 et d'outils 3D comme WebGL permetten
 intégrés dans les pages internet.
 Cependant, les contenus 3D dans les pages Web ne sont actuellement que très peu interactifs.
 Fort du succès des jeux flash, les contenus interactifs 3D comme les mini-jeux ont naturellement leur place sur le Web.
-Or s'il existe de nombreux outils tel que Google SketchUp pour créer et manipuler les objets 3D en eux-mêmes,
-il reste tout de même un effort important à faire en ce qui concerne les interactions avec ceux-ci et en particulier la création de mini-jeux en 3D.
+Or s'il existe de nombreux outils tel que Google SketchUp pour créer et manipuler les objets 3D en eux-mêmes.
+Il reste tout de même un effort important à faire en ce qui concerne les interactions avec ceux-ci et en particulier la création de mini-jeux en 3D.
 
 \vspace{0.5cm}
 
@@ -42,23 +42,23 @@ En effet, les jeux décrits par une grammaire sont forcément restreints.
 
 Toutefois, de nombreuses similarités existent entre plusieurs jeux. Il s'agit donc de les exploiter afin de définir un langage général de description de jeux.
 
-Le fichier définissant le jeu via la grammaire se fera à l'aide d'un éditeur spécial, par exemple créé via eclipse.
+Le fichier définissant le jeu via la grammaire se fera à l'aide d'un éditeur spécial, créé à l'aide Éclipse par exemple.
 
 \vspace{0.5cm}
 
 La partie centrale du schéma correspond à un compilateur.
-Il permet de convertir le fichier de description du jeu en un script javascript exécutable dans une page Web et permettant de jouer et 
-interagir avec l'environnement.
+Il permet de convertir le fichier de description du jeu en un script javascript exécutable dans une page Web et jouable.
 Le langage javascript a été choisi pour la génération du jeu car il est actuellement le plus utilisé pour les interactions dans les pages Web.
 
 La création et l'édition des objets 3D se fera à l'aide d'outils déjà très complets tel que Google SketchUp.
-Leur affichage sera géré par WebGL.
-\note{compléter un peu la partie 3D, dire ce qu'est WebGL tout ca peut être ?}
+Leur affichage sera géré par WebGL, une spécification d'affichage 3D pour les navigateurs. 
+Elle permet d'utiliser le standard OpenGL depuis le code JavaScript d'une page web, 
+exploitant les accélérations matérielles 3D à l'aide des pilotes OpenGL de la carte graphique
 
 \vspace{0.5cm}
 
 Dans un premier temps, des exemples classiques de mini-jeux seront présentés et analysés afin de mieux identifier
-les différences et points communs entre différents types de jeux. Cette analyse mettra en évidence des notions classiques
-présentes dans plusieurs jeux.
+les différences et points communs entre plusieurs types de jeux. Cette analyse mettra en évidence des notions classiques
+présentes dans la plupart des jeux existants.
 Dans une seconde partie, les concepts récurrents vus dans l'analyse et présents dans les grammaires seront détaillés.
 Enfin, les langages proposés pour la description des jeux seront exposés en mettant en évidence leurs possibilités et leurs limites.

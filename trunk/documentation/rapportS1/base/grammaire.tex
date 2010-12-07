@@ -15,7 +15,7 @@ C'est par exemple elle qui permettra de définir le comportement de l'intelligen
 
 Le schéma de compilation se complexifie alors : un fichier décrivant le jeu dans la grammaire de haut-niveau est compilé afin de donner un fichier
 respectant la grammaire de bas-niveau. A ce niveau-là, l'utilisateur peut effectuer de nouveaux ajouts ou modifications. Le second compilateur
-produit alors le script final du jeu en javascript.
+produit alors le script final du jeu en JavaScript.
 
 \subsection{Grammaire haut-niveau}
 
@@ -168,7 +168,7 @@ zombie is Character enemy multiple.
 zombie has attack at 1.                 //si un zombie ennemi touche le joueur, celui-ci perd 1 point de vie
 
 sheriff is Character player.
-sheriff has life at 1.                  //sa vie est \`a 1 alors au premiers coup, il meurt
+sheriff has life at 1.                  //sa vie est a 1 alors au premiers coup, il meurt
 sheriff has position at 0 300 0.
 
 piece is Bonus multiple.
@@ -178,14 +178,14 @@ piece has collectors at sheriff.        //le seul capable de collecter le bonus
 arrivee is Zone.
 arrivee has position at 300 500 0.
 
-musiqueAngoissante is media loop.       //'loop' pour jouer en boucle et 'once' pour une seule fois lorsqu'elle est appel\'ee
+musiqueAngoissante is media loop.       //'loop' pour jouer en boucle et 'once' pour une seule fois lorsqu'elle est appelee
 musiqueVictoire is media once.
 musiqueDefaite is media once.
 
 
 definition generer10Zombies means
-	generate 9 zombie on sol,    //10 nouveaux zombies sont g\'en\'er\'es
-	generate 1 zombie in zone     //1 zombie en plus est g\'en\'er\'e \`a l'int\'erieur de la zone que le joueur est en train de toucher
+	generate 9 zombie on sol,    //10 nouveaux zombies sont generes
+	generate 1 zombie in zone     //1 zombie en plus est genere a l'interieur de la zone que le joueur est en train de toucher
 
 
 command sheriff is 
@@ -197,7 +197,7 @@ command sheriff is
 
 command key P for pause
 
-command key enter for generer10Zombies    //si le joueur veut corser la difficult\'e
+command key enter for generer10Zombies    //si le joueur veut corser la difficulte
 
 
 rule game starts
@@ -208,7 +208,7 @@ rule game starts
 		 play musiqueAngoissante.
 
 rule sheriff touches arrivee
-	then if score of game = 100             //10 pi\`eces g\'en\'er\'ees qui ont une valeur \`a 10
+	then if score of game = 100             //10 pieces generees qui ont une valeur a 10
 		 then play musiqueVictoire,
 			  victory
 		 else generer10Zombies

@@ -120,6 +120,7 @@ Si mario entre en collision avec lui, il perd un point de vie, réduit son score
 
 Avec 'sub', d'autres mots-clés existent pour les autres opérations arithmétiques élémentaires, ainsi qu'un 'assign' qui change directement
 la valeur de l'attribut.
+Il est également possible d'exécuter des actions seulement sous certaines conditions avec un 'If ... then ... else ... endIf'.
 
 Certains concepts sont déjà définis : ainsi 'touches' est causé par une entrée en collision entre les deux entités. 'dies' signifie l'arrivée de l'attribut
 'life' à 0 pour un objet de type Character, 'kills' se produit lorsque le premier personnage tue le second.
@@ -253,8 +254,6 @@ des points de l'objet, et un fichier .mat contenant la texture appliquée sur le
 De plus chaque objet contient un ensemble de paramètre comme la vitesse, la position, etc. \note{vérifier le format de sortie de Sketchup}
 
 Les caméras sont définies de manière similaire aux entités : chaque caméra est définie par un nom, une position et une orientation.
-
-\note{comment on associe des ressources à une entité ?}
 
 \subsubsection{Boucle de rafraîchissement et gestionnaire d'évènements}
 

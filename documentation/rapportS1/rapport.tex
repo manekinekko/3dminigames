@@ -29,15 +29,15 @@
 		   move,left,right,forward,backward,accelerate,brake,
 		   add,sub,assign,
 		   pause,mute,play,stop
-		  } % concept haut niveau
-  morecomment=[l]/,
+		  }, % concept haut niveau
+  morecomment=[l]{//}
 }
 
 \newcommand{\code}[1]{
 \lstset{
   language=GameGrammar,
   basicstyle=\scriptsize\ttfamily,
-  commentstyle=\color{blue},
+  commentstyle=\ttfamily\color{blue},
   keywordstyle=[1]\bfseries,
   keywordstyle=[2]\itshape,
   keywordstyle=[3]\itshape

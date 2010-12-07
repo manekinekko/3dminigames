@@ -1,4 +1,4 @@
-﻿grammar grammaireHautNiveauV3;
+grammar grammaireHautNiveau;
  
 tokens {                                                                            // variables and methods to be included in the java file generated
 AAAA;
@@ -9,13 +9,13 @@ AAAA;
  
  
 game :
-  (infosJeu '\n')?
-  (nouveauType '\n')*
-  (init '\n')+
-  (definition '\n')*
-  (commande '\n')*
-  (reglesJeu '\n')*
-  (iaBasique '\n')*;
+  (infosJeu '.')?
+  (nouveauType '.')*
+  (init '.')+
+  (definition '.')*
+  (commande '.')*
+  (reglesJeu '.')*
+  (iaBasique '.')*;
  
 ///////////////////////////// ( infos sur le jeu )  //////////////////////////////////
 infosJeu :
@@ -47,8 +47,8 @@ init :
 // s'il n'est pas joueur, allié ou ennemi, il est neutre
 declarationObjet :
   (ident | typeObjet3D) ('player' | interaction ('multiple')? )?             //neutral par défaut, utilisateur pas obligé de le mettre
-  | 'list' 'of' (operation)? (ident | typeObjet)
-  | 'camera' (('first' | 'third') 'person' | 'global')
+  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?        //operation s'il est multiple 
+  | 'camera' (('first' | 'third') 'person' | 'free')
   | 'media' ('loop' | 'once')? //sons joués en boucle ou une seule fois
   | 'in' ident //ident de la liste pour rajouter l'élément dans la liste
 // | ...)
@@ -116,6 +116,7 @@ typeObjet3D:
   | 'construction'
   | 'room'
   | 'ball'
+  | 'teleporter'
 // | ...
   ;
  
@@ -179,6 +180,8 @@ attributListeOuObjet :
   | 'typeGenerators'
   | 'breakers'
   | 'typesBreakers'
+  | 'teleportables'
+  | 'typesTeleportables'
   ;
  
 attributTps :
@@ -193,7 +196,7 @@ attributTps :
 definition : 'definition' ident 'means' consequences;
  
 consequences :
-  consequ '\n' (consequ '\n')*
+  consequ (',' consequ)*
   ;
   
 consequ :
@@ -212,15 +215,19 @@ appelDef :
   ;
  
 activCommande :
-  ('activate' | 'desactivate') ('commands' | 'mouse' (souris (',' souris)*)? | 'key' (clavier  (',')*)? )
+  ('activate' | 'disable') ('commands' | 'mouse' (souris (',' souris)*)? | 'key' clavier (',' clavier)* | 'keyboard' )
   ;
-//desactivate commands              // commands représente toutes les commandes
-//desactivate key                   // toutes les commandes du clavier
-//desactivate mouse up, down        //seulement aller en haut et en bas avec la souris
+//disable commands              // commands représente toutes les commandes
+//disable key                   // toutes les commandes du clavier
+//disable mouse up, down        //seulement aller en haut et en bas avec la souris
  
 //////////////////////////// ( Initialisations des commandes )  /////////////////////////////
 commande :
-  'command' ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue)
+  'command' (ident 'is' actionCommande (',' actionCommande)* | actionCommande)
+  ;
+
+actionCommande :
+  ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue)
   ;
 //est-ce utile de prévoir l'appui sur plusieurs commandes en même tps
 // ident : ce qu'on a défini avec means
@@ -302,6 +309,7 @@ action :
   | 'block' transformation 'of' accesClasse coordonnees
   | ('efface' | 'generate') (accesClasse | operation accesClasse ('in' accesLocal | 'on' accesLocal | 'at' coordonnees)?)
   | 'wait' operation uniteTps 'then' consequences 'endWait'
+  | 'save'
 // | ...
   ;
  
@@ -415,7 +423,7 @@ ident :
  
 //////////////////////////// ia //////////////////////////
  
-iaBasique : 'ia' accesClasse 'is' (actionObjet '\n')+;
+iaBasique : 'ia' accesClasse 'is' actionObjet (',' actionObjet)*;
  
  
  

@@ -11,6 +11,9 @@ Ensemble de principes qui décrivent le fonctionnement du jeu et
 la façon dont les éléments qui le composent interagissent entre eux. 
 Ces règles définissent également les conditions nécessaires à la victoire (objectifs).
 
+\underline{Niveau} :
+Sous-division d'un jeu. Elle permet de gérer la difficulté de jeu. Elle peut aussi être utilisée pour en définir la fin. 
+
 \subsection*{Élément d'un jeu}
 
 \underline{Environnement} : 
@@ -27,11 +30,31 @@ Elle dispose de caractéristiques et d'un panel d'actions prédéfinies qui lui 
 \underline{Décor} : 
 Élément inerte présent dans l'environnement.
 
-
-\subsection*{Titre à trouver x)}
-
 \underline{Ressource} : 
 Elément virtuel d'un jeu exprimé sous forme numérique, pouvant servir de monnaie, de matière première, d'état ou autres.
+
+\subsection*{Liste d'Entité définies}
+
+\underline{Personnage} :
+Entité qui agit avec un comportement particulier. Un personnage peut-être le joueur, un allié, un ennemi ou neutre.
+\note{Je ne suis pas sur que ce qui suit soit a la bonne place}
+
+\underline{Joueur} :
+Le joueur est un personnage contrôlé par l'utilisateur par le biais du clavier ou de la souris.
+
+\underline{Allié} :
+L'allié est un personnage contrôlé par l'IA. Il possède un comportement visant a aider le joueur a finir le jeu.
+
+\underline{Ennemi} :
+L'ennemi est un personnage contrôlé par l'IA. Il possède un comportement visant a faire perdre le joueur.
+
+\underline{Neutre} :
+Le neutre est un personnage contrôlé par l'IA. Il possède un comportement précis qui ne tient pas compte du joueur.
+
+
+\subsection*{Liste de Ressources}
+
+\note{Surement incomplet}
 
 \underline{Inventaire} : 
 Ensemble des objets dont dispose une entité et qu'elle transporte avec elle.
@@ -39,6 +62,11 @@ Ensemble des objets dont dispose une entité et qu'elle transporte avec elle.
 \underline{Vie} : 
 Ressource particulière associée aux entités mortelles et aux objets destructibles du jeu.
 
+\underline{Temps} :
+Ressource particulière qui se calcule par rapport a la boucle de rafraichissement et évolue de façon cyclique (+1 tout les 3 rafraichissement par exemple)
+
+\underline{Score} :
+Ressource particulière qui se calcule par rapport aux actions par le joueur. Elle permet un classement de tous les utilisateurs en fin de partie.
 
 \subsection*{Contrôle direct/indirect}
 
@@ -63,13 +91,6 @@ Il n'y a donc pas d'obligation à accomplir les objectifs dans un ordre précis.
 
 \subsection*{Autre ... à faire et à classer}
 
-\underline{Niveau} :
-
-\underline{Temps} :
-
-\underline{Score} :
-
-\underline{Allié,ennemi,neutre} :
 
 \underline{Entité réactive/autonome}
 

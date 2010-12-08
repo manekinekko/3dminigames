@@ -1,0 +1,98 @@
+\begin{lstlisting}[language=GameGrammar]
+ Game ::= refreshLoop eventsManager ressourcesSets camera entities physicsEngine
+
+refreshLoop ::= signalUpdateCounter keyListener{ keyboardCommands } mouseListener{ mouseCommands }
+//signalUpdateCounter is triggered by the refreshLoop and updates counters of type times
+
+// pressed a key or action with mouse triggers an event
+keyboardCommands ::= (keystroke : signalSets)*
+
+mouseCommands ::= (typeOfClick : signalSets)*
+
+signalSets ::= signal (| signal)*
+
+----------------------------------------------------------------------------------------------------------
+// Events Managers
+
+eventsManager ::= signal (@ signal)* instructions (| signal instructions)*
+
+instructions ::= resourceApply(applyExpression) 
+               | if conditonnal then instructions (& instructions)* (else instructions (& instructions)*)? 
+               | conceptsInstructions
+
+conceptsInstructions ::= gamOver | pause | newGame | saveGame
+
+conditionnal ::= testExpression (booleanOperator testExpression)*
+
+booleanOperator ::= and | or
+
+testExpression ::= expression comparisonOperator expression
+
+comparisonOperator ::= < | > | <= | >= | == | !=
+
+applyExpression ::= arithmeticOperator (metaExpression | expression)
+
+// to reuse an expression without writing it
+metaExpression ::= nameExp expression
+
+nameExp ::= string
+expression ::= (arithmeticOperator value)+
+arithmeticOperator ::= + | - | * | / | %
+
+
+//random(int, int) to generate a random number between these integers
+value = ressource | constant | random(value, value) | random(0, value)
+c
+onstant ::= int | double
+
+----------------------------------------------------------------------------------------------------------
+// Resource Manager
+
+// An event tiggers when a resource is modified
+resourcesSets ::= (enumResource | resource)+
+
+
+enumResource ::= name { nameEnumResource (, nameEnumResource)*}
+nameEnumResource ::=  String
+
+resource ::= (# nameEnumResource)? name (signal (@ signal)*)? (timer|initValue)
+
+name ::= string
+
+timer ::= step initTimer
+
+initValue ::= int | double
+
+----------------------------------------------------------------------------------------------------------
+// camera and entites manager
+
+
+camera ::= name position
+
+position ::= vector | angle
+
+entities ::= map with object+
+
+// With a map like a points matrix with a unique texture
+map ::= matrix texture
+
+
+object ::= object = name object3D parameters
+parameters ::= coeffOfFriction = double weight = double speed = vector position = vector  isFixed = boolean isTraversable = boolean
+object3D ::= model texture includingVolume
+model ::= [a-zA-Z]*.obj
+texture ::= [a-zA-Z]*.mat
+
+----------------------------------------------------------------------------------------------------------
+// physics engine
+
+physicsEngine ::= forces+ collision
+forces ::= gravity | wind |...
+
+// Bounded box are provided by the user
+collision ::= collision{ name name signalSets (, name name signalSets)*}
+gravity ::= gravity = vector
+wind ::= wind = vector
+
+
+\end{lstlisting}

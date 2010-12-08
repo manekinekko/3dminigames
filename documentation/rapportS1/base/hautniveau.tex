@@ -4,7 +4,6 @@
 * PARSER RULES
 *------------------------------------------------------------------*/
  
- 
 game :
   (infosJeu '.')?
   (nouveauType '.')*
@@ -15,40 +14,35 @@ game :
   (iaBasique '.')*;
  
 
-///////////////////////////// ( infos sur le jeu )  //////////////////////////////////
+///////////////////////////// ( information of the game)  //////////////////////////////////
+
 infosJeu :
   'game' 'has' ('gravity' | 'score' /*| ...*/ ) 'at' (NUMBER | NUMBER NUMBER NUMBER)
   ;
- 
+
  
 //////////////////////////// ( Inheritance )  /////////////////////////////
  
-// to declare a new type
-
 nouveauType :
-  'type' ident 'is' (ident | typeObjet) ('and' ident | typeObjet)*
+  'type' ident 'is' (ident | typeObjet) ('and' ident | typeObjet)* // to declare a new type
   ;            
   
 // ident | typeObjet : if it is an ident, verify that it is defined before by the user and is inherited Object.
- 
- 
+
  
 //////////////////////////// ( Initialization )  /////////////////////////////
 
 init :
   ident 'is' declarationObjet
-  | accesClasse 'has' affectationObjet (',' affectationObjet)*
+  | accesClasse 'has' affectationObjet (',' affectationObjet)* // check the types and its attributes
   ;
-
-// check the types and its attributes
- 
  
 declarationObjet :
-  (ident | typeObjet3D) ('player' | interaction ('multiple')? )?             // interaction is neutral by default
-  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?        //operation if it is multiple 
+  (ident | typeObjet3D) ('player' | interaction ('multiple')? )?         // interaction is neutral by default
+  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?  //operation if it is multiple 
   | 'camera' (('first' | 'third') 'person' | 'free')
-  | 'media' ('loop' | 'once')? 						// sounds played in loop or once
-  | 'in' ident 				// ident of a list to add an element
+  | 'media' ('loop' | 'once')? 						 // sounds played in loop or once
+  | 'in' ident 				                                 // ident of a list to add an element
 // | ...)
 ;           
  
@@ -56,7 +50,6 @@ interaction :
   'ally' | 'enemy' | 'neutral'
   ;
  
-
 affectationObjet :
   ident ('at' (operation (uniteTps)? | ident) )?         //aggregation
   | attribut 'at' (operation | STRING | BOOL)          //life at 5, name at "Gandalf Le Gris"
@@ -65,13 +58,10 @@ affectationObjet :
   | attributTps 'at' operation uniteTps         //
   ;
  
- 
 // has ident at ... : to declare a new attribute
 // Attributes of predefined class have default initialized
 // it is not necessary to initialize not used attribute
- 
- 
-
+  
 typeObjet :
   'camera'
   | 'media'
@@ -80,6 +70,7 @@ typeObjet :
   | typeObjet3D
   ;
  
+// all the predefined classes
 typeObjet3D:
   'object'                      // -> position(x,y,z), orientation(x,y,z), taille(x,y,z)
   | 'character'                 // -> life, lifeMax, mana, manaMax , level, experience, attack, defense
@@ -102,7 +93,7 @@ typeObjet3D:
   ;
  
 // all the attributes of predefined classes
-attribut :
+attribut : 
   'mass'                  // attributes of object :
   | 'isFix'
   | 'isTraversable'
@@ -169,6 +160,7 @@ attributTps :
 // | ...
   ;
  
+
 //////////////////////////// ( new definitions of actions ) ///////////////////
  
 definition : 'definition' ident 'means' consequences;
@@ -201,15 +193,14 @@ activCommande :
  
 
 //////////////////////////// ( Initialization of commands )  /////////////////////////////
+
 commande :
   'command' (ident 'is' actionCommande (',' actionCommande)* | actionCommande)
   ;
 
 actionCommande :
-  ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue)
+  ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue) // ident : what is defined with means
   ;
-
-// ident : what is defined with means
  
 souris :
         'up' | 'down' | 'left' | 'right' | 'lClick' | 'cClick' | 'rClick' | 'scrollUp' | 'scrollDown'
@@ -218,7 +209,6 @@ souris :
 clavier :
         CHAR | 'up' | 'down' | 'left' | 'right' | 'space' | 'echap' | 'enter'          //CHAR : Z,Q,S,D,...
         ;
- 
  
 actionCommandePressee :
   'jump'
@@ -235,7 +225,6 @@ actionCommandeMaintenue :
   | 'brake'
   ;
  
-
  
 //////////////////////////// ( Rules of game + victory condition / defeat )  /////////////////////////////
 
@@ -254,7 +243,6 @@ cond         :
   etat
   | operation comparaison operation
 
-  
 etat :
   accesClasse 'is' ('not')? ('dead' | 'alive' | 'effaced' | 'generated' | 'touching' (('other')? accesGlobal | accesLocal))  // for an object
   | (ident | 'game') 'is' ('not')? ('finished' |'started' | 'paused' | 'muted' ('on' | 'off') | 'played' | 'stopped' )  // game,counter,media
@@ -398,8 +386,7 @@ ident :
  
 iaBasique : 'ia' accesClasse 'is' actionObjet (',' actionObjet)*;
  
- 
- 
+
 /*------------------------------------------------------------------
 * LEXER RULES
 *------------------------------------------------------------------*/

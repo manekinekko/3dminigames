@@ -19,6 +19,9 @@
 \newcommand{\titlegame}[1]{\subsubsection*{\begin{center}#1\end{center}}}
 
 \usepackage{listings}
+
+
+%%%%%%%%%%%%%%%%%%%% Langage pour les jeux en haut-niveau
 \lstdefinelanguage{GameGrammar}{
   morekeywords=[1]{type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,disable,activate,definition,command,
                    rule,then,generate,efface,wait,random,ia,for,loop,once,during,if,else,endIf,play,not,
@@ -37,7 +40,13 @@
   morestring=[b]',
 }[keywords,comments,strings]
 
-\lstset{
+\lstdefinelanguage{Grammar}{
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+}[keywords,comments,strings]
+
+\newcommand{\code}[1]{\lstset{
   language=GameGrammar,
   basicstyle=\scriptsize\ttfamily,
   commentstyle=\ttfamily\color{blue},
@@ -49,8 +58,6 @@
   inputencoding=utf8,
   breaklines=true %autorise les accents
 }
-
-\newcommand{\code}[1]{
 \lstinline{#1}}
 
 \lstnewenvironment{GameGrammar}[1][]{\lstset{language=GameGrammar}#1}{}

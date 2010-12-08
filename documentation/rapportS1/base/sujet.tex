@@ -11,12 +11,13 @@ Il reste tout de même un effort important à faire en ce qui concerne les inter
 La conception d'un outil de création de mini-jeux 3D pour le Web nécessite, d'une part la description des objectifs, des règles, des interactions, 
 du scénario du jeu qui permettra de générer le code du jeu, et d'autre part les éléments 3D constitutifs.
 Il peut également être souhaitable de pouvoir sauvegarder une partie :
-un jeu ne peut pas forcément se finir en quelques minutes, le fait de pouvoir reprendre une partie commencée un autre jour est alors nécessaire.
+un jeu ne se finit pas nécessairement en quelques minutes, le fait de pouvoir reprendre une partie commencée un autre jour est alors nécessaire.
 
 \begin{figure}[h]
  \centering
  \includegraphics[height=7cm]{img/schema_general}
  \label{fig:schemaprojet}
+ \caption{Schéma Général}
 \end{figure}
 
 Le schéma général du projet est présenté sur la figure ci-dessus.
@@ -30,25 +31,23 @@ Cette dernière doit permettre de décrire à la fois :
 \begin{itemize}
  \item les objectifs ;
  \item les règles ;
- \item le scénario, les niveaux, la logique de score ;
  \item les interactions avec le(s) joueur(s).
 \end{itemize}
 
-Le challenge est difficile car il existe de très nombreuses catégories de jeux : 
-par exemple, un jeu de gestion n'a, à première vue, aucun point commun avec un jeu de volley ou un jeu de plateforme.
+La création de la grammaire est complexe, en effet, il existe de nombreuses catégories de jeux.
+Par exemple, un jeu de gestion n'a, à première vue, aucun point commun avec un jeu de volley ou un jeu de plateforme.
 
-Il serait illusoire de vouloir décrire absolument tous les jeux à l'aide d'une seule et unique grammaire.
-En effet, les jeux décrits par une grammaire sont forcément restreints.
+Il serait illusoire de vouloir décrire tous les jeux à l'aide d'une seule et unique grammaire, à cause de leurs différences.
 
 Toutefois, de nombreuses similarités existent entre plusieurs jeux. Il s'agit donc de les exploiter afin de définir un langage général de description de jeux.
 
-Le fichier définissant le jeu via la grammaire se fera à l'aide d'un éditeur spécial, créé à l'aide Éclipse par exemple.
+Le fichier définissant le jeu via la grammaire se fera à l'aide d'un éditeur spécial, créé à l'aide d'Eclipse par exemple.
 
 \vspace{0.5cm}
 
 La partie centrale du schéma correspond à un compilateur.
-Il permet de convertir le fichier de description du jeu en un script JavaScript exécutable dans une page Web et jouable.
-Le langage JavaScript a été choisi pour la génération du jeu car il est actuellement le plus utilisé pour les interactions dans les pages Web.
+Il permet de convertir le fichier de description du jeu en JavaScript exécutable dans une page Web et jouable.
+Le langage JavaScript a été choisi pour la génération du jeu. Il est actuellement le plus utilisé pour les interactions dans les pages Web. Il est également natif dans la majorité des navigateurs Web.
 
 La création et l'édition des objets 3D se fera à l'aide d'outils déjà très complets tel que Google SketchUp.
 Leur affichage sera géré par WebGL, une spécification d'affichage 3D pour les navigateurs. 
@@ -58,7 +57,7 @@ exploitant les accélérations matérielles 3D à l'aide des pilotes OpenGL de l
 \vspace{0.5cm}
 
 Dans un premier temps, des exemples classiques de mini-jeux seront présentés et analysés afin de mieux identifier
-les différences et points communs entre plusieurs types de jeux. Cette analyse mettra en évidence des notions classiques
-présentes dans la plupart des jeux existants.
+les différences et points communs entre plusieurs types de jeux. Cette analyse mettra en évidence des concepts 
+présents dans la plupart des jeux existants.
 Dans une seconde partie, les concepts récurrents vus dans l'analyse et présents dans les grammaires seront détaillés.
 Enfin, les langages proposés pour la description des jeux seront exposés en mettant en évidence leurs possibilités et leurs limites.

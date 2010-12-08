@@ -1,12 +1,11 @@
 
-Le contenu des mini-jeux est très varié : jeu de rôle, jeu de gestion, jeu de plateforme, etc.
-L'analyse des différences et des ressemblances entre ceux-ci, afin de définir ensuite une grammaire de description de jeux, est d'autant plus complexe.
+Le genre des mini-jeux est très varié. Par exemple, il y a des jeux de gestion, de plateforme, de course.
+L'analyse des différences et des ressemblances entre ceux-ci est d'autant plus complexe.
 
 Les difficultés d'implémentation des mini-jeux sont elles aussi différentes.
-8 exemples concrets de jeux sont développés par la suite.
+Huit exemples de jeux seront décrits par la suite.
 Cela permet d'appuyer l'analyse du contenu d'un mini-jeu.
-
-Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans la description de ses règles et son implémentation. 
+Ces jeux n'ont pas été choisi par hasard car chacun possède un intérêt dans la description de ses règles et son implémentation. 
 
 
 \begin{center}
@@ -26,7 +25,7 @@ Ces jeux n'ont pas été choisi par hasard : chacun possède un intérêt dans l
 
 \vspace{0.5cm}
 
-Tout d'abord, chaque jeu est présenté succintement, illustré par la capture d'écran d'une implémentation effectuée.
+Tout d'abord, chaque jeu est présenté succinctement, illustré par la capture d'écran d'une implémentation effectuée.
 Dans un second temps, une analyse de leur contenu sera effectuée, appuyée par un tableau comparatif et les diagrammes UML de ces jeux.
 
 \clearpage
@@ -57,18 +56,18 @@ la carte à partir d’images et d’un fichier JSON.
 \hfill
 \begin{minipage}{9cm}
 Dans ce shoot'em up (jeu d’action où le joueur fait face à une multitude d’ennemis), 
-le joueur contrôle un vaisseau armé de deux canons pour détruire tous les véhicules adverses et gagner ainsi des points. 
+le joueur contrôle un vaisseau armé de deux canons pour détruire tous les véhicules adverses et ainsi gagner des points. 
 Le joueur possède 3 vies et doit engranger le maximum de points. Lorsque le joueur perd une vie, il devient invincible durant une courte durée 
 pour reprendre la main. Le vaisseau est contrôlé via le clavier. En ce qui concerne les ennemis, 
 ils suivent des déplacements prédéfinis qui peuvent être paramétrés. 
-Le joueur n’est pas obligé de tuer tous les ennemis mais le but est quand même de faire le plus grand score.
+Le joueur n’est pas obligé de tuer tous les ennemis mais le but est de faire le plus grand score.
 \end{minipage}
 
 \titlegame{Volley}
 \begin{minipage}{9cm}
 CowCow Volley Party est un mini jeu humoristique mettant en scène deux vaches jouant au volley.
 On peut jouer à ce jeu en mode solo, contre une IA ou à deux joueurs. 
-Le but est de remporter 2 sets, sachant que remporter un set revient à marquer \note{xxx} points. 
+Le but est de remporter 2 sets, sachant que remporter un set revient à marquer 21 points. 
 La vache dispose de 3 coups différents : passe courte, passe longue et un smash.
 Les règles de ce jeu sont les mêmes que celles du volley classique.
 La vache est contrôlée au clavier aussi bien en mode multijoueur qu’en mode solo.
@@ -97,8 +96,8 @@ Il serait aussi possible de mettre en place un système de lecture de fichier po
 \titlegame{Mario}
 \begin{minipage}{9cm}
 Ce mini-jeu de plateforme reprend le principe de jeux comme Mario Bros.
-Un personnage, contrôlé au clavier et représenté par un rectangle, peut se déplacer sur les côtés ou sauter.
-Il doit avancer au maximum, sans être touché par des ennemis, dessinés par des triangles, et sans tomber dans les trous.
+Un personnage est représenté par un rectangle et contrôlé au clavier. Il peut se déplacer sur les côtés ou sauter.
+Il doit avancer au maximum sans tomber dans les trous ni être touché par des ennemis. Ces derniers sont symbolisés par des triangles.
 Le personnage peut faire perdre des points de vie aux ennemis en leur sautant dessus jusqu'à les tuer. 
 S'il les touche sur les côtés, il meurt et la partie est terminée.
 La caméra avance lorsque le joueur avance suffisamment mais elle ne lui permet pas de revenir en arrière.
@@ -165,7 +164,7 @@ monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
 
 \vspace{0.8cm}
 
-\subsection{Comparaison des mini-jeux}
+\subsection{Analyse des mini-jeux}
 
 Ces mini-jeux ont été développés et leurs diagrammes UML sont disponibles en annexe.
 De plus, ils permettent d'appuyer l'analyse de la description d'un mini-jeu.
@@ -191,7 +190,7 @@ Le tableau suivant récapitule les différents objectifs des jeux et leur style 
 \hline
  Billard & Non & toute boule rentrée & score & Oui & Plateau \\
 \hline
- Gestion & Non & & & Oui & Grille\\
+ Gestion & Non & Non & pas de victoire & Oui & Grille\\
 \hline
 \end{tabular}
 
@@ -205,7 +204,7 @@ Le second tableau permet de comparer les aspects concernant le contrôle et les 
 \hline
  Jeu & Personnage & Contrôle & Autres actions & PNJ \footnote{Personnage non-joueur} \\
 \hline
- Pacman &  Oui & direct via clavier & &  Oui \\
+ Pacman &  Oui & direct via clavier & Aucune &  Oui \\
 \hline
  1942 & Oui & direct via clavier & Tir & Oui  \\
 \hline
@@ -228,36 +227,33 @@ Le second tableau permet de comparer les aspects concernant le contrôle et les 
 Ces tableaux permettent de mieux identifier les différences et points communs entre les jeux proposés.
 
 Par exemple, les objectifs au cours d'un niveau (ou pour un jeu sans niveau) se limitent souvent à atteindre une certaine zone
-appelée ligne d'arrivée, ou éventuellement à remplir des conditions de temps ou de ressources. En effet, à la fois la vie et le score
-peuvent être vus comme une ressource : il s'agit d'un état, et une condition sur celui-ci est nécessaire à la victoire.
-En faisant des conjonctions et des disjonctions de ces différentes possiblités, il est possible de définir 
+appelée ligne d'arrivée, ou éventuellement à remplir des conditions de temps ou de ressources. En effet, la vie et le score
+peuvent être vus comme des ressources. Une condition sur celles-ci est nécessaire à la victoire.
+En faisant des conjonctions et des disjonctions de ces différentes possibilités, il est possible de définir 
 les conditions de victoire pour tous les jeux (sauf le jeu de gestion).
 
 En revanche, si on regarde comment le monde est construit, il est très différent d'un jeu à l'autre.
 Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est défini via un ruban.
 
-Le tableau permet de distinguer clairement le jeu de gestion des autres jeux.
-La grammaire proposée par la suite ne prendra pas en compte ce type de jeux.
-La comparaison se base donc sur les autres jeux, pour définir des concepts qui seront détaillés dans les parties suivantes.
-Retirer du langage de description les jeux de gestion n'empêchent pas de couvrir un nombre important de jeux.
-Il serait possible par exemple de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir en 
+Le tableau permet de mettre en évidence le jeu de gestion par rapport aux autres jeux.
+En effet celui-ci ne dispose pas de fin de niveau et de conditions de victoire.
+Suite à ce constat, il a été décider de ne pas traiter le cas des jeux de gestions.
+Il serait possible de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir en 
 créer plusieurs types. Ainsi, une autre grammaire pourrait spécialement être créée pour les jeux de gestion.
-De la même façon, il est difficile de trouver des points communs entre les 7 mini-jeux restants et un jeu de rôle classique où le joueur
-doit réaliser plusieurs quêtes.
 
-\subsection{Analyse des mini-jeux}
+La comparaison se base donc sur les autres jeux, pour définir des concepts qui seront détaillés dans la partie suivante.
 
 On remarque tout d'abord que tous les mini-jeux possèdent une boucle de rafraîchissement.
 Cette dernière permet à la fois d'effectuer les différentes actions telles que le déplacement des personnages non joueurs et de gérer 
-les différents 'timer' du jeu.
+les différents compteurs du jeu (durée d'une course, d'un bonus).
 
-Ensuite, dans les mini-jeux se retrouvent souvent la notion d'avatar, personnage que le joueur peut déplacer.
+Ensuite, dans les mini-jeux se retrouvent souvent la notion d'avatar (personnage que le joueur peut déplacer).
 Différentes actions peuvent se greffer à cet avatar selon les jeux : souvent le déplacement, le saut, le tir.
 Cet avatar a des caractéristiques que l'on retrouve dans plusieurs jeux comme la vie, d'autres plus rares comme une quantité de points de magie.
-De même, dans de nombreux jeux se trouvent la notion d'ennemis : des personnages non-joueurs dont le comportement est prédéfini.
+De même, dans de nombreux jeux se trouvent la notion d'ennemis. Ce sont des personnages non-joueurs dont le comportement est prédéfini et qui ont pour but d'empêcher le joueur de gagner.
 
 De plus, la notion de ressources est très utile. Il s'agit d'une variable qui définit un état, par exemple, sur les entiers tel que le score.
 Celle-ci peut être modifiée selon les évènements du jeu.
 
-Enfin, dans tous les mini-jeux, le concept de collision est très utile. Celle-ci déclenche, la plupart du temps, de nombreuses conséquences (mort d'ennemis, de joueurs,
-incapacité de passer un obstacle, etc.)
+Enfin, dans tous les mini-jeux, le concept de collision est présent. Celle-ci déclenche, la plupart du temps, 
+de nombreux évènement comme mort d'ennemis, de joueurs ou incapacité de passer un obstacle.

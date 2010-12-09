@@ -1,11 +1,10 @@
-
-Le genre des mini-jeux est très varié. Par exemple, il y a des jeux de gestion, de plateforme, de course.
+Les mini-jeux ont des genres très variés comme les jeux de gestion, de plateforme, de course.
 L'analyse des différences et des ressemblances entre ceux-ci est d'autant plus complexe.
 
 Les difficultés d'implémentation des mini-jeux sont elles aussi différentes.
-Huit exemples de jeux seront décrits par la suite.
+Huit exemples de jeux sont décrits par la suite.
 Cela permet d'appuyer l'analyse du contenu d'un mini-jeu.
-Ces jeux n'ont pas été choisi par hasard car chacun possède un intérêt dans la description de ses règles et son implémentation. 
+Ces jeux n'ont pas été choisi par hasard. Chacun possède un intérêt dans la description de ses règles et son implémentation. 
 
 
 \begin{center}
@@ -57,7 +56,7 @@ la carte à partir d’images et d’un fichier JSON.
 \begin{minipage}{9cm}
 Dans ce shoot'em up (jeu d’action où le joueur fait face à une multitude d’ennemis), 
 le joueur contrôle un vaisseau armé de deux canons pour détruire tous les véhicules adverses et ainsi gagner des points. 
-Le joueur possède 3 vies et doit engranger le maximum de points. Lorsque le joueur perd une vie, il devient invincible durant une courte durée 
+Le joueur possède 3 vies et doit engranger le maximum de points. Lorsque le joueur perd une vie, il devient invulnérable durant une courte durée 
 pour reprendre la main. Le vaisseau est contrôlé via le clavier. En ce qui concerne les ennemis, 
 ils suivent des déplacements prédéfinis qui peuvent être paramétrés. 
 Le joueur n’est pas obligé de tuer tous les ennemis mais le but est de faire le plus grand score.
@@ -89,14 +88,14 @@ Ce n’est pas un jeu de course classique, des bonus se trouvent sur le circuit 
 un turbo, un bonus permettant d’augmenter le chrono des concurrents, un autre permettant l'échange de sa position avec celle d'un adversaire, etc. 
 De plus, il existe différentes zones de circuit ayant des effets divers : inversion des commandes, réduction de vitesse, etc.
 Le joueur peut choisir son véhicule parmi une sélection de 12 vaisseaux différents contrôlés au clavier. 
-Ce jeu est adaptable : en effet, il est possible de créer facilement des circuits ainsi que de nouveaux bonus. 
-Il serait aussi possible de mettre en place un système de lecture de fichier pour configurer les paramètres des différentes courses.
+Ce jeu est adaptable : en effet, de nouveaux bonus et de nouveaux circuits peuvent être ajoutés facilement.
+Il est aussi possible de mettre en place un système de lecture de fichier pour configurer les paramètres des différentes courses.
 \end{minipage}
 
 \titlegame{Mario}
 \begin{minipage}{9cm}
 Ce mini-jeu de plateforme reprend le principe de jeux comme Mario Bros.
-Un personnage est représenté par un rectangle et contrôlé au clavier. Il peut se déplacer sur les côtés ou sauter.
+Le personnage est représenté par un rectangle et contrôlé au clavier. Il peut se déplacer sur les côtés ou sauter.
 Il doit avancer au maximum sans tomber dans les trous ni être touché par des ennemis. Ces derniers sont symbolisés par des triangles.
 Le personnage peut faire perdre des points de vie aux ennemis en leur sautant dessus jusqu'à les tuer. 
 S'il les touche sur les côtés, il meurt et la partie est terminée.
@@ -132,7 +131,7 @@ Lorsque le nombre de vie arrive à zéro, le joueur a la possibilité d’enregi
 \titlegame{Billard}
 \begin{minipage}{9cm}
 Ce mini-jeu de billard est un jeu multijoueurs en tour par tour. 
-Il reprend les règles classiques du billard anglais (chaque joueur doit rentrer toutes les boules d’une couleur puis la noire). 
+Il reprend les règles classiques du billard anglais : chaque joueur doit rentrer toutes les boules d’une couleur puis la noire. 
 D’un point de vue gameplay, le joueur actif (désigné par une icone verte) contrôle la queue de billard avec la souris. Cette dernière pointe automatiquement vers la boule blanche. 
 Il peut ainsi choisir l’angle avec lequel il compte frapper la boule blanche. En fonction du temps pendant lequel
  il laisse le bouton de la souris enfoncé, le tir est plus ou moins fort. 
@@ -151,7 +150,7 @@ Enfin, le cadre bleu en bas de l’écran affiche la personne ayant gagné la pa
 \end{minipage}
 \hfill
 \begin{minipage}{9cm}
-Le jeu commissariat est un jeu de gestion du style Farmville. 
+Commissariat est un jeu de gestion du style Farmville. 
 Le but est de maintenir et améliorer le commissariat en fonction des ressources disponibles.
 Les ressources sont au nombre de quatre : le nombre de policiers, l’argent, l’indice IGPN et l’alcool. 
 Il y a trois actions disponibles pour le joueur. Il peut envoyer des policiers en mission dans un quartier 
@@ -159,7 +158,7 @@ choisi pour ramener de l’argent ainsi qu’un prisonnier. Si un prisonnier est
 de libérer le prisonnier contre de l’argent ou de le tabasser (avec un fort risque de pénalité). 
 Il peut aussi acheter des équipements ainsi que de l’alcool avec son argent. L’alcool est une ressource qui diminue constamment, 
 le joueur doit veiller à toujours en avoir pour ne pas perdre. Il peut aussi perdre avec un indice d’IGPN trop élevé, cet indice 
-monte avec toutes les mauvaises actions (tabasser un prisonnier, etc.).
+monte avec toutes les mauvaises actions comme tabasser un prisonnier.
 \end{minipage}
 
 \vspace{0.8cm}
@@ -172,6 +171,7 @@ Le tableau suivant récapitule les différents objectifs des jeux et leur style 
 
 \vspace{0.5cm}
 \noindent
+\begin{center}
 \begin{tabular}{|l|| c|c|c|c|c|}
 \hline
  Jeu &  Niveaux & Fin de niveau & Victoire & Score & Terrain \\
@@ -190,11 +190,12 @@ Le tableau suivant récapitule les différents objectifs des jeux et leur style 
 \hline
  Billard & Non & toute boule rentrée & score & Oui & Plateau \\
 \hline
- Gestion & Non & Non & pas de victoire & Oui & Grille\\
+ Gestion & Non & Non & Non & Oui & Grille\\
 \hline
 \end{tabular}
+\end{center}
 
-\vspace{0.5cm}
+
 
 Le second tableau permet de comparer les aspects concernant le contrôle et les personnages.
 
@@ -229,19 +230,22 @@ Ces tableaux permettent de mieux identifier les différences et points communs e
 Par exemple, les objectifs au cours d'un niveau (ou pour un jeu sans niveau) se limitent souvent à atteindre une certaine zone
 appelée ligne d'arrivée, ou éventuellement à remplir des conditions de temps ou de ressources. En effet, la vie et le score
 peuvent être vus comme des ressources. Une condition sur celles-ci est nécessaire à la victoire.
-En faisant des conjonctions et des disjonctions de ces différentes possibilités, il est possible de définir 
-les conditions de victoire pour tous les jeux (sauf le jeu de gestion).
+En faisant des conjonctions et des disjonctions de ces différentes possibilités,
+les conditions de victoire pour tous les jeux (sauf le jeu de gestion) peuvent être définies.
 
-En revanche, si on regarde comment le monde est construit, il est très différent d'un jeu à l'autre.
-Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est défini via un ruban.
+En revanche, si on observe la façon dont le monde est construit, il est très différent d'un jeu à l'autre.
+Pour certains comme Pacman, il est défini par une grille, pour d'autres comme le jeu de course, il est représenté via un ruban.
 
 Le tableau permet de mettre en évidence le jeu de gestion par rapport aux autres jeux.
-En effet celui-ci ne dispose pas de fin de niveau et de conditions de victoire.
-Suite à ce constat, il a été décider de ne pas traiter le cas des jeux de gestions.
+En effet celui-ci ne dispose pas de niveau et de conditions de victoire.
+De plus, le personnage n'est pas directement contrôlé par l'utilisateur pour lui faire faire des actions.
+La grammaire proposée ne traitera pas le cas des jeux de gestions.
 Il serait possible de définir plusieurs grammaires, chacune couvrant une catégorie de jeux afin de pouvoir en 
 créer plusieurs types. Ainsi, une autre grammaire pourrait spécialement être créée pour les jeux de gestion.
 
 La comparaison se base donc sur les autres jeux, pour définir des concepts qui seront détaillés dans la partie suivante.
+
+\vspace{0.5cm}
 
 On remarque tout d'abord que tous les mini-jeux possèdent une boucle de rafraîchissement.
 Cette dernière permet à la fois d'effectuer les différentes actions telles que le déplacement des personnages non joueurs et de gérer 
@@ -255,5 +259,5 @@ De même, dans de nombreux jeux se trouvent la notion d'ennemis. Ce sont des per
 De plus, la notion de ressources est très utile. Il s'agit d'une variable qui définit un état, par exemple, sur les entiers tel que le score.
 Celle-ci peut être modifiée selon les évènements du jeu.
 
-Enfin, dans tous les mini-jeux, le concept de collision est présent. Celle-ci déclenche, la plupart du temps, 
-de nombreux évènement comme mort d'ennemis, de joueurs ou incapacité de passer un obstacle.
+Enfin, dans tous les mini-jeux, le concept de collision est nécessaire. Celle-ci déclenche, la plupart du temps, 
+de nombreux évènements comme la mort d'ennemis, de joueurs ou l'incapacité de passer un obstacle.

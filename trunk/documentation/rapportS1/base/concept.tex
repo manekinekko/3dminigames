@@ -24,11 +24,11 @@ des règles physiques qui s'y appliquent comme la gravitation.
 Socle de l'environnement.
 
 \underline{Entité} : 
-Élément présent dans l'environnement pouvant changer d'état. 
+Elément présent dans l'environnement pouvant changer d'état. 
 Elle dispose de caractéristiques et d'un panel d'actions prédéfinies qui lui sont propres.
 
 \underline{Décor} : 
-Élément inerte présent dans l'environnement.
+Elément inerte présent dans l'environnement.
 
 \underline{Ressource} : 
 Elément virtuel d'un jeu exprimé sous forme numérique, pouvant servir de monnaie, de matière première, d'état ou autres.
@@ -36,17 +36,17 @@ Elément virtuel d'un jeu exprimé sous forme numérique, pouvant servir de monn
 \subsection*{Liste d'Entité définies}
 
 \underline{Personnage} :
-Entité qui agit avec un comportement particulier. Un personnage peut-être le joueur, un allié, un ennemi ou neutre.
+Entité qui agit avec un comportement particulier. Un personnage peut être le joueur, un allié, un ennemi ou neutre.
 \note{Je ne suis pas sur que ce qui suit soit a la bonne place}
 
 \underline{Joueur} :
-Le joueur est un personnage contrôlé par l'utilisateur par le biais du clavier ou de la souris.
+Le joueur est un personnage contrôlé par l'utilisateur grâce au clavier ou à la souris.
 
 \underline{Allié} :
-L'allié est un personnage contrôlé par l'IA. Il possède un comportement visant a aider le joueur a finir le jeu.
+L'allié est un personnage contrôlé par l'IA. Il possède un comportement visant à aider le joueur à progresser dans le jeu.
 
 \underline{Ennemi} :
-L'ennemi est un personnage contrôlé par l'IA. Il possède un comportement visant a faire perdre le joueur.
+L'ennemi est un personnage contrôlé par l'IA. Il possède un comportement visant à faire perdre le joueur.
 
 \underline{Neutre} :
 Le neutre est un personnage contrôlé par l'IA. Il possède un comportement précis qui ne tient pas compte du joueur.
@@ -63,10 +63,11 @@ Ensemble des objets dont dispose une entité et qu'elle transporte avec elle.
 Ressource particulière associée aux entités mortelles et aux objets destructibles du jeu.
 
 \underline{Temps} :
-Ressource particulière qui se calcule par rapport a la boucle de rafraichissement et évolue de façon cyclique (+1 tout les 3 rafraichissement par exemple)
+Ressource particulière qui se calcule par rapport à la boucle de rafraichissement et évolue de façon cyclique (+1 tous les 3 rafraichissements par exemple)
 
 \underline{Score} :
-Ressource particulière qui se calcule par rapport aux actions par le joueur. Elle permet un classement de tous les utilisateurs en fin de partie.
+Ressource particulière qui se calcule par rapport aux actions du joueur et leurs conséquences sur la partie.
+Elle permet un classement de tous les utilisateurs en fin de partie.
 
 \subsection*{Contrôle direct/indirect}
 
@@ -76,7 +77,7 @@ Les actions dont il dispose sont celles dont l'entité dispose.
 
 \underline{Contrôle indirect} :
 Capacité du joueur à interagir sur l’environnement, plus complexe. 
-Les actions dont il dispose sont définies à la création du jeu et ne se limite pas au contrôle et aux actions d'une unique entité.
+Les actions dont il dispose sont définies à la création du jeu et ne se limitent pas au contrôle et aux actions d'une unique entité.
 Il faut souvent une sélection de ou des entités avant d'agir dessus (ex : sélection de plusieurs soldats dans un jeu de type stratégie en temps réel).
 
 \subsection*{Environnement linéaire/non linéaire}

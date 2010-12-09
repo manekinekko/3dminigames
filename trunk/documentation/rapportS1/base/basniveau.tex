@@ -40,10 +40,9 @@ expression ::= (arithmeticOperator value)+
 arithmeticOperator ::= + | - | * | / | %
 
 
-//random(int, int) to generate a random number between these integers
+//random(value,value) to generate a random number between these integers
 value = ressource | constant | random(value, value) | random(0, value)
-c
-onstant ::= int | double
+constant ::= int | double
 
 ----------------------------------------------------------------------------------------------------------
 // Resource Manager

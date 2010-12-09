@@ -7,8 +7,7 @@ AAAA;
 * PARSER RULES
 *------------------------------------------------------------------*/
  
- 
-game :
+jeu :
   (infosJeu '.')?
   (nouveauType '.')*
   (init '.')+
@@ -17,121 +16,92 @@ game :
   (reglesJeu '.')*
   (iaBasique '.')*;
  
-///////////////////////////// ( infos sur le jeu )  //////////////////////////////////
+
+///////////////////////////// ( informations about the game)  //////////////////////////////////
+
 infosJeu :
-  'game' 'has' ('gravity' | 'score'/*| ...*/) 'at' (NUMBER | NUMBER NUMBER NUMBER)
+  'Game' 'has' ('gravity' | 'score' /*| ...*/ ) 'at' (NUMBER | NUMBER NUMBER NUMBER)
   ;
+
  
+//////////////////////////// ( Inheritance )  /////////////////////////////
  
-//////////////////////////// ( Héritages )  /////////////////////////////
- 
-// équivaut à la déclaration d'un type qui n'est pas générique (obligation de l'hériter)
 nouveauType :
-  'type' ident 'is' (ident | typeObjet) ('and' ident | typeObjet)*        //vérifier que ce ne sont pas les mêmes et que l'ident n'existe pas déjà
+  'type' ident 'is' (ident | typeObjet) ('and' ident | typeObjet)* // to declare a new type
   ;            
   
-// ident | typeObjet : un type hérité (de objet) défini au début du code client
-// pour éviter que le "is" soit confondu avec celui des déclarations, il vaut mieux mettre un mot comme "type"
-// et sinon pourquoi pas un héritage multiple juste pour la 1ere grammaire pour générer les attributs à la demande
-//exemple : type mineDeFer is obstacle and bonus
+// ident | typeObjet : if it is an ident, check that it is defined before by the user and that is an inherited Object.
+
  
- 
- 
-//////////////////////////// ( Initialisations )  /////////////////////////////
+//////////////////////////// ( Initializations )  /////////////////////////////
+
 init :
   ident 'is' declarationObjet
-  | accesClasse 'has' affectationObjet (',' affectationObjet)*
-  ;//à chaque fois, vérifications si les types concordent bien avec les attributs
+  | accesClasse 'has' affectationObjet (',' affectationObjet)* // check the types and its attributes
+  ;
  
- 
-// s'il n'est pas joueur, allié ou ennemi, il est neutre
 declarationObjet :
-  (ident | typeObjet3D) ('player' | interaction ('multiple')? )?             //neutral par défaut, utilisateur pas obligé de le mettre
-  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?        //operation s'il est multiple 
-  | 'camera' (('first' | 'third') 'person' | 'free')
-  | 'media' ('loop' | 'once')? //sons joués en boucle ou une seule fois
-  | 'in' ident //ident de la liste pour rajouter l'élément dans la liste
-// | ...)
+  (ident | typeObjet3D) ('player' | interaction ('duplicable')? )?         // interaction is neutral by default
+  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?  //operation if the object is duplicable
+  | 'Camera' (('first' | 'third') 'person' | 'free')?
+  | 'Media' ('loop' | 'once')? 						 // sound, music or video played in loop or once
+  | 'in' ident 				                         // ident of a list to add an element
 ;           
- 
-//ident is ident : un type hérité (de objet) défini au début du code client
-// list of ident : un type hérité (de objet) défini au début du code client ou un objet ou une autre liste
-//type magicien is character
-//gandalf is magicien
-//list1 is list of magicien          //liste qui contiendra tous les magiciens
-//list2 is list of gandalf           //1 seul élément
  
 interaction :
   'ally' | 'enemy' | 'neutral'
   ;
  
- 
-//multiple est le fait de pouvoir le générer plusieurs fois en même temps, duplicable
- 
- 
-//ex : ferrari is vehicle
-//perso1 is character
-//ferrari has perso1
- 
 affectationObjet :
-  ident ('at' (operation (uniteTps)? | ident) )?         //aggrégation + 4 lignes suivantes
+  ident ('at' (operation (uniteTps)? | ident) )?       //aggregation
   | attribut 'at' (operation | STRING | BOOL)          //life at 5, name at "Gandalf Le Gris"
   | typeCoordonnees 'at' coordonnees            //size at 20 30 40
   | attributListeOuObjet 'at' ident             //inventory at listeArmesJoueur
   | attributTps 'at' operation uniteTps         //
   ;
  
- 
-// has ident at ... : dans le cas d'une déclaration d'un nouvel attribut
-//le client n'est pas obligé de déclarer tous les attribut dont il a besoin
-// s'ils sont génériques comme vie, vieMax ... ils sont générés lorsqu'ils sont appelés pour la première fois avec une initialisation en dur
-// ça veut veut dire que s'il la déclare ici, il veut l'initialiser
-// de plus s'il déclare un nouvel attribut, il est obligé de l'initialiser (du moins c'est vraiment recommandé)
-// donc il est nécessaire d'avoir le "'at' operation" (pas de '?')
- 
- 
-// à compléter
+// has ident at ... : to declare a new attribute
+// Attributes of predefined class have default initialized
+// it is not necessary to initialize not used attribute
+  
 typeObjet :
-  'camera'
-  | 'media'
-  | 'counter'                                 // un compteur, n'hérite pas de objet
+  'Camera'
+  | 'Media'
+  | 'Counter'
+  | 'Time'
   | typeObjet3D
   ;
  
+// every predefined classes
 typeObjet3D:
-  'object'                                  // concept de base -> position(x,y,z), orientation(x,y,z), taille(x,y,z)  //pour la rotation, elle s'effectue autour de l'axe choisi
-  | 'character'                               // -> vie, vieMax, magie, magieMax , level, experience, attaque, défense
-  | 'vehicle'                                 // -> accélération, vitesseMax,
-  | 'plane' | 'spaceCraft'
-  | 'obstacle'                                 // génèrera une entité fixe servant aux collisions
-  | 'weapon'                                  // -> nbMunitions, nbMaxMunitions intervalleTirs, tpsRecharge
-  | 'sword'                                     // -> dégâts, level(pourquoi pas)
-  | 'projectile'                               // -> vitesse, dégâts, level(pourquoi pas)
-  | 'zone'                                     // génèrera une entité invisible et traversable
-  | 'ground'                                  // -> type //idée pour préciser le type de sol : eau (génèrera une entité traversable), neige/glace (min de frottement) ...
-  | 'bonus'                                      // un objet qui disparait lorsqu'il est touché par un objet spécifique-> valeur(entier), nomObjet(type),listeObjets,
-                                              // listeAttributs (le ou les objets/types de touché(s) par le bonus et le ou les attributs touchés )  
-  | 'checkPoint'
-  | 'breakable'
-  | 'construction'
-  | 'room'
-  | 'ball'
-  | 'teleporter'
-// | ...
+  'Object'                      // -> position(x,y,z), orientation(x,y,z), size(x,y,z)
+  | 'Character'                 // -> life, lifeMax, magic, magicMax , level, experience, attack, defense
+  | 'Vehicle'                   // -> acceleration, speedMax,
+  | 'Plane' | 'SpaceCraft'
+  | 'Obstacle'                  // a fixed entity, used for collisions
+  | 'Weapon'                    // -> nbMunitions, nbMaxMunitions, intervalleTirs, timeRecharge
+  | 'Sword'                     // -> damages, level
+  | 'Projectile'                // -> vitesse, damages, level(pourquoi pas)
+  | 'Zone'                      // an invisible and traversable entity
+  | 'Ground'                    // -> type of ground (water, snow ...)
+  | 'Bonus'                     // an object which disappears when something touches it-> valeur(entier), nomObjet(type),listeObjets 
+  | 'CheckPoint'
+  | 'Breakable'
+  | 'Construction'
+  | 'Room'
+  | 'Ball'
+  | 'Teleporter'
   ;
  
- 
-// à compléter
-//là clairement, on reprend tous les attributs qu'on a défini pour chaque objet
- 
-attribut :
-  'mass'                  // attributs d un objet :
+// every attributes of predefined classes
+attribut : 
+  'mass'                  // attributes of object :
   | 'isFix'
   | 'isTraversable'
-  | 'fov'                    // attributs de "camera"
+  | 'fov'                    // attributes of "camera"
   | 'type'
   | 'active'
-  | 'name'                   // attributs de "personnage" :
+  | 'name'                   // attributes of "character" :
   | 'description'
   | 'life'
   | 'lifeMax'
@@ -149,23 +119,22 @@ attribut :
   | 'class'
   | 'race'
   | 'acceleration'    
-  | 'speed'                // attributs de "vehicle" :
+  | 'speed'                // attributes of "vehicle" :
   | 'maxSpeed'
   | 'minSpeed'
   | 'boost'
   | 'maxBoost'
-  | 'nbMunitions'           // attributs de "weapon" :
-  | 'nbMunitionsMax'          //nbMunitionsMin = 0
+  | 'nbMunitions'           // attributes of"weapon" :
+  | 'nbMunitionsMax'        
   | 'shootPower'
-  | 'damages'               //"projectile"
-  | 'value'                // attributs de "bonus" :
+  | 'damages'               //attributes of "projectile"
+  | 'value'                // attributes of "bonus" :
   | 'unit'
   | 'objectname'
   | 'attributName'               
-  | 'volume'                 //attributs de "media"
-  | 'number'              //"ball"
+  | 'volume'                 //attributes of "media"
+  | 'number'              //attributes of "ball"
   | 'moveWithCamera'
-// | ...
   ;
  
 attributListeOuObjet :
@@ -186,12 +155,12 @@ attributListeOuObjet :
  
 attributTps :
   'boostInterval'
-  | 'shootInterval'        // attributs de "arme" :
+  | 'shootInterval'        //attributes of "weapon" :
   | 'reloadTime'
-// | ...
   ;
  
-//////////////////////////// ( nouvelles définitons des actions ) ///////////////////
+
+//////////////////////////// ( new definitions of actions ) ///////////////////
  
 definition : 'definition' ident 'means' consequences;
  
@@ -207,94 +176,87 @@ consequ :
   | appelDef
   | 'victory'
   | 'defeat'
-// | ...
   ;
  
 appelDef :
-  ident           //l'ident d'une définition d'action (means)
+  ident           //ident of a definition of an action (means)
   ;
  
 activCommande :
   ('activate' | 'disable') ('commands' | 'mouse' (souris (',' souris)*)? | 'key' clavier (',' clavier)* | 'keyboard' )
   ;
-//disable commands              // commands représente toutes les commandes
-//disable key                   // toutes les commandes du clavier
-//disable mouse up, down        //seulement aller en haut et en bas avec la souris
+//disable commands              // all the commands
+//disable key                   // all the key commands
+//disable mouse up, down        // only move up or down with the mouse
  
-//////////////////////////// ( Initialisations des commandes )  /////////////////////////////
+
+//////////////////////////// ( Initialization of commands )  /////////////////////////////
+
 commande :
   'command' (ident 'is' actionCommande (',' actionCommande)* | actionCommande)
   ;
 
 actionCommande :
-  ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue)
+  ('mouse' souris | 'key' clavier) 'for' (ident | actionCommandePressee | actionCommandeMaintenue) // ident : what is defined with means
   ;
-//est-ce utile de prévoir l'appui sur plusieurs commandes en même tps
-// ident : ce qu'on a défini avec means
  
 souris :
         'up' | 'down' | 'left' | 'right' | 'lClick' | 'cClick' | 'rClick' | 'scrollUp' | 'scrollDown'
         ;
  
 clavier :
-        CHAR | 'up' | 'down' | 'left' | 'right' | 'space' | 'echap' | 'enter'          //CHAR : Z,Q,S,D
+        CHAR | 'up' | 'down' | 'left' | 'right' | 'space' | 'echap' | 'enter'          //CHAR : Z,Q,S,D,...
         ;
  
- 
 actionCommandePressee :
-  'jump'
+  'jump' operation
   | 'pause'
   | 'stop'
-// | ...
   ;
 actionCommandeMaintenue :
-  'move left'
-  | 'move right'
-  | 'move forward'
-  | 'move backword'
+  'move' ('left' | 'right' | 'forward' | 'backward')
+  | 'turn' ('left' | 'right')
   | 'accelerate'
-  | 'brake'  //freiner
+  | 'brake'
   ;
  
-// ici, pour chaque commande, il faut prévoir le fait d agir sur le joueur ou les alliés ou les ennemis (pourquoi pas) ou sur une liste
-// d objets ou un objet d une liste ou un objet en particulier
  
- 
-//////////////////////////// ( Règles de jeu + conditions victoire / défaite à l intérieur )  /////////////////////////////
+//////////////////////////// ( Rules of the game + conditions of victory / defeat )  /////////////////////////////
+
 reglesJeu :
   'rule' (ident 'is')? declencheur 'then' consequences ','
   ;
 conditions :
-  conditionEt ('or' conditionEt)*  //ajouter le moyen de mettre des parenthèses pour les priorités
+  conditionEt ('or' conditionEt)*
   ;
  
 conditionEt :
-  cond ('and' cond)*
+  conditionsNot ('and' conditionsNot)*
   ;
   
-cond         :
-  etat
+conditionsNot :
+  'not' cond
+  ;
+
+cond :
+  '(' conditions ')'
+  | etat
   | operation comparaison operation
-  //| '(' conditions ')' //si parenthèses alors grammaire non LL(*) à cause de
-                             //"operation comparaison operation" -> "comparaison operation operation "
-  // | ...
   ;
-  
+
 etat :
-  accesClasse 'is' ('not')? ('dead' | 'alive' | 'effaced' | 'generated' | 'touching' (('other')? accesGlobal | accesLocal))        // pour un perso / pour tous les objets
-  | (ident | 'game') 'is' ('not')? ('finished' |'started' | 'paused' | 'muted' ('on' | 'off') | 'playd' | 'stopped' )  // jeu , compteur , media
-  | 'true'                                                    // pour 'faux' je crois pas que ce soit nécessaire
+  accesClasse 'is' ('not')? ('dead' | 'alive' | 'effaced' | 'generated' | 'touching' (('other')? accesGlobal | accesLocal))  // for an object
+  | (ident | 'game') 'is' ('not')? ('finished' |'started' | 'paused' | 'muted' ('on' | 'off') | 'played' | 'stopped' )  // game,counter,media
+  | 'true'                                                   
   | 'victory'
   | 'defeat'
-  //  | ...
   ;
  
 declencheur :
   accesClasse ('dies' | ('touches' | 'kills') (('other')? accesGlobal | accesLocal) | ('killed' | 'touched') ('by' (('other')? accesGlobal | accesLocal))? )
-  | (ident | 'game') ('ends' |'starts')
+  | (ident | 'game') ('ends' |'starts')          //ident if it is a counter
   | variable 'becomes' varOuNb
   | ident 'becomes' ('player' | interaction)
-// | ...         //ident si c'est un compteur
   ;
   
 siAlors :
@@ -310,31 +272,28 @@ action :
   | ('efface' | 'generate') (accesClasse | operation accesClasse ('in' accesLocal | 'on' accesLocal | 'at' coordonnees)?)
   | 'wait' operation uniteTps 'then' consequences 'endWait'
   | 'save'
-// | ...
   ;
  
 actionObjet :
   'dies'
   | actionCommandePressee
   | actionCommandeMaintenue ('during' operation uniteTps | 'until' conditions)
-  | 'equip' (accesLocal | 'next' | 'previous')   //pour l'inventaire du perso, change l'arme, efface la première et generate la 2eme
-// | ...
+  | 'equip' (accesLocal | 'next' | 'previous')   
   ;
  
 affectation :
   (('assign' | 'add' | 'sub') operation) 'for' variable | 'invert' variable 'with' variable
   ;
-/*
-add : a += b, remove : a -= b, assign : a = b, invert : tmp=a; a=b; b=tmp;
-*/
+
+//add : a += b, remove : a -= b, assign : a = b, invert : tmp=a; a=b; b=tmp;
+
 coordonnees :
   operation operation operation
   ;
  
 comparaison :
   '=' | '<' | '>' | '<=' | '>='
-  ;              //ici le = correspond à notre ==
-//plus simple à implémenter et de toute façon, l utilisateur est censé avoir un minimum de niveau en maths
+  ; 
  
 transformation :
   'translation'
@@ -349,7 +308,6 @@ uniteTps :
   | 'frames'
   ;
  
-// pris sur le dm de comp
 operation :
   ('random' 'between' operationPlus 'and')? operationPlus
   ;
@@ -378,7 +336,6 @@ varOuNb :
 variable :
   (('x' | 'y' | 'z') 'of' (typeCoordonnees | ident | attribut)) 'of' accesClasse
                       //x of size of num 10 in listeWeapon
-// | ...
   ;
  
 accesClasse : accesLocal | accesGlobal;
@@ -425,8 +382,7 @@ ident :
  
 iaBasique : 'ia' accesClasse 'is' actionObjet (',' actionObjet)*;
  
- 
- 
+
 /*------------------------------------------------------------------
 * LEXER RULES
 *------------------------------------------------------------------*/

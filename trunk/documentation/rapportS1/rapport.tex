@@ -23,16 +23,25 @@
 
 %%%%%%%%%%%%%%%%%%%% Langage pour les jeux en haut-niveau
 \lstdefinelanguage{GameGrammar}{
-  morekeywords=[1]{type,is,has,multiple,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,disable,activate,definition,command,
-                   rule,then,generate,efface,wait,random,ia,for,loop,once,during,if,else,endIf,play,not,
+  morekeywords=[1]{type,is,has,duplicable,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,disable,activate,definition,command,
+                   rule,then,generate,efface,wait,endWait,random,ia,for,loop,once,during,if,else,endIf,play,not,
 		   finished,started,paused,muted,paused,off,played,becomes,starts,ends}, % keywords
   morekeywords=[2]{Object,Character,Vehicle,SpaceCraft,Plane,Obstacle,Weapon,Projectile,Sword,Zone,Gound,Bonus,Checkpoint,Breakable,
 		   Construction,Room,Ball,Teleporter}, % class
-  morekeywords=[3]{touches,dies,kills,killed,touched,jump,
+  morekeywords=[3]{mass,isFix,isTraversable,fov,type,active,name,description,life,
+			lifeMax,lifeMin,nbOfLives,magic,magicMax,magicMin,level,attack,defense,jumpForce,
+			maxJumpsInTheAir,money,class,race,acceleration,speed,maxSpeed,minSpeed,boost,
+			maxBoost,nbMunitions,nbMunitionsMax,shootPower,damages,value,unit,objectname,
+			attributName,volume,number,moveWithCamera,inventory,equipedObjects,entrances,
+			exits,damageZone,collectors,typesCollectors,generators,typeGenerators,
+			breakers,typesBreakers,teleportables,typesTeleportables,boostInterval,
+			shootInterval,reloadTime
+		  }, % attributs
+  morekeywords=[4]{touches,dies,kills,killed,touched,jump,
 		   keyboard,mouse,commands,
-		   move,left,right,forward,backward,accelerate,brake,
+		   move,turn,left,right,forward,backward,accelerate,brake,
 		   defeat,victory,
-		   add,sub,assign,
+		   add,sub,assign,invert,
 		   pause,mute,stop
 		  }, % concept haut niveau
   morecomment=[l]{//},
@@ -53,6 +62,7 @@
   keywordstyle=[1]\bfseries,
   keywordstyle=[2]\itshape,
   keywordstyle=[3]\itshape,
+  keywordstyle=[4]\itshape,
   stringstyle=\color{green},
   linewidth=\linewidth,
   inputencoding=utf8,

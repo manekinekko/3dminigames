@@ -12,7 +12,7 @@ la façon dont les éléments qui le composent interagissent entre eux.
 Ces règles définissent également les conditions nécessaires à la victoire (objectifs).
 
 \underline{Niveau} :
-Sous-division d'un jeu. Elle permet de gérer la difficulté de jeu. Elle peut aussi être utilisée pour en définir la fin. 
+Sous-division d'un jeu. Elle permet de gérer la difficulté de jeu de manière progressive. Elle peut aussi être utilisée pour en définir la fin. 
 
 \subsection*{Élément d'un jeu}
 
@@ -22,6 +22,7 @@ des règles physiques qui s'y appliquent comme la gravitation.
 
 \underline{Terrain} : 
 Socle de l'environnement.
+\note{mettre les différents types}
 
 \underline{Entité} : 
 Elément présent dans l'environnement pouvant changer d'état. 
@@ -33,23 +34,23 @@ Elément inerte présent dans l'environnement.
 \underline{Ressource} : 
 Elément virtuel d'un jeu exprimé sous forme numérique, pouvant servir de monnaie, de matière première, d'état ou autres.
 
-\subsection*{Liste d'Entité définies}
+\subsection*{Groupes d'Entités}
 
+\note{Je propose un vote à main levée pour enlever Personnage car il peut être un véhicule, un projectile, ou n'importe quel autre objet}
 \underline{Personnage} :
 Entité qui agit avec un comportement particulier. Un personnage peut être le joueur, un allié, un ennemi ou neutre.
-\note{Je ne suis pas sur que ce qui suit soit a la bonne place}
 
 \underline{Joueur} :
-Le joueur est un personnage contrôlé par l'utilisateur grâce au clavier ou à la souris.
+Le joueur est une entité contrôlée par l'utilisateur grâce au clavier ou à la souris.
 
 \underline{Allié} :
-L'allié est un personnage contrôlé par l'IA. Il possède un comportement visant à aider le joueur à progresser dans le jeu.
+L'allié est une entité contrôlée par l'IA. Elle possède un comportement visant à aider le joueurlors de sa progression dans le jeu.
 
 \underline{Ennemi} :
-L'ennemi est un personnage contrôlé par l'IA. Il possède un comportement visant à faire perdre le joueur.
+L'ennemi est une entité contrôlée par l'IA. Elle possède un comportement visant à faire perdre le joueur.
 
 \underline{Neutre} :
-Le neutre est un personnage contrôlé par l'IA. Il possède un comportement précis qui ne tient pas compte du joueur.
+Le neutre est une entité contrôlée par l'IA. Elle possède un comportement précis qui ne tient pas compte des autres groupes.
 
 
 \subsection*{Liste de Ressources}
@@ -57,7 +58,7 @@ Le neutre est un personnage contrôlé par l'IA. Il possède un comportement pr�
 \note{Surement incomplet}
 
 \underline{Inventaire} : 
-Ensemble des objets dont dispose une entité et qu'elle transporte avec elle.
+Ensemble des objets dont dispose une entité et qu'elle transporte.
 
 \underline{Vie} : 
 Ressource particulière associée aux entités mortelles et aux objets destructibles du jeu.
@@ -67,7 +68,7 @@ Ressource particulière qui se calcule par rapport à la boucle de rafraichissem
 
 \underline{Score} :
 Ressource particulière qui se calcule par rapport aux actions du joueur et leurs conséquences sur la partie.
-Elle permet un classement de tous les utilisateurs en fin de partie.
+En fin de partie, le score permet un classement de tous les utilisateurs ayant déjà joué auparavant.
 
 \subsection*{Contrôle direct/indirect}
 

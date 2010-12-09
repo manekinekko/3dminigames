@@ -1,3 +1,66 @@
+\subsection{La classe Object et ses fils}
+
+Pour rappel, la classe object permet de définir toutes les entités du jeu.
+Tout type définit par l'utilisateur hérite de cette classe ou de l'une de ces classes filles.
+Elles sont présentées dans le schéma ci-dessous :
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{img/objectclass}
+\end{figure}
+
+Les divers attributs name pourront servir lors de l'affichage d'information.
+\code{gandalf is Character. gandalf has name at 'Gandalf le Blanc'.}
+
+Pour la classe Character, si l'accélération est bien défini, c'est elle qui régit le déplacement et les touches pour se déplacer la modifie.
+Sinon le déplacement se fait directement lors de l'appui des touches.
+
+Les classes Character, Vehicle et Plane ont des comportements différents concernant la caméra.
+Par exemple, pour un déplacement vers la droite, le personnage va à droite sur l'écran, le véhicule tourne à droite, l'avion fait une rotation dans le sens horaire.
+
+Pour les obstacles, ils héritent des attributs isFix et isTraversable de Object qui sont mis respectivement à true et false.
+
+Concernant les projectiles, ils se déplacent jusqu'à leur description ont ils font des dégâts.
+
+Une zone correspond juste à un volume englobant invisible, et est donc traversable par tous.
+
+La classe Ground peut avoir plusieurs types comme la neige, qui a donc un coefficient de frottement faible, ou l'eau qui est traversable.
+
+Un bonus possède une liste d'objets qui peuvent le ramasser. Dès qu'une entité de ce type entre en contact avec le bonus, celui-ci
+disparaît et a un effet sur son collecteur.
+
+Le Checkpoint est une Zone particulière : si le joueur meurt, il réapparaît à cet endroit.
+
+Les objects de la classe Breakable correspond à un object à 2 états, représenté par 2 fichiers 3D différents. Les deux états correspondent
+à une vie nulle ou une vie strictement positive.
+
+Une Construction correspond à la fois à une vue extérieure, et à l'intérieur d'une pièce lorsqu'on entre à l'intérieur.
+
+Un objet de type Room reprend le principe de Construction mais les collisions sont gérés via des plans.
+
+Un objet de type Ball a un volume englobant sphérique.
+
+\subsection{Les autres classes}
+
+Ci-dessous se trouvent les autres classes prédéfinies pour la grammaire haut-niveau.
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{img/otherclass}
+\end{figure}
+
+La classe Game ne peut être instancier qu'une unique fois.
+
+Les ressources temporelles peuvent avoir plusieurs unités telles que les secondes, les milisecondes ou les minutes.
+
+Les caméras ont des types prédinis comme 'firstPreson' pour un suivi à la première personne, 'thirdPerson' pour un suivi à la troisième personne, ou 'free'
+pour une caméra libre.
+
+Un media a des mots-clefs dédiés comme play, mute on, mute off, pause ou stop.
+Un attribut permet aussi de choisir entre un media répété en boucle ou lu une unique fois.
+
+\subsection{La grammaire}
+
 \begin{lstlisting}[language=Grammar]
 
 /*------------------------------------------------------------------

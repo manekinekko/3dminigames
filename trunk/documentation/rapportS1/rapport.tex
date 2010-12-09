@@ -14,6 +14,8 @@
 
 \usepackage{fullpage}
 
+\usepackage[svgnales]{xcolor}
+
 \newcommand{\note}[1]{\textit{\textcolor{blue}{#1}}}
 
 \newcommand{\titlegame}[1]{\subsubsection*{\begin{center}#1\end{center}}}
@@ -22,6 +24,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%% Langage pour les jeux en haut-niveau
+\definecolor{darkgreen}{rgb}{0,.5,0}
+
 \lstdefinelanguage{GameGrammar}{
   morekeywords=[1]{type,is,has,duplicable,enemy,ally,neutral,player,game,at,in,on,list,of,with,means,disable,activate,definition,command,
                    rule,then,generate,efface,wait,endWait,random,ia,for,loop,once,during,if,else,endIf,play,not,
@@ -63,7 +67,7 @@
   keywordstyle=[2]\itshape,
   keywordstyle=[3]\itshape,
   keywordstyle=[4]\itshape,
-  stringstyle=\color{green},
+  stringstyle=\color{darkgreen},
   linewidth=\linewidth,
   inputencoding=utf8,
   breaklines=true %autorise les accents

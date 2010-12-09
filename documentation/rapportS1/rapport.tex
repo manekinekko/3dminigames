@@ -59,7 +59,7 @@
   morestring=[b]',
 }[keywords,comments,strings]
 
-\newcommand{\code}[1]{\lstset{
+\lstset{
   language=GameGrammar,
   basicstyle=\scriptsize\ttfamily,
   commentstyle=\ttfamily\color{blue},
@@ -70,9 +70,13 @@
   stringstyle=\color{darkgreen},
   linewidth=\linewidth,
   inputencoding=utf8,
-  breaklines=true %autorise les accents
+  breaklines=true,
+  showstringspaces=false,
+  showspaces=false,
+  showtabs=false
 }
-\lstinline{#1}}
+
+\newcommand{\code}[1]{\lstinline{#1}}
 
 \lstnewenvironment{GameGrammar}[1][]{\lstset{language=GameGrammar}#1}{}
 

@@ -248,13 +248,9 @@ Il est également possible de faire des énumérations de ressources.
 
 \subsubsection{Définition des entités et caméras}
 
-On considère que le terrain est représenté, par exemple, par une matrice de points dans l'espace sur laquelle est appliquée une texture.
-La matrice pourra être remplacée selon le type de terrain pour un certain jeu. \note{Ca veut un peut rien dire ça, non ?}
-
-L'ensemble des entités d'un jeu est alors constitué d'un terrain et d'un ensemble d'objet.
-Chaque objet est identifié par un nom, ainsi que par deux fichiers créés par des outils de dessin d'objets 3D, un fichier .obj contenant l'ensemble
-des points de l'objet, et un fichier .mat contenant la texture appliquée sur les faces de l'objet.
-De plus chaque objet contient un ensemble de paramètre comme la vitesse, la position, etc. \note{vérifier le format de sortie de Sketchup}
+L'ensemble des entités d'un jeu est alors constitué d'un terrain et d'un ensemble d'objets.
+Chaque objet est identifié par un nom, ainsi que par un fichier créé par des outils de dessin d'objets 3D, par exemple au format Collada (file.dae).
+De plus chaque objet contient un ensemble de paramètres comme la vitesse ou la position.
 
 Les caméras sont définies de manière similaire aux entités : chaque caméra est définie par un nom, une position et une orientation.
 
@@ -276,6 +272,7 @@ aléatoires.
 Des instructions conditionnelles sont également disponibles, les booléens étant générés via des comparaisons d'expressions.
 
 Les instructions peuvent également reprendre des concepts classiques de mini-jeux : pause, nouvelle partie, fin de partie, sauvegarde de la partie.
+
 \note{insérer un petit exemple}
 
 \subsubsection{Exemple de mini-jeu dans la grammaire bas-niveau}
@@ -284,4 +281,15 @@ Les instructions peuvent également reprendre des concepts classiques de mini-je
 
 \subsection{Avantages et limites de ces langages}
 
-\note{cherche inspiration ...}
+Ces grammaires ont l'avantage de donner à l'utilisateur la possibilité de décrire simplement le jeu.
+La séparation nette entre la définition des entités, des interactions et des règles du jeu donne plus de clarté au fichier de description.
+
+De plus, les deux grammaires sont complémentaires. La première permet de décrire le fonctionnement du jeu en général. La seconde permet
+de détailler plus facilement le comportement concret, notamment pour l'intelligence artificielle.
+
+\vspace{0.2cm}
+
+Cependant, la capacité des deux grammaires est limitée.
+La réalisation d'un UML commun aux jeux n'a pas été possible.
+Ceux-ci ont une diversité importante au niveau de leur catégorie.
+Tous les jeux ne peuvent pas être codés avec les langages proposés.

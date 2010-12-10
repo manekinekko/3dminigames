@@ -112,10 +112,7 @@ Il est également possible de désactiver toutes les commandes \code{disable com
 Les règles du jeu sont définies par le mot-clef 'rule' et 'then'.
 Par exemple \code{rule mario dies then defeat}.
 'mario dies' est un déclencheur et 'defeat' est une conséquence.
-Il ne peut y avoir qu'un déclencheur dans la règle mais il peut y avoir plusieurs conséquences.
-La suite de conséquences s'exécute séquentiellement tandis que chaque règle est appelée en parallèle.
-\note{Problème lié au parallélisme, si on change 2 fois des variables en même temps ... faudrait préciser le concept du parallèle 
-ou n'autoriser que certains trucs en parallèle comme les médias, mais dans ce cas autant trouver une syntaxe dans une seule règle}
+Plusieurs conséquences peuvent suivre le 'then', elles sont exécutées séquentiellement.
 
 Il est également possible de manipuler les attributs des différentes entités. Prenons le cas où un ennemi a été défini \code{bowser is Character ennemy}.
 Si mario entre en collision avec lui, il perd un point de vie, réduit son score de 100 et provoque un saut :
@@ -146,7 +143,8 @@ ia goomba is
 Voici un exemple de code utilisant la grammaire haut-niveau.
 Supposons que l'utilisateur crée un mini-jeu avec les éléments suivants :
 \begin{itemize}
-\item des représentation en 3D d'un shérif 'sheriff.obj', d'un zombie 'zombie.obj', d'une pièce de monnaie 'piece.obj'
+\item des représentations en 3D d'un shérif, d'un zombie, d'une pièce de monnaie 
+par exemple au format Collada (.dae) dans les fichiers 'sheriff.dae', 'zombie.dae' et 'piece.dae'
 \item d'un sol 
 \item d'un volume englobant représentant une zone d'arrivée
 \item d'une musique nommée 'musiqueAngoissante.mp3' et de deux musiques de fin 'musiqueVictoire.mp3' et 'musiqueDefaite.mp3'

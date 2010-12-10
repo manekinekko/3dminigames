@@ -1,10 +1,12 @@
+Cette partie présente la totalité de la grammaire bas-niveau
+
 \begin{lstlisting}[language=Grammar]
  Game ::= refreshLoop eventsManager ressourcesSets camera entities physicsEngine
 
 refreshLoop ::= signalUpdateCounter keyListener{ keyboardCommands } mouseListener{ mouseCommands }
 //signalUpdateCounter is triggered by the refreshLoop and updates counters of type times
 
-// pressed a key or action with mouse triggers an event
+// pressing a key or action with mouse triggers an event
 keyboardCommands ::= (keystroke : signalSets)*
 
 mouseCommands ::= (typeOfClick : signalSets)*
@@ -76,11 +78,11 @@ entities ::= map with object+
 map ::= matrix texture
 
 
-object ::= object = name object3D parameters
+object ::= object = (name object3D parameters | media)
 parameters ::= coeffOfFriction = double weight = double speed = vector position = vector  isFixed = boolean isTraversable = boolean
-object3D ::= model texture includingVolume
-model ::= [a-zA-Z]*.obj
-texture ::= [a-zA-Z]*.mat
+object3D ::= colladaFile boundingBox
+media ::= soundLevel | isMute | isPlayed | isStopped | isPaused
+colladaFile ::= [a-zA-Z]*.dae
 
 ----------------------------------------------------------------------------------------------------------
 // physics engine

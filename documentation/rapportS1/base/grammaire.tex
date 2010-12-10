@@ -244,7 +244,7 @@ Pour la définir, cette fois 2 valeurs sont données suite à la ressource : le 
 avec un pas de 10 secondes et initialisée à 0 millisecondes. 
 
 Il est également possible de faire des énumérations de ressources.
-\note{il faudrait un joli exemple}
+\code{foret\{chene,olivier,peuplier\}}
 
 \subsubsection{Définition des entités et caméras}
 
@@ -273,11 +273,17 @@ Des instructions conditionnelles sont également disponibles, les booléens éta
 
 Les instructions peuvent également reprendre des concepts classiques de mini-jeux : pause, nouvelle partie, fin de partie, sauvegarde de la partie.
 
-\note{insérer un petit exemple}
+Voici l'exemple  d'un jeu où un personnage \code{perso} et un ennemi \code{boss} ont été définis, ainsi que des ressources \code{persoLife} et \code{bossLife}.
+Dans le cas où le signal \code{bossAttack} est lancé, il est possible d'avoir les règles :
+\code{bossAttack persoLife -1} qui retranche 1 à la ressource \code{marioLife}.
+Puisque \code{persoLife} est modifié, le signal \code{updatePersoLife} est émis et on peut avoir une règle
+\code{updatePersoLife if persoLife==0 then gameOver}.
 
 \subsubsection{Exemple de mini-jeu dans la grammaire bas-niveau}
 
-\note{to do ...}
+Le même mini-jeu que celui décrit dans la grammaire haut-niveau est maintenant présenté dans la grammaire bas-niveau.
+
+\note{A venir ...}
 
 \subsection{Avantages et limites de ces langages}
 

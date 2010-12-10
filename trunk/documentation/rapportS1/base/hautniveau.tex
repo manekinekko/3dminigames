@@ -1,7 +1,7 @@
 \subsection{La classe Object et ses filles}
 
 Pour rappel, la classe object permet de définir toutes les entités du jeu.
-Tout type définit par l'utilisateur hérite de cette classe ou de l'une de ces classes filles.
+Tout type défini par l'utilisateur hérite de cette classe ou de l'une de ces classes filles.
 Elles sont présentées dans le schéma ci-dessous :
 
 \begin{figure}[h]
@@ -17,11 +17,11 @@ Les classes Character, Vehicle et Plane/SpaceCraft ont des comportements différ
 Pour un objet de type Character, le déplacement se fait directement lors de l'appui sur une touche. 
 Il est possible d'initialiser l'attribut 'acceleration' pour avoir une physique plus réaliste comme Sonic ou Mario.
 Un attribut 'moveWithCamera' permet d'indiquer si le personnage se déplace en fonction de la caméra courante. 
-Par exemple, indiquer au personnage 'move backward' sans cet attribut le fera reculer.
-Avec 'moveWithCamera', le personnage avancera vers la caméra.
+Par exemple, indiquer au personnage 'move backward' sans cet attribut le fait reculer.
+Avec 'moveWithCamera', le personnage avance vers la caméra.
 
-Pour un ojet de type Vehicle, son délacement se fait uniquement avec son accélération et le fait de tourner dans une direction
- se fera uniquement si le véhicule n'est pas à l'arrêt.
+Pour un ojet de type Vehicle, son déplacement se fait uniquement avec son accélération et le fait de tourner dans une direction
+ se fait uniquement si le véhicule n'est pas à l'arrêt.
 
 Enfin pour un objet de type Plane, SpaceCraft, sa masse est nulle s'il avance, et tourner dans une direction signifie
 effectuer une rotation suivant l'axe que forme sa trajectoire.
@@ -45,9 +45,9 @@ Les objets de la classe Breakable correspondent à un Object à 2 états, repré
 à une vie nulle ou une vie strictement positive. Un exemple concret est une fenêtre. 
 Dès qu'une balle (Projectile ayant un attribut 'damages') la traverse, elle passe dans l'état cassée avec la représentation 3D associée.
 
-Une Construction correspond à une vue extérieure d'un bâtiment, d'une maison...
-Ce type d'objet est associé à Room pour des jeux de rôles ou il n'est pas nécessaire de représenter une maison à sa taille réelle pour y entrer ensuite.
-Une liste d'entrées correspond à des zones de téléporteurs associés aux sorties de Room le plus souvent.
+Une Construction correspond à une vue extérieure, par exemple d'un bâtiment ou d'une maison.
+Ce type d'objet est associé à Room pour des jeux de rôles où il n'est pas nécessaire de représenter une maison à sa taille réelle pour y entrer ensuite.
+Une liste d'entrées correspond à des zones de téléporteurs associés le plus souvent aux sorties de Room.
 
 Un objet de type Room reprend le principe de Construction mais les collisions sont gérées via des plans car un personnage à l'intérieur est considéré comme déjà en collision. 
 Elle contient des sorties associées aux entrées d'une Construction ou d'une autre Room.
@@ -76,7 +76,7 @@ On peut choisir entre un Media répété en boucle ('loop') ou lu une unique foi
 
 \subsection{La grammaire}
 
-L'intégralité de la gramaire haut-niveau est maintenant présenté.
+L'intégralité de la gramaire haut-niveau est maintenant présentée.
 
 \begin{lstlisting}[language=Grammar]
 

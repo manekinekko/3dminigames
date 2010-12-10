@@ -3,7 +3,7 @@ Cette partie présente la totalité de la grammaire bas-niveau
 \begin{lstlisting}[language=Grammar]
  Game ::= refreshLoop eventsManager ressourcesSets camera entities physicsEngine
 
-refreshLoop ::= signalUpdateCounter keyListener{ keyboardCommands } mouseListener{ mouseCommands }
+refreshLoop ::= signalUpdateCounter 'keyListener{' keyboardCommands '} mouseListener{' mouseCommands '}'
 //signalUpdateCounter is triggered by the refreshLoop and updates counters of type times
 
 // pressing a key or action with mouse triggers an event
@@ -11,28 +11,28 @@ keyboardCommands ::= (keystroke : signalSets)*
 
 mouseCommands ::= (typeOfClick : signalSets)*
 
-signalSets ::= signal (| signal)*
+signalSets ::= signal ('|' signal)*
 
 ----------------------------------------------------------------------------------------------------------
 // Events Managers
 
-eventsManager ::= signal (@ signal)* (instructions)+ (| signal (@signal)* (instructions)+)*
+eventsManager ::= signal ('@' signal)* instructions ('&' instructions)* ('|' signal ('@'signal)* instructions ('&' instructions)*)*
 
 instructions ::= 
-	         | resourceApply resource (expression | applyExpression ) // expression pour resource = expression ; applyExpression pour resource += expression
-                 | if conditonnal then instructions (& instructions)* (else instructions (& instructions)*)? 
+	         | 'resourceApply' resource (expression | applyExpression ) // expression pour resource = expression ; applyExpression pour resource += expression
+                 | 'if' conditonnal 'then' instructions ('&' instructions)* ('else' instructions ('&' instructions)*)? 
                  | conceptsInstructions
 		 | mediaName mediaState
 
-conceptsInstructions ::= gamOver | pause | newGame | saveGame
+conceptsInstructions ::= 'gamOver' | 'pause' | 'newGame' | 'saveGame'
 
 conditionnal ::= testExpression (booleanOperator testExpression)*
 
-booleanOperator ::= and | or
+booleanOperator ::= 'and' | 'or'
 
 testExpression ::= expression comparisonOperator expression
 
-comparisonOperator ::= < | > | <= | >= | == | !=
+comparisonOperator ::= '<' | '>' | '<=' | '>=' | '==' | '!='
 
 applyExpression ::= arithmeticOperator (metaExpression | expression)
 
@@ -41,7 +41,7 @@ metaExpression ::= nameExp expression
 
 nameExp ::= string
 expression ::= (arithmeticOperator value)+
-arithmeticOperator ::= + | - | * | / | %
+arithmeticOperator ::= '+' | '-' | '*' | '/' | '%'
 
 
 //random(value,value) to generate a random number between these integers
@@ -56,16 +56,17 @@ resourcesSets ::= (enumResource | resource)+
 
 
 enumResource ::= name { nameEnumResource (, nameEnumResource)*}
-nameEnumResource ::=  String
+nameEnumResource ::=  string
 
-resource ::= (# nameEnumResource)? name (signal (@ signal)*)? (timer|initValue)
+resource ::= ('#' nameEnumResource)? name (signal ('@' signal)*)? (timer|initValue)
 
 name ::= string
 
 timer ::= step initTimer
 
 initValue ::= int | double
-
+step ::= int | double
+vector ::= '['int','int','int']' | '['double','double','double']' |
 ----------------------------------------------------------------------------------------------------------
 // camera and entites manager
 
@@ -74,31 +75,32 @@ camera ::= name position
 
 position ::= vector | angle
 
-entities ::= map with object+
+entities ::= map 'with' object+
 
-// With a map like a points matrix with a unique texture
+// With an abstraction of the representation of a map with a string for a mapType and a file containing a picture for the texture
 map ::= mapType texture
 
 
-object ::= object = (name object3D parameters | media)
-parameters ::= coeffOfFriction = double weight = double speed = vector position = vector  isFixed = boolean isTraversable = boolean
-object3D ::= colladaFile boundingBox
+object ::= 'object =' (name object3D parameters | media)
+parameters ::= 'coeffOfFriction =' double 'weight =' double 'speed =' vector 'position =' vector  'isFixed =' boolean 'isTraversable =' boolean
+object3D ::= colladaFile // the collada format includes bouding box
 colladaFile ::= [a-zA-Z]*.dae
 
 media ::= mediaName soundLevel mediaState
+soundLevel ::= int // between 0 to 100
 mediaName ::= string
-mediaStat ::= isMute | isPlayed | isStopped | isPaused
+mediaStat ::= 'isMute' | 'isPlayed' | 'isStopped' | 'isPaused'
 
 ----------------------------------------------------------------------------------------------------------
 // physics engine
 
 physicsEngine ::= forces+ collision
-forces ::= gravity | wind |...
+forces ::= 'gravity' | 'wind' |...
 
 // Bounded box are provided by the user
-collision ::= collision{ name name signalSets (, name name signalSets)*}
-gravity ::= gravity = vector
-wind ::= wind = vector
+collision ::= 'collision'{ name name signalSets (, name name signalSets)*'}'
+gravity ::= 'gravity =' vector
+wind ::= 'wind =' vector
 
 
 \end{lstlisting}

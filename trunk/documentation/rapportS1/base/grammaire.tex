@@ -15,7 +15,7 @@ produit alors le script final du jeu en JavaScript.
 \subsection{Grammaire haut-niveau}
 
 La description du jeu se déroule en plusieurs phases.
-Au début, on peut spécifier les attributs du jeu, puis déclarer ses entités : personnages, véhicules... et leurs attributs. 
+Au début sont spécifiés les attributs du jeu, puis déclarés ses entités (personnages, véhicules...) et leurs attributs. 
 Viennent ensuite les définitions d'actions de base et des commandes.
 Enfin, les règles du jeu sont spécifiées.
 Il est possible d'ajouter une intelligence artificielle (IA) basique, utilisant les entités et les actions déjà définies.
@@ -30,7 +30,7 @@ de préciser cette partie lors de l'écriture du code. Cependant il peut être p
 
 Il s'agit de lister les différents personnages ou objets qui apparaissent dans le jeu.
 Pour faciliter le travail de l'utilisateur, diverses classes sont déjà créées pour définir les entités.
-La classe de base est la classe Object avec des attributs de base comme la position, l'orientation, la taille, etc.
+La classe de base est la classe Object avec des attributs de base comme la position, l'orientation ou la taille.
 De celle-ci héritent de nombreuses autres classes comme Character, Vehicle ou Weapon, chacune ayant de nouveaux attributs spécifiques.
 L'ensemble de ces classes et leurs attributs sont en annexe.
 
@@ -41,7 +41,7 @@ L'utilisateur peut les modifier. Par exemple, pour changer l'attribut \code{life
 représentant le niveau le plus haut possible de son attribut \code{life} les mots-clés 'has' et 'at' sont utilisés : 
 \code{Mario has lifeMax at 3}.
 De même, il est nécessaire de pouvoir rajouter de nouveaux attributs.
-La syntaxe est la même. Ainsi, \code{Mario has energie at 8} ajoute un attribut energie (qui n'existe pas déjà dans Character) à Mario,
+La syntaxe est la même. Ainsi, \code{Mario has energie at 8} ajoute un attribut energie (qui n'existe pas déjà dans Character ou Object) à Mario,
  initialisé à 8.
 Les nouveaux attributs doivent obligatoirement être initialisés avec 'at'.
 
@@ -83,7 +83,7 @@ CommunauteDeLAnneau is list of aragorn with legolas with gimli with aragorn with
 D'autres classes sont prédéfinies : une classe Game concernant l'ensemble général du jeu, une classe Camera contenant les informations sur les caméras :
 certains comportements classiques sont prédéfinies comme une caméra libre ou bien un suivi à la première ou troisième personne.
 
-De plus, 2 classes permettent de gérer respectivement les compteurs et les ressources de type temporel.
+De plus, 2 classes permettent de gérer respectivement les compteurs et les ressources temporelles, servant par exemple pour la durée d'un bonus d'invulnérabilité.
 
 Enfin, une dernière classe permet de gérer les fichiers multimédias tel que les sons ou les vidéos qui peuvent intervenir au cours d'un jeu 
 avec la possibilité de les jouer, de les arrêter, de les mettre en pause, d'activer le mode muet ainsi que de définir s'ils seront joués 
@@ -164,7 +164,7 @@ cam1 is Camera free.         //free is not necessary because it is the default b
 sol is Ground.
 
 zombie is Character enemy duplicable. 
-zombie has attack at 1.                 //if a zombie touche the player, he loses one life
+zombie has attack at 1.                 //if a zombie touches the player, he will loose one life
 
 sheriff is Character player.
 sheriff has life at 1.                  //he has only 1 life, so, at the first shot, he dies
@@ -278,12 +278,6 @@ Dans le cas où le signal \code{bossAttack} est lancé, il est possible d'avoir 
 \code{bossAttack persoLife -1} qui retranche 1 à la ressource \code{marioLife}.
 Puisque \code{persoLife} est modifié, le signal \code{updatePersoLife} est émis et on peut avoir une règle
 \code{updatePersoLife if persoLife==0 then gameOver}.
-
-\subsubsection{Exemple de mini-jeu dans la grammaire bas-niveau}
-
-Le même mini-jeu que celui décrit dans la grammaire haut-niveau est maintenant présenté dans la grammaire bas-niveau.
-
-\note{A venir ...}
 
 \subsection{Avantages et limites de ces langages}
 

@@ -16,11 +16,13 @@ signalSets ::= signal (| signal)*
 ----------------------------------------------------------------------------------------------------------
 // Events Managers
 
-eventsManager ::= signal (@ signal)* instructions (| signal instructions)*
+eventsManager ::= signal (@ signal)* (instructions)+ (| signal (@signal)* (instructions)+)*
 
-instructions ::= resourceApply(applyExpression) 
-               | if conditonnal then instructions (& instructions)* (else instructions (& instructions)*)? 
-               | conceptsInstructions
+instructions ::= 
+	         | resourceApply resource (expression | applyExpression ) // expression pour resource = expression ; applyExpression pour resource += expression
+                 | if conditonnal then instructions (& instructions)* (else instructions (& instructions)*)? 
+                 | conceptsInstructions
+		 | mediaName mediaState
 
 conceptsInstructions ::= gamOver | pause | newGame | saveGame
 
@@ -81,8 +83,11 @@ map ::= matrix texture
 object ::= object = (name object3D parameters | media)
 parameters ::= coeffOfFriction = double weight = double speed = vector position = vector  isFixed = boolean isTraversable = boolean
 object3D ::= colladaFile boundingBox
-media ::= soundLevel | isMute | isPlayed | isStopped | isPaused
 colladaFile ::= [a-zA-Z]*.dae
+
+media ::= mediaName soundLevel mediaState
+mediaName ::= string
+mediaStat ::= isMute | isPlayed | isStopped | isPaused
 
 ----------------------------------------------------------------------------------------------------------
 // physics engine

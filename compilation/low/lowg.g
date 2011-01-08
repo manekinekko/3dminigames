@@ -193,7 +193,7 @@ MOUSELISTENER 	:	 'mouseListener';
 
 
 
-KEYSTROKE  : /* MEGALONG */;
+KEYSTROKE  : /* MEGALONG */' ';
 
 TYPEOFCLICK 
 	: 'leftClick' | 'leftDrop' | 'leftDrag' | 'rightClick' | 'rightDrop'  	;

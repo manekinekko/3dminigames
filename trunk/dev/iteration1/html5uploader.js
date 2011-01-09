@@ -14,7 +14,7 @@
 *	IE 6+
 */
 
-function uploader(place, status, targetPHP, show, autoinsert) {
+function uploader(place, status, targetPHP, show, doc) {
 	
 	// Upload image files
 	upload = function(file) {
@@ -164,11 +164,18 @@ function uploader(place, status, targetPHP, show, autoinsert) {
 				var value = 'dae/'+name;
 				document.getElementById('myModels').innerHTML += "<option value='"+value+"'>"+name+"</option>";
 				
-				if ( autoinsert )
+				if ( doc )
 				{
-//					document.getElementById('importUrl').value = value;
-//					var obj= document.getElementById('import');
-//					Event.fire(obj,'click');
+					var loading = document.getElementById('loading').style;
+					loading.style = "block";
+					
+					var docCollada = new GLGE.Collada;
+			        docCollada.setDocument(value,doc.getAbsolutePath(doc.rootURL,null), function(){
+						
+						loading.style = "none";
+						doc.getElement("mainscene").addChild(docCollada);
+						
+					});
 				}
 				
 				

@@ -1,4 +1,9 @@
 
+//////////////////////////////////////////////////////////////////////////////////
+// CECI EST UN PROTO : LE CODE N'EST PAS TERMINE !! PAS DE JUGEMENT !! MERCI :)
+//////////////////////////////////////////////////////////////////////////////////
+
+
 // constants
 var ANIMATE_START_POS = 300;
 var ANIMATE_END_POS = 606;
@@ -96,8 +101,7 @@ doc.onLoad = function() {
 			{
 
 		        if(delta!=0){
-//				    scene.camera.setDRotX(parseFloat(scene.camera.getDRotX())-delta);
-					//scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
+					scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
 		        }
 				
 			}
@@ -265,15 +269,17 @@ doc.onLoad = function() {
 	// -- import collada		
     function importCollada(url){
         
-		document.getElementById('loading').style.display = "block";
+		var loading = document.getElementById('loading').style;
+		loading.display = "block";
 		
 		var docCollada = new GLGE.Collada;
-        docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null));
-		
-		docCollada.onLoad = function(){
-			document.getElementById('loading').style.display = "none";			
-		}
-        scene.addChild(docCollada);
+        docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null), function(){
+			
+			loading.display = "none";
+			scene.addChild(docCollada);
+			
+		});
+        
     }
 	
 	// -- picking
@@ -409,36 +415,25 @@ doc.onLoad = function() {
 		}
 		else {
 			
-			if ( keys.isKeyPressed(GLGE.KI_X) )
+			if ( keys.isKeyPressed(GLGE.KI_R) )
 			{
-				scene.camera.setDRotX( newRotX * deltaRot ); 
-			}
-			else if ( keys.isKeyPressed(GLGE.KI_Y) )
-			{
-				scene.camera.setDRotY( newRotY * deltaRot ); 
-			}
-			else if ( keys.isKeyPressed(GLGE.KI_Z) )
-			{
-				scene.camera.setDRotZ( (newRotX+newRotY) * deltaRot ); 
-			}
-			else {
 				
-//				if ( keys.isKeyPressed(GLGE.KI_ALT) )
-//				{
-//					scene.camera.setDLocX( -newRotX * deltaLoc ); 
-//					scene.camera.setDLocY( -newRotY * deltaLoc );
-//				}
+				scene.camera.setRotOrder( GLGE.ROT_XYZ );
+				scene.camera.setRotX( -newRotX * deltaRot ); 
+				scene.camera.setRotY( -newRotY * deltaRot ); 
 				
-				scene.camera.setDRotX( newRotX * 0.00001 ); 
-				scene.camera.setDRotY( newRotY * 0.00001 ); 
+			}else {
+				
+				scene.camera.setLookat( null );
+				scene.camera.setDLocX( newRotY * 0.005 ); 
+				scene.camera.setDLocY( -newRotX * 0.005 ); 
 			}
 		}
 		
-
 	}
 	
 		
-	
+	// -- camera control (TODO)
 	function mouselook(){
 		if(mouseovercanvas){
 			var mousepos=mouse.getMousePosition();

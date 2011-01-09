@@ -3,15 +3,15 @@ grammar GrammaireHautNiveau;
 tokens {                                                                            // variables and methods to be included in the java file generated
 AAAA;
 	GAME='GAME';
-	GAMEATTRIBUT = 'GAME ATTRIBUT';
+	GAME_ATTRIBUT = 'GAME_ATTRIBUT';
 	GRAVITY = 'GRAVITY';
 	SCORE = 'SCORE';
 	TYPE = 'TYPE';
 	ALLY = 'ALLY';
 	ENEMY = 'ENEMY';
 	NEUTRAL = 'NEUTRAL';
-	INITIS = 'INITIS';
-	INITHAS = 'INITHAS';
+	INIT_IS = 'INIT_IS';
+	INIT_HAS = 'INIT_HAS';
 	AFFECTATION = 'AFFECTATION';
 	DEC = 'DECLARATION';
 	PLAYER ='PLAYER';
@@ -28,62 +28,55 @@ AAAA;
 	IN = 'IN';
 	ENTITIES = 'ENTITIES;
 	DEF = 'DEFINITION';
-	CONSEQ = CONSEQUENCE
+	CONSEQ = 'CONSEQUENCE'
       }
-@members {
-	
-	GestionTypes gt = new GestionTypes();
-	
-
-}
+@members {}
 
 /*------------------------------------------------------------------
 * PARSER RULES
 *------------------------------------------------------------------*/
  
 game :
-  (gameData FIN)?
-  (newType FIN)*
-  (init FIN)+
-  (definition (FIN)?)*
-  (commande (FIN)?)*
-  (reglesJeu (FIN)?)*
-  (iaBasique (FIN)?)* {System.out.println("Fin du parsing de la grammaire.\n"+gt.toString());}
-  -> ^(GAME gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)
-  ;
- 
+	(gameData FIN)?
+	(newType FIN)*
+	(init FIN)+
+	(definition (FIN)?)*
+	(commande (FIN)?)*
+	(reglesJeu (FIN)?)*
+	(iaBasique (FIN)?)*
+	  -> ^(GAME gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)
+	;
 
 ///////////////////////////// ( informations about the game)  //////////////////////////////////
 
 gameData :
-  'Game' 'has' attributGame (VIRG attributGame)*
-  -> ^(GAMEATTRIBUT attributGame+)
-  ;
+	'Game' 'has' attributGame (VIRG attributGame)*
+	  -> ^(GAME_ATTRIBUT attributGame+)
+	;
 
 attributGame :
-  'gravity' 'at' (NUMBER 
- 	-> ^(GRAVITY NUMBER)
-  	| NUMBER NUMBER NUMBER
-  	-> ^(GRAVITY NUMBER NUMBER NUMBER)//Possible erreur
+	'gravity' 'at' (NUMBER 
+		  -> ^(GRAVITY NUMBER)
+		| NUMBER NUMBER NUMBER
+		  -> ^(GRAVITY NUMBER NUMBER NUMBER) //Possible erreur
   )
-  | 'score' 'at' NUMBER
-  -> ^(SCORE NUMBER)
-//| ... 
-  ;
+	| 'score' 'at' NUMBER
+	  -> ^(SCORE NUMBER)
+	;
 
  
 //////////////////////////// ( Inheritance )  /////////////////////////////
  
-newType @init{boolean valide = true; GestionTypes tmp = new GestionTypes();} :
-  'type' ident 'is' subType  ('and' subType)*   // to declare a new type
-  -> ^(TYPE ident subType+)
-  ;            
+newType :
+	'type' ident 'is' subType  ('and' subType)* // to declare a new type
+	  -> ^(TYPE ident subType+)
+	;
   
 subType :
 	ident 
-	-> ^(ident)
-	|typeObjet 
-	-> ^(typeObjet)
+	  -> ^(ident)
+	| typeObjet 
+	  -> ^(typeObjet)
 	;	  
 // ident | typeObjet : if it is an ident, check that it is defined before by the user and that is an inherited Object.
 
@@ -91,21 +84,21 @@ subType :
 //////////////////////////// ( Initializations )  /////////////////////////////
 
 init :
-  ident  'is' declarationObjet
-  -> ^(INITIS declarationObjet)
-  | accesClasse 'has' affectationObjet (VIRG affectationObjet)* // check the types and its attributes
-  -> ^(INITHAS affectationObjet)
-  ;
- 
+	ident  'is' declarationObjet
+	  -> ^(INIT_IS declarationObjet)
+	| accesClasse 'has' affectationObjet (VIRG affectationObjet)* // check the types and its attributes
+	  -> ^(INIT_HAS affectationObjet)
+	;
+
 declarationObjet :
-  typeEntity entityMode 
-  -> ^(DEC typeEntity entityMode)   // interaction is neutral by default
-  | 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?  //operation if the object is duplicable
-  ->^(LIST (operation? ident)*)
-  | 'Camera' ((view) 'person' ->^(CAM PER view) | 'free' ->^(CAM FREE))?
-  | 'Media' ('loop' ->^(MEDIA LOOP) | 'once' ->^(MEDIA ONCE))? 						 // sound, music or video played in loop or once
-  | 'in' ident 										  // ident of a list to add an element
-  -> ^(IN ident)
+	typeEntity entityMode 
+	  -> ^(DEC typeEntity entityMode)   // interaction is neutral by default
+	| 'list' ('of' (operation)? (ident) ('with' (operation)? (ident))* )?  //operation if the object is duplicable
+	  ->^(LIST (operation? ident)*)
+	| 'Camera' ((view) 'person' ->^(CAM PER view) | 'free' ->^(CAM FREE))?
+	| 'Media' ('loop' ->^(MEDIA LOOP) | 'once' ->^(MEDIA ONCE))? 						 // sound, music or video played in loop or once
+	| 'in' ident 										  // ident of a list to add an element
+	  -> ^(IN ident)
   ;  
 typeEntity :
 	ident 

@@ -189,8 +189,7 @@ doc.onLoad = function() {
 			if(obj.getId()!="mainscene") {
 				
 				obj.oldmaterial=obj.getMaterial();
-				obj.getMaterial().setBlendMode(10);
-//				obj.setMaterial(pickcolor);	
+				obj.setMaterial(pickcolor);	
 					
 				updateInfo();
 										
@@ -265,9 +264,15 @@ doc.onLoad = function() {
 
 	// -- import collada		
     function importCollada(url){
-        var docCollada = new GLGE.Collada;
+        
+		document.getElementById('loading').style.display = "block";
+		
+		var docCollada = new GLGE.Collada;
         docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null));
-
+		
+		docCollada.onLoad = function(){
+			document.getElementById('loading').style.display = "none";			
+		}
         scene.addChild(docCollada);
     }
 	

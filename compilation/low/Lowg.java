@@ -5,6 +5,8 @@ import org.antlr.runtime.tree.*;import java.util.Stack;
 import java.util.*;
 
 public class Lowg {
+	
+		
     public static void main(String[] args) throws Exception {
         
         LowgLexer lexer = new LowgLexer(new ANTLRFileStream(args[0]));
@@ -14,9 +16,9 @@ public class Lowg {
 	
 
             LowgParser.game_return r = parser.game();
-	/*	
-            //resulting tree
-            CommonTree t = (CommonTree)r.getTree();
+		
+            //Resulting tree
+            /*CommonTree t = (CommonTree)r.getTree();
 
             //Tree nodes stream
 

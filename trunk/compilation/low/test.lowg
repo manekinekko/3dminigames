@@ -1,3 +1,9 @@
-bois 23244
-score 23
-oru 14 ;
+bois 2324 ;
+argent 3 ;
+score 23 ;
+
+object = table frictioncoef = 4.2;
+object = giraffe frictioncoef = 3.5;
+object = balais frictioncoef = 0.1;
+
+;;

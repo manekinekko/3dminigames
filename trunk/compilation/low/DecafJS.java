@@ -7,7 +7,7 @@
 
 public class DecafJS implements InstJS{
 	
-	public static final String instDec = "var"; 
+	public static final String INSTDEC = "var"; 
 	
 	protected String name;
 	protected String val;
@@ -20,6 +20,6 @@ public class DecafJS implements InstJS{
 	
 	
 	public String getCode(){
-		return instDec + " " + this.name + " =" + this.val + "\n"; 
+		return INSTDEC + " " + this.name + " =" + this.val + "\n"; 
 	}
 }

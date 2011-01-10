@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-09 16:39:59
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-10 19:55:38
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -10,12 +10,17 @@ public class LowgLexer extends Lexer {
     public static final int IMAGINERY_TOKEN=4;
     public static final int RESOURCE=5;
     public static final int RESOURCES=6;
-    public static final int GAME=7;
-    public static final int PTVIRG=8;
-    public static final int ID=9;
-    public static final int INT=10;
-    public static final int FLOAT=11;
-    public static final int WS=12;
+    public static final int VAL=7;
+    public static final int GAME=8;
+    public static final int PTVIRG=9;
+    public static final int ID=10;
+    public static final int INT=11;
+    public static final int FLOAT=12;
+    public static final int OBJECT=13;
+    public static final int AFF=14;
+    public static final int FRICTIONCOEF=15;
+    public static final int WS=16;
+    public static final int WITH=17;
 
     // delegates
     // delegators
@@ -72,13 +77,34 @@ public class LowgLexer extends Lexer {
     }
     // $ANTLR end "RESOURCES"
 
+    // $ANTLR start "VAL"
+    public final void mVAL() throws RecognitionException {
+        try {
+            int _type = VAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Lowg.g:5:5: ( 'VAL' )
+            // Lowg.g:5:7: 'VAL'
+            {
+            match("VAL"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "VAL"
+
     // $ANTLR start "GAME"
     public final void mGAME() throws RecognitionException {
         try {
             int _type = GAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:5:6: ( 'GAME' )
-            // Lowg.g:5:8: 'GAME'
+            // Lowg.g:6:6: ( 'GAME' )
+            // Lowg.g:6:8: 'GAME'
             {
             match("GAME"); 
 
@@ -98,8 +124,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:167:17: ( ( ' ' | '\\n' | '\\t' | '\\r' ) )
-            // Lowg.g:167:20: ( ' ' | '\\n' | '\\t' | '\\r' )
+            // Lowg.g:72:17: ( ( ' ' | '\\n' | '\\t' | '\\r' ) )
+            // Lowg.g:72:20: ( ' ' | '\\n' | '\\t' | '\\r' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -127,8 +153,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PTVIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:203:8: ( ';' )
-            // Lowg.g:203:10: ';'
+            // Lowg.g:77:8: ( ';' )
+            // Lowg.g:77:10: ';'
             {
             match(';'); 
 
@@ -142,13 +168,96 @@ public class LowgLexer extends Lexer {
     }
     // $ANTLR end "PTVIRG"
 
+    // $ANTLR start "AFF"
+    public final void mAFF() throws RecognitionException {
+        try {
+            int _type = AFF;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Lowg.g:78:5: ( '=' )
+            // Lowg.g:78:7: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "AFF"
+
+    // $ANTLR start "OBJECT"
+    public final void mOBJECT() throws RecognitionException {
+        try {
+            int _type = OBJECT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Lowg.g:82:8: ( 'object' )
+            // Lowg.g:82:10: 'object'
+            {
+            match("object"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "OBJECT"
+
+    // $ANTLR start "FRICTIONCOEF"
+    public final void mFRICTIONCOEF() throws RecognitionException {
+        try {
+            int _type = FRICTIONCOEF;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Lowg.g:86:15: ( 'frictioncoef' )
+            // Lowg.g:86:17: 'frictioncoef'
+            {
+            match("frictioncoef"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FRICTIONCOEF"
+
+    // $ANTLR start "WITH"
+    public final void mWITH() throws RecognitionException {
+        try {
+            int _type = WITH;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Lowg.g:88:6: ( 'with' )
+            // Lowg.g:88:8: 'with'
+            {
+            match("with"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "WITH"
+
     // $ANTLR start "ID"
     public final void mID() throws RecognitionException {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:246:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
-            // Lowg.g:246:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+            // Lowg.g:90:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
+            // Lowg.g:90:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -159,7 +268,7 @@ public class LowgLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // Lowg.g:246:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+            // Lowg.g:90:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -208,10 +317,10 @@ public class LowgLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:249:5: ( ( '0' .. '9' )+ )
-            // Lowg.g:249:7: ( '0' .. '9' )+
+            // Lowg.g:93:5: ( ( '0' .. '9' )+ )
+            // Lowg.g:93:7: ( '0' .. '9' )+
             {
-            // Lowg.g:249:7: ( '0' .. '9' )+
+            // Lowg.g:93:7: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -225,7 +334,7 @@ public class LowgLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // Lowg.g:249:7: '0' .. '9'
+            	    // Lowg.g:93:7: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -257,14 +366,14 @@ public class LowgLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:256:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // Lowg.g:97:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt7=3;
             alt7 = dfa7.predict(input);
             switch (alt7) {
                 case 1 :
-                    // Lowg.g:256:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // Lowg.g:97:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    // Lowg.g:256:9: ( '0' .. '9' )+
+                    // Lowg.g:97:9: ( '0' .. '9' )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -278,7 +387,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // Lowg.g:256:10: '0' .. '9'
+                    	    // Lowg.g:97:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -295,7 +404,7 @@ public class LowgLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // Lowg.g:256:25: ( '0' .. '9' )*
+                    // Lowg.g:97:25: ( '0' .. '9' )*
                     loop4:
                     do {
                         int alt4=2;
@@ -308,7 +417,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // Lowg.g:256:26: '0' .. '9'
+                    	    // Lowg.g:97:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -324,10 +433,10 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Lowg.g:257:9: '.' ( '0' .. '9' )+
+                    // Lowg.g:98:9: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // Lowg.g:257:13: ( '0' .. '9' )+
+                    // Lowg.g:98:13: ( '0' .. '9' )+
                     int cnt5=0;
                     loop5:
                     do {
@@ -341,7 +450,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // Lowg.g:257:14: '0' .. '9'
+                    	    // Lowg.g:98:14: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -361,9 +470,9 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // Lowg.g:258:9: ( '0' .. '9' )+
+                    // Lowg.g:99:9: ( '0' .. '9' )+
                     {
-                    // Lowg.g:258:9: ( '0' .. '9' )+
+                    // Lowg.g:99:9: ( '0' .. '9' )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -377,7 +486,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // Lowg.g:258:10: '0' .. '9'
+                    	    // Lowg.g:99:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -407,8 +516,8 @@ public class LowgLexer extends Lexer {
     // $ANTLR end "FLOAT"
 
     public void mTokens() throws RecognitionException {
-        // Lowg.g:1:8: ( RESOURCE | RESOURCES | GAME | WS | PTVIRG | ID | INT | FLOAT )
-        int alt8=8;
+        // Lowg.g:1:8: ( RESOURCE | RESOURCES | VAL | GAME | WS | PTVIRG | AFF | OBJECT | FRICTIONCOEF | WITH | ID | INT | FLOAT )
+        int alt8=13;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
@@ -426,42 +535,77 @@ public class LowgLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // Lowg.g:1:29: GAME
+                // Lowg.g:1:29: VAL
+                {
+                mVAL(); 
+
+                }
+                break;
+            case 4 :
+                // Lowg.g:1:33: GAME
                 {
                 mGAME(); 
 
                 }
                 break;
-            case 4 :
-                // Lowg.g:1:34: WS
+            case 5 :
+                // Lowg.g:1:38: WS
                 {
                 mWS(); 
 
                 }
                 break;
-            case 5 :
-                // Lowg.g:1:37: PTVIRG
+            case 6 :
+                // Lowg.g:1:41: PTVIRG
                 {
                 mPTVIRG(); 
 
                 }
                 break;
-            case 6 :
-                // Lowg.g:1:44: ID
+            case 7 :
+                // Lowg.g:1:48: AFF
+                {
+                mAFF(); 
+
+                }
+                break;
+            case 8 :
+                // Lowg.g:1:52: OBJECT
+                {
+                mOBJECT(); 
+
+                }
+                break;
+            case 9 :
+                // Lowg.g:1:59: FRICTIONCOEF
+                {
+                mFRICTIONCOEF(); 
+
+                }
+                break;
+            case 10 :
+                // Lowg.g:1:72: WITH
+                {
+                mWITH(); 
+
+                }
+                break;
+            case 11 :
+                // Lowg.g:1:77: ID
                 {
                 mID(); 
 
                 }
                 break;
-            case 7 :
-                // Lowg.g:1:47: INT
+            case 12 :
+                // Lowg.g:1:80: INT
                 {
                 mINT(); 
 
                 }
                 break;
-            case 8 :
-                // Lowg.g:1:51: FLOAT
+            case 13 :
+                // Lowg.g:1:84: FLOAT
                 {
                 mFLOAT(); 
 
@@ -525,49 +669,89 @@ public class LowgLexer extends Lexer {
             this.transition = DFA7_transition;
         }
         public String getDescription() {
-            return "255:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
+            return "96:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
         }
     }
     static final String DFA8_eotS =
-        "\1\uffff\2\5\3\uffff\1\12\1\uffff\2\5\1\uffff\3\5\1\20\1\5\1\uffff"+
-        "\2\5\1\25\1\26\2\uffff";
+        "\1\uffff\3\12\3\uffff\3\12\1\uffff\1\23\1\uffff\6\12\1\uffff\1\12"+
+        "\1\33\5\12\1\uffff\1\41\2\12\1\44\1\12\1\uffff\2\12\1\uffff\1\12"+
+        "\1\51\2\12\1\uffff\1\12\1\56\1\12\1\60\1\uffff\1\12\1\uffff\2\12"+
+        "\1\64\1\uffff";
     static final String DFA8_eofS =
-        "\27\uffff";
+        "\65\uffff";
     static final String DFA8_minS =
-        "\1\11\1\105\1\101\3\uffff\1\56\1\uffff\1\123\1\115\1\uffff\1\117"+
-        "\1\105\1\125\1\60\1\122\1\uffff\1\103\1\105\2\60\2\uffff";
+        "\1\11\1\105\2\101\3\uffff\1\142\1\162\1\151\1\uffff\1\56\1\uffff"+
+        "\1\123\1\114\1\115\1\152\1\151\1\164\1\uffff\1\117\1\60\1\105\1"+
+        "\145\1\143\1\150\1\125\1\uffff\1\60\1\143\1\164\1\60\1\122\1\uffff"+
+        "\1\164\1\151\1\uffff\1\103\1\60\1\157\1\105\1\uffff\1\156\1\60\1"+
+        "\143\1\60\1\uffff\1\157\1\uffff\1\145\1\146\1\60\1\uffff";
     static final String DFA8_maxS =
-        "\1\172\1\105\1\101\3\uffff\1\71\1\uffff\1\123\1\115\1\uffff\1\117"+
-        "\1\105\1\125\1\172\1\122\1\uffff\1\103\1\105\2\172\2\uffff";
+        "\1\172\1\105\2\101\3\uffff\1\142\1\162\1\151\1\uffff\1\71\1\uffff"+
+        "\1\123\1\114\1\115\1\152\1\151\1\164\1\uffff\1\117\1\172\1\105\1"+
+        "\145\1\143\1\150\1\125\1\uffff\1\172\1\143\1\164\1\172\1\122\1\uffff"+
+        "\1\164\1\151\1\uffff\1\103\1\172\1\157\1\105\1\uffff\1\156\1\172"+
+        "\1\143\1\172\1\uffff\1\157\1\uffff\1\145\1\146\1\172\1\uffff";
     static final String DFA8_acceptS =
-        "\3\uffff\1\4\1\5\1\6\1\uffff\1\10\2\uffff\1\7\5\uffff\1\3\4\uffff"+
-        "\1\1\1\2";
+        "\4\uffff\1\5\1\6\1\7\3\uffff\1\13\1\uffff\1\15\6\uffff\1\14\7\uffff"+
+        "\1\3\5\uffff\1\4\2\uffff\1\12\4\uffff\1\10\4\uffff\1\1\1\uffff\1"+
+        "\2\3\uffff\1\11";
     static final String DFA8_specialS =
-        "\27\uffff}>";
+        "\65\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\2\3\2\uffff\1\3\22\uffff\1\3\15\uffff\1\7\1\uffff\12\6\1\uffff"+
-            "\1\4\5\uffff\6\5\1\2\12\5\1\1\10\5\6\uffff\32\5",
-            "\1\10",
-            "\1\11",
-            "",
-            "",
-            "",
-            "\1\7\1\uffff\12\6",
-            "",
-            "\1\13",
-            "\1\14",
-            "",
+            "\2\4\2\uffff\1\4\22\uffff\1\4\15\uffff\1\14\1\uffff\12\13\1"+
+            "\uffff\1\5\1\uffff\1\6\3\uffff\6\12\1\3\12\12\1\1\3\12\1\2\4"+
+            "\12\6\uffff\5\12\1\10\10\12\1\7\7\12\1\11\3\12",
             "\1\15",
             "\1\16",
             "\1\17",
-            "\12\5\7\uffff\32\5\6\uffff\32\5",
+            "",
+            "",
+            "",
+            "\1\20",
             "\1\21",
-            "",
             "\1\22",
-            "\1\23",
-            "\12\5\7\uffff\22\5\1\24\7\5\6\uffff\32\5",
-            "\12\5\7\uffff\32\5\6\uffff\32\5",
             "",
+            "\1\14\1\uffff\12\13",
+            "",
+            "\1\24",
+            "\1\25",
+            "\1\26",
+            "\1\27",
+            "\1\30",
+            "\1\31",
+            "",
+            "\1\32",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\34",
+            "\1\35",
+            "\1\36",
+            "\1\37",
+            "\1\40",
+            "",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\42",
+            "\1\43",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\45",
+            "",
+            "\1\46",
+            "\1\47",
+            "",
+            "\1\50",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\52",
+            "\1\53",
+            "",
+            "\1\54",
+            "\12\12\7\uffff\22\12\1\55\7\12\6\uffff\32\12",
+            "\1\57",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "",
+            "\1\61",
+            "",
+            "\1\62",
+            "\1\63",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
             ""
     };
 
@@ -601,7 +785,7 @@ public class LowgLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( RESOURCE | RESOURCES | GAME | WS | PTVIRG | ID | INT | FLOAT );";
+            return "1:1: Tokens : ( RESOURCE | RESOURCES | VAL | GAME | WS | PTVIRG | AFF | OBJECT | FRICTIONCOEF | WITH | ID | INT | FLOAT );";
         }
     }
  

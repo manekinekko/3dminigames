@@ -5,7 +5,7 @@ options {
     ASTLabelType = CommonTree;
 }
 
-game 	returns[Code c] @init{ c = new CodeResources();}: ^(GAME rs = resourcesSets { c.append(rs); } );
+game 	returns[Code c] @init{ c = new CodeResources();}: ^(GAME rs = resourcesSets { c.append(rs); } entities);
 	   
 /* RESOURCES */
 

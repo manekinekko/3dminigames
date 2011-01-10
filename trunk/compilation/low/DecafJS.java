@@ -20,6 +20,6 @@ public class DecafJS implements InstJS{
 	
 	
 	public String getCode(){
-		return INSTDEC + " " + this.name + " =" + this.val + "\n"; 
+		return INSTDEC + " " + this.name + " = " + this.val + " ;\n"; 
 	}
 }

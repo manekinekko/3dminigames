@@ -3,6 +3,7 @@ import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
 
 import java.util.*;
+import java.io.*;
 
 public class Lowg {
 	
@@ -12,13 +13,13 @@ public class Lowg {
         LowgLexer lexer = new LowgLexer(new ANTLRFileStream(args[0]));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         LowgParser parser = new LowgParser(tokens);
-        parser.game(); //parsing ...
+
 	
 
             LowgParser.game_return r = parser.game();
 		
             //Resulting tree
-            /*CommonTree t = (CommonTree)r.getTree();
+            CommonTree t = (CommonTree)r.getTree();
 
             //Tree nodes stream
 
@@ -28,10 +29,35 @@ public class Lowg {
 	   //Resulting code
 	
 	   Code code = tparser.game();
+	   String resultingCode = new String();
 
 	   for (Iterator<InstJS> it = code.getIterator() ; it.hasNext() ;){
-		   System.out.print(it.next().getCode());
-	   }*/
+		   //System.out.print(it.next().getCode());
+		   resultingCode += it.next().getCode();
+	   }
+
+	/* Create js files */
+	File resourcesFile = new File("resources.js");
+	File entitiesFile = new File("entities.js");
+	
+	/* Write into this file */
+	
+	FileWriter jsFileWriter = new FileWriter(resourcesFile);
+	
+	//Create an output stream
+	BufferedWriter out = new BufferedWriter(jsFileWriter);
+	out.write(resultingCode);
+	
+	//Close the output stream
+    out.close();
+	
+    //Create the actual files
+	resourcesFile.createNewFile();
+	entitiesFile.createNewFile();
+
+    
+    
+
 	
     }
      

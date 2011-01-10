@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class CodeResources implements Code {
+public class ConcreteCode implements Code {
 
 	protected Vector<InstJS> vjs;
 	
-	public CodeResources(){
+	public ConcreteCode(){
 		vjs = new Vector<InstJS>();
 	}
 	

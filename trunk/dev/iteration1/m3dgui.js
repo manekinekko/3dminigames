@@ -31,8 +31,7 @@ doc.onLoad = function() {
 	var mouse=new GLGE.MouseInput(canvas);
 	var keys=new GLGE.KeyInput();
 	var hoverobj;
-	var mouseovercanvas;
-	var now;
+	var mouseovercanvas;	
 	var pickcolor=doc.getElement("green");
 	var controller = new CameraController(canvas);
 	
@@ -474,6 +473,34 @@ doc.onLoad = function() {
 		}
 	}
 	
+	function checkkeys(){
+
+	var camera=scene.camera;
+	if(keys.isKeyPressed(GLGE.KI_G)){
+		var CameraLookat = new Array(0,0,0);
+		camera.setLookat(CameraLookat);
+	}
+
+	camerapos=camera.getPosition();
+	camerarot=camera.getRotation();
+	var cam = camera.getRotMatrix();
+	cam = GLGE.inverseMat4(cam);		
+	
+	if(keys.isKeyPressed(GLGE.KI_Z)) {camera.setLocX(camerapos.x-cam[8]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[9]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[10]*0.5*(now-lasttime));}
+
+	if(keys.isKeyPressed(GLGE.KI_S)) {camera.setLocX(camerapos.x+cam[8]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[9]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[10]*0.5*(now-lasttime));}
+
+	if(keys.isKeyPressed(GLGE.KI_Q)) {camera.setLocX(camerapos.x-cam[0]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[1]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[2]*0.5*(now-lasttime));}
+
+	if(keys.isKeyPressed(GLGE.KI_D)) {camera.setLocX(camerapos.x+cam[0]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[1]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[2]*0.5*(now-lasttime));}
+
+	if(keys.isKeyPressed(GLGE.KI_DOWN_ARROW)) {camera.setLocX(camerapos.x-cam[4]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[5]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[6]*0.5*(now-lasttime));}		
+		
+	if(keys.isKeyPressed(GLGE.KI_UP_ARROW)) {camera.setLocX(camerapos.x+cam[4]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[5]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[6]*0.5*(now-lasttime));}	
+
+	if(keys.isKeyPressed(GLGE.KI_F)) camera.setLookat(null);
+	
+	}
 	
 	// -- reset camera
 	$('#resetcamera').click(function resetcamera(){
@@ -522,10 +549,11 @@ doc.onLoad = function() {
 	// -- the rendering loop
 	///////////////////////////
 	var now;
-	var lastetime = 0;
+	var lasttime = 0;
 	function render() {
 		now=parseInt(new Date().getTime());
 		//mouselook();
+		checkkeys();
 		renderer.render();
 		lasttime=now;
 	}

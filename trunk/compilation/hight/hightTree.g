@@ -60,7 +60,7 @@ typeEntity :
 
 entityMode:
 	PLAYER
-	| interaction dupli? ->^(INTERACTION_KW interaction dupli?)
+	| ^(INTERACTION_KW interaction dupli?)
 	| dupli
 	;
 	

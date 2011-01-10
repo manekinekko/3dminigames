@@ -1,0 +1,151 @@
+
+
+//       ______________
+//      |              |
+//      |   zone de    |      
+//      |   gen des    |
+//      |    lapins    |
+//      |______________|
+//
+//   _                     _
+//  |_|<-------(O)------->|_|
+//  aG                    aD
+
+
+
+//////////// INFOS GAME
+// rien
+
+//////////// TYPES HERITES
+type Lapin is Character and Projectile;
+type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+
+//////////// INIT
+Lapin has life at 1;
+Lapin has compteurPas at 3;
+Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (random between 0 and 360);   //lorsque le lapin est généré
+Lapin has size at 1 1 1;
+
+
+cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
+
+chasseur is Character player;
+chasseur has life at 5;
+chasseur has position at 0 0 0;
+chasseur has orientation at 0 0 0;
+chasseur has size at 1 1 1;
+
+arretGauche is Zobstacle;
+arretGauche has position at 0 0 0;
+arretGauche has orientation at 0 0 0;
+arretGauche has size at 1 1 1;
+
+arretDroit is Zobstacle; 
+arretDroit has position at 0 0 0;
+arretDroit has orientation at 0 0 0;
+arretDroit has size at 1 1 1;
+
+
+lapin1 is Lapin enemy;
+lapin has speed at 10;
+lapin2 is Lapin enemy;
+lapin2 has speed at 20;
+lapin3 is Lapin enemy;
+lapin3 has speed at 30;
+
+zoneGenLapin is Zone;  //la zone ou va générer les lapins
+zoneGenLapin has position at 0 0 0;
+zoneGenLapin has orientation at 0 0 0;
+zoneGenLapin has size at 1 1 1;
+
+bazooka is Weapon;
+bazooka has reloadTime at 500 ms;
+bazooka has position at 0 0 0;
+bazooka has orientation at 0 0 0;
+
+missile is Projectile ally;  //pour Projectile, doit-on ajouter un attribut durée de vie ?
+missile has damages at 100;
+missile has position at 0 0 0;
+missile has orientation at 0 0 0;
+
+bazooka has missile ;        //aggrégation -> missile parenté à bazooka -> missile position relative
+chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
+
+
+sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
+
+
+//////////// DEF
+
+definition  tirer  means 
+	generate missile
+
+
+definition  reinitialisation  means 
+	generate chasseur,
+	generate bazooka
+
+
+//////////// COMMANDES
+command key left for move left
+command key right for move right
+
+command key space for tirer 
+
+//////////// REGLES DU JEU
+rule init is  Game starts then
+	reinitialisation,
+	wait 2 sec then
+		generate lapin1 in zoneGenLapin
+	endWait
+
+rule lapin1 dies then
+	reinitialisation,
+	wait 2 sec then
+		generate lapin2 in zoneGenLapin
+	endWait
+	
+rule lapin2 dies then
+	reinitialisation,
+	wait 2 sec then
+		generate lapin3 in zoneGenLapin
+	endWait
+	
+rule lapin3 dies then
+	victory
+
+
+rule Lapin moves then        //va se transformer en 3 règles dans la grammaire bas niveau, 1 pour chaque lapin
+	sub 1 for compteurPas of Lapin,
+	if comp compteurPas of Lapin = 0
+	then
+		defeat
+	endIf
+
+
+rule victory then
+	Game ends
+
+rule defeat then
+	Game ends
+
+//rule defeat then
+//	play musiqueGameOver,
+//	wait 5 sec then Game starts
+//	endWait
+
+
+//////////// IA BASIQUE
+ia lapin1 is 
+	move forward during (random between 4 and 6) sec,
+	turn right during (random between 300 and 500) ms
+
+ia lapin2 is 
+	move forward during (random between 3 and 4.5) sec,
+	turn right during (random between 300 and 500) ms
+
+ia lapin3 is 
+	move forward during (random between 2 and 3) sec,
+	turn right during (random between 300 and 500) ms
+
+ 

@@ -26,7 +26,7 @@ tokens {
 
 
 game 	: resourcesSets   entities PTVIRG PTVIRG
-		->^(GAME resourcesSets );
+		->^(GAME resourcesSets entities);
 
 
 /* RESOURCES */

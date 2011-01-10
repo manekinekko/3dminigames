@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 LowgTree.g 2011-01-10 19:55:44
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 LowgTree.g 2011-01-10 20:30:26
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -44,7 +44,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "game"
-    // LowgTree.g:8:1: game returns [Code c] : ^( GAME rs= resourcesSets ) ;
+    // LowgTree.g:8:1: game returns [Code c] : ^( GAME rs= resourcesSets entities ) ;
     public final Code game() throws RecognitionException {
         Code c = null;
 
@@ -53,8 +53,8 @@ public class LowgTree extends TreeParser {
 
          c = new CodeResources();
         try {
-            // LowgTree.g:8:55: ( ^( GAME rs= resourcesSets ) )
-            // LowgTree.g:8:57: ^( GAME rs= resourcesSets )
+            // LowgTree.g:8:55: ( ^( GAME rs= resourcesSets entities ) )
+            // LowgTree.g:8:57: ^( GAME rs= resourcesSets entities )
             {
             match(input,GAME,FOLLOW_GAME_in_game47); 
 
@@ -65,6 +65,11 @@ public class LowgTree extends TreeParser {
             state._fsp--;
 
              c.append(rs); 
+            pushFollow(FOLLOW_entities_in_game57);
+            entities();
+
+            state._fsp--;
+
 
             match(input, Token.UP, null); 
 
@@ -95,7 +100,7 @@ public class LowgTree extends TreeParser {
             // LowgTree.g:12:63: ( ^( RESOURCES (r= resource )+ ) )
             // LowgTree.g:12:65: ^( RESOURCES (r= resource )+ )
             {
-            match(input,RESOURCES,FOLLOW_RESOURCES_in_resourcesSets80); 
+            match(input,RESOURCES,FOLLOW_RESOURCES_in_resourcesSets81); 
 
             match(input, Token.DOWN, null); 
             // LowgTree.g:12:77: (r= resource )+
@@ -114,7 +119,7 @@ public class LowgTree extends TreeParser {
             	case 1 :
             	    // LowgTree.g:12:78: r= resource
             	    {
-            	    pushFollow(FOLLOW_resource_in_resourcesSets87);
+            	    pushFollow(FOLLOW_resource_in_resourcesSets88);
             	    r=resource();
 
             	    state._fsp--;
@@ -164,11 +169,11 @@ public class LowgTree extends TreeParser {
             // LowgTree.g:17:3: ( ^( RESOURCE n= ID i= initValue ) )
             // LowgTree.g:17:4: ^( RESOURCE n= ID i= initValue )
             {
-            match(input,RESOURCE,FOLLOW_RESOURCE_in_resource112); 
+            match(input,RESOURCE,FOLLOW_RESOURCE_in_resource113); 
 
             match(input, Token.DOWN, null); 
-            n=(CommonTree)match(input,ID,FOLLOW_ID_in_resource122); 
-            pushFollow(FOLLOW_initValue_in_resource132);
+            n=(CommonTree)match(input,ID,FOLLOW_ID_in_resource123); 
+            pushFollow(FOLLOW_initValue_in_resource133);
             i=initValue();
 
             state._fsp--;
@@ -244,10 +249,10 @@ public class LowgTree extends TreeParser {
                 case 1 :
                     // LowgTree.g:30:22: ^( VAL n= INT )
                     {
-                    match(input,VAL,FOLLOW_VAL_in_initValue161); 
+                    match(input,VAL,FOLLOW_VAL_in_initValue162); 
 
                     match(input, Token.DOWN, null); 
-                    n=(CommonTree)match(input,INT,FOLLOW_INT_in_initValue167); 
+                    n=(CommonTree)match(input,INT,FOLLOW_INT_in_initValue168); 
 
                     		s = new String(n.getText());
                     	  
@@ -259,10 +264,10 @@ public class LowgTree extends TreeParser {
                 case 2 :
                     // LowgTree.g:35:12: ^( VAL f= FLOAT )
                     {
-                    match(input,VAL,FOLLOW_VAL_in_initValue189); 
+                    match(input,VAL,FOLLOW_VAL_in_initValue190); 
 
                     match(input, Token.DOWN, null); 
-                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_initValue195); 
+                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_initValue196); 
 
                     		s = new String(f.getText());
 
@@ -310,7 +315,7 @@ public class LowgTree extends TreeParser {
             	case 1 :
             	    // LowgTree.g:48:12: object
             	    {
-            	    pushFollow(FOLLOW_object_in_entities215);
+            	    pushFollow(FOLLOW_object_in_entities216);
             	    object();
 
             	    state._fsp--;
@@ -350,15 +355,15 @@ public class LowgTree extends TreeParser {
             // LowgTree.g:51:8: ( OBJECT AFF ID parameters PTVIRG )
             // LowgTree.g:51:10: OBJECT AFF ID parameters PTVIRG
             {
-            match(input,OBJECT,FOLLOW_OBJECT_in_object225); 
-            match(input,AFF,FOLLOW_AFF_in_object227); 
-            match(input,ID,FOLLOW_ID_in_object229); 
-            pushFollow(FOLLOW_parameters_in_object231);
+            match(input,OBJECT,FOLLOW_OBJECT_in_object226); 
+            match(input,AFF,FOLLOW_AFF_in_object228); 
+            match(input,ID,FOLLOW_ID_in_object230); 
+            pushFollow(FOLLOW_parameters_in_object232);
             parameters();
 
             state._fsp--;
 
-            match(input,PTVIRG,FOLLOW_PTVIRG_in_object233); 
+            match(input,PTVIRG,FOLLOW_PTVIRG_in_object234); 
 
             }
 
@@ -381,9 +386,9 @@ public class LowgTree extends TreeParser {
             // LowgTree.g:53:12: ( FRICTIONCOEF AFF FLOAT )
             // LowgTree.g:53:14: FRICTIONCOEF AFF FLOAT
             {
-            match(input,FRICTIONCOEF,FOLLOW_FRICTIONCOEF_in_parameters242); 
-            match(input,AFF,FOLLOW_AFF_in_parameters244); 
-            match(input,FLOAT,FOLLOW_FLOAT_in_parameters246); 
+            match(input,FRICTIONCOEF,FOLLOW_FRICTIONCOEF_in_parameters243); 
+            match(input,AFF,FOLLOW_AFF_in_parameters245); 
+            match(input,FLOAT,FOLLOW_FLOAT_in_parameters247); 
 
             }
 
@@ -404,24 +409,25 @@ public class LowgTree extends TreeParser {
  
 
     public static final BitSet FOLLOW_GAME_in_game47 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_resourcesSets_in_game53 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_RESOURCES_in_resourcesSets80 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_resource_in_resourcesSets87 = new BitSet(new long[]{0x0000000000000028L});
-    public static final BitSet FOLLOW_RESOURCE_in_resource112 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ID_in_resource122 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_initValue_in_resource132 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_VAL_in_initValue161 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_initValue167 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_VAL_in_initValue189 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FLOAT_in_initValue195 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_object_in_entities215 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_OBJECT_in_object225 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_AFF_in_object227 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ID_in_object229 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_parameters_in_object231 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_PTVIRG_in_object233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRICTIONCOEF_in_parameters242 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_AFF_in_parameters244 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_FLOAT_in_parameters246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_resourcesSets_in_game53 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_entities_in_game57 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_RESOURCES_in_resourcesSets81 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_resource_in_resourcesSets88 = new BitSet(new long[]{0x0000000000000028L});
+    public static final BitSet FOLLOW_RESOURCE_in_resource113 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ID_in_resource123 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_initValue_in_resource133 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_VAL_in_initValue162 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_initValue168 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_VAL_in_initValue190 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FLOAT_in_initValue196 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_object_in_entities216 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_OBJECT_in_object226 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_AFF_in_object228 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ID_in_object230 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_parameters_in_object232 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_PTVIRG_in_object234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRICTIONCOEF_in_parameters243 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_AFF_in_parameters245 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_FLOAT_in_parameters247 = new BitSet(new long[]{0x0000000000000002L});
 
 }

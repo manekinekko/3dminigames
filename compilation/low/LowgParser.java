@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-10 19:55:38
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-10 20:30:15
 
 
 
@@ -62,7 +62,7 @@ public class LowgParser extends Parser {
     };
 
     // $ANTLR start "game"
-    // Lowg.g:28:1: game : resourcesSets entities PTVIRG PTVIRG -> ^( GAME resourcesSets ) ;
+    // Lowg.g:28:1: game : resourcesSets entities PTVIRG PTVIRG -> ^( GAME resourcesSets entities ) ;
     public final LowgParser.game_return game() throws RecognitionException {
         LowgParser.game_return retval = new LowgParser.game_return();
         retval.start = input.LT(1);
@@ -82,7 +82,7 @@ public class LowgParser extends Parser {
         RewriteRuleSubtreeStream stream_resourcesSets=new RewriteRuleSubtreeStream(adaptor,"rule resourcesSets");
         RewriteRuleSubtreeStream stream_entities=new RewriteRuleSubtreeStream(adaptor,"rule entities");
         try {
-            // Lowg.g:28:7: ( resourcesSets entities PTVIRG PTVIRG -> ^( GAME resourcesSets ) )
+            // Lowg.g:28:7: ( resourcesSets entities PTVIRG PTVIRG -> ^( GAME resourcesSets entities ) )
             // Lowg.g:28:9: resourcesSets entities PTVIRG PTVIRG
             {
             pushFollow(FOLLOW_resourcesSets_in_game102);
@@ -106,7 +106,7 @@ public class LowgParser extends Parser {
 
 
             // AST REWRITE
-            // elements: resourcesSets
+            // elements: entities, resourcesSets
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -116,14 +116,15 @@ public class LowgParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 29:3: -> ^( GAME resourcesSets )
+            // 29:3: -> ^( GAME resourcesSets entities )
             {
-                // Lowg.g:29:5: ^( GAME resourcesSets )
+                // Lowg.g:29:5: ^( GAME resourcesSets entities )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(GAME, "GAME"), root_1);
 
                 adaptor.addChild(root_1, stream_resourcesSets.nextTree());
+                adaptor.addChild(root_1, stream_entities.nextTree());
 
                 adaptor.addChild(root_0, root_1);
                 }
@@ -188,7 +189,7 @@ public class LowgParser extends Parser {
             	case 1 :
             	    // Lowg.g:34:17: resource
             	    {
-            	    pushFollow(FOLLOW_resource_in_resourcesSets132);
+            	    pushFollow(FOLLOW_resource_in_resourcesSets133);
             	    resource5=resource();
 
             	    state._fsp--;
@@ -289,22 +290,22 @@ public class LowgParser extends Parser {
             // Lowg.g:41:10: ( ID initValue PTVIRG -> ^( RESOURCE ID initValue ) )
             // Lowg.g:41:12: ID initValue PTVIRG
             {
-            ID6=(Token)match(input,ID,FOLLOW_ID_in_resource160);  
+            ID6=(Token)match(input,ID,FOLLOW_ID_in_resource161);  
             stream_ID.add(ID6);
 
-            pushFollow(FOLLOW_initValue_in_resource163);
+            pushFollow(FOLLOW_initValue_in_resource164);
             initValue7=initValue();
 
             state._fsp--;
 
             stream_initValue.add(initValue7.getTree());
-            PTVIRG8=(Token)match(input,PTVIRG,FOLLOW_PTVIRG_in_resource165);  
+            PTVIRG8=(Token)match(input,PTVIRG,FOLLOW_PTVIRG_in_resource166);  
             stream_PTVIRG.add(PTVIRG8);
 
 
 
             // AST REWRITE
-            // elements: ID, initValue
+            // elements: initValue, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -392,7 +393,7 @@ public class LowgParser extends Parser {
                 case 1 :
                     // Lowg.g:48:13: INT
                     {
-                    INT9=(Token)match(input,INT,FOLLOW_INT_in_initValue188);  
+                    INT9=(Token)match(input,INT,FOLLOW_INT_in_initValue189);  
                     stream_INT.add(INT9);
 
 
@@ -428,7 +429,7 @@ public class LowgParser extends Parser {
                 case 2 :
                     // Lowg.g:48:33: FLOAT
                     {
-                    FLOAT10=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_initValue200);  
+                    FLOAT10=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_initValue201);  
                     stream_FLOAT.add(FLOAT10);
 
 
@@ -520,7 +521,7 @@ public class LowgParser extends Parser {
             	case 1 :
             	    // Lowg.g:55:12: object
             	    {
-            	    pushFollow(FOLLOW_object_in_entities222);
+            	    pushFollow(FOLLOW_object_in_entities223);
             	    object11=object();
 
             	    state._fsp--;
@@ -591,25 +592,25 @@ public class LowgParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            OBJECT12=(Token)match(input,OBJECT,FOLLOW_OBJECT_in_object232); 
+            OBJECT12=(Token)match(input,OBJECT,FOLLOW_OBJECT_in_object233); 
             OBJECT12_tree = (CommonTree)adaptor.create(OBJECT12);
             adaptor.addChild(root_0, OBJECT12_tree);
 
-            AFF13=(Token)match(input,AFF,FOLLOW_AFF_in_object234); 
+            AFF13=(Token)match(input,AFF,FOLLOW_AFF_in_object235); 
             AFF13_tree = (CommonTree)adaptor.create(AFF13);
             adaptor.addChild(root_0, AFF13_tree);
 
-            ID14=(Token)match(input,ID,FOLLOW_ID_in_object236); 
+            ID14=(Token)match(input,ID,FOLLOW_ID_in_object237); 
             ID14_tree = (CommonTree)adaptor.create(ID14);
             adaptor.addChild(root_0, ID14_tree);
 
-            pushFollow(FOLLOW_parameters_in_object238);
+            pushFollow(FOLLOW_parameters_in_object239);
             parameters15=parameters();
 
             state._fsp--;
 
             adaptor.addChild(root_0, parameters15.getTree());
-            PTVIRG16=(Token)match(input,PTVIRG,FOLLOW_PTVIRG_in_object240); 
+            PTVIRG16=(Token)match(input,PTVIRG,FOLLOW_PTVIRG_in_object241); 
             PTVIRG16_tree = (CommonTree)adaptor.create(PTVIRG16);
             adaptor.addChild(root_0, PTVIRG16_tree);
 
@@ -661,15 +662,15 @@ public class LowgParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            FRICTIONCOEF17=(Token)match(input,FRICTIONCOEF,FOLLOW_FRICTIONCOEF_in_parameters249); 
+            FRICTIONCOEF17=(Token)match(input,FRICTIONCOEF,FOLLOW_FRICTIONCOEF_in_parameters250); 
             FRICTIONCOEF17_tree = (CommonTree)adaptor.create(FRICTIONCOEF17);
             adaptor.addChild(root_0, FRICTIONCOEF17_tree);
 
-            AFF18=(Token)match(input,AFF,FOLLOW_AFF_in_parameters251); 
+            AFF18=(Token)match(input,AFF,FOLLOW_AFF_in_parameters252); 
             AFF18_tree = (CommonTree)adaptor.create(AFF18);
             adaptor.addChild(root_0, AFF18_tree);
 
-            FLOAT19=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_parameters253); 
+            FLOAT19=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_parameters254); 
             FLOAT19_tree = (CommonTree)adaptor.create(FLOAT19);
             adaptor.addChild(root_0, FLOAT19_tree);
 
@@ -703,20 +704,20 @@ public class LowgParser extends Parser {
     public static final BitSet FOLLOW_entities_in_game106 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_PTVIRG_in_game108 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_PTVIRG_in_game110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_resource_in_resourcesSets132 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_ID_in_resource160 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_initValue_in_resource163 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_PTVIRG_in_resource165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_initValue188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_initValue200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_object_in_entities222 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_OBJECT_in_object232 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_AFF_in_object234 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ID_in_object236 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_parameters_in_object238 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_PTVIRG_in_object240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRICTIONCOEF_in_parameters249 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_AFF_in_parameters251 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_FLOAT_in_parameters253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_resource_in_resourcesSets133 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_ID_in_resource161 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_initValue_in_resource164 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_PTVIRG_in_resource166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_initValue189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_initValue201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_object_in_entities223 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_OBJECT_in_object233 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_AFF_in_object235 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ID_in_object237 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_parameters_in_object239 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_PTVIRG_in_object241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRICTIONCOEF_in_parameters250 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_AFF_in_parameters252 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_FLOAT_in_parameters254 = new BitSet(new long[]{0x0000000000000002L});
 
 }

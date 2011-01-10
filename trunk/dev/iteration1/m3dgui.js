@@ -1,8 +1,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////
-// CECI EST UN PROTO : LE CODE N'EST PAS TERMINE !! PAS DE JUGEMENT !! MERCI :)
+// CECI EST UN PROTO : LE CODE N'EST PAS TERMINE !! PAS DE CRITIQUES !! MERCI :)
 //////////////////////////////////////////////////////////////////////////////////
-
 
 // constants
 var ANIMATE_START_POS = 300;
@@ -184,7 +183,6 @@ doc.onLoad = function() {
 	// -- picking
 	function pick(e){
 		
-		$('#canvas').css('cursor', 'hand');
 		
 		obj = scene.pick(e.clientX-this.parentNode.offsetLeft,e.clientY-this.parentNode.offsetTop).object; 
 		
@@ -192,8 +190,7 @@ doc.onLoad = function() {
 			
 			if(obj.getId()!="mainscene") {
 				
-				obj.oldmaterial=obj.getMaterial();
-				obj.setMaterial(pickcolor);	
+				obj.getMaterial().setEmit(.1);
 					
 				updateInfo();
 										
@@ -221,8 +218,8 @@ doc.onLoad = function() {
 	}
 
 	function unpickObject(){
-		hoverobj.setMaterial(hoverobj.oldmaterial);
-
+		hoverobj.getMaterial().setEmit(null);
+		
 		updateInfo(false);
 		
 		hoverobj = null;
@@ -266,19 +263,39 @@ doc.onLoad = function() {
 		}
 	}
 
+	// -- add object to scene (TODO)
+	function addObjecToScene(mesh) {
+	    var obj = new GLGE.Object();
+	    obj.setMesh(doc.getElement(mesh));
+    	scene.addChild(obj);
+	};
+
 	// -- import collada		
-    function importCollada(url){
+    function importModel(url){
         
-		var loading = document.getElementById('loading').style;
-		loading.display = "block";
+		var ext = url.split('.');
+		var filetype = ext[ ext.length-1 ];
 		
-		var docCollada = new GLGE.Collada;
-        docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null), function(){
+		if ( filetype == "dae" ){
 			
-			loading.display = "none";
-			scene.addChild(docCollada);
+			var loading = document.getElementById('loading').style;
+			loading.display = "block";
 			
-		});
+			var docCollada = new GLGE.Collada;
+	        docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null), function(){
+				
+				loading.display = "none";
+				scene.addChild(docCollada);
+				
+			});
+			
+		}
+		else {
+			
+			// basic geometry models
+			addObjecToScene(url);
+			
+		}
         
     }
 	
@@ -373,41 +390,36 @@ doc.onLoad = function() {
 		
 		if ( obj ){
 			
-			if ( keys.isKeyPressed(GLGE.KI_SHIFT)){
+			if ( keys.isKeyPressed(GLGE.KI_X) )
+			{
+				
+				obj.setDLocX( -newRotX * deltaLoc ); 
+			
+			}
+			else if ( keys.isKeyPressed(GLGE.KI_Y) )
+			{
+				obj.setDLocY( newRotY * deltaLoc );
+			
+			}
+			else if ( keys.isKeyPressed(GLGE.KI_Z) )
+			{
+			
+				obj.setDLocZ( newRotY * deltaLoc );
+			
+			}
+			else if ( keys.isKeyPressed(GLGE.KI_SHIFT)){
 								
-				if ( keys.isKeyPressed(GLGE.KI_X) )
-				{
-					obj.setDRotX( newRotX * deltaRot ); 
-				}
-				else if ( keys.isKeyPressed(GLGE.KI_Y) )
-				{
-					obj.setDRotY( newRotY * deltaRot );
-				}
-				else if ( keys.isKeyPressed(GLGE.KI_Z) )
-				{
-					obj.ssetDRotZ( newRotY * deltaRot );
-				}
+				obj.setDRotY( newRotY * deltaRot );
+
+			}
+			else if (keys.isKeyPressed(GLGE.KI_ALT)){
+				
+				obj.setDRotX( newRotY * deltaRot );
+			
 			}
 			else {
-				
-				
-				if ( keys.isKeyPressed(GLGE.KI_X) )
-				{
-					obj.setDLocX( newRotX * deltaLoc ); 
-				}
-				else if ( keys.isKeyPressed(GLGE.KI_Y) )
-				{
-					obj.setDLocY( newRotY * deltaLoc );
-				}
-				else if ( keys.isKeyPressed(GLGE.KI_Z) )
-				{
-					obj.setDLocZ( newRotY * deltaLoc );
-				}
-				else {
-					obj.setDRotX( -newRotX * deltaRot ); 
-					obj.setDRotY( -newRotY * deltaRot ); 
-				}
-			
+				obj.setDRotX( -newRotX * deltaRot ); 
+				obj.setDRotY( -newRotY * deltaRot ); 
 			}
 			
 			updateInfo();
@@ -418,9 +430,10 @@ doc.onLoad = function() {
 			if ( keys.isKeyPressed(GLGE.KI_R) )
 			{
 				
-				scene.camera.setRotOrder( GLGE.ROT_XYZ );
+				scene.camera.setRotOrder( GLGE.ROT_YXZ );
 				scene.camera.setRotX( -newRotX * deltaRot ); 
 				scene.camera.setRotY( -newRotY * deltaRot ); 
+
 				
 			}else {
 				
@@ -470,7 +483,7 @@ doc.onLoad = function() {
 	
 	// -- bind collada import
 	$('#import').click( function(){
-		importCollada( $('#importUrl').val() );
+		importModel( $('#importUrl').val() );
 	});
 	
 	// -- show upload area

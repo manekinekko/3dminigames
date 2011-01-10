@@ -11,8 +11,10 @@ tokens {
    RESOURCE = 'RESOURCE';
    RESOURCES = 'RESOURCES';
    VAL = 'VAL';
-   GAME = 'GAME';	
-
+   GAME = 'GAME';
+   PARAMS = 'PARAMS';	
+   OBJ = 'OBJ';	
+   OBJS = 'OBJS';
 }
 
 @header{
@@ -45,19 +47,25 @@ resource : ID  initValue PTVIRG
 
 
 
-initValue : INT -> ^(VAL INT) | FLOAT -> ^(VAL FLOAT);
+initValue : INT | FLOAT ;
 
 
 
 
 /* ENTITIES */
 
-entities : object+;
+entities : object+
+		->^(OBJS object+)
+	;
 
 
-object : OBJECT AFF ID parameters PTVIRG ;
+object : OBJECT AFF ID parameters PTVIRG 
+		->^(OBJ ID parameters)
+	;
 
-parameters : FRICTIONCOEF AFF FLOAT;
+parameters : FRICTIONCOEF AFF FLOAT
+		->^(PARAMS FRICTIONCOEF  FLOAT)	
+	;
 
 
 

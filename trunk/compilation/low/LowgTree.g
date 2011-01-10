@@ -5,11 +5,11 @@ options {
     ASTLabelType = CommonTree;
 }
 
-game 	returns[Code c] @init{ c = new CodeResources();}: ^(GAME rs = resourcesSets { c.append(rs); } entities);
+game 	returns[Codes c] @init{ c = null;}: ^(GAME rs = resourcesSets  e = entities{c = new Codes(e,rs);});
 	   
 /* RESOURCES */
 
-resourcesSets returns [Code c] @init{ c =new CodeResources();}: ^(RESOURCES (r = resource{ c.append(r);})+);
+resourcesSets returns [Code c] @init{ c =new ConcreteCode();}: ^(RESOURCES (r = resource{ c.append(r);})+);
  
 
 resource returns [InstJS ijs]
@@ -27,17 +27,17 @@ resource returns [InstJS ijs]
 
  
 initValue returns[String s]
-	@init{s = null;}		: ^(VAL n = INT {
+	@init{s = null;}		: n = INT {
 		s = new String(n.getText());
-	  })
+	  }
 	| 
 
-           ^(VAL f = FLOAT
+           f = FLOAT
 	{
 		s = new String(f.getText());
 
 
-	})
+	}
 
 
 	;
@@ -45,12 +45,31 @@ initValue returns[String s]
 
 /* ENTITIES */
 
-entities : object+;
+entities returns [Code c] @init{c = new ConcreteCode();}: ^(OBJS (ob = object
+		{
+			c.append(ob);	
+		}
+	)+
+	);
 
 
-object : OBJECT AFF ID parameters PTVIRG ;
+object returns [ClassJS cjs] @init{cjs = null; }: ^(OBJ i = ID pms = parameters
+	{
+		List<AffJS> l= new ArrayList();
+		l.add(pms);		
+		cjs = new ClassJS(i.getText() , new ArrayList() , l); 
+	}
+	
 
-parameters : FRICTIONCOEF AFF FLOAT;
+	);
+
+parameters returns [AffJS aff] @init{aff=null;}: ^(PARAMS id = FRICTIONCOEF  f = FLOAT
+		{
+			aff = new AffJS(id.getText() , f.getText());
+		}
+
+
+		);
 
 
 

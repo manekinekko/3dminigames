@@ -83,7 +83,7 @@ doc.onLoad = function() {
 	var lasttime = 0;
 	function render() {
 		now=parseInt(new Date().getTime());
-		//checkkeys();
+		checkkeys();
 		renderer.render();
 		lasttime=now;
 	}

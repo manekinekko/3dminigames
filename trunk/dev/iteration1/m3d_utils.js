@@ -238,9 +238,9 @@ M3D.Utilitie.drawBbox = function(posX,posY,posZ,rotX,rotY,rotZ,cote){
 
 
 // -- camera control (TODO)
-M3D.Utilitie.checkkeys = function (){	
+M3D.Utilitie.checkkeys = function (keys, lasttime, now){	
 
-	var camera=gameScene.camera;
+	var camera=scene.camera;
 	camerapos=camera.getPosition();
 	camerarot=camera.getRotation();
 	var cam = camera.getRotMatrix();
@@ -264,17 +264,17 @@ M3D.Utilitie.checkkeys = function (){
 							0, 0, 0, 1]));
 	}
 	
-	if(keys.isKeyPressed(GLGE.KI_Z)) {camera.setLocX(camerapos.x-cam[8]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[9]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[10]*0.5*(now-lasttime));}
+	if(keys.isKeyPressed(GLGE.KI_Z)) {camera.setLocX(camerapos.x-cam[8]*0.1*(now-lasttime));camera.setLocY(camerapos.y-cam[9]*0.1*(now-lasttime));camera.setLocZ(camerapos.z-cam[10]*0.1*(now-lasttime));}
 
-	if(keys.isKeyPressed(GLGE.KI_S)) {camera.setLocX(camerapos.x+cam[8]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[9]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[10]*0.5*(now-lasttime));}
+	if(keys.isKeyPressed(GLGE.KI_S)) {camera.setLocX(camerapos.x+cam[8]*0.1*(now-lasttime));camera.setLocY(camerapos.y+cam[9]*0.1*(now-lasttime));camera.setLocZ(camerapos.z+cam[10]*0.1*(now-lasttime));}
 
-	if(keys.isKeyPressed(GLGE.KI_Q)) {camera.setLocX(camerapos.x-cam[0]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[1]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[2]*0.5*(now-lasttime));}
+	if(keys.isKeyPressed(GLGE.KI_Q)) {camera.setLocX(camerapos.x-cam[0]*0.1*(now-lasttime));camera.setLocY(camerapos.y-cam[1]*0.1*(now-lasttime));camera.setLocZ(camerapos.z-cam[2]*0.1*(now-lasttime));}
 
-	if(keys.isKeyPressed(GLGE.KI_D)) {camera.setLocX(camerapos.x+cam[0]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[1]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[2]*0.5*(now-lasttime));}
+	if(keys.isKeyPressed(GLGE.KI_D)) {camera.setLocX(camerapos.x+cam[0]*0.1*(now-lasttime));camera.setLocY(camerapos.y+cam[1]*0.1*(now-lasttime));camera.setLocZ(camerapos.z+cam[2]*0.1*(now-lasttime));}
 
-	if(keys.isKeyPressed(GLGE.KI_DOWN_ARROW)) {camera.setLocX(camerapos.x-cam[4]*0.5*(now-lasttime));camera.setLocY(camerapos.y-cam[5]*0.5*(now-lasttime));camera.setLocZ(camerapos.z-cam[6]*0.5*(now-lasttime));}		
+	if(keys.isKeyPressed(GLGE.KI_DOWN_ARROW)) {camera.setLocX(camerapos.x-cam[4]*0.1*(now-lasttime));camera.setLocY(camerapos.y-cam[5]*0.1*(now-lasttime));camera.setLocZ(camerapos.z-cam[6]*0.1*(now-lasttime));}		
 		
-	if(keys.isKeyPressed(GLGE.KI_UP_ARROW)) {camera.setLocX(camerapos.x+cam[4]*0.5*(now-lasttime));camera.setLocY(camerapos.y+cam[5]*0.5*(now-lasttime));camera.setLocZ(camerapos.z+cam[6]*0.5*(now-lasttime));}		
+	if(keys.isKeyPressed(GLGE.KI_UP_ARROW)) {camera.setLocX(camerapos.x+cam[4]*0.1*(now-lasttime));camera.setLocY(camerapos.y+cam[5]*0.1*(now-lasttime));camera.setLocZ(camerapos.z+cam[6]*0.1*(now-lasttime));}		
 	
 
 }

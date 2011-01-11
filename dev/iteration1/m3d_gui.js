@@ -14,6 +14,7 @@ var canvas = document.getElementById('canvas');
 var doc = new GLGE.Document();
 var obj;
 var scene;
+var camLookAt;
 var hoverobj;
 var mouseovercanvas;
 var now;
@@ -25,7 +26,7 @@ doc.onLoad = function() {
 	var mouse=new GLGE.MouseInput(canvas);
 	var keys=new GLGE.KeyInput();
 	var pickcolor=doc.getElement("green");
-	var controller = new M3D.Utilitie.CameraController(canvas);
+	var controller = new M3D.Utilitie.CameraController(canvas);	
 	
 	// -- create a renderer and pass in the canvas object
 	var renderer = new GLGE.Renderer(document.getElementById("canvas"));
@@ -83,7 +84,7 @@ doc.onLoad = function() {
 	var lasttime = 0;
 	function render() {
 		now=parseInt(new Date().getTime());
-		checkkeys();
+		M3D.Utilitie.checkkeys(keys, lasttime, now);
 		renderer.render();
 		lasttime=now;
 	}

@@ -90,9 +90,12 @@
 	<material id="black" specular="0" color="#000" alpha="0.3" emit="1" />
 	<material id="cyan" specular="0" color="#00FFFF" alpha="0.3" emit="1" />
 	
-	<camera id="maincamera" rot_x="0" rot_y="0" rot_z="0" loc_x="0" loc_y="100" loc_z="500" />
+	<camera id="maincamera1" rot_x="0" rot_y="0" rot_z="0" loc_x="0" loc_y="0" loc_z="100" />
 	
-	<scene id="mainscene" camera="#maincamera" > 
+	<!-- n'est pas adaptée -->
+	<camera id="maincamera2" rot_order="ROT_XZY"  loc_y="20" loc_x="1" loc_z="8" xtype="C_ORTHO" rot_z="0" rot_x="1.56" rot_y="3.141" />
+	
+	<scene id="mainscene" camera="#maincamera1" > 
 	    
 		<light id="mainlight" color="#ffffff" loc_x="-114" loc_y="28" loc_z="22" rot_x="-1.3"  type="L_POINT" />
 		<light id="mainlight2" color="#ffffff" loc_x="-60" loc_y="-29" loc_z="17" rot_x="-1.3" type="L_POINT" />
@@ -103,7 +106,7 @@
 			<object id="zaxis" draw_type="DRAW_LINES" line_width="2" mesh="#zline" material="#blue"  />
 		</group>
 		
-		<collada emit="0.1" specular="1.0" id="duck" rot_y="-1" document="dae/duck.dae" scale="1" />
+		<collada emit="0.1" specular="1.0" id="duck" rot_y="-1" rot_x="1.57"  document="dae/duck.dae" scale="0.05" />
 		<!--
 		<object id="box11" mesh="#box" loc_x="0" loc_y="0" loc_z="0" scale_x="1000" scale_y="1000" scale_z="1000" material="#red" />	
 		<object id="box12" mesh="#box" loc_x="0" loc_y="3" loc_z="0" scale_x="1" scale_y="1" scale_z="1" material="#boxmaterial" />

@@ -238,9 +238,7 @@ M3D.Utilitie.drawBbox = function(posX,posY,posZ,rotX,rotY,rotZ,cote){
 
 
 // -- camera control (TODO)
-M3D.Utilitie.checkkeys = function (){
-
-	function checkkeys(){
+M3D.Utilitie.checkkeys = function (){	
 
 	var camera=gameScene.camera;
 	camerapos=camera.getPosition();

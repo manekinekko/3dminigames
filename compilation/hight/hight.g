@@ -2,7 +2,9 @@ grammar hight;
 
 options {
     output=AST;
+    ASTLabelType=CommonTree; // type of $stat.tree ref etc...
 }
+
 
 tokens {
 	GAME_KW='GAME_KW';
@@ -21,6 +23,11 @@ tokens {
 	COORDINATE_KW;
 	CONSEQUENCES_KW;
 	AGGREGATION_KW;
+	VAR_I_KW;
+	VAR_A_KW; 
+	BECOMES_VAR_KW;
+	BECOMES_ID_KW;
+	CONDITION_KW;
 }
 
 
@@ -30,9 +37,9 @@ game :
 	(init FIN)+
 	(definition (FIN)?)*
 	(commande (FIN)?)*
-	/*(reglesJeu (FIN)?)*
+	(reglesJeu (FIN)?)*
 	(iaBasique (FIN)?)*
-	  -> ^(GAME_KW gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)*/
+	  -> ^(GAME_KW gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)
 	;
 
 /* Information about game */
@@ -52,8 +59,8 @@ attributGame :
 
 /* Inheritance, creation of type */
 newType :
-	TYPE_KW IDENT IS subType (AND subType)*
-	  -> ^(TYPE_KW IDENT subType+)
+	TYPE IDENT IS subType (AND subType)*
+	  -> ^(TYPE IDENT subType+)
 	;
   
 subType :
@@ -121,7 +128,7 @@ allocationObject :
 	  ;
   
 typeAllocation 
-	:	(operation | STRING | BOOL);
+	:	(operation | IDENT | 'true' | 'false');
 
 valAggregation :
 	operation (timeUnit)? 
@@ -132,10 +139,8 @@ valAggregation :
  
  valAffectation : 
 	operation 
-	| STRING 
-	->^(STRING)
-	| BOOL
-	->^(BOOL)
+	| IDENT 
+	| 'true' | 'false'
 	;
 
 /* Definition */	
@@ -147,31 +152,31 @@ consequences :
 	;
 	
 consequ :
-  //siAlors
+  siAlors
   | action
-  //| affectation
-  //| activCommande
+  | affectation
+  | activCommande
   | IDENT
-  | VICTORY
-  | DEFEAT
+  | VICTORY_KW
+  | DEFEAT_KW
   ;
 
 action :
-/*	accesClasse actionObjet
-	|*/ (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)
+	accesClasse actionObjet
+	| (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)
 	| (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
 	| BLOCK_KW^ transformation OF! accesClasse coordinates
-	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal) (IN! accesLocal | ON! accesLocal | AT! coordinates)?)
+	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) (IN! accesLocal | ON! accesLocal | AT! coordinates)?
 	| WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
 	| SAVE_KW^
 	;
 
-/*actionObjet :
-  DIES
+actionObjet :
+  DIES_KW^
   | actionCommandePressee
-  | actionCommandeMaintenue ('during' operation timeUnit | 'until' conditions)
-  | 'equip' (accesLocal | 'next' | 'previous')   
-  ;*/
+  | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions)
+  | EQUIP^ (accesLocal | NEXT | PREVIOUS)   
+  ;
   
 transformation :
 	TRANSLATION
@@ -187,32 +192,105 @@ coordinates :
 /* Initialization of commands */
 
 commande :
-  'command' (IDENT 'is' actionCommande (VIRG actionCommande)* | actionCommande)
-  ;
+	COMMAND_KW^ (IDENT IS!)? actionCommande (VIRG! actionCommande)*
+	;
 
 actionCommande :
-  ('mouse' souris | 'key' clavier) 'for' (IDENT | actionCommandePressee | actionCommandeMaintenue) // ident : that was defined with means
-  ;
+	(MOUSE_KW^ souris | KEY_KW^ clavier) FOR actionCommandeType // ident : that was defined with means
+	;
+
+actionCommandeType :
+	IDENT | actionCommandePressee | actionCommandeMaintenue
+	;	
  
 souris :
-  'up' | 'down' | 'left' | 'right' | 'lClick' | 'cClick' | 'rClick' | 'scrollUp' | 'scrollDown'
+  UP | DOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
   ;
  
 clavier :
-  CHAR | 'up' | 'down' | 'left' | 'right' | 'space' | 'echap' | 'enter'          //CHAR : Z,Q,S,D,...
+  LETTER | UP | DOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
   ;
  
 actionCommandePressee :
-  'jump' operation
-  | 'pause'
-  | 'stop'
+  JUMP operation
+  | PAUSE_KW
+  | STOP_KW
   ;
 actionCommandeMaintenue :
-  'move' ('left' | 'right' | 'forward' | 'backward')
-  | 'turn' ('left' | 'right')
-  | 'accelerate'
-  | 'brake'
+  MOVE (LEFT | RIGHT | FORWARD | BACKWARD)
+  | TURN (LEFT | RIGHT)
+  | ACCELERATE
+  | BRAKE
   ;
+  
+activCommande :
+  (ACTIVATE_KW^ | DISABLE_KW^) (COMMANDS | MOUSE_KW (souris (VIRG! souris)*)? | KEY_KW clavier (VIRG! clavier)* | KEYBOARD )
+	;
+	
+reglesJeu :
+  RULE_KW^ (IDENT IS!)?  declencheur THEN! consequences
+  ;
+ 
+declencheur :
+  accesClasse (MOVES_KW | DIES_KW | declencheurTK | declencheurKT) 
+  | (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)          //ident if it is a counter
+  | variable BECOMES varOuNB
+    -> ^(BECOMES_VAR_KW variable varOuNB)
+  | IDENT BECOMES playerOuInteraction
+    -> ^(BECOMES_ID_KW IDENT playerOuInteraction)
+  | VICTORY_KW^ 
+  | DEFEAT_KW^
+  ;
+
+varOuNB :	variable | FLOAT;
+
+playerOuInteraction
+	:	(PLAYER| interaction);
+
+declencheurTK 
+	:	(TOUCHES_KW^ | KILLS_KW^) ((OTHER)? accesGlobal | accesLocal);
+	
+declencheurKT
+	:	(KILLED_KW^ | TOUCHED_KW^) (BY! ((OTHER)? accesGlobal | accesLocal))?;
+
+/* Conditions */  
+siAlors :
+  IF_KW^ conditions THEN! consequences (ELSE! consequences)? ENDIF!
+  ;
+
+conditions :
+  (NOT)? conditionOu
+  -> ^(CONDITION_KW NOT? conditionOu)
+  ;
+
+conditionOu :
+  conditionEt (OR^ (NOT)? conditionOu)? 
+  ;
+
+conditionEt :
+  cond (AND^ (NOT)? conditionEt)? 
+  ;
+
+cond :
+  etat
+  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   à cause des parenthèses qu'on retrouve dans operation
+  | PG conditions PD 
+  ;
+
+etat :
+  accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesGlobal | accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
+  | (IDENT | GAME) IS! (NOT)? (FINISHED_KW^ |STARTED_KW^ | PAUSED_KW^ | MUTED_KW^ (ON | OFF) | PLAYED_KW^ | STOPPED_KW^ )  // game,counter,media
+  //| 'true'^                                                   
+  | VICTORY_KW^
+  | DEFEAT_KW^
+  ;
+  
+affectation :
+  ((ASSIGN_KW^ | ADD_KW^ | SUB_KW^) operation) FOR! variable 
+  | INVERT_KW^ variable WITH! variable
+  ;
+  
+iaBasique : IA_KW^ accesClasse IS! actionObjet (VIRG! actionObjet)*;
 
 /* Arithmetic expression */
 
@@ -239,34 +317,34 @@ operationBracket :
 	| FLOAT
 	;
 
-// A revoir
 variable :
-  (((X | Y | Z) OF typeCoordonnees) | IDENT | attribut) OF accesClasse
+  (X^ | Y^ | Z^) OF! typeCoordonnees OF! accesClasse
+  | IDENT OF accesClasse
+    -> ^(VAR_I_KW IDENT accesClasse)
+  | attribut OF accesClasse
+    -> ^(VAR_A_KW attribut accesClasse)
   | SCORE OF GAME
     -> ^(GAME_SCORE_KW)
   | VALUE OF attributTps OF accesClasse
     -> ^(VALUE_KW attributTps accesClasse)
   ;
 
-// A revoir
 accesClasse : 
   ALL 
   | accesLocal
   | accesGlobal
   ;
 
-// A revoir
 accesGlobal :
   typeObjet
   | interaction
-  | PG NOT (typeObjet | interaction | 'player') PD
+  | PG NOT (typeObjet | interaction | PLAYER) PD
   ;
 
-// A revoir : Attention il existe un IN_KW donc à voir s'il faut changer ou pas.
 accesLocal :
   IDENT
-  | 'num' operation 'in' IDENT
-  | 'player'
+  | NUM operation IN IDENT
+  | PLAYER
   ;
   
 typeCoordonnees :
@@ -377,6 +455,9 @@ attributListeOuObjet :
   | TYPES_TELEPORTABLES
   ;
 
+
+COMMENT     : '//'(~'\n')* {skip();}
+   ;
 PD	: ')';
 PG	: '(';
 FIN	: ';' ; //opérateur de fin de règles
@@ -403,11 +484,18 @@ MIN	: 'min';
 SEC	: 'sec';
 MS	: 'ms';
 THEN	: 'then';
+FOR	: 'for';
+EQUALS : '=';
+INF :  '<';
+SUP :  '>';
+INFEG : '<=';
+SUPED : '>=';
+DIFF : '!=';
 
 GAME		: 'Game';
 GRAVITY_KW	: 'gravity';
 SCORE		: 'score';
-TYPE_KW		: 'type';
+TYPE		: 'type';
 PLAYER		: 'player';
 LIST_KW		: 'list';
 IN		: 'in';
@@ -416,8 +504,6 @@ ONCE		: 'once';
 RANDOM_KW	: 'random';
 DEFINITION_KW	: 'definition';
 MEANS		: 'means';
-VICTORY		: 'victory';
-DEFEAT		: 'defeat';
 PAUSE_KW	: 'pause';
 MUTE_KW		: 'mute';
 ON		: 'on';
@@ -426,7 +512,6 @@ PLAY_KW		: 'play';
 STOP_KW		: 'stop';
 ENDS_KW		: 'ends';
 STARTS_KW	: 'starts';
-DIES		: 'dies';
 BLOCK_KW	: 'block';
 TRANSLATION	: 'translation';
 ROTATION	: 'rotation';
@@ -436,8 +521,51 @@ GENERATE_KW	: 'generate';
 WAIT_KW		: 'wait';
 ENDWAIT		: 'endWait';
 SAVE_KW		: 'save';
-
-
+RULE_KW		: 'rule';
+MOVES_KW : 'moves'; 
+DIES_KW : 'dies';
+TOUCHES_KW : 'touches';
+KILLS_KW : 'kills';
+KILLED_KW : 'killed';
+TOUCHED_KW : 'touched';
+BY : 'by';
+OTHER : 'other';
+BECOMES : 'becomes';
+VICTORY_KW : 'victory';
+DEFEAT_KW : 'defeat';
+IF_KW : 'if';
+ELSE : 'else';
+ENDIF : 'endIf';
+OR : 'or';
+COMP : 'comp'; 
+DEAD_KW : 'dead';
+ALIVE_KW : 'alive';
+EFFACED_KW :'effaced';
+GENERATED_KW : 'generated';
+TOUCHING_KW : 'touching';
+MOVING_KW : 'moving';
+WAITING_KW : 'waiting';
+FINISHED_KW : 'finished';
+STARTED_KW : 'started'; 
+PAUSED_KW : 'paused';  
+MUTED_KW : 'muted';
+PLAYED_KW : 'played';  
+STOPPED_KW : 'stopped';
+ASSIGN_KW : 'assign';
+ADD_KW : 'add';
+SUB_KW : 'sub';
+INVERT_KW : 'invert';
+NUM 		: 'num';
+IA_KW 	:	 'ia';
+DURING : 'during';
+UNTIL : 'until';
+EQUIP : 'equip';
+NEXT : 'next';
+PREVIOUS : 'previous';
+KEYBOARD : 'keyboard';
+ACTIVATE_KW : 'activate';
+DISABLE_KW:'disable';
+COMMANDS:'commands';
 
 DUPLICABLE	: 'duplicable';
 FIRST		: 'first';
@@ -451,6 +579,32 @@ SIZE		: 'size';
 PERSON		: 'person';
 FREE		: 'free';
 FRAME		: 'frame' | 'frames';
+
+/* Control */
+UP	: 'up';
+DOWN	: 'down';
+LEFT	: 'left';
+RIGHT	: 'right';
+SPACE	: 'space';
+ESCAPE	: 'escape';
+ENTER	: 'enter';
+MOUSE_KW: 'mouse';
+KEY_KW	: 'key';
+CLICK_LEFT	: 'lClick';
+CLICK_CENTER	: 'cClick';
+CLICK_RIGHT	: 'rClick';
+SCROLL_UP	: 'scrollUp';
+SCROLL_DOWN	: 'scrollDown';
+
+COMMAND_KW	: 'command';
+JUMP : 'jump';
+MOVE : 'move';
+FORWARD : 'forward';
+BACKWARD : 'backward';
+TURN : 'turn';
+ACCELERATE : 'accelerate';
+BRAKE : 'brake';
+
 
 CAMERA	: 'Camera';
 MEDIA	: 'Media';
@@ -481,7 +635,6 @@ MASS		: 'mass';
 IS_FIX		: 'isFix';
 IS_TRAVERSABLE	: 'isTraversable';
 FOV		: 'fov';
-TYPE		: 'type';
 ACTIVE		: 'active';
 NAME		: 'name';
 DESCRIPTION	: 'description';
@@ -536,11 +689,16 @@ TYPES_BREAKERS	: 'typesBreakers';
 TELEPORTABLES	: 'teleportables';
 TYPES_TELEPORTABLES 
 	:	 'typesTeleportables';
+	
 
-DIGIT	: '0'..'9';
 LETTER	: 'a'..'z'|'A'..'Z';
-STRING	: LETTER+;
-BOOL	: ('true' | 'false');
-FLOAT	: DIGIT+ ('.' DIGIT+)?;
-IDENT	: LETTER( LETTER|DIGIT )*;
+FLOAT	: ('0'..'9')+ ('.' ('0'..'9')+)?;
+IDENT	: LETTER( LETTER|'0'..'9' )*;
+WS  :   ( ' '  
+           | '\t'  
+           | '\r'  
+           | '\n'  
+           | '\u000C'
+           )+ {$channel=HIDDEN;}  
+        ;
 

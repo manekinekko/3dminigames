@@ -18,6 +18,9 @@ tokens {
 	VALUE_KW;
 	IN_KW;
 	ALLOCATION_KW;
+	COORDINATE_KW;
+	CONSEQUENCES_KW;
+	AGGREGATION_KW;
 }
 
 
@@ -25,9 +28,9 @@ game :
 	(gameData FIN)?
 	(newType FIN)*
 	(init FIN)+
-	/*(definition (FIN)?)*
+	(definition (FIN)?)*
 	(commande (FIN)?)*
-	(reglesJeu (FIN)?)*
+	/*(reglesJeu (FIN)?)*
 	(iaBasique (FIN)?)*
 	  -> ^(GAME_KW gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)*/
 	;
@@ -63,8 +66,8 @@ subType :
 init :
 	IDENT IS declarationObjet
 	  -> ^(INIT_IS_KW IDENT declarationObjet)
-	| accesClasse HAS affectationObjet (VIRG affectationObjet)* // check the types and its attributes
-	  -> ^(INIT_HAS_KW affectationObjet)
+	| accesClasse HAS allocationObject (VIRG allocationObject)* // check the types and its attributes
+	  -> ^(INIT_HAS_KW allocationObject+)
 	;
 
 // A revoir : CAMERA : si rien n'est ajouté on fait quoi ?, MEDIA pareil
@@ -104,23 +107,27 @@ view :
 	| THIRD
 	;
 
-affectationObjet :
-  IDENT (AT valAggregation )?       //aggregation
-  -> ^( ALLOCATION_KW IDENT valAggregation) 
-  | attribut AT typeAffectation          //life at 5, name at "Gandalf Le Gris"
-  -> ^( ALLOCATION_KW attribut valAffectation)
-  | typeCoordonnees AT coordonnees            //size at 20 30 40
-  -> ^( ALLOCATION_KW typeCoordonnees coordonnees)
-  | attributListeOuObjet AT IDENT             //inventory at listeArmesJoueur
-  -> ^( ALLOCATION_KW attributListeOuObjet IDENT)
-  | attributTps AT operation timeUnit         //
-  -> ^( ALLOCATION_KW attributTps operation timeUnit);
-  ;
+allocationObject :
+	IDENT (AT valAggregation )?       //aggregation
+	  -> ^( ALLOCATION_KW IDENT valAggregation) 
+	| attribut AT typeAllocation           //life at 5, name at "Gandalf Le Gris"
+	  -> ^( ALLOCATION_KW attribut typeAllocation)
+	| typeCoordonnees AT coordinates            //size at 20 30 40
+	  -> ^( ALLOCATION_KW typeCoordonnees coordinates)
+	| attributListeOuObjet AT IDENT             //inventory at listeArmesJoueur
+	  -> ^( ALLOCATION_KW attributListeOuObjet IDENT)
+	| attributTps AT operation timeUnit         //
+	  -> ^( ALLOCATION_KW attributTps operation timeUnit)
+	  ;
+  
+typeAllocation 
+	:	(operation | STRING | BOOL);
 
 valAggregation :
 	operation (timeUnit)? 
-	  ->^(operation timeUnit?)
+	  -> ^(AGGREGATION_KW operation timeUnit?)
 	| IDENT
+	  -> ^(AGGREGATION_KW IDENT)
 	; 
  
  valAffectation : 
@@ -130,6 +137,82 @@ valAggregation :
 	| BOOL
 	->^(BOOL)
 	;
+
+/* Definition */	
+definition : DEFINITION_KW^ IDENT MEANS! consequences;
+
+consequences :
+	consequ (VIRG consequ)*
+	  ->^(CONSEQUENCES_KW consequ+)
+	;
+	
+consequ :
+  //siAlors
+  | action
+  //| affectation
+  //| activCommande
+  | IDENT
+  | VICTORY
+  | DEFEAT
+  ;
+
+action :
+/*	accesClasse actionObjet
+	|*/ (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)
+	| (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
+	| BLOCK_KW^ transformation OF! accesClasse coordinates
+	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal) (IN! accesLocal | ON! accesLocal | AT! coordinates)?)
+	| WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
+	| SAVE_KW^
+	;
+
+/*actionObjet :
+  DIES
+  | actionCommandePressee
+  | actionCommandeMaintenue ('during' operation timeUnit | 'until' conditions)
+  | 'equip' (accesLocal | 'next' | 'previous')   
+  ;*/
+  
+transformation :
+	TRANSLATION
+	| ROTATION
+	| SCALE
+	;
+	
+coordinates :
+	operation operation operation
+	  -> ^(COORDINATE_KW operation operation operation)
+	;
+
+/* Initialization of commands */
+
+commande :
+  'command' (IDENT 'is' actionCommande (VIRG actionCommande)* | actionCommande)
+  ;
+
+actionCommande :
+  ('mouse' souris | 'key' clavier) 'for' (IDENT | actionCommandePressee | actionCommandeMaintenue) // ident : that was defined with means
+  ;
+ 
+souris :
+  'up' | 'down' | 'left' | 'right' | 'lClick' | 'cClick' | 'rClick' | 'scrollUp' | 'scrollDown'
+  ;
+ 
+clavier :
+  CHAR | 'up' | 'down' | 'left' | 'right' | 'space' | 'echap' | 'enter'          //CHAR : Z,Q,S,D,...
+  ;
+ 
+actionCommandePressee :
+  'jump' operation
+  | 'pause'
+  | 'stop'
+  ;
+actionCommandeMaintenue :
+  'move' ('left' | 'right' | 'forward' | 'backward')
+  | 'turn' ('left' | 'right')
+  | 'accelerate'
+  | 'brake'
+  ;
 
 /* Arithmetic expression */
 
@@ -276,6 +359,22 @@ attributTps :
 	BOOST_INTERVAL
 	| SHOOT_INTERVAL        //attributes of "weapon" :
 	| RELOAD_TIME
+	;
+
+attributListeOuObjet :
+  INVENTORY
+  | EQUIPED_OBJECT
+  | ENTRANCES
+  | EXITS
+  | DAMAGE_ZONE
+  | COLLECTORS
+  | TYPES_COLLECTORS
+  | GENERATORS
+  | TYPE_GENERATORS
+  | BREAKERS
+  | TYPES_BREAKERS
+  | TELEPORTABLES
+  | TYPES_TELEPORTABLES
   ;
 
 PD	: ')';
@@ -303,6 +402,7 @@ NOT	: 'not';
 MIN	: 'min';
 SEC	: 'sec';
 MS	: 'ms';
+THEN	: 'then';
 
 GAME		: 'Game';
 GRAVITY_KW	: 'gravity';
@@ -314,6 +414,30 @@ IN		: 'in';
 LOOP		: 'loop';
 ONCE		: 'once';
 RANDOM_KW	: 'random';
+DEFINITION_KW	: 'definition';
+MEANS		: 'means';
+VICTORY		: 'victory';
+DEFEAT		: 'defeat';
+PAUSE_KW	: 'pause';
+MUTE_KW		: 'mute';
+ON		: 'on';
+OFF		: 'off';
+PLAY_KW		: 'play';
+STOP_KW		: 'stop';
+ENDS_KW		: 'ends';
+STARTS_KW	: 'starts';
+DIES		: 'dies';
+BLOCK_KW	: 'block';
+TRANSLATION	: 'translation';
+ROTATION	: 'rotation';
+SCALE		: 'scale';
+EFFACE_KW	: 'efface';
+GENERATE_KW	: 'generate';
+WAIT_KW		: 'wait';
+ENDWAIT		: 'endWait';
+SAVE_KW		: 'save';
+
+
 
 DUPLICABLE	: 'duplicable';
 FIRST		: 'first';
@@ -398,6 +522,20 @@ BOOST_INTERVAL	: 'boostInterval';
 SHOOT_INTERVAL	: 'shootInterval';
 RELOAD_TIME	: 'reloadTime';
 
+INVENTORY	: 'inventory';
+EQUIPED_OBJECT	: 'equipedObjects';
+ENTRANCES	: 'entrances';
+EXITS		: 'exits';
+DAMAGE_ZONE	: 'damageZone';
+COLLECTORS	: 'collectors';
+TYPES_COLLECTORS: 'typesCollectors';
+GENERATORS	: 'generators';
+TYPE_GENERATORS : 'typeGenerators';
+BREAKERS	: 'breakers';
+TYPES_BREAKERS	: 'typesBreakers';
+TELEPORTABLES	: 'teleportables';
+TYPES_TELEPORTABLES 
+	:	 'typesTeleportables';
 
 DIGIT	: '0'..'9';
 LETTER	: 'a'..'z'|'A'..'Z';

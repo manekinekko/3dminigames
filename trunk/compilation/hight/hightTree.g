@@ -210,6 +210,7 @@ actionCommandePressee [SymbolTable st] returns [Code c]:
   | PAUSE_KW
   | STOP_KW
   ;
+  
 actionCommandeMaintenue [SymbolTable st] returns [Code c]:
   MOVE (LEFT | RIGHT | FORWARD | BACKWARD)
   | TURN (LEFT | RIGHT)
@@ -278,7 +279,6 @@ conditions [SymbolTable st] returns [Code c]:
   |^(INFEG operation[st] operation[st])
   |^(SUPED operation[st] operation[st])
   |^(DIFF operation[st] operation[st])
-  |condition[st]
   ;
 
 etat [SymbolTable st] returns [Code c]:

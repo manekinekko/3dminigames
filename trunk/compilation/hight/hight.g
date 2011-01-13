@@ -196,7 +196,7 @@ commande :
 	;
 
 actionCommande :
-	(MOUSE_KW^ souris | KEY_KW^ clavier) FOR actionCommandeType // ident : that was defined with means
+	(MOUSE_KW^ souris | KEY_KW^ clavier) FOR! actionCommandeType // ident : that was defined with means
 	;
 
 actionCommandeType :
@@ -216,6 +216,7 @@ actionCommandePressee :
   | PAUSE_KW
   | STOP_KW
   ;
+  
 actionCommandeMaintenue :
   MOVE (LEFT | RIGHT | FORWARD | BACKWARD)
   | TURN (LEFT | RIGHT)

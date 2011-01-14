@@ -6,7 +6,7 @@
 
 ////////////////// Events Managers
 
-move left resourceApply chasseur.position_x += 10 // valeur arbitraire pour l'instant
+move left resourceApply chasseur.position_x + 10 // valeur arbitraire pour l'instant
 
 |move right resourceApply chasseur.position_x + 20
 
@@ -22,13 +22,21 @@ move left resourceApply chasseur.position_x += 10 // valeur arbitraire pour l'in
 
 |dies gameOver
 
-/!\ voir la gestion des doubles attributs (par ex position du lapin/chasseur) pour l'instant j'ai rajouté le point
+/!\ voir la gestion des doubles attributs (par ex position du lapin/chasseur) pour l'instant j'ai rajouté nomdelobjet.nomdelaressource au lieu du nomdelaressource présent dans la grammaire
  
 //////////////// Resources Managers
 
-/!\ il faudrait les associés a des entités pour plus de simplicité
+chasseur mass,position,orientation,taille,isFix,isTraversable,touch,name,description,life,lifeMax,lifeMin,nbOfLives,magic,magicMax,magicMin,level,attack,defense,jumpForce,maxJumpsInTheAir,money,class,race,acceleration,inventory,moveWithCamera,equipedObjects,rightHandObject,leftHandObject
+Lapin mass,position,orientation,taille,isFix,isTraversable,touch,name,description,life,lifeMax,lifeMin,nbOfLives,magic,magicMax,magicMin,level,attack,defense,jumpForce,maxJumpsInTheAir,money,class,race,acceleration,inventory,moveWithCamera,equipedObjects,rightHandObject,leftHandObject,speed,damage,damageZone
+
+//resource ::= (’#’ nameEnumResource)? name (signal (’@’ signal)*)? (timer|initValue) -> Meme mystère que sur l'autre règle, aucune idée de ce a quoi correspond la règle.
+
+
 
 /////////////// Camera Entites manager
+
+"mapType texture" object = chasseur "fichier collada" ’coeffOfFriction =’ unevaleur ’weight =’ unevaleur ’speed =’ unevaleur ’position =’ unevaleur ’isFixed
+=’ false ’isTraversable =’ false
 
 /!\ a déplacer je pense
 

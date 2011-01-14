@@ -1,6 +1,8 @@
 
 object chasseur =  posx = 10 , posy = 20 , posz = 0 , speed = 1 ;
-object lapin =  posx = 50 , posy = 40 , posz = 0 , speed = 3 ;
+object lapin1 =  posx = 50 , posy = 40 , posz = 0 , speed = 1 ;
+object lapin2 =  posx = 50 , posy = 40 , posz = 0 , speed = 2 ;
+object lapin3 =  posx = 50 , posy = 40 , posz = 0 , speed = 3 ;
 
 
 camera cam1 {

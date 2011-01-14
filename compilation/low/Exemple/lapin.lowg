@@ -1,0 +1,23 @@
+
+object chasseur =  posx = 10 , posy = 20 , posz = 0 , speed = 1 ;
+object lapin =  posx = 50 , posy = 40 , posz = 0 , speed = 3 ;
+
+
+camera cam1 {
+	position : 10 10 10;
+	angle : 21 34 54; 	
+}
+
+
+keylistener{ LEFT : moveleft, RIGHT : moveright, SPACE : tirer} 
+mouselistener{}
+
+
+moveleft -> chasseur.posx apply (+ 10) ;
+	
+moveright -> chasseur.posx apply (+ 20) ;
+
+dies -> gameover ;
+
+
+;;

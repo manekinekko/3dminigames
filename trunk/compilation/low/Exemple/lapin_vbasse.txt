@@ -1,0 +1,44 @@
+////////////////// Partie refreshLoop
+
+(signaleUpdateCounter ? //pas compris là) keyListener{ LEFT : move left, RIGHT : move right, SPACE : tirer} mouseListener{}
+
+/!\ ajout de la virgule pour séparer les keyListener entre elles, a faire pour les mouseListener aussi
+
+////////////////// Events Managers
+
+move left resourceApply chasseur.position_x += 10 // valeur arbitraire pour l'instant
+
+|move right resourceApply chasseur.position_x += 20
+
+|tirer générer missile //aucune idée de comment faire aparaitre une entitié
+
+|toucher1 générer lapin2
+
+|toucher2 générer lapin3
+
+|toucher3 win 
+
+|init générer chasseur&bazooka
+
+|dies gameOver
+
+/!\ voir la gestion des doubles attributs (par ex position du lapin/chasseur) pour l'instant j'ai rajouté le point
+ 
+//////////////// Resources Managers
+
+/!\ il faudrait les associés a des entités pour plus de simplicité
+
+/////////////// Camera Entites manager
+
+/!\ a déplacer je pense
+
+/////////////// Phisics engine
+
+collision{ missile lapin1 toucher1 | missile lapin2 toucher2| missile lapin3 toucher3}
+
+/!\ les forces ne devraient pas être obligatoires !!! C'est pas utile dans tous les jeu (a voir avec le moteur 3D)
+
+
+A mon avis il faudrait modifier l'ordre dans le fichier :
+
+refreshLoop puis Entities/Camera puis Phisics engine puis Event/ressources (je sais pas trop dans quel ordre vu que y a un entrecroisement : les ressources ont besoins des noms de signaux les signaux ont besoin des ressources) 

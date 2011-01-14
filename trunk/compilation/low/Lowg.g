@@ -12,7 +12,9 @@ tokens {
    RESOURCES = 'RESOURCES';
    VAL = 'VAL';
    GAME = 'GAME';
-   PARAMS = 'PARAMS';	
+   PARAMS = 'PARAMS';
+   PARAMLIST = 'PARAMLIST';   
+	
    OBJ = 'OBJ';	
    OBJS = 'OBJS';
 }
@@ -27,9 +29,23 @@ tokens {
 
 
 
-game 	: resourcesSets   entities PTVIRG PTVIRG
+game 	: refreshLoop resourcesSets entities PTVIRG PTVIRG
 		->^(GAME resourcesSets entities);
 
+/* REFRESH LOOP */ 
+
+refreshLoop : KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF;
+
+keyboardCommands : (KEYSTROKE DP signalSets)*;
+	
+
+mouseCommands : (typeofclick DP signalSets)*;
+
+signalSets : signal+;
+
+signal : ID;
+
+typeofclick : LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP 	;
 
 /* RESOURCES */
 
@@ -47,9 +63,9 @@ resource : ID  initValue PTVIRG
 
 
 
-initValue : INT | FLOAT ;
+initNumValue : INT | FLOAT ;
 
-
+initValue : initNumValue | STRING ;
 
 
 /* ENTITIES */
@@ -59,16 +75,18 @@ entities : object+
 	;
 
 
-object : OBJECT AFF ID parameters PTVIRG 
+object : OBJECT ID AFF  parameters PTVIRG 
 		->^(OBJ ID parameters)
 	;
 
-parameters : FRICTIONCOEF AFF FLOAT
-		->^(PARAMS FRICTIONCOEF  FLOAT)	
+parameters : POSX AFF initNumValue VIRG POSY AFF initNumValue VIRG POSZ AFF initNumValue paramlist
+		->^(PARAMS POSX initNumValue POSY initNumValue POSZ initNumValue paramlist)	
 	;
 
 
-
+paramlist : (VIRG ID AFF initValue)* 
+		->^(PARAMLIST (ID initValue)*)
+	;
 
 
 
@@ -83,15 +101,32 @@ WS              :  (' '|'\n'|'\t'|'\r')
 
 
 PTVIRG : ';' ;
+VIRG : ',' ;
 AFF	: '=';
+AD	: '{';
+AF	: '}';
+DP	: ':';
 
 
 
 OBJECT : 'object' ;
+KEYLISTENER :	'keylistener';
+MOUSELISTENER : 'mouselistener';
 
 
 
-FRICTIONCOEF  :	'frictioncoef' ;
+KEYSTROKE : '\'' ('a'..'z'| 'A'..'Z') '\'';
+
+LEFTCLICK 	:'leftclick';
+LEFTDROP	:'leftdrop';
+LEFTDRAG	:'leftdrag';
+RIGHTCLICK	:'rightclick';
+RIGHTDROP	:'rightdrop';
+
+
+POSX  :	'posx' ;
+POSY  :	'posy' ;
+POSZ  :	'posz' ;
 
 WITH : 'with';
 
@@ -100,6 +135,10 @@ ID  :	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*
 
 INT :	'0'..'9'+
     ;
+
+STRING : '"' ('a'..'z'|'A'..'Z'|'0'..'9')* '"' 
+	| '\'' ('a'..'z'|'A'..'Z'|'0'..'9')* '\'' 
+	;
 
 FLOAT
     :   ('0'..'9')+ '.' ('0'..'9')* 

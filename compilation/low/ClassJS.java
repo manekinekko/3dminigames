@@ -1,9 +1,9 @@
 
 import java.util.*;
 
-public class ClassJS implements InstJS{
+public class ClassJS implements Inst{
 	
-	public static String INSTFUNC = "function"; 
+	public static final String INSTFUNC = "function"; 
 	
 	protected String name;
 	protected List<String> params;

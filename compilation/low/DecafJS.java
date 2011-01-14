@@ -5,7 +5,7 @@
  * ************************************** */
 
 
-public class DecafJS implements InstJS{
+public class DecafJS implements Inst{
 	
 	public static final String INSTDEC = "var"; 
 	

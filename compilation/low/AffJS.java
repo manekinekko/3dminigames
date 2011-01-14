@@ -1,5 +1,5 @@
 
-public class AffJS implements InstJS{
+public class AffJS implements Inst{
 	
 	protected String name;
 	protected String val;

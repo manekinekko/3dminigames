@@ -5,15 +5,62 @@ options {
     ASTLabelType = CommonTree;
 }
 
-game 	returns[Codes c] @init{ c = null;}: ^(GAME rs = resourcesSets  e = entities{c = new Codes(e,rs);});
+game returns[Codes c] @init{ c = null;}: ^(GAME e = entities camera refreshLoop eventManager rs = resourcesSets  {c = new Codes(e,rs);});
 	   
+
+
+/* ENTITIES */
+
+entities returns [Code c] @init{c = new ConcreteCode();}: ^(OBJS (ob = object
+		{
+			c.append(ob);	
+		}
+	)+
+	);
+
+
+object returns [ClassJS cjs] @init{cjs = null; }: ^(OBJ i = ID pms = paramlist
+	{
+
+		cjs = new ClassJS(i.getText() , new ArrayList() , pms); 
+	}
+	
+
+	);
+
+paramlist returns [List<AffJS> l] @init{l = new ArrayList<AffJS>();}: ^(PARAMLIST (p = param
+		{
+			l.add(p);	 
+		} )+
+
+
+		);
+
+param returns [AffJS aff] @init{aff = null;}:^(PARAM id = ID v = initValue
+		{aff = new AffJS(id.getText() , v);})
+			
+	
+	;
+
+
+/* CAMERA */
+
+camera : CAMERA ID AD position AF;
+
+position : POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG ;
+
+triplet : initNumValue initNumValue initNumValue ;
+ 
+
+
+
 
 
 /* REFRESH LOOP */ 
 
 refreshLoop : KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF;
 
-keyboardCommands : (KEYSTROKE DP signalSets)*;
+keyboardCommands : (KEYSTROKE DP signalSets)(VIRG KEYSTROKE DP signalSets)*;
 	
 
 mouseCommands : (typeofclick DP signalSets)*;
@@ -26,7 +73,20 @@ typeofclick : LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP 	;
 
 
 
+/* EVENT MANAGER */
 
+
+eventManager : signal (VIRG signal)* ARROW instructions  ( signal(VIRG signal)* ARROW instructions  )* ;
+	
+instructions :  resourcePath APPLY PG applyExpression PD PTVIRG | conceptInstruction PTVIRG;
+
+resourcePath : (ID | ID PT ID);
+
+applyExpression : arithmeticOperator initNumValue;
+
+arithmeticOperator : PLUS | MOINS | MULT  |DIV | MOD;
+
+conceptInstruction : GAMEOVER | PAUSE | NEWGAME | SAVEGAME;
 
 
 
@@ -38,7 +98,7 @@ resourcesSets returns [Code c] @init{ c =new ConcreteCode();}: ^(RESOURCES
 
 			(r = resource{ 
 				c.append(r);
-			})+);
+			})*);
  
 
 resource returns [Inst ijs]
@@ -84,48 +144,6 @@ initValue returns[String s]
 	;
 
 
-
-
-/* ENTITIES */
-
-entities returns [Code c] @init{c = new ConcreteCode();}: ^(OBJS (ob = object
-		{
-			c.append(ob);	
-		}
-	)+
-	);
-
-
-object returns [ClassJS cjs] @init{cjs = null; }: ^(OBJ i = ID pms = parameters
-	{
-
-		cjs = new ClassJS(i.getText() , new ArrayList() , pms); 
-	}
-	
-
-	);
-
-parameters returns [List<AffJS> l] @init{l = new ArrayList<AffJS>();}: ^(PARAMS id1 = POSX f1 = initNumValue id2 = POSY f2 = initNumValue  id3 = POSZ f3 = initNumValue pl = paramlist
-		{
-
-			l.add(new AffJS(id1.getText() , f1));
-			l.add(new AffJS(id2.getText() , f2));
-			l.add(new AffJS(id3.getText() , f3));
-			l.addAll(pl);
-
-		 
-
-
-		}
-
-
-		);
-
-paramlist returns [List<AffJS> l] @init{l = new ArrayList<AffJS>();}:^(PARAMLIST (id = ID v = initValue
-		{l.add(new AffJS(id.getText() , v));})*)
-			
-	
-	;
 
 
 

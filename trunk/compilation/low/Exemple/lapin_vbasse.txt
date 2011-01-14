@@ -8,7 +8,7 @@
 
 move left resourceApply chasseur.position_x += 10 // valeur arbitraire pour l'instant
 
-|move right resourceApply chasseur.position_x += 20
+|move right resourceApply chasseur.position_x + 20
 
 |tirer générer missile //aucune idée de comment faire aparaitre une entitié
 

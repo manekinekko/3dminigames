@@ -30,6 +30,13 @@ tokens {
 	CONDITION_KW;
 }
 
+@header {
+    package grammars;
+}
+
+@lexer::header {
+    package grammars;
+}
 
 game :
 	(gameData FIN)?
@@ -77,7 +84,7 @@ init :
 	  -> ^(INIT_HAS_KW allocationObject+)
 	;
 
-// A revoir : CAMERA : si rien n'est ajouté on fait quoi ?, MEDIA pareil
+// A revoir : CAMERA : si rien n'est ajoutï¿½ on fait quoi ?, MEDIA pareil
 declarationObjet :
 	typeEntity entityMode? 
 	  -> ^(DEC typeEntity entityMode?)   // interaction is neutral by default
@@ -166,13 +173,13 @@ action :
 	| (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)
 	| (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
 	| BLOCK_KW^ transformation OF! accesClasse coordinates
-	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) (IN! accesLocal | ON! accesLocal | AT! coordinates)?
+	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) ((IN!|ON!) accesLocal | AT! coordinates)?
 	| WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
-	| SAVE_KW^
+	| SAVE_KW
 	;
 
 actionObjet :
-  DIES_KW^
+  DIES_KW
   | actionCommandePressee
   | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions)
   | EQUIP^ (accesLocal | NEXT | PREVIOUS)   
@@ -239,8 +246,8 @@ declencheur :
     -> ^(BECOMES_VAR_KW variable varOuNB)
   | IDENT BECOMES playerOuInteraction
     -> ^(BECOMES_ID_KW IDENT playerOuInteraction)
-  | VICTORY_KW^ 
-  | DEFEAT_KW^
+  | VICTORY_KW
+  | DEFEAT_KW
   ;
 
 varOuNB :	variable | FLOAT;
@@ -274,7 +281,7 @@ conditionEt :
 
 cond :
   etat
-  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   à cause des parenthèses qu'on retrouve dans operation
+  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   ï¿½ cause des parenthï¿½ses qu'on retrouve dans operation
   | PG conditions PD 
   ;
 
@@ -282,8 +289,8 @@ etat :
   accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesGlobal | accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
   | (IDENT | GAME) IS! (NOT)? (FINISHED_KW^ |STARTED_KW^ | PAUSED_KW^ | MUTED_KW^ (ON | OFF) | PLAYED_KW^ | STOPPED_KW^ )  // game,counter,media
   //| 'true'^                                                   
-  | VICTORY_KW^
-  | DEFEAT_KW^
+  | VICTORY_KW
+  | DEFEAT_KW
   ;
   
 affectation :
@@ -325,7 +332,7 @@ variable :
   | attribut OF accesClasse
     -> ^(VAR_A_KW attribut accesClasse)
   | SCORE OF GAME
-    -> ^(GAME_SCORE_KW)
+    -> GAME_SCORE_KW
   | VALUE OF attributTps OF accesClasse
     -> ^(VALUE_KW attributTps accesClasse)
   ;
@@ -461,7 +468,7 @@ COMMENT     : '//'(~'\n')* {skip();}
    ;
 PD	: ')';
 PG	: '(';
-FIN	: ';' ; //opérateur de fin de règles
+FIN	: ';' ; //opï¿½rateur de fin de rï¿½gles
 VIRG	: ',';
 HAS	: 'has';
 AT	: 'at';

@@ -3,7 +3,16 @@ tree grammar hightTree;
 options {
     tokenVocab=hight;
     ASTLabelType=CommonTree;
+    output=AST;
 }
+
+@header {
+    package grammars;
+}
+
+/*@lexer::hearder {
+    package grammars;
+}*/
 
 //@header {}
 
@@ -48,7 +57,7 @@ init [SymbolTable st] returns [Code c]:
 	|^(INIT_HAS_KW affectationObjet[st])
 	;
 
-// A revoir : CAMERA : si rien n'est ajouté on fait quoi ?, MEDIA pareil
+// A revoir : CAMERA : si rien n'est ajoutï¿½ on fait quoi ?, MEDIA pareil
 declarationObjet [SymbolTable st] returns [Code c]:
 	^(DEC typeEntity[st] entityMode[st]?)   // interaction is neutral by default
 	|^(LIST_KW list_declaration[st])
@@ -94,8 +103,9 @@ affectationObjet [SymbolTable st] returns [Code c]:
 	^( ALLOCATION_KW attribut[st] typeAllocation[st])
 	^( ALLOCATION_KW typeCoordonnees[st] coordinates[st])
 	^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
-	^( ALLOCATION_KW attributTps[st] operation[st] timeUnit[st]);
-  ;
+	^( ALLOCATION_KW attributTps[st] operation[st] timeUnit[st])
+    ;
+    
 typeAllocation [SymbolTable st] returns [Code c]:	
 	(operation[st] | IDENT | 'true' | 'false')
 	;
@@ -149,17 +159,17 @@ action [SymbolTable st] returns [Code c]:
 	|^(EFFACE_KW typeAcces[st] typeDestination[st]?)
 	|^(GENERATE_KW typeAcces[st] typeDestination[st]?)
 	|^(WAIT_KW operation[st] timeUnit[st] consequences[st])
-	|^(SAVE_KW)
+	|SAVE_KW
 	;
 
 typeAcces [SymbolTable st] returns [Code c]:
 	accesLocal[st] | operation[st] (IDENT | accesGlobal[st]);
 
 typeDestination [SymbolTable st] returns [Code c]: 
-	accesLocal[st] | accesLocal[st] | coordinates[st];
+	accesLocal[st] | coordinates[st];
 
 actionObjet [SymbolTable st] returns [Code c]:
-  ^(DIES_KW)
+  DIES_KW
   | actionCommandePressee[st]
   |^(DURING actionCommandeMaintenue[st] operation[st] timeUnit[st])
   |^(UNTIL actionCommandeMaintenue[st] conditions[st])
@@ -225,7 +235,7 @@ activCommande [SymbolTable st] returns [Code c]:
 
 type_Command [SymbolTable st] returns [Code c]:
 	COMMANDS 
-	| MOUSE_KW (souris[st] (VIRG! souris)*)? 
+	| MOUSE_KW (souris[st] (VIRG! souris[st])*)?
 	| KEY_KW clavier[st] (VIRG! clavier[st])* 
 	| KEYBOARD;
  	
@@ -235,12 +245,12 @@ reglesJeu [SymbolTable st] returns [Code c]:
  
 declencheur [SymbolTable st] returns [Code c]:
   accesClasse[st] (MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st]) 
-  |^(ENDS_KW type_declencheur[st]) |
-  ^(STARTS_KW type_declencheur[st])          //ident if it is a counter
+  |^(ENDS_KW type_declencheur[st])
+  |^(STARTS_KW type_declencheur[st])          //ident if it is a counter
   |^(BECOMES_VAR_KW variable[st] varOuNB[st])
   |^(BECOMES_ID_KW IDENT playerOuInteraction[st])
-  |^VICTORY_KW 
-  |^DEFEAT_KW^
+  |VICTORY_KW 
+  |DEFEAT_KW
   ;
   
 type_declencheur [SymbolTable st] returns [Code c]: 
@@ -270,9 +280,9 @@ siAlors [SymbolTable st] returns [Code c]:
   ;
 //////////////////////////////////////////////////////////////////////////petit pb ici je pense
 conditions [SymbolTable st] returns [Code c]:
-  ^(CONDITION_KW NOT? condition[st])
-  |^(OR condition NOT? condition[st])
-  |^(AND condition NOT? condition[st])
+  ^(CONDITION_KW NOT? conditions[st])
+  |^(OR conditions[st] NOT? conditions[st])
+  |^(AND conditions[st] NOT? conditions[st])
   |^(EQUALS operation[st] operation[st])
   |^(INF operation[st]operation[st])
   |^(SUP operation[st] operation[st])
@@ -296,8 +306,8 @@ etat [SymbolTable st] returns [Code c]:
 	| ^(PLAYED_KW type_declencheur[st] (NOT)?)
 	| ^(STOPPED_KW type_declencheur[st] (NOT)?)
   //| 'true'^                                                   
-  |^(VICTORY_KW)
-  |^(DEFEAT_KW)
+  |VICTORY_KW
+  |DEFEAT_KW
   ;
   
 mode_mute [SymbolTable st] returns [Code c]: 
@@ -310,9 +320,9 @@ affectation [SymbolTable st] returns [Code c]:
   |^(INVERT_KW variable[st] variable[st])
   ;
   
-iaBasique [SymbolTable st] returns [Code c]: ^(IA_KW accesClasse[st] actionObjet_List[st]);
+iaBasique [SymbolTable st] returns [Code c]: ^(IA_KW accesClasse[st] actionObjetList[st]);
 
-actionObjet_list [SymbolTable st] returns [Code c]: actionObjet[st]+;
+actionObjetList [SymbolTable st] returns [Code c]: actionObjet[st]+;
 
 
 	
@@ -338,7 +348,7 @@ variable [SymbolTable st] returns [Code c]:
   |^(Z typeCoordonnees[st] accesClasse[st])
   |^(VAR_I_KW IDENT accesClasse[st])
   |^(VAR_A_KW attribut[st] accesClasse[st])
-  |^(GAME_SCORE_KW)
+  |GAME_SCORE_KW
   |^(VALUE_KW attributTps[st] accesClasse[st])
   ;
 

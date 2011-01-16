@@ -211,11 +211,11 @@ actionCommandeType :
 	;	
  
 souris :
-  UP | DOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
+  WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
   ;
  
 clavier :
-  LETTER | UP | DOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
+  LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
   ;
  
 actionCommandePressee :
@@ -589,8 +589,8 @@ FREE		: 'free';
 FRAME		: 'frame' | 'frames';
 
 /* Control */
-UP	: 'up';
-DOWN	: 'down';
+WUP	: 'up';
+WDOWN	: 'down';
 LEFT	: 'left';
 RIGHT	: 'right';
 SPACE	: 'space';

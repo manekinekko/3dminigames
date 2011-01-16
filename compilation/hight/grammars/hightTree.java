@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-01-15 20:54:40
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-01-16 21:36:03
 
     package grammars;
 
@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 public class hightTree extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "GAME_KW", "GAME_ATTRIBUT_KW", "INIT_IS_KW", "INIT_HAS_KW", "DEC", "MEDIA_KW", "CAMERA_KW", "INTERACTION_KW", "GAME_SCORE_KW", "SCORE_KW", "VALUE_KW", "IN_KW", "ALLOCATION_KW", "COORDINATE_KW", "CONSEQUENCES_KW", "AGGREGATION_KW", "VAR_I_KW", "VAR_A_KW", "BECOMES_VAR_KW", "BECOMES_ID_KW", "CONDITION_KW", "FIN", "GAME", "HAS", "VIRG", "GRAVITY_KW", "AT", "FLOAT", "SCORE", "TYPE", "IDENT", "IS", "AND", "LIST_KW", "OF", "WITH", "CAMERA", "PERSON", "FREE", "MEDIA", "LOOP", "ONCE", "IN", "PLAYER", "ALLY", "ENEMY", "NEUTRAL", "DUPLICABLE", "FIRST", "THIRD", "DEFINITION_KW", "MEANS", "VICTORY_KW", "DEFEAT_KW", "ENDS_KW", "STARTS_KW", "PAUSE_KW", "MUTE_KW", "ON", "OFF", "PLAY_KW", "STOP_KW", "BLOCK_KW", "EFFACE_KW", "GENERATE_KW", "WAIT_KW", "THEN", "ENDWAIT", "SAVE_KW", "DIES_KW", "DURING", "UNTIL", "EQUIP", "NEXT", "PREVIOUS", "TRANSLATION", "ROTATION", "SCALE", "COMMAND_KW", "MOUSE_KW", "KEY_KW", "FOR", "LEFT", "RIGHT", "CLICK_LEFT", "CLICK_CENTER", "CLICK_RIGHT", "SCROLL_UP", "SCROLL_DOWN", "LETTER", "SPACE", "ESCAPE", "ENTER", "JUMP", "MOVE", "FORWARD", "BACKWARD", "TURN", "ACCELERATE", "BRAKE", "ACTIVATE_KW", "DISABLE_KW", "COMMANDS", "KEYBOARD", "RULE_KW", "MOVES_KW", "BECOMES", "TOUCHES_KW", "KILLS_KW", "OTHER", "KILLED_KW", "TOUCHED_KW", "BY", "IF_KW", "ELSE", "ENDIF", "NOT", "OR", "COMP", "EQUALS", "INF", "SUP", "INFEG", "SUPED", "DIFF", "PG", "PD", "DEAD_KW", "ALIVE_KW", "EFFACED_KW", "GENERATED_KW", "TOUCHING_KW", "MOVING_KW", "WAITING_KW", "FINISHED_KW", "STARTED_KW", "PAUSED_KW", "MUTED_KW", "PLAYED_KW", "STOPPED_KW", "ASSIGN_KW", "ADD_KW", "SUB_KW", "INVERT_KW", "IA_KW", "RANDOM_KW", "BETWEEN", "PLUS", "MINUS", "MUL", "DIV", "MOD", "POW", "X", "Y", "Z", "VALUE", "ALL", "NUM", "POSITION", "ORIENTATION", "SIZE", "MIN", "SEC", "MS", "FRAME", "COUNTER", "TIME", "OBJECT", "CHARACTER", "VEHICLE", "PLANE", "SPACECRAFT", "OBSTACLE", "WEAPON", "SWORD", "PROJECTILE", "ZONE", "GROUND", "BONUS", "CHECKPOINT", "BREAKABLE", "CONSTRUCTION", "ROOM", "BALL", "TELEPORTER", "MASS", "IS_FIX", "IS_TRAVERSABLE", "FOV", "ACTIVE", "NAME", "DESCRIPTION", "LIFE", "LIFE_MAX", "LIFE_MIN", "NB_LIVES", "MAGIC", "MAGIC_MAX", "MAGIC_MIN", "LEVEL", "ATTACK", "DEFENSE", "JUMP_FORCE", "JUMP_AIR_MAX", "MONEY", "CLASS", "RACE", "ACCELERATION", "SPEED", "SPEED_MAX", "SPEED_MIN", "BOOST", "BOOST_MAX", "NB_MUNITIONS", "NB_MUNITIONS_MAX", "SHOOT_POWER", "DAMAGES", "UNIT", "OBJECT_NAME", "ATTRIBUT_NAME", "VOLUME", "NUMBER", "MOVE_WITH_CAMERA", "BOOST_INTERVAL", "SHOOT_INTERVAL", "RELOAD_TIME", "INVENTORY", "EQUIPED_OBJECT", "ENTRANCES", "EXITS", "DAMAGE_ZONE", "COLLECTORS", "TYPES_COLLECTORS", "GENERATORS", "TYPE_GENERATORS", "BREAKERS", "TYPES_BREAKERS", "TELEPORTABLES", "TYPES_TELEPORTABLES", "COMMENT", "WS", "'true'", "'false'", "TYPE_KW"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "GAME_KW", "GAME_ATTRIBUT_KW", "INIT_IS_KW", "INIT_HAS_KW", "DEC", "MEDIA_KW", "CAMERA_KW", "INTERACTION_KW", "GAME_SCORE_KW", "SCORE_KW", "VALUE_KW", "IN_KW", "ALLOCATION_KW", "COORDINATE_KW", "CONSEQUENCES_KW", "AGGREGATION_KW", "VAR_I_KW", "VAR_A_KW", "BECOMES_VAR_KW", "BECOMES_ID_KW", "CONDITION_KW", "FIN", "GAME", "HAS", "VIRG", "GRAVITY_KW", "AT", "FLOAT", "SCORE", "TYPE", "IDENT", "IS", "AND", "LIST_KW", "OF", "WITH", "CAMERA", "PERSON", "FREE", "MEDIA", "LOOP", "ONCE", "IN", "PLAYER", "ALLY", "ENEMY", "NEUTRAL", "DUPLICABLE", "FIRST", "THIRD", "DEFINITION_KW", "MEANS", "VICTORY_KW", "DEFEAT_KW", "ENDS_KW", "STARTS_KW", "PAUSE_KW", "MUTE_KW", "ON", "OFF", "PLAY_KW", "STOP_KW", "BLOCK_KW", "EFFACE_KW", "GENERATE_KW", "WAIT_KW", "THEN", "ENDWAIT", "SAVE_KW", "DIES_KW", "DURING", "UNTIL", "EQUIP", "NEXT", "PREVIOUS", "TRANSLATION", "ROTATION", "SCALE", "COMMAND_KW", "MOUSE_KW", "KEY_KW", "FOR", "WUP", "WDOWN", "LEFT", "RIGHT", "CLICK_LEFT", "CLICK_CENTER", "CLICK_RIGHT", "SCROLL_UP", "SCROLL_DOWN", "LETTER", "SPACE", "ESCAPE", "ENTER", "JUMP", "MOVE", "FORWARD", "BACKWARD", "TURN", "ACCELERATE", "BRAKE", "ACTIVATE_KW", "DISABLE_KW", "COMMANDS", "KEYBOARD", "RULE_KW", "MOVES_KW", "BECOMES", "TOUCHES_KW", "KILLS_KW", "OTHER", "KILLED_KW", "TOUCHED_KW", "BY", "IF_KW", "ELSE", "ENDIF", "NOT", "OR", "COMP", "EQUALS", "INF", "SUP", "INFEG", "SUPED", "DIFF", "PG", "PD", "DEAD_KW", "ALIVE_KW", "EFFACED_KW", "GENERATED_KW", "TOUCHING_KW", "MOVING_KW", "WAITING_KW", "FINISHED_KW", "STARTED_KW", "PAUSED_KW", "MUTED_KW", "PLAYED_KW", "STOPPED_KW", "ASSIGN_KW", "ADD_KW", "SUB_KW", "INVERT_KW", "IA_KW", "RANDOM_KW", "BETWEEN", "PLUS", "MINUS", "MUL", "DIV", "MOD", "POW", "X", "Y", "Z", "VALUE", "ALL", "NUM", "POSITION", "ORIENTATION", "SIZE", "MIN", "SEC", "MS", "FRAME", "COUNTER", "TIME", "OBJECT", "CHARACTER", "VEHICLE", "PLANE", "SPACECRAFT", "OBSTACLE", "WEAPON", "SWORD", "PROJECTILE", "ZONE", "GROUND", "BONUS", "CHECKPOINT", "BREAKABLE", "CONSTRUCTION", "ROOM", "BALL", "TELEPORTER", "MASS", "IS_FIX", "IS_TRAVERSABLE", "FOV", "ACTIVE", "NAME", "DESCRIPTION", "LIFE", "LIFE_MAX", "LIFE_MIN", "NB_LIVES", "MAGIC", "MAGIC_MAX", "MAGIC_MIN", "LEVEL", "ATTACK", "DEFENSE", "JUMP_FORCE", "JUMP_AIR_MAX", "MONEY", "CLASS", "RACE", "ACCELERATION", "SPEED", "SPEED_MAX", "SPEED_MIN", "BOOST", "BOOST_MAX", "NB_MUNITIONS", "NB_MUNITIONS_MAX", "SHOOT_POWER", "DAMAGES", "UNIT", "OBJECT_NAME", "ATTRIBUT_NAME", "VOLUME", "NUMBER", "MOVE_WITH_CAMERA", "BOOST_INTERVAL", "SHOOT_INTERVAL", "RELOAD_TIME", "INVENTORY", "EQUIPED_OBJECT", "ENTRANCES", "EXITS", "DAMAGE_ZONE", "COLLECTORS", "TYPES_COLLECTORS", "GENERATORS", "TYPE_GENERATORS", "BREAKERS", "TYPES_BREAKERS", "TELEPORTABLES", "TYPES_TELEPORTABLES", "COMMENT", "WS", "'true'", "'false'", "TYPE_KW"
     };
     public static final int EOF=-1;
-    public static final int T__246=246;
-    public static final int T__247=247;
+    public static final int T__248=248;
+    public static final int T__249=249;
     public static final int GAME_KW=4;
     public static final int GAME_ATTRIBUT_KW=5;
     public static final int INIT_IS_KW=6;
@@ -98,167 +98,169 @@ public class hightTree extends TreeParser {
     public static final int MOUSE_KW=83;
     public static final int KEY_KW=84;
     public static final int FOR=85;
-    public static final int LEFT=86;
-    public static final int RIGHT=87;
-    public static final int CLICK_LEFT=88;
-    public static final int CLICK_CENTER=89;
-    public static final int CLICK_RIGHT=90;
-    public static final int SCROLL_UP=91;
-    public static final int SCROLL_DOWN=92;
-    public static final int LETTER=93;
-    public static final int SPACE=94;
-    public static final int ESCAPE=95;
-    public static final int ENTER=96;
-    public static final int JUMP=97;
-    public static final int MOVE=98;
-    public static final int FORWARD=99;
-    public static final int BACKWARD=100;
-    public static final int TURN=101;
-    public static final int ACCELERATE=102;
-    public static final int BRAKE=103;
-    public static final int ACTIVATE_KW=104;
-    public static final int DISABLE_KW=105;
-    public static final int COMMANDS=106;
-    public static final int KEYBOARD=107;
-    public static final int RULE_KW=108;
-    public static final int MOVES_KW=109;
-    public static final int BECOMES=110;
-    public static final int TOUCHES_KW=111;
-    public static final int KILLS_KW=112;
-    public static final int OTHER=113;
-    public static final int KILLED_KW=114;
-    public static final int TOUCHED_KW=115;
-    public static final int BY=116;
-    public static final int IF_KW=117;
-    public static final int ELSE=118;
-    public static final int ENDIF=119;
-    public static final int NOT=120;
-    public static final int OR=121;
-    public static final int COMP=122;
-    public static final int EQUALS=123;
-    public static final int INF=124;
-    public static final int SUP=125;
-    public static final int INFEG=126;
-    public static final int SUPED=127;
-    public static final int DIFF=128;
-    public static final int PG=129;
-    public static final int PD=130;
-    public static final int DEAD_KW=131;
-    public static final int ALIVE_KW=132;
-    public static final int EFFACED_KW=133;
-    public static final int GENERATED_KW=134;
-    public static final int TOUCHING_KW=135;
-    public static final int MOVING_KW=136;
-    public static final int WAITING_KW=137;
-    public static final int FINISHED_KW=138;
-    public static final int STARTED_KW=139;
-    public static final int PAUSED_KW=140;
-    public static final int MUTED_KW=141;
-    public static final int PLAYED_KW=142;
-    public static final int STOPPED_KW=143;
-    public static final int ASSIGN_KW=144;
-    public static final int ADD_KW=145;
-    public static final int SUB_KW=146;
-    public static final int INVERT_KW=147;
-    public static final int IA_KW=148;
-    public static final int RANDOM_KW=149;
-    public static final int BETWEEN=150;
-    public static final int PLUS=151;
-    public static final int MINUS=152;
-    public static final int MUL=153;
-    public static final int DIV=154;
-    public static final int MOD=155;
-    public static final int POW=156;
-    public static final int X=157;
-    public static final int Y=158;
-    public static final int Z=159;
-    public static final int VALUE=160;
-    public static final int ALL=161;
-    public static final int NUM=162;
-    public static final int POSITION=163;
-    public static final int ORIENTATION=164;
-    public static final int SIZE=165;
-    public static final int MIN=166;
-    public static final int SEC=167;
-    public static final int MS=168;
-    public static final int FRAME=169;
-    public static final int COUNTER=170;
-    public static final int TIME=171;
-    public static final int OBJECT=172;
-    public static final int CHARACTER=173;
-    public static final int VEHICLE=174;
-    public static final int PLANE=175;
-    public static final int SPACECRAFT=176;
-    public static final int OBSTACLE=177;
-    public static final int WEAPON=178;
-    public static final int SWORD=179;
-    public static final int PROJECTILE=180;
-    public static final int ZONE=181;
-    public static final int GROUND=182;
-    public static final int BONUS=183;
-    public static final int CHECKPOINT=184;
-    public static final int BREAKABLE=185;
-    public static final int CONSTRUCTION=186;
-    public static final int ROOM=187;
-    public static final int BALL=188;
-    public static final int TELEPORTER=189;
-    public static final int MASS=190;
-    public static final int IS_FIX=191;
-    public static final int IS_TRAVERSABLE=192;
-    public static final int FOV=193;
-    public static final int ACTIVE=194;
-    public static final int NAME=195;
-    public static final int DESCRIPTION=196;
-    public static final int LIFE=197;
-    public static final int LIFE_MAX=198;
-    public static final int LIFE_MIN=199;
-    public static final int NB_LIVES=200;
-    public static final int MAGIC=201;
-    public static final int MAGIC_MAX=202;
-    public static final int MAGIC_MIN=203;
-    public static final int LEVEL=204;
-    public static final int ATTACK=205;
-    public static final int DEFENSE=206;
-    public static final int JUMP_FORCE=207;
-    public static final int JUMP_AIR_MAX=208;
-    public static final int MONEY=209;
-    public static final int CLASS=210;
-    public static final int RACE=211;
-    public static final int ACCELERATION=212;
-    public static final int SPEED=213;
-    public static final int SPEED_MAX=214;
-    public static final int SPEED_MIN=215;
-    public static final int BOOST=216;
-    public static final int BOOST_MAX=217;
-    public static final int NB_MUNITIONS=218;
-    public static final int NB_MUNITIONS_MAX=219;
-    public static final int SHOOT_POWER=220;
-    public static final int DAMAGES=221;
-    public static final int UNIT=222;
-    public static final int OBJECT_NAME=223;
-    public static final int ATTRIBUT_NAME=224;
-    public static final int VOLUME=225;
-    public static final int NUMBER=226;
-    public static final int MOVE_WITH_CAMERA=227;
-    public static final int BOOST_INTERVAL=228;
-    public static final int SHOOT_INTERVAL=229;
-    public static final int RELOAD_TIME=230;
-    public static final int INVENTORY=231;
-    public static final int EQUIPED_OBJECT=232;
-    public static final int ENTRANCES=233;
-    public static final int EXITS=234;
-    public static final int DAMAGE_ZONE=235;
-    public static final int COLLECTORS=236;
-    public static final int TYPES_COLLECTORS=237;
-    public static final int GENERATORS=238;
-    public static final int TYPE_GENERATORS=239;
-    public static final int BREAKERS=240;
-    public static final int TYPES_BREAKERS=241;
-    public static final int TELEPORTABLES=242;
-    public static final int TYPES_TELEPORTABLES=243;
-    public static final int COMMENT=244;
-    public static final int WS=245;
-    public static final int TYPE_KW=248;
+    public static final int WUP=86;
+    public static final int WDOWN=87;
+    public static final int LEFT=88;
+    public static final int RIGHT=89;
+    public static final int CLICK_LEFT=90;
+    public static final int CLICK_CENTER=91;
+    public static final int CLICK_RIGHT=92;
+    public static final int SCROLL_UP=93;
+    public static final int SCROLL_DOWN=94;
+    public static final int LETTER=95;
+    public static final int SPACE=96;
+    public static final int ESCAPE=97;
+    public static final int ENTER=98;
+    public static final int JUMP=99;
+    public static final int MOVE=100;
+    public static final int FORWARD=101;
+    public static final int BACKWARD=102;
+    public static final int TURN=103;
+    public static final int ACCELERATE=104;
+    public static final int BRAKE=105;
+    public static final int ACTIVATE_KW=106;
+    public static final int DISABLE_KW=107;
+    public static final int COMMANDS=108;
+    public static final int KEYBOARD=109;
+    public static final int RULE_KW=110;
+    public static final int MOVES_KW=111;
+    public static final int BECOMES=112;
+    public static final int TOUCHES_KW=113;
+    public static final int KILLS_KW=114;
+    public static final int OTHER=115;
+    public static final int KILLED_KW=116;
+    public static final int TOUCHED_KW=117;
+    public static final int BY=118;
+    public static final int IF_KW=119;
+    public static final int ELSE=120;
+    public static final int ENDIF=121;
+    public static final int NOT=122;
+    public static final int OR=123;
+    public static final int COMP=124;
+    public static final int EQUALS=125;
+    public static final int INF=126;
+    public static final int SUP=127;
+    public static final int INFEG=128;
+    public static final int SUPED=129;
+    public static final int DIFF=130;
+    public static final int PG=131;
+    public static final int PD=132;
+    public static final int DEAD_KW=133;
+    public static final int ALIVE_KW=134;
+    public static final int EFFACED_KW=135;
+    public static final int GENERATED_KW=136;
+    public static final int TOUCHING_KW=137;
+    public static final int MOVING_KW=138;
+    public static final int WAITING_KW=139;
+    public static final int FINISHED_KW=140;
+    public static final int STARTED_KW=141;
+    public static final int PAUSED_KW=142;
+    public static final int MUTED_KW=143;
+    public static final int PLAYED_KW=144;
+    public static final int STOPPED_KW=145;
+    public static final int ASSIGN_KW=146;
+    public static final int ADD_KW=147;
+    public static final int SUB_KW=148;
+    public static final int INVERT_KW=149;
+    public static final int IA_KW=150;
+    public static final int RANDOM_KW=151;
+    public static final int BETWEEN=152;
+    public static final int PLUS=153;
+    public static final int MINUS=154;
+    public static final int MUL=155;
+    public static final int DIV=156;
+    public static final int MOD=157;
+    public static final int POW=158;
+    public static final int X=159;
+    public static final int Y=160;
+    public static final int Z=161;
+    public static final int VALUE=162;
+    public static final int ALL=163;
+    public static final int NUM=164;
+    public static final int POSITION=165;
+    public static final int ORIENTATION=166;
+    public static final int SIZE=167;
+    public static final int MIN=168;
+    public static final int SEC=169;
+    public static final int MS=170;
+    public static final int FRAME=171;
+    public static final int COUNTER=172;
+    public static final int TIME=173;
+    public static final int OBJECT=174;
+    public static final int CHARACTER=175;
+    public static final int VEHICLE=176;
+    public static final int PLANE=177;
+    public static final int SPACECRAFT=178;
+    public static final int OBSTACLE=179;
+    public static final int WEAPON=180;
+    public static final int SWORD=181;
+    public static final int PROJECTILE=182;
+    public static final int ZONE=183;
+    public static final int GROUND=184;
+    public static final int BONUS=185;
+    public static final int CHECKPOINT=186;
+    public static final int BREAKABLE=187;
+    public static final int CONSTRUCTION=188;
+    public static final int ROOM=189;
+    public static final int BALL=190;
+    public static final int TELEPORTER=191;
+    public static final int MASS=192;
+    public static final int IS_FIX=193;
+    public static final int IS_TRAVERSABLE=194;
+    public static final int FOV=195;
+    public static final int ACTIVE=196;
+    public static final int NAME=197;
+    public static final int DESCRIPTION=198;
+    public static final int LIFE=199;
+    public static final int LIFE_MAX=200;
+    public static final int LIFE_MIN=201;
+    public static final int NB_LIVES=202;
+    public static final int MAGIC=203;
+    public static final int MAGIC_MAX=204;
+    public static final int MAGIC_MIN=205;
+    public static final int LEVEL=206;
+    public static final int ATTACK=207;
+    public static final int DEFENSE=208;
+    public static final int JUMP_FORCE=209;
+    public static final int JUMP_AIR_MAX=210;
+    public static final int MONEY=211;
+    public static final int CLASS=212;
+    public static final int RACE=213;
+    public static final int ACCELERATION=214;
+    public static final int SPEED=215;
+    public static final int SPEED_MAX=216;
+    public static final int SPEED_MIN=217;
+    public static final int BOOST=218;
+    public static final int BOOST_MAX=219;
+    public static final int NB_MUNITIONS=220;
+    public static final int NB_MUNITIONS_MAX=221;
+    public static final int SHOOT_POWER=222;
+    public static final int DAMAGES=223;
+    public static final int UNIT=224;
+    public static final int OBJECT_NAME=225;
+    public static final int ATTRIBUT_NAME=226;
+    public static final int VOLUME=227;
+    public static final int NUMBER=228;
+    public static final int MOVE_WITH_CAMERA=229;
+    public static final int BOOST_INTERVAL=230;
+    public static final int SHOOT_INTERVAL=231;
+    public static final int RELOAD_TIME=232;
+    public static final int INVENTORY=233;
+    public static final int EQUIPED_OBJECT=234;
+    public static final int ENTRANCES=235;
+    public static final int EXITS=236;
+    public static final int DAMAGE_ZONE=237;
+    public static final int COLLECTORS=238;
+    public static final int TYPES_COLLECTORS=239;
+    public static final int GENERATORS=240;
+    public static final int TYPE_GENERATORS=241;
+    public static final int BREAKERS=242;
+    public static final int TYPES_BREAKERS=243;
+    public static final int TELEPORTABLES=244;
+    public static final int TYPES_TELEPORTABLES=245;
+    public static final int COMMENT=246;
+    public static final int WS=247;
+    public static final int TYPE_KW=250;
 
     // delegates
     // delegators
@@ -2429,12 +2431,12 @@ public class hightTree extends TreeParser {
                 alt20=2;
                 }
                 break;
-            case 246:
+            case 248:
                 {
                 alt20=3;
                 }
                 break;
-            case 247:
+            case 249:
                 {
                 alt20=4;
                 }
@@ -2476,7 +2478,7 @@ public class hightTree extends TreeParser {
                     // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:110:27: 'true'
                     {
                     _last = (CommonTree)input.LT(1);
-                    string_literal77=(CommonTree)match(input,246,FOLLOW_246_in_typeAllocation639); 
+                    string_literal77=(CommonTree)match(input,248,FOLLOW_248_in_typeAllocation639); 
                     string_literal77_tree = (CommonTree)adaptor.dupNode(string_literal77);
 
                     adaptor.addChild(root_0, string_literal77_tree);
@@ -2488,7 +2490,7 @@ public class hightTree extends TreeParser {
                     // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:110:36: 'false'
                     {
                     _last = (CommonTree)input.LT(1);
-                    string_literal78=(CommonTree)match(input,247,FOLLOW_247_in_typeAllocation643); 
+                    string_literal78=(CommonTree)match(input,249,FOLLOW_249_in_typeAllocation643); 
                     string_literal78_tree = (CommonTree)adaptor.dupNode(string_literal78);
 
                     adaptor.addChild(root_0, string_literal78_tree);
@@ -2739,12 +2741,12 @@ public class hightTree extends TreeParser {
                 alt23=2;
                 }
                 break;
-            case 246:
+            case 248:
                 {
                 alt23=3;
                 }
                 break;
-            case 247:
+            case 249:
                 {
                 alt23=4;
                 }
@@ -2792,7 +2794,7 @@ public class hightTree extends TreeParser {
                     root_0 = (CommonTree)adaptor.nil();
 
                     _last = (CommonTree)input.LT(1);
-                    string_literal86=(CommonTree)match(input,246,FOLLOW_246_in_valAffectation708); 
+                    string_literal86=(CommonTree)match(input,248,FOLLOW_248_in_valAffectation708); 
                     string_literal86_tree = (CommonTree)adaptor.dupNode(string_literal86);
 
                     adaptor.addChild(root_0, string_literal86_tree);
@@ -2806,7 +2808,7 @@ public class hightTree extends TreeParser {
                     root_0 = (CommonTree)adaptor.nil();
 
                     _last = (CommonTree)input.LT(1);
-                    string_literal87=(CommonTree)match(input,247,FOLLOW_247_in_valAffectation712); 
+                    string_literal87=(CommonTree)match(input,249,FOLLOW_249_in_valAffectation712); 
                     string_literal87_tree = (CommonTree)adaptor.dupNode(string_literal87);
 
                     adaptor.addChild(root_0, string_literal87_tree);
@@ -10891,30 +10893,30 @@ public class hightTree extends TreeParser {
     static final String DFA25_minS =
         "\1\42\2\uffff\1\3\4\uffff\2\2\1\uffff";
     static final String DFA25_maxS =
-        "\1\u00bd\2\uffff\1\u00bd\4\uffff\2\u00bd\1\uffff";
+        "\1\u00bf\2\uffff\1\u00bf\4\uffff\2\u00bf\1\uffff";
     static final String DFA25_acceptS =
         "\1\uffff\1\1\1\2\1\uffff\1\3\1\4\1\6\1\7\2\uffff\1\5";
     static final String DFA25_specialS =
         "\13\uffff}>";
     static final String[] DFA25_transitionS = {
             "\1\3\5\uffff\1\2\2\uffff\1\2\3\uffff\4\2\5\uffff\1\6\1\7\4"+
-            "\2\2\uffff\6\2\2\uffff\1\2\37\uffff\2\5\13\uffff\1\1\13\uffff"+
+            "\2\2\uffff\6\2\2\uffff\1\2\41\uffff\2\5\13\uffff\1\1\13\uffff"+
             "\1\2\16\uffff\4\4\15\uffff\2\2\7\uffff\24\2",
             "",
             "",
             "\1\12\36\uffff\1\12\5\uffff\1\12\2\uffff\1\12\3\uffff\4\12"+
             "\5\uffff\4\12\1\10\1\12\2\uffff\1\12\1\11\4\12\2\uffff\1\12"+
-            "\4\2\24\uffff\1\2\6\uffff\2\12\13\uffff\1\12\13\uffff\1\12\16"+
+            "\4\2\26\uffff\1\2\6\uffff\2\12\13\uffff\1\12\13\uffff\1\12\16"+
             "\uffff\4\12\15\uffff\2\12\7\uffff\24\12",
             "",
             "",
             "",
             "",
             "\1\12\1\2\36\uffff\1\2\5\uffff\1\2\2\uffff\1\2\3\uffff\4\2"+
-            "\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\37\uffff\2\2\13\uffff\1"+
+            "\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\41\uffff\2\2\13\uffff\1"+
             "\2\13\uffff\1\2\16\uffff\4\2\15\uffff\2\2\7\uffff\24\2",
             "\1\12\1\2\36\uffff\1\2\5\uffff\1\2\2\uffff\1\2\3\uffff\4\2"+
-            "\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\37\uffff\2\2\13\uffff\1"+
+            "\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\41\uffff\2\2\13\uffff\1"+
             "\2\13\uffff\1\2\16\uffff\4\2\15\uffff\2\2\7\uffff\24\2",
             ""
     };
@@ -10959,7 +10961,7 @@ public class hightTree extends TreeParser {
     static final String DFA28_minS =
         "\1\42\1\uffff\2\2\1\uffff\1\2\7\uffff\2\32\1\76\6\uffff";
     static final String DFA28_maxS =
-        "\1\u00bd\1\uffff\2\2\1\uffff\1\2\7\uffff\2\42\1\77\6\uffff";
+        "\1\u00bf\1\uffff\2\2\1\uffff\1\2\7\uffff\2\42\1\77\6\uffff";
     static final String DFA28_acceptS =
         "\1\uffff\1\1\2\uffff\1\6\1\uffff\1\11\1\12\1\13\1\14\1\15\1\16"+
         "\1\17\3\uffff\1\2\1\3\1\4\1\5\1\7\1\10";
@@ -10967,7 +10969,7 @@ public class hightTree extends TreeParser {
         "\26\uffff}>";
     static final String[] DFA28_transitionS = {
             "\1\1\5\uffff\1\1\2\uffff\1\1\3\uffff\4\1\7\uffff\1\2\1\3\1"+
-            "\4\1\5\2\uffff\1\6\1\7\1\10\1\11\1\12\1\13\2\uffff\1\14\70\uffff"+
+            "\4\1\5\2\uffff\1\6\1\7\1\10\1\11\1\12\1\13\2\uffff\1\14\72\uffff"+
             "\1\1\37\uffff\2\1\7\uffff\24\1",
             "",
             "\1\15",
@@ -11032,19 +11034,19 @@ public class hightTree extends TreeParser {
     static final String DFA32_minS =
         "\1\74\4\uffff\1\2\1\42\3\uffff";
     static final String DFA32_maxS =
-        "\1\141\4\uffff\1\2\1\u00a2\3\uffff";
+        "\1\143\4\uffff\1\2\1\u00a4\3\uffff";
     static final String DFA32_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\2\uffff\1\6\1\7\1\5";
     static final String DFA32_specialS =
         "\12\uffff}>";
     static final String[] DFA32_transitionS = {
-            "\1\2\4\uffff\1\2\7\uffff\1\1\1\3\1\4\1\5\24\uffff\1\2",
+            "\1\2\4\uffff\1\2\7\uffff\1\1\1\3\1\4\1\5\26\uffff\1\2",
             "",
             "",
             "",
             "",
             "\1\6",
-            "\1\11\14\uffff\1\11\35\uffff\1\7\1\10\123\uffff\1\11",
+            "\1\11\14\uffff\1\11\35\uffff\1\7\1\10\125\uffff\1\11",
             "",
             "",
             ""
@@ -11090,32 +11092,32 @@ public class hightTree extends TreeParser {
     static final String DFA41_minS =
         "\1\2\1\3\1\uffff\1\3\1\uffff\3\3";
     static final String DFA41_maxS =
-        "\1\134\1\u00bd\1\uffff\1\u00bd\1\uffff\3\u00bd";
+        "\1\136\1\u00bf\1\uffff\1\u00bf\1\uffff\3\u00bf";
     static final String DFA41_acceptS =
         "\2\uffff\1\1\1\uffff\1\2\3\uffff";
     static final String DFA41_specialS =
         "\10\uffff}>";
     static final String[] DFA41_transitionS = {
-            "\1\2\1\1\122\uffff\7\2",
+            "\1\2\1\1\124\uffff\7\2",
             "\1\3\30\uffff\1\2\5\uffff\1\4\5\uffff\1\4\2\uffff\1\4\3\uffff"+
-            "\4\4\5\uffff\6\4\2\uffff\6\4\2\uffff\1\4\37\uffff\2\4\13\uffff"+
+            "\4\4\5\uffff\6\4\2\uffff\6\4\2\uffff\1\4\41\uffff\2\4\13\uffff"+
             "\1\4\13\uffff\1\4\16\uffff\4\4\15\uffff\2\4\7\uffff\24\4",
             "",
             "\1\5\16\uffff\1\4\17\uffff\1\2\5\uffff\1\2\2\uffff\1\2\3\uffff"+
-            "\4\2\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\37\uffff\2\2\13\uffff"+
+            "\4\2\5\uffff\6\2\2\uffff\6\2\2\uffff\1\2\41\uffff\2\2\13\uffff"+
             "\1\2\13\uffff\1\2\16\uffff\4\2\15\uffff\2\2\7\uffff\24\2",
             "",
             "\1\6\16\uffff\1\2\17\uffff\1\4\5\uffff\1\4\2\uffff\1\4\3\uffff"+
             "\4\4\3\uffff\1\4\1\uffff\6\4\2\uffff\6\4\2\uffff\1\4\11\uffff"+
-            "\1\4\25\uffff\2\4\2\uffff\1\4\10\uffff\1\4\13\uffff\1\4\16\uffff"+
+            "\1\4\27\uffff\2\4\2\uffff\1\4\10\uffff\1\4\13\uffff\1\4\16\uffff"+
             "\5\4\14\uffff\2\4\7\uffff\24\4",
             "\1\7\16\uffff\1\4\17\uffff\1\2\5\uffff\1\2\2\uffff\1\2\3\uffff"+
             "\4\2\3\uffff\1\2\1\uffff\6\2\2\uffff\6\2\2\uffff\1\2\11\uffff"+
-            "\1\2\25\uffff\2\2\2\uffff\1\2\10\uffff\1\2\13\uffff\1\2\16\uffff"+
+            "\1\2\27\uffff\2\2\2\uffff\1\2\10\uffff\1\2\13\uffff\1\2\16\uffff"+
             "\5\2\14\uffff\2\2\7\uffff\24\2",
             "\1\6\16\uffff\1\2\17\uffff\1\4\5\uffff\1\4\2\uffff\1\4\3\uffff"+
             "\4\4\3\uffff\1\4\1\uffff\6\4\2\uffff\6\4\2\uffff\1\4\11\uffff"+
-            "\1\4\25\uffff\2\4\2\uffff\1\4\10\uffff\1\4\13\uffff\1\4\16\uffff"+
+            "\1\4\27\uffff\2\4\2\uffff\1\4\10\uffff\1\4\13\uffff\1\4\16\uffff"+
             "\5\4\14\uffff\2\4\7\uffff\24\4"
     };
 
@@ -11155,13 +11157,13 @@ public class hightTree extends TreeParser {
  
 
     public static final BitSet FOLLOW_GAME_KW_in_game68 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_gameData_in_game70 = new BitSet(new long[]{0x00000000000000C0L,0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_newType_in_game74 = new BitSet(new long[]{0x00000000000000C0L,0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_init_in_game78 = new BitSet(new long[]{0x00400000000000C8L,0x0000100000040000L,0x0000000000100000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_definition_in_game82 = new BitSet(new long[]{0x0040000000000008L,0x0000100000040000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_commande_in_game86 = new BitSet(new long[]{0x0000000000000008L,0x0000100000040000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_reglesJeu_in_game90 = new BitSet(new long[]{0x0000000000000008L,0x0000100000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_iaBasique_in_game94 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_gameData_in_game70 = new BitSet(new long[]{0x00000000000000C0L,0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_newType_in_game74 = new BitSet(new long[]{0x00000000000000C0L,0x0000000000000000L,0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_init_in_game78 = new BitSet(new long[]{0x00400000000000C8L,0x0000400000040000L,0x0000000000400000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_definition_in_game82 = new BitSet(new long[]{0x0040000000000008L,0x0000400000040000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_commande_in_game86 = new BitSet(new long[]{0x0000000000000008L,0x0000400000040000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_reglesJeu_in_game90 = new BitSet(new long[]{0x0000000000000008L,0x0000400000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_iaBasique_in_game94 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000400000L});
     public static final BitSet FOLLOW_GAME_ATTRIBUT_KW_in_gameData117 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_attributGame_list_in_gameData119 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_attributGame_in_attributGame_list136 = new BitSet(new long[]{0x0000000020002002L});
@@ -11174,9 +11176,9 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_SCORE_KW_in_attributGame174 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_FLOAT_in_attributGame176 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_TYPE_KW_in_newType196 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_newType198 = new BitSet(new long[]{0x0000090400000000L,0x0000000000000000L,0x3FFFFC0000000000L});
+    public static final BitSet FOLLOW_IDENT_in_newType198 = new BitSet(new long[]{0x0000090400000000L,0x0000000000000000L,0xFFFFF00000000000L});
     public static final BitSet FOLLOW_subType_list_in_newType200 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_subType_in_subType_list219 = new BitSet(new long[]{0x0000090400000002L,0x0000000000000000L,0x3FFFFC0000000000L});
+    public static final BitSet FOLLOW_subType_in_subType_list219 = new BitSet(new long[]{0x0000090400000002L,0x0000000000000000L,0xFFFFF00000000000L});
     public static final BitSet FOLLOW_IDENT_in_subType237 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeObjet_in_subType242 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_INIT_IS_KW_in_init262 = new BitSet(new long[]{0x0000000000000004L});
@@ -11201,7 +11203,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_IN_KW_in_declarationObjet365 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_declarationObjet367 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_operation_in_list_declaration399 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_IDENT_in_list_declaration403 = new BitSet(new long[]{0x0000000480305002L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_IDENT_in_list_declaration403 = new BitSet(new long[]{0x0000000480305002L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_IDENT_in_typeEntity422 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeObjet3D_in_typeEntity427 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_PLAYER_in_entityMode444 = new BitSet(new long[]{0x0000000000000002L});
@@ -11216,7 +11218,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_IDENT_in_affectationObjet550 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_valAggregation_in_affectationObjet552 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALLOCATION_KW_in_affectationObjet560 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_attribut_in_affectationObjet562 = new BitSet(new long[]{0x0000000480305000L,0x0000000000000000L,0x00000000FFA00000L,0x00C0000000000000L});
+    public static final BitSet FOLLOW_attribut_in_affectationObjet562 = new BitSet(new long[]{0x0000000480305000L,0x0000000000000000L,0x00000003FE800000L,0x0300000000000000L});
     public static final BitSet FOLLOW_typeAllocation_in_affectationObjet565 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALLOCATION_KW_in_affectationObjet572 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_typeCoordonnees_in_affectationObjet574 = new BitSet(new long[]{0x0000000000020000L});
@@ -11225,28 +11227,28 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_attributListeOuObjet_in_affectationObjet586 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_IDENT_in_affectationObjet589 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALLOCATION_KW_in_affectationObjet595 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_attributTps_in_affectationObjet597 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
-    public static final BitSet FOLLOW_operation_in_affectationObjet600 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000003C000000000L});
+    public static final BitSet FOLLOW_attributTps_in_affectationObjet597 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
+    public static final BitSet FOLLOW_operation_in_affectationObjet600 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000F0000000000L});
     public static final BitSet FOLLOW_timeUnit_in_affectationObjet603 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_operation_in_typeAllocation630 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IDENT_in_typeAllocation635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_typeAllocation639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_typeAllocation643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_248_in_typeAllocation639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_249_in_typeAllocation643 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_AGGREGATION_KW_in_valAggregation662 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_valAggregation664 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x000003C000000000L});
+    public static final BitSet FOLLOW_operation_in_valAggregation664 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x00000F0000000000L});
     public static final BitSet FOLLOW_timeUnit_in_valAggregation667 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_AGGREGATION_KW_in_valAggregation675 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_valAggregation677 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_operation_in_valAffectation698 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IDENT_in_valAffectation704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_246_in_valAffectation708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_valAffectation712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_248_in_valAffectation708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_249_in_valAffectation712 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DEFINITION_KW_in_definition735 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_definition737 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_consequences_in_definition739 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_CONSEQUENCES_KW_in_consequences759 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_consequ_list_in_consequences761 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_consequ_in_consequ_list780 = new BitSet(new long[]{0x3F07890400000002L,0x002003000000013FL,0x3FFFFC06000F0002L});
+    public static final BitSet FOLLOW_consequ_in_consequ_list780 = new BitSet(new long[]{0x3F07890400000002L,0x00800C000000013FL,0xFFFFF018003C0008L});
     public static final BitSet FOLLOW_siAlors_in_consequ799 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_action_in_consequ806 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_affectation_in_consequ813 = new BitSet(new long[]{0x0000000000000002L});
@@ -11254,7 +11256,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_IDENT_in_consequ827 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_VICTORY_KW_in_consequ833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DEFEAT_KW_in_consequ839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_action856 = new BitSet(new long[]{0x1000000000000000L,0x0000000200001E02L});
+    public static final BitSet FOLLOW_accesClasse_in_action856 = new BitSet(new long[]{0x1000000000000000L,0x0000000800001E02L});
     public static final BitSet FOLLOW_actionObjet_in_action859 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ENDS_KW_in_action865 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_action867 = new BitSet(new long[]{0x0000000000000008L});
@@ -11277,22 +11279,22 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_STOP_KW_in_action936 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_action938 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_BLOCK_KW_in_action944 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_transformation_in_action946 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_transformation_in_action946 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_action949 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_coordinates_in_action952 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_EFFACE_KW_in_action959 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeAcces_in_action961 = new BitSet(new long[]{0x0000800400020008L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_typeAcces_in_action961 = new BitSet(new long[]{0x0000800400020008L,0x0000000000000000L,0x0000001000000000L});
     public static final BitSet FOLLOW_typeDestination_in_action964 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_GENERATE_KW_in_action972 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeAcces_in_action974 = new BitSet(new long[]{0x0000800400020008L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_typeAcces_in_action974 = new BitSet(new long[]{0x0000800400020008L,0x0000000000000000L,0x0000001000000000L});
     public static final BitSet FOLLOW_typeDestination_in_action977 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_WAIT_KW_in_action985 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_action987 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000003C000000000L});
+    public static final BitSet FOLLOW_operation_in_action987 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000F0000000000L});
     public static final BitSet FOLLOW_timeUnit_in_action990 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_consequences_in_action993 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SAVE_KW_in_action999 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesLocal_in_typeAcces1015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_typeAcces1020 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_operation_in_typeAcces1020 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_IDENT_in_typeAcces1024 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesGlobal_in_typeAcces1028 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesLocal_in_typeDestination1045 = new BitSet(new long[]{0x0000000000000002L});
@@ -11300,11 +11302,11 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_DIES_KW_in_actionObjet1066 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_actionCommandePressee_in_actionObjet1072 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DURING_in_actionObjet1079 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1081 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
-    public static final BitSet FOLLOW_operation_in_actionObjet1084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000003C000000000L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1081 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
+    public static final BitSet FOLLOW_operation_in_actionObjet1084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000F0000000000L});
     public static final BitSet FOLLOW_timeUnit_in_actionObjet1087 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_UNTIL_in_actionObjet1095 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1097 = new BitSet(new long[]{0x0000001001000000L,0xFA00000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1097 = new BitSet(new long[]{0x0000001001000000L,0xE800000000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_conditions_in_actionObjet1100 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_EQUIP_in_actionObjet1108 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesLocal_in_actionObjet1110 = new BitSet(new long[]{0x0000000000000008L});
@@ -11314,31 +11316,31 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_PREVIOUS_in_actionObjet1131 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_set_in_transformation0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_COORDINATE_KW_in_coordinates1182 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_coordinates1184 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
-    public static final BitSet FOLLOW_operation_in_coordinates1187 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_coordinates1184 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
+    public static final BitSet FOLLOW_operation_in_coordinates1187 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_coordinates1190 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_COMMAND_KW_in_commande1212 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_commande1214 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
     public static final BitSet FOLLOW_actionCommande_list_in_commande1217 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_actionCommande_in_actionCommande_list1235 = new BitSet(new long[]{0x0000000000000002L,0x0000000000180000L});
     public static final BitSet FOLLOW_MOUSE_KW_in_actionCommande1255 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_souris_in_actionCommande1257 = new BitSet(new long[]{0x1000000400000000L,0x000000E600000002L});
+    public static final BitSet FOLLOW_souris_in_actionCommande1257 = new BitSet(new long[]{0x1000000400000000L,0x0000039800000002L});
     public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1260 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_KEY_KW_in_actionCommande1268 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_clavier_in_actionCommande1270 = new BitSet(new long[]{0x1000000400000000L,0x000000E600000002L});
+    public static final BitSet FOLLOW_clavier_in_actionCommande1270 = new BitSet(new long[]{0x1000000400000000L,0x0000039800000002L});
     public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1273 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_IDENT_in_actionCommandeType1292 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_actionCommandePressee_in_actionCommandeType1296 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionCommandeType1301 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_souris0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_clavier0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1429 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1429 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_actionCommandePressee1431 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_PAUSE_KW_in_actionCommandePressee1438 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_STOP_KW_in_actionCommandePressee1444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1464 = new BitSet(new long[]{0x0000000000000000L,0x0000001800C00000L});
+    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1464 = new BitSet(new long[]{0x0000000000000000L,0x0000006003000000L});
     public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1486 = new BitSet(new long[]{0x0000000000000000L,0x0000000000C00000L});
+    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1486 = new BitSet(new long[]{0x0000000000000000L,0x0000000003000000L});
     public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1488 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ACCELERATE_in_actionCommandeMaintenue1500 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_BRAKE_in_actionCommandeMaintenue1506 = new BitSet(new long[]{0x0000000000000002L});
@@ -11347,20 +11349,20 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_DISABLE_KW_in_activCommande1538 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_type_Command_in_activCommande1540 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_COMMANDS_in_type_Command1558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOUSE_KW_in_type_Command1564 = new BitSet(new long[]{0x000000000000000EL,0x000000001FC00000L});
+    public static final BitSet FOLLOW_MOUSE_KW_in_type_Command1564 = new BitSet(new long[]{0x000000000000000EL,0x000000007F000000L});
     public static final BitSet FOLLOW_souris_in_type_Command1567 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_VIRG_in_type_Command1571 = new BitSet(new long[]{0x000000000000000CL,0x000000001FC00000L});
+    public static final BitSet FOLLOW_VIRG_in_type_Command1571 = new BitSet(new long[]{0x000000000000000CL,0x000000007F000000L});
     public static final BitSet FOLLOW_souris_in_type_Command1574 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_KEY_KW_in_type_Command1584 = new BitSet(new long[]{0x000000000000000CL,0x00000001E0C00000L});
+    public static final BitSet FOLLOW_KEY_KW_in_type_Command1584 = new BitSet(new long[]{0x000000000000000CL,0x0000000783000000L});
     public static final BitSet FOLLOW_clavier_in_type_Command1586 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_VIRG_in_type_Command1590 = new BitSet(new long[]{0x000000000000000CL,0x00000001E0C00000L});
+    public static final BitSet FOLLOW_VIRG_in_type_Command1590 = new BitSet(new long[]{0x000000000000000CL,0x0000000783000000L});
     public static final BitSet FOLLOW_clavier_in_type_Command1593 = new BitSet(new long[]{0x0000000010000002L});
     public static final BitSet FOLLOW_KEYBOARD_in_type_Command1602 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_in_reglesJeu1620 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_reglesJeu1622 = new BitSet(new long[]{0x0F07890400C00000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_IDENT_in_reglesJeu1622 = new BitSet(new long[]{0x0F07890400C00000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_in_reglesJeu1625 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_consequences_in_reglesJeu1628 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_accesClasse_in_declencheur1649 = new BitSet(new long[]{0x0000000000000000L,0x000DA00000000200L});
+    public static final BitSet FOLLOW_accesClasse_in_declencheur1649 = new BitSet(new long[]{0x0000000000000000L,0x0036800000000200L});
     public static final BitSet FOLLOW_MOVES_KW_in_declencheur1653 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DIES_KW_in_declencheur1657 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_declencheurTK_in_declencheur1661 = new BitSet(new long[]{0x0000000000000002L});
@@ -11370,7 +11372,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_STARTS_KW_in_declencheur1685 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_type_declencheur_in_declencheur1687 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_BECOMES_VAR_KW_in_declencheur1705 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_variable_in_declencheur1707 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000E0000000L});
+    public static final BitSet FOLLOW_variable_in_declencheur1707 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x0000000380000000L});
     public static final BitSet FOLLOW_varOuNB_in_declencheur1710 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_BECOMES_ID_KW_in_declencheur1718 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_declencheur1720 = new BitSet(new long[]{0x0007800000000000L});
@@ -11390,7 +11392,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_declencheur_O_in_declencheurKT1849 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT1858 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_declencheur_O_in_declencheurKT1860 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OTHER_in_declencheur_O1877 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_OTHER_in_declencheur_O1877 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesGlobal_in_declencheur_O1881 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesLocal_in_declencheur_O1886 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IF_KW_in_siAlors1908 = new BitSet(new long[]{0x0000000000000004L});
@@ -11398,155 +11400,155 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_consequences_in_siAlors1913 = new BitSet(new long[]{0x0000000000040008L});
     public static final BitSet FOLLOW_consequences_in_siAlors1916 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_CONDITION_KW_in_conditions1938 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_NOT_in_conditions1940 = new BitSet(new long[]{0x0000001001000000L,0xFA00000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_NOT_in_conditions1940 = new BitSet(new long[]{0x0000001001000000L,0xE800000000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_conditions_in_conditions1943 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_OR_in_conditions1951 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_conditions_in_conditions1953 = new BitSet(new long[]{0x0000001001000000L,0xFB00000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_NOT_in_conditions1956 = new BitSet(new long[]{0x0000001001000000L,0xFA00000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_conditions_in_conditions1953 = new BitSet(new long[]{0x0000001001000000L,0xEC00000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_NOT_in_conditions1956 = new BitSet(new long[]{0x0000001001000000L,0xE800000000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_conditions_in_conditions1959 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_AND_in_conditions1967 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_conditions_in_conditions1969 = new BitSet(new long[]{0x0000001001000000L,0xFB00000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_NOT_in_conditions1972 = new BitSet(new long[]{0x0000001001000000L,0xFA00000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_conditions_in_conditions1969 = new BitSet(new long[]{0x0000001001000000L,0xEC00000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_NOT_in_conditions1972 = new BitSet(new long[]{0x0000001001000000L,0xE800000000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_conditions_in_conditions1975 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_EQUALS_in_conditions1983 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions1985 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions1985 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions1988 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_INF_in_conditions1996 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions1998 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions1998 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions2000 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SUP_in_conditions2008 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions2010 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions2010 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions2013 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_INFEG_in_conditions2021 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions2023 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions2023 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions2026 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SUPED_in_conditions2034 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions2036 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions2036 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions2039 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_DIFF_in_conditions2047 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions2049 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_conditions2049 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_conditions2052 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_DEAD_KW_in_etat2072 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2074 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2078 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2074 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2078 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2082 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALIVE_KW_in_etat2090 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2092 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2096 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2092 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2096 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2100 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_EFFACED_KW_in_etat2108 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2110 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2114 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2110 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2114 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2118 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_GENERATED_KW_in_etat2126 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2128 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2132 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2128 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2132 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2136 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_TOUCHING_KW_in_etat2144 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2146 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2150 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2146 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2150 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2154 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MOVING_KW_in_etat2162 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2164 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2168 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2164 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2168 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2172 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_WAITING_KW_in_etat2180 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2182 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
-    public static final BitSet FOLLOW_NOT_in_etat2186 = new BitSet(new long[]{0x0007890400000000L,0x0102000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2182 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
+    public static final BitSet FOLLOW_NOT_in_etat2186 = new BitSet(new long[]{0x0007890400000000L,0x0408000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_declencheur_O_in_etat2190 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_FINISHED_KW_in_etat2198 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2200 = new BitSet(new long[]{0x0000000000000008L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2200 = new BitSet(new long[]{0x0000000000000008L,0x0400000000000000L});
     public static final BitSet FOLLOW_NOT_in_etat2204 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_STARTED_KW_in_etat2213 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2215 = new BitSet(new long[]{0x0000000000000008L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2215 = new BitSet(new long[]{0x0000000000000008L,0x0400000000000000L});
     public static final BitSet FOLLOW_NOT_in_etat2218 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_PAUSED_KW_in_etat2227 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2229 = new BitSet(new long[]{0x0000000000000008L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2229 = new BitSet(new long[]{0x0000000000000008L,0x0400000000000000L});
     public static final BitSet FOLLOW_NOT_in_etat2232 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MUTED_KW_in_etat2241 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2243 = new BitSet(new long[]{0xC000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_NOT_in_etat2247 = new BitSet(new long[]{0xC000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2243 = new BitSet(new long[]{0xC000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_NOT_in_etat2247 = new BitSet(new long[]{0xC000000000000000L,0x0400000000000000L});
     public static final BitSet FOLLOW_mode_mute_in_etat2251 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_PLAYED_KW_in_etat2259 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2261 = new BitSet(new long[]{0x0000000000000008L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2261 = new BitSet(new long[]{0x0000000000000008L,0x0400000000000000L});
     public static final BitSet FOLLOW_NOT_in_etat2265 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_STOPPED_KW_in_etat2274 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat2276 = new BitSet(new long[]{0x0000000000000008L,0x0100000000000000L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat2276 = new BitSet(new long[]{0x0000000000000008L,0x0400000000000000L});
     public static final BitSet FOLLOW_NOT_in_etat2280 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_VICTORY_KW_in_etat2291 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DEFEAT_KW_in_etat2296 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_mode_mute0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ASSIGN_KW_in_affectation2335 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation2337 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x00000000E0000000L});
+    public static final BitSet FOLLOW_operation_in_affectation2337 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x0000000380000000L});
     public static final BitSet FOLLOW_variable_in_affectation2340 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ADD_KW_in_affectation2348 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation2350 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x00000000E0000000L});
+    public static final BitSet FOLLOW_operation_in_affectation2350 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x0000000380000000L});
     public static final BitSet FOLLOW_variable_in_affectation2353 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SUB_KW_in_affectation2362 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation2364 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x00000000E0000000L});
+    public static final BitSet FOLLOW_operation_in_affectation2364 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x0000000380000000L});
     public static final BitSet FOLLOW_variable_in_affectation2367 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_INVERT_KW_in_affectation2376 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_variable_in_affectation2378 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x00000000E0000000L});
+    public static final BitSet FOLLOW_variable_in_affectation2378 = new BitSet(new long[]{0x0000000000305000L,0x0000000000000000L,0x0000000380000000L});
     public static final BitSet FOLLOW_variable_in_affectation2381 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_IA_KW_in_iaBasique2402 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClasse_in_iaBasique2404 = new BitSet(new long[]{0x1000000000000000L,0x0000000200001E02L});
+    public static final BitSet FOLLOW_accesClasse_in_iaBasique2404 = new BitSet(new long[]{0x1000000000000000L,0x0000000800001E02L});
     public static final BitSet FOLLOW_actionObjetList_in_iaBasique2407 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_actionObjet_in_actionObjetList2422 = new BitSet(new long[]{0x1000000000000002L,0x0000000200001E02L});
+    public static final BitSet FOLLOW_actionObjet_in_actionObjetList2422 = new BitSet(new long[]{0x1000000000000002L,0x0000000800001E02L});
     public static final BitSet FOLLOW_RANDOM_KW_in_operation2447 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2449 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2449 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2452 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_PLUS_in_operation2459 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2461 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2461 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2464 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MINUS_in_operation2471 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2473 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2473 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2476 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MUL_in_operation2483 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2485 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2485 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2488 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_DIV_in_operation2495 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2497 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2497 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2500 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MOD_in_operation2507 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2509 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2509 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2512 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_POW_in_operation2519 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation2521 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_operation_in_operation2521 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_operation2524 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_variable_in_operation2530 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FLOAT_in_operation2535 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_X_in_variable2555 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable2557 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable2557 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2560 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_Y_in_variable2568 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable2570 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable2570 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2573 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_Z_in_variable2581 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable2583 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable2583 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2586 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_VAR_I_KW_in_variable2594 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_variable2596 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_IDENT_in_variable2596 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2598 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_VAR_A_KW_in_variable2606 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_attribut_in_variable2608 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_attribut_in_variable2608 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2611 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_GAME_SCORE_KW_in_variable2618 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_VALUE_KW_in_variable2624 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_attributTps_in_variable2626 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0600000002L});
+    public static final BitSet FOLLOW_attributTps_in_variable2626 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF01800000008L});
     public static final BitSet FOLLOW_accesClasse_in_variable2629 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALL_in_accesClasse2650 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesLocal_in_accesClasse2657 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accesGlobal_in_accesClasse2664 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeObjet_in_accesGlobal2683 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_interaction_in_accesGlobal2690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_accesGlobal2697 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_NOT_in_accesGlobal2699 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0x3FFFFC0000000000L});
-    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2702 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_interaction_in_accesGlobal2707 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_PLAYER_in_accesGlobal2712 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_PG_in_accesGlobal2697 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_NOT_in_accesGlobal2699 = new BitSet(new long[]{0x0007890400000000L,0x0000000000000000L,0xFFFFF00000000000L});
+    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2702 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_interaction_in_accesGlobal2707 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_PLAYER_in_accesGlobal2712 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_PD_in_accesGlobal2715 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IDENT_in_accesLocal2733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NUM_in_accesLocal2739 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000000FFA00000L});
+    public static final BitSet FOLLOW_NUM_in_accesLocal2739 = new BitSet(new long[]{0x0000000080305000L,0x0000000000000000L,0x00000003FE800000L});
     public static final BitSet FOLLOW_operation_in_accesLocal2741 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_IN_in_accesLocal2744 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_IDENT_in_accesLocal2746 = new BitSet(new long[]{0x0000000000000002L});

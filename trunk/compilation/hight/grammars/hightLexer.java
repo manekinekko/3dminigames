@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-15 20:54:37
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-16 21:36:00
 
     package grammars;
 
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class hightLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__246=246;
-    public static final int T__247=247;
+    public static final int T__248=248;
+    public static final int T__249=249;
     public static final int GAME_KW=4;
     public static final int GAME_ATTRIBUT_KW=5;
     public static final int INIT_IS_KW=6;
@@ -94,166 +94,168 @@ public class hightLexer extends Lexer {
     public static final int MOUSE_KW=83;
     public static final int KEY_KW=84;
     public static final int FOR=85;
-    public static final int LEFT=86;
-    public static final int RIGHT=87;
-    public static final int CLICK_LEFT=88;
-    public static final int CLICK_CENTER=89;
-    public static final int CLICK_RIGHT=90;
-    public static final int SCROLL_UP=91;
-    public static final int SCROLL_DOWN=92;
-    public static final int LETTER=93;
-    public static final int SPACE=94;
-    public static final int ESCAPE=95;
-    public static final int ENTER=96;
-    public static final int JUMP=97;
-    public static final int MOVE=98;
-    public static final int FORWARD=99;
-    public static final int BACKWARD=100;
-    public static final int TURN=101;
-    public static final int ACCELERATE=102;
-    public static final int BRAKE=103;
-    public static final int ACTIVATE_KW=104;
-    public static final int DISABLE_KW=105;
-    public static final int COMMANDS=106;
-    public static final int KEYBOARD=107;
-    public static final int RULE_KW=108;
-    public static final int MOVES_KW=109;
-    public static final int BECOMES=110;
-    public static final int TOUCHES_KW=111;
-    public static final int KILLS_KW=112;
-    public static final int OTHER=113;
-    public static final int KILLED_KW=114;
-    public static final int TOUCHED_KW=115;
-    public static final int BY=116;
-    public static final int IF_KW=117;
-    public static final int ELSE=118;
-    public static final int ENDIF=119;
-    public static final int NOT=120;
-    public static final int OR=121;
-    public static final int COMP=122;
-    public static final int EQUALS=123;
-    public static final int INF=124;
-    public static final int SUP=125;
-    public static final int INFEG=126;
-    public static final int SUPED=127;
-    public static final int DIFF=128;
-    public static final int PG=129;
-    public static final int PD=130;
-    public static final int DEAD_KW=131;
-    public static final int ALIVE_KW=132;
-    public static final int EFFACED_KW=133;
-    public static final int GENERATED_KW=134;
-    public static final int TOUCHING_KW=135;
-    public static final int MOVING_KW=136;
-    public static final int WAITING_KW=137;
-    public static final int FINISHED_KW=138;
-    public static final int STARTED_KW=139;
-    public static final int PAUSED_KW=140;
-    public static final int MUTED_KW=141;
-    public static final int PLAYED_KW=142;
-    public static final int STOPPED_KW=143;
-    public static final int ASSIGN_KW=144;
-    public static final int ADD_KW=145;
-    public static final int SUB_KW=146;
-    public static final int INVERT_KW=147;
-    public static final int IA_KW=148;
-    public static final int RANDOM_KW=149;
-    public static final int BETWEEN=150;
-    public static final int PLUS=151;
-    public static final int MINUS=152;
-    public static final int MUL=153;
-    public static final int DIV=154;
-    public static final int MOD=155;
-    public static final int POW=156;
-    public static final int X=157;
-    public static final int Y=158;
-    public static final int Z=159;
-    public static final int VALUE=160;
-    public static final int ALL=161;
-    public static final int NUM=162;
-    public static final int POSITION=163;
-    public static final int ORIENTATION=164;
-    public static final int SIZE=165;
-    public static final int MIN=166;
-    public static final int SEC=167;
-    public static final int MS=168;
-    public static final int FRAME=169;
-    public static final int COUNTER=170;
-    public static final int TIME=171;
-    public static final int OBJECT=172;
-    public static final int CHARACTER=173;
-    public static final int VEHICLE=174;
-    public static final int PLANE=175;
-    public static final int SPACECRAFT=176;
-    public static final int OBSTACLE=177;
-    public static final int WEAPON=178;
-    public static final int SWORD=179;
-    public static final int PROJECTILE=180;
-    public static final int ZONE=181;
-    public static final int GROUND=182;
-    public static final int BONUS=183;
-    public static final int CHECKPOINT=184;
-    public static final int BREAKABLE=185;
-    public static final int CONSTRUCTION=186;
-    public static final int ROOM=187;
-    public static final int BALL=188;
-    public static final int TELEPORTER=189;
-    public static final int MASS=190;
-    public static final int IS_FIX=191;
-    public static final int IS_TRAVERSABLE=192;
-    public static final int FOV=193;
-    public static final int ACTIVE=194;
-    public static final int NAME=195;
-    public static final int DESCRIPTION=196;
-    public static final int LIFE=197;
-    public static final int LIFE_MAX=198;
-    public static final int LIFE_MIN=199;
-    public static final int NB_LIVES=200;
-    public static final int MAGIC=201;
-    public static final int MAGIC_MAX=202;
-    public static final int MAGIC_MIN=203;
-    public static final int LEVEL=204;
-    public static final int ATTACK=205;
-    public static final int DEFENSE=206;
-    public static final int JUMP_FORCE=207;
-    public static final int JUMP_AIR_MAX=208;
-    public static final int MONEY=209;
-    public static final int CLASS=210;
-    public static final int RACE=211;
-    public static final int ACCELERATION=212;
-    public static final int SPEED=213;
-    public static final int SPEED_MAX=214;
-    public static final int SPEED_MIN=215;
-    public static final int BOOST=216;
-    public static final int BOOST_MAX=217;
-    public static final int NB_MUNITIONS=218;
-    public static final int NB_MUNITIONS_MAX=219;
-    public static final int SHOOT_POWER=220;
-    public static final int DAMAGES=221;
-    public static final int UNIT=222;
-    public static final int OBJECT_NAME=223;
-    public static final int ATTRIBUT_NAME=224;
-    public static final int VOLUME=225;
-    public static final int NUMBER=226;
-    public static final int MOVE_WITH_CAMERA=227;
-    public static final int BOOST_INTERVAL=228;
-    public static final int SHOOT_INTERVAL=229;
-    public static final int RELOAD_TIME=230;
-    public static final int INVENTORY=231;
-    public static final int EQUIPED_OBJECT=232;
-    public static final int ENTRANCES=233;
-    public static final int EXITS=234;
-    public static final int DAMAGE_ZONE=235;
-    public static final int COLLECTORS=236;
-    public static final int TYPES_COLLECTORS=237;
-    public static final int GENERATORS=238;
-    public static final int TYPE_GENERATORS=239;
-    public static final int BREAKERS=240;
-    public static final int TYPES_BREAKERS=241;
-    public static final int TELEPORTABLES=242;
-    public static final int TYPES_TELEPORTABLES=243;
-    public static final int COMMENT=244;
-    public static final int WS=245;
+    public static final int WUP=86;
+    public static final int WDOWN=87;
+    public static final int LEFT=88;
+    public static final int RIGHT=89;
+    public static final int CLICK_LEFT=90;
+    public static final int CLICK_CENTER=91;
+    public static final int CLICK_RIGHT=92;
+    public static final int SCROLL_UP=93;
+    public static final int SCROLL_DOWN=94;
+    public static final int LETTER=95;
+    public static final int SPACE=96;
+    public static final int ESCAPE=97;
+    public static final int ENTER=98;
+    public static final int JUMP=99;
+    public static final int MOVE=100;
+    public static final int FORWARD=101;
+    public static final int BACKWARD=102;
+    public static final int TURN=103;
+    public static final int ACCELERATE=104;
+    public static final int BRAKE=105;
+    public static final int ACTIVATE_KW=106;
+    public static final int DISABLE_KW=107;
+    public static final int COMMANDS=108;
+    public static final int KEYBOARD=109;
+    public static final int RULE_KW=110;
+    public static final int MOVES_KW=111;
+    public static final int BECOMES=112;
+    public static final int TOUCHES_KW=113;
+    public static final int KILLS_KW=114;
+    public static final int OTHER=115;
+    public static final int KILLED_KW=116;
+    public static final int TOUCHED_KW=117;
+    public static final int BY=118;
+    public static final int IF_KW=119;
+    public static final int ELSE=120;
+    public static final int ENDIF=121;
+    public static final int NOT=122;
+    public static final int OR=123;
+    public static final int COMP=124;
+    public static final int EQUALS=125;
+    public static final int INF=126;
+    public static final int SUP=127;
+    public static final int INFEG=128;
+    public static final int SUPED=129;
+    public static final int DIFF=130;
+    public static final int PG=131;
+    public static final int PD=132;
+    public static final int DEAD_KW=133;
+    public static final int ALIVE_KW=134;
+    public static final int EFFACED_KW=135;
+    public static final int GENERATED_KW=136;
+    public static final int TOUCHING_KW=137;
+    public static final int MOVING_KW=138;
+    public static final int WAITING_KW=139;
+    public static final int FINISHED_KW=140;
+    public static final int STARTED_KW=141;
+    public static final int PAUSED_KW=142;
+    public static final int MUTED_KW=143;
+    public static final int PLAYED_KW=144;
+    public static final int STOPPED_KW=145;
+    public static final int ASSIGN_KW=146;
+    public static final int ADD_KW=147;
+    public static final int SUB_KW=148;
+    public static final int INVERT_KW=149;
+    public static final int IA_KW=150;
+    public static final int RANDOM_KW=151;
+    public static final int BETWEEN=152;
+    public static final int PLUS=153;
+    public static final int MINUS=154;
+    public static final int MUL=155;
+    public static final int DIV=156;
+    public static final int MOD=157;
+    public static final int POW=158;
+    public static final int X=159;
+    public static final int Y=160;
+    public static final int Z=161;
+    public static final int VALUE=162;
+    public static final int ALL=163;
+    public static final int NUM=164;
+    public static final int POSITION=165;
+    public static final int ORIENTATION=166;
+    public static final int SIZE=167;
+    public static final int MIN=168;
+    public static final int SEC=169;
+    public static final int MS=170;
+    public static final int FRAME=171;
+    public static final int COUNTER=172;
+    public static final int TIME=173;
+    public static final int OBJECT=174;
+    public static final int CHARACTER=175;
+    public static final int VEHICLE=176;
+    public static final int PLANE=177;
+    public static final int SPACECRAFT=178;
+    public static final int OBSTACLE=179;
+    public static final int WEAPON=180;
+    public static final int SWORD=181;
+    public static final int PROJECTILE=182;
+    public static final int ZONE=183;
+    public static final int GROUND=184;
+    public static final int BONUS=185;
+    public static final int CHECKPOINT=186;
+    public static final int BREAKABLE=187;
+    public static final int CONSTRUCTION=188;
+    public static final int ROOM=189;
+    public static final int BALL=190;
+    public static final int TELEPORTER=191;
+    public static final int MASS=192;
+    public static final int IS_FIX=193;
+    public static final int IS_TRAVERSABLE=194;
+    public static final int FOV=195;
+    public static final int ACTIVE=196;
+    public static final int NAME=197;
+    public static final int DESCRIPTION=198;
+    public static final int LIFE=199;
+    public static final int LIFE_MAX=200;
+    public static final int LIFE_MIN=201;
+    public static final int NB_LIVES=202;
+    public static final int MAGIC=203;
+    public static final int MAGIC_MAX=204;
+    public static final int MAGIC_MIN=205;
+    public static final int LEVEL=206;
+    public static final int ATTACK=207;
+    public static final int DEFENSE=208;
+    public static final int JUMP_FORCE=209;
+    public static final int JUMP_AIR_MAX=210;
+    public static final int MONEY=211;
+    public static final int CLASS=212;
+    public static final int RACE=213;
+    public static final int ACCELERATION=214;
+    public static final int SPEED=215;
+    public static final int SPEED_MAX=216;
+    public static final int SPEED_MIN=217;
+    public static final int BOOST=218;
+    public static final int BOOST_MAX=219;
+    public static final int NB_MUNITIONS=220;
+    public static final int NB_MUNITIONS_MAX=221;
+    public static final int SHOOT_POWER=222;
+    public static final int DAMAGES=223;
+    public static final int UNIT=224;
+    public static final int OBJECT_NAME=225;
+    public static final int ATTRIBUT_NAME=226;
+    public static final int VOLUME=227;
+    public static final int NUMBER=228;
+    public static final int MOVE_WITH_CAMERA=229;
+    public static final int BOOST_INTERVAL=230;
+    public static final int SHOOT_INTERVAL=231;
+    public static final int RELOAD_TIME=232;
+    public static final int INVENTORY=233;
+    public static final int EQUIPED_OBJECT=234;
+    public static final int ENTRANCES=235;
+    public static final int EXITS=236;
+    public static final int DAMAGE_ZONE=237;
+    public static final int COLLECTORS=238;
+    public static final int TYPES_COLLECTORS=239;
+    public static final int GENERATORS=240;
+    public static final int TYPE_GENERATORS=241;
+    public static final int BREAKERS=242;
+    public static final int TYPES_BREAKERS=243;
+    public static final int TELEPORTABLES=244;
+    public static final int TYPES_TELEPORTABLES=245;
+    public static final int COMMENT=246;
+    public static final int WS=247;
 
     // delegates
     // delegators
@@ -352,10 +354,10 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "DEC"
 
-    // $ANTLR start "T__246"
-    public final void mT__246() throws RecognitionException {
+    // $ANTLR start "T__248"
+    public final void mT__248() throws RecognitionException {
         try {
-            int _type = T__246;
+            int _type = T__248;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:8: ( 'true' )
             // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:10: 'true'
@@ -371,12 +373,12 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__246"
+    // $ANTLR end "T__248"
 
-    // $ANTLR start "T__247"
-    public final void mT__247() throws RecognitionException {
+    // $ANTLR start "T__249"
+    public final void mT__249() throws RecognitionException {
         try {
-            int _type = T__247;
+            int _type = T__249;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:8: ( 'false' )
             // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:10: 'false'
@@ -392,7 +394,7 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__247"
+    // $ANTLR end "T__249"
 
     // $ANTLR start "COMMENT"
     public final void mCOMMENT() throws RecognitionException {
@@ -3002,13 +3004,13 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "FRAME"
 
-    // $ANTLR start "UP"
-    public final void mUP() throws RecognitionException {
+    // $ANTLR start "WUP"
+    public final void mWUP() throws RecognitionException {
         try {
-            int _type = UP;
+            int _type = WUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:4: ( 'up' )
-            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:6: 'up'
+            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:5: ( 'up' )
+            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:7: 'up'
             {
             match("up"); 
 
@@ -3021,15 +3023,15 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "UP"
+    // $ANTLR end "WUP"
 
-    // $ANTLR start "DOWN"
-    public final void mDOWN() throws RecognitionException {
+    // $ANTLR start "WDOWN"
+    public final void mWDOWN() throws RecognitionException {
         try {
-            int _type = DOWN;
+            int _type = WDOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:6: ( 'down' )
-            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:8: 'down'
+            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:7: ( 'down' )
+            // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:9: 'down'
             {
             match("down"); 
 
@@ -3042,7 +3044,7 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "DOWN"
+    // $ANTLR end "WDOWN"
 
     // $ANTLR start "LEFT"
     public final void mLEFT() throws RecognitionException {
@@ -5318,7 +5320,7 @@ public class hightLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__246 | T__247 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | UP | DOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
+        // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__248 | T__249 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
         int alt8=229;
         alt8 = dfa8.predict(input);
         switch (alt8) {
@@ -5351,16 +5353,16 @@ public class hightLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__246
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__248
                 {
-                mT__246(); 
+                mT__248(); 
 
                 }
                 break;
             case 6 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__247
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__249
                 {
-                mT__247(); 
+                mT__249(); 
 
                 }
                 break;
@@ -6205,721 +6207,721 @@ public class hightLexer extends Lexer {
                 }
                 break;
             case 127 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:905: UP
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:905: WUP
                 {
-                mUP(); 
+                mWUP(); 
 
                 }
                 break;
             case 128 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:908: DOWN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:909: WDOWN
                 {
-                mDOWN(); 
+                mWDOWN(); 
 
                 }
                 break;
             case 129 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:913: LEFT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:915: LEFT
                 {
                 mLEFT(); 
 
                 }
                 break;
             case 130 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:918: RIGHT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:920: RIGHT
                 {
                 mRIGHT(); 
 
                 }
                 break;
             case 131 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:924: SPACE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:926: SPACE
                 {
                 mSPACE(); 
 
                 }
                 break;
             case 132 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:930: ESCAPE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:932: ESCAPE
                 {
                 mESCAPE(); 
 
                 }
                 break;
             case 133 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:937: ENTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:939: ENTER
                 {
                 mENTER(); 
 
                 }
                 break;
             case 134 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:943: MOUSE_KW
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:945: MOUSE_KW
                 {
                 mMOUSE_KW(); 
 
                 }
                 break;
             case 135 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:952: KEY_KW
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:954: KEY_KW
                 {
                 mKEY_KW(); 
 
                 }
                 break;
             case 136 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:959: CLICK_LEFT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:961: CLICK_LEFT
                 {
                 mCLICK_LEFT(); 
 
                 }
                 break;
             case 137 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:970: CLICK_CENTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:972: CLICK_CENTER
                 {
                 mCLICK_CENTER(); 
 
                 }
                 break;
             case 138 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:983: CLICK_RIGHT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:985: CLICK_RIGHT
                 {
                 mCLICK_RIGHT(); 
 
                 }
                 break;
             case 139 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:995: SCROLL_UP
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:997: SCROLL_UP
                 {
                 mSCROLL_UP(); 
 
                 }
                 break;
             case 140 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1005: SCROLL_DOWN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1007: SCROLL_DOWN
                 {
                 mSCROLL_DOWN(); 
 
                 }
                 break;
             case 141 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1017: COMMAND_KW
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1019: COMMAND_KW
                 {
                 mCOMMAND_KW(); 
 
                 }
                 break;
             case 142 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1028: JUMP
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1030: JUMP
                 {
                 mJUMP(); 
 
                 }
                 break;
             case 143 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1033: MOVE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1035: MOVE
                 {
                 mMOVE(); 
 
                 }
                 break;
             case 144 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1038: FORWARD
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1040: FORWARD
                 {
                 mFORWARD(); 
 
                 }
                 break;
             case 145 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1046: BACKWARD
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1048: BACKWARD
                 {
                 mBACKWARD(); 
 
                 }
                 break;
             case 146 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1055: TURN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1057: TURN
                 {
                 mTURN(); 
 
                 }
                 break;
             case 147 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1060: ACCELERATE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1062: ACCELERATE
                 {
                 mACCELERATE(); 
 
                 }
                 break;
             case 148 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1071: BRAKE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1073: BRAKE
                 {
                 mBRAKE(); 
 
                 }
                 break;
             case 149 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1077: CAMERA
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1079: CAMERA
                 {
                 mCAMERA(); 
 
                 }
                 break;
             case 150 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1084: MEDIA
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1086: MEDIA
                 {
                 mMEDIA(); 
 
                 }
                 break;
             case 151 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1090: COUNTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1092: COUNTER
                 {
                 mCOUNTER(); 
 
                 }
                 break;
             case 152 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1098: TIME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1100: TIME
                 {
                 mTIME(); 
 
                 }
                 break;
             case 153 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1103: OBJECT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1105: OBJECT
                 {
                 mOBJECT(); 
 
                 }
                 break;
             case 154 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1110: CHARACTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1112: CHARACTER
                 {
                 mCHARACTER(); 
 
                 }
                 break;
             case 155 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1120: VEHICLE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1122: VEHICLE
                 {
                 mVEHICLE(); 
 
                 }
                 break;
             case 156 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1128: PLANE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1130: PLANE
                 {
                 mPLANE(); 
 
                 }
                 break;
             case 157 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1134: SPACECRAFT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1136: SPACECRAFT
                 {
                 mSPACECRAFT(); 
 
                 }
                 break;
             case 158 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1145: OBSTACLE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1147: OBSTACLE
                 {
                 mOBSTACLE(); 
 
                 }
                 break;
             case 159 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1154: WEAPON
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1156: WEAPON
                 {
                 mWEAPON(); 
 
                 }
                 break;
             case 160 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1161: SWORD
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1163: SWORD
                 {
                 mSWORD(); 
 
                 }
                 break;
             case 161 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1167: PROJECTILE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1169: PROJECTILE
                 {
                 mPROJECTILE(); 
 
                 }
                 break;
             case 162 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1178: ZONE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1180: ZONE
                 {
                 mZONE(); 
 
                 }
                 break;
             case 163 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1183: GROUND
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1185: GROUND
                 {
                 mGROUND(); 
 
                 }
                 break;
             case 164 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1190: BONUS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1192: BONUS
                 {
                 mBONUS(); 
 
                 }
                 break;
             case 165 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1196: CHECKPOINT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1198: CHECKPOINT
                 {
                 mCHECKPOINT(); 
 
                 }
                 break;
             case 166 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1207: BREAKABLE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1209: BREAKABLE
                 {
                 mBREAKABLE(); 
 
                 }
                 break;
             case 167 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1217: CONSTRUCTION
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1219: CONSTRUCTION
                 {
                 mCONSTRUCTION(); 
 
                 }
                 break;
             case 168 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1230: ROOM
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1232: ROOM
                 {
                 mROOM(); 
 
                 }
                 break;
             case 169 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1235: BALL
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1237: BALL
                 {
                 mBALL(); 
 
                 }
                 break;
             case 170 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1240: TELEPORTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1242: TELEPORTER
                 {
                 mTELEPORTER(); 
 
                 }
                 break;
             case 171 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1251: MASS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1253: MASS
                 {
                 mMASS(); 
 
                 }
                 break;
             case 172 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1256: IS_FIX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1258: IS_FIX
                 {
                 mIS_FIX(); 
 
                 }
                 break;
             case 173 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1263: IS_TRAVERSABLE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1265: IS_TRAVERSABLE
                 {
                 mIS_TRAVERSABLE(); 
 
                 }
                 break;
             case 174 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1278: FOV
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1280: FOV
                 {
                 mFOV(); 
 
                 }
                 break;
             case 175 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1282: ACTIVE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1284: ACTIVE
                 {
                 mACTIVE(); 
 
                 }
                 break;
             case 176 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1289: NAME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1291: NAME
                 {
                 mNAME(); 
 
                 }
                 break;
             case 177 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1294: DESCRIPTION
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1296: DESCRIPTION
                 {
                 mDESCRIPTION(); 
 
                 }
                 break;
             case 178 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1306: LIFE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1308: LIFE
                 {
                 mLIFE(); 
 
                 }
                 break;
             case 179 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1311: LIFE_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1313: LIFE_MAX
                 {
                 mLIFE_MAX(); 
 
                 }
                 break;
             case 180 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1320: LIFE_MIN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1322: LIFE_MIN
                 {
                 mLIFE_MIN(); 
 
                 }
                 break;
             case 181 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1329: NB_LIVES
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1331: NB_LIVES
                 {
                 mNB_LIVES(); 
 
                 }
                 break;
             case 182 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1338: MAGIC
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1340: MAGIC
                 {
                 mMAGIC(); 
 
                 }
                 break;
             case 183 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1344: MAGIC_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1346: MAGIC_MAX
                 {
                 mMAGIC_MAX(); 
 
                 }
                 break;
             case 184 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1354: MAGIC_MIN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1356: MAGIC_MIN
                 {
                 mMAGIC_MIN(); 
 
                 }
                 break;
             case 185 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1364: LEVEL
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1366: LEVEL
                 {
                 mLEVEL(); 
 
                 }
                 break;
             case 186 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1370: ATTACK
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1372: ATTACK
                 {
                 mATTACK(); 
 
                 }
                 break;
             case 187 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1377: DEFENSE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1379: DEFENSE
                 {
                 mDEFENSE(); 
 
                 }
                 break;
             case 188 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1385: JUMP_FORCE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1387: JUMP_FORCE
                 {
                 mJUMP_FORCE(); 
 
                 }
                 break;
             case 189 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1396: JUMP_AIR_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1398: JUMP_AIR_MAX
                 {
                 mJUMP_AIR_MAX(); 
 
                 }
                 break;
             case 190 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1409: MONEY
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1411: MONEY
                 {
                 mMONEY(); 
 
                 }
                 break;
             case 191 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1415: CLASS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1417: CLASS
                 {
                 mCLASS(); 
 
                 }
                 break;
             case 192 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1421: RACE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1423: RACE
                 {
                 mRACE(); 
 
                 }
                 break;
             case 193 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1426: ACCELERATION
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1428: ACCELERATION
                 {
                 mACCELERATION(); 
 
                 }
                 break;
             case 194 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1439: SPEED
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1441: SPEED
                 {
                 mSPEED(); 
 
                 }
                 break;
             case 195 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1445: SPEED_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1447: SPEED_MAX
                 {
                 mSPEED_MAX(); 
 
                 }
                 break;
             case 196 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1455: SPEED_MIN
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1457: SPEED_MIN
                 {
                 mSPEED_MIN(); 
 
                 }
                 break;
             case 197 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1465: BOOST
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1467: BOOST
                 {
                 mBOOST(); 
 
                 }
                 break;
             case 198 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1471: BOOST_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1473: BOOST_MAX
                 {
                 mBOOST_MAX(); 
 
                 }
                 break;
             case 199 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1481: NB_MUNITIONS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1483: NB_MUNITIONS
                 {
                 mNB_MUNITIONS(); 
 
                 }
                 break;
             case 200 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1494: NB_MUNITIONS_MAX
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1496: NB_MUNITIONS_MAX
                 {
                 mNB_MUNITIONS_MAX(); 
 
                 }
                 break;
             case 201 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1511: SHOOT_POWER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1513: SHOOT_POWER
                 {
                 mSHOOT_POWER(); 
 
                 }
                 break;
             case 202 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1523: DAMAGES
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1525: DAMAGES
                 {
                 mDAMAGES(); 
 
                 }
                 break;
             case 203 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1531: VALUE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1533: VALUE
                 {
                 mVALUE(); 
 
                 }
                 break;
             case 204 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1537: UNIT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1539: UNIT
                 {
                 mUNIT(); 
 
                 }
                 break;
             case 205 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1542: OBJECT_NAME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1544: OBJECT_NAME
                 {
                 mOBJECT_NAME(); 
 
                 }
                 break;
             case 206 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1554: ATTRIBUT_NAME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1556: ATTRIBUT_NAME
                 {
                 mATTRIBUT_NAME(); 
 
                 }
                 break;
             case 207 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1568: VOLUME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1570: VOLUME
                 {
                 mVOLUME(); 
 
                 }
                 break;
             case 208 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1575: NUMBER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1577: NUMBER
                 {
                 mNUMBER(); 
 
                 }
                 break;
             case 209 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1582: MOVE_WITH_CAMERA
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1584: MOVE_WITH_CAMERA
                 {
                 mMOVE_WITH_CAMERA(); 
 
                 }
                 break;
             case 210 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1599: BOOST_INTERVAL
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1601: BOOST_INTERVAL
                 {
                 mBOOST_INTERVAL(); 
 
                 }
                 break;
             case 211 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1614: SHOOT_INTERVAL
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1616: SHOOT_INTERVAL
                 {
                 mSHOOT_INTERVAL(); 
 
                 }
                 break;
             case 212 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1629: RELOAD_TIME
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1631: RELOAD_TIME
                 {
                 mRELOAD_TIME(); 
 
                 }
                 break;
             case 213 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1641: INVENTORY
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1643: INVENTORY
                 {
                 mINVENTORY(); 
 
                 }
                 break;
             case 214 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1651: EQUIPED_OBJECT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1653: EQUIPED_OBJECT
                 {
                 mEQUIPED_OBJECT(); 
 
                 }
                 break;
             case 215 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1666: ENTRANCES
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1668: ENTRANCES
                 {
                 mENTRANCES(); 
 
                 }
                 break;
             case 216 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1676: EXITS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1678: EXITS
                 {
                 mEXITS(); 
 
                 }
                 break;
             case 217 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1682: DAMAGE_ZONE
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1684: DAMAGE_ZONE
                 {
                 mDAMAGE_ZONE(); 
 
                 }
                 break;
             case 218 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1694: COLLECTORS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1696: COLLECTORS
                 {
                 mCOLLECTORS(); 
 
                 }
                 break;
             case 219 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1705: TYPES_COLLECTORS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1707: TYPES_COLLECTORS
                 {
                 mTYPES_COLLECTORS(); 
 
                 }
                 break;
             case 220 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1722: GENERATORS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1724: GENERATORS
                 {
                 mGENERATORS(); 
 
                 }
                 break;
             case 221 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1733: TYPE_GENERATORS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1735: TYPE_GENERATORS
                 {
                 mTYPE_GENERATORS(); 
 
                 }
                 break;
             case 222 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1749: BREAKERS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1751: BREAKERS
                 {
                 mBREAKERS(); 
 
                 }
                 break;
             case 223 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1758: TYPES_BREAKERS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1760: TYPES_BREAKERS
                 {
                 mTYPES_BREAKERS(); 
 
                 }
                 break;
             case 224 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1773: TELEPORTABLES
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1775: TELEPORTABLES
                 {
                 mTELEPORTABLES(); 
 
                 }
                 break;
             case 225 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1787: TYPES_TELEPORTABLES
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1789: TYPES_TELEPORTABLES
                 {
                 mTYPES_TELEPORTABLES(); 
 
                 }
                 break;
             case 226 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1807: LETTER
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1809: LETTER
                 {
                 mLETTER(); 
 
                 }
                 break;
             case 227 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1814: FLOAT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1816: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
             case 228 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1820: IDENT
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1822: IDENT
                 {
                 mIDENT(); 
 
                 }
                 break;
             case 229 :
-                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1826: WS
+                // D:\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1828: WS
                 {
                 mWS(); 
 
@@ -8452,7 +8454,7 @@ public class hightLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__246 | T__247 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | UP | DOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
+            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__248 | T__249 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
         }
     }
  

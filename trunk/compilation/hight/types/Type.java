@@ -8,7 +8,7 @@ public class Type {
     public static final Type Object = new Type("Object"),
             Character = new Type("Character");
     private String name;
-    private Map<String, Attributes> attributs;
+    private Map<String, Attributes> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
 
     public Type(String name) {
         this.name = name;

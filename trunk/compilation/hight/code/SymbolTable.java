@@ -1,9 +1,14 @@
+package code;
+
+import java.util.Hashtable;
+import types.Type;
+
 public class SymbolTable{
 
-	private HashTable table;
+	private Hashtable table;
 	
 	public SymbolTable() {
-		table = new HashTable();
+		table = new Hashtable();
 	}
 	
 	public void add(String name, Type type) {

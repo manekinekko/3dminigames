@@ -43,8 +43,8 @@ game :
 	(newType FIN)*
 	(init FIN)+
 	(definition (FIN)?)*
-	(commande (FIN)?)*
-	(reglesJeu (FIN)?)*
+	(commande (FIN)?)+
+	(reglesJeu (FIN)?)+
 	(iaBasique (FIN)?)*
 	  -> ^(GAME_KW gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)
 	;

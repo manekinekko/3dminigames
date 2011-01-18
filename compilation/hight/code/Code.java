@@ -24,7 +24,11 @@ public class Code {
 		c += s;
 	}
 	
-	public String getCode(String s){
+	public void append(Code co){
+		c += co.getCode();
+	}
+	
+	public String getCode(){
 		return s;
 		}
 		

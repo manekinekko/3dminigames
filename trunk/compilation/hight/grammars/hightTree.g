@@ -23,7 +23,7 @@ options {
  *------------------------------------------------------------------*/
  
 game [SymbolTable st] returns [Code c] @init{c = new Code;}:
-	^(GAME_KW gd =gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]* reg=reglesJeu[st]* ia=iaBasique[st]*);
+	^(GAME_KW gd =gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*);
 	{c.append(in);c.append(com);c.append(reg);}
 	
 

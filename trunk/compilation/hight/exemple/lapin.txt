@@ -42,7 +42,7 @@ arretGauche has size at 1 1 1;
 
 arretDroit is Zobstacle; 
 arretDroit has position at 0 0 0;
-arretDroit has orientation at 0 0 0;
+arretDroit has orientation at 0 0 0; //verif 0=<orientation<=360
 arretDroit has size at 1 1 1;
 
 

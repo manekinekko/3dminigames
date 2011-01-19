@@ -123,7 +123,7 @@ view :
 
 allocationObject :
 	IDENT (AT valAggregation )?       //aggregation
-	  -> ^( ALLOCATION_KW IDENT valAggregation) 
+	  -> ^( ALLOCATION_KW IDENT valAggregation?)
 	| attribut AT typeAllocation           //life at 5, name at "Gandalf Le Gris"
 	  -> ^( ALLOCATION_KW attribut typeAllocation)
 	| typeCoordonnees AT coordinates            //size at 20 30 40
@@ -142,12 +142,6 @@ valAggregation :
 	  -> ^(AGGREGATION_KW operation timeUnit?)
 	| IDENT
 	  -> ^(AGGREGATION_KW IDENT)
-	; 
- 
- valAffectation : 
-	operation 
-	| IDENT 
-	| 'true' | 'false'
 	;
 
 /* Definition */	

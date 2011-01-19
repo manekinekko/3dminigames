@@ -5,10 +5,10 @@ import types.Type;
 
 public class SymbolTable{
 
-	private Hashtable table;
+	private Hashtable<String, Type> table;
 	
 	public SymbolTable() {
-		table = new Hashtable();
+		table = new Hashtable<String, Type>();
 	}
 	
 	public void add(String name, Type type) {

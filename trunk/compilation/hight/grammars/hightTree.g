@@ -8,13 +8,9 @@ options {
 
 @header {
     package grammars;
+    import code.*;
+    import types.*;
 }
-
-/*@lexer::hearder {
-    package grammars;
-}*/
-
-//@header {}
 
 //@members {}
 
@@ -22,9 +18,10 @@ options {
  * TREE RULES
  *------------------------------------------------------------------*/
  
-game [SymbolTable st] returns [Code c] @init{c = new Code;}:
-	^(GAME_KW gd =gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*);
-	{c.append(in);c.append(com);c.append(reg);}
+game [SymbolTable st] returns [Code c] /*@init{c = new Code();}*/:
+	^(GAME_KW gd =gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+	//{c.append(in);c.append(com);c.append(reg);}
+    ;
 	
 
 /*------------------------------ Information about game ---------------------------------*/
@@ -100,11 +97,11 @@ view [SymbolTable st] returns [Code c]:
 	;
 
 affectationObjet [SymbolTable st] returns [Code c]:
-	^( ALLOCATION_KW IDENT valAggregation[st]) 
-	^( ALLOCATION_KW attribut[st] typeAllocation[st])
-	^( ALLOCATION_KW typeCoordonnees[st] coordinates[st])
-	^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
-	^( ALLOCATION_KW attributTps[st] operation[st] timeUnit[st])
+	^( ALLOCATION_KW IDENT valAggregation[st]?)
+	| ^( ALLOCATION_KW attribut[st] typeAllocation[st])
+	| ^( ALLOCATION_KW typeCoordonnees[st] coordinates[st])
+	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
+	| ^( ALLOCATION_KW attributTps[st] operation[st] timeUnit[st])
     ;
     
 typeAllocation [SymbolTable st] returns [Code c]:	
@@ -115,13 +112,6 @@ valAggregation [SymbolTable st] returns [Code c]:
 	^(AGGREGATION_KW operation[st] timeUnit[st]?)
 	|^(AGGREGATION_KW IDENT)
 	; 
- 
- valAffectation [SymbolTable st] returns [Code c]: 
-	operation[st] 
-	|IDENT
-	|'true' | 'false'
-	;
-	
 
 /* Definition */	
 definition [SymbolTable st] returns [Code c]: 

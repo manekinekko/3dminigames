@@ -54,7 +54,7 @@ init [SymbolTable st] returns [Code c]:
 	|^(INIT_HAS_KW affectationObjet[st])
 	;
 
-// A revoir : CAMERA : si rien n'est ajout� on fait quoi ?, MEDIA pareil
+// A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet [SymbolTable st] returns [Code c]:
 	^(DEC typeEntity[st] entityMode[st]?)   // interaction is neutral by default
 	|^(LIST_KW list_declaration[st])
@@ -135,7 +135,7 @@ consequ [SymbolTable st] returns [Code c]:
   ;
 
 action [SymbolTable st] returns [Code c]:
-	accesClasse[st] actionObjet[st]
+	accesClass[st] actionObjet[st]
 	|^(ENDS_KW IDENT) 
 	|^(ENDS_KW GAME) 
 	|^(STARTS_KW IDENT)
@@ -145,7 +145,7 @@ action [SymbolTable st] returns [Code c]:
 	|^(MUTE_KW OFF IDENT) 
 	|^(PLAY_KW IDENT)
 	|^(STOP_KW IDENT)
-	|^(BLOCK_KW transformation[st] accesClasse[st] coordinates[st])
+	|^(BLOCK_KW transformation[st] accesClass[st] coordinates[st])
 	|^(EFFACE_KW typeAcces[st] typeDestination[st]?)
 	|^(GENERATE_KW typeAcces[st] typeDestination[st]?)
 	|^(WAIT_KW operation[st] timeUnit[st] consequences[st])
@@ -153,17 +153,17 @@ action [SymbolTable st] returns [Code c]:
 	;
 
 typeAcces [SymbolTable st] returns [Code c]:
-	accesLocal[st] | operation[st] (IDENT | accesGlobal[st]);
+	accesClass[st] | operation[st] (IDENT | accesClass[st]);
 
 typeDestination [SymbolTable st] returns [Code c]: 
-	accesLocal[st] | coordinates[st];
+	accesClass[st] | coordinates[st];
 
 actionObjet [SymbolTable st] returns [Code c]:
   DIES_KW
   | actionCommandePressee[st]
   |^(DURING actionCommandeMaintenue[st] operation[st] timeUnit[st])
   |^(UNTIL actionCommandeMaintenue[st] conditions[st])
-  |^(EQUIP accesLocal[st]) 
+  |^(EQUIP accesClass[st])
   |^(EQUIP NEXT) 
   |^(EQUIP PREVIOUS)   
   ;
@@ -234,7 +234,7 @@ reglesJeu [SymbolTable st] returns [Code c]:
   ;
  
 declencheur [SymbolTable st] returns [Code c]:
-  accesClasse[st] (MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st]) 
+  accesClass[st] (MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st])
   |^(ENDS_KW type_declencheur[st])
   |^(STARTS_KW type_declencheur[st])          //ident if it is a counter
   |^(BECOMES_VAR_KW variable[st] varOuNB[st])
@@ -252,17 +252,14 @@ playerOuInteraction [SymbolTable st] returns [Code c]
 	:	(PLAYER| interaction[st]);
 
 declencheurTK [SymbolTable st] returns [Code c]
-	:	^(TOUCHES_KW declencheur_O[st])
-	| ^(KILLS_KW declencheur_O[st]);
+	:	^(TOUCHES_KW (OTHER)? accesClass[st])
+	| ^(KILLS_KW (OTHER)? accesClass[st]);
 	
 
 	
 declencheurKT [SymbolTable st] returns [Code c]
-	:	^(KILLED_KW declencheur_O[st]) 
-	| ^(TOUCHED_KW declencheur_O[st]);
-
-declencheur_O [SymbolTable st] returns [Code c]:
-	(OTHER)? accesGlobal[st] | accesLocal[st];
+	:	^(KILLED_KW (OTHER)? accesClass[st])
+	| ^(TOUCHED_KW (OTHER)? accesClass[st]);
 	
 /* Conditions */  
 siAlors [SymbolTable st] returns [Code c]:
@@ -279,16 +276,17 @@ conditions [SymbolTable st] returns [Code c]:
   |^(INFEG operation[st] operation[st])
   |^(SUPED operation[st] operation[st])
   |^(DIFF operation[st] operation[st])
+  | etat[st]
   ;
 
 etat [SymbolTable st] returns [Code c]:
-	^(DEAD_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(ALIVE_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(EFFACED_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(GENERATED_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(TOUCHING_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(MOVING_KW accesClasse[st] (NOT)? declencheur_O[st])
-	| ^(WAITING_KW accesClasse[st] (NOT)? declencheur_O[st])
+	^(DEAD_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(ALIVE_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(EFFACED_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(GENERATED_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(TOUCHING_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(MOVING_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
+	| ^(WAITING_KW accesClass[st] (NOT)? (OTHER)? accesClass[st])
 	| ^(FINISHED_KW type_declencheur[st] (NOT)?)
 	| ^(STARTED_KW type_declencheur[st](NOT)?)
 	| ^(PAUSED_KW type_declencheur[st](NOT)?)
@@ -310,7 +308,7 @@ affectation [SymbolTable st] returns [Code c]:
   |^(INVERT_KW variable[st] variable[st])
   ;
   
-iaBasique [SymbolTable st] returns [Code c]: ^(IA_KW accesClasse[st] actionObjetList[st]);
+iaBasique [SymbolTable st] returns [Code c]: ^(IA_KW accesClass[st] actionObjetList[st]);
 
 actionObjetList [SymbolTable st] returns [Code c]: actionObjet[st]+;
 
@@ -333,32 +331,26 @@ operation [SymbolTable st] returns [Code c]:
  
 
 variable [SymbolTable st] returns [Code c]:
-  ^(X typeCoordonnees[st] accesClasse[st])
-  |^(Y typeCoordonnees[st] accesClasse[st])
-  |^(Z typeCoordonnees[st] accesClasse[st])
-  |^(VAR_I_KW IDENT accesClasse[st])
-  |^(VAR_A_KW attribut[st] accesClasse[st])
+  ^(X typeCoordonnees[st] accesClass[st])
+  |^(Y typeCoordonnees[st] accesClass[st])
+  |^(Z typeCoordonnees[st] accesClass[st])
+  |^(VAR_I_KW IDENT accesClass[st])
+  |^(VAR_A_KW attribut[st] accesClass[st])
   |GAME_SCORE_KW
-  |^(VALUE_KW attributTps[st] accesClasse[st])
+  |^(VALUE_KW attributTps[st] accesClass[st])
   ;
 
-accesClasse [SymbolTable st] returns [Code c]: 
-  ALL 
-  | accesLocal[st]
-  | accesGlobal[st]
+accesClass [SymbolTable st] returns [Code c] :
+    ^(ACCESS_KW ALL)
+  | ^(ACCESS_KW typeObjet[st])
+  | ^(ACCESS_KW interaction[st])
+  | ^(ACCESS_KW NOT notAccess[st])
+  | ^(ACCESS_KW IDENT operation[st]?)
+  | ^(ACCESS_KW PLAYER)
   ;
 
-accesGlobal [SymbolTable st] returns [Code c]:
-  typeObjet[st]
-  | interaction[st]
-  | PG NOT (typeObjet[st] | interaction[st] | PLAYER) PD
-  ;
-
-accesLocal [SymbolTable st] returns [Code c]:
-  IDENT
-  | NUM operation[st] IN IDENT
-  | PLAYER
-  ;
+notAccess [SymbolTable st] returns [Code c] :
+typeObjet[st] | interaction[st] | PLAYER;
   
 typeCoordonnees [SymbolTable st] returns [Code c]:
 	POSITION | ORIENTATION | SIZE

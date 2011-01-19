@@ -28,6 +28,7 @@ tokens {
 	BECOMES_VAR_KW;
 	BECOMES_ID_KW;
 	CONDITION_KW;
+    ACCESS_KW;
 }
 
 @header {
@@ -332,21 +333,31 @@ variable :
   ;
 
 accesClasse : 
-  ALL 
+  ALL
+    -> ^(ACCESS_KW ALL)
   | accesLocal
   | accesGlobal
   ;
 
 accesGlobal :
   typeObjet
+    -> ^(ACCESS_KW typeObjet)
   | interaction
-  | PG NOT (typeObjet | interaction | PLAYER) PD
+    -> ^(ACCESS_KW interaction)
+  | PG NOT notAccess PD
+    -> ^(ACCESS_KW NOT notAccess)
   ;
+
+notAccess :
+typeObjet | interaction | PLAYER;
 
 accesLocal :
   IDENT
+    -> ^(ACCESS_KW IDENT)
   | NUM operation IN IDENT
+    -> ^(ACCESS_KW IDENT operation)
   | PLAYER
+    -> ^(ACCESS_KW PLAYER)
   ;
   
 typeCoordonnees :

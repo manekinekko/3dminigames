@@ -3,7 +3,6 @@ tree grammar hightTree;
 options {
     tokenVocab=hight;
     ASTLabelType=CommonTree;
-    output=AST;
 }
 
 @header {
@@ -18,9 +17,9 @@ options {
  * TREE RULES
  *------------------------------------------------------------------*/
  
-game [SymbolTable st] returns [Code c] /*@init{c = new Code();}*/:
-	^(GAME_KW gd =gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
-	//{c.append(in);c.append(com);c.append(reg);}
+game [SymbolTable st] returns [Code c]
+	@init{c = new Code();}:
+	^(GAME_KW gd=gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
     ;
 	
 
@@ -39,11 +38,11 @@ attributGame [SymbolTable st] returns [Code c]:
 	;
 /*-------------------------- Inheritance, creation of type -------------------------------*/	
 newType [SymbolTable st] returns [Code c]:
-	^(TYPE_KW IDENT subType_list[st])
+	^(TYPE_KW IDENT subType[st] subType[st]*)
 	;
 
 subType_list [SymbolTable st] returns [Code c]: 
-	subType[st]+;
+	subType[st]*;
   
 subType [SymbolTable st] returns [Code c]:
 	IDENT

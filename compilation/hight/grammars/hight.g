@@ -67,7 +67,7 @@ attributGame :
 /* Inheritance, creation of type */
 newType :
 	TYPE IDENT IS subType (AND subType)*
-	  -> ^(TYPE IDENT subType+)
+	  -> ^(TYPE IDENT subType subType*)
 	;
   
 subType :

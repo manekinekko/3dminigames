@@ -18,5 +18,13 @@ public class SymbolTable{
 	public Type get(String name) {
 		return table.get(name);
 	}
+	
+	public void toString(){
+		Enumeration <String> key = table.keys();
+		for(int i = 0; i< table.size();i++){
+			String id = key.nextElement();
+			System.out.println(id+"\t\t\t"+table.get(name).getName());
+		}
+	}
 
 }

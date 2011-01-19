@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-19 01:38:39
+// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-19 18:08:05
 
     package grammars;
 
@@ -9,253 +9,256 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class hightLexer extends Lexer {
+    public static final int GRAVITY_KW=32;
+    public static final int ENDS_KW=61;
+    public static final int LETTER=98;
+    public static final int MOD=160;
+    public static final int GROUND=187;
+    public static final int TYPES_BREAKERS=246;
+    public static final int CHECKPOINT=189;
+    public static final int NOT=125;
+    public static final int SAVE_KW=75;
+    public static final int STARTS_KW=62;
     public static final int EOF=-1;
-    public static final int T__248=248;
-    public static final int T__249=249;
-    public static final int GAME_KW=4;
-    public static final int GAME_ATTRIBUT_KW=5;
-    public static final int INIT_IS_KW=6;
-    public static final int INIT_HAS_KW=7;
-    public static final int DEC=8;
-    public static final int MEDIA_KW=9;
-    public static final int CAMERA_KW=10;
+    public static final int DEAD_KW=136;
+    public static final int CHARACTER=178;
+    public static final int LIFE_MAX=203;
+    public static final int SPEED_MIN=220;
+    public static final int TYPE=36;
+    public static final int OBJECT_NAME=228;
+    public static final int LIST_KW=40;
+    public static final int COMMANDS=111;
+    public static final int CAMERA=43;
     public static final int INTERACTION_KW=11;
-    public static final int GAME_SCORE_KW=12;
-    public static final int SCORE_KW=13;
-    public static final int VALUE_KW=14;
-    public static final int IN_KW=15;
-    public static final int ALLOCATION_KW=16;
-    public static final int COORDINATE_KW=17;
-    public static final int CONSEQUENCES_KW=18;
-    public static final int AGGREGATION_KW=19;
-    public static final int VAR_I_KW=20;
+    public static final int BALL=193;
+    public static final int OFF=66;
+    public static final int JUMP_AIR_MAX=213;
+    public static final int ALIVE_KW=137;
+    public static final int LOOP=47;
+    public static final int T__251=251;
+    public static final int T__252=252;
+    public static final int ATTACK=210;
+    public static final int NB_MUNITIONS_MAX=224;
+    public static final int RACE=216;
+    public static final int BONUS=188;
     public static final int VAR_A_KW=21;
+    public static final int CONSEQUENCES_KW=18;
+    public static final int WDOWN=90;
+    public static final int COLLECTORS=241;
+    public static final int EFFACED_KW=138;
+    public static final int TYPE_GENERATORS=244;
+    public static final int KEY=88;
+    public static final int STOPPED_KW=148;
+    public static final int ELSE=123;
+    public static final int NUMBER=231;
+    public static final int NB_MUNITIONS=223;
+    public static final int VALUE=165;
+    public static final int VALUE_KW=14;
+    public static final int INF=129;
+    public static final int Y=163;
+    public static final int X=162;
+    public static final int SHOOT_INTERVAL=234;
+    public static final int Z=164;
+    public static final int SCORE_KW=13;
+    public static final int DEFINITION_KW=57;
+    public static final int WS=250;
+    public static final int INIT_HAS_KW=7;
+    public static final int MEANS=58;
+    public static final int LEVEL=209;
+    public static final int DIFF=133;
+    public static final int MUTE_KW=64;
+    public static final int NB_LIVES=205;
+    public static final int KEYBOARD=112;
+    public static final int PERSON=44;
+    public static final int WAITING_KW=142;
+    public static final int WEAPON=183;
+    public static final int SIZE=170;
+    public static final int THIRD=56;
+    public static final int RANDOM_KW=154;
+    public static final int GENERATED_KW=139;
+    public static final int STOP_KW=68;
+    public static final int ACCELERATION=217;
+    public static final int FLOAT=34;
+    public static final int TELEPORTER=194;
+    public static final int WUP=89;
+    public static final int POSITION=168;
+    public static final int SUP=130;
+    public static final int MOVES_KW=114;
+    public static final int BOOST=221;
+    public static final int AT=33;
+    public static final int SHOOT_POWER=225;
+    public static final int TIME=176;
+    public static final int FREE=45;
+    public static final int KILLED_KW=119;
+    public static final int CONSTRUCTION=191;
+    public static final int THEN=73;
+    public static final int SEC=172;
+    public static final int CLICK_RIGHT=95;
+    public static final int LEFT=91;
+    public static final int VAR_I_KW=20;
+    public static final int IA_KW=153;
+    public static final int PREVIOUS=81;
+    public static final int ZONE=186;
+    public static final int IDENT=37;
+    public static final int PLUS=156;
+    public static final int RULE_KW=113;
+    public static final int BLOCK_KW=69;
+    public static final int BY=121;
+    public static final int WAIT_KW=72;
+    public static final int ADD_KW=150;
+    public static final int MOVE_WITH_CAMERA=232;
+    public static final int DEFEAT_KW=60;
+    public static final int INIT_IS_KW=6;
+    public static final int MAGIC_MIN=208;
+    public static final int MOUSE=86;
+    public static final int BECOMES=115;
+    public static final int RIGHT=92;
+    public static final int BREAKERS=245;
+    public static final int BREAKABLE=190;
+    public static final int MIN=171;
+    public static final int FINISHED_KW=143;
+    public static final int MINUS=157;
+    public static final int OBSTACLE=182;
+    public static final int MAGIC=206;
+    public static final int PLAYED_KW=147;
+    public static final int GAME_SCORE_KW=12;
     public static final int BECOMES_VAR_KW=22;
-    public static final int BECOMES_ID_KW=23;
+    public static final int DAMAGES=226;
+    public static final int MOVE=103;
+    public static final int VOLUME=230;
+    public static final int ENTER=101;
+    public static final int ENTRANCES=238;
+    public static final int IS_TRAVERSABLE=197;
+    public static final int IN_KW=15;
+    public static final int MONEY=214;
+    public static final int TYPES_TELEPORTABLES=248;
+    public static final int DIV=159;
+    public static final int BETWEEN=155;
+    public static final int MASS=195;
+    public static final int KEY_KW=26;
+    public static final int FIRST=55;
+    public static final int COMMAND_KW=85;
+    public static final int ORIENTATION=169;
+    public static final int DISABLE_KW=110;
+    public static final int IS_FIX=196;
+    public static final int SUB_KW=151;
+    public static final int ACTIVATE_KW=109;
+    public static final int EQUIPED_OBJECT=237;
+    public static final int ATTRIBUT_NAME=229;
+    public static final int DUPLICABLE=54;
+    public static final int ENEMY=52;
+    public static final int PLAYER=50;
+    public static final int EQUALS=128;
+    public static final int MEDIA=46;
+    public static final int CLICK_CENTER=94;
+    public static final int KILLS_KW=117;
+    public static final int FIN=28;
+    public static final int SPEED_MAX=219;
+    public static final int HAS=30;
+    public static final int SUPED=132;
+    public static final int AGGREGATION_KW=19;
+    public static final int PLANE=180;
+    public static final int NAME=200;
+    public static final int DESCRIPTION=201;
+    public static final int POW=161;
+    public static final int ESCAPE=100;
+    public static final int ACCELERATE=107;
+    public static final int BOOST_MAX=222;
+    public static final int PAUSE_KW=63;
+    public static final int TOUCHING_KW=140;
+    public static final int STARTED_KW=144;
+    public static final int MS=173;
+    public static final int ENDIF=124;
+    public static final int COMMENT=249;
+    public static final int ACTIVE=199;
+    public static final int JUMP=102;
+    public static final int EFFACE_KW=70;
+    public static final int ALLY=51;
+    public static final int ON=65;
+    public static final int OF=41;
+    public static final int NEUTRAL=53;
+    public static final int MUL=158;
+    public static final int TURN=106;
+    public static final int CAMERA_KW=10;
+    public static final int CLICK_LEFT=93;
+    public static final int DEFENSE=211;
+    public static final int ACCESS_KW=25;
+    public static final int PROJECTILE=185;
+    public static final int UNIT=227;
+    public static final int SCALE=84;
+    public static final int MUTED_KW=146;
+    public static final int EQUIP=79;
+    public static final int UNTIL=78;
+    public static final int OR=126;
+    public static final int MOVING_KW=141;
+    public static final int INVERT_KW=152;
+    public static final int VICTORY_KW=59;
+    public static final int TOUCHED_KW=120;
+    public static final int RELOAD_TIME=235;
+    public static final int DURING=77;
+    public static final int PD=135;
+    public static final int GAME=29;
+    public static final int SPACECRAFT=181;
+    public static final int VEHICLE=179;
+    public static final int PG=134;
+    public static final int SWORD=184;
+    public static final int DEC=8;
+    public static final int DAMAGE_ZONE=240;
+    public static final int CLASS=215;
+    public static final int COORDINATE_KW=17;
+    public static final int FORWARD=104;
+    public static final int SCROLL_UP=96;
+    public static final int GAME_KW=4;
+    public static final int INVENTORY=236;
+    public static final int FOR=87;
+    public static final int TELEPORTABLES=247;
+    public static final int TYPES_COLLECTORS=242;
+    public static final int BRAKE=108;
+    public static final int FOV=198;
+    public static final int AND=39;
+    public static final int SPACE=99;
+    public static final int SCROLL_DOWN=97;
+    public static final int GENERATE_KW=71;
+    public static final int MAGIC_MAX=207;
+    public static final int IN=49;
+    public static final int DIES_KW=76;
+    public static final int OBJECT=177;
+    public static final int INFEG=131;
+    public static final int IS=38;
+    public static final int SPEED=218;
+    public static final int GENERATORS=243;
+    public static final int ALL=166;
+    public static final int IF_KW=122;
+    public static final int VIRG=31;
+    public static final int NEXT=80;
+    public static final int ASSIGN_KW=149;
+    public static final int ONCE=48;
+    public static final int GAME_ATTRIBUT_KW=5;
+    public static final int MEDIA_KW=9;
+    public static final int WITH=42;
+    public static final int BOOST_INTERVAL=233;
+    public static final int TOUCHES_KW=116;
+    public static final int LIFE=202;
+    public static final int OTHER=118;
+    public static final int ROTATION=83;
+    public static final int LIFE_MIN=204;
     public static final int CONDITION_KW=24;
-    public static final int FIN=25;
-    public static final int GAME=26;
-    public static final int HAS=27;
-    public static final int VIRG=28;
-    public static final int GRAVITY_KW=29;
-    public static final int AT=30;
-    public static final int FLOAT=31;
-    public static final int SCORE=32;
-    public static final int TYPE=33;
-    public static final int IDENT=34;
-    public static final int IS=35;
-    public static final int AND=36;
-    public static final int LIST_KW=37;
-    public static final int OF=38;
-    public static final int WITH=39;
-    public static final int CAMERA=40;
-    public static final int PERSON=41;
-    public static final int FREE=42;
-    public static final int MEDIA=43;
-    public static final int LOOP=44;
-    public static final int ONCE=45;
-    public static final int IN=46;
-    public static final int PLAYER=47;
-    public static final int ALLY=48;
-    public static final int ENEMY=49;
-    public static final int NEUTRAL=50;
-    public static final int DUPLICABLE=51;
-    public static final int FIRST=52;
-    public static final int THIRD=53;
-    public static final int DEFINITION_KW=54;
-    public static final int MEANS=55;
-    public static final int VICTORY_KW=56;
-    public static final int DEFEAT_KW=57;
-    public static final int ENDS_KW=58;
-    public static final int STARTS_KW=59;
-    public static final int PAUSE_KW=60;
-    public static final int MUTE_KW=61;
-    public static final int ON=62;
-    public static final int OFF=63;
-    public static final int PLAY_KW=64;
-    public static final int STOP_KW=65;
-    public static final int BLOCK_KW=66;
-    public static final int EFFACE_KW=67;
-    public static final int GENERATE_KW=68;
-    public static final int WAIT_KW=69;
-    public static final int THEN=70;
-    public static final int ENDWAIT=71;
-    public static final int SAVE_KW=72;
-    public static final int DIES_KW=73;
-    public static final int DURING=74;
-    public static final int UNTIL=75;
-    public static final int EQUIP=76;
-    public static final int NEXT=77;
-    public static final int PREVIOUS=78;
-    public static final int TRANSLATION=79;
-    public static final int ROTATION=80;
-    public static final int SCALE=81;
-    public static final int COMMAND_KW=82;
-    public static final int MOUSE_KW=83;
-    public static final int KEY_KW=84;
-    public static final int FOR=85;
-    public static final int WUP=86;
-    public static final int WDOWN=87;
-    public static final int LEFT=88;
-    public static final int RIGHT=89;
-    public static final int CLICK_LEFT=90;
-    public static final int CLICK_CENTER=91;
-    public static final int CLICK_RIGHT=92;
-    public static final int SCROLL_UP=93;
-    public static final int SCROLL_DOWN=94;
-    public static final int LETTER=95;
-    public static final int SPACE=96;
-    public static final int ESCAPE=97;
-    public static final int ENTER=98;
-    public static final int JUMP=99;
-    public static final int MOVE=100;
-    public static final int FORWARD=101;
-    public static final int BACKWARD=102;
-    public static final int TURN=103;
-    public static final int ACCELERATE=104;
-    public static final int BRAKE=105;
-    public static final int ACTIVATE_KW=106;
-    public static final int DISABLE_KW=107;
-    public static final int COMMANDS=108;
-    public static final int KEYBOARD=109;
-    public static final int RULE_KW=110;
-    public static final int MOVES_KW=111;
-    public static final int BECOMES=112;
-    public static final int TOUCHES_KW=113;
-    public static final int KILLS_KW=114;
-    public static final int OTHER=115;
-    public static final int KILLED_KW=116;
-    public static final int TOUCHED_KW=117;
-    public static final int BY=118;
-    public static final int IF_KW=119;
-    public static final int ELSE=120;
-    public static final int ENDIF=121;
-    public static final int NOT=122;
-    public static final int OR=123;
-    public static final int COMP=124;
-    public static final int EQUALS=125;
-    public static final int INF=126;
-    public static final int SUP=127;
-    public static final int INFEG=128;
-    public static final int SUPED=129;
-    public static final int DIFF=130;
-    public static final int PG=131;
-    public static final int PD=132;
-    public static final int DEAD_KW=133;
-    public static final int ALIVE_KW=134;
-    public static final int EFFACED_KW=135;
-    public static final int GENERATED_KW=136;
-    public static final int TOUCHING_KW=137;
-    public static final int MOVING_KW=138;
-    public static final int WAITING_KW=139;
-    public static final int FINISHED_KW=140;
-    public static final int STARTED_KW=141;
-    public static final int PAUSED_KW=142;
-    public static final int MUTED_KW=143;
-    public static final int PLAYED_KW=144;
-    public static final int STOPPED_KW=145;
-    public static final int ASSIGN_KW=146;
-    public static final int ADD_KW=147;
-    public static final int SUB_KW=148;
-    public static final int INVERT_KW=149;
-    public static final int IA_KW=150;
-    public static final int RANDOM_KW=151;
-    public static final int BETWEEN=152;
-    public static final int PLUS=153;
-    public static final int MINUS=154;
-    public static final int MUL=155;
-    public static final int DIV=156;
-    public static final int MOD=157;
-    public static final int POW=158;
-    public static final int X=159;
-    public static final int Y=160;
-    public static final int Z=161;
-    public static final int VALUE=162;
-    public static final int ALL=163;
-    public static final int NUM=164;
-    public static final int POSITION=165;
-    public static final int ORIENTATION=166;
-    public static final int SIZE=167;
-    public static final int MIN=168;
-    public static final int SEC=169;
-    public static final int MS=170;
-    public static final int FRAME=171;
-    public static final int COUNTER=172;
-    public static final int TIME=173;
-    public static final int OBJECT=174;
-    public static final int CHARACTER=175;
-    public static final int VEHICLE=176;
-    public static final int PLANE=177;
-    public static final int SPACECRAFT=178;
-    public static final int OBSTACLE=179;
-    public static final int WEAPON=180;
-    public static final int SWORD=181;
-    public static final int PROJECTILE=182;
-    public static final int ZONE=183;
-    public static final int GROUND=184;
-    public static final int BONUS=185;
-    public static final int CHECKPOINT=186;
-    public static final int BREAKABLE=187;
-    public static final int CONSTRUCTION=188;
-    public static final int ROOM=189;
-    public static final int BALL=190;
-    public static final int TELEPORTER=191;
-    public static final int MASS=192;
-    public static final int IS_FIX=193;
-    public static final int IS_TRAVERSABLE=194;
-    public static final int FOV=195;
-    public static final int ACTIVE=196;
-    public static final int NAME=197;
-    public static final int DESCRIPTION=198;
-    public static final int LIFE=199;
-    public static final int LIFE_MAX=200;
-    public static final int LIFE_MIN=201;
-    public static final int NB_LIVES=202;
-    public static final int MAGIC=203;
-    public static final int MAGIC_MAX=204;
-    public static final int MAGIC_MIN=205;
-    public static final int LEVEL=206;
-    public static final int ATTACK=207;
-    public static final int DEFENSE=208;
-    public static final int JUMP_FORCE=209;
-    public static final int JUMP_AIR_MAX=210;
-    public static final int MONEY=211;
-    public static final int CLASS=212;
-    public static final int RACE=213;
-    public static final int ACCELERATION=214;
-    public static final int SPEED=215;
-    public static final int SPEED_MAX=216;
-    public static final int SPEED_MIN=217;
-    public static final int BOOST=218;
-    public static final int BOOST_MAX=219;
-    public static final int NB_MUNITIONS=220;
-    public static final int NB_MUNITIONS_MAX=221;
-    public static final int SHOOT_POWER=222;
-    public static final int DAMAGES=223;
-    public static final int UNIT=224;
-    public static final int OBJECT_NAME=225;
-    public static final int ATTRIBUT_NAME=226;
-    public static final int VOLUME=227;
-    public static final int NUMBER=228;
-    public static final int MOVE_WITH_CAMERA=229;
-    public static final int BOOST_INTERVAL=230;
-    public static final int SHOOT_INTERVAL=231;
-    public static final int RELOAD_TIME=232;
-    public static final int INVENTORY=233;
-    public static final int EQUIPED_OBJECT=234;
-    public static final int ENTRANCES=235;
-    public static final int EXITS=236;
-    public static final int DAMAGE_ZONE=237;
-    public static final int COLLECTORS=238;
-    public static final int TYPES_COLLECTORS=239;
-    public static final int GENERATORS=240;
-    public static final int TYPE_GENERATORS=241;
-    public static final int BREAKERS=242;
-    public static final int TYPES_BREAKERS=243;
-    public static final int TELEPORTABLES=244;
-    public static final int TYPES_TELEPORTABLES=245;
-    public static final int COMMENT=246;
-    public static final int WS=247;
+    public static final int BACKWARD=105;
+    public static final int MOUSE_KW=27;
+    public static final int COMP=127;
+    public static final int PAUSED_KW=145;
+    public static final int TRANSLATION=82;
+    public static final int ENDWAIT=74;
+    public static final int NUM=167;
+    public static final int EXITS=239;
+    public static final int ALLOCATION_KW=16;
+    public static final int ROOM=192;
+    public static final int COUNTER=175;
+    public static final int BECOMES_ID_KW=23;
+    public static final int SCORE=35;
+    public static final int JUMP_FORCE=212;
+    public static final int PLAY_KW=67;
+    public static final int FRAME=174;
 
     // delegates
     // delegators
@@ -354,10 +357,10 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "DEC"
 
-    // $ANTLR start "T__248"
-    public final void mT__248() throws RecognitionException {
+    // $ANTLR start "T__251"
+    public final void mT__251() throws RecognitionException {
         try {
-            int _type = T__248;
+            int _type = T__251;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:8: ( 'true' )
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:10: 'true'
@@ -373,12 +376,12 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__248"
+    // $ANTLR end "T__251"
 
-    // $ANTLR start "T__249"
-    public final void mT__249() throws RecognitionException {
+    // $ANTLR start "T__252"
+    public final void mT__252() throws RecognitionException {
         try {
-            int _type = T__249;
+            int _type = T__252;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:8: ( 'false' )
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:10: 'false'
@@ -394,19 +397,19 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__249"
+    // $ANTLR end "T__252"
 
     // $ANTLR start "COMMENT"
     public final void mCOMMENT() throws RecognitionException {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:13: ( '//' (~ '\\n' )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:15: '//' (~ '\\n' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:13: ( '//' (~ '\\n' )* )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:15: '//' (~ '\\n' )*
             {
             match("//"); 
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:19: (~ '\\n' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:19: (~ '\\n' )*
             loop1:
             do {
                 int alt1=2;
@@ -419,7 +422,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:20: ~ '\\n'
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:20: ~ '\\n'
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -456,8 +459,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:4: ( ')' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:6: ')'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:4: ( ')' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:6: ')'
             {
             match(')'); 
 
@@ -476,8 +479,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:4: ( '(' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:6: '('
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:4: ( '(' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:6: '('
             {
             match('('); 
 
@@ -496,8 +499,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:465:5: ( ';' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:465:7: ';'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:5: ( ';' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:7: ';'
             {
             match(';'); 
 
@@ -516,8 +519,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:6: ( ',' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:8: ','
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:6: ( ',' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:8: ','
             {
             match(','); 
 
@@ -536,8 +539,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = HAS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:5: ( 'has' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:7: 'has'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:5: ( 'has' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:7: 'has'
             {
             match("has"); 
 
@@ -557,8 +560,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:4: ( 'at' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:6: 'at'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:4: ( 'at' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:6: 'at'
             {
             match("at"); 
 
@@ -578,8 +581,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:4: ( 'is' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:6: 'is'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:4: ( 'is' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:6: 'is'
             {
             match("is"); 
 
@@ -599,8 +602,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:5: ( 'and' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:7: 'and'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:5: ( 'and' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:7: 'and'
             {
             match("and"); 
 
@@ -620,8 +623,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:4: ( 'of' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:6: 'of'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:4: ( 'of' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:6: 'of'
             {
             match("of"); 
 
@@ -641,8 +644,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:6: ( 'with' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:8: 'with'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:6: ( 'with' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:8: 'with'
             {
             match("with"); 
 
@@ -662,8 +665,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BETWEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:9: ( 'between' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:11: 'between'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:9: ( 'between' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:11: 'between'
             {
             match("between"); 
 
@@ -683,8 +686,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:6: ( '+' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:8: '+'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:6: ( '+' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:8: '+'
             {
             match('+'); 
 
@@ -703,8 +706,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:7: ( '-' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:9: '-'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:7: ( '-' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:9: '-'
             {
             match('-'); 
 
@@ -723,8 +726,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:5: ( '*' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:7: '*'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:5: ( '*' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:7: '*'
             {
             match('*'); 
 
@@ -743,8 +746,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:5: ( '/' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:7: '/'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:5: ( '/' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:7: '/'
             {
             match('/'); 
 
@@ -763,8 +766,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = POW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:5: ( '^' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:7: '^'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:5: ( '^' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:7: '^'
             {
             match('^'); 
 
@@ -783,8 +786,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:5: ( '%' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:7: '%'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:5: ( '%' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:7: '%'
             {
             match('%'); 
 
@@ -803,8 +806,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = X;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:3: ( 'x' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:5: 'x'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:3: ( 'x' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:5: 'x'
             {
             match('x'); 
 
@@ -823,8 +826,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Y;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:3: ( 'y' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:5: 'y'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:3: ( 'y' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:5: 'y'
             {
             match('y'); 
 
@@ -843,8 +846,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Z;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:3: ( 'z' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:5: 'z'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:3: ( 'z' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:5: 'z'
             {
             match('z'); 
 
@@ -863,8 +866,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:5: ( 'all' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:7: 'all'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:5: ( 'all' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:7: 'all'
             {
             match("all"); 
 
@@ -884,8 +887,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:5: ( 'not' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:7: 'not'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:5: ( 'not' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:7: 'not'
             {
             match("not"); 
 
@@ -905,8 +908,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:5: ( 'min' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:7: 'min'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:5: ( 'min' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:7: 'min'
             {
             match("min"); 
 
@@ -926,8 +929,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:5: ( 'sec' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:7: 'sec'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:5: ( 'sec' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:7: 'sec'
             {
             match("sec"); 
 
@@ -947,8 +950,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:4: ( 'ms' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:6: 'ms'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:4: ( 'ms' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:6: 'ms'
             {
             match("ms"); 
 
@@ -968,8 +971,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:6: ( 'then' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:8: 'then'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:6: ( 'then' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:8: 'then'
             {
             match("then"); 
 
@@ -989,8 +992,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:5: ( 'for' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:7: 'for'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:5: ( 'for' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:7: 'for'
             {
             match("for"); 
 
@@ -1010,8 +1013,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:8: ( '=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:10: '='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:8: ( '=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:10: '='
             {
             match('='); 
 
@@ -1030,8 +1033,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:5: ( '<' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:8: '<'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:5: ( '<' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:8: '<'
             {
             match('<'); 
 
@@ -1050,8 +1053,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:5: ( '>' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:8: '>'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:5: ( '>' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:8: '>'
             {
             match('>'); 
 
@@ -1070,8 +1073,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INFEG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:7: ( '<=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:9: '<='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:7: ( '<=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:9: '<='
             {
             match("<="); 
 
@@ -1091,8 +1094,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUPED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:7: ( '>=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:9: '>='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:7: ( '>=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:9: '>='
             {
             match(">="); 
 
@@ -1112,8 +1115,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:6: ( '!=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:8: '!='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:6: ( '!=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:8: '!='
             {
             match("!="); 
 
@@ -1133,8 +1136,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:7: ( 'Game' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:9: 'Game'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:7: ( 'Game' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:9: 'Game'
             {
             match("Game"); 
 
@@ -1154,8 +1157,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRAVITY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:12: ( 'gravity' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:14: 'gravity'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:12: ( 'gravity' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:14: 'gravity'
             {
             match("gravity"); 
 
@@ -1175,8 +1178,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:8: ( 'score' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:10: 'score'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:8: ( 'score' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:10: 'score'
             {
             match("score"); 
 
@@ -1196,8 +1199,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:7: ( 'type' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:9: 'type'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:7: ( 'type' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:9: 'type'
             {
             match("type"); 
 
@@ -1217,8 +1220,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAYER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:9: ( 'player' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:11: 'player'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:9: ( 'player' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:11: 'player'
             {
             match("player"); 
 
@@ -1238,8 +1241,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIST_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:10: ( 'list' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:12: 'list'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:10: ( 'list' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:12: 'list'
             {
             match("list"); 
 
@@ -1259,8 +1262,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:5: ( 'in' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:7: 'in'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:5: ( 'in' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:7: 'in'
             {
             match("in"); 
 
@@ -1280,8 +1283,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:7: ( 'loop' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:9: 'loop'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:7: ( 'loop' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:9: 'loop'
             {
             match("loop"); 
 
@@ -1301,8 +1304,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ONCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:7: ( 'once' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:9: 'once'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:7: ( 'once' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:9: 'once'
             {
             match("once"); 
 
@@ -1322,8 +1325,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RANDOM_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:11: ( 'random' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:13: 'random'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:11: ( 'random' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:13: 'random'
             {
             match("random"); 
 
@@ -1343,8 +1346,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFINITION_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:15: ( 'definition' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:17: 'definition'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:15: ( 'definition' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:17: 'definition'
             {
             match("definition"); 
 
@@ -1364,8 +1367,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEANS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:8: ( 'means' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:10: 'means'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:8: ( 'means' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:10: 'means'
             {
             match("means"); 
 
@@ -1385,8 +1388,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:10: ( 'pause' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:12: 'pause'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:10: ( 'pause' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:12: 'pause'
             {
             match("pause"); 
 
@@ -1406,8 +1409,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:10: ( 'mute' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:12: 'mute'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:10: ( 'mute' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:12: 'mute'
             {
             match("mute"); 
 
@@ -1427,8 +1430,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:5: ( 'on' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:7: 'on'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:5: ( 'on' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:7: 'on'
             {
             match("on"); 
 
@@ -1448,8 +1451,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:6: ( 'off' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:8: 'off'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:6: ( 'off' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:8: 'off'
             {
             match("off"); 
 
@@ -1469,8 +1472,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:10: ( 'play' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:12: 'play'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:10: ( 'play' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:12: 'play'
             {
             match("play"); 
 
@@ -1490,8 +1493,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOP_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:10: ( 'stop' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:12: 'stop'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:10: ( 'stop' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:12: 'stop'
             {
             match("stop"); 
 
@@ -1511,8 +1514,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:10: ( 'ends' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:12: 'ends'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:10: ( 'ends' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:12: 'ends'
             {
             match("ends"); 
 
@@ -1532,8 +1535,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:11: ( 'starts' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:13: 'starts'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:11: ( 'starts' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:13: 'starts'
             {
             match("starts"); 
 
@@ -1553,8 +1556,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BLOCK_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:10: ( 'block' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:12: 'block'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:10: ( 'block' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:12: 'block'
             {
             match("block"); 
 
@@ -1574,8 +1577,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TRANSLATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:13: ( 'translation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:15: 'translation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:13: ( 'translation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:15: 'translation'
             {
             match("translation"); 
 
@@ -1595,8 +1598,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ROTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:10: ( 'rotation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:12: 'rotation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:10: ( 'rotation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:12: 'rotation'
             {
             match("rotation"); 
 
@@ -1616,8 +1619,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCALE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:8: ( 'scale' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:10: 'scale'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:8: ( 'scale' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:10: 'scale'
             {
             match("scale"); 
 
@@ -1637,8 +1640,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:11: ( 'efface' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:13: 'efface'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:11: ( 'efface' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:13: 'efface'
             {
             match("efface"); 
 
@@ -1658,8 +1661,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:13: ( 'generate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:15: 'generate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:13: ( 'generate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:15: 'generate'
             {
             match("generate"); 
 
@@ -1679,8 +1682,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAIT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:10: ( 'wait' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:12: 'wait'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:10: ( 'wait' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:12: 'wait'
             {
             match("wait"); 
 
@@ -1700,8 +1703,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDWAIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:10: ( 'endWait' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:12: 'endWait'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:10: ( 'endWait' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:12: 'endWait'
             {
             match("endWait"); 
 
@@ -1721,8 +1724,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SAVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:10: ( 'save' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:12: 'save'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:10: ( 'save' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:12: 'save'
             {
             match("save"); 
 
@@ -1742,8 +1745,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RULE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:10: ( 'rule' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:12: 'rule'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:10: ( 'rule' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:12: 'rule'
             {
             match("rule"); 
 
@@ -1763,8 +1766,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:10: ( 'moves' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:12: 'moves'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:10: ( 'moves' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:12: 'moves'
             {
             match("moves"); 
 
@@ -1784,8 +1787,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:9: ( 'dies' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:11: 'dies'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:9: ( 'dies' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:11: 'dies'
             {
             match("dies"); 
 
@@ -1805,8 +1808,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:12: ( 'touches' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:14: 'touches'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:12: ( 'touches' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:14: 'touches'
             {
             match("touches"); 
 
@@ -1826,8 +1829,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:10: ( 'kills' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:12: 'kills'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:10: ( 'kills' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:12: 'kills'
             {
             match("kills"); 
 
@@ -1847,8 +1850,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:11: ( 'killed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:13: 'killed'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:11: ( 'killed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:13: 'killed'
             {
             match("killed"); 
 
@@ -1868,8 +1871,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:12: ( 'touched' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:14: 'touched'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:12: ( 'touched' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:14: 'touched'
             {
             match("touched"); 
 
@@ -1889,8 +1892,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:4: ( 'by' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:6: 'by'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:4: ( 'by' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:6: 'by'
             {
             match("by"); 
 
@@ -1910,8 +1913,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:7: ( 'other' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:9: 'other'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:7: ( 'other' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:9: 'other'
             {
             match("other"); 
 
@@ -1931,8 +1934,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BECOMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:9: ( 'becomes' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:11: 'becomes'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:9: ( 'becomes' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:11: 'becomes'
             {
             match("becomes"); 
 
@@ -1952,8 +1955,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VICTORY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:12: ( 'victory' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:14: 'victory'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:12: ( 'victory' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:14: 'victory'
             {
             match("victory"); 
 
@@ -1973,8 +1976,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFEAT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:11: ( 'defeat' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:13: 'defeat'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:11: ( 'defeat' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:13: 'defeat'
             {
             match("defeat"); 
 
@@ -1994,8 +1997,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IF_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:7: ( 'if' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:9: 'if'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:7: ( 'if' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:9: 'if'
             {
             match("if"); 
 
@@ -2015,8 +2018,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:6: ( 'else' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:8: 'else'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:6: ( 'else' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:8: 'else'
             {
             match("else"); 
 
@@ -2036,8 +2039,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:7: ( 'endIf' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:9: 'endIf'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:7: ( 'endIf' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:9: 'endIf'
             {
             match("endIf"); 
 
@@ -2057,8 +2060,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:4: ( 'or' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:6: 'or'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:4: ( 'or' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:6: 'or'
             {
             match("or"); 
 
@@ -2078,8 +2081,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:6: ( 'comp' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:8: 'comp'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:6: ( 'comp' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:8: 'comp'
             {
             match("comp"); 
 
@@ -2099,8 +2102,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:9: ( 'dead' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:11: 'dead'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:9: ( 'dead' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:11: 'dead'
             {
             match("dead"); 
 
@@ -2120,8 +2123,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALIVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:10: ( 'alive' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:12: 'alive'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:10: ( 'alive' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:12: 'alive'
             {
             match("alive"); 
 
@@ -2141,8 +2144,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:12: ( 'effaced' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:13: 'effaced'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:12: ( 'effaced' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:13: 'effaced'
             {
             match("effaced"); 
 
@@ -2162,8 +2165,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:14: ( 'generated' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:16: 'generated'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:14: ( 'generated' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:16: 'generated'
             {
             match("generated"); 
 
@@ -2183,8 +2186,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:13: ( 'touching' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:15: 'touching'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:571:13: ( 'touching' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:571:15: 'touching'
             {
             match("touching"); 
 
@@ -2204,8 +2207,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:11: ( 'moving' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:13: 'moving'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:11: ( 'moving' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:13: 'moving'
             {
             match("moving"); 
 
@@ -2225,8 +2228,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAITING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:12: ( 'waiting' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:14: 'waiting'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:12: ( 'waiting' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:14: 'waiting'
             {
             match("waiting"); 
 
@@ -2246,8 +2249,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FINISHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:13: ( 'finished' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:15: 'finished'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:13: ( 'finished' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:15: 'finished'
             {
             match("finished"); 
 
@@ -2267,8 +2270,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:12: ( 'started' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:14: 'started'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:12: ( 'started' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:14: 'started'
             {
             match("started"); 
 
@@ -2288,8 +2291,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:11: ( 'paused' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:13: 'paused'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:11: ( 'paused' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:13: 'paused'
             {
             match("paused"); 
 
@@ -2309,8 +2312,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:10: ( 'muted' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:12: 'muted'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:10: ( 'muted' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:12: 'muted'
             {
             match("muted"); 
 
@@ -2330,8 +2333,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAYED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:11: ( 'played' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:13: 'played'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:11: ( 'played' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:13: 'played'
             {
             match("played"); 
 
@@ -2351,8 +2354,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOPPED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:12: ( 'stopped' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:14: 'stopped'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:12: ( 'stopped' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:14: 'stopped'
             {
             match("stopped"); 
 
@@ -2372,8 +2375,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ASSIGN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:11: ( 'assign' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:13: 'assign'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:11: ( 'assign' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:13: 'assign'
             {
             match("assign"); 
 
@@ -2393,8 +2396,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ADD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:8: ( 'add' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:10: 'add'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:8: ( 'add' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:10: 'add'
             {
             match("add"); 
 
@@ -2414,8 +2417,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUB_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:8: ( 'sub' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:10: 'sub'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:8: ( 'sub' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:10: 'sub'
             {
             match("sub"); 
 
@@ -2435,8 +2438,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:11: ( 'invert' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:13: 'invert'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:11: ( 'invert' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:13: 'invert'
             {
             match("invert"); 
 
@@ -2456,8 +2459,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NUM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:7: ( 'num' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:9: 'num'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:7: ( 'num' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:9: 'num'
             {
             match("num"); 
 
@@ -2477,8 +2480,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IA_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:8: ( 'ia' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:11: 'ia'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:8: ( 'ia' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:11: 'ia'
             {
             match("ia"); 
 
@@ -2498,8 +2501,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DURING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:8: ( 'during' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:10: 'during'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:8: ( 'during' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:10: 'during'
             {
             match("during"); 
 
@@ -2519,8 +2522,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = UNTIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:7: ( 'until' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:9: 'until'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:7: ( 'until' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:9: 'until'
             {
             match("until"); 
 
@@ -2540,8 +2543,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:7: ( 'equip' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:9: 'equip'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:7: ( 'equip' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:9: 'equip'
             {
             match("equip"); 
 
@@ -2561,8 +2564,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:6: ( 'next' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:8: 'next'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:6: ( 'next' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:8: 'next'
             {
             match("next"); 
 
@@ -2582,8 +2585,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PREVIOUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:10: ( 'previous' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:12: 'previous'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:10: ( 'previous' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:12: 'previous'
             {
             match("previous"); 
 
@@ -2603,8 +2606,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KEYBOARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:10: ( 'keyboard' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:12: 'keyboard'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:10: ( 'keyboard' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:12: 'keyboard'
             {
             match("keyboard"); 
 
@@ -2624,8 +2627,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACTIVATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:13: ( 'activate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:15: 'activate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:13: ( 'activate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:15: 'activate'
             {
             match("activate"); 
 
@@ -2645,8 +2648,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DISABLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:11: ( 'disable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:12: 'disable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:11: ( 'disable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:12: 'disable'
             {
             match("disable"); 
 
@@ -2666,8 +2669,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMANDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:9: ( 'commands' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:10: 'commands'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:9: ( 'commands' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:10: 'commands'
             {
             match("commands"); 
 
@@ -2687,8 +2690,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DUPLICABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:12: ( 'duplicable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:14: 'duplicable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:12: ( 'duplicable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:14: 'duplicable'
             {
             match("duplicable"); 
 
@@ -2708,8 +2711,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:8: ( 'first' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:10: 'first'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:8: ( 'first' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:10: 'first'
             {
             match("first"); 
 
@@ -2729,8 +2732,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:8: ( 'third' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:10: 'third'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:8: ( 'third' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:10: 'third'
             {
             match("third"); 
 
@@ -2750,8 +2753,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:7: ( 'ally' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:9: 'ally'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:7: ( 'ally' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:9: 'ally'
             {
             match("ally"); 
 
@@ -2771,8 +2774,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENEMY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:8: ( 'enemy' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:10: 'enemy'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:600:8: ( 'enemy' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:600:10: 'enemy'
             {
             match("enemy"); 
 
@@ -2792,8 +2795,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NEUTRAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:10: ( 'neutral' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:12: 'neutral'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:10: ( 'neutral' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:12: 'neutral'
             {
             match("neutral"); 
 
@@ -2813,8 +2816,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = POSITION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:10: ( 'position' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:12: 'position'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:602:10: ( 'position' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:602:12: 'position'
             {
             match("position"); 
 
@@ -2834,8 +2837,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ORIENTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:13: ( 'orientation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:15: 'orientation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:13: ( 'orientation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:15: 'orientation'
             {
             match("orientation"); 
 
@@ -2855,8 +2858,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SIZE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:7: ( 'size' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:9: 'size'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:7: ( 'size' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:9: 'size'
             {
             match("size"); 
 
@@ -2876,8 +2879,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PERSON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:9: ( 'person' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:11: 'person'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:9: ( 'person' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:11: 'person'
             {
             match("person"); 
 
@@ -2897,8 +2900,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FREE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:7: ( 'free' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:9: 'free'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:7: ( 'free' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:9: 'free'
             {
             match("free"); 
 
@@ -2918,7 +2921,7 @@ public class hightLexer extends Lexer {
         try {
             int _type = FRAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:8: ( 'frame' | 'frames' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:8: ( 'frame' | 'frames' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2979,7 +2982,7 @@ public class hightLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:10: 'frame'
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:10: 'frame'
                     {
                     match("frame"); 
 
@@ -2987,7 +2990,7 @@ public class hightLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:20: 'frames'
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:20: 'frames'
                     {
                     match("frames"); 
 
@@ -3009,8 +3012,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:5: ( 'up' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:7: 'up'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:610:5: ( 'up' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:610:7: 'up'
             {
             match("up"); 
 
@@ -3030,8 +3033,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WDOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:7: ( 'down' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:9: 'down'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:7: ( 'down' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:9: 'down'
             {
             match("down"); 
 
@@ -3051,8 +3054,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:6: ( 'left' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:8: 'left'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:6: ( 'left' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:8: 'left'
             {
             match("left"); 
 
@@ -3072,8 +3075,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:7: ( 'right' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:9: 'right'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:7: ( 'right' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:9: 'right'
             {
             match("right"); 
 
@@ -3093,8 +3096,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:7: ( 'space' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:9: 'space'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:7: ( 'space' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:9: 'space'
             {
             match("space"); 
 
@@ -3114,8 +3117,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ESCAPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:8: ( 'escape' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:10: 'escape'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:8: ( 'escape' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:10: 'escape'
             {
             match("escape"); 
 
@@ -3135,8 +3138,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:7: ( 'enter' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:9: 'enter'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:7: ( 'enter' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:9: 'enter'
             {
             match("enter"); 
 
@@ -3151,13 +3154,13 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "ENTER"
 
-    // $ANTLR start "MOUSE_KW"
-    public final void mMOUSE_KW() throws RecognitionException {
+    // $ANTLR start "MOUSE"
+    public final void mMOUSE() throws RecognitionException {
         try {
-            int _type = MOUSE_KW;
+            int _type = MOUSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:9: ( 'mouse' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:11: 'mouse'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:7: ( 'mouse' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:9: 'mouse'
             {
             match("mouse"); 
 
@@ -3170,15 +3173,15 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "MOUSE_KW"
+    // $ANTLR end "MOUSE"
 
-    // $ANTLR start "KEY_KW"
-    public final void mKEY_KW() throws RecognitionException {
+    // $ANTLR start "KEY"
+    public final void mKEY() throws RecognitionException {
         try {
-            int _type = KEY_KW;
+            int _type = KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:8: ( 'key' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:10: 'key'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:5: ( 'key' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:7: 'key'
             {
             match("key"); 
 
@@ -3191,15 +3194,15 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "KEY_KW"
+    // $ANTLR end "KEY"
 
     // $ANTLR start "CLICK_LEFT"
     public final void mCLICK_LEFT() throws RecognitionException {
         try {
             int _type = CLICK_LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:595:12: ( 'lClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:595:14: 'lClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:12: ( 'lClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:14: 'lClick'
             {
             match("lClick"); 
 
@@ -3219,8 +3222,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_CENTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:14: ( 'cClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:16: 'cClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:14: ( 'cClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:16: 'cClick'
             {
             match("cClick"); 
 
@@ -3240,8 +3243,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:13: ( 'rClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:15: 'rClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:13: ( 'rClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:15: 'rClick'
             {
             match("rClick"); 
 
@@ -3261,8 +3264,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_UP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:11: ( 'scrollUp' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:13: 'scrollUp'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:11: ( 'scrollUp' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:13: 'scrollUp'
             {
             match("scrollUp"); 
 
@@ -3282,8 +3285,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_DOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:13: ( 'scrollDown' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:15: 'scrollDown'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:13: ( 'scrollDown' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:15: 'scrollDown'
             {
             match("scrollDown"); 
 
@@ -3303,8 +3306,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMAND_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:12: ( 'command' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:14: 'command'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:12: ( 'command' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:14: 'command'
             {
             match("command"); 
 
@@ -3324,8 +3327,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = JUMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:602:6: ( 'jump' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:602:8: 'jump'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:6: ( 'jump' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:8: 'jump'
             {
             match("jump"); 
 
@@ -3345,8 +3348,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:6: ( 'move' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:8: 'move'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:627:6: ( 'move' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:627:8: 'move'
             {
             match("move"); 
 
@@ -3366,8 +3369,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FORWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:9: ( 'forward' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:11: 'forward'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:9: ( 'forward' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:11: 'forward'
             {
             match("forward"); 
 
@@ -3387,8 +3390,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BACKWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:10: ( 'backward' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:12: 'backward'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:629:10: ( 'backward' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:629:12: 'backward'
             {
             match("backward"); 
 
@@ -3408,8 +3411,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:6: ( 'turn' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:8: 'turn'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:630:6: ( 'turn' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:630:8: 'turn'
             {
             match("turn"); 
 
@@ -3429,8 +3432,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACCELERATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:12: ( 'accelerate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:14: 'accelerate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:631:12: ( 'accelerate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:631:14: 'accelerate'
             {
             match("accelerate"); 
 
@@ -3450,8 +3453,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BRAKE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:608:7: ( 'brake' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:608:9: 'brake'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:7: ( 'brake' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:9: 'brake'
             {
             match("brake"); 
 
@@ -3471,8 +3474,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:8: ( 'Camera' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:10: 'Camera'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:635:8: ( 'Camera' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:635:10: 'Camera'
             {
             match("Camera"); 
 
@@ -3492,8 +3495,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEDIA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:7: ( 'Media' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:9: 'Media'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:636:7: ( 'Media' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:636:9: 'Media'
             {
             match("Media"); 
 
@@ -3513,8 +3516,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COUNTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:9: ( 'Counter' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:11: 'Counter'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:637:9: ( 'Counter' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:637:11: 'Counter'
             {
             match("Counter"); 
 
@@ -3534,8 +3537,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:6: ( 'Time' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:8: 'Time'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:638:6: ( 'Time' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:638:8: 'Time'
             {
             match("Time"); 
 
@@ -3555,8 +3558,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:9: ( 'Object' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:11: 'Object'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:640:9: ( 'Object' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:640:11: 'Object'
             {
             match("Object"); 
 
@@ -3576,8 +3579,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CHARACTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:11: ( 'Character' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:13: 'Character'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:641:11: ( 'Character' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:641:13: 'Character'
             {
             match("Character"); 
 
@@ -3597,8 +3600,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VEHICLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:10: ( 'Vehicle' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:12: 'Vehicle'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:642:10: ( 'Vehicle' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:642:12: 'Vehicle'
             {
             match("Vehicle"); 
 
@@ -3618,8 +3621,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLANE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:8: ( 'Plane' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:10: 'Plane'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:643:8: ( 'Plane' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:643:10: 'Plane'
             {
             match("Plane"); 
 
@@ -3639,8 +3642,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPACECRAFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:12: ( 'SpaceCraft' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:14: 'SpaceCraft'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:644:12: ( 'SpaceCraft' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:644:14: 'SpaceCraft'
             {
             match("SpaceCraft"); 
 
@@ -3660,8 +3663,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OBSTACLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:10: ( 'Obstacle' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:12: 'Obstacle'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:645:10: ( 'Obstacle' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:645:12: 'Obstacle'
             {
             match("Obstacle"); 
 
@@ -3681,8 +3684,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WEAPON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:9: ( 'Weapon' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:11: 'Weapon'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:646:9: ( 'Weapon' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:646:11: 'Weapon'
             {
             match("Weapon"); 
 
@@ -3702,8 +3705,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:8: ( 'Sword' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:10: 'Sword'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:647:8: ( 'Sword' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:647:10: 'Sword'
             {
             match("Sword"); 
 
@@ -3723,8 +3726,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PROJECTILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:12: ( 'Projectile' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:14: 'Projectile'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:648:12: ( 'Projectile' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:648:14: 'Projectile'
             {
             match("Projectile"); 
 
@@ -3744,8 +3747,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ZONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:7: ( 'Zone' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:9: 'Zone'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:649:7: ( 'Zone' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:649:9: 'Zone'
             {
             match("Zone"); 
 
@@ -3765,8 +3768,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GROUND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:9: ( 'Ground' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:11: 'Ground'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:650:9: ( 'Ground' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:650:11: 'Ground'
             {
             match("Ground"); 
 
@@ -3786,8 +3789,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BONUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:627:8: ( 'Bonus' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:627:10: 'Bonus'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:651:8: ( 'Bonus' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:651:10: 'Bonus'
             {
             match("Bonus"); 
 
@@ -3807,8 +3810,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CHECKPOINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:12: ( 'CheckPoint' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:14: 'CheckPoint'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:652:12: ( 'CheckPoint' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:652:14: 'CheckPoint'
             {
             match("CheckPoint"); 
 
@@ -3828,8 +3831,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BREAKABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:629:11: ( 'Breakable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:629:13: 'Breakable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:653:11: ( 'Breakable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:653:13: 'Breakable'
             {
             match("Breakable"); 
 
@@ -3849,8 +3852,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CONSTRUCTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:630:14: ( 'Construction' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:630:16: 'Construction'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:654:14: ( 'Construction' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:654:16: 'Construction'
             {
             match("Construction"); 
 
@@ -3870,8 +3873,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ROOM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:631:7: ( 'Room' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:631:9: 'Room'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:655:7: ( 'Room' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:655:9: 'Room'
             {
             match("Room"); 
 
@@ -3891,8 +3894,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BALL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:7: ( 'Ball' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:9: 'Ball'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:656:7: ( 'Ball' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:656:9: 'Ball'
             {
             match("Ball"); 
 
@@ -3912,8 +3915,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TELEPORTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:633:12: ( 'Teleporter' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:633:14: 'Teleporter'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:657:12: ( 'Teleporter' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:657:14: 'Teleporter'
             {
             match("Teleporter"); 
 
@@ -3933,8 +3936,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MASS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:636:7: ( 'mass' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:636:9: 'mass'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:660:7: ( 'mass' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:660:9: 'mass'
             {
             match("mass"); 
 
@@ -3954,8 +3957,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IS_FIX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:637:9: ( 'isFix' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:637:11: 'isFix'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:661:9: ( 'isFix' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:661:11: 'isFix'
             {
             match("isFix"); 
 
@@ -3975,8 +3978,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IS_TRAVERSABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:638:16: ( 'isTraversable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:638:18: 'isTraversable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:662:16: ( 'isTraversable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:662:18: 'isTraversable'
             {
             match("isTraversable"); 
 
@@ -3996,8 +3999,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FOV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:639:6: ( 'fov' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:639:8: 'fov'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:663:6: ( 'fov' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:663:8: 'fov'
             {
             match("fov"); 
 
@@ -4017,8 +4020,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACTIVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:640:9: ( 'active' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:640:11: 'active'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:664:9: ( 'active' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:664:11: 'active'
             {
             match("active"); 
 
@@ -4038,8 +4041,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:641:7: ( 'name' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:641:9: 'name'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:665:7: ( 'name' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:665:9: 'name'
             {
             match("name"); 
 
@@ -4059,8 +4062,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DESCRIPTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:642:13: ( 'description' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:642:15: 'description'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:666:13: ( 'description' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:666:15: 'description'
             {
             match("description"); 
 
@@ -4080,8 +4083,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIFE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:643:7: ( 'life' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:643:9: 'life'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:667:7: ( 'life' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:667:9: 'life'
             {
             match("life"); 
 
@@ -4101,8 +4104,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIFE_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:644:10: ( 'lifeMax' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:644:12: 'lifeMax'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:668:10: ( 'lifeMax' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:668:12: 'lifeMax'
             {
             match("lifeMax"); 
 
@@ -4122,8 +4125,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIFE_MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:645:10: ( 'lifeMin' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:645:12: 'lifeMin'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:669:10: ( 'lifeMin' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:669:12: 'lifeMin'
             {
             match("lifeMin"); 
 
@@ -4143,8 +4146,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NB_LIVES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:646:10: ( 'nbOfLives' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:646:12: 'nbOfLives'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:670:10: ( 'nbOfLives' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:670:12: 'nbOfLives'
             {
             match("nbOfLives"); 
 
@@ -4164,8 +4167,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MAGIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:647:8: ( 'magic' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:647:10: 'magic'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:671:8: ( 'magic' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:671:10: 'magic'
             {
             match("magic"); 
 
@@ -4185,8 +4188,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MAGIC_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:648:11: ( 'magicMax' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:648:13: 'magicMax'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:672:11: ( 'magicMax' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:672:13: 'magicMax'
             {
             match("magicMax"); 
 
@@ -4206,8 +4209,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MAGIC_MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:649:11: ( 'magicMin' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:649:13: 'magicMin'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:673:11: ( 'magicMin' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:673:13: 'magicMin'
             {
             match("magicMin"); 
 
@@ -4227,8 +4230,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LEVEL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:650:8: ( 'level' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:650:10: 'level'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:674:8: ( 'level' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:674:10: 'level'
             {
             match("level"); 
 
@@ -4248,8 +4251,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ATTACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:651:9: ( 'attack' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:651:11: 'attack'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:675:9: ( 'attack' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:675:11: 'attack'
             {
             match("attack"); 
 
@@ -4269,8 +4272,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFENSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:652:10: ( 'defense' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:652:12: 'defense'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:676:10: ( 'defense' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:676:12: 'defense'
             {
             match("defense"); 
 
@@ -4290,8 +4293,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = JUMP_FORCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:653:12: ( 'jumpForce' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:653:14: 'jumpForce'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:677:12: ( 'jumpForce' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:677:14: 'jumpForce'
             {
             match("jumpForce"); 
 
@@ -4311,8 +4314,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = JUMP_AIR_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:654:14: ( 'maxJumpsInTheAir' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:654:16: 'maxJumpsInTheAir'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:678:14: ( 'maxJumpsInTheAir' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:678:16: 'maxJumpsInTheAir'
             {
             match("maxJumpsInTheAir"); 
 
@@ -4332,8 +4335,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MONEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:655:8: ( 'money' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:655:10: 'money'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:679:8: ( 'money' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:679:10: 'money'
             {
             match("money"); 
 
@@ -4353,8 +4356,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLASS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:656:8: ( 'class' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:656:10: 'class'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:680:8: ( 'class' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:680:10: 'class'
             {
             match("class"); 
 
@@ -4374,8 +4377,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:657:7: ( 'race' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:657:9: 'race'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:681:7: ( 'race' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:681:9: 'race'
             {
             match("race"); 
 
@@ -4395,8 +4398,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACCELERATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:658:14: ( 'acceleration' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:658:16: 'acceleration'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:682:14: ( 'acceleration' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:682:16: 'acceleration'
             {
             match("acceleration"); 
 
@@ -4416,8 +4419,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPEED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:659:8: ( 'speed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:659:10: 'speed'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:683:8: ( 'speed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:683:10: 'speed'
             {
             match("speed"); 
 
@@ -4437,8 +4440,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPEED_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:660:11: ( 'maxSpeed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:660:13: 'maxSpeed'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:684:11: ( 'maxSpeed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:684:13: 'maxSpeed'
             {
             match("maxSpeed"); 
 
@@ -4458,8 +4461,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPEED_MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:661:11: ( 'minSpeed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:661:13: 'minSpeed'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:685:11: ( 'minSpeed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:685:13: 'minSpeed'
             {
             match("minSpeed"); 
 
@@ -4479,8 +4482,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BOOST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:662:8: ( 'boost' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:662:10: 'boost'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:686:8: ( 'boost' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:686:10: 'boost'
             {
             match("boost"); 
 
@@ -4500,8 +4503,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BOOST_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:663:11: ( 'maxBoost' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:663:13: 'maxBoost'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:687:11: ( 'maxBoost' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:687:13: 'maxBoost'
             {
             match("maxBoost"); 
 
@@ -4521,8 +4524,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NB_MUNITIONS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:664:14: ( 'nbMunitions' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:664:16: 'nbMunitions'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:688:14: ( 'nbMunitions' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:688:16: 'nbMunitions'
             {
             match("nbMunitions"); 
 
@@ -4542,8 +4545,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NB_MUNITIONS_MAX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:665:17: ( 'nbMunitionsMax' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:665:19: 'nbMunitionsMax'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:689:17: ( 'nbMunitionsMax' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:689:19: 'nbMunitionsMax'
             {
             match("nbMunitionsMax"); 
 
@@ -4563,8 +4566,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SHOOT_POWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:666:13: ( 'shootPower' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:666:15: 'shootPower'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:690:13: ( 'shootPower' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:690:15: 'shootPower'
             {
             match("shootPower"); 
 
@@ -4584,8 +4587,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DAMAGES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:667:10: ( 'damages' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:667:12: 'damages'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:691:10: ( 'damages' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:691:12: 'damages'
             {
             match("damages"); 
 
@@ -4605,8 +4608,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:668:8: ( 'value' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:668:10: 'value'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:692:8: ( 'value' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:692:10: 'value'
             {
             match("value"); 
 
@@ -4626,8 +4629,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = UNIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:669:7: ( 'unit' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:669:9: 'unit'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:693:7: ( 'unit' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:693:9: 'unit'
             {
             match("unit"); 
 
@@ -4647,8 +4650,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OBJECT_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:670:13: ( 'objectname' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:670:15: 'objectname'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:694:13: ( 'objectname' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:694:15: 'objectname'
             {
             match("objectname"); 
 
@@ -4668,8 +4671,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ATTRIBUT_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:671:15: ( 'attributName' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:671:17: 'attributName'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:695:15: ( 'attributName' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:695:17: 'attributName'
             {
             match("attributName"); 
 
@@ -4689,8 +4692,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VOLUME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:672:9: ( 'volume' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:672:11: 'volume'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:696:9: ( 'volume' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:696:11: 'volume'
             {
             match("volume"); 
 
@@ -4710,8 +4713,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:673:9: ( 'number' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:673:11: 'number'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:9: ( 'number' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:11: 'number'
             {
             match("number"); 
 
@@ -4731,8 +4734,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVE_WITH_CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:674:17: ( 'moveWithCamera' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:674:19: 'moveWithCamera'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:698:17: ( 'moveWithCamera' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:698:19: 'moveWithCamera'
             {
             match("moveWithCamera"); 
 
@@ -4752,8 +4755,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BOOST_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:676:16: ( 'boostInterval' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:676:18: 'boostInterval'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:700:16: ( 'boostInterval' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:700:18: 'boostInterval'
             {
             match("boostInterval"); 
 
@@ -4773,8 +4776,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SHOOT_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:677:16: ( 'shootInterval' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:677:18: 'shootInterval'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:701:16: ( 'shootInterval' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:701:18: 'shootInterval'
             {
             match("shootInterval"); 
 
@@ -4794,8 +4797,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RELOAD_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:678:13: ( 'reloadTime' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:678:15: 'reloadTime'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:702:13: ( 'reloadTime' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:702:15: 'reloadTime'
             {
             match("reloadTime"); 
 
@@ -4815,8 +4818,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVENTORY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:680:11: ( 'inventory' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:680:13: 'inventory'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:704:11: ( 'inventory' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:704:13: 'inventory'
             {
             match("inventory"); 
 
@@ -4836,8 +4839,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIPED_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:681:16: ( 'equipedObjects' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:681:18: 'equipedObjects'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:705:16: ( 'equipedObjects' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:705:18: 'equipedObjects'
             {
             match("equipedObjects"); 
 
@@ -4857,8 +4860,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTRANCES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:682:11: ( 'entrances' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:682:13: 'entrances'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:706:11: ( 'entrances' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:706:13: 'entrances'
             {
             match("entrances"); 
 
@@ -4878,8 +4881,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EXITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:683:8: ( 'exits' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:683:10: 'exits'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:707:8: ( 'exits' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:707:10: 'exits'
             {
             match("exits"); 
 
@@ -4899,8 +4902,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DAMAGE_ZONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:684:13: ( 'damageZone' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:684:15: 'damageZone'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:708:13: ( 'damageZone' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:708:15: 'damageZone'
             {
             match("damageZone"); 
 
@@ -4920,8 +4923,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:685:12: ( 'collectors' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:685:14: 'collectors'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:709:12: ( 'collectors' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:709:14: 'collectors'
             {
             match("collectors"); 
 
@@ -4941,8 +4944,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:686:17: ( 'typesCollectors' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:686:19: 'typesCollectors'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:710:17: ( 'typesCollectors' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:710:19: 'typesCollectors'
             {
             match("typesCollectors"); 
 
@@ -4962,8 +4965,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:687:12: ( 'generators' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:687:14: 'generators'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:711:12: ( 'generators' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:711:14: 'generators'
             {
             match("generators"); 
 
@@ -4983,8 +4986,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPE_GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:688:17: ( 'typeGenerators' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:688:19: 'typeGenerators'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:712:17: ( 'typeGenerators' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:712:19: 'typeGenerators'
             {
             match("typeGenerators"); 
 
@@ -5004,8 +5007,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:689:10: ( 'breakers' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:689:12: 'breakers'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:713:10: ( 'breakers' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:713:12: 'breakers'
             {
             match("breakers"); 
 
@@ -5025,8 +5028,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:690:16: ( 'typesBreakers' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:690:18: 'typesBreakers'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:714:16: ( 'typesBreakers' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:714:18: 'typesBreakers'
             {
             match("typesBreakers"); 
 
@@ -5046,8 +5049,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:691:15: ( 'teleportables' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:691:17: 'teleportables'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:715:15: ( 'teleportables' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:715:17: 'teleportables'
             {
             match("teleportables"); 
 
@@ -5067,8 +5070,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:693:2: ( 'typesTeleportables' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:693:5: 'typesTeleportables'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:717:2: ( 'typesTeleportables' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:717:5: 'typesTeleportables'
             {
             match("typesTeleportables"); 
 
@@ -5088,7 +5091,7 @@ public class hightLexer extends Lexer {
         try {
             int _type = LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:696:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:720:8: ( 'a' .. 'z' | 'A' .. 'Z' )
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -5116,10 +5119,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:9: ( '0' .. '9' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:9: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -5133,7 +5136,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:10: '0' .. '9'
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:10: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -5149,7 +5152,7 @@ public class hightLexer extends Lexer {
                 cnt3++;
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:21: ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:21: ( '.' ( '0' .. '9' )+ )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -5158,10 +5161,10 @@ public class hightLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:22: '.' ( '0' .. '9' )+
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:22: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:26: ( '0' .. '9' )+
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:26: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -5175,7 +5178,7 @@ public class hightLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:697:27: '0' .. '9'
+                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:721:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -5213,11 +5216,11 @@ public class hightLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:698:7: ( LETTER ( LETTER | '0' .. '9' )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:698:9: LETTER ( LETTER | '0' .. '9' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:722:7: ( LETTER ( LETTER | '0' .. '9' )* )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:722:9: LETTER ( LETTER | '0' .. '9' )*
             {
             mLETTER(); 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:698:15: ( LETTER | '0' .. '9' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:722:15: ( LETTER | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -5266,10 +5269,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:699:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:699:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:723:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:723:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:699:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:723:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             int cnt7=0;
             loop7:
             do {
@@ -5320,7 +5323,7 @@ public class hightLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__248 | T__249 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
+        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__251 | T__252 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
         int alt8=229;
         alt8 = dfa8.predict(input);
         switch (alt8) {
@@ -5353,16 +5356,16 @@ public class hightLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__248
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__251
                 {
-                mT__248(); 
+                mT__251(); 
 
                 }
                 break;
             case 6 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__249
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__252
                 {
-                mT__249(); 
+                mT__252(); 
 
                 }
                 break;
@@ -6256,672 +6259,672 @@ public class hightLexer extends Lexer {
                 }
                 break;
             case 134 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:945: MOUSE_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:945: MOUSE
                 {
-                mMOUSE_KW(); 
+                mMOUSE(); 
 
                 }
                 break;
             case 135 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:954: KEY_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:951: KEY
                 {
-                mKEY_KW(); 
+                mKEY(); 
 
                 }
                 break;
             case 136 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:961: CLICK_LEFT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:955: CLICK_LEFT
                 {
                 mCLICK_LEFT(); 
 
                 }
                 break;
             case 137 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:972: CLICK_CENTER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:966: CLICK_CENTER
                 {
                 mCLICK_CENTER(); 
 
                 }
                 break;
             case 138 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:985: CLICK_RIGHT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:979: CLICK_RIGHT
                 {
                 mCLICK_RIGHT(); 
 
                 }
                 break;
             case 139 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:997: SCROLL_UP
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:991: SCROLL_UP
                 {
                 mSCROLL_UP(); 
 
                 }
                 break;
             case 140 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1007: SCROLL_DOWN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1001: SCROLL_DOWN
                 {
                 mSCROLL_DOWN(); 
 
                 }
                 break;
             case 141 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1019: COMMAND_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1013: COMMAND_KW
                 {
                 mCOMMAND_KW(); 
 
                 }
                 break;
             case 142 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1030: JUMP
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1024: JUMP
                 {
                 mJUMP(); 
 
                 }
                 break;
             case 143 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1035: MOVE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1029: MOVE
                 {
                 mMOVE(); 
 
                 }
                 break;
             case 144 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1040: FORWARD
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1034: FORWARD
                 {
                 mFORWARD(); 
 
                 }
                 break;
             case 145 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1048: BACKWARD
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1042: BACKWARD
                 {
                 mBACKWARD(); 
 
                 }
                 break;
             case 146 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1057: TURN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1051: TURN
                 {
                 mTURN(); 
 
                 }
                 break;
             case 147 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1062: ACCELERATE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1056: ACCELERATE
                 {
                 mACCELERATE(); 
 
                 }
                 break;
             case 148 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1073: BRAKE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1067: BRAKE
                 {
                 mBRAKE(); 
 
                 }
                 break;
             case 149 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1079: CAMERA
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1073: CAMERA
                 {
                 mCAMERA(); 
 
                 }
                 break;
             case 150 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1086: MEDIA
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1080: MEDIA
                 {
                 mMEDIA(); 
 
                 }
                 break;
             case 151 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1092: COUNTER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1086: COUNTER
                 {
                 mCOUNTER(); 
 
                 }
                 break;
             case 152 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1100: TIME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1094: TIME
                 {
                 mTIME(); 
 
                 }
                 break;
             case 153 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1105: OBJECT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1099: OBJECT
                 {
                 mOBJECT(); 
 
                 }
                 break;
             case 154 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1112: CHARACTER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1106: CHARACTER
                 {
                 mCHARACTER(); 
 
                 }
                 break;
             case 155 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1122: VEHICLE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1116: VEHICLE
                 {
                 mVEHICLE(); 
 
                 }
                 break;
             case 156 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1130: PLANE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1124: PLANE
                 {
                 mPLANE(); 
 
                 }
                 break;
             case 157 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1136: SPACECRAFT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1130: SPACECRAFT
                 {
                 mSPACECRAFT(); 
 
                 }
                 break;
             case 158 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1147: OBSTACLE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1141: OBSTACLE
                 {
                 mOBSTACLE(); 
 
                 }
                 break;
             case 159 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1156: WEAPON
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1150: WEAPON
                 {
                 mWEAPON(); 
 
                 }
                 break;
             case 160 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1163: SWORD
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1157: SWORD
                 {
                 mSWORD(); 
 
                 }
                 break;
             case 161 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1169: PROJECTILE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1163: PROJECTILE
                 {
                 mPROJECTILE(); 
 
                 }
                 break;
             case 162 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1180: ZONE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1174: ZONE
                 {
                 mZONE(); 
 
                 }
                 break;
             case 163 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1185: GROUND
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1179: GROUND
                 {
                 mGROUND(); 
 
                 }
                 break;
             case 164 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1192: BONUS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1186: BONUS
                 {
                 mBONUS(); 
 
                 }
                 break;
             case 165 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1198: CHECKPOINT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1192: CHECKPOINT
                 {
                 mCHECKPOINT(); 
 
                 }
                 break;
             case 166 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1209: BREAKABLE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1203: BREAKABLE
                 {
                 mBREAKABLE(); 
 
                 }
                 break;
             case 167 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1219: CONSTRUCTION
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1213: CONSTRUCTION
                 {
                 mCONSTRUCTION(); 
 
                 }
                 break;
             case 168 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1232: ROOM
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1226: ROOM
                 {
                 mROOM(); 
 
                 }
                 break;
             case 169 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1237: BALL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1231: BALL
                 {
                 mBALL(); 
 
                 }
                 break;
             case 170 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1242: TELEPORTER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1236: TELEPORTER
                 {
                 mTELEPORTER(); 
 
                 }
                 break;
             case 171 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1253: MASS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1247: MASS
                 {
                 mMASS(); 
 
                 }
                 break;
             case 172 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1258: IS_FIX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1252: IS_FIX
                 {
                 mIS_FIX(); 
 
                 }
                 break;
             case 173 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1265: IS_TRAVERSABLE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1259: IS_TRAVERSABLE
                 {
                 mIS_TRAVERSABLE(); 
 
                 }
                 break;
             case 174 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1280: FOV
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1274: FOV
                 {
                 mFOV(); 
 
                 }
                 break;
             case 175 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1284: ACTIVE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1278: ACTIVE
                 {
                 mACTIVE(); 
 
                 }
                 break;
             case 176 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1291: NAME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1285: NAME
                 {
                 mNAME(); 
 
                 }
                 break;
             case 177 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1296: DESCRIPTION
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1290: DESCRIPTION
                 {
                 mDESCRIPTION(); 
 
                 }
                 break;
             case 178 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1308: LIFE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1302: LIFE
                 {
                 mLIFE(); 
 
                 }
                 break;
             case 179 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1313: LIFE_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1307: LIFE_MAX
                 {
                 mLIFE_MAX(); 
 
                 }
                 break;
             case 180 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1322: LIFE_MIN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1316: LIFE_MIN
                 {
                 mLIFE_MIN(); 
 
                 }
                 break;
             case 181 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1331: NB_LIVES
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1325: NB_LIVES
                 {
                 mNB_LIVES(); 
 
                 }
                 break;
             case 182 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1340: MAGIC
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1334: MAGIC
                 {
                 mMAGIC(); 
 
                 }
                 break;
             case 183 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1346: MAGIC_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1340: MAGIC_MAX
                 {
                 mMAGIC_MAX(); 
 
                 }
                 break;
             case 184 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1356: MAGIC_MIN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1350: MAGIC_MIN
                 {
                 mMAGIC_MIN(); 
 
                 }
                 break;
             case 185 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1366: LEVEL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1360: LEVEL
                 {
                 mLEVEL(); 
 
                 }
                 break;
             case 186 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1372: ATTACK
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1366: ATTACK
                 {
                 mATTACK(); 
 
                 }
                 break;
             case 187 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1379: DEFENSE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1373: DEFENSE
                 {
                 mDEFENSE(); 
 
                 }
                 break;
             case 188 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1387: JUMP_FORCE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1381: JUMP_FORCE
                 {
                 mJUMP_FORCE(); 
 
                 }
                 break;
             case 189 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1398: JUMP_AIR_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1392: JUMP_AIR_MAX
                 {
                 mJUMP_AIR_MAX(); 
 
                 }
                 break;
             case 190 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1411: MONEY
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1405: MONEY
                 {
                 mMONEY(); 
 
                 }
                 break;
             case 191 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1417: CLASS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1411: CLASS
                 {
                 mCLASS(); 
 
                 }
                 break;
             case 192 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1423: RACE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1417: RACE
                 {
                 mRACE(); 
 
                 }
                 break;
             case 193 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1428: ACCELERATION
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1422: ACCELERATION
                 {
                 mACCELERATION(); 
 
                 }
                 break;
             case 194 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1441: SPEED
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1435: SPEED
                 {
                 mSPEED(); 
 
                 }
                 break;
             case 195 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1447: SPEED_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1441: SPEED_MAX
                 {
                 mSPEED_MAX(); 
 
                 }
                 break;
             case 196 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1457: SPEED_MIN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1451: SPEED_MIN
                 {
                 mSPEED_MIN(); 
 
                 }
                 break;
             case 197 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1467: BOOST
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1461: BOOST
                 {
                 mBOOST(); 
 
                 }
                 break;
             case 198 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1473: BOOST_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1467: BOOST_MAX
                 {
                 mBOOST_MAX(); 
 
                 }
                 break;
             case 199 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1483: NB_MUNITIONS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1477: NB_MUNITIONS
                 {
                 mNB_MUNITIONS(); 
 
                 }
                 break;
             case 200 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1496: NB_MUNITIONS_MAX
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1490: NB_MUNITIONS_MAX
                 {
                 mNB_MUNITIONS_MAX(); 
 
                 }
                 break;
             case 201 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1513: SHOOT_POWER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1507: SHOOT_POWER
                 {
                 mSHOOT_POWER(); 
 
                 }
                 break;
             case 202 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1525: DAMAGES
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1519: DAMAGES
                 {
                 mDAMAGES(); 
 
                 }
                 break;
             case 203 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1533: VALUE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1527: VALUE
                 {
                 mVALUE(); 
 
                 }
                 break;
             case 204 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1539: UNIT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1533: UNIT
                 {
                 mUNIT(); 
 
                 }
                 break;
             case 205 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1544: OBJECT_NAME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1538: OBJECT_NAME
                 {
                 mOBJECT_NAME(); 
 
                 }
                 break;
             case 206 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1556: ATTRIBUT_NAME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1550: ATTRIBUT_NAME
                 {
                 mATTRIBUT_NAME(); 
 
                 }
                 break;
             case 207 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1570: VOLUME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1564: VOLUME
                 {
                 mVOLUME(); 
 
                 }
                 break;
             case 208 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1577: NUMBER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1571: NUMBER
                 {
                 mNUMBER(); 
 
                 }
                 break;
             case 209 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1584: MOVE_WITH_CAMERA
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1578: MOVE_WITH_CAMERA
                 {
                 mMOVE_WITH_CAMERA(); 
 
                 }
                 break;
             case 210 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1601: BOOST_INTERVAL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1595: BOOST_INTERVAL
                 {
                 mBOOST_INTERVAL(); 
 
                 }
                 break;
             case 211 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1616: SHOOT_INTERVAL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1610: SHOOT_INTERVAL
                 {
                 mSHOOT_INTERVAL(); 
 
                 }
                 break;
             case 212 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1631: RELOAD_TIME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1625: RELOAD_TIME
                 {
                 mRELOAD_TIME(); 
 
                 }
                 break;
             case 213 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1643: INVENTORY
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1637: INVENTORY
                 {
                 mINVENTORY(); 
 
                 }
                 break;
             case 214 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1653: EQUIPED_OBJECT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1647: EQUIPED_OBJECT
                 {
                 mEQUIPED_OBJECT(); 
 
                 }
                 break;
             case 215 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1668: ENTRANCES
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1662: ENTRANCES
                 {
                 mENTRANCES(); 
 
                 }
                 break;
             case 216 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1678: EXITS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1672: EXITS
                 {
                 mEXITS(); 
 
                 }
                 break;
             case 217 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1684: DAMAGE_ZONE
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1678: DAMAGE_ZONE
                 {
                 mDAMAGE_ZONE(); 
 
                 }
                 break;
             case 218 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1696: COLLECTORS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1690: COLLECTORS
                 {
                 mCOLLECTORS(); 
 
                 }
                 break;
             case 219 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1707: TYPES_COLLECTORS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1701: TYPES_COLLECTORS
                 {
                 mTYPES_COLLECTORS(); 
 
                 }
                 break;
             case 220 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1724: GENERATORS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1718: GENERATORS
                 {
                 mGENERATORS(); 
 
                 }
                 break;
             case 221 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1735: TYPE_GENERATORS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1729: TYPE_GENERATORS
                 {
                 mTYPE_GENERATORS(); 
 
                 }
                 break;
             case 222 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1751: BREAKERS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1745: BREAKERS
                 {
                 mBREAKERS(); 
 
                 }
                 break;
             case 223 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1760: TYPES_BREAKERS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1754: TYPES_BREAKERS
                 {
                 mTYPES_BREAKERS(); 
 
                 }
                 break;
             case 224 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1775: TELEPORTABLES
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1769: TELEPORTABLES
                 {
                 mTELEPORTABLES(); 
 
                 }
                 break;
             case 225 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1789: TYPES_TELEPORTABLES
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1783: TYPES_TELEPORTABLES
                 {
                 mTYPES_TELEPORTABLES(); 
 
                 }
                 break;
             case 226 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1809: LETTER
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1803: LETTER
                 {
                 mLETTER(); 
 
                 }
                 break;
             case 227 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1816: FLOAT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1810: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
             case 228 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1822: IDENT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1816: IDENT
                 {
                 mIDENT(); 
 
                 }
                 break;
             case 229 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1828: WS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1822: WS
                 {
                 mWS(); 
 
@@ -8454,7 +8457,7 @@ public class hightLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__248 | T__249 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE_KW | KEY_KW | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
+            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__251 | T__252 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | OBJECT | CHARACTER | VEHICLE | PLANE | SPACECRAFT | OBSTACLE | WEAPON | SWORD | PROJECTILE | ZONE | GROUND | BONUS | CHECKPOINT | BREAKABLE | CONSTRUCTION | ROOM | BALL | TELEPORTER | MASS | IS_FIX | IS_TRAVERSABLE | FOV | ACTIVE | NAME | DESCRIPTION | LIFE | LIFE_MAX | LIFE_MIN | NB_LIVES | MAGIC | MAGIC_MAX | MAGIC_MIN | LEVEL | ATTACK | DEFENSE | JUMP_FORCE | JUMP_AIR_MAX | MONEY | CLASS | RACE | ACCELERATION | SPEED | SPEED_MAX | SPEED_MIN | BOOST | BOOST_MAX | NB_MUNITIONS | NB_MUNITIONS_MAX | SHOOT_POWER | DAMAGES | VALUE | UNIT | OBJECT_NAME | ATTRIBUT_NAME | VOLUME | NUMBER | MOVE_WITH_CAMERA | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
         }
     }
  

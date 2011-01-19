@@ -7,28 +7,30 @@ options {
 
 
 tokens {
-	GAME_KW='GAME_KW';
-	GAME_ATTRIBUT_KW='GAME_ATTRIBUT_KW';
-	INIT_IS_KW='INIT_IS_KW';
-	INIT_HAS_KW;
-	DEC='DEC';
-	MEDIA_KW;
-	CAMERA_KW;
-	INTERACTION_KW;
-	GAME_SCORE_KW;
-	SCORE_KW;
-	VALUE_KW;
-	IN_KW;
-	ALLOCATION_KW;
-	COORDINATE_KW;
-	CONSEQUENCES_KW;
-	AGGREGATION_KW;
-	VAR_I_KW;
-	VAR_A_KW; 
-	BECOMES_VAR_KW;
-	BECOMES_ID_KW;
-	CONDITION_KW;
+    GAME_KW='GAME_KW';
+    GAME_ATTRIBUT_KW='GAME_ATTRIBUT_KW';
+    INIT_IS_KW='INIT_IS_KW';
+    INIT_HAS_KW;
+    DEC='DEC';
+    MEDIA_KW;
+    CAMERA_KW;
+    INTERACTION_KW;
+    GAME_SCORE_KW;
+    SCORE_KW;
+    VALUE_KW;
+    IN_KW;
+    ALLOCATION_KW;
+    COORDINATE_KW;
+    CONSEQUENCES_KW;
+    AGGREGATION_KW;
+    VAR_I_KW;
+    VAR_A_KW;
+    BECOMES_VAR_KW;
+    BECOMES_ID_KW;
+    CONDITION_KW;
     ACCESS_KW;
+    KEY_KW;
+    MOUSE_KW;
 }
 
 @header {
@@ -47,7 +49,7 @@ game :
 	(commande (FIN)?)+
 	(reglesJeu (FIN)?)+
 	(iaBasique (FIN)?)*
-	  -> ^(GAME_KW gameData? newType* init+ definition* commande* reglesJeu* iaBasique*)
+	  -> ^(GAME_KW gameData? newType* init+ definition* commande+ reglesJeu+ iaBasique*)
 	;
 
 /* Information about game */
@@ -198,7 +200,10 @@ commande :
 	;
 
 actionCommande :
-	(MOUSE_KW^ souris | KEY_KW^ clavier) FOR! actionCommandeType // ident : that was defined with means
+	MOUSE souris FOR actionCommandeType
+	  -> ^(MOUSE_KW souris actionCommandeType)
+	| KEY clavier FOR actionCommandeType // ident : that was defined with means
+	  -> ^(KEY_KW clavier actionCommandeType)
 	;
 
 actionCommandeType :
@@ -227,9 +232,17 @@ actionCommandeMaintenue :
   ;
   
 activCommande :
-  (ACTIVATE_KW^ | DISABLE_KW^) (COMMANDS | MOUSE_KW (souris (VIRG! souris)*)? | KEY_KW clavier (VIRG! clavier)* | KEYBOARD )
+  (ACTIVATE_KW^ | DISABLE_KW^) typeCommand
 	;
-	
+
+typeCommand :
+    COMMANDS
+    | MOUSE (souris (VIRG souris)*)?
+      -> ^(MOUSE_KW souris*)
+    | KEY clavier (VIRG clavier)*
+      -> ^(KEY_KW clavier+)
+    | KEYBOARD;
+
 reglesJeu :
   RULE_KW^ (IDENT IS!)?  declencheur THEN! consequences
   ;
@@ -601,8 +614,8 @@ RIGHT	: 'right';
 SPACE	: 'space';
 ESCAPE	: 'escape';
 ENTER	: 'enter';
-MOUSE_KW: 'mouse';
-KEY_KW	: 'key';
+MOUSE	: 'mouse';
+KEY	: 'key';
 CLICK_LEFT	: 'lClick';
 CLICK_CENTER	: 'cClick';
 CLICK_RIGHT	: 'rClick';

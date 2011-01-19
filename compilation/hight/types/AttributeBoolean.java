@@ -11,7 +11,7 @@ package types;
 public class AttributeBoolean implements Attributes {
     private boolean b;
 
-    public AttributeBoolean(float b) {
+    public AttributeBoolean(boolean b) {
         this.b = b;
     }
 

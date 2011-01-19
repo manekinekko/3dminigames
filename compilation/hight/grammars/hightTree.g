@@ -9,6 +9,7 @@ options {
     package grammars;
     import code.*;
     import types.*;
+    import lib.*;
 }
 
 //@members {}
@@ -18,8 +19,9 @@ options {
  *------------------------------------------------------------------*/
  
 game [SymbolTable st] returns [Code c]
-	@init{c = new Code();}:
-	^(GAME_KW gd=gameData[st]? nt=newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+	@init{c = new Code();		Type.init();}:
+	^(GAME_KW gd=gameData[st]? newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+	{st.print();}
     ;
 	
 
@@ -37,26 +39,64 @@ attributGame [SymbolTable st] returns [Code c]:
 	|^(SCORE_KW FLOAT)
 	;
 /*-------------------------- Inheritance, creation of type -------------------------------*/	
-newType [SymbolTable st] returns [Code c]:
-	^(TYPE_KW IDENT subType[st] subType[st]*)
+newType [SymbolTable st]
+	@init{List<Type> sub = new ArrayList<Type>();}:
+	^(TYPE i=IDENT subType[st,sub]+)
+	{   String id = i.getText();
+	    Type verif = st.get(id);
+	    if(verif != null) {
+		System.out.println("Type \""+id+"\" déjà déclaré.");
+		System.exit(-1);
+	    } else {
+		Type[] tab = (Type[])sub.toArray(new Type[0]);
+		Type t = new Type(id, tab);
+		st.add(id, t);
+	    }
+	}
 	;
 
-subType_list [SymbolTable st] returns [Code c]: 
-	subType[st]*;
-  
-subType [SymbolTable st] returns [Code c]:
-	IDENT
-	| typeObjet[st]
+subType [SymbolTable st, List<Type> sub] :
+	i=IDENT
+	{   String id = i.getText();
+	    Type verif = st.get(id);
+	    if(verif == null) {
+		System.out.println("Type \""+id+"\" non défini.");
+		System.exit(-1);
+	    } else if(verif.getName() != id) {
+		System.out.println("Gros Gros bug !!!");
+		System.exit(-1);
+	    } else {
+		sub.add(verif);
+	    }
+	}
+	| t=typeObjet{sub.add(t);}
 	;	
 	
 init [SymbolTable st] returns [Code c]:
-	^(INIT_IS_KW IDENT declarationObjet[st])
+	^(INIT_IS_KW i=IDENT d=declarationObjet[st])
+	{   String id = i.getText();
+	    Type verif = st.get(id);
+	    if(verif != null) {
+		System.out.println("Elément \""+id+"\" déjà déclaré.");
+		System.exit(-1);
+	    } else {
+		Type t = new Type(d.getFirst().getName(),d.getFirst());
+		st.add(id,t);
+	    }
+	}
 	|^(INIT_HAS_KW affectationObjet[st])
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
-declarationObjet [SymbolTable st] returns [Code c]:
-	^(DEC typeEntity[st] entityMode[st]?)   // interaction is neutral by default
+declarationObjet [SymbolTable st] returns [Pair<Type, Integer> p]
+	@init{em=null;}:
+	^(DEC te=typeEntity[st] (em=entityMode)?)
+	{
+	    if(em == null)
+		em=4;
+
+	    p = new Pair<Type, Integer>(te,em);
+	}
 	|^(LIST_KW list_declaration[st])
 	|^(CAMERA_KW PERSON view[st]) 
 	|^(CAMERA_KW FREE)
@@ -69,25 +109,43 @@ list_declaration [SymbolTable st] returns [Code c]:
 	(operation[st]? IDENT)+
 	;
 	
-typeEntity [SymbolTable st] returns [Code c]:
-	IDENT
-	| typeObjet3D[st]
+typeEntity [SymbolTable st] returns [Type t]:
+	i=IDENT
+	{   String id = i.getText();
+	    Type verif = st.get(id);
+	    if(verif == null) {
+		System.out.println("Type \""+id+"\" non défini.");
+		System.exit(-1);
+	    } else if(verif.getName() != id) {
+		System.out.println("Gros Gros bug !!!");
+		System.exit(-1);
+	    } else {
+		t = verif;
+	    }
+	}
+	| to=typeObjet3D{t = to;}
 	;
 
-entityMode [SymbolTable st] returns [Code c]:
+entityMode returns [Integer i]
+    @init{d=null;}:
 	PLAYER
-	| ^(INTERACTION_KW interaction[st] dupli[st]?)
-	| dupli[st]
+	{i=1;}
+	| ^(INTERACTION_KW in=interaction d=dupli?) {if(d!=null){i=in+d;}else{i=in;}}
+	| d=dupli {i=d;}
 	;
 	
-interaction [SymbolTable st] returns [Code c]:
+interaction returns [Integer i]:
 	ALLY
+	{i=2;}
 	| ENEMY
+	{i=3;}
 	| NEUTRAL
+	{i=4;}
 	;
 
-dupli [SymbolTable st] returns [Code c]:
-	DUPLICABLE	
+dupli returns [Integer i]:
+	DUPLICABLE
+	{i=10;}
 	;
 	
 view [SymbolTable st] returns [Code c]:
@@ -141,8 +199,7 @@ action [SymbolTable st] returns [Code c]:
 	|^(STARTS_KW IDENT)
 	|^(STARTS_KW GAME)
 	|^(PAUSE_KW IDENT)
-	|^(MUTE_KW ON IDENT)
-	|^(MUTE_KW OFF IDENT) 
+	|^(MUTE_KW mode_mute[st] IDENT)
 	|^(PLAY_KW IDENT)
 	|^(STOP_KW IDENT)
 	|^(BLOCK_KW transformation[st] accesClass[st] coordinates[st])
@@ -198,11 +255,11 @@ actionCommandeType [SymbolTable st] returns [Code c]:
 	;	
  
 souris [SymbolTable st] returns [Code c]:
-  UP | DOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
+  WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
   ;
  
 clavier [SymbolTable st] returns [Code c]:
-  LETTER | UP | DOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
+  LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
   ;
  
 actionCommandePressee [SymbolTable st] returns [Code c]:
@@ -219,14 +276,14 @@ actionCommandeMaintenue [SymbolTable st] returns [Code c]:
   ;
   
 activCommande [SymbolTable st] returns [Code c]:
-  ^(ACTIVATE_KW type_Command[st]) 
-  |^(DISABLE_KW type_Command[st])
+  ^(ACTIVATE_KW typeCommand[st]) 
+  |^(DISABLE_KW typeCommand[st])
 	;
 
-type_Command [SymbolTable st] returns [Code c]:
+typeCommand [SymbolTable st] returns [Code c]:
 	COMMANDS 
-	| MOUSE_KW (souris[st] (VIRG! souris[st])*)?
-	| KEY_KW clavier[st] (VIRG! clavier[st])* 
+	| ^(MOUSE_KW souris[st]*)
+	| ^(KEY_KW clavier[st]+)
 	| KEYBOARD;
  	
 reglesJeu [SymbolTable st] returns [Code c]:
@@ -249,7 +306,7 @@ type_declencheur [SymbolTable st] returns [Code c]:
 varOuNB [SymbolTable st] returns [Code c]:	variable[st] | FLOAT;
 
 playerOuInteraction [SymbolTable st] returns [Code c]
-	:	(PLAYER| interaction[st]);
+	:	(PLAYER| interaction);
 
 declencheurTK [SymbolTable st] returns [Code c]
 	:	^(TOUCHES_KW (OTHER)? accesClass[st])
@@ -342,15 +399,15 @@ variable [SymbolTable st] returns [Code c]:
 
 accesClass [SymbolTable st] returns [Code c] :
     ^(ACCESS_KW ALL)
-  | ^(ACCESS_KW typeObjet[st])
-  | ^(ACCESS_KW interaction[st])
+  | ^(ACCESS_KW typeObjet)
+  | ^(ACCESS_KW interaction)
   | ^(ACCESS_KW NOT notAccess[st])
   | ^(ACCESS_KW IDENT operation[st]?)
   | ^(ACCESS_KW PLAYER)
   ;
 
 notAccess [SymbolTable st] returns [Code c] :
-typeObjet[st] | interaction[st] | PLAYER;
+typeObjet | interaction | PLAYER;
   
 typeCoordonnees [SymbolTable st] returns [Code c]:
 	POSITION | ORIENTATION | SIZE
@@ -364,26 +421,26 @@ timeUnit [SymbolTable st] returns [Code c]:
 	;
 
 /*  */
-typeObjet [SymbolTable st] returns [Code c]:
+typeObjet returns [Type t]:
 	CAMERA
 	| MEDIA
 	| COUNTER
 	| TIME
-	| typeObjet3D[st]
+	| to=typeObjet3D {t = to;}
   ;
  
 // every predefined classe
 
-typeObjet3D [SymbolTable st] returns [Code c]:
-	OBJECT                      // -> position(x,y,z), orientation(x,y,z), size(x,y,z)
-	| CHARACTER                 // -> life, lifeMax, magic, magicMax , level, experience, attack, defense
+typeObjet3D returns [Type t]:
+	OBJECT {t = Type.object;}
+	| CHARACTER {t = Type.character;}
 	| VEHICLE                   // -> acceleration, speedMax,
 	| PLANE | SPACECRAFT
-	| OBSTACLE                  // a fixed entity, used for collisions
-	| WEAPON                    // -> nbMunitions, nbMaxMunitions, intervalleTirs, timeRecharge
+	| OBSTACLE {t = Type.obstacle;}
+	| WEAPON {t = Type.weapon;}
 	| SWORD                     // -> damages, level
-	| PROJECTILE                // -> vitesse, damages, level(pourquoi pas)
-	| ZONE                      // an invisible and traversable entity
+	| PROJECTILE {t = Type.projectile;}
+	| ZONE {t = Type.zone;}
 	| GROUND                    // -> type of ground (water, snow ...)
 	| BONUS                     // an object which disappears when something touches it-> valeur(entier), nomObjet(type),listeObjets 
 	| CHECKPOINT

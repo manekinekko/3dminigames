@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package types;
+package symbols.attributes;
 
 import java.util.ArrayList;
 import java.util.List;

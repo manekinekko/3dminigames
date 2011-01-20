@@ -7,7 +7,7 @@ import org.antlr.runtime.tree.Tree;
 
 import grammars.*;
 import code.*;
-import types.*;
+import symbols.Model;
 
 
 public class Test {
@@ -51,6 +51,7 @@ public class Test {
 
 	    try {
 		SymbolTable ts = new SymbolTable();
+                Model.init(ts);
 
 		tparser.game(ts);
 

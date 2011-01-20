@@ -2,7 +2,7 @@
  * and open the template in the editor.
  */
 
-package types;
+package symbols.attributes;
 
 /**
  *

@@ -2,21 +2,21 @@ package code;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
-import types.Type;
+import symbols.Symbol;
 
 public class SymbolTable {
 
-    private Hashtable<String, Type> table;
+    private Hashtable<String, Symbol> table;
 
     public SymbolTable() {
-	table = new Hashtable<String, Type>();
+	table = new Hashtable<String, Symbol>();
     }
 
-    public void add(String name, Type type) {
-	table.put(name, type);
+    public void add(String name, Symbol s) {
+	table.put(name, s);
     }
 
-    public Type get(String name) {
+    public Symbol get(String name) {
 	return table.get(name);
     }
 

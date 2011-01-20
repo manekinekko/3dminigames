@@ -1,110 +1,264 @@
+<!-- html5 doctype -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>M3D GUI</title>
+	</head>
+	<body onload="new M3D.Upload.uploader('canvas', 'status', 'upload.php', null, doc);">
+		
+		<div id="gui">	
+			
+			<!-- start: canvas container -->
+			<div id="container">
+				<div id="modal" ></div>
+				<div id="loading"></div>
+				<h1><span>3D</span>WIGS</span></h1>
+				<canvas id="canvas" width="1000" height="500"></canvas>
+			</div>
+			<!-- end: canvas container -->
+
+			<!-- start: menu -->
+			<div id="viewmenu">
+				<select style="width:200px;" id="importUrl" name="importUrl">
+					<optgroup id="myModels" label="My models">
+					</optgroup>
+					<optgroup label="Free models">
+						<option value="dae/free/duck.dae" selected="true">Duck</option>
+						<option value="dae/free/f.dae" >Girl</option>
+					</optgroup>
+					<optgroup label="Presets">
+						<option value="dae/presets/cube.dae">Cube</option>
+						<option value="dae/presets/sphere.dae">Sphere</option>
+						<option value="dae/presets/cylindre.dae">Cylindre</option>
+					</optgroup>
+				</select>
+				<input type="button" name="import" id="import" value="Add a model" />
+				
+				<input type="button" name="resetcamera" id="resetcamera" value="Reset Camera" />
+				<select id="select-model">
+						<option value="">--select model--</option>
+				</select>
+			</div>
+			<!-- end: menu -->
+
+			<!-- start: right info panel -->
+			<div id="info-right">
+				
+				<h2>Model attributes</h2>
+				<div id="attributes"></div>
+				<input type="button" name="add-attributes" class="add-atttributes" value="Add new Attribut">			
+			</div>
+			<!-- end: right info panel -->
+
+			<!-- start: bottom info panel -->
+			<div id="info-bottom" class="animate">
+	
+				<div class="column">
+					<h4>Position</h4>
+		        	<label for="posX">X</label>
+					<input type="text" name="posX" id="posX" value="" placeholder="#" /><br/>
+					<label for="posY">Y</label>
+					<input type="text" name="posY" id="posY" value="" placeholder="#" /><br/>
+					<label for="posZ">Z</label>
+					<input type="text" name="posZ" id="posZ" value="" placeholder="#" /><br/>
+				</div>
+				<div class="column">				
+					<h4>Scale</h4>
+					<label for="scaleX">X</label>
+					<input type="text" name="scaleX" id="scaleX" value="" placeholder="#"/><br/>
+					<label for="scaleY">Y</label>
+					<input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /><br/>
+					<label for="scaleZ">Z</label>
+					<input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" />
+				</div>
+				<div class="column">				
+					<h4>Rotation</h4>
+					<label for="rotX">X</label>
+					<input type="text" name="rotX" id="rotX" value="" placeholder="#"/><br/>
+					<label for="rotY">Y</label>
+					<input type="text" name="rotY" id="rotY" value="" placeholder="#" /><br/>
+					<label for="rotZ">Z</label>
+					<input type="text" name="rotZ" id="rotZ" value="" placeholder="#" />
+				</div>
+				<div class="column">
+					<h4>Bounding box</h4>
+					<label for="bboxX">X</label>
+					<input type="text" name="bboxX" id="bboxX" value="" placeholder="#"/><br/>
+					<label for="bboxY">Y</label>
+					<input type="text" name="bboxY" id="bboxY" value="" placeholder="#"/><br/>
+					<label for="bboxZ">Z</label>
+					<input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#"/><br/>
+					<label style="width:60px;" for="switchBbox">Show/Hide</label>
+					<input type="checkbox" name="switchBbox" id="switchBbox" />
+				</div>
+				<br class="clear"/>
+			</div>
+			<!-- end: right info panel -->
+
+			<!-- start: upload panel -->
+			<div id="upload" class="animate">
+				<div id="status">Drag & Drop your Collada models into the canva above.</div>
+				<div id="list"></div> 
+			</div>
+			<!-- end: upload panel -->
+
+			<!-- start: windows container -->
+			<div id="windows-container">
+				
+				<div id="entity-info" class="window closed">
+					<h2>Entity information</h2>
+					<label for="name">Name<em>*</em></label>
+
+					<input type="text" name="name" id="name" value="" placeholder="Entity name" required />
+					<br/>
+					<label for="entity">Attached type<em>*</em></label>
+					<select name="entity" id="entity" required >
+						<option value="">--select type--</option>
+						<option value="type1">Dummy type #1</option>
+						<option value="type2">Dummy type #2</option>
+					</select>
+					&nbsp;&nbsp;or&nbsp;&nbsp;
+					<a id="add-new-entity" href="#" title="Create a new type entity">Create new type</a>
+
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Cancel" name="cancel">
+						<input type="button" id="save-entity-info" value="Save" name="save" />
+					</div>
+				</div>
+				
+				<div id="new-entity" class="window close">
+					<h2>New Entity Type</h2>
+					<label for="entity-name">Type Name<em>*</em></label>
+					<input type="text" name="entity-name" value="" placeholder="Type name" required />
+					 
+					<br/>
+					<label for="entity-type">Type model</label>
+					<input type="checkbox" name="entity-type[]" value="object"/> Object
+					<input type="checkbox" name="entity-type[]" value="character"/> Character
+					<input type="checkbox" name="entity-type[]" value="vehicle"/> Vehicle
+					<br/>
+					
+					<label for="entity-attributes">Add new attributes</label>
+					<br/>
+					<br/>
+					<input class="width-100" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
+					<select class="width-100" id="new-attribut-type-1" name="new-attribut-type-1">
+						<option value="">--Type--</option>
+						<option value="string">String</option>
+						<option value="number">Number</option>
+						<option value="boolean">Boolean</option>
+					</select>
+					<input class="width-100" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
+					<select class="width-100 hidden" id="new-attribut-value-select" name="new-attribut-value-select" >
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+					   
+					<a href="#" id="add-new-attribut" title="Add this attribut">Add</a>
+					
+					<br/>
+					
+					<div id="entity-attributes-list" >
+						<!-- all new attributes are shown in here -->
+					</div>
+					
+					<div id="window-buttons">
+						<input type="button" id="save-new-entity" value="Done" name="save" />
+					</div>
+				</div>
+				
+				<div id="entity-new-attribut" class="window closed">
+					<h2>New attribut Info</h2>
+		        	
+					<label for="">Name<em>*</em></label>
+					<input name="new-attribut-name" id="new-attribut-name" required type="text" placeholder="Attribut name"/>
+					<br/>
+					
+					<label for="">Type<em>*</em></label>
+					<select id="new-attribut-type-2" name="new-attribut-type-2" required>
+						<option value="">--Type--</option>
+						<option value="string">String</option>
+						<option value="number">Number</option>
+						<option value="boolean">Boolean</option>
+					</select>
+					<br/>
+					
+					<label for="">Value<em>*</em></label>
+					<input name="new-attribut-value-input" id="new-attribut-value-input" required type="text" placeholder="Attribut value"/>
+					<select class="hidden" id="new-attribut-value-select" required name="new-attribut-value-select" >
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+					<br/>
+					
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Cancel" name="cancel">
+						<input type="button" id="save-new-attribut" value="Add" name="save-new-attribut" />
+					</div>
+				</div>
+				
+				<div id="help" class="window closed">
+					<h2>Help</h2>
+					<div>
+						&#187;Use mouse wheel to zoom in/out<br/>
+						&#187;Use Shift key to rotate a model around Y-axis<br/>
+						&#187;Use Alt key to rotate a model around X-axis<br/>
+						&#187;Use mouse drag + X/Y/Z keys to move a model along with the X/Y/Z-axis<br/>
+						&#187;Use mouse wheel + S key to scale a model<br/> 
+						<i><strong>Hint&nbsp;</strong>You can import your collada models easily by 
+						draging and dropping them onto onto the canvas!</i>
+					</div>
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+					</div>
+				</div>
+				
+				<div id="about" class="window closed">
+					<h2>About</h2>
+					<p>
+						<strong>3DWIGS</strong> - 3D Web Interactive Game Studio is a new way of creating 3D mini-games for the web.<br/>
+					</p>
+					<p>
+						<strong>Author: </strong>Professor R&eacute;mi Cozot.
+						<strong>Developers: </strong>Berlon Antoine, Bouzillard Jer&ocirc;me, Chegham Wassim, Clergeau Thomas, Faghihi Afshin,
+						Guichaoua Mathieu, Israel Quentin, Kien Emeric, Le Corronc Thibault, Le Galludec Benjamin,
+						Le Normand Erik, Lubecki Aur&eacute;lien, Marginier David, Sanvoisin Aur&eacute;lien, Tolba Mohamed Amine,
+						Weinzaepfel Philippe &amp; Zadith Ludovic.
+					</p>
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+						<input type="button" value="Help" id="showhelp" name="showhelp">
+					</div>
+				</div>
+				
+			</div>
+			<!-- end: windows container -->
+
+		</div>
+		
+		<!-- start: css parsing -->
+		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
+		<link href="m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
+		<!-- end: css parsing -->
+		
+		<!-- start: js parsing -->
+		<!-- start: libraries -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script type="text/javascript" src="html5uploader.js"></script>
 		<script type="text/javascript" src="glge/glge_math.js"></script>
 		<script type="text/javascript" src="glge/glge.js"></script>
 		<script type="text/javascript" src="glge/glge_collada.js"></script> 
 		<script type="text/javascript" src="glge/glge_input.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
-		<style>
-			body { font-size:11px; background:#eee url('dae/images/e8clangfloor.jpg') repeat center center scroll;margin:0; padding:0;}
-			h1 { text-shadow:0 0 2px #000; z-index:100; top:-30px; left:8px; position:absolute;background:transparent; font-size:3em; color:#fffa24; font-family: 'Coda', arial, serif; }
-			h1 span { color:#ff0000; }
-			#container, #viewmenu, #info, #upload { width:1000px; margin:0 0 0 50%; left:-500px; position:relative; }
-			#container { margin-top:20px; background: #000; z-index:10; -webkit-box-shadow: 0 0 20px #000; -moz-box-shadow: 0 0 20px #000; box-shadow: 0 0 20px #000; }
-			#canvas { cursor:default; border:1px solid transparent; }
-			#info, #upload { position:absolute; padding:15px 10px; background:#fff; width:980px; top:300px; -moz-border-radius:0 0 10px 10px; -webkit-border-radius:0 0 10px 10px; }
-			#viewmenu { top:-4px; width:990px; height:25px; padding: 5px; z-index:20; background: #fff;}
-			#status { text-align:center;width:100%; height:100px;}
-			#status {font-size:3em; }
-			#loading { display:none; top:10px; right:10px; z-index:100; position:absolute; width:16px; height:16px; background:transparent url('css/img/ajax-loader.gif') no-repeat center center; }
-			.column { float:left; position:relative; margin-right:20px;}
-			.clear { clear:both;}
-			label { float:left; width:20px; display:block;}
-			input[type="text"] { width:40px;border:1px solid #eee;padding:2px;}
-			input[type="button"] { border:1px solid; background:#eee; cursor:pointer; -moz-border-radius:5px; -webkit-border-radius:5px;}
-		</style>
-	</head>
-	<body onload="new uploader('canvas', 'status', 'upload.php', null, doc);">
-		<div id="container">
-			<div id="loading"></div>
-			<h1><span>3D</span>WIGS</spa></h1>
-			<canvas id="canvas" width="1000" height="550"></canvas>
-		</div>
-		<div id="viewmenu">
-			<input type="button" name="resetcamera" id="resetcamera" value="Reset Camera" />
-			<select style="width:200px;" id="importUrl" name="importUrl">
-				<optgroup id="myModels" label="My models">
-				</optgroup>
-				<optgroup label="Free models">
-					<option value="dae/duck.dae" selected="true" selected="true">Duck</option>
-					<option value="dae/v.dae" selected="true">Car</option>
-					<option value="dae/f.dae" selected="true">Girl</option>
-				</optgroup>
-				<optgroup label="Basics">
-					<option value="cube">Cube</option>
-					<option value="sphere">Sphere</option>
-				</optgroup>
-			</select>
-			<input type="button" name="import" id="import" value="Import Model" />
-			<input type="button" name="showupload" id="showupload" value="Add my models" />
-		</div>
-		<div id="info" class="animate">
-			
-			<label for="id">ID</label>
-			<input style="width:100px;" type="text" name="id" id="id" value="" placeholder="#" disabled="true" /><br/>
-				
-			<div class="column">
-				<h4>Position</h4>
-	        	<label for="posX">X</label>
-				<input type="text" name="posX" id="posX" value="" placeholder="#" /><br/>
-				<label for="posY">Y</label>
-				<input type="text" name="posY" id="posY" value="" placeholder="#" /><br/>
-				<label for="posZ">Z</label>
-				<input type="text" name="posZ" id="posZ" value="" placeholder="#" /><br/>
-			</div>
-			<div class="column">				
-				<h4>Scale</h4>
-				<label for="scaleX">X</label>
-				<input type="text" name="scaleX" id="scaleX" value="" placeholder="#"/><br/>
-				<label for="scaleY">Y</label>
-				<input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /><br/>
-				<label for="scaleZ">Z</label>
-				<input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" />
-			</div>
-			<div class="column">				
-				<h4>Rotation</h4>
-				<label for="rotX">X</label>
-				<input type="text" name="rotX" id="rotX" value="" placeholder="#"/><br/>
-				<label for="rotY">Y</label>
-				<input type="text" name="rotY" id="rotY" value="" placeholder="#" /><br/>
-				<label for="rotZ">Z</label>
-				<input type="text" name="rotZ" id="rotZ" value="" placeholder="#" />
-			</div>
-			<div class="column">
-				<h4>Bounding box</h4>
-				<label for="bboxX">X</label>
-				<input type="text" name="bboxX" id="bboxX" value="" placeholder="#" disabled="true" /><br/>
-				<label for="bboxY">Y</label>
-				<input type="text" name="bboxY" id="bboxY" value="" placeholder="#" disabled="true" /><br/>
-				<label for="bboxZ">Z</label>
-				<input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#" disabled="true" /><br/>
-				<label style="width:60px;" for="switchBbox">Show/Hide</label>
-				<input type="checkbox" name="switchBbox" id="switchBbox" /><br/>still buggy !
-			</div>
-			<br class="clear"/>
-		</div>
-		<div id="upload" class="animate">
-			<div id="status">Drag & Drop your Collada models into the canva above.</div>
-			<div id="list"></div> 
-		</div>
+		<script type="text/javascript" src="glge/patches/glge.js"></script>
+		<script type="text/javascript" src="glge/patches/glge_collada.js"></script>
+		<!-- end: libraries -->
 		
+		<!-- start: js custom -->
+		<script type="text/javascript" src="m3d_common.js"></script>
 		<script type="text/javascript" src="m3d_utils.js"></script>
+		<script type="text/javascript" src="m3d_upload.js"></script>
 		<script type="text/javascript" src="m3d_gui.js"></script>
+		<!-- end: js custom -->
+		<!-- end: js parsing -->
 
 	</body>
-	
 </html>

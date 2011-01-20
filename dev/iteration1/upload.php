@@ -5,7 +5,7 @@ ini_set("memory_limit","128M");
 //echo ini_get("memory_limit");
 
 // Destination folder for downloaded files
-$upload_folder = 'dae';
+$upload_folder = 'dae/custom';
 
 // If the browser supports sendAsBinary () can use the array $ _FILES
 if(count($_FILES)>0) { 

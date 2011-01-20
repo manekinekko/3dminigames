@@ -14,7 +14,23 @@
 *	IE 6+
 */
 
-function uploader(place, status, targetPHP, show, doc) {
+/**
+ * @name m3d_utils.js
+ * @author chegham wassim
+ */
+
+
+if(!window["M3D"]){
+	window["M3D"]={};	
+}
+
+if (!window["M3D"].Upload){
+		window["M3D"].Upload={};
+}
+
+
+
+M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	
 	// Upload image files
 	upload = function(file) {
@@ -161,7 +177,7 @@ function uploader(place, status, targetPHP, show, doc) {
 			else {
 	
 				var name = file.fileName; 
-				var value = 'dae/'+name;
+				var value = 'dae/custom/'+name;
 				document.getElementById('myModels').innerHTML += "<option value='"+value+"'>"+name+"</option>";
 				
 				if ( doc )
@@ -169,13 +185,8 @@ function uploader(place, status, targetPHP, show, doc) {
 					var loading = document.getElementById('loading').style;
 					loading.style = "block";
 					
-					var docCollada = new GLGE.Collada;
-			        docCollada.setDocument(value,doc.getAbsolutePath(doc.rootURL,null), function(){
-						
-						loading.style = "none";
-						doc.getElement("mainscene").addChild(docCollada);
-						
-					});
+					M3D.GUI.importModel(value);
+					
 				}
 				
 				

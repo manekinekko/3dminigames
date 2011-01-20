@@ -8,7 +8,7 @@ options {
 @header {
     package grammars;
     import code.*;
-    import types.*;
+    import symbols.*;
     import lib.*;
 }
 
@@ -19,7 +19,7 @@ options {
  *------------------------------------------------------------------*/
  
 game [SymbolTable st] returns [Code c]
-	@init{c = new Code();		Type.init();}:
+	@init{c = new Code();}:
 	^(GAME_KW gd=gameData[st]? newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
 	{st.print();}
     ;
@@ -40,33 +40,33 @@ attributGame [SymbolTable st] returns [Code c]:
 	;
 /*-------------------------- Inheritance, creation of type -------------------------------*/	
 newType [SymbolTable st]
-	@init{List<Type> sub = new ArrayList<Type>();}:
+	@init{List<Model> sub = new ArrayList<Model>();}:
 	^(TYPE i=IDENT subType[st,sub]+)
 	{   String id = i.getText();
-	    Type verif = st.get(id);
+	    Symbol verif = st.get(id);
 	    if(verif != null) {
 		System.out.println("Type \""+id+"\" déjà déclaré.");
 		System.exit(-1);
 	    } else {
-		Type[] tab = (Type[])sub.toArray(new Type[0]);
-		Type t = new Type(id, tab);
+		Model[] tab = (Model[])sub.toArray(new Model[0]);
+		Model t = new Model(id, tab);
 		st.add(id, t);
 	    }
 	}
 	;
 
-subType [SymbolTable st, List<Type> sub] :
+subType [SymbolTable st, List<Model> sub] :
 	i=IDENT
 	{   String id = i.getText();
-	    Type verif = st.get(id);
+	    Symbol verif = st.get(id);
 	    if(verif == null) {
-		System.out.println("Type \""+id+"\" non défini.");
+		System.out.println("Model \""+id+"\" non défini.");
 		System.exit(-1);
 	    } else if(verif.getName() != id) {
 		System.out.println("Gros Gros bug !!!");
 		System.exit(-1);
 	    } else {
-		sub.add(verif);
+		sub.add((Model)verif);
 	    }
 	}
 	| t=typeObjet{sub.add(t);}
@@ -75,12 +75,13 @@ subType [SymbolTable st, List<Type> sub] :
 init [SymbolTable st] returns [Code c]:
 	^(INIT_IS_KW i=IDENT d=declarationObjet[st])
 	{   String id = i.getText();
-	    Type verif = st.get(id);
+	    Symbol verif = st.get(id);
 	    if(verif != null) {
 		System.out.println("Elément \""+id+"\" déjà déclaré.");
 		System.exit(-1);
 	    } else {
-		Type t = new Type(d.getFirst().getName(),d.getFirst());
+                System.out.println(d.getFirst().getName());
+		Entity t = new Entity(id,d.getFirst());
 		st.add(id,t);
 	    }
 	}
@@ -88,14 +89,14 @@ init [SymbolTable st] returns [Code c]:
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
-declarationObjet [SymbolTable st] returns [Pair<Type, Integer> p]
+declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
 	@init{em=null;}:
 	^(DEC te=typeEntity[st] (em=entityMode)?)
 	{
 	    if(em == null)
 		em=4;
 
-	    p = new Pair<Type, Integer>(te,em);
+	    p = new Pair<Model, Integer>(te,em);
 	}
 	|^(LIST_KW list_declaration[st])
 	|^(CAMERA_KW PERSON view[st]) 
@@ -109,18 +110,18 @@ list_declaration [SymbolTable st] returns [Code c]:
 	(operation[st]? IDENT)+
 	;
 	
-typeEntity [SymbolTable st] returns [Type t]:
+typeEntity [SymbolTable st] returns [Model t]:
 	i=IDENT
 	{   String id = i.getText();
-	    Type verif = st.get(id);
+	    Symbol verif = st.get(id);
 	    if(verif == null) {
-		System.out.println("Type \""+id+"\" non défini.");
+		System.out.println("Model \""+id+"\" non défini.");
 		System.exit(-1);
-	    } else if(verif.getName() != id) {
+	    } else if(!verif.getName().equals(id)) {
 		System.out.println("Gros Gros bug !!!");
 		System.exit(-1);
 	    } else {
-		t = verif;
+		t = (Model)verif;
 	    }
 	}
 	| to=typeObjet3D{t = to;}
@@ -421,7 +422,7 @@ timeUnit [SymbolTable st] returns [Code c]:
 	;
 
 /*  */
-typeObjet returns [Type t]:
+typeObjet returns [Model t]:
 	CAMERA
 	| MEDIA
 	| COUNTER
@@ -431,16 +432,16 @@ typeObjet returns [Type t]:
  
 // every predefined classe
 
-typeObjet3D returns [Type t]:
-	OBJECT {t = Type.object;}
-	| CHARACTER {t = Type.character;}
+typeObjet3D returns [Model t]:
+	OBJECT {t = Model.object;}
+	| CHARACTER {t = Model.character;}
 	| VEHICLE                   // -> acceleration, speedMax,
 	| PLANE | SPACECRAFT
-	| OBSTACLE {t = Type.obstacle;}
-	| WEAPON {t = Type.weapon;}
+	| OBSTACLE {t = Model.obstacle;}
+	| WEAPON {t = Model.weapon;}
 	| SWORD                     // -> damages, level
-	| PROJECTILE {t = Type.projectile;}
-	| ZONE {t = Type.zone;}
+	| PROJECTILE {t = Model.projectile;}
+	| ZONE {t = Model.zone;}
 	| GROUND                    // -> type of ground (water, snow ...)
 	| BONUS                     // an object which disappears when something touches it-> valeur(entier), nomObjet(type),listeObjets 
 	| CHECKPOINT

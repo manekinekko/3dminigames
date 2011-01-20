@@ -1626,7 +1626,9 @@ GLGE.Placeable.prototype.getInverseModelMatrix=function(){
 		this.getModelMatrix();
 	}
 	if(!this.invmatrix){
+
 		this.invmatrix=GLGE.transposeMat4(this.matrix);
+
 	}
 	return this.invmatrix;
 }

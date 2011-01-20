@@ -124,9 +124,8 @@ GLGE.Collada.prototype.parseArray=function(node){
 * loads an collada file from a given url
 * @param {DOM Element} node the value to parse
 * @param {string} relativeTo optional the path the url is relative to
-* @param {function} callback optional the callback function when document wad loaded successfully
 */
-GLGE.Collada.prototype.setDocument=function(url,relativeTo, cb){
+GLGE.Collada.prototype.setDocument=function(url,relativeTo){
 	this.url=url;
 	//use # to determine the is of the asset to extract
 	if(url.indexOf("#")!=-1){
@@ -140,17 +139,17 @@ GLGE.Collada.prototype.setDocument=function(url,relativeTo, cb){
 	}else{
 		var req = new XMLHttpRequest();
 		if(req) {
-			req.overrideMimeType("text/xml")
+			req.overrideMimeType("application/xml")
 			var docurl=url;
 			var docObj=this;
 			req.onreadystatechange = function() {
 				if(this.readyState  == 4)
 				{
 					if(this.status  == 200 || this.status==0){
+						
 						this.responseXML.getElementById=docObj.getElementById;
 						docObj.loaded(docurl,this.responseXML);
-						
-						if ( cb ) cb();
+
 						
 					}else{ 
 						GLGE.error("Error loading Document: "+docurl+" status "+this.status);

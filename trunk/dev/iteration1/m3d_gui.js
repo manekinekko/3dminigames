@@ -1,7 +1,6 @@
 
 
 /**
- * @guiFile
  * @name m3d_gui.js
  * @author chegham wassim
  */
@@ -14,7 +13,6 @@ var canvas = document.getElementById('canvas');
 var doc = new GLGE.Document();
 var obj;
 var scene;
-var camLookAt;
 var hoverobj;
 var mouseovercanvas;
 var now;
@@ -26,56 +24,119 @@ doc.onLoad = function() {
 	var mouse=new GLGE.MouseInput(canvas);
 	var keys=new GLGE.KeyInput();
 	var pickcolor=doc.getElement("green");
-	var controller = new M3D.Utilitie.CameraController(canvas);	
+	var controller = new M3D.GUI.CameraController(canvas);
 	
-	// -- create a renderer and pass in the canvas object
 	var renderer = new GLGE.Renderer(document.getElementById("canvas"));
-	
-	// -- create a new scene. the name defined in the parameter corresponds
-	//    to the id attribute of the scene element in the xml file.
 	scene = doc.getElement("mainscene");
-	scene.backgroundColor = "#fff";
-	
-	// -- pass the scene to the renderer
 	renderer.setScene(scene);
 
-	
-	// -- picking
-	$('#canvas').bind('mousedown', M3D.Utilitie.pickObject);
-	
+	// Start Event Bindings
+
+	// -- is hovering the canvas ?
 	$('#canvas').bind('mouseover', function(e){mouseovercanvas=true;});
 	
-	// -- camera 
-	document.getElementById("canvas").addEventListener('DOMMouseScroll', M3D.Utilitie.wheel, false);
-	window.onmousewheel = document.onmousewheel = M3D.Utilitie.wheel;
+	// -- picking
+	$('#canvas').bind('mousedown', M3D.GUI.pickObject);	
 	
-	// -- manual value updating
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.Utilitie.updateValues($(this)) });
+	// -- mouse wheel for camera
+	document.getElementById("canvas").addEventListener('DOMMouseScroll', M3D.GUI.wheel, false);
+	window.document.getElementById("canvas").onmousewheel = document.getElementById("canvas").onmousewheel = M3D.GUI.wheel;
+	
+	// -- values manual updating
+	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)) });
 
 	
-	$('#switchBbox').bind('click', M3D.Utilitie.toggleBbox);
+	// -- toggling the bbox
+	$('#switchBbox').bind('click', M3D.GUI.toggleBbox);
+	$('#canvas').bind('keypress', function(){
+		if ( obj && keys.isKeyPressed(GLGE.KI_B) ){
+			M3D.GUI.toggleBbox();
+			$('#switchBbox').attr('checked', !$('#switchBbox').is(':checked') );
+		}
+	});
 
-	// -- objet and camera rotaion
+	// -- objet and camera rotation
 	controller.onchange = function(xRot, yRot) { 
-
-		M3D.Utilitie.handleCamera(xRot, yRot);
+		M3D.GUI.handleCamera(xRot, yRot);
 	}
 		
 	// -- reset camera
-	$('#resetcamera').bind('click', M3D.Utilitie.resetCameraPosition);
+	$('#resetcamera').bind('click', M3D.GUI.resetCameraPosition);
 	
-	// -- bind import
-	$('#import').click( function(){
-		M3D.Utilitie.importModel( $('#importUrl').val() );
+	// -- bind import model
+	$('#import').bind('click', function(){
+		M3D.GUI.importModel( $('#importUrl').val() );
 	});
 	
+	// -- open new attribut
+	$('.add-atttributes').bind('click', function(){
+		M3D.GUI.showPopup('entity-new-attribut');
+	});
+	
+	// -- window button
+	$('.cancel').bind('click', M3D.GUI.hidePopup);
+	$('#save-entity-info').bind('click', function(){
+		
+		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+			M3D.GUI.updateEntityList();
+			M3D.GUI.addObjectToScene();
+		}
+		
+	});
+	
+	// -- object picking from select box
+	$('#select-model').bind('change', M3D.GUI.pickObjectFromSelect);
+	
 	// -- show upload area
-	var flag = true;
-	$('#showupload').click(function(){
+	$('#showupload').click(function(){M3D.GUI.toggleShowUpload});
+	
+	// -- add new attributes
+	$('#new-attribut-type-1, #new-attribut-type-2').bind('change', function(){
+		M3D.GUI.toggleInputSelect(this);
+	});
+	
+	// -- save new attribut
+	$('#save-new-attribut').bind('click', function(){
 		
-		M3D.Utilitie.toggleShowUplaod();
+		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+			M3D.GUI.saveNewAttribut();
+		}
 		
-	})
+	});
+	
+	$('#add-new-attribut').bind('click', M3D.GUI.addNewAttribut);
+	
+	// -- show the help window
+	$('#showhelp').bind('click', function(){
+		M3D.GUI.showPopup('help');
+	});
+
+	// -- easter egg :)
+	$('#container h1').bind('click', function(){
+		M3D.GUI.showPopup('about');
+	});
+	
+	// -- prevent default
+	$('a[href="#"]').live("click", function(e){ e.preventDefault(); });
+	
+	// -- add new entity type
+	$('#add-new-entity').bind('click', function(){
+		M3D.GUI.showPopup('new-entity');
+	});
+	
+	// -- save new attributes
+	$('#save-new-entity').bind('click', function(){
+		
+		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+			M3D.GUI.saveNewEntity();
+		}
+		
+	});
+	
+	// -- delete attributes
+	$('.detele-attribut').live('click', function(){
+		M3D.GUI.deleteAttributFromList(this);
+	});
 	
 	///////////////////////////			
 	// -- the rendering loop
@@ -83,15 +144,18 @@ doc.onLoad = function() {
 	var now;
 	var lasttime = 0;
 	function render() {
+		
 		now=parseInt(new Date().getTime());
-		M3D.Utilitie.checkkeys(keys, lasttime, now);
-		renderer.render();
 		lasttime=now;
+
+		//checkkeys();
+
+		// render the canvas
+		renderer.render();
 	}
 
 	// -- render each millisecond
-	setInterval(render, 1);
-	
+	setInterval(render, 1);	
 	
 }
 

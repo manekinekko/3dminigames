@@ -27,7 +27,7 @@ Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (
 Lapin has size at 1 1 1;
 
 
-cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
+//cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
 
 chasseur is Character player;
 chasseur has life at 5;
@@ -72,7 +72,7 @@ bazooka has missile ;        //aggrégation -> missile parenté à bazooka -> mi
 chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 
 
-sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
+//sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
 
 
 //////////// DEF

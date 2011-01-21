@@ -32,11 +32,11 @@ public class Code {
 	return c;
     }
 
-    public Code genEntity(String name) {
+    public static Code genEntity(String name) {
 	return new Code("object" + name + "=");
     }
 
-    public Code genRessourceI(String name, float value, boolean fin) {
+    public static Code genRessourceI(String name, float value, boolean fin) {
 	Code co = new Code(" " + name + "=" + value);
 	if (fin) {
 	    co.append(" ;");
@@ -46,7 +46,7 @@ public class Code {
 	return co;
     }
 
-    public Code genRessourceS(String name, String value, boolean fin) {
+    public static Code genRessourceS(String name, String value, boolean fin) {
 	Code co = new Code(" " + name + "=" + value);
 	if (fin) {
 	    co.append(" ;");
@@ -95,15 +95,19 @@ public class Code {
 	return co;
     }*/
 
-    public Code genSigPre(String name, String pre) {
+    public static Code genSigPre(String name, String pre) {
 	return new Code(name + "->" + pre + ";");
     }
 
-    public Code genSigOp(String name, String entities, String ress, String op, float value) {
+    public static Code genSigOp(String name, String entities, String ress, String op, float value) {
 	return new Code(name + "->" + entities + "." + ress + "apply (" + op + value + ");");
     }
 
-    public Code genEOF() {
+    public static Code genRD(String val1, String val2){
+        return new Code("Rand("+val1+","+val2+")");
+    }
+
+    public static Code genEOF() {
 	return new Code(";;");
     }
 }

@@ -84,7 +84,7 @@ init :
 	IDENT IS declarationObjet
 	  -> ^(INIT_IS_KW IDENT declarationObjet)
 	| accesClasse HAS allocationObject (VIRG allocationObject)* // check the types and its attributes
-	  -> ^(INIT_HAS_KW allocationObject+)
+	  -> ^(INIT_HAS_KW accesClasse allocationObject+)
 	;
 
 // A revoir : CAMERA : si rien n'est ajout� on fait quoi ?, MEDIA pareil

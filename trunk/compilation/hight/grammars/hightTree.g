@@ -80,12 +80,11 @@ init [SymbolTable st] returns [Code c]:
 		System.out.println("Elément \""+id+"\" déjà déclaré.");
 		System.exit(-1);
 	    } else {
-                System.out.println(d.getFirst().getName());
 		Entity t = new Entity(id,d.getFirst());
 		st.add(id,t);
 	    }
 	}
-	|^(INIT_HAS_KW affectationObjet[st])
+	|^(INIT_HAS_KW accesClass[st] affectationObjet[st])
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
@@ -156,14 +155,18 @@ view [SymbolTable st] returns [Code c]:
 
 affectationObjet [SymbolTable st] returns [Code c]:
 	^( ALLOCATION_KW IDENT valAggregation[st]?)
-	| ^( ALLOCATION_KW attribut[st] typeAllocation[st])
-	| ^( ALLOCATION_KW typeCoordonnees[st] coordinates[st])
+	| ^( ALLOCATION_KW a=attribut[st] v=typeAllocation[st])
+
+	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
+
 	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
-	| ^( ALLOCATION_KW attributTps[st] operation[st] timeUnit[st])
+
+	| ^( ALLOCATION_KW att=attributTps[st] v=operation[st] u=timeUnit[st])
     ;
     
 typeAllocation [SymbolTable st] returns [Code c]:	
-	(operation[st] | IDENT | 'true' | 'false')
+	(co = operation[st] | IDENT | 'true' | 'false')
+        {c = co;}
 	;
 	
 valAggregation [SymbolTable st] returns [Code c]:
@@ -232,8 +235,9 @@ transformation [SymbolTable st] returns [Code c]:
 	| SCALE
 	;
 	
-coordinates [SymbolTable st] returns [Code c]:
-	^(COORDINATE_KW operation[st] operation[st] operation[st])
+coordinates [SymbolTable st] returns [Coordonnees coo]:
+	^(COORDINATE_KW x=operation[st] y=operation[st] z=operation[st])
+        {coo = new Coordonnees(x.getCode(),y.getCode(),z.getCode());}
 	;
 
 /* Initialization of commands */
@@ -376,7 +380,8 @@ actionObjetList [SymbolTable st] returns [Code c]: actionObjet[st]+;
 /* Arithmetic expression */
 
 operation [SymbolTable st] returns [Code c]:
-	^(RANDOM_KW operation[st] operation[st])
+	^(RANDOM_KW c1 =operation[st] c2 =operation[st])
+         {c=Code.genRD(c1.getCode(),c2.getCode());}
 	|^(PLUS operation[st] operation[st])
 	|^(MINUS operation[st] operation[st])
 	|^(MUL operation[st] operation[st])
@@ -384,8 +389,9 @@ operation [SymbolTable st] returns [Code c]:
 	|^(MOD operation[st] operation[st])
 	|^(POW operation[st] operation[st])
 	|variable[st]
-	|FLOAT
-	;
+	|f = FLOAT
+        {c = new Code(f.getText());}
+        ;
  
 
 variable [SymbolTable st] returns [Code c]:
@@ -411,13 +417,14 @@ notAccess [SymbolTable st] returns [Code c] :
 typeObjet | interaction | PLAYER;
   
 typeCoordonnees [SymbolTable st] returns [Code c]:
-	POSITION | ORIENTATION | SIZE
+	POSITION {c = new Code("position");}| ORIENTATION {c = new Code("angle");}| SIZE {c = new Code("taille");}
 	;
 
 timeUnit [SymbolTable st] returns [Code c]:
 	MIN
 	| SEC
 	| MS
+        {c = new Code("ms");}
 	| FRAME
 	;
 

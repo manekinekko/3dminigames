@@ -21,10 +21,12 @@ public class SymbolTable {
     }
 
     public void print() {
+        System.out.println("/////////////////////////////Table des Symboles/////////////////////////////");
 	Enumeration<String> key = table.keys();
 	for (int i = 0; i < table.size(); i++) {
 	    String id = key.nextElement();
 	    System.out.println(id + "\t\t\t" + table.get(id).getName());
 	}
+        System.out.println("////////////////////////////////////////////////////////////////////////////");
     }
 }

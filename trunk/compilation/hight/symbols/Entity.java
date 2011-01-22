@@ -1,7 +1,7 @@
 
 package symbols;
 
-import symbols.attributes.Attributes;
+import attributes.Attributes;
 import java.util.*;
 
 /**

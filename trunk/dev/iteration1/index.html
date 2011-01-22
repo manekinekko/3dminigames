@@ -1,8 +1,8 @@
-<!-- html5 doctype -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>M3D GUI</title>
+		<script src="modernizr.min.js"></script>
 	</head>
 	<body onload="new M3D.Upload.uploader('canvas', 'status', 'upload.php', null, doc);">
 		
@@ -33,6 +33,8 @@
 					</optgroup>
 				</select>
 				<input type="button" name="import" id="import" value="Add a model" />
+				
+				<input type="button" name="manage-rules" id="manage-rules" value="Manage Game Rules" />
 				
 				<input type="button" name="resetcamera" id="resetcamera" value="Reset Camera" />
 				<select id="select-model">
@@ -197,6 +199,76 @@
 					</div>
 				</div>
 				
+				<div id="rules" class="window closed">
+					<h2>Game Rules</h2>
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Name<em>*</em></th>
+								<th>Entity<em>*</em></th>
+								<th>Attribut<em>*</em></th>
+								<th>Condition<em>*</em></th>
+								<th>Value<em>*</em></th>
+								<th>Action<em>*</em></th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td>
+									<input name="rule-name" id="rule-name" required type="text" placeholder="Rule name"/>
+								</td>
+								<td>
+									<select id="entity-name" name="entity-name" required>
+										<option value="">--select type--</option>
+										<option value="type1">Dummy type #1</option>
+										<option value="type2">Dummy type #2</option>
+									</select>
+								</td>
+								<td>
+									<select id="entity-attribut" name="entity-attribut" required>
+										<option value="">--select attribut--</option>
+										<option value="type1" type="boolean">Dummy attribut #1</option>
+										<option value="type2" type="number">Dummy attribut #2</option>
+										<option value="type2" type="number">Dummy attribut #3</option>
+									</select>
+								</td>
+								<td>
+									<select id="rule-condition" name="rule-condition" required>
+										<option value="">--select condition--</option>
+										<option value="0">equals to</option>
+										<option value="1">greater than</option>
+										<option value="2">less than</option>
+										<option value="3">greater or equal to</option>
+										<option value="4">less or equal to</option>
+									</select>
+								</td>
+								<td>
+									<input name="rule-condition-value" id="rule-condition-value" required type="text" placeholder="Value"/>
+								</td>
+								<td>
+									<select id="rule-action" name="rule-action" required>
+										<option value="">--select action--</option>
+										<option value="action1">Action #1</option>
+										<option value="action2">Action #2</option>
+									</select>
+								</td>
+								<td>
+									<a href="#" title="Add" id="add-rule" >Add rule</a>
+								</td>
+							</tr>
+						</tbody>
+						
+					</table>
+	
+					<div id="rules-list" ></div>
+					
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+					</div>
+				</div>
+				
 				<div id="help" class="window closed">
 					<h2>Help</h2>
 					<div>
@@ -256,6 +328,8 @@
 		<script type="text/javascript" src="m3d_common.js"></script>
 		<script type="text/javascript" src="m3d_utils.js"></script>
 		<script type="text/javascript" src="m3d_upload.js"></script>
+		
+		<!-- Please load this script after all the others! -->
 		<script type="text/javascript" src="m3d_gui.js"></script>
 		<!-- end: js custom -->
 		<!-- end: js parsing -->

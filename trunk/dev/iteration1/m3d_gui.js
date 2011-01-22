@@ -138,6 +138,20 @@ doc.onLoad = function() {
 		M3D.GUI.deleteAttributFromList(this);
 	});
 	
+	$('#manage-rules').bind('click', function(){
+		M3D.GUI.showPopup('rules');
+	});
+	
+	$('#add-rule').bind('click', function(){
+		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+			M3D.GUI.saveNewRule();
+		}
+	});
+	
+	$('.delete-rule').live('click', function(){
+		M3D.GUI.deleteRule(this);
+	});
+	
 	///////////////////////////			
 	// -- the rendering loop
 	///////////////////////////

@@ -284,6 +284,43 @@ M3D.GUI.toggleInputSelect = function(el){
 }
 
 
+M3D.GUI.saveNewRule = function(){
+	
+	var ruleName = $('#rule-name').val();
+	var entityName = $('#entity-name').val();
+	var entityAttribut = $('#entity-attribut').val();
+	var ruleCondition = $('#rule-condition').val();
+	var conditionValue = $('#rule-condition-value').val();
+	var action = $('#rule-action').val();
+	
+	var value = [];
+	value.push('rule '+ruleName+' is'); 
+	value.push(entityName);
+	value.push(entityAttribut);
+	value.push(ruleCondition+' then');
+	value.push(conditionValue);
+	value.push(action);
+	var ruleHTML = '<div><input class="input-rule" type="text" name="rules[]" value="'+value.join(' ')+'" disabled="true"/>&nbsp;<a href="#" class="delete-rule" title="Delete">Delete</a></div>';
+
+	$('#rules-list').prepend(ruleHTML);
+
+	// [DB]
+	// Save the new rule into DB
+}
+
+
+M3D.GUI.deleteRule = function(el){
+	
+	var rule = $(el).closest('div');
+	rule.remove(); 
+	
+	// [DB]
+	// delete this rule from DB
+	
+}
+
+
+
 M3D.GUI.saveNewEntity = function(){
 	var entityInfo = $('#new-entity input[name="entity-name"]');
 	var val = entityInfo.val();

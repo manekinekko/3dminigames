@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g 2011-01-21 21:48:51
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g 2011-01-22 18:09:40
 
     package grammars;
 
@@ -655,7 +655,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: reglesJeu, commande, init, definition, gameData, newType, iaBasique
+            // elements: commande, definition, newType, init, gameData, iaBasique, reglesJeu
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -979,7 +979,7 @@ public class hightParser extends Parser {
 
 
                             // AST REWRITE
-                            // elements: FLOAT, GRAVITY_KW
+                            // elements: GRAVITY_KW, FLOAT
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -1204,7 +1204,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: subType, subType, TYPE, IDENT
+            // elements: subType, IDENT, subType, TYPE
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1345,7 +1345,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "init"
-    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:83:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW ( allocationObject )+ ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:83:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) );
     public final hightParser.init_return init() throws RecognitionException {
         hightParser.init_return retval = new hightParser.init_return();
         retval.start = input.LT(1);
@@ -1377,7 +1377,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_allocationObject=new RewriteRuleSubtreeStream(adaptor,"rule allocationObject");
         RewriteRuleSubtreeStream stream_declarationObjet=new RewriteRuleSubtreeStream(adaptor,"rule declarationObjet");
         try {
-            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:83:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW ( allocationObject )+ ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:83:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1425,7 +1425,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, declarationObjet
+                    // elements: declarationObjet, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1507,7 +1507,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: allocationObject
+                    // elements: accesClasse, allocationObject
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1517,13 +1517,14 @@ public class hightParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 87:4: -> ^( INIT_HAS_KW ( allocationObject )+ )
+                    // 87:4: -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                     {
-                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:87:7: ^( INIT_HAS_KW ( allocationObject )+ )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:87:7: ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INIT_HAS_KW, "INIT_HAS_KW"), root_1);
 
+                        adaptor.addChild(root_1, stream_accesClasse.nextTree());
                         if ( !(stream_allocationObject.hasNext()) ) {
                             throw new RewriteEarlyExitException();
                         }
@@ -1684,7 +1685,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:92:2: typeEntity ( entityMode )?
                     {
-                    pushFollow(FOLLOW_typeEntity_in_declarationObjet574);
+                    pushFollow(FOLLOW_typeEntity_in_declarationObjet576);
                     typeEntity45=typeEntity();
 
                     state._fsp--;
@@ -1701,7 +1702,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:92:13: entityMode
                             {
-                            pushFollow(FOLLOW_entityMode_in_declarationObjet576);
+                            pushFollow(FOLLOW_entityMode_in_declarationObjet578);
                             entityMode46=entityMode();
 
                             state._fsp--;
@@ -1716,7 +1717,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: entityMode, typeEntity
+                    // elements: typeEntity, entityMode
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1752,7 +1753,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:4: LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
                     {
-                    LIST_KW47=(Token)match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet600);  
+                    LIST_KW47=(Token)match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet602);  
                     stream_LIST_KW.add(LIST_KW47);
 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:12: ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
@@ -1766,7 +1767,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:13: OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )*
                             {
-                            OF48=(Token)match(input,OF,FOLLOW_OF_in_declarationObjet603);  
+                            OF48=(Token)match(input,OF,FOLLOW_OF_in_declarationObjet605);  
                             stream_OF.add(OF48);
 
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:16: ( operation )?
@@ -1787,7 +1788,7 @@ public class hightParser extends Parser {
                                 case 1 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:17: operation
                                     {
-                                    pushFollow(FOLLOW_operation_in_declarationObjet606);
+                                    pushFollow(FOLLOW_operation_in_declarationObjet608);
                                     operation49=operation();
 
                                     state._fsp--;
@@ -1802,7 +1803,7 @@ public class hightParser extends Parser {
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:29: ( IDENT )
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:30: IDENT
                             {
-                            IDENT50=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet611);  
+                            IDENT50=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet613);  
                             stream_IDENT.add(IDENT50);
 
 
@@ -1823,7 +1824,7 @@ public class hightParser extends Parser {
                             	case 1 :
                             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:38: WITH ( operation )? ( IDENT )
                             	    {
-                            	    WITH51=(Token)match(input,WITH,FOLLOW_WITH_in_declarationObjet615);  
+                            	    WITH51=(Token)match(input,WITH,FOLLOW_WITH_in_declarationObjet617);  
                             	    stream_WITH.add(WITH51);
 
                             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:43: ( operation )?
@@ -1844,7 +1845,7 @@ public class hightParser extends Parser {
                             	        case 1 :
                             	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:44: operation
                             	            {
-                            	            pushFollow(FOLLOW_operation_in_declarationObjet618);
+                            	            pushFollow(FOLLOW_operation_in_declarationObjet620);
                             	            operation52=operation();
 
                             	            state._fsp--;
@@ -1859,7 +1860,7 @@ public class hightParser extends Parser {
                             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:56: ( IDENT )
                             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:94:57: IDENT
                             	    {
-                            	    IDENT53=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet623);  
+                            	    IDENT53=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet625);  
                             	    stream_IDENT.add(IDENT53);
 
 
@@ -1883,7 +1884,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, operation, LIST_KW
+                    // elements: LIST_KW, IDENT, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1926,7 +1927,7 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:96:4: CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
                     {
-                    CAMERA54=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_declarationObjet652);  
+                    CAMERA54=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_declarationObjet654);  
                     stream_CAMERA.add(CAMERA54);
 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:96:11: ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
@@ -1943,13 +1944,13 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:96:12: view PERSON
                             {
-                            pushFollow(FOLLOW_view_in_declarationObjet655);
+                            pushFollow(FOLLOW_view_in_declarationObjet657);
                             view55=view();
 
                             state._fsp--;
 
                             stream_view.add(view55.getTree());
-                            PERSON56=(Token)match(input,PERSON,FOLLOW_PERSON_in_declarationObjet657);  
+                            PERSON56=(Token)match(input,PERSON,FOLLOW_PERSON_in_declarationObjet659);  
                             stream_PERSON.add(PERSON56);
 
 
@@ -1986,7 +1987,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:96:54: FREE
                             {
-                            FREE57=(Token)match(input,FREE,FOLLOW_FREE_in_declarationObjet671);  
+                            FREE57=(Token)match(input,FREE,FOLLOW_FREE_in_declarationObjet673);  
                             stream_FREE.add(FREE57);
 
 
@@ -2028,7 +2029,7 @@ public class hightParser extends Parser {
                 case 4 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:97:4: MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
                     {
-                    MEDIA58=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_declarationObjet686);  
+                    MEDIA58=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_declarationObjet688);  
                     stream_MEDIA.add(MEDIA58);
 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:97:10: ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
@@ -2045,7 +2046,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:97:11: LOOP
                             {
-                            LOOP59=(Token)match(input,LOOP,FOLLOW_LOOP_in_declarationObjet689);  
+                            LOOP59=(Token)match(input,LOOP,FOLLOW_LOOP_in_declarationObjet691);  
                             stream_LOOP.add(LOOP59);
 
 
@@ -2081,7 +2082,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:97:37: ONCE
                             {
-                            ONCE60=(Token)match(input,ONCE,FOLLOW_ONCE_in_declarationObjet700);  
+                            ONCE60=(Token)match(input,ONCE,FOLLOW_ONCE_in_declarationObjet702);  
                             stream_ONCE.add(ONCE60);
 
 
@@ -2123,10 +2124,10 @@ public class hightParser extends Parser {
                 case 5 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:98:4: IN IDENT
                     {
-                    IN61=(Token)match(input,IN,FOLLOW_IN_in_declarationObjet722);  
+                    IN61=(Token)match(input,IN,FOLLOW_IN_in_declarationObjet724);  
                     stream_IN.add(IN61);
 
-                    IDENT62=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet724);  
+                    IDENT62=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet726);  
                     stream_IDENT.add(IDENT62);
 
 
@@ -2221,7 +2222,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT63=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeEntity755); 
+                    IDENT63=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeEntity757); 
                     IDENT63_tree = (CommonTree)adaptor.create(IDENT63);
                     adaptor.addChild(root_0, IDENT63_tree);
 
@@ -2233,7 +2234,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeObjet3D_in_typeEntity760);
+                    pushFollow(FOLLOW_typeObjet3D_in_typeEntity762);
                     typeObjet3D64=typeObjet3D();
 
                     state._fsp--;
@@ -2320,7 +2321,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PLAYER65=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_entityMode770); 
+                    PLAYER65=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_entityMode772); 
                     PLAYER65_tree = (CommonTree)adaptor.create(PLAYER65);
                     adaptor.addChild(root_0, PLAYER65_tree);
 
@@ -2330,7 +2331,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:108:4: interaction ( dupli )?
                     {
-                    pushFollow(FOLLOW_interaction_in_entityMode775);
+                    pushFollow(FOLLOW_interaction_in_entityMode777);
                     interaction66=interaction();
 
                     state._fsp--;
@@ -2347,7 +2348,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:108:16: dupli
                             {
-                            pushFollow(FOLLOW_dupli_in_entityMode777);
+                            pushFollow(FOLLOW_dupli_in_entityMode779);
                             dupli67=dupli();
 
                             state._fsp--;
@@ -2400,7 +2401,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dupli_in_entityMode793);
+                    pushFollow(FOLLOW_dupli_in_entityMode795);
                     dupli68=dupli();
 
                     state._fsp--;
@@ -2507,7 +2508,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            DUPLICABLE70=(Token)match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli826); 
+            DUPLICABLE70=(Token)match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli828); 
             DUPLICABLE70_tree = (CommonTree)adaptor.create(DUPLICABLE70);
             adaptor.addChild(root_0, DUPLICABLE70_tree);
 
@@ -2739,7 +2740,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:128:2: IDENT ( AT valAggregation )?
                     {
-                    IDENT72=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject855);  
+                    IDENT72=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject857);  
                     stream_IDENT.add(IDENT72);
 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:128:8: ( AT valAggregation )?
@@ -2753,10 +2754,10 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:128:9: AT valAggregation
                             {
-                            AT73=(Token)match(input,AT,FOLLOW_AT_in_allocationObject858);  
+                            AT73=(Token)match(input,AT,FOLLOW_AT_in_allocationObject860);  
                             stream_AT.add(AT73);
 
-                            pushFollow(FOLLOW_valAggregation_in_allocationObject860);
+                            pushFollow(FOLLOW_valAggregation_in_allocationObject862);
                             valAggregation74=valAggregation();
 
                             state._fsp--;
@@ -2771,7 +2772,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: valAggregation, IDENT
+                    // elements: IDENT, valAggregation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2807,16 +2808,16 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:130:4: attribut AT typeAllocation
                     {
-                    pushFollow(FOLLOW_attribut_in_allocationObject890);
+                    pushFollow(FOLLOW_attribut_in_allocationObject892);
                     attribut75=attribut();
 
                     state._fsp--;
 
                     stream_attribut.add(attribut75.getTree());
-                    AT76=(Token)match(input,AT,FOLLOW_AT_in_allocationObject892);  
+                    AT76=(Token)match(input,AT,FOLLOW_AT_in_allocationObject894);  
                     stream_AT.add(AT76);
 
-                    pushFollow(FOLLOW_typeAllocation_in_allocationObject894);
+                    pushFollow(FOLLOW_typeAllocation_in_allocationObject896);
                     typeAllocation77=typeAllocation();
 
                     state._fsp--;
@@ -2856,16 +2857,16 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:132:4: typeCoordonnees AT coordinates
                     {
-                    pushFollow(FOLLOW_typeCoordonnees_in_allocationObject924);
+                    pushFollow(FOLLOW_typeCoordonnees_in_allocationObject926);
                     typeCoordonnees78=typeCoordonnees();
 
                     state._fsp--;
 
                     stream_typeCoordonnees.add(typeCoordonnees78.getTree());
-                    AT79=(Token)match(input,AT,FOLLOW_AT_in_allocationObject926);  
+                    AT79=(Token)match(input,AT,FOLLOW_AT_in_allocationObject928);  
                     stream_AT.add(AT79);
 
-                    pushFollow(FOLLOW_coordinates_in_allocationObject928);
+                    pushFollow(FOLLOW_coordinates_in_allocationObject930);
                     coordinates80=coordinates();
 
                     state._fsp--;
@@ -2905,22 +2906,22 @@ public class hightParser extends Parser {
                 case 4 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:134:4: attributListeOuObjet AT IDENT
                     {
-                    pushFollow(FOLLOW_attributListeOuObjet_in_allocationObject959);
+                    pushFollow(FOLLOW_attributListeOuObjet_in_allocationObject961);
                     attributListeOuObjet81=attributListeOuObjet();
 
                     state._fsp--;
 
                     stream_attributListeOuObjet.add(attributListeOuObjet81.getTree());
-                    AT82=(Token)match(input,AT,FOLLOW_AT_in_allocationObject961);  
+                    AT82=(Token)match(input,AT,FOLLOW_AT_in_allocationObject963);  
                     stream_AT.add(AT82);
 
-                    IDENT83=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject963);  
+                    IDENT83=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject965);  
                     stream_IDENT.add(IDENT83);
 
 
 
                     // AST REWRITE
-                    // elements: IDENT, attributListeOuObjet
+                    // elements: attributListeOuObjet, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2951,22 +2952,22 @@ public class hightParser extends Parser {
                 case 5 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:136:4: attributTps AT operation timeUnit
                     {
-                    pushFollow(FOLLOW_attributTps_in_allocationObject995);
+                    pushFollow(FOLLOW_attributTps_in_allocationObject997);
                     attributTps84=attributTps();
 
                     state._fsp--;
 
                     stream_attributTps.add(attributTps84.getTree());
-                    AT85=(Token)match(input,AT,FOLLOW_AT_in_allocationObject997);  
+                    AT85=(Token)match(input,AT,FOLLOW_AT_in_allocationObject999);  
                     stream_AT.add(AT85);
 
-                    pushFollow(FOLLOW_operation_in_allocationObject999);
+                    pushFollow(FOLLOW_operation_in_allocationObject1001);
                     operation86=operation();
 
                     state._fsp--;
 
                     stream_operation.add(operation86.getTree());
-                    pushFollow(FOLLOW_timeUnit_in_allocationObject1001);
+                    pushFollow(FOLLOW_timeUnit_in_allocationObject1003);
                     timeUnit87=timeUnit();
 
                     state._fsp--;
@@ -2975,7 +2976,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: timeUnit, attributTps, operation
+                    // elements: attributTps, timeUnit, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3146,7 +3147,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:141:5: operation
                     {
-                    pushFollow(FOLLOW_operation_in_typeAllocation1043);
+                    pushFollow(FOLLOW_operation_in_typeAllocation1045);
                     operation88=operation();
 
                     state._fsp--;
@@ -3158,7 +3159,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:141:17: IDENT
                     {
-                    IDENT89=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeAllocation1047); 
+                    IDENT89=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeAllocation1049); 
                     IDENT89_tree = (CommonTree)adaptor.create(IDENT89);
                     adaptor.addChild(root_0, IDENT89_tree);
 
@@ -3168,7 +3169,7 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:141:25: 'true'
                     {
-                    string_literal90=(Token)match(input,251,FOLLOW_251_in_typeAllocation1051); 
+                    string_literal90=(Token)match(input,251,FOLLOW_251_in_typeAllocation1053); 
                     string_literal90_tree = (CommonTree)adaptor.create(string_literal90);
                     adaptor.addChild(root_0, string_literal90_tree);
 
@@ -3178,7 +3179,7 @@ public class hightParser extends Parser {
                 case 4 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:141:34: 'false'
                     {
-                    string_literal91=(Token)match(input,252,FOLLOW_252_in_typeAllocation1055); 
+                    string_literal91=(Token)match(input,252,FOLLOW_252_in_typeAllocation1057); 
                     string_literal91_tree = (CommonTree)adaptor.create(string_literal91);
                     adaptor.addChild(root_0, string_literal91_tree);
 
@@ -3266,7 +3267,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:144:2: operation ( timeUnit )?
                     {
-                    pushFollow(FOLLOW_operation_in_valAggregation1065);
+                    pushFollow(FOLLOW_operation_in_valAggregation1067);
                     operation92=operation();
 
                     state._fsp--;
@@ -3283,7 +3284,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:144:13: timeUnit
                             {
-                            pushFollow(FOLLOW_timeUnit_in_valAggregation1068);
+                            pushFollow(FOLLOW_timeUnit_in_valAggregation1070);
                             timeUnit93=timeUnit();
 
                             state._fsp--;
@@ -3334,7 +3335,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:146:4: IDENT
                     {
-                    IDENT94=(Token)match(input,IDENT,FOLLOW_IDENT_in_valAggregation1090);  
+                    IDENT94=(Token)match(input,IDENT,FOLLOW_IDENT_in_valAggregation1092);  
                     stream_IDENT.add(IDENT94);
 
 
@@ -3416,16 +3417,16 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            DEFINITION_KW95=(Token)match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition1114); 
+            DEFINITION_KW95=(Token)match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition1116); 
             DEFINITION_KW95_tree = (CommonTree)adaptor.create(DEFINITION_KW95);
             root_0 = (CommonTree)adaptor.becomeRoot(DEFINITION_KW95_tree, root_0);
 
-            IDENT96=(Token)match(input,IDENT,FOLLOW_IDENT_in_definition1117); 
+            IDENT96=(Token)match(input,IDENT,FOLLOW_IDENT_in_definition1119); 
             IDENT96_tree = (CommonTree)adaptor.create(IDENT96);
             adaptor.addChild(root_0, IDENT96_tree);
 
-            MEANS97=(Token)match(input,MEANS,FOLLOW_MEANS_in_definition1119); 
-            pushFollow(FOLLOW_consequences_in_definition1122);
+            MEANS97=(Token)match(input,MEANS,FOLLOW_MEANS_in_definition1121); 
+            pushFollow(FOLLOW_consequences_in_definition1124);
             consequences98=consequences();
 
             state._fsp--;
@@ -3478,7 +3479,7 @@ public class hightParser extends Parser {
             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:153:14: ( consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) )
             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:154:2: consequ ( VIRG consequ )*
             {
-            pushFollow(FOLLOW_consequ_in_consequences1131);
+            pushFollow(FOLLOW_consequ_in_consequences1133);
             consequ99=consequ();
 
             state._fsp--;
@@ -3499,10 +3500,10 @@ public class hightParser extends Parser {
             	case 1 :
             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:154:11: VIRG consequ
             	    {
-            	    VIRG100=(Token)match(input,VIRG,FOLLOW_VIRG_in_consequences1134);  
+            	    VIRG100=(Token)match(input,VIRG,FOLLOW_VIRG_in_consequences1136);  
             	    stream_VIRG.add(VIRG100);
 
-            	    pushFollow(FOLLOW_consequ_in_consequences1136);
+            	    pushFollow(FOLLOW_consequ_in_consequences1138);
             	    consequ101=consequ();
 
             	    state._fsp--;
@@ -3708,7 +3709,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_siAlors_in_consequ1162);
+                    pushFollow(FOLLOW_siAlors_in_consequ1164);
                     siAlors102=siAlors();
 
                     state._fsp--;
@@ -3722,7 +3723,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_action_in_consequ1168);
+                    pushFollow(FOLLOW_action_in_consequ1170);
                     action103=action();
 
                     state._fsp--;
@@ -3736,7 +3737,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_affectation_in_consequ1174);
+                    pushFollow(FOLLOW_affectation_in_consequ1176);
                     affectation104=affectation();
 
                     state._fsp--;
@@ -3750,7 +3751,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_activCommande_in_consequ1180);
+                    pushFollow(FOLLOW_activCommande_in_consequ1182);
                     activCommande105=activCommande();
 
                     state._fsp--;
@@ -3764,7 +3765,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT106=(Token)match(input,IDENT,FOLLOW_IDENT_in_consequ1186); 
+                    IDENT106=(Token)match(input,IDENT,FOLLOW_IDENT_in_consequ1188); 
                     IDENT106_tree = (CommonTree)adaptor.create(IDENT106);
                     adaptor.addChild(root_0, IDENT106_tree);
 
@@ -3776,7 +3777,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW107=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1192); 
+                    VICTORY_KW107=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1194); 
                     VICTORY_KW107_tree = (CommonTree)adaptor.create(VICTORY_KW107);
                     adaptor.addChild(root_0, VICTORY_KW107_tree);
 
@@ -3788,7 +3789,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW108=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1198); 
+                    DEFEAT_KW108=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1200); 
                     DEFEAT_KW108_tree = (CommonTree)adaptor.create(DEFEAT_KW108);
                     adaptor.addChild(root_0, DEFEAT_KW108_tree);
 
@@ -4000,13 +4001,13 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_action1210);
+                    pushFollow(FOLLOW_accesClasse_in_action1212);
                     accesClasse109=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse109.getTree());
-                    pushFollow(FOLLOW_actionObjet_in_action1212);
+                    pushFollow(FOLLOW_actionObjet_in_action1214);
                     actionObjet110=actionObjet();
 
                     state._fsp--;
@@ -4051,7 +4052,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:170:20: ENDS_KW
                             {
-                            ENDS_KW112=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1226); 
+                            ENDS_KW112=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1228); 
                             ENDS_KW112_tree = (CommonTree)adaptor.create(ENDS_KW112);
                             root_0 = (CommonTree)adaptor.becomeRoot(ENDS_KW112_tree, root_0);
 
@@ -4061,7 +4062,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:170:30: STARTS_KW
                             {
-                            STARTS_KW113=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1230); 
+                            STARTS_KW113=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1232); 
                             STARTS_KW113_tree = (CommonTree)adaptor.create(STARTS_KW113);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTS_KW113_tree, root_0);
 
@@ -4113,7 +4114,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:171:5: PAUSE_KW
                             {
-                            PAUSE_KW114=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1238); 
+                            PAUSE_KW114=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1240); 
                             PAUSE_KW114_tree = (CommonTree)adaptor.create(PAUSE_KW114);
                             root_0 = (CommonTree)adaptor.becomeRoot(PAUSE_KW114_tree, root_0);
 
@@ -4123,7 +4124,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:171:17: MUTE_KW ( ON | OFF )
                             {
-                            MUTE_KW115=(Token)match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1243); 
+                            MUTE_KW115=(Token)match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1245); 
                             MUTE_KW115_tree = (CommonTree)adaptor.create(MUTE_KW115);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUTE_KW115_tree, root_0);
 
@@ -4144,7 +4145,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:171:39: PLAY_KW
                             {
-                            PLAY_KW117=(Token)match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1256); 
+                            PLAY_KW117=(Token)match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1258); 
                             PLAY_KW117_tree = (CommonTree)adaptor.create(PLAY_KW117);
                             root_0 = (CommonTree)adaptor.becomeRoot(PLAY_KW117_tree, root_0);
 
@@ -4154,7 +4155,7 @@ public class hightParser extends Parser {
                         case 4 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:171:50: STOP_KW
                             {
-                            STOP_KW118=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_action1261); 
+                            STOP_KW118=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_action1263); 
                             STOP_KW118_tree = (CommonTree)adaptor.create(STOP_KW118);
                             root_0 = (CommonTree)adaptor.becomeRoot(STOP_KW118_tree, root_0);
 
@@ -4164,7 +4165,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    IDENT119=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1266); 
+                    IDENT119=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1268); 
                     IDENT119_tree = (CommonTree)adaptor.create(IDENT119);
                     adaptor.addChild(root_0, IDENT119_tree);
 
@@ -4176,24 +4177,24 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    BLOCK_KW120=(Token)match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1271); 
+                    BLOCK_KW120=(Token)match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1273); 
                     BLOCK_KW120_tree = (CommonTree)adaptor.create(BLOCK_KW120);
                     root_0 = (CommonTree)adaptor.becomeRoot(BLOCK_KW120_tree, root_0);
 
-                    pushFollow(FOLLOW_transformation_in_action1274);
+                    pushFollow(FOLLOW_transformation_in_action1276);
                     transformation121=transformation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, transformation121.getTree());
-                    OF122=(Token)match(input,OF,FOLLOW_OF_in_action1276); 
-                    pushFollow(FOLLOW_accesClasse_in_action1279);
+                    OF122=(Token)match(input,OF,FOLLOW_OF_in_action1278); 
+                    pushFollow(FOLLOW_accesClasse_in_action1281);
                     accesClasse123=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse123.getTree());
-                    pushFollow(FOLLOW_coordinates_in_action1281);
+                    pushFollow(FOLLOW_coordinates_in_action1283);
                     coordinates124=coordinates();
 
                     state._fsp--;
@@ -4227,7 +4228,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:5: EFFACE_KW
                             {
-                            EFFACE_KW125=(Token)match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1287); 
+                            EFFACE_KW125=(Token)match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1289); 
                             EFFACE_KW125_tree = (CommonTree)adaptor.create(EFFACE_KW125);
                             root_0 = (CommonTree)adaptor.becomeRoot(EFFACE_KW125_tree, root_0);
 
@@ -4237,7 +4238,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:18: GENERATE_KW
                             {
-                            GENERATE_KW126=(Token)match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1292); 
+                            GENERATE_KW126=(Token)match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1294); 
                             GENERATE_KW126_tree = (CommonTree)adaptor.create(GENERATE_KW126);
                             root_0 = (CommonTree)adaptor.becomeRoot(GENERATE_KW126_tree, root_0);
 
@@ -4336,7 +4337,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:33: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_action1297);
+                            pushFollow(FOLLOW_accesLocal_in_action1299);
                             accesLocal127=accesLocal();
 
                             state._fsp--;
@@ -4348,7 +4349,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:46: operation ( IDENT | accesGlobal )
                             {
-                            pushFollow(FOLLOW_operation_in_action1301);
+                            pushFollow(FOLLOW_operation_in_action1303);
                             operation128=operation();
 
                             state._fsp--;
@@ -4374,7 +4375,7 @@ public class hightParser extends Parser {
                                 case 1 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:57: IDENT
                                     {
-                                    IDENT129=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1304); 
+                                    IDENT129=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1306); 
                                     IDENT129_tree = (CommonTree)adaptor.create(IDENT129);
                                     adaptor.addChild(root_0, IDENT129_tree);
 
@@ -4384,7 +4385,7 @@ public class hightParser extends Parser {
                                 case 2 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:65: accesGlobal
                                     {
-                                    pushFollow(FOLLOW_accesGlobal_in_action1308);
+                                    pushFollow(FOLLOW_accesGlobal_in_action1310);
                                     accesGlobal130=accesGlobal();
 
                                     state._fsp--;
@@ -4436,21 +4437,21 @@ public class hightParser extends Parser {
                                 case 1 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:81: IN
                                     {
-                                    IN131=(Token)match(input,IN,FOLLOW_IN_in_action1314); 
+                                    IN131=(Token)match(input,IN,FOLLOW_IN_in_action1316); 
 
                                     }
                                     break;
                                 case 2 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:85: ON
                                     {
-                                    ON132=(Token)match(input,ON,FOLLOW_ON_in_action1317); 
+                                    ON132=(Token)match(input,ON,FOLLOW_ON_in_action1319); 
 
                                     }
                                     break;
 
                             }
 
-                            pushFollow(FOLLOW_accesLocal_in_action1321);
+                            pushFollow(FOLLOW_accesLocal_in_action1323);
                             accesLocal133=accesLocal();
 
                             state._fsp--;
@@ -4462,8 +4463,8 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:173:103: AT coordinates
                             {
-                            AT134=(Token)match(input,AT,FOLLOW_AT_in_action1325); 
-                            pushFollow(FOLLOW_coordinates_in_action1328);
+                            AT134=(Token)match(input,AT,FOLLOW_AT_in_action1327); 
+                            pushFollow(FOLLOW_coordinates_in_action1330);
                             coordinates135=coordinates();
 
                             state._fsp--;
@@ -4483,30 +4484,30 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    WAIT_KW136=(Token)match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1335); 
+                    WAIT_KW136=(Token)match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1337); 
                     WAIT_KW136_tree = (CommonTree)adaptor.create(WAIT_KW136);
                     root_0 = (CommonTree)adaptor.becomeRoot(WAIT_KW136_tree, root_0);
 
-                    pushFollow(FOLLOW_operation_in_action1338);
+                    pushFollow(FOLLOW_operation_in_action1340);
                     operation137=operation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation137.getTree());
-                    pushFollow(FOLLOW_timeUnit_in_action1340);
+                    pushFollow(FOLLOW_timeUnit_in_action1342);
                     timeUnit138=timeUnit();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, timeUnit138.getTree());
-                    THEN139=(Token)match(input,THEN,FOLLOW_THEN_in_action1342); 
-                    pushFollow(FOLLOW_consequences_in_action1345);
+                    THEN139=(Token)match(input,THEN,FOLLOW_THEN_in_action1344); 
+                    pushFollow(FOLLOW_consequences_in_action1347);
                     consequences140=consequences();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, consequences140.getTree());
-                    ENDWAIT141=(Token)match(input,ENDWAIT,FOLLOW_ENDWAIT_in_action1347); 
+                    ENDWAIT141=(Token)match(input,ENDWAIT,FOLLOW_ENDWAIT_in_action1349); 
 
                     }
                     break;
@@ -4515,7 +4516,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    SAVE_KW142=(Token)match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1353); 
+                    SAVE_KW142=(Token)match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1355); 
                     SAVE_KW142_tree = (CommonTree)adaptor.create(SAVE_KW142);
                     adaptor.addChild(root_0, SAVE_KW142_tree);
 
@@ -4623,7 +4624,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DIES_KW143=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1365); 
+                    DIES_KW143=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1367); 
                     DIES_KW143_tree = (CommonTree)adaptor.create(DIES_KW143);
                     adaptor.addChild(root_0, DIES_KW143_tree);
 
@@ -4635,7 +4636,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1371);
+                    pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1373);
                     actionCommandePressee144=actionCommandePressee();
 
                     state._fsp--;
@@ -4649,7 +4650,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionObjet1377);
+                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionObjet1379);
                     actionCommandeMaintenue145=actionCommandeMaintenue();
 
                     state._fsp--;
@@ -4675,17 +4676,17 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:181:30: DURING operation timeUnit
                             {
-                            DURING146=(Token)match(input,DURING,FOLLOW_DURING_in_actionObjet1380); 
+                            DURING146=(Token)match(input,DURING,FOLLOW_DURING_in_actionObjet1382); 
                             DURING146_tree = (CommonTree)adaptor.create(DURING146);
                             root_0 = (CommonTree)adaptor.becomeRoot(DURING146_tree, root_0);
 
-                            pushFollow(FOLLOW_operation_in_actionObjet1383);
+                            pushFollow(FOLLOW_operation_in_actionObjet1385);
                             operation147=operation();
 
                             state._fsp--;
 
                             adaptor.addChild(root_0, operation147.getTree());
-                            pushFollow(FOLLOW_timeUnit_in_actionObjet1385);
+                            pushFollow(FOLLOW_timeUnit_in_actionObjet1387);
                             timeUnit148=timeUnit();
 
                             state._fsp--;
@@ -4697,11 +4698,11 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:181:59: UNTIL conditions
                             {
-                            UNTIL149=(Token)match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1389); 
+                            UNTIL149=(Token)match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1391); 
                             UNTIL149_tree = (CommonTree)adaptor.create(UNTIL149);
                             root_0 = (CommonTree)adaptor.becomeRoot(UNTIL149_tree, root_0);
 
-                            pushFollow(FOLLOW_conditions_in_actionObjet1392);
+                            pushFollow(FOLLOW_conditions_in_actionObjet1394);
                             conditions150=conditions();
 
                             state._fsp--;
@@ -4721,7 +4722,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    EQUIP151=(Token)match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1399); 
+                    EQUIP151=(Token)match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1401); 
                     EQUIP151_tree = (CommonTree)adaptor.create(EQUIP151);
                     root_0 = (CommonTree)adaptor.becomeRoot(EQUIP151_tree, root_0);
 
@@ -4756,7 +4757,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:182:13: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_actionObjet1403);
+                            pushFollow(FOLLOW_accesLocal_in_actionObjet1405);
                             accesLocal152=accesLocal();
 
                             state._fsp--;
@@ -4768,7 +4769,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:182:26: NEXT
                             {
-                            NEXT153=(Token)match(input,NEXT,FOLLOW_NEXT_in_actionObjet1407); 
+                            NEXT153=(Token)match(input,NEXT,FOLLOW_NEXT_in_actionObjet1409); 
                             NEXT153_tree = (CommonTree)adaptor.create(NEXT153);
                             adaptor.addChild(root_0, NEXT153_tree);
 
@@ -4778,7 +4779,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:182:33: PREVIOUS
                             {
-                            PREVIOUS154=(Token)match(input,PREVIOUS,FOLLOW_PREVIOUS_in_actionObjet1411); 
+                            PREVIOUS154=(Token)match(input,PREVIOUS,FOLLOW_PREVIOUS_in_actionObjet1413); 
                             PREVIOUS154_tree = (CommonTree)adaptor.create(PREVIOUS154);
                             adaptor.addChild(root_0, PREVIOUS154_tree);
 
@@ -4891,19 +4892,19 @@ public class hightParser extends Parser {
             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:191:13: ( operation operation operation -> ^( COORDINATE_KW operation operation operation ) )
             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:192:2: operation operation operation
             {
-            pushFollow(FOLLOW_operation_in_coordinates1451);
+            pushFollow(FOLLOW_operation_in_coordinates1453);
             operation156=operation();
 
             state._fsp--;
 
             stream_operation.add(operation156.getTree());
-            pushFollow(FOLLOW_operation_in_coordinates1453);
+            pushFollow(FOLLOW_operation_in_coordinates1455);
             operation157=operation();
 
             state._fsp--;
 
             stream_operation.add(operation157.getTree());
-            pushFollow(FOLLOW_operation_in_coordinates1455);
+            pushFollow(FOLLOW_operation_in_coordinates1457);
             operation158=operation();
 
             state._fsp--;
@@ -4992,7 +4993,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            COMMAND_KW159=(Token)match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande1484); 
+            COMMAND_KW159=(Token)match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande1486); 
             COMMAND_KW159_tree = (CommonTree)adaptor.create(COMMAND_KW159);
             root_0 = (CommonTree)adaptor.becomeRoot(COMMAND_KW159_tree, root_0);
 
@@ -5007,18 +5008,18 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:199:15: IDENT IS
                     {
-                    IDENT160=(Token)match(input,IDENT,FOLLOW_IDENT_in_commande1488); 
+                    IDENT160=(Token)match(input,IDENT,FOLLOW_IDENT_in_commande1490); 
                     IDENT160_tree = (CommonTree)adaptor.create(IDENT160);
                     adaptor.addChild(root_0, IDENT160_tree);
 
-                    IS161=(Token)match(input,IS,FOLLOW_IS_in_commande1490); 
+                    IS161=(Token)match(input,IS,FOLLOW_IS_in_commande1492); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_actionCommande_in_commande1495);
+            pushFollow(FOLLOW_actionCommande_in_commande1497);
             actionCommande162=actionCommande();
 
             state._fsp--;
@@ -5039,8 +5040,8 @@ public class hightParser extends Parser {
             	case 1 :
             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:199:43: VIRG actionCommande
             	    {
-            	    VIRG163=(Token)match(input,VIRG,FOLLOW_VIRG_in_commande1498); 
-            	    pushFollow(FOLLOW_actionCommande_in_commande1501);
+            	    VIRG163=(Token)match(input,VIRG,FOLLOW_VIRG_in_commande1500); 
+            	    pushFollow(FOLLOW_actionCommande_in_commande1503);
             	    actionCommande164=actionCommande();
 
             	    state._fsp--;
@@ -5133,19 +5134,19 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:203:2: MOUSE souris FOR actionCommandeType
                     {
-                    MOUSE165=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_actionCommande1514);  
+                    MOUSE165=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_actionCommande1516);  
                     stream_MOUSE.add(MOUSE165);
 
-                    pushFollow(FOLLOW_souris_in_actionCommande1516);
+                    pushFollow(FOLLOW_souris_in_actionCommande1518);
                     souris166=souris();
 
                     state._fsp--;
 
                     stream_souris.add(souris166.getTree());
-                    FOR167=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1518);  
+                    FOR167=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1520);  
                     stream_FOR.add(FOR167);
 
-                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1520);
+                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1522);
                     actionCommandeType168=actionCommandeType();
 
                     state._fsp--;
@@ -5185,19 +5186,19 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:205:4: KEY clavier FOR actionCommandeType
                     {
-                    KEY169=(Token)match(input,KEY,FOLLOW_KEY_in_actionCommande1538);  
+                    KEY169=(Token)match(input,KEY,FOLLOW_KEY_in_actionCommande1540);  
                     stream_KEY.add(KEY169);
 
-                    pushFollow(FOLLOW_clavier_in_actionCommande1540);
+                    pushFollow(FOLLOW_clavier_in_actionCommande1542);
                     clavier170=clavier();
 
                     state._fsp--;
 
                     stream_clavier.add(clavier170.getTree());
-                    FOR171=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1542);  
+                    FOR171=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1544);  
                     stream_FOR.add(FOR171);
 
-                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1544);
+                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1546);
                     actionCommandeType172=actionCommandeType();
 
                     state._fsp--;
@@ -5312,7 +5313,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT173=(Token)match(input,IDENT,FOLLOW_IDENT_in_actionCommandeType1569); 
+                    IDENT173=(Token)match(input,IDENT,FOLLOW_IDENT_in_actionCommandeType1571); 
                     IDENT173_tree = (CommonTree)adaptor.create(IDENT173);
                     adaptor.addChild(root_0, IDENT173_tree);
 
@@ -5324,7 +5325,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandePressee_in_actionCommandeType1573);
+                    pushFollow(FOLLOW_actionCommandePressee_in_actionCommandeType1575);
                     actionCommandePressee174=actionCommandePressee();
 
                     state._fsp--;
@@ -5338,7 +5339,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionCommandeType1577);
+                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionCommandeType1579);
                     actionCommandeMaintenue175=actionCommandeMaintenue();
 
                     state._fsp--;
@@ -5532,11 +5533,11 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    JUMP178=(Token)match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1689); 
+                    JUMP178=(Token)match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1691); 
                     JUMP178_tree = (CommonTree)adaptor.create(JUMP178);
                     adaptor.addChild(root_0, JUMP178_tree);
 
-                    pushFollow(FOLLOW_operation_in_actionCommandePressee1691);
+                    pushFollow(FOLLOW_operation_in_actionCommandePressee1693);
                     operation179=operation();
 
                     state._fsp--;
@@ -5550,7 +5551,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PAUSE_KW180=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_actionCommandePressee1697); 
+                    PAUSE_KW180=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_actionCommandePressee1699); 
                     PAUSE_KW180_tree = (CommonTree)adaptor.create(PAUSE_KW180);
                     adaptor.addChild(root_0, PAUSE_KW180_tree);
 
@@ -5562,7 +5563,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    STOP_KW181=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_actionCommandePressee1703); 
+                    STOP_KW181=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_actionCommandePressee1705); 
                     STOP_KW181_tree = (CommonTree)adaptor.create(STOP_KW181);
                     adaptor.addChild(root_0, STOP_KW181_tree);
 
@@ -5653,7 +5654,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    MOVE182=(Token)match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1718); 
+                    MOVE182=(Token)match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1720); 
                     MOVE182_tree = (CommonTree)adaptor.create(MOVE182);
                     adaptor.addChild(root_0, MOVE182_tree);
 
@@ -5676,7 +5677,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    TURN184=(Token)match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue1740); 
+                    TURN184=(Token)match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue1742); 
                     TURN184_tree = (CommonTree)adaptor.create(TURN184);
                     adaptor.addChild(root_0, TURN184_tree);
 
@@ -5699,7 +5700,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    ACCELERATE186=(Token)match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue1754); 
+                    ACCELERATE186=(Token)match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue1756); 
                     ACCELERATE186_tree = (CommonTree)adaptor.create(ACCELERATE186);
                     adaptor.addChild(root_0, ACCELERATE186_tree);
 
@@ -5711,7 +5712,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    BRAKE187=(Token)match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue1760); 
+                    BRAKE187=(Token)match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue1762); 
                     BRAKE187_tree = (CommonTree)adaptor.create(BRAKE187);
                     adaptor.addChild(root_0, BRAKE187_tree);
 
@@ -5785,7 +5786,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:235:4: ACTIVATE_KW
                     {
-                    ACTIVATE_KW188=(Token)match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande1776); 
+                    ACTIVATE_KW188=(Token)match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande1778); 
                     ACTIVATE_KW188_tree = (CommonTree)adaptor.create(ACTIVATE_KW188);
                     root_0 = (CommonTree)adaptor.becomeRoot(ACTIVATE_KW188_tree, root_0);
 
@@ -5795,7 +5796,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:235:19: DISABLE_KW
                     {
-                    DISABLE_KW189=(Token)match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande1781); 
+                    DISABLE_KW189=(Token)match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande1783); 
                     DISABLE_KW189_tree = (CommonTree)adaptor.create(DISABLE_KW189);
                     root_0 = (CommonTree)adaptor.becomeRoot(DISABLE_KW189_tree, root_0);
 
@@ -5805,7 +5806,7 @@ public class hightParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_typeCommand_in_activCommande1785);
+            pushFollow(FOLLOW_typeCommand_in_activCommande1787);
             typeCommand190=typeCommand();
 
             state._fsp--;
@@ -5908,7 +5909,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    COMMANDS191=(Token)match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand1799); 
+                    COMMANDS191=(Token)match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand1801); 
                     COMMANDS191_tree = (CommonTree)adaptor.create(COMMANDS191);
                     adaptor.addChild(root_0, COMMANDS191_tree);
 
@@ -5918,7 +5919,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:240:7: MOUSE ( souris ( VIRG souris )* )?
                     {
-                    MOUSE192=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_typeCommand1807);  
+                    MOUSE192=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_typeCommand1809);  
                     stream_MOUSE.add(MOUSE192);
 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:240:13: ( souris ( VIRG souris )* )?
@@ -5932,7 +5933,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:240:14: souris ( VIRG souris )*
                             {
-                            pushFollow(FOLLOW_souris_in_typeCommand1810);
+                            pushFollow(FOLLOW_souris_in_typeCommand1812);
                             souris193=souris();
 
                             state._fsp--;
@@ -5959,10 +5960,10 @@ public class hightParser extends Parser {
                             	case 1 :
                             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:240:22: VIRG souris
                             	    {
-                            	    VIRG194=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1813);  
+                            	    VIRG194=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1815);  
                             	    stream_VIRG.add(VIRG194);
 
-                            	    pushFollow(FOLLOW_souris_in_typeCommand1815);
+                            	    pushFollow(FOLLOW_souris_in_typeCommand1817);
                             	    souris195=souris();
 
                             	    state._fsp--;
@@ -6021,10 +6022,10 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:242:7: KEY clavier ( VIRG clavier )*
                     {
-                    KEY196=(Token)match(input,KEY,FOLLOW_KEY_in_typeCommand1842);  
+                    KEY196=(Token)match(input,KEY,FOLLOW_KEY_in_typeCommand1844);  
                     stream_KEY.add(KEY196);
 
-                    pushFollow(FOLLOW_clavier_in_typeCommand1844);
+                    pushFollow(FOLLOW_clavier_in_typeCommand1846);
                     clavier197=clavier();
 
                     state._fsp--;
@@ -6051,10 +6052,10 @@ public class hightParser extends Parser {
                     	case 1 :
                     	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:242:20: VIRG clavier
                     	    {
-                    	    VIRG198=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1847);  
+                    	    VIRG198=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1849);  
                     	    stream_VIRG.add(VIRG198);
 
-                    	    pushFollow(FOLLOW_clavier_in_typeCommand1849);
+                    	    pushFollow(FOLLOW_clavier_in_typeCommand1851);
                     	    clavier199=clavier();
 
                     	    state._fsp--;
@@ -6111,7 +6112,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    KEYBOARD200=(Token)match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand1874); 
+                    KEYBOARD200=(Token)match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand1876); 
                     KEYBOARD200_tree = (CommonTree)adaptor.create(KEYBOARD200);
                     adaptor.addChild(root_0, KEYBOARD200_tree);
 
@@ -6171,7 +6172,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            RULE_KW201=(Token)match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu1884); 
+            RULE_KW201=(Token)match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu1886); 
             RULE_KW201_tree = (CommonTree)adaptor.create(RULE_KW201);
             root_0 = (CommonTree)adaptor.becomeRoot(RULE_KW201_tree, root_0);
 
@@ -6190,25 +6191,25 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:247:13: IDENT IS
                     {
-                    IDENT202=(Token)match(input,IDENT,FOLLOW_IDENT_in_reglesJeu1888); 
+                    IDENT202=(Token)match(input,IDENT,FOLLOW_IDENT_in_reglesJeu1890); 
                     IDENT202_tree = (CommonTree)adaptor.create(IDENT202);
                     adaptor.addChild(root_0, IDENT202_tree);
 
-                    IS203=(Token)match(input,IS,FOLLOW_IS_in_reglesJeu1890); 
+                    IS203=(Token)match(input,IS,FOLLOW_IS_in_reglesJeu1892); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_declencheur_in_reglesJeu1896);
+            pushFollow(FOLLOW_declencheur_in_reglesJeu1898);
             declencheur204=declencheur();
 
             state._fsp--;
 
             adaptor.addChild(root_0, declencheur204.getTree());
-            THEN205=(Token)match(input,THEN,FOLLOW_THEN_in_reglesJeu1898); 
-            pushFollow(FOLLOW_consequences_in_reglesJeu1901);
+            THEN205=(Token)match(input,THEN,FOLLOW_THEN_in_reglesJeu1900); 
+            pushFollow(FOLLOW_consequences_in_reglesJeu1903);
             consequences206=consequences();
 
             state._fsp--;
@@ -6437,7 +6438,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_declencheur1915);
+                    pushFollow(FOLLOW_accesClasse_in_declencheur1917);
                     accesClasse207=accesClasse();
 
                     state._fsp--;
@@ -6479,7 +6480,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:251:16: MOVES_KW
                             {
-                            MOVES_KW208=(Token)match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur1918); 
+                            MOVES_KW208=(Token)match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur1920); 
                             MOVES_KW208_tree = (CommonTree)adaptor.create(MOVES_KW208);
                             adaptor.addChild(root_0, MOVES_KW208_tree);
 
@@ -6489,7 +6490,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:251:27: DIES_KW
                             {
-                            DIES_KW209=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur1922); 
+                            DIES_KW209=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur1924); 
                             DIES_KW209_tree = (CommonTree)adaptor.create(DIES_KW209);
                             adaptor.addChild(root_0, DIES_KW209_tree);
 
@@ -6499,7 +6500,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:251:37: declencheurTK
                             {
-                            pushFollow(FOLLOW_declencheurTK_in_declencheur1926);
+                            pushFollow(FOLLOW_declencheurTK_in_declencheur1928);
                             declencheurTK210=declencheurTK();
 
                             state._fsp--;
@@ -6511,7 +6512,7 @@ public class hightParser extends Parser {
                         case 4 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:251:53: declencheurKT
                             {
-                            pushFollow(FOLLOW_declencheurKT_in_declencheur1930);
+                            pushFollow(FOLLOW_declencheurKT_in_declencheur1932);
                             declencheurKT211=declencheurKT();
 
                             state._fsp--;
@@ -6562,7 +6563,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:252:21: ENDS_KW
                             {
-                            ENDS_KW213=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur1947); 
+                            ENDS_KW213=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur1949); 
                             ENDS_KW213_tree = (CommonTree)adaptor.create(ENDS_KW213);
                             root_0 = (CommonTree)adaptor.becomeRoot(ENDS_KW213_tree, root_0);
 
@@ -6572,7 +6573,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:252:31: STARTS_KW
                             {
-                            STARTS_KW214=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur1951); 
+                            STARTS_KW214=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur1953); 
                             STARTS_KW214_tree = (CommonTree)adaptor.create(STARTS_KW214);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTS_KW214_tree, root_0);
 
@@ -6588,16 +6589,16 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:253:5: variable BECOMES varOuNB
                     {
-                    pushFollow(FOLLOW_variable_in_declencheur1969);
+                    pushFollow(FOLLOW_variable_in_declencheur1971);
                     variable215=variable();
 
                     state._fsp--;
 
                     stream_variable.add(variable215.getTree());
-                    BECOMES216=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1971);  
+                    BECOMES216=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1973);  
                     stream_BECOMES.add(BECOMES216);
 
-                    pushFollow(FOLLOW_varOuNB_in_declencheur1973);
+                    pushFollow(FOLLOW_varOuNB_in_declencheur1975);
                     varOuNB217=varOuNB();
 
                     state._fsp--;
@@ -6637,13 +6638,13 @@ public class hightParser extends Parser {
                 case 4 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:255:5: IDENT BECOMES playerOuInteraction
                     {
-                    IDENT218=(Token)match(input,IDENT,FOLLOW_IDENT_in_declencheur1993);  
+                    IDENT218=(Token)match(input,IDENT,FOLLOW_IDENT_in_declencheur1995);  
                     stream_IDENT.add(IDENT218);
 
-                    BECOMES219=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1995);  
+                    BECOMES219=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1997);  
                     stream_BECOMES.add(BECOMES219);
 
-                    pushFollow(FOLLOW_playerOuInteraction_in_declencheur1997);
+                    pushFollow(FOLLOW_playerOuInteraction_in_declencheur1999);
                     playerOuInteraction220=playerOuInteraction();
 
                     state._fsp--;
@@ -6652,7 +6653,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: playerOuInteraction, IDENT
+                    // elements: IDENT, playerOuInteraction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6685,7 +6686,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW221=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur2017); 
+                    VICTORY_KW221=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur2019); 
                     VICTORY_KW221_tree = (CommonTree)adaptor.create(VICTORY_KW221);
                     adaptor.addChild(root_0, VICTORY_KW221_tree);
 
@@ -6697,7 +6698,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW222=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur2023); 
+                    DEFEAT_KW222=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur2025); 
                     DEFEAT_KW222_tree = (CommonTree)adaptor.create(DEFEAT_KW222);
                     adaptor.addChild(root_0, DEFEAT_KW222_tree);
 
@@ -6766,7 +6767,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_variable_in_varOuNB2034);
+                    pushFollow(FOLLOW_variable_in_varOuNB2036);
                     variable223=variable();
 
                     state._fsp--;
@@ -6780,7 +6781,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    FLOAT224=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2038); 
+                    FLOAT224=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2040); 
                     FLOAT224_tree = (CommonTree)adaptor.create(FLOAT224);
                     adaptor.addChild(root_0, FLOAT224_tree);
 
@@ -6852,7 +6853,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:264:5: PLAYER
                     {
-                    PLAYER225=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_playerOuInteraction2048); 
+                    PLAYER225=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_playerOuInteraction2050); 
                     PLAYER225_tree = (CommonTree)adaptor.create(PLAYER225);
                     adaptor.addChild(root_0, PLAYER225_tree);
 
@@ -6862,7 +6863,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:264:13: interaction
                     {
-                    pushFollow(FOLLOW_interaction_in_playerOuInteraction2051);
+                    pushFollow(FOLLOW_interaction_in_playerOuInteraction2053);
                     interaction226=interaction();
 
                     state._fsp--;
@@ -6946,7 +6947,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:267:5: TOUCHES_KW
                     {
-                    TOUCHES_KW227=(Token)match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2063); 
+                    TOUCHES_KW227=(Token)match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2065); 
                     TOUCHES_KW227_tree = (CommonTree)adaptor.create(TOUCHES_KW227);
                     root_0 = (CommonTree)adaptor.becomeRoot(TOUCHES_KW227_tree, root_0);
 
@@ -6956,7 +6957,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:267:19: KILLS_KW
                     {
-                    KILLS_KW228=(Token)match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2068); 
+                    KILLS_KW228=(Token)match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2070); 
                     KILLS_KW228_tree = (CommonTree)adaptor.create(KILLS_KW228);
                     root_0 = (CommonTree)adaptor.becomeRoot(KILLS_KW228_tree, root_0);
 
@@ -6997,7 +6998,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:267:32: OTHER
                             {
-                            OTHER229=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2074); 
+                            OTHER229=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2076); 
                             OTHER229_tree = (CommonTree)adaptor.create(OTHER229);
                             adaptor.addChild(root_0, OTHER229_tree);
 
@@ -7007,7 +7008,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_accesGlobal_in_declencheurTK2078);
+                    pushFollow(FOLLOW_accesGlobal_in_declencheurTK2080);
                     accesGlobal230=accesGlobal();
 
                     state._fsp--;
@@ -7019,7 +7020,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:267:54: accesLocal
                     {
-                    pushFollow(FOLLOW_accesLocal_in_declencheurTK2082);
+                    pushFollow(FOLLOW_accesLocal_in_declencheurTK2084);
                     accesLocal231=accesLocal();
 
                     state._fsp--;
@@ -7105,7 +7106,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:5: KILLED_KW
                     {
-                    KILLED_KW232=(Token)match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2094); 
+                    KILLED_KW232=(Token)match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2096); 
                     KILLED_KW232_tree = (CommonTree)adaptor.create(KILLED_KW232);
                     root_0 = (CommonTree)adaptor.becomeRoot(KILLED_KW232_tree, root_0);
 
@@ -7115,7 +7116,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:18: TOUCHED_KW
                     {
-                    TOUCHED_KW233=(Token)match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2099); 
+                    TOUCHED_KW233=(Token)match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2101); 
                     TOUCHED_KW233_tree = (CommonTree)adaptor.create(TOUCHED_KW233);
                     root_0 = (CommonTree)adaptor.becomeRoot(TOUCHED_KW233_tree, root_0);
 
@@ -7136,7 +7137,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:32: BY ( ( OTHER )? accesGlobal | accesLocal )
                     {
-                    BY234=(Token)match(input,BY,FOLLOW_BY_in_declencheurKT2104); 
+                    BY234=(Token)match(input,BY,FOLLOW_BY_in_declencheurKT2106); 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:36: ( ( OTHER )? accesGlobal | accesLocal )
                     int alt70=2;
                     int LA70_0 = input.LA(1);
@@ -7168,7 +7169,7 @@ public class hightParser extends Parser {
                                 case 1 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:38: OTHER
                                     {
-                                    OTHER235=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2109); 
+                                    OTHER235=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2111); 
                                     OTHER235_tree = (CommonTree)adaptor.create(OTHER235);
                                     adaptor.addChild(root_0, OTHER235_tree);
 
@@ -7178,7 +7179,7 @@ public class hightParser extends Parser {
 
                             }
 
-                            pushFollow(FOLLOW_accesGlobal_in_declencheurKT2113);
+                            pushFollow(FOLLOW_accesGlobal_in_declencheurKT2115);
                             accesGlobal236=accesGlobal();
 
                             state._fsp--;
@@ -7190,7 +7191,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:270:60: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_declencheurKT2117);
+                            pushFollow(FOLLOW_accesLocal_in_declencheurKT2119);
                             accesLocal237=accesLocal();
 
                             state._fsp--;
@@ -7264,18 +7265,18 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            IF_KW238=(Token)match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2134); 
+            IF_KW238=(Token)match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2136); 
             IF_KW238_tree = (CommonTree)adaptor.create(IF_KW238);
             root_0 = (CommonTree)adaptor.becomeRoot(IF_KW238_tree, root_0);
 
-            pushFollow(FOLLOW_conditions_in_siAlors2137);
+            pushFollow(FOLLOW_conditions_in_siAlors2139);
             conditions239=conditions();
 
             state._fsp--;
 
             adaptor.addChild(root_0, conditions239.getTree());
-            THEN240=(Token)match(input,THEN,FOLLOW_THEN_in_siAlors2139); 
-            pushFollow(FOLLOW_consequences_in_siAlors2142);
+            THEN240=(Token)match(input,THEN,FOLLOW_THEN_in_siAlors2141); 
+            pushFollow(FOLLOW_consequences_in_siAlors2144);
             consequences241=consequences();
 
             state._fsp--;
@@ -7292,8 +7293,8 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:274:41: ELSE consequences
                     {
-                    ELSE242=(Token)match(input,ELSE,FOLLOW_ELSE_in_siAlors2145); 
-                    pushFollow(FOLLOW_consequences_in_siAlors2148);
+                    ELSE242=(Token)match(input,ELSE,FOLLOW_ELSE_in_siAlors2147); 
+                    pushFollow(FOLLOW_consequences_in_siAlors2150);
                     consequences243=consequences();
 
                     state._fsp--;
@@ -7305,7 +7306,7 @@ public class hightParser extends Parser {
 
             }
 
-            ENDIF244=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_siAlors2152); 
+            ENDIF244=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_siAlors2154); 
 
             }
 
@@ -7362,7 +7363,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:278:4: NOT
                     {
-                    NOT245=(Token)match(input,NOT,FOLLOW_NOT_in_conditions2167);  
+                    NOT245=(Token)match(input,NOT,FOLLOW_NOT_in_conditions2169);  
                     stream_NOT.add(NOT245);
 
 
@@ -7371,7 +7372,7 @@ public class hightParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_conditionOu_in_conditions2171);
+            pushFollow(FOLLOW_conditionOu_in_conditions2173);
             conditionOu246=conditionOu();
 
             state._fsp--;
@@ -7380,7 +7381,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: conditionOu, NOT
+            // elements: NOT, conditionOu
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7460,7 +7461,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_conditionEt_in_conditionOu2197);
+            pushFollow(FOLLOW_conditionEt_in_conditionOu2199);
             conditionEt247=conditionEt();
 
             state._fsp--;
@@ -7477,7 +7478,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:283:16: OR ( NOT )? conditionOu
                     {
-                    OR248=(Token)match(input,OR,FOLLOW_OR_in_conditionOu2200); 
+                    OR248=(Token)match(input,OR,FOLLOW_OR_in_conditionOu2202); 
                     OR248_tree = (CommonTree)adaptor.create(OR248);
                     root_0 = (CommonTree)adaptor.becomeRoot(OR248_tree, root_0);
 
@@ -7492,7 +7493,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:283:21: NOT
                             {
-                            NOT249=(Token)match(input,NOT,FOLLOW_NOT_in_conditionOu2204); 
+                            NOT249=(Token)match(input,NOT,FOLLOW_NOT_in_conditionOu2206); 
                             NOT249_tree = (CommonTree)adaptor.create(NOT249);
                             adaptor.addChild(root_0, NOT249_tree);
 
@@ -7502,7 +7503,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_conditionOu_in_conditionOu2208);
+                    pushFollow(FOLLOW_conditionOu_in_conditionOu2210);
                     conditionOu250=conditionOu();
 
                     state._fsp--;
@@ -7564,7 +7565,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_cond_in_conditionEt2224);
+            pushFollow(FOLLOW_cond_in_conditionEt2226);
             cond251=cond();
 
             state._fsp--;
@@ -7581,7 +7582,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:287:9: AND ( NOT )? conditionEt
                     {
-                    AND252=(Token)match(input,AND,FOLLOW_AND_in_conditionEt2227); 
+                    AND252=(Token)match(input,AND,FOLLOW_AND_in_conditionEt2229); 
                     AND252_tree = (CommonTree)adaptor.create(AND252);
                     root_0 = (CommonTree)adaptor.becomeRoot(AND252_tree, root_0);
 
@@ -7596,7 +7597,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:287:15: NOT
                             {
-                            NOT253=(Token)match(input,NOT,FOLLOW_NOT_in_conditionEt2231); 
+                            NOT253=(Token)match(input,NOT,FOLLOW_NOT_in_conditionEt2233); 
                             NOT253_tree = (CommonTree)adaptor.create(NOT253);
                             adaptor.addChild(root_0, NOT253_tree);
 
@@ -7606,7 +7607,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_conditionEt_in_conditionEt2235);
+                    pushFollow(FOLLOW_conditionEt_in_conditionEt2237);
                     conditionEt254=conditionEt();
 
                     state._fsp--;
@@ -7690,7 +7691,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_etat_in_cond2251);
+                    pushFollow(FOLLOW_etat_in_cond2253);
                     etat255=etat();
 
                     state._fsp--;
@@ -7704,8 +7705,8 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    COMP256=(Token)match(input,COMP,FOLLOW_COMP_in_cond2257); 
-                    pushFollow(FOLLOW_operation_in_cond2260);
+                    COMP256=(Token)match(input,COMP,FOLLOW_COMP_in_cond2259); 
+                    pushFollow(FOLLOW_operation_in_cond2262);
                     operation257=operation();
 
                     state._fsp--;
@@ -7755,7 +7756,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:22: EQUALS
                             {
-                            EQUALS258=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cond2263); 
+                            EQUALS258=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cond2265); 
                             EQUALS258_tree = (CommonTree)adaptor.create(EQUALS258);
                             root_0 = (CommonTree)adaptor.becomeRoot(EQUALS258_tree, root_0);
 
@@ -7765,7 +7766,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:32: INF
                             {
-                            INF259=(Token)match(input,INF,FOLLOW_INF_in_cond2268); 
+                            INF259=(Token)match(input,INF,FOLLOW_INF_in_cond2270); 
                             INF259_tree = (CommonTree)adaptor.create(INF259);
                             root_0 = (CommonTree)adaptor.becomeRoot(INF259_tree, root_0);
 
@@ -7775,7 +7776,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:39: SUP
                             {
-                            SUP260=(Token)match(input,SUP,FOLLOW_SUP_in_cond2273); 
+                            SUP260=(Token)match(input,SUP,FOLLOW_SUP_in_cond2275); 
                             SUP260_tree = (CommonTree)adaptor.create(SUP260);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUP260_tree, root_0);
 
@@ -7785,7 +7786,7 @@ public class hightParser extends Parser {
                         case 4 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:46: INFEG
                             {
-                            INFEG261=(Token)match(input,INFEG,FOLLOW_INFEG_in_cond2278); 
+                            INFEG261=(Token)match(input,INFEG,FOLLOW_INFEG_in_cond2280); 
                             INFEG261_tree = (CommonTree)adaptor.create(INFEG261);
                             root_0 = (CommonTree)adaptor.becomeRoot(INFEG261_tree, root_0);
 
@@ -7795,7 +7796,7 @@ public class hightParser extends Parser {
                         case 5 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:55: SUPED
                             {
-                            SUPED262=(Token)match(input,SUPED,FOLLOW_SUPED_in_cond2283); 
+                            SUPED262=(Token)match(input,SUPED,FOLLOW_SUPED_in_cond2285); 
                             SUPED262_tree = (CommonTree)adaptor.create(SUPED262);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUPED262_tree, root_0);
 
@@ -7805,7 +7806,7 @@ public class hightParser extends Parser {
                         case 6 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:292:64: DIFF
                             {
-                            DIFF263=(Token)match(input,DIFF,FOLLOW_DIFF_in_cond2288); 
+                            DIFF263=(Token)match(input,DIFF,FOLLOW_DIFF_in_cond2290); 
                             DIFF263_tree = (CommonTree)adaptor.create(DIFF263);
                             root_0 = (CommonTree)adaptor.becomeRoot(DIFF263_tree, root_0);
 
@@ -7815,7 +7816,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operation_in_cond2292);
+                    pushFollow(FOLLOW_operation_in_cond2294);
                     operation264=operation();
 
                     state._fsp--;
@@ -7829,17 +7830,17 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PG265=(Token)match(input,PG,FOLLOW_PG_in_cond2309); 
+                    PG265=(Token)match(input,PG,FOLLOW_PG_in_cond2311); 
                     PG265_tree = (CommonTree)adaptor.create(PG265);
                     adaptor.addChild(root_0, PG265_tree);
 
-                    pushFollow(FOLLOW_conditions_in_cond2311);
+                    pushFollow(FOLLOW_conditions_in_cond2313);
                     conditions266=conditions();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, conditions266.getTree());
-                    PD267=(Token)match(input,PD,FOLLOW_PD_in_cond2313); 
+                    PD267=(Token)match(input,PD,FOLLOW_PD_in_cond2315); 
                     PD267_tree = (CommonTree)adaptor.create(PD267);
                     adaptor.addChild(root_0, PD267_tree);
 
@@ -8057,13 +8058,13 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_etat2327);
+                    pushFollow(FOLLOW_accesClasse_in_etat2329);
                     accesClasse268=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse268.getTree());
-                    IS269=(Token)match(input,IS,FOLLOW_IS_in_etat2329); 
+                    IS269=(Token)match(input,IS,FOLLOW_IS_in_etat2331); 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:19: ( NOT )?
                     int alt80=2;
                     int LA80_0 = input.LA(1);
@@ -8075,7 +8076,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:20: NOT
                             {
-                            NOT270=(Token)match(input,NOT,FOLLOW_NOT_in_etat2333); 
+                            NOT270=(Token)match(input,NOT,FOLLOW_NOT_in_etat2335); 
                             NOT270_tree = (CommonTree)adaptor.create(NOT270);
                             adaptor.addChild(root_0, NOT270_tree);
 
@@ -8134,7 +8135,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:27: DEAD_KW
                             {
-                            DEAD_KW271=(Token)match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2338); 
+                            DEAD_KW271=(Token)match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2340); 
                             DEAD_KW271_tree = (CommonTree)adaptor.create(DEAD_KW271);
                             root_0 = (CommonTree)adaptor.becomeRoot(DEAD_KW271_tree, root_0);
 
@@ -8144,7 +8145,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:38: ALIVE_KW
                             {
-                            ALIVE_KW272=(Token)match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2343); 
+                            ALIVE_KW272=(Token)match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2345); 
                             ALIVE_KW272_tree = (CommonTree)adaptor.create(ALIVE_KW272);
                             root_0 = (CommonTree)adaptor.becomeRoot(ALIVE_KW272_tree, root_0);
 
@@ -8154,7 +8155,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:50: EFFACED_KW
                             {
-                            EFFACED_KW273=(Token)match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2348); 
+                            EFFACED_KW273=(Token)match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2350); 
                             EFFACED_KW273_tree = (CommonTree)adaptor.create(EFFACED_KW273);
                             root_0 = (CommonTree)adaptor.becomeRoot(EFFACED_KW273_tree, root_0);
 
@@ -8164,7 +8165,7 @@ public class hightParser extends Parser {
                         case 4 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:64: GENERATED_KW
                             {
-                            GENERATED_KW274=(Token)match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2353); 
+                            GENERATED_KW274=(Token)match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2355); 
                             GENERATED_KW274_tree = (CommonTree)adaptor.create(GENERATED_KW274);
                             root_0 = (CommonTree)adaptor.becomeRoot(GENERATED_KW274_tree, root_0);
 
@@ -8174,7 +8175,7 @@ public class hightParser extends Parser {
                         case 5 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:80: TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal )
                             {
-                            TOUCHING_KW275=(Token)match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat2358); 
+                            TOUCHING_KW275=(Token)match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat2360); 
                             TOUCHING_KW275_tree = (CommonTree)adaptor.create(TOUCHING_KW275);
                             root_0 = (CommonTree)adaptor.becomeRoot(TOUCHING_KW275_tree, root_0);
 
@@ -8209,7 +8210,7 @@ public class hightParser extends Parser {
                                         case 1 :
                                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:95: OTHER
                                             {
-                                            OTHER276=(Token)match(input,OTHER,FOLLOW_OTHER_in_etat2363); 
+                                            OTHER276=(Token)match(input,OTHER,FOLLOW_OTHER_in_etat2365); 
                                             OTHER276_tree = (CommonTree)adaptor.create(OTHER276);
                                             adaptor.addChild(root_0, OTHER276_tree);
 
@@ -8219,7 +8220,7 @@ public class hightParser extends Parser {
 
                                     }
 
-                                    pushFollow(FOLLOW_accesGlobal_in_etat2367);
+                                    pushFollow(FOLLOW_accesGlobal_in_etat2369);
                                     accesGlobal277=accesGlobal();
 
                                     state._fsp--;
@@ -8231,7 +8232,7 @@ public class hightParser extends Parser {
                                 case 2 :
                                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:117: accesLocal
                                     {
-                                    pushFollow(FOLLOW_accesLocal_in_etat2371);
+                                    pushFollow(FOLLOW_accesLocal_in_etat2373);
                                     accesLocal278=accesLocal();
 
                                     state._fsp--;
@@ -8249,7 +8250,7 @@ public class hightParser extends Parser {
                         case 6 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:131: MOVING_KW
                             {
-                            MOVING_KW279=(Token)match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat2376); 
+                            MOVING_KW279=(Token)match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat2378); 
                             MOVING_KW279_tree = (CommonTree)adaptor.create(MOVING_KW279);
                             root_0 = (CommonTree)adaptor.becomeRoot(MOVING_KW279_tree, root_0);
 
@@ -8259,7 +8260,7 @@ public class hightParser extends Parser {
                         case 7 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:297:144: WAITING_KW
                             {
-                            WAITING_KW280=(Token)match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat2381); 
+                            WAITING_KW280=(Token)match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat2383); 
                             WAITING_KW280_tree = (CommonTree)adaptor.create(WAITING_KW280);
                             root_0 = (CommonTree)adaptor.becomeRoot(WAITING_KW280_tree, root_0);
 
@@ -8288,7 +8289,7 @@ public class hightParser extends Parser {
                         throw mse;
                     }
 
-                    IS282=(Token)match(input,IS,FOLLOW_IS_in_etat2399); 
+                    IS282=(Token)match(input,IS,FOLLOW_IS_in_etat2401); 
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:24: ( NOT )?
                     int alt84=2;
                     int LA84_0 = input.LA(1);
@@ -8300,7 +8301,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:25: NOT
                             {
-                            NOT283=(Token)match(input,NOT,FOLLOW_NOT_in_etat2403); 
+                            NOT283=(Token)match(input,NOT,FOLLOW_NOT_in_etat2405); 
                             NOT283_tree = (CommonTree)adaptor.create(NOT283);
                             adaptor.addChild(root_0, NOT283_tree);
 
@@ -8354,7 +8355,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:32: FINISHED_KW
                             {
-                            FINISHED_KW284=(Token)match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat2408); 
+                            FINISHED_KW284=(Token)match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat2410); 
                             FINISHED_KW284_tree = (CommonTree)adaptor.create(FINISHED_KW284);
                             root_0 = (CommonTree)adaptor.becomeRoot(FINISHED_KW284_tree, root_0);
 
@@ -8364,7 +8365,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:46: STARTED_KW
                             {
-                            STARTED_KW285=(Token)match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat2412); 
+                            STARTED_KW285=(Token)match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat2414); 
                             STARTED_KW285_tree = (CommonTree)adaptor.create(STARTED_KW285);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTED_KW285_tree, root_0);
 
@@ -8374,7 +8375,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:60: PAUSED_KW
                             {
-                            PAUSED_KW286=(Token)match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat2417); 
+                            PAUSED_KW286=(Token)match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat2419); 
                             PAUSED_KW286_tree = (CommonTree)adaptor.create(PAUSED_KW286);
                             root_0 = (CommonTree)adaptor.becomeRoot(PAUSED_KW286_tree, root_0);
 
@@ -8384,7 +8385,7 @@ public class hightParser extends Parser {
                         case 4 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:73: MUTED_KW ( ON | OFF )
                             {
-                            MUTED_KW287=(Token)match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat2422); 
+                            MUTED_KW287=(Token)match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat2424); 
                             MUTED_KW287_tree = (CommonTree)adaptor.create(MUTED_KW287);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUTED_KW287_tree, root_0);
 
@@ -8405,7 +8406,7 @@ public class hightParser extends Parser {
                         case 5 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:96: PLAYED_KW
                             {
-                            PLAYED_KW289=(Token)match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat2435); 
+                            PLAYED_KW289=(Token)match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat2437); 
                             PLAYED_KW289_tree = (CommonTree)adaptor.create(PLAYED_KW289);
                             root_0 = (CommonTree)adaptor.becomeRoot(PLAYED_KW289_tree, root_0);
 
@@ -8415,7 +8416,7 @@ public class hightParser extends Parser {
                         case 6 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:298:109: STOPPED_KW
                             {
-                            STOPPED_KW290=(Token)match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat2440); 
+                            STOPPED_KW290=(Token)match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat2442); 
                             STOPPED_KW290_tree = (CommonTree)adaptor.create(STOPPED_KW290);
                             root_0 = (CommonTree)adaptor.becomeRoot(STOPPED_KW290_tree, root_0);
 
@@ -8433,7 +8434,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW291=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat2454); 
+                    VICTORY_KW291=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat2456); 
                     VICTORY_KW291_tree = (CommonTree)adaptor.create(VICTORY_KW291);
                     adaptor.addChild(root_0, VICTORY_KW291_tree);
 
@@ -8445,7 +8446,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW292=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat2460); 
+                    DEFEAT_KW292=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat2462); 
                     DEFEAT_KW292_tree = (CommonTree)adaptor.create(DEFEAT_KW292);
                     adaptor.addChild(root_0, DEFEAT_KW292_tree);
 
@@ -8562,7 +8563,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:305:5: ASSIGN_KW
                             {
-                            ASSIGN_KW293=(Token)match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation2477); 
+                            ASSIGN_KW293=(Token)match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation2479); 
                             ASSIGN_KW293_tree = (CommonTree)adaptor.create(ASSIGN_KW293);
                             root_0 = (CommonTree)adaptor.becomeRoot(ASSIGN_KW293_tree, root_0);
 
@@ -8572,7 +8573,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:305:18: ADD_KW
                             {
-                            ADD_KW294=(Token)match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation2482); 
+                            ADD_KW294=(Token)match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation2484); 
                             ADD_KW294_tree = (CommonTree)adaptor.create(ADD_KW294);
                             root_0 = (CommonTree)adaptor.becomeRoot(ADD_KW294_tree, root_0);
 
@@ -8582,7 +8583,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:305:28: SUB_KW
                             {
-                            SUB_KW295=(Token)match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation2487); 
+                            SUB_KW295=(Token)match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation2489); 
                             SUB_KW295_tree = (CommonTree)adaptor.create(SUB_KW295);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUB_KW295_tree, root_0);
 
@@ -8592,7 +8593,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operation_in_affectation2491);
+                    pushFollow(FOLLOW_operation_in_affectation2493);
                     operation296=operation();
 
                     state._fsp--;
@@ -8601,8 +8602,8 @@ public class hightParser extends Parser {
 
                     }
 
-                    FOR297=(Token)match(input,FOR,FOLLOW_FOR_in_affectation2494); 
-                    pushFollow(FOLLOW_variable_in_affectation2497);
+                    FOR297=(Token)match(input,FOR,FOLLOW_FOR_in_affectation2496); 
+                    pushFollow(FOLLOW_variable_in_affectation2499);
                     variable298=variable();
 
                     state._fsp--;
@@ -8616,18 +8617,18 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    INVERT_KW299=(Token)match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation2504); 
+                    INVERT_KW299=(Token)match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation2506); 
                     INVERT_KW299_tree = (CommonTree)adaptor.create(INVERT_KW299);
                     root_0 = (CommonTree)adaptor.becomeRoot(INVERT_KW299_tree, root_0);
 
-                    pushFollow(FOLLOW_variable_in_affectation2507);
+                    pushFollow(FOLLOW_variable_in_affectation2509);
                     variable300=variable();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, variable300.getTree());
-                    WITH301=(Token)match(input,WITH,FOLLOW_WITH_in_affectation2509); 
-                    pushFollow(FOLLOW_variable_in_affectation2512);
+                    WITH301=(Token)match(input,WITH,FOLLOW_WITH_in_affectation2511); 
+                    pushFollow(FOLLOW_variable_in_affectation2514);
                     variable302=variable();
 
                     state._fsp--;
@@ -8689,18 +8690,18 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            IA_KW303=(Token)match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique2525); 
+            IA_KW303=(Token)match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique2527); 
             IA_KW303_tree = (CommonTree)adaptor.create(IA_KW303);
             root_0 = (CommonTree)adaptor.becomeRoot(IA_KW303_tree, root_0);
 
-            pushFollow(FOLLOW_accesClasse_in_iaBasique2528);
+            pushFollow(FOLLOW_accesClasse_in_iaBasique2530);
             accesClasse304=accesClasse();
 
             state._fsp--;
 
             adaptor.addChild(root_0, accesClasse304.getTree());
-            IS305=(Token)match(input,IS,FOLLOW_IS_in_iaBasique2530); 
-            pushFollow(FOLLOW_actionObjet_in_iaBasique2533);
+            IS305=(Token)match(input,IS,FOLLOW_IS_in_iaBasique2532); 
+            pushFollow(FOLLOW_actionObjet_in_iaBasique2535);
             actionObjet306=actionObjet();
 
             state._fsp--;
@@ -8721,8 +8722,8 @@ public class hightParser extends Parser {
             	case 1 :
             	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:309:49: VIRG actionObjet
             	    {
-            	    VIRG307=(Token)match(input,VIRG,FOLLOW_VIRG_in_iaBasique2536); 
-            	    pushFollow(FOLLOW_actionObjet_in_iaBasique2539);
+            	    VIRG307=(Token)match(input,VIRG,FOLLOW_VIRG_in_iaBasique2538); 
+            	    pushFollow(FOLLOW_actionObjet_in_iaBasique2541);
             	    actionObjet308=actionObjet();
 
             	    state._fsp--;
@@ -8808,7 +8809,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_operationPlus_in_operation2553);
+                    pushFollow(FOLLOW_operationPlus_in_operation2555);
                     operationPlus309=operationPlus();
 
                     state._fsp--;
@@ -8822,19 +8823,19 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    RANDOM_KW310=(Token)match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation2558); 
+                    RANDOM_KW310=(Token)match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation2560); 
                     RANDOM_KW310_tree = (CommonTree)adaptor.create(RANDOM_KW310);
                     root_0 = (CommonTree)adaptor.becomeRoot(RANDOM_KW310_tree, root_0);
 
-                    BETWEEN311=(Token)match(input,BETWEEN,FOLLOW_BETWEEN_in_operation2561); 
-                    pushFollow(FOLLOW_operationPlus_in_operation2564);
+                    BETWEEN311=(Token)match(input,BETWEEN,FOLLOW_BETWEEN_in_operation2563); 
+                    pushFollow(FOLLOW_operationPlus_in_operation2566);
                     operationPlus312=operationPlus();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operationPlus312.getTree());
-                    AND313=(Token)match(input,AND,FOLLOW_AND_in_operation2566); 
-                    pushFollow(FOLLOW_operationPlus_in_operation2569);
+                    AND313=(Token)match(input,AND,FOLLOW_AND_in_operation2568); 
+                    pushFollow(FOLLOW_operationPlus_in_operation2571);
                     operationPlus314=operationPlus();
 
                     state._fsp--;
@@ -8892,7 +8893,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationMul_in_operationPlus2581);
+            pushFollow(FOLLOW_operationMul_in_operationPlus2583);
             operationMul315=operationMul();
 
             state._fsp--;
@@ -8933,7 +8934,7 @@ public class hightParser extends Parser {
             	        case 1 :
             	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:319:17: PLUS
             	            {
-            	            PLUS316=(Token)match(input,PLUS,FOLLOW_PLUS_in_operationPlus2585); 
+            	            PLUS316=(Token)match(input,PLUS,FOLLOW_PLUS_in_operationPlus2587); 
             	            PLUS316_tree = (CommonTree)adaptor.create(PLUS316);
             	            root_0 = (CommonTree)adaptor.becomeRoot(PLUS316_tree, root_0);
 
@@ -8943,7 +8944,7 @@ public class hightParser extends Parser {
             	        case 2 :
             	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:319:25: MINUS
             	            {
-            	            MINUS317=(Token)match(input,MINUS,FOLLOW_MINUS_in_operationPlus2590); 
+            	            MINUS317=(Token)match(input,MINUS,FOLLOW_MINUS_in_operationPlus2592); 
             	            MINUS317_tree = (CommonTree)adaptor.create(MINUS317);
             	            root_0 = (CommonTree)adaptor.becomeRoot(MINUS317_tree, root_0);
 
@@ -8953,7 +8954,7 @@ public class hightParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_operationMul_in_operationPlus2594);
+            	    pushFollow(FOLLOW_operationMul_in_operationPlus2596);
             	    operationMul318=operationMul();
 
             	    state._fsp--;
@@ -9020,7 +9021,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationPow_in_operationMul2607);
+            pushFollow(FOLLOW_operationPow_in_operationMul2609);
             operationPow319=operationPow();
 
             state._fsp--;
@@ -9066,7 +9067,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:323:17: MUL
                             {
-                            MUL320=(Token)match(input,MUL,FOLLOW_MUL_in_operationMul2611); 
+                            MUL320=(Token)match(input,MUL,FOLLOW_MUL_in_operationMul2613); 
                             MUL320_tree = (CommonTree)adaptor.create(MUL320);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUL320_tree, root_0);
 
@@ -9076,7 +9077,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:323:24: DIV
                             {
-                            DIV321=(Token)match(input,DIV,FOLLOW_DIV_in_operationMul2616); 
+                            DIV321=(Token)match(input,DIV,FOLLOW_DIV_in_operationMul2618); 
                             DIV321_tree = (CommonTree)adaptor.create(DIV321);
                             root_0 = (CommonTree)adaptor.becomeRoot(DIV321_tree, root_0);
 
@@ -9086,7 +9087,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:323:31: MOD
                             {
-                            MOD322=(Token)match(input,MOD,FOLLOW_MOD_in_operationMul2621); 
+                            MOD322=(Token)match(input,MOD,FOLLOW_MOD_in_operationMul2623); 
                             MOD322_tree = (CommonTree)adaptor.create(MOD322);
                             root_0 = (CommonTree)adaptor.becomeRoot(MOD322_tree, root_0);
 
@@ -9096,7 +9097,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operationPow_in_operationMul2625);
+                    pushFollow(FOLLOW_operationPow_in_operationMul2627);
                     operationPow323=operationPow();
 
                     state._fsp--;
@@ -9156,7 +9157,7 @@ public class hightParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationBracket_in_operationPow2640);
+            pushFollow(FOLLOW_operationBracket_in_operationPow2642);
             operationBracket324=operationBracket();
 
             state._fsp--;
@@ -9173,11 +9174,11 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:327:20: POW operationBracket
                     {
-                    POW325=(Token)match(input,POW,FOLLOW_POW_in_operationPow2643); 
+                    POW325=(Token)match(input,POW,FOLLOW_POW_in_operationPow2645); 
                     POW325_tree = (CommonTree)adaptor.create(POW325);
                     root_0 = (CommonTree)adaptor.becomeRoot(POW325_tree, root_0);
 
-                    pushFollow(FOLLOW_operationBracket_in_operationPow2646);
+                    pushFollow(FOLLOW_operationBracket_in_operationPow2648);
                     operationBracket326=operationBracket();
 
                     state._fsp--;
@@ -9311,14 +9312,14 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PG327=(Token)match(input,PG,FOLLOW_PG_in_operationBracket2661); 
-                    pushFollow(FOLLOW_operation_in_operationBracket2664);
+                    PG327=(Token)match(input,PG,FOLLOW_PG_in_operationBracket2663); 
+                    pushFollow(FOLLOW_operation_in_operationBracket2666);
                     operation328=operation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation328.getTree());
-                    PD329=(Token)match(input,PD,FOLLOW_PD_in_operationBracket2666); 
+                    PD329=(Token)match(input,PD,FOLLOW_PD_in_operationBracket2668); 
 
                     }
                     break;
@@ -9327,7 +9328,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_variable_in_operationBracket2672);
+                    pushFollow(FOLLOW_variable_in_operationBracket2674);
                     variable330=variable();
 
                     state._fsp--;
@@ -9341,7 +9342,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    FLOAT331=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_operationBracket2677); 
+                    FLOAT331=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_operationBracket2679); 
                     FLOAT331_tree = (CommonTree)adaptor.create(FLOAT331);
                     adaptor.addChild(root_0, FLOAT331_tree);
 
@@ -9566,7 +9567,7 @@ public class hightParser extends Parser {
                         case 1 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:337:4: X
                             {
-                            X332=(Token)match(input,X,FOLLOW_X_in_variable2690); 
+                            X332=(Token)match(input,X,FOLLOW_X_in_variable2692); 
                             X332_tree = (CommonTree)adaptor.create(X332);
                             root_0 = (CommonTree)adaptor.becomeRoot(X332_tree, root_0);
 
@@ -9576,7 +9577,7 @@ public class hightParser extends Parser {
                         case 2 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:337:9: Y
                             {
-                            Y333=(Token)match(input,Y,FOLLOW_Y_in_variable2695); 
+                            Y333=(Token)match(input,Y,FOLLOW_Y_in_variable2697); 
                             Y333_tree = (CommonTree)adaptor.create(Y333);
                             root_0 = (CommonTree)adaptor.becomeRoot(Y333_tree, root_0);
 
@@ -9586,7 +9587,7 @@ public class hightParser extends Parser {
                         case 3 :
                             // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:337:14: Z
                             {
-                            Z334=(Token)match(input,Z,FOLLOW_Z_in_variable2700); 
+                            Z334=(Token)match(input,Z,FOLLOW_Z_in_variable2702); 
                             Z334_tree = (CommonTree)adaptor.create(Z334);
                             root_0 = (CommonTree)adaptor.becomeRoot(Z334_tree, root_0);
 
@@ -9596,15 +9597,15 @@ public class hightParser extends Parser {
 
                     }
 
-                    OF335=(Token)match(input,OF,FOLLOW_OF_in_variable2704); 
-                    pushFollow(FOLLOW_typeCoordonnees_in_variable2707);
+                    OF335=(Token)match(input,OF,FOLLOW_OF_in_variable2706); 
+                    pushFollow(FOLLOW_typeCoordonnees_in_variable2709);
                     typeCoordonnees336=typeCoordonnees();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, typeCoordonnees336.getTree());
-                    OF337=(Token)match(input,OF,FOLLOW_OF_in_variable2709); 
-                    pushFollow(FOLLOW_accesClasse_in_variable2712);
+                    OF337=(Token)match(input,OF,FOLLOW_OF_in_variable2711); 
+                    pushFollow(FOLLOW_accesClasse_in_variable2714);
                     accesClasse338=accesClasse();
 
                     state._fsp--;
@@ -9616,13 +9617,13 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:338:5: IDENT OF accesClasse
                     {
-                    IDENT339=(Token)match(input,IDENT,FOLLOW_IDENT_in_variable2718);  
+                    IDENT339=(Token)match(input,IDENT,FOLLOW_IDENT_in_variable2720);  
                     stream_IDENT.add(IDENT339);
 
-                    OF340=(Token)match(input,OF,FOLLOW_OF_in_variable2720);  
+                    OF340=(Token)match(input,OF,FOLLOW_OF_in_variable2722);  
                     stream_OF.add(OF340);
 
-                    pushFollow(FOLLOW_accesClasse_in_variable2722);
+                    pushFollow(FOLLOW_accesClasse_in_variable2724);
                     accesClasse341=accesClasse();
 
                     state._fsp--;
@@ -9631,7 +9632,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, accesClasse
+                    // elements: accesClasse, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9662,16 +9663,16 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:340:5: attribut OF accesClasse
                     {
-                    pushFollow(FOLLOW_attribut_in_variable2742);
+                    pushFollow(FOLLOW_attribut_in_variable2744);
                     attribut342=attribut();
 
                     state._fsp--;
 
                     stream_attribut.add(attribut342.getTree());
-                    OF343=(Token)match(input,OF,FOLLOW_OF_in_variable2744);  
+                    OF343=(Token)match(input,OF,FOLLOW_OF_in_variable2746);  
                     stream_OF.add(OF343);
 
-                    pushFollow(FOLLOW_accesClasse_in_variable2746);
+                    pushFollow(FOLLOW_accesClasse_in_variable2748);
                     accesClasse344=accesClasse();
 
                     state._fsp--;
@@ -9680,7 +9681,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesClasse, attribut
+                    // elements: attribut, accesClasse
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9711,13 +9712,13 @@ public class hightParser extends Parser {
                 case 4 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:342:5: SCORE OF GAME
                     {
-                    SCORE345=(Token)match(input,SCORE,FOLLOW_SCORE_in_variable2766);  
+                    SCORE345=(Token)match(input,SCORE,FOLLOW_SCORE_in_variable2768);  
                     stream_SCORE.add(SCORE345);
 
-                    OF346=(Token)match(input,OF,FOLLOW_OF_in_variable2768);  
+                    OF346=(Token)match(input,OF,FOLLOW_OF_in_variable2770);  
                     stream_OF.add(OF346);
 
-                    GAME347=(Token)match(input,GAME,FOLLOW_GAME_in_variable2770);  
+                    GAME347=(Token)match(input,GAME,FOLLOW_GAME_in_variable2772);  
                     stream_GAME.add(GAME347);
 
 
@@ -9745,22 +9746,22 @@ public class hightParser extends Parser {
                 case 5 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:344:5: VALUE OF attributTps OF accesClasse
                     {
-                    VALUE348=(Token)match(input,VALUE,FOLLOW_VALUE_in_variable2784);  
+                    VALUE348=(Token)match(input,VALUE,FOLLOW_VALUE_in_variable2786);  
                     stream_VALUE.add(VALUE348);
 
-                    OF349=(Token)match(input,OF,FOLLOW_OF_in_variable2786);  
+                    OF349=(Token)match(input,OF,FOLLOW_OF_in_variable2788);  
                     stream_OF.add(OF349);
 
-                    pushFollow(FOLLOW_attributTps_in_variable2788);
+                    pushFollow(FOLLOW_attributTps_in_variable2790);
                     attributTps350=attributTps();
 
                     state._fsp--;
 
                     stream_attributTps.add(attributTps350.getTree());
-                    OF351=(Token)match(input,OF,FOLLOW_OF_in_variable2790);  
+                    OF351=(Token)match(input,OF,FOLLOW_OF_in_variable2792);  
                     stream_OF.add(OF351);
 
-                    pushFollow(FOLLOW_accesClasse_in_variable2792);
+                    pushFollow(FOLLOW_accesClasse_in_variable2794);
                     accesClasse352=accesClasse();
 
                     state._fsp--;
@@ -9769,7 +9770,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesClasse, attributTps
+                    // elements: attributTps, accesClasse
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9896,7 +9897,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:349:3: ALL
                     {
-                    ALL353=(Token)match(input,ALL,FOLLOW_ALL_in_accesClasse2820);  
+                    ALL353=(Token)match(input,ALL,FOLLOW_ALL_in_accesClasse2822);  
                     stream_ALL.add(ALL353);
 
 
@@ -9934,7 +9935,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesLocal_in_accesClasse2838);
+                    pushFollow(FOLLOW_accesLocal_in_accesClasse2840);
                     accesLocal354=accesLocal();
 
                     state._fsp--;
@@ -9948,7 +9949,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesGlobal_in_accesClasse2844);
+                    pushFollow(FOLLOW_accesGlobal_in_accesClasse2846);
                     accesGlobal355=accesGlobal();
 
                     state._fsp--;
@@ -10062,7 +10063,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:356:3: typeObjet
                     {
-                    pushFollow(FOLLOW_typeObjet_in_accesGlobal2857);
+                    pushFollow(FOLLOW_typeObjet_in_accesGlobal2859);
                     typeObjet356=typeObjet();
 
                     state._fsp--;
@@ -10101,7 +10102,7 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:358:5: interaction
                     {
-                    pushFollow(FOLLOW_interaction_in_accesGlobal2875);
+                    pushFollow(FOLLOW_interaction_in_accesGlobal2877);
                     interaction357=interaction();
 
                     state._fsp--;
@@ -10140,19 +10141,19 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:360:5: PG NOT notAccess PD
                     {
-                    PG358=(Token)match(input,PG,FOLLOW_PG_in_accesGlobal2893);  
+                    PG358=(Token)match(input,PG,FOLLOW_PG_in_accesGlobal2895);  
                     stream_PG.add(PG358);
 
-                    NOT359=(Token)match(input,NOT,FOLLOW_NOT_in_accesGlobal2895);  
+                    NOT359=(Token)match(input,NOT,FOLLOW_NOT_in_accesGlobal2897);  
                     stream_NOT.add(NOT359);
 
-                    pushFollow(FOLLOW_notAccess_in_accesGlobal2897);
+                    pushFollow(FOLLOW_notAccess_in_accesGlobal2899);
                     notAccess360=notAccess();
 
                     state._fsp--;
 
                     stream_notAccess.add(notAccess360.getTree());
-                    PD361=(Token)match(input,PD,FOLLOW_PD_in_accesGlobal2899);  
+                    PD361=(Token)match(input,PD,FOLLOW_PD_in_accesGlobal2901);  
                     stream_PD.add(PD361);
 
 
@@ -10282,7 +10283,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeObjet_in_notAccess2924);
+                    pushFollow(FOLLOW_typeObjet_in_notAccess2926);
                     typeObjet362=typeObjet();
 
                     state._fsp--;
@@ -10296,7 +10297,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_interaction_in_notAccess2928);
+                    pushFollow(FOLLOW_interaction_in_notAccess2930);
                     interaction363=interaction();
 
                     state._fsp--;
@@ -10310,7 +10311,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PLAYER364=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_notAccess2932); 
+                    PLAYER364=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_notAccess2934); 
                     PLAYER364_tree = (CommonTree)adaptor.create(PLAYER364);
                     adaptor.addChild(root_0, PLAYER364_tree);
 
@@ -10398,7 +10399,7 @@ public class hightParser extends Parser {
                 case 1 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:368:3: IDENT
                     {
-                    IDENT365=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2942);  
+                    IDENT365=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2944);  
                     stream_IDENT.add(IDENT365);
 
 
@@ -10434,25 +10435,25 @@ public class hightParser extends Parser {
                 case 2 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:370:5: NUM operation IN IDENT
                     {
-                    NUM366=(Token)match(input,NUM,FOLLOW_NUM_in_accesLocal2960);  
+                    NUM366=(Token)match(input,NUM,FOLLOW_NUM_in_accesLocal2962);  
                     stream_NUM.add(NUM366);
 
-                    pushFollow(FOLLOW_operation_in_accesLocal2962);
+                    pushFollow(FOLLOW_operation_in_accesLocal2964);
                     operation367=operation();
 
                     state._fsp--;
 
                     stream_operation.add(operation367.getTree());
-                    IN368=(Token)match(input,IN,FOLLOW_IN_in_accesLocal2964);  
+                    IN368=(Token)match(input,IN,FOLLOW_IN_in_accesLocal2966);  
                     stream_IN.add(IN368);
 
-                    IDENT369=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2966);  
+                    IDENT369=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2968);  
                     stream_IDENT.add(IDENT369);
 
 
 
                     // AST REWRITE
-                    // elements: operation, IDENT
+                    // elements: IDENT, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10483,7 +10484,7 @@ public class hightParser extends Parser {
                 case 3 :
                     // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\grammars\\hight.g:372:5: PLAYER
                     {
-                    PLAYER370=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_accesLocal2986);  
+                    PLAYER370=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_accesLocal2988);  
                     stream_PLAYER.add(PLAYER370);
 
 
@@ -10730,7 +10731,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    CAMERA373=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_typeObjet3059); 
+                    CAMERA373=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_typeObjet3061); 
                     CAMERA373_tree = (CommonTree)adaptor.create(CAMERA373);
                     adaptor.addChild(root_0, CAMERA373_tree);
 
@@ -10742,7 +10743,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    MEDIA374=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_typeObjet3064); 
+                    MEDIA374=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_typeObjet3066); 
                     MEDIA374_tree = (CommonTree)adaptor.create(MEDIA374);
                     adaptor.addChild(root_0, MEDIA374_tree);
 
@@ -10754,7 +10755,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    COUNTER375=(Token)match(input,COUNTER,FOLLOW_COUNTER_in_typeObjet3069); 
+                    COUNTER375=(Token)match(input,COUNTER,FOLLOW_COUNTER_in_typeObjet3071); 
                     COUNTER375_tree = (CommonTree)adaptor.create(COUNTER375);
                     adaptor.addChild(root_0, COUNTER375_tree);
 
@@ -10766,7 +10767,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    TIME376=(Token)match(input,TIME,FOLLOW_TIME_in_typeObjet3074); 
+                    TIME376=(Token)match(input,TIME,FOLLOW_TIME_in_typeObjet3076); 
                     TIME376_tree = (CommonTree)adaptor.create(TIME376);
                     adaptor.addChild(root_0, TIME376_tree);
 
@@ -10778,7 +10779,7 @@ public class hightParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeObjet3D_in_typeObjet3079);
+                    pushFollow(FOLLOW_typeObjet3D_in_typeObjet3081);
                     typeObjet3D377=typeObjet3D();
 
                     state._fsp--;
@@ -11143,339 +11144,339 @@ public class hightParser extends Parser {
     public static final BitSet FOLLOW_allocationObject_in_init542 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_VIRG_in_init545 = new BitSet(new long[]{0x0000003000000000L,0x0000000000000000L,0x0000072000000000L,0x01FFFFFFFFFFFFF8L});
     public static final BitSet FOLLOW_allocationObject_in_init547 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_typeEntity_in_declarationObjet574 = new BitSet(new long[]{0x007C000000000002L});
-    public static final BitSet FOLLOW_entityMode_in_declarationObjet576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LIST_KW_in_declarationObjet600 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_OF_in_declarationObjet603 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_declarationObjet606 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet611 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_WITH_in_declarationObjet615 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_declarationObjet618 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet623 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_CAMERA_in_declarationObjet652 = new BitSet(new long[]{0x0180200000000002L});
-    public static final BitSet FOLLOW_view_in_declarationObjet655 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_PERSON_in_declarationObjet657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FREE_in_declarationObjet671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MEDIA_in_declarationObjet686 = new BitSet(new long[]{0x0001800000000002L});
-    public static final BitSet FOLLOW_LOOP_in_declarationObjet689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONCE_in_declarationObjet700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_declarationObjet722 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_typeEntity755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet3D_in_typeEntity760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_entityMode770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_entityMode775 = new BitSet(new long[]{0x007C000000000002L});
-    public static final BitSet FOLLOW_dupli_in_entityMode777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dupli_in_entityMode793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeEntity_in_declarationObjet576 = new BitSet(new long[]{0x007C000000000002L});
+    public static final BitSet FOLLOW_entityMode_in_declarationObjet578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LIST_KW_in_declarationObjet602 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_OF_in_declarationObjet605 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_declarationObjet608 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet613 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_WITH_in_declarationObjet617 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_declarationObjet620 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet625 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_CAMERA_in_declarationObjet654 = new BitSet(new long[]{0x0180200000000002L});
+    public static final BitSet FOLLOW_view_in_declarationObjet657 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_PERSON_in_declarationObjet659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FREE_in_declarationObjet673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MEDIA_in_declarationObjet688 = new BitSet(new long[]{0x0001800000000002L});
+    public static final BitSet FOLLOW_LOOP_in_declarationObjet691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONCE_in_declarationObjet702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_declarationObjet724 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_typeEntity757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet3D_in_typeEntity762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_entityMode772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_entityMode777 = new BitSet(new long[]{0x007C000000000002L});
+    public static final BitSet FOLLOW_dupli_in_entityMode779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dupli_in_entityMode795 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_interaction0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DUPLICABLE_in_dupli826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DUPLICABLE_in_dupli828 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_view0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_allocationObject855 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_AT_in_allocationObject858 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_valAggregation_in_allocationObject860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attribut_in_allocationObject890 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject892 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x180001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_typeAllocation_in_allocationObject894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_allocationObject924 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject926 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_coordinates_in_allocationObject928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributListeOuObjet_in_allocationObject959 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject961 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_allocationObject963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributTps_in_allocationObject995 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject997 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_allocationObject999 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_allocationObject1001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_typeAllocation1043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_typeAllocation1047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_251_in_typeAllocation1051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_252_in_typeAllocation1055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_valAggregation1065 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_valAggregation1068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_valAggregation1090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFINITION_KW_in_definition1114 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_definition1117 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_MEANS_in_definition1119 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequences_in_definition1122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_consequ_in_consequences1131 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_consequences1134 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequ_in_consequences1136 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_siAlors_in_consequ1162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_action_in_consequ1168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_affectation_in_consequ1174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_activCommande_in_consequ1180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_consequ1186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_consequ1192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_consequ1198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_action1210 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_action1212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_action1217 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_ENDS_KW_in_action1226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTS_KW_in_action1230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSE_KW_in_action1238 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_MUTE_KW_in_action1243 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_set_in_action1246 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_PLAY_KW_in_action1256 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_STOP_KW_in_action1261 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_action1266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BLOCK_KW_in_action1271 = new BitSet(new long[]{0x0000000000000000L,0x00000000001C0000L});
-    public static final BitSet FOLLOW_transformation_in_action1274 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_action1276 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_action1279 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_coordinates_in_action1281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EFFACE_KW_in_action1287 = new BitSet(new long[]{0x0004003C00000000L,0x0000000000000000L,0x000000BC04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_GENERATE_KW_in_action1292 = new BitSet(new long[]{0x0004003C00000000L,0x0000000000000000L,0x000000BC04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_accesLocal_in_action1297 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_action1301 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_IDENT_in_action1304 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_accesGlobal_in_action1308 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_action1314 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_ON_in_action1317 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_action1321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_action1325 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_coordinates_in_action1328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WAIT_KW_in_action1335 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_action1338 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_action1340 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_action1342 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequences_in_action1345 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ENDWAIT_in_action1347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SAVE_KW_in_action1353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIES_KW_in_actionObjet1365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandePressee_in_actionObjet1371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1377 = new BitSet(new long[]{0x0000000000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_DURING_in_actionObjet1380 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_actionObjet1383 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_actionObjet1385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNTIL_in_actionObjet1389 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditions_in_actionObjet1392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUIP_in_actionObjet1399 = new BitSet(new long[]{0x0004002000000000L,0x0000000000030000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_actionObjet1403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEXT_in_actionObjet1407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREVIOUS_in_actionObjet1411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_allocationObject857 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_AT_in_allocationObject860 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_valAggregation_in_allocationObject862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attribut_in_allocationObject892 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject894 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x180001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_typeAllocation_in_allocationObject896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_allocationObject926 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject928 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_coordinates_in_allocationObject930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributListeOuObjet_in_allocationObject961 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject963 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_allocationObject965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributTps_in_allocationObject997 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject999 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_allocationObject1001 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_allocationObject1003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_typeAllocation1045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_typeAllocation1049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_251_in_typeAllocation1053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_252_in_typeAllocation1057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_valAggregation1067 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_valAggregation1070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_valAggregation1092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFINITION_KW_in_definition1116 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_definition1119 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_MEANS_in_definition1121 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequences_in_definition1124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_consequ_in_consequences1133 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_consequences1136 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequ_in_consequences1138 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_siAlors_in_consequ1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_action_in_consequ1170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_affectation_in_consequ1176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_activCommande_in_consequ1182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_consequ1188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_consequ1194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_consequ1200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_action1212 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_action1214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_action1219 = new BitSet(new long[]{0x6000000000000000L});
+    public static final BitSet FOLLOW_ENDS_KW_in_action1228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTS_KW_in_action1232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSE_KW_in_action1240 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_MUTE_KW_in_action1245 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_set_in_action1248 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_PLAY_KW_in_action1258 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_STOP_KW_in_action1263 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_action1268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BLOCK_KW_in_action1273 = new BitSet(new long[]{0x0000000000000000L,0x00000000001C0000L});
+    public static final BitSet FOLLOW_transformation_in_action1276 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_action1278 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_action1281 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_coordinates_in_action1283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EFFACE_KW_in_action1289 = new BitSet(new long[]{0x0004003C00000000L,0x0000000000000000L,0x000000BC04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_GENERATE_KW_in_action1294 = new BitSet(new long[]{0x0004003C00000000L,0x0000000000000000L,0x000000BC04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_accesLocal_in_action1299 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_action1303 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_IDENT_in_action1306 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_accesGlobal_in_action1310 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_action1316 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_ON_in_action1319 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_action1323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_action1327 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_coordinates_in_action1330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WAIT_KW_in_action1337 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_action1340 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_action1342 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_action1344 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequences_in_action1347 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ENDWAIT_in_action1349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SAVE_KW_in_action1355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIES_KW_in_actionObjet1367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandePressee_in_actionObjet1373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1379 = new BitSet(new long[]{0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_DURING_in_actionObjet1382 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_actionObjet1385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_actionObjet1387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNTIL_in_actionObjet1391 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditions_in_actionObjet1394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUIP_in_actionObjet1401 = new BitSet(new long[]{0x0004002000000000L,0x0000000000030000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_actionObjet1405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEXT_in_actionObjet1409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PREVIOUS_in_actionObjet1413 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_transformation0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_coordinates1451 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
     public static final BitSet FOLLOW_operation_in_coordinates1453 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_coordinates1455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMAND_KW_in_commande1484 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_IDENT_in_commande1488 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_commande1490 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_actionCommande_in_commande1495 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_commande1498 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_actionCommande_in_commande1501 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_MOUSE_in_actionCommande1514 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_actionCommande1516 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_actionCommande1518 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
-    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KEY_in_actionCommande1538 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_actionCommande1540 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_actionCommande1542 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
-    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_actionCommandeType1569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandePressee_in_actionCommandeType1573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionCommandeType1577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_coordinates1455 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_coordinates1457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMAND_KW_in_commande1486 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_IDENT_in_commande1490 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_commande1492 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_actionCommande_in_commande1497 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_commande1500 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_actionCommande_in_commande1503 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_MOUSE_in_actionCommande1516 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_actionCommande1518 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_actionCommande1520 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
+    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KEY_in_actionCommande1540 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_actionCommande1542 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_actionCommande1544 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
+    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_actionCommandeType1571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandePressee_in_actionCommandeType1575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionCommandeType1579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_souris0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_clavier0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1689 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_actionCommandePressee1691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSE_KW_in_actionCommandePressee1697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_KW_in_actionCommandePressee1703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1718 = new BitSet(new long[]{0x0000000000000000L,0x0000030018000000L});
-    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1740 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
-    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ACCELERATE_in_actionCommandeMaintenue1754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BRAKE_in_actionCommandeMaintenue1760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande1776 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
-    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande1781 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
-    public static final BitSet FOLLOW_typeCommand_in_activCommande1785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMANDS_in_typeCommand1799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOUSE_in_typeCommand1807 = new BitSet(new long[]{0x0000000000000002L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_typeCommand1810 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_typeCommand1813 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_typeCommand1815 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_KEY_in_typeCommand1842 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_typeCommand1844 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_typeCommand1847 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_typeCommand1849 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand1874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu1884 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0xFFFF80FC00000040L,0x000001FFFFFFFFFFL});
-    public static final BitSet FOLLOW_IDENT_in_reglesJeu1888 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_reglesJeu1890 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0xFFFF80FC00000040L,0x000001FFFFFFFFFFL});
-    public static final BitSet FOLLOW_declencheur_in_reglesJeu1896 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_reglesJeu1898 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequences_in_reglesJeu1901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_declencheur1915 = new BitSet(new long[]{0x0000000000000000L,0x01B4000000001000L});
-    public static final BitSet FOLLOW_MOVES_KW_in_declencheur1918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIES_KW_in_declencheur1922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurTK_in_declencheur1926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurKT_in_declencheur1930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_declencheur1938 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_ENDS_KW_in_declencheur1947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTS_KW_in_declencheur1951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_declencheur1969 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_BECOMES_in_declencheur1971 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_varOuNB_in_declencheur1973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_declencheur1993 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_BECOMES_in_declencheur1995 = new BitSet(new long[]{0x003C000000000000L});
-    public static final BitSet FOLLOW_playerOuInteraction_in_declencheur1997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur2017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur2023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_varOuNB2034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_varOuNB2038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_playerOuInteraction2048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_playerOuInteraction2051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2063 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2068 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2074 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesGlobal_in_declencheurTK2078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_declencheurTK2082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2094 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
-    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2099 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
-    public static final BitSet FOLLOW_BY_in_declencheurKT2104 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2109 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesGlobal_in_declencheurKT2113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_declencheurKT2117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_KW_in_siAlors2134 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditions_in_siAlors2137 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_siAlors2139 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2142 = new BitSet(new long[]{0x0000000000000000L,0x1800000000000000L});
-    public static final BitSet FOLLOW_ELSE_in_siAlors2145 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2148 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_ENDIF_in_siAlors2152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_conditions2167 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditionOu_in_conditions2171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionEt_in_conditionOu2197 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
-    public static final BitSet FOLLOW_OR_in_conditionOu2200 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_NOT_in_conditionOu2204 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditionOu_in_conditionOu2208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cond_in_conditionEt2224 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_AND_in_conditionEt2227 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_NOT_in_conditionEt2231 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditionEt_in_conditionEt2235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_etat_in_cond2251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMP_in_cond2257 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_cond2260 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000003FL});
-    public static final BitSet FOLLOW_EQUALS_in_cond2263 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_INF_in_cond2268 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_SUP_in_cond2273 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_INFEG_in_cond2278 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_SUPED_in_cond2283 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_DIFF_in_cond2288 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_cond2292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_cond2309 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_conditions_in_cond2311 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_cond2313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2327 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_etat2329 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x0000000000007F00L});
-    public static final BitSet FOLLOW_NOT_in_etat2333 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000007F00L});
-    public static final BitSet FOLLOW_DEAD_KW_in_etat2338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALIVE_KW_in_etat2343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EFFACED_KW_in_etat2348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GENERATED_KW_in_etat2353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOUCHING_KW_in_etat2358 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_OTHER_in_etat2363 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesGlobal_in_etat2367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_etat2371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVING_KW_in_etat2376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WAITING_KW_in_etat2381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_etat2391 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_etat2399 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x00000000001F8000L});
-    public static final BitSet FOLLOW_NOT_in_etat2403 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001F8000L});
-    public static final BitSet FOLLOW_FINISHED_KW_in_etat2408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTED_KW_in_etat2412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSED_KW_in_etat2417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MUTED_KW_in_etat2422 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_set_in_etat2425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYED_KW_in_etat2435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOPPED_KW_in_etat2440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_etat2454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_etat2460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation2477 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_ADD_KW_in_affectation2482 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_SUB_KW_in_affectation2487 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_affectation2491 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_affectation2494 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_variable_in_affectation2497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INVERT_KW_in_affectation2504 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_variable_in_affectation2507 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_WITH_in_affectation2509 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_variable_in_affectation2512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IA_KW_in_iaBasique2525 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_iaBasique2528 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_iaBasique2530 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_iaBasique2533 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_iaBasique2536 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_iaBasique2539 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RANDOM_KW_in_operation2558 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_BETWEEN_in_operation2561 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2564 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_AND_in_operation2566 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operationMul_in_operationPlus2581 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_PLUS_in_operationPlus2585 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_MINUS_in_operationPlus2590 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operationMul_in_operationPlus2594 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_operationPow_in_operationMul2607 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
-    public static final BitSet FOLLOW_MUL_in_operationMul2611 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_DIV_in_operationMul2616 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_MOD_in_operationMul2621 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operationPow_in_operationMul2625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operationBracket_in_operationPow2640 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_POW_in_operationPow2643 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operationBracket_in_operationPow2646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_operationBracket2661 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_operationBracket2664 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_operationBracket2666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_operationBracket2672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_operationBracket2677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_X_in_variable2690 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_Y_in_variable2695 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_Z_in_variable2700 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2704 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000070000000000L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable2707 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2709 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_variable2712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_variable2718 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2720 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_variable2722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attribut_in_variable2742 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2744 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_variable2746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_variable2766 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2768 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_GAME_in_variable2770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALUE_in_variable2784 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2786 = new BitSet(new long[]{0x0000003000000000L,0x0000000000000000L,0x0000072000000000L,0x01FFFFFFFFFFFFF8L});
-    public static final BitSet FOLLOW_attributTps_in_variable2788 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2790 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
-    public static final BitSet FOLLOW_accesClasse_in_variable2792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALL_in_accesClasse2820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_accesClasse2838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesGlobal_in_accesClasse2844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_accesGlobal2875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_accesGlobal2893 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_NOT_in_accesGlobal2895 = new BitSet(new long[]{0x003C480000000000L,0x0000000000000000L,0xFFFF800000000000L,0x0000000000000007L});
-    public static final BitSet FOLLOW_notAccess_in_accesGlobal2897 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_accesGlobal2899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet_in_notAccess2924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_notAccess2928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_notAccess2932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_accesLocal2942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NUM_in_accesLocal2960 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
-    public static final BitSet FOLLOW_operation_in_accesLocal2962 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_IN_in_accesLocal2964 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_accesLocal2966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_accesLocal2986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1691 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_actionCommandePressee1693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSE_KW_in_actionCommandePressee1699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_KW_in_actionCommandePressee1705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1720 = new BitSet(new long[]{0x0000000000000000L,0x0000030018000000L});
+    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1742 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
+    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ACCELERATE_in_actionCommandeMaintenue1756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BRAKE_in_actionCommandeMaintenue1762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande1778 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
+    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande1783 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
+    public static final BitSet FOLLOW_typeCommand_in_activCommande1787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMANDS_in_typeCommand1801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOUSE_in_typeCommand1809 = new BitSet(new long[]{0x0000000000000002L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_typeCommand1812 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_typeCommand1815 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_typeCommand1817 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_KEY_in_typeCommand1844 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_typeCommand1846 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_typeCommand1849 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_typeCommand1851 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand1876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu1886 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0xFFFF80FC00000040L,0x000001FFFFFFFFFFL});
+    public static final BitSet FOLLOW_IDENT_in_reglesJeu1890 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_reglesJeu1892 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0xFFFF80FC00000040L,0x000001FFFFFFFFFFL});
+    public static final BitSet FOLLOW_declencheur_in_reglesJeu1898 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_reglesJeu1900 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequences_in_reglesJeu1903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_declencheur1917 = new BitSet(new long[]{0x0000000000000000L,0x01B4000000001000L});
+    public static final BitSet FOLLOW_MOVES_KW_in_declencheur1920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIES_KW_in_declencheur1924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurTK_in_declencheur1928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurKT_in_declencheur1932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_declencheur1940 = new BitSet(new long[]{0x6000000000000000L});
+    public static final BitSet FOLLOW_ENDS_KW_in_declencheur1949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTS_KW_in_declencheur1953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_declencheur1971 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_BECOMES_in_declencheur1973 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_varOuNB_in_declencheur1975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_declencheur1995 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_BECOMES_in_declencheur1997 = new BitSet(new long[]{0x003C000000000000L});
+    public static final BitSet FOLLOW_playerOuInteraction_in_declencheur1999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur2019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur2025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_varOuNB2036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_varOuNB2040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_playerOuInteraction2050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_playerOuInteraction2053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2065 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2070 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2076 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesGlobal_in_declencheurTK2080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_declencheurTK2084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2096 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
+    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2101 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
+    public static final BitSet FOLLOW_BY_in_declencheurKT2106 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2111 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesGlobal_in_declencheurKT2115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_declencheurKT2119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_KW_in_siAlors2136 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditions_in_siAlors2139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_siAlors2141 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2144 = new BitSet(new long[]{0x0000000000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_ELSE_in_siAlors2147 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0xFFFF80C001E00040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2150 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_ENDIF_in_siAlors2154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_conditions2169 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditionOu_in_conditions2173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionEt_in_conditionOu2199 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
+    public static final BitSet FOLLOW_OR_in_conditionOu2202 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_NOT_in_conditionOu2206 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditionOu_in_conditionOu2210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cond_in_conditionEt2226 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_AND_in_conditionEt2229 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_NOT_in_conditionEt2233 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditionEt_in_conditionEt2237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_etat_in_cond2253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMP_in_cond2259 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_cond2262 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000003FL});
+    public static final BitSet FOLLOW_EQUALS_in_cond2265 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_INF_in_cond2270 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_SUP_in_cond2275 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_INFEG_in_cond2280 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_SUPED_in_cond2285 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_DIFF_in_cond2290 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_cond2294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_cond2311 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_conditions_in_cond2313 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_cond2315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2329 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_etat2331 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x0000000000007F00L});
+    public static final BitSet FOLLOW_NOT_in_etat2335 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000007F00L});
+    public static final BitSet FOLLOW_DEAD_KW_in_etat2340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALIVE_KW_in_etat2345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EFFACED_KW_in_etat2350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GENERATED_KW_in_etat2355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOUCHING_KW_in_etat2360 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_OTHER_in_etat2365 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesGlobal_in_etat2369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_etat2373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVING_KW_in_etat2378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WAITING_KW_in_etat2383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_etat2393 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_etat2401 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x00000000001F8000L});
+    public static final BitSet FOLLOW_NOT_in_etat2405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001F8000L});
+    public static final BitSet FOLLOW_FINISHED_KW_in_etat2410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTED_KW_in_etat2414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSED_KW_in_etat2419 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MUTED_KW_in_etat2424 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_set_in_etat2427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYED_KW_in_etat2437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOPPED_KW_in_etat2442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_etat2456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_etat2462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation2479 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_ADD_KW_in_affectation2484 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_SUB_KW_in_affectation2489 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_affectation2493 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_affectation2496 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_variable_in_affectation2499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INVERT_KW_in_affectation2506 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_variable_in_affectation2509 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_WITH_in_affectation2511 = new BitSet(new long[]{0x0000003800000000L,0x0000000000000000L,0x0000003C00000000L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_variable_in_affectation2514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IA_KW_in_iaBasique2527 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_iaBasique2530 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_iaBasique2532 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_iaBasique2535 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_iaBasique2538 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_iaBasique2541 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RANDOM_KW_in_operation2560 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_BETWEEN_in_operation2563 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2566 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_AND_in_operation2568 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operationMul_in_operationPlus2583 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
+    public static final BitSet FOLLOW_PLUS_in_operationPlus2587 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_MINUS_in_operationPlus2592 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operationMul_in_operationPlus2596 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
+    public static final BitSet FOLLOW_operationPow_in_operationMul2609 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
+    public static final BitSet FOLLOW_MUL_in_operationMul2613 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_DIV_in_operationMul2618 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_MOD_in_operationMul2623 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operationPow_in_operationMul2627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operationBracket_in_operationPow2642 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_POW_in_operationPow2645 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C00000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operationBracket_in_operationPow2648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_operationBracket2663 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_operationBracket2666 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_operationBracket2668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_operationBracket2674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_operationBracket2679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_X_in_variable2692 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_Y_in_variable2697 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_Z_in_variable2702 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2706 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000070000000000L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable2709 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2711 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_variable2714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_variable2720 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2722 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_variable2724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attribut_in_variable2744 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2746 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_variable2748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_variable2768 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2770 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_GAME_in_variable2772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALUE_in_variable2786 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2788 = new BitSet(new long[]{0x0000003000000000L,0x0000000000000000L,0x0000072000000000L,0x01FFFFFFFFFFFFF8L});
+    public static final BitSet FOLLOW_attributTps_in_variable2790 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2792 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0xFFFF80C000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_accesClasse_in_variable2794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALL_in_accesClasse2822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_accesClasse2840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesGlobal_in_accesClasse2846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_accesGlobal2877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_accesGlobal2895 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_NOT_in_accesGlobal2897 = new BitSet(new long[]{0x003C480000000000L,0x0000000000000000L,0xFFFF800000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_notAccess_in_accesGlobal2899 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_accesGlobal2901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet_in_notAccess2926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_notAccess2930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_notAccess2934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_accesLocal2944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NUM_in_accesLocal2962 = new BitSet(new long[]{0x0000003C00000000L,0x0000000000000000L,0x0000003C04000040L,0x000001FFFFFFFFF8L});
+    public static final BitSet FOLLOW_operation_in_accesLocal2964 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_IN_in_accesLocal2966 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_accesLocal2968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_accesLocal2988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_typeCoordonnees0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_timeUnit0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CAMERA_in_typeObjet3059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MEDIA_in_typeObjet3064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COUNTER_in_typeObjet3069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TIME_in_typeObjet3074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet3D_in_typeObjet3079 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CAMERA_in_typeObjet3061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MEDIA_in_typeObjet3066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COUNTER_in_typeObjet3071 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TIME_in_typeObjet3076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet3D_in_typeObjet3081 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_typeObjet3D0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_attribut0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_attributTps0 = new BitSet(new long[]{0x0000000000000002L});

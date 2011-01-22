@@ -10,6 +10,7 @@ options {
     import code.*;
     import symbols.*;
     import lib.*;
+    import attributes.*;
 }
 
 //@members {}
@@ -84,8 +85,12 @@ init [SymbolTable st] returns [Code c]:
 		st.add(id,t);
 	    }
 	}
-	|^(INIT_HAS_KW accesClass[st] affectationObjet[st])
+	|^(INIT_HAS_KW accesClass[st] affectationObjet_list[st])
 	;
+
+
+
+
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
@@ -152,26 +157,50 @@ view [SymbolTable st] returns [Code c]:
 	FIRST
 	| THIRD
 	;
+affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c] @init{c = new ArrayList();}:
+        (a=affectationObjet[st]{c.addAll(a);} )+;
 
-affectationObjet [SymbolTable st] returns [Code c]:
-	^( ALLOCATION_KW IDENT valAggregation[st]?)
-	| ^( ALLOCATION_KW a=attribut[st] v=typeAllocation[st])
-
+affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c] @init{c = new ArrayList();}:
+	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
+        {c.add(new Pair(i.getText(),t));}
+	| ^( ALLOCATION_KW a=attribut[st] v=typeAllocation[st]) //Controle de type a voir, c'est moche !!!
+            {/*if(a.getSecond().getClass == AtributeBoolean.class &&(true ou false)|||c.add(a.getSecond().setValue(v.getCode()));*/}
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
-
+        {String mode = tc.getCode();
+        if(mode.equals("position")){
+                c.add(new Pair("posX", new AttributeNum(coo.x)));
+                c.add(new Pair("posY", new AttributeNum(coo.y)));
+                c.add(new Pair("posZ", new AttributeNum(coo.z)));
+            }else if(mode.equals("angle")){
+                c.add(new Pair("orX", new AttributeNum(coo.x)));
+                c.add(new Pair("orY", new AttributeNum(coo.y)));
+                c.add(new Pair("orZ", new AttributeNum(coo.z)));
+            }else{
+                c.add(new Pair("tX", new AttributeNum(coo.x)));
+                c.add(new Pair("tY", new AttributeNum(coo.y)));
+                c.add(new Pair("tZ", new AttributeNum(coo.z)));
+            }
+        }
 	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
-
 	| ^( ALLOCATION_KW att=attributTps[st] v=operation[st] u=timeUnit[st])
+        {c.add(new Pair(att,new AttributeTime(v.getCode(),u)));}
     ;
     
 typeAllocation [SymbolTable st] returns [Code c]:	
-	(co = operation[st] | IDENT | 'true' | 'false')
-        {c = co;}
+	(co = operation[st] {c = co;}| i=IDENT {c = new Code(i.getText());}| 'true' {c = new Code ("true");} | 'false' {c = new Code ("false");})
+        
 	;
 	
-valAggregation [SymbolTable st] returns [Code c]:
-	^(AGGREGATION_KW operation[st] timeUnit[st]?)
-	|^(AGGREGATION_KW IDENT)
+valAggregation [SymbolTable st] returns [Attributes c]:
+	^(AGGREGATION_KW o=operation[st] t=timeUnit[st]?)
+        {if(t!=null){
+            c= new AttributeTime(o.getCode(),t);
+        }else{
+                c=new AttributeNum(o.getCode());
+            }
+        }
+	|^(AGGREGATION_KW i=IDENT)
+        {c = new AttributeString(i.getText());}
 	; 
 
 /* Definition */	
@@ -420,11 +449,11 @@ typeCoordonnees [SymbolTable st] returns [Code c]:
 	POSITION {c = new Code("position");}| ORIENTATION {c = new Code("angle");}| SIZE {c = new Code("taille");}
 	;
 
-timeUnit [SymbolTable st] returns [Code c]:
+timeUnit [SymbolTable st] returns [String c]:
 	MIN
 	| SEC
 	| MS
-        {c = new Code("ms");}
+        {c = "ms";}
 	| FRAME
 	;
 
@@ -460,53 +489,53 @@ typeObjet3D returns [Model t]:
 	;
 	
 // every attributes of predefined classes
-attribut [SymbolTable st] returns [Code c]: 
-	MASS                  // attributes of object :
-	| IS_FIX
-	| IS_TRAVERSABLE
-	| FOV                    // attributes of "camera"
-	| TYPE
-	| ACTIVE
-	| NAME                   // attributes of "character" :
-	| DESCRIPTION
-	| LIFE
-	| LIFE_MAX
-	| LIFE_MIN
-	| NB_LIVES
-	| MAGIC
-	| MAGIC_MAX
-	| MAGIC_MIN
-	| LEVEL
-	| ATTACK
-	| DEFENSE
-	| JUMP_FORCE
-	| JUMP_AIR_MAX
-	| MONEY
-	| CLASS
-	| RACE
-	| ACCELERATION
-	| SPEED                // attributes of "vehicle" :
-	| SPEED_MAX
-	| SPEED_MIN
-	| BOOST
-	| BOOST_MAX
-	| NB_MUNITIONS           // attributes of"weapon" :
-	| NB_MUNITIONS_MAX
-	| SHOOT_POWER
-	| DAMAGES               //attributes of "projectile"
-	| VALUE                // attributes of "bonus" :
-	| UNIT
-	| OBJECT_NAME
-	| ATTRIBUT_NAME
-	| VOLUME                 //attributes of "media"
-	| NUMBER              //attributes of "ball"
-	| MOVE_WITH_CAMERA
+attribut [SymbolTable st] returns [Pair<String,Attributes> c]:
+	MASS {c =new Pair("mass",new AttributeNum(0));}                 // attributes of object :
+	| IS_FIX {c =new Pair("isFix",new AttributeBoolean(false));}
+	| IS_TRAVERSABLE {c =new Pair("isTraversable",new AttributeBoolean(false));}
+	| FOV //{c ="fov";}                    // attributes of "camera"
+	| TYPE //{c ="type";}
+	| ACTIVE //{c ="active";}
+	| NAME {c =new Pair("name",new AttributeString(""));}                   // attributes of "character" :
+	| DESCRIPTION {c =new Pair("description",new AttributeString(""));}
+	| LIFE {c =new Pair("life",new AttributeNum(0));}
+	| LIFE_MAX {c =new Pair("lifeMax",new AttributeNum(0));}
+	| LIFE_MIN {c =new Pair("lifeMin",new AttributeNum(0));}
+	| NB_LIVES {c =new Pair("nbOfLives",new AttributeNum(0));}
+	| MAGIC {c =new Pair("magic",new AttributeNum(0));}
+	| MAGIC_MAX {c =new Pair("magicMax",new AttributeNum(0));}
+	| MAGIC_MIN {c =new Pair("magicMin",new AttributeNum(0));}
+	| LEVEL {c =new Pair("level",new AttributeNum(0));}
+	| ATTACK {c =new Pair("attack",new AttributeNum(0));}
+	| DEFENSE {c =new Pair("defense",new AttributeNum(0));}
+	| JUMP_FORCE {c =new Pair("jumpForce",new AttributeNum(0));}
+	| JUMP_AIR_MAX {c =new Pair("maxJumpsInTheAir",new AttributeNum(0));}
+	| MONEY {c =new Pair("money",new AttributeNum(0));}
+	| CLASS {c =new Pair("class",new AttributeString(""));}
+	| RACE {c =new Pair("race",new AttributeString(""));}
+	| ACCELERATION {c =new Pair("acceleration",new AttributeNum(0));}
+	| SPEED {c =new Pair("speed",new AttributeNum(0));}                // attributes of "vehicle" :
+	| SPEED_MAX //{c ="maxSpeed";}
+	| SPEED_MIN //{c ="minSpeed";}
+	| BOOST //{c ="boost";}
+	| BOOST_MAX //{c ="maxBoost";}
+	| NB_MUNITIONS {c =new Pair("nbMunitions",new AttributeNum(0));}           // attributes of"weapon" :
+	| NB_MUNITIONS_MAX {c =new Pair("nbMunitionsMax",new AttributeNum(0));}
+	| SHOOT_POWER {c =new Pair("boostInterval",new AttributeNum(0));}
+	| DAMAGES {c =new Pair("damages",new AttributeNum(0));}               //attributes of "projectile"
+	| VALUE //{c ="value";}                // attributes of "bonus" :
+	| UNIT //{c ="unit";}
+	| OBJECT_NAME //{c ="objectname";}
+	| ATTRIBUT_NAME //{c ="attributName";}
+	| VOLUME  //{c ="volume";}                //attributes of "media"
+	| NUMBER //{c ="number";}           //attributes of "ball"
+	| MOVE_WITH_CAMERA {c =new Pair("moveWithCamera",new AttributeBoolean(false));}
 	;
 	
-attributTps [SymbolTable st] returns [Code c]:
-	BOOST_INTERVAL
-	| SHOOT_INTERVAL        //attributes of "weapon" :
-	| RELOAD_TIME
+attributTps [SymbolTable st] returns [String c]:
+	BOOST_INTERVAL{c ="boostInterval";}
+	| SHOOT_INTERVAL {c = "shootInterval";}        //attributes of "weapon" :
+	| RELOAD_TIME {c = "reloadTime";}
 	;
 
 attributListeOuObjet [SymbolTable st] returns [Code c]:

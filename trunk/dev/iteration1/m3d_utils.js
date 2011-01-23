@@ -295,17 +295,36 @@ M3D.GUI.saveNewRule = function(){
 	
 	var value = [];
 	value.push('rule '+ruleName+' is'); 
+	value.push(entityAttribut+' of');
 	value.push(entityName);
-	value.push(entityAttribut);
-	value.push(ruleCondition+' then');
-	value.push(conditionValue);
+	value.push(ruleCondition);
+	value.push(conditionValue+' then');
 	value.push(action);
 	var ruleHTML = '<div><input class="input-rule" type="text" name="rules[]" value="'+value.join(' ')+'" disabled="true"/>&nbsp;<a href="#" class="delete-rule" title="Delete">Delete</a></div>';
 
-	$('#rules-list').prepend(ruleHTML);
+	if ( isNewRule(value.join(' ')) ){
+		$('#rules-list').prepend(ruleHTML);
+		
+		// [DB]
+		// Save the new rule into DB
 
-	// [DB]
-	// Save the new rule into DB
+	}
+	else {
+		alert('The same rule has already been saved!');
+	}
+	
+	// local function
+	function isNewRule(v){
+		var inputs = $('#rules-list input[type="text"]');
+		var len = inputs.length;
+		for(var i=0; i<len; i++){
+
+			if ( inputs[i].value === v ) return false;
+			
+		}
+
+		return true;
+	}
 }
 
 

@@ -102,12 +102,88 @@ public class Code {
     public static Code genSigOp(String name, String entities, String ress, String op, float value) {
 	return new Code(name + "->" + entities + "." + ress + "apply (" + op + value + ");");
     }
-
-    public static Code genRD(String val1, String val2){
-        return new Code("Rand("+val1+","+val2+")");
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////Opérations///////////////////////////////////////
+    public static Code genRD(Code c1, Code c2){ //Math.round() arrondi ?
+        Code c = new Code("Math.ramdom()*(");
+        c.append(c1);
+        c.append("-");
+        c.append(c2);
+        c.append(") + (");
+        c.append(c2);
+        return c;
     }
 
-    public static Code genEOF() {
-	return new Code(";;");
+    public static Code genPLUS(Code c1, Code c2){
+        Code c = new Code("(");
+        c.append(c1);
+        c.append(") + (");
+        c.append(c2);
+        c.append(")");
+      return c;
+    }
+
+    public static Code genMINUS(Code c1,Code c2){
+        Code c = new Code("(");
+        c.append(c1);
+        c.append(") - (");
+        c.append(c2);
+        c.append(")");
+      return c;
+    }
+
+    public static Code genMUL(Code c1,Code c2){
+        Code c = new Code("(");
+        c.append(c1);
+        c.append(") * (");
+        c.append(c2);
+        c.append(")");
+      return c;
+    }
+
+    public static Code genDIV(Code c1,Code c2){
+        Code c = new Code("(");
+        c.append(c1);
+        c.append(") / (");
+        c.append(c2);
+        c.append(")");
+      return c;
+    }
+
+    public static Code genMOD(Code c1,Code c2){
+        Code c = new Code("(");
+        c.append(c1);
+        c.append(") % (");
+        c.append(c2);
+        c.append(")");
+        return c;
+    }
+
+    public static Code genPOW(Code c1,Code c2){
+        Code c = new Code("Math.pow(");
+        c.append(c1);
+        c.append(",");
+        c.append(c2);
+        c.append(")");
+        return c;
+    }
+ ///////////////////////////////////////////////////////////////////////////////
+
+    public static Code genIF(Code co, Code r1,Code r2){
+        Code c = new Code ("if(");
+        c.append(co);
+        c.append("){ \n");
+        c.append(r1);
+        c.append("} \n");
+        if(r2!= null){
+            c.append("else{ \n");
+            c.append(r2);
+            c.append("} \n");
+        }
+        return c;
+    }
+
+    public static Code genEOL() {
+	return new Code(";");
     }
 }

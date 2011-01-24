@@ -4,6 +4,8 @@
  */
 package attributes;
 
+import code.Code;
+
 /**
  *
  * @author Quentin
@@ -69,6 +71,10 @@ public class AttributeTime implements Attributes {
     }
 
     public void setValue(String s) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(Code s) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

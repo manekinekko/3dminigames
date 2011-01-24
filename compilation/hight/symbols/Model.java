@@ -7,7 +7,7 @@ import lib.Pair;
 
 public class Model implements Symbol {
 
-    public static Model object, character, projectile, zone, obstacle, weapon;
+    public static Model object, character, projectile, zone, obstacle, weapon, ground;
     private String name;
     private Map<String, Attributes> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
 
@@ -43,6 +43,9 @@ public class Model implements Symbol {
 	weapon = new Model("Weapon", object);
 	weapon.addAttributes(new Pair<String, Attributes>("name", new AttributeString("")), new Pair<String, Attributes>("nbMunitions", new AttributeNum(-1)), new Pair<String, Attributes>("nbMunitionsMax", new AttributeNum(-1)), new Pair<String, Attributes>("shootPower", new AttributeNum(1)), new Pair<String, Attributes>("shootInterval", new AttributeTime(1, "s")), new Pair<String, Attributes>("reloadTime", new AttributeTime(1, "s")));
         st.add(weapon.getName(), weapon);
+        ground = new Model("Ground", object);
+        ground.addAttribut("type", new AttributeString(""));
+        st.add(ground.getName(), ground);
     }
 
     public void addAttribut(String attr) {

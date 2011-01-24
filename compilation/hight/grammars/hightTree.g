@@ -196,7 +196,7 @@ valAggregation [SymbolTable st] returns [Attributes c]:
         {if(t!=null){
             c= new AttributeTime(o.getCode(),t);
         }else{
-                c=new AttributeNum(o.getCode());
+                c=new AttributeNum(o);
             }
         }
 	|^(AGGREGATION_KW i=IDENT)
@@ -266,7 +266,7 @@ transformation [SymbolTable st] returns [Code c]:
 	
 coordinates [SymbolTable st] returns [Coordonnees coo]:
 	^(COORDINATE_KW x=operation[st] y=operation[st] z=operation[st])
-        {coo = new Coordonnees(x.getCode(),y.getCode(),z.getCode());}
+        {coo = new Coordonnees(x, y, z);}
 	;
 
 /* Initialization of commands */
@@ -354,14 +354,28 @@ declencheurKT [SymbolTable st] returns [Code c]
 	
 /* Conditions */  
 siAlors [SymbolTable st] returns [Code c]:
-  ^(IF_KW c=conditions[st] r1=consequences[st] r2=consequences[st]?)
-  {c = Code.genIF(c,r1,r2);}
+  ^(IF_KW cond=conditions[st] r1=consequences[st] r2=consequences[st]?)
+  {c = Code.genIF(cond,r1,r2);}
   ;
 //////////////////////////////////////////////////////////////////////////petit pb ici je pense
-conditions [SymbolTable st] returns [Code c]:
-  ^(CONDITION_KW NOT? conditions[st])
-  |^(OR conditions[st] NOT? conditions[st])
-  |^(AND conditions[st] NOT? conditions[st])
+conditions [SymbolTable st] returns [Code c]
+    @init{not=null;}:
+  ^(CONDITION_KW (not=NOT)? cond=conditions[st])
+    {
+        if(not != null) {
+            c = Code.genNot(cond);
+        } else {
+            c = cond;
+        }
+    }
+  |^(OR cond1=conditions[st] cond2=conditions[st])
+    {
+        c = Code.genOr(cond1,cond2);
+    }
+  |^(AND cond1=conditions[st] cond2=conditions[st])
+    {
+        c = Code.genAnd(cond1,cond2);
+    }
   |^(EQUALS operation[st] operation[st])
   |^(INF operation[st]operation[st])
   |^(SUP operation[st] operation[st])

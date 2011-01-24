@@ -280,11 +280,11 @@ conditions :
   ;
 
 conditionOu :
-  conditionEt (OR^ (NOT)? conditionOu)? 
+  conditionEt (OR^ conditionEt)*
   ;
 
 conditionEt :
-  cond (AND^ (NOT)? conditionEt)? 
+  cond (AND^ cond)*
   ;
 
 cond :

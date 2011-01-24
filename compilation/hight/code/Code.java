@@ -102,6 +102,42 @@ public class Code {
     public static Code genSigOp(String name, String entities, String ress, String op, float value) {
 	return new Code(name + "->" + entities + "." + ress + "apply (" + op + value + ");");
     }
+    /*Conditions*/
+
+    public static Code genNot(Code c) {
+        Code cod = new Code();
+
+        cod.append("!(");
+        cod.append(cod);
+        cod.append(")");
+        
+        return cod;
+    }
+
+    public static Code genOr(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") || (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+
+    public static Code genAnd(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") && (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Opérations///////////////////////////////////////
     public static Code genRD(Code c1, Code c2){ //Math.round() arrondi ?

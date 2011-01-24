@@ -5,6 +5,8 @@
 
 package attributes;
 
+import code.Code;
+
 /**
  *
  * @author Quentin
@@ -15,4 +17,5 @@ public interface Attributes {
     public void setValue(boolean b);
     public void setValue(float f);
     public void setValue(String s);
+    public void setValue(Code s);
 }

@@ -354,7 +354,8 @@ declencheurKT [SymbolTable st] returns [Code c]
 	
 /* Conditions */  
 siAlors [SymbolTable st] returns [Code c]:
-  ^(IF_KW conditions[st] consequences[st] consequences[st]?)
+  ^(IF_KW c=conditions[st] r1=consequences[st] r2=consequences[st]?)
+  {c = Code.genIF(c,r1,r2);}
   ;
 //////////////////////////////////////////////////////////////////////////petit pb ici je pense
 conditions [SymbolTable st] returns [Code c]:
@@ -410,13 +411,19 @@ actionObjetList [SymbolTable st] returns [Code c]: actionObjet[st]+;
 
 operation [SymbolTable st] returns [Code c]:
 	^(RANDOM_KW c1 =operation[st] c2 =operation[st])
-         {c=Code.genRD(c1.getCode(),c2.getCode());}
+         {c=Code.genRD(c1,c2);}
 	|^(PLUS operation[st] operation[st])
+        {c=Code.genPLUS(c1,c2);}
 	|^(MINUS operation[st] operation[st])
+        {c=Code.genMINUS(c1,c2);}
 	|^(MUL operation[st] operation[st])
+        {c=Code.genMUL(c1,c2);}
 	|^(DIV operation[st] operation[st])
+        {c=Code.genDIV(c1,c2);}
 	|^(MOD operation[st] operation[st])
+        {c=Code.genMOD(c1,c2);}
 	|^(POW operation[st] operation[st])
+        {c=Code.genPOW(c1,c2);}
 	|variable[st]
 	|f = FLOAT
         {c = new Code(f.getText());}

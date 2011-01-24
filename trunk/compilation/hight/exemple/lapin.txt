@@ -72,7 +72,7 @@ bazooka has missile ;        //aggrégation -> missile parenté à bazooka -> mi
 chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 
 
-//sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
+sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
 
 
 //////////// DEF

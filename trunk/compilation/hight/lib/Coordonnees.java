@@ -5,15 +5,17 @@
 
 package lib;
 
+import code.Code;
+
 /**
  *
  * @author Beben
  */
 public class Coordonnees{
 
-public String x,y,z;
+public Code x,y,z;
 
-public Coordonnees(String x, String y, String z){
+public Coordonnees(Code x, Code y, Code z){
     this.x = x;
     this.y = y;
     this.z = z;

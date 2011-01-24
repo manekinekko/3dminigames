@@ -3,6 +3,8 @@
  */
 package attributes;
 
+import code.Code;
+
 /**
  *
  * @author Quentin
@@ -10,14 +12,15 @@ package attributes;
 public class AttributeNum implements Attributes {
 
     private float f;
-    private String rd, last;
+    private String last;
+    private Code rd;
 
     public AttributeNum(float f) {
         this.f = f;
         last = "f";
     }
 
-    public AttributeNum(String f) {
+    public AttributeNum(Code f) {
         this.rd = f;
         last = "rd";
     }
@@ -27,7 +30,7 @@ public class AttributeNum implements Attributes {
         last = "f";
     }
 
-    public void setValue(String s) {
+    public void setValue(Code s) {
             this.rd = s;
             last = "rd";
     }
@@ -43,7 +46,7 @@ public class AttributeNum implements Attributes {
     @Override
     public String toString() {
         if (last.equals("rd")) {
-            return rd;
+            return rd.getCode();
         } else {
             return f + "";
         }
@@ -54,6 +57,10 @@ public class AttributeNum implements Attributes {
     }
 
     public void setValue(String r, String u) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(String s) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

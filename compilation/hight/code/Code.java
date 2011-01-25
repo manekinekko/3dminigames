@@ -102,7 +102,18 @@ public class Code {
     public static Code genSigOp(String name, String entities, String ress, String op, float value) {
 	return new Code(name + "->" + entities + "." + ress + "apply (" + op + value + ");");
     }
-    /*Conditions*/
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////Assignation//////////////////////////////////////
+
+
+
+    
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////Conditions///////////////////////////////////////
 
     public static Code genNot(Code c) {
         Code cod = new Code();
@@ -137,6 +148,74 @@ public class Code {
 
         return cod;
     }
+
+        public static Code genInfEg(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") <= (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+    public static Code genInf(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") < (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+    public static Code genSupEg(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") >= (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+    public static Code genSup(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") > (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+    public static Code genEquals(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") == (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+    public static Code genDiff(Code cond1, Code cond2) {
+        Code cod = new Code();
+
+        cod.append("(");
+        cod.append(cond1);
+        cod.append(") != (");
+        cod.append(cond2);
+        cod.append(")");
+
+        return cod;
+    }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Opérations///////////////////////////////////////

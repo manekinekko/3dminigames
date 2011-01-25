@@ -376,12 +376,30 @@ conditions [SymbolTable st] returns [Code c]
     {
         c = Code.genAnd(cond1,cond2);
     }
-  |^(EQUALS operation[st] operation[st])
-  |^(INF operation[st]operation[st])
-  |^(SUP operation[st] operation[st])
-  |^(INFEG operation[st] operation[st])
-  |^(SUPED operation[st] operation[st])
-  |^(DIFF operation[st] operation[st])
+  |^(EQUALS cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genEquals(cond1,cond2);
+    }
+  |^(INF cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genInf(cond1,cond2);
+    }
+  |^(SUP cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genSup(cond1,cond2);
+    }
+  |^(INFEG cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genInfEg(cond1,cond2);
+    }
+  |^(SUPED cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genSupEg(cond1,cond2);
+    }
+  |^(DIFF cond1=operation[st] cond2=operation[st])
+    {
+        c = Code.genDiff(cond1,cond2);
+    }
   | etat[st]
   ;
 

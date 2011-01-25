@@ -27,7 +27,7 @@ Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (
 Lapin has size at 1 1 1;
 
 
-//cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
+cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
 
 chasseur is Character player;
 chasseur has life at 5;
@@ -47,7 +47,7 @@ arretDroit has size at 1 1 1;
 
 
 lapin1 is Lapin enemy;
-lapin has speed at 10;
+lapin1 has speed at 10;
 lapin2 is Lapin enemy;
 lapin2 has speed at 20;
 lapin3 is Lapin enemy;
@@ -58,17 +58,18 @@ zoneGenLapin has position at 0 0 0;
 zoneGenLapin has orientation at 0 0 0;
 zoneGenLapin has size at 1 1 1;
 
-bazooka is Weapon;
-bazooka has reloadTime at 500 ms;
+bazooka is Weapon;              
+bazooka has shootInterval at 500 ms;  //munitions infinies
 bazooka has position at 0 0 0;
 bazooka has orientation at 0 0 0;
 
-missile is Projectile ally;  //pour Projectile, doit-on ajouter un attribut durée de vie ?
+missile is Projectile ally;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
 missile has damages at 100;
-missile has position at 0 0 0;
-missile has orientation at 0 0 0;
+missile has speed at 100;
+missile has position at position of bazooka;          //la position et l'orientation du bazooka changent
+missile has orientation at orientation of bazooka;
 
-bazooka has missile ;        //aggrégation -> missile parenté à bazooka -> missile position relative
+// (bazooka has missile ; )     // faux selon Emeric et il a raison
 chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 
 
@@ -84,6 +85,8 @@ definition  tirer  means
 definition  reinitialisation  means 
 	generate chasseur,
 	generate bazooka
+
+
 
 
 //////////// COMMANDES
@@ -134,6 +137,8 @@ rule defeat then
 //	wait 5 sec then Game starts
 //	endWait
 
+rule missile touches Lapin then
+	sub 1 for life of Lapin
 
 //////////// IA BASIQUE
 ia lapin1 is 

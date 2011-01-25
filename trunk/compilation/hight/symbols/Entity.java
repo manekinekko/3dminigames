@@ -13,6 +13,7 @@ public class Entity implements Symbol{
     private String name;
     private List<Model> models;
     private Map<String, Attributes> attributes;
+    private boolean generate = true;
 
     public Entity(String name, Model ... m) {
         this.name = name;
@@ -57,5 +58,13 @@ public class Entity implements Symbol{
 
     public String getName() {
         return this.name;
+    }
+
+    public void toGenerate(){
+        generate = true;
+    }
+
+    public boolean getGenerate(){
+        return generate;
     }
 }

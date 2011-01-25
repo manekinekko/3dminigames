@@ -10,6 +10,7 @@ public class Model implements Symbol {
     public static Model object, character, projectile, zone, obstacle, weapon, ground;
     private String name;
     private Map<String, Attributes> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
+    private boolean generate = true;
 
     public Model(String name) {
 	this.name = name;
@@ -85,5 +86,13 @@ public class Model implements Symbol {
 
     public String getName() {
 	return name;
+    }
+
+    public void toGenerate(){
+        generate = true;
+    }
+
+    public boolean getGenerate(){
+        return generate;
     }
 }

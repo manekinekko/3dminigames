@@ -15,6 +15,7 @@ public class Definition implements Symbol{
 
     String name;
     Code c;
+    boolean generate = false;
 
     public Definition(String s, Code c){
         name = s;
@@ -26,6 +27,14 @@ public class Definition implements Symbol{
     }
     public String getName() {
         return name;
+    }
+
+    public void toGenerate(){
+        generate = true;
+    }
+
+    public boolean getGenerate(){
+        return generate;
     }
 
 }

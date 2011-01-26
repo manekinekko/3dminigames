@@ -11,6 +11,7 @@ options {
     import symbols.*;
     import lib.*;
     import attributes.*;
+    import java.util.Iterator;
 }
 
 @members {
@@ -101,7 +102,18 @@ init [SymbolTable st] returns [Code c]:
 		st.add(id,t);
 	    }
 	}
-	|^(INIT_HAS_KW accesClass[st] affectationObjet_list[st])
+	|^(INIT_HAS_KW ac=accesClass[st] ao=affectationObjet_list[st])
+	{
+	    Iterator<Symbol> it = ac.iterator();
+	    while(it.hasNext()) {
+		Symbol s = it.next();
+		Iterator<Pair<String,Attributes>> ite = ao.iterator();
+		while(ite.hasNext()) {
+		    Pair<String,Attributes> p = ite.next();
+		    s.addAttribute(p.getFirst(),p.getSecond());
+		}
+	    }
+	}
 	;
 
 
@@ -179,8 +191,21 @@ affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,Attributes>
 affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c] @init{c = new ArrayList();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
         {c.add(new Pair(i.getText(),t));}
-	| ^( ALLOCATION_KW a=attribut[st] v=typeAllocation[st]) //Controle de type a voir, c'est moche !!!
-            {/*if(a.getSecond().getClass == AtributeBoolean.class &&(true ou false)|||c.add(a.getSecond().setValue(v.getCode()));*/}
+	| ^( ALLOCATION_KW a=attribut[st] ta=typeAllocation[st]) //Controle de type a voir, c'est moche !!!
+            {
+		if(!a.getSecond().equals(ta.getFirst())) {
+		    System.out.println("Erreur : Erreur de type");
+		    System.exit(-1);
+		}
+
+		try {
+		    Attributes attr = ta.getFirst().getConstructor(Code.class).newInstance(ta.getSecond());
+		    c.add(new Pair(a.getFirst(), attr));
+		} catch(Exception e) {
+		    System.out.println("Erreur Critique !!!");
+		    System.exit(-1);
+		}
+	    }
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
         {String mode = tc.getCode();
         if(mode.equals("position")){
@@ -202,11 +227,11 @@ affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c]
         {c.add(new Pair(att,new AttributeTime(v.getCode(),u)));}
     ;
     
-typeAllocation [SymbolTable st] returns [Code c]:	
-	(co = operation[st] {c = co;}
-        | i=IDENT {c = new Code(i.getText());}
-        | 'true' {c = new Code ("true");}
-        | 'false' {c = new Code ("false");})
+typeAllocation [SymbolTable st] returns [Pair<Class<Attributes>, Code> p]:
+	co = operation[st] {p = new Pair(AttributeNum.class,co);}
+	| i=IDENT {p = new Pair(AttributeString.class,new Code(i.getText()));}
+	| 'true' {p = new Pair(AttributeBoolean.class, new Code ("true"));}
+	| 'false' {p = new Pair(AttributeBoolean.class, new Code ("false"));}
 	;
 	
 valAggregation [SymbolTable st] returns [Attributes c]:
@@ -622,47 +647,47 @@ typeObjet3D returns [Model t]:
 	;
 	
 // every attributes of predefined classes
-attribut [SymbolTable st] returns [Pair<String,Attributes> c]:
-	MASS {c =new Pair("mass",new AttributeNum(0));}                 // attributes of object :
-	| IS_FIX {c =new Pair("isFix",new AttributeBoolean(false));}
-	| IS_TRAVERSABLE {c =new Pair("isTraversable",new AttributeBoolean(false));}
+attribut [SymbolTable st] returns [Pair<String,Class<Attributes>> c]:
+	MASS {c =new Pair("mass", AttributeNum.class);}                 // attributes of object :
+	| IS_FIX {c =new Pair("isFix", AttributeBoolean.class);}
+	| IS_TRAVERSABLE {c =new Pair("isTraversable", AttributeBoolean.class);}
 	| FOV //{c ="fov";}                    // attributes of "camera"
 	| TYPE //{c ="type";}
 	| ACTIVE //{c ="active";}
-	| NAME {c =new Pair("name",new AttributeString(""));}                   // attributes of "character" :
-	| DESCRIPTION {c =new Pair("description",new AttributeString(""));}
-	| LIFE {c =new Pair("life",new AttributeNum(0));}
-	| LIFE_MAX {c =new Pair("lifeMax",new AttributeNum(0));}
-	| LIFE_MIN {c =new Pair("lifeMin",new AttributeNum(0));}
-	| NB_LIVES {c =new Pair("nbOfLives",new AttributeNum(0));}
-	| MAGIC {c =new Pair("magic",new AttributeNum(0));}
-	| MAGIC_MAX {c =new Pair("magicMax",new AttributeNum(0));}
-	| MAGIC_MIN {c =new Pair("magicMin",new AttributeNum(0));}
-	| LEVEL {c =new Pair("level",new AttributeNum(0));}
-	| ATTACK {c =new Pair("attack",new AttributeNum(0));}
-	| DEFENSE {c =new Pair("defense",new AttributeNum(0));}
-	| JUMP_FORCE {c =new Pair("jumpForce",new AttributeNum(0));}
-	| JUMP_AIR_MAX {c =new Pair("maxJumpsInTheAir",new AttributeNum(0));}
-	| MONEY {c =new Pair("money",new AttributeNum(0));}
+	| NAME {c =new Pair("name", AttributeString.class);}                   // attributes of "character" :
+	| DESCRIPTION {c =new Pair("description", AttributeString.class);}
+	| LIFE {c =new Pair("life", AttributeNum.class);}
+	| LIFE_MAX {c =new Pair("lifeMax", AttributeNum.class);}
+	| LIFE_MIN {c =new Pair("lifeMin", AttributeNum.class);}
+	| NB_LIVES {c =new Pair("nbOfLives", AttributeNum.class);}
+	| MAGIC {c =new Pair("magic", AttributeNum.class);}
+	| MAGIC_MAX {c =new Pair("magicMax", AttributeNum.class);}
+	| MAGIC_MIN {c =new Pair("magicMin", AttributeNum.class);}
+	| LEVEL {c =new Pair("level", AttributeNum.class);}
+	| ATTACK {c =new Pair("attack", AttributeNum.class);}
+	| DEFENSE {c =new Pair("defense", AttributeNum.class);}
+	| JUMP_FORCE {c =new Pair("jumpForce", AttributeNum.class);}
+	| JUMP_AIR_MAX {c =new Pair("maxJumpsInTheAir", AttributeNum.class);}
+	| MONEY {c =new Pair("money", AttributeNum.class);}
 	| CLASS {c =new Pair("class",new AttributeString(""));}
 	| RACE {c =new Pair("race",new AttributeString(""));}
-	| ACCELERATION {c =new Pair("acceleration",new AttributeNum(0));}
-	| SPEED {c =new Pair("speed",new AttributeNum(0));}                // attributes of "vehicle" :
+	| ACCELERATION {c =new Pair("acceleration", AttributeNum.class);}
+	| SPEED {c =new Pair("speed", AttributeNum.class);}                // attributes of "vehicle" :
 	| SPEED_MAX //{c ="maxSpeed";}
 	| SPEED_MIN //{c ="minSpeed";}
 	| BOOST //{c ="boost";}
 	| BOOST_MAX //{c ="maxBoost";}
-	| NB_MUNITIONS {c =new Pair("nbMunitions",new AttributeNum(0));}           // attributes of"weapon" :
-	| NB_MUNITIONS_MAX {c =new Pair("nbMunitionsMax",new AttributeNum(0));}
-	| SHOOT_POWER {c =new Pair("boostInterval",new AttributeNum(0));}
-	| DAMAGES {c =new Pair("damages",new AttributeNum(0));}               //attributes of "projectile"
+	| NB_MUNITIONS {c =new Pair("nbMunitions", AttributeNum.class);}           // attributes of"weapon" :
+	| NB_MUNITIONS_MAX {c =new Pair("nbMunitionsMax", AttributeNum.class);}
+	| SHOOT_POWER {c =new Pair("boostInterval", AttributeNum.class);}
+	| DAMAGES {c =new Pair("damages", AttributeNum.class);}               //attributes of "projectile"
 	| VALUE //{c ="value";}                // attributes of "bonus" :
 	| UNIT //{c ="unit";}
 	| OBJECT_NAME //{c ="objectname";}
 	| ATTRIBUT_NAME //{c ="attributName";}
 	| VOLUME  //{c ="volume";}                //attributes of "media"
 	| NUMBER //{c ="number";}           //attributes of "ball"
-	| MOVE_WITH_CAMERA {c =new Pair("moveWithCamera",new AttributeBoolean(false));}
+	| MOVE_WITH_CAMERA {c =new Pair("moveWithCamera", AttributeBoolean.class);}
 	;
 	
 attributTps [SymbolTable st] returns [String c]:

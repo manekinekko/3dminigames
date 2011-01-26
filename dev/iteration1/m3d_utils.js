@@ -965,6 +965,56 @@ M3D.GUI.scaleObject = function(delta)
 }
 
 
+M3D.GUI.generateLevelFile = function(){
+	
+	var camera = scene.camera;
+	var light = doc.getElement("mainlight");
+	
+	var data = {};
+	data.scene = {id:'scene1'};
+	data.cam = {
+					id:'camera1',
+					loc_x:camera.getLocX(),
+					loc_y:camera.getLocY(),
+					loc_z:camera.getLocZ(),
+					rot_x:camera.getRotX(),
+					rot_y:camera.getRotY(),
+					rot_z:camera.getRotZ()
+				};
+				
+	data.lights = [];
+	data.lights.push({
+						id:light.getId(),
+						loc_x:light.getLocX(),
+						loc_y:light.getLocY(),
+						loc_z:light.getLocZ(),
+						type:light.getType()
+					});
+	
+	// sample
+	// please get the real collada models from DB
+	data.colladas = [];
+	data.colladas.push({id:'collada1',document:'path/to/collada1.dae',loc_x:0,loc_y:0,loc_z:0,rot_x:0,rot_y:0,rot_z:0,scale:1});
+	data.colladas.push({id:'collada2',document:'path/to/collada2.dae',loc_x:0,loc_y:0,loc_z:0,rot_x:0,rot_y:0,rot_z:0,scale:1});
+	
+	var dataString = JSON.stringify(data);
+	$.ajax({
+		url: 'xml_gen.php',
+		type: 'POST',
+		dataType:'json',
+		data: { glge:dataString },
+		success:function(a){
+			//alert('Generated file name is : '+ a.filename);
+
+			// FOR DEBUGGING ONLY
+			var newwindow = window.open(a.filename, a.filename, 'height=400,width=400');
+			if(window.focus) newwindow.focus;
+			//
+		}	
+	});
+	
+}
+
 
 // -- camera controler
 M3D.GUI.CameraController = function(element) {

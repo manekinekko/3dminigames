@@ -138,19 +138,25 @@ doc.onLoad = function() {
 		M3D.GUI.deleteAttributFromList(this);
 	});
 	
+	// -- open the rules manager window
 	$('#manage-rules').bind('click', function(){
 		M3D.GUI.showPopup('rules');
 	});
 	
+	// -- add a new rule
 	$('#add-rule').bind('click', function(){
 		if ( M3D.GUI.isRequiredFieldsOK(this) ){
 			M3D.GUI.saveNewRule();
 		}
 	});
 	
+	// -- delete a rule
 	$('.delete-rule').live('click', function(){
 		M3D.GUI.deleteRule(this);
 	});
+	
+	
+	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 	
 	///////////////////////////			
 	// -- the rendering loop

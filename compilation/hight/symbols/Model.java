@@ -45,7 +45,7 @@ public class Model implements Symbol {
 	weapon.addAttributes(new Pair<String, Attributes>("name", new AttributeString("")), new Pair<String, Attributes>("nbMunitions", new AttributeNum(-1)), new Pair<String, Attributes>("nbMunitionsMax", new AttributeNum(-1)), new Pair<String, Attributes>("shootPower", new AttributeNum(1)), new Pair<String, Attributes>("shootInterval", new AttributeTime(1, "s")), new Pair<String, Attributes>("reloadTime", new AttributeTime(1, "s")));
         st.add(weapon.getName(), weapon);
         ground = new Model("Ground", object);
-        ground.addAttribut("type", new AttributeString(""));
+        ground.addAttribute("type", new AttributeString(""));
         st.add(ground.getName(), ground);
     }
 
@@ -53,7 +53,7 @@ public class Model implements Symbol {
 	this.attributs.put(attr, null);
     }
 
-    public void addAttribut(String attr, Attributes value) {
+    public void addAttribute(String attr, Attributes value) {
 	this.attributs.put(attr, value);
     }
 

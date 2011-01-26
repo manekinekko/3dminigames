@@ -42,4 +42,8 @@ public class Definition implements Symbol{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    public void addAttribute(String attr, Attributes value) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }

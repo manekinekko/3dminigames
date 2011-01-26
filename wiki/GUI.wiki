@@ -10,4 +10,6 @@ This is a simple how to introduction to the 3DWIGS GUI.
   # Managing game rules
 
 ==1- Importing 3D models==
-3DWIGS GUI allows you to import 3D models^*^ so you can easily add them to your 3D scene. To do so, just drag and drop your 3D model onto 3DWIGS GUI and you are done. You may also use the preset tool to import the free integrated 3D models and some basic shapes (Cubes, Spheres, Cylindre, ...etc). Please note that when you import a new model, it is saved in the preset tool, so you can add them later. 
+3DWIGS GUI allows you to import 3D models^*^ so you can easily add them to your 3D scene. To do so, just drag and drop your 3D model onto 3DWIGS GUI and you are done. You may also use the preset tool to import the free integrated 3D models and some basic shapes (Cubes, Spheres, Cylindre, ...etc). Please note that when you import a new model, it is saved in the preset tool, so you can add them later.
+
+(to be continued...)

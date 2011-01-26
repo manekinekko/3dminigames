@@ -334,15 +334,15 @@ operationBracket :
 	;
 
 variable :
-  (X^ | Y^ | Z^) OF! typeCoordonnees OF! accesClasse
-  | IDENT OF accesClasse
-    -> ^(VAR_I_KW IDENT accesClasse)
-  | attribut OF accesClasse
-    -> ^(VAR_A_KW attribut accesClasse)
+  (X^ | Y^ | Z^) OF! typeCoordonnees OF! accesLocal
+  | IDENT OF accesLocal
+    -> ^(VAR_I_KW IDENT accesLocal)
+  | attribut OF accesLocal
+    -> ^(VAR_A_KW attribut accesLocal)
   | SCORE OF GAME
     -> GAME_SCORE_KW
-  | VALUE OF attributTps OF accesClasse
-    -> ^(VALUE_KW attributTps accesClasse)
+  | VALUE OF attributTps OF accesLocal
+    -> ^(VALUE_KW attributTps accesLocal)
   ;
 
 accesClasse : 

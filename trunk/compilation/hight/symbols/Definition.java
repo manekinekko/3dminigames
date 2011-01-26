@@ -5,6 +5,7 @@
 
 package symbols;
 
+import attributes.Attributes;
 import code.Code;
 
 /**
@@ -35,6 +36,10 @@ public class Definition implements Symbol{
 
     public boolean getGenerate(){
         return generate;
+    }
+
+    public Attributes getAttribute(String n) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

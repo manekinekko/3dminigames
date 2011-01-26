@@ -203,8 +203,10 @@ affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c]
     ;
     
 typeAllocation [SymbolTable st] returns [Code c]:	
-	(co = operation[st] {c = co;}| i=IDENT {c = new Code(i.getText());}| 'true' {c = new Code ("true");} | 'false' {c = new Code ("false");})
-        
+	(co = operation[st] {c = co;}
+        | i=IDENT {c = new Code(i.getText());}
+        | 'true' {c = new Code ("true");}
+        | 'false' {c = new Code ("false");})
 	;
 	
 valAggregation [SymbolTable st] returns [Attributes c]:
@@ -479,22 +481,98 @@ operation [SymbolTable st] returns [Code c]:
  
 
 variable [SymbolTable st] returns [Code c]:
-  ^(X typeCoordonnees[st] accesClass[st])
-  |^(Y typeCoordonnees[st] accesClass[st])
-  |^(Z typeCoordonnees[st] accesClass[st])
-  |^(VAR_I_KW IDENT accesClass[st])
-  |^(VAR_A_KW attribut[st] accesClass[st])
+  ^(X tc=typeCoordonnees[st] sb=accesClass[st])
+  {
+      Symbol sy = sb.get(0);
+      if(tc.equals("position")){
+                c = Code.genPosX(sy.getName());
+        }else if(tc.equals("angle")){
+                c= Code.genoRX(sy.getName());
+        }else{
+                c= Code.genTX(sy.getName());
+            }
+  }
+  |^(Y tc =typeCoordonnees[st] sb=accesClass[st])
+  {
+            Symbol sy = sb.get(0);
+      if(tc.equals("position")){
+                c = Code.genPosY(sy.getName());
+        }else if(tc.equals("angle")){
+                c= Code.genoRY(sy.getName());
+        }else{
+                c= Code.genTY(sy.getName());
+            }
+  }
+  |^(Z typeCoordonnees[st] sb=accesClass[st])
+    {      Symbol sy = sb.get(0);
+      if(tc.equals("position")){
+                c = Code.genPosZ(sy.getName());
+        }else if(tc.equals("angle")){
+                c= Code.genoRZ(sy.getName());
+        }else{
+                c= Code.genTZ(sy.getName());
+            }
+        }
+  |^(VAR_I_KW i=IDENT e=accesClass[st])
+  {Symbol si = e.get(0);String ident= i.getText(); Attributes a = si.getAttribute(ident);
+    if(a==null){
+        System.out.println(si.getName()+"n'a pas l'attribut"+ident);
+        System.exit(-1);}
+    else if(a.getClass()!= AttributeNum.class){
+        System.out.println(ident+"n'est pas un nombre.");
+        System.exit(-1);
+   }else{
+        c=Code.genAccess(si.getName(),ident);
+    }}
+  |^(VAR_A_KW att=attribut[st] en=accesClass[st])
+  {Symbol si = en.get(0); Attributes a = si.getAttribute(att.getFirst());
+    if(a==null){
+        System.out.println(si.getName()+"n'a pas l'attribut"+att.getFirst());
+        System.exit(-1);}
+    else if(a.getClass()!= AttributeNum.class){
+        System.out.println(att.getFirst()+"n'est pas un nombre.");
+        System.exit(-1);
+   }else{
+        c=Code.genAccess(si.getName(),att.getFirst());
+    }}
   |GAME_SCORE_KW
-  |^(VALUE_KW attributTps[st] accesClass[st])
+  |^(VALUE_KW at=attributTps[st] ac=accesClass[st])
+  {Symbol si = ac.get(0); Attributes a = si.getAttribute(at);
+    if(a==null){
+    System.out.println(si.getName()+"n'a pas l'attribut"+at);
+    System.exit(-1);}
+    else{
+        c=Code.genAccess(si.getName(),at);
+    }}
   ;
 
-accesClass [SymbolTable st] returns [Code c] :
+accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList();}:
     ^(ACCESS_KW ALL)
-  | ^(ACCESS_KW typeObjet)
-  | ^(ACCESS_KW interaction)
+    {sb.add(Genre.player);sb.addAll(Genre.allies);sb.addAll(Genre.enemies);sb.addAll(Genre.neutral);}
+  | ^(ACCESS_KW mo=typeObjet)
+    {sb.add(mo);}
+  | ^(ACCESS_KW val=interaction)
+    {if(val == 2 ){
+        sb.addAll(Genre.allies);
+    }else if (val == 3){
+        sb.addAll(Genre.enemies);
+    }else{
+        sb.addAll(Genre.neutral);
+    }
+    }
   | ^(ACCESS_KW NOT notAccess[st])
-  | ^(ACCESS_KW IDENT operation[st]?)
+    {}
+  | ^(ACCESS_KW i=IDENT co=operation[st]?) //acces a un tableau.
+    {String ident = i.getText(); Symbol s = st.get(ident);
+    if(s==null){
+        System.out.println("L'identifiant"+ident+"n'est pas défini.");
+        System.exit(-1);
+    }else{
+        sb.add(s);
+    }
+    }
   | ^(ACCESS_KW PLAYER)
+    {sb.add(Genre.player);}
   ;
 
 notAccess [SymbolTable st] returns [Code c] :

@@ -27,7 +27,7 @@ Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (
 Lapin has size at 1 1 1;
 
 
-cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
+//cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
 
 chasseur is Character player;
 chasseur has life at 5;
@@ -66,14 +66,14 @@ bazooka has orientation at 0 0 0;
 missile is Projectile ally;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
 missile has damages at 100;
 missile has speed at 100;
-missile has position at position of bazooka;          //la position et l'orientation du bazooka changent
-missile has orientation at orientation of bazooka;
+//missile has position at position of bazooka;          //la position et l'orientation du bazooka changent
+//missile has orientation at orientation of bazooka;
 
 // (bazooka has missile ; )     // faux selon Emeric et il a raison
 chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 
 
-sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
+//sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
 
 
 //////////// DEF

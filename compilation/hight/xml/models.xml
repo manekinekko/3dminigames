@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plop>
+	<model name="Object">
+		<attribute name="mass" type = "num" value="0"/>
+		<attribute name="posX" type = "num" value="0"/>
+		<attribute name="posY" type = "num" value="0"/>
+		<attribute name="posZ" type = "num" value="0"/>
+		<attribute name="orX" type = "num" value="0"/>
+		<attribute name="orY" type = "num" value="0"/>
+		<attribute name="orZ" type = "num" value="0"/>
+		<attribute name="tX" type = "num" value="0"/>
+		<attribute name="tY" type = "num" value="0"/>
+		<attribute name="tZ" type = "num" value="0"/>
+		<attribute name="isFix" type = "boolean" value="false"/>
+		<attribute name="isTraversable" type = "boolean" value="false"/>
+	</model>
+	<model name="Character">
+		<inheritance value="Object"/>
+		<attribute name="name" type = "String" value=""/>
+		<attribute name="description" type = "String" value=""/>
+		<attribute name="life" type = "num" value="1"/>
+		<attribute name="lifeMax" type = "num" value="1"/>
+		<attribute name="lifeMin" type = "num" value="1"/>
+		<attribute name="nbOfLives" type = "num" value="1"/>
+		<attribute name="magic" type = "num" value="0"/>
+		<attribute name="magicMax" type = "num" value="0"/>
+		<attribute name="magicMin" type = "num" value="0"/>
+		<attribute name="level" type = "num" value="0"/>
+		<attribute name="attack" type = "num" value="0"/>
+		<attribute name="defense" type = "num" value="0"/>
+		<attribute name="jumpForce" type = "num" value="0"/>
+		<attribute name="maxJumpsInTheAir" type = "num" value="0"/>
+		<attribute name="money" type = "num" value="0"/>
+		<attribute name="class" type = "String" value=""/>
+		<attribute name="race" type = "String" value=""/>
+		<attribute name="acceleration" type = "num" value="1"/>
+		<attribute name="inventory" type = "ObjectList" value="null"/>
+		<attribute name="moveWithCamera" type = "boolean"value="false"/>
+		<attribute name="equipedObject" type = "ObjectList" value="null"/>
+		<attribute name="rightHandObject" type = "Object" value="null"/>
+		<attribute name="leftHandObject" type = "Object" value="null"/>
+	</model>
+	<model name="Projectile">
+		<inheritance value="Object"/>
+		<attribute name="speed" type = "num" value="1"/>
+		<attribute name="damages" type = "num" value="1"/>
+		<attribute name="damageZone" type = "Object" value="null"/>
+	</model>
+	<model name="Zone">
+		<inheritance value="Object"/>
+		<attribute name="name" type = "String" value=""/>
+	</model>
+	<model name="Obstacle">
+		<inheritance value="Object"/>
+		<attribute name="name" type = "String" value=""/>
+	</model>
+	<model name="Weapon">
+		<inheritance value="Object"/>
+		<attribute name="name" type = "String" value=""/>
+		<attribute name="nbMunitions" type = "num" value="-1"/>
+		<attribute name="nbMunitionsMax" type = "num" value="-1"/>
+		<attribute name="shootPower" type = "num" value="1"/>
+		<attribute name="shootInterval" type = "time"  value="1" unit="s"/>
+		<attribute name="reloadTime" type = "time" value="1" unit="s"/>
+	</model>
+	<model name="Ground">
+		<inheritance value="Object"/>
+		<attribute name="type" type = "String" value=""/>
+	</model>
+</plop>

@@ -13,7 +13,9 @@ options {
     import attributes.*;
 }
 
-//@members {}
+@members {
+    private int INT_PLAYER=1, INT_ALLY=2, INT_ENEMY=3, INT_NEUTRAL=4, INT_DUPLICABLE=10;
+}
 
 /*------------------------------------------------------------------
  * TREE RULES
@@ -81,7 +83,21 @@ init [SymbolTable st] returns [Code c]:
 		System.out.println("Elément \""+id+"\" déjà déclaré.");
 		System.exit(-1);
 	    } else {
+		int mode = d.getSecond();
+		int duplicable = (mode/INT_DUPLICABLE);
+		mode = mode - (duplicable*INT_DUPLICABLE);
+	    
 		Entity t = new Entity(id,d.getFirst());
+
+		if(mode == INT_PLAYER)
+		    Genre.player = t;
+		else if(mode == INT_ENEMY)
+		    Genre.enemies.add(t);
+		else if(mode == INT_ALLY)
+		    Genre.allies.add(t);
+		else
+		    Genre.neutral.add(t);
+
 		st.add(id,t);
 	    }
 	}
@@ -134,23 +150,23 @@ typeEntity [SymbolTable st] returns [Model t]:
 entityMode returns [Integer i]
     @init{d=null;}:
 	PLAYER
-	{i=1;}
+	{i=INT_PLAYER;}
 	| ^(INTERACTION_KW in=interaction d=dupli?) {if(d!=null){i=in+d;}else{i=in;}}
 	| d=dupli {i=d;}
 	;
 	
 interaction returns [Integer i]:
 	ALLY
-	{i=2;}
+	{i=INT_ALLY;}
 	| ENEMY
-	{i=3;}
+	{i=INT_ENEMY;}
 	| NEUTRAL
-	{i=4;}
+	{i=INT_NEUTRAL;}
 	;
 
 dupli returns [Integer i]:
 	DUPLICABLE
-	{i=10;}
+	{i=INT_DUPLICABLE;}
 	;
 	
 view [SymbolTable st] returns [Code c]:

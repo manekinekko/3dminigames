@@ -1,7 +1,0 @@
-broadphase : most coarse grain culling, based on bounding boxes per object
-very popular is the 3D Sweep and Prune, based on axis aligned bounding boxes (AABB)
-- midphase : for complex objects with a lot of triangles, an acceleration structure based on Bounding Volume Hierarchy is very popular. OPCODE, Bullet and SOLID use an AABB tree, with an AABB for each triangle.
-- narrowphase : The actual contact information for a pair of objects is calculated here, including penetration depth, contact normal and contact position.
-Special case solutions and general solutions are available. GJK is a generic solution that handles all combinations between two convex object (sphere,box,cylinder,cone,convex hull, triangle leaf from midphase). SAT is another popular but less generic convex-convex collision detection algorithm that only works on polyhedra (with vertices, edges and faces). It doesn't handle implicit/analytical objects, so Special case solutions for convex versus sphere, cylinder etc. are needed.
-
-Projected Gauss Seidel

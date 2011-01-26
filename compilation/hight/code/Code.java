@@ -25,7 +25,8 @@ public class Code {
     }
 
     public void append(Code co) {
-	c += co.getCode();
+	if(co != null)
+	    c += co.getCode();
     }
 
     public String getCode() {

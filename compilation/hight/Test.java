@@ -3,10 +3,10 @@ import java.io.*;
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
 
-import org.antlr.runtime.tree.Tree;
 
 import grammars.*;
 import code.*;
+import symbols.Genre;
 import symbols.Model;
 
 
@@ -19,7 +19,7 @@ public class Test {
 	    if( (args.length > 2) || (args.length == 0)) {
 		System.err.println("Usage: Test fichier.vsl [fichier.s]");
 		System.exit(1);
-	    };
+	    }
 
 	    f = new File(args[0]);
 	    s = new FileReader(f);

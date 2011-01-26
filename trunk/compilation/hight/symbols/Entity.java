@@ -22,8 +22,8 @@ public class Entity implements Symbol{
         this.models.addAll(Arrays.asList(m));
     }
 
-    public void addAttribute(String n, Attributes a) {
-        this.attributes.put(n, a);
+    public void addAttribute(String attr, Attributes value) {
+        this.attributes.put(attr, value);
     }
 
     public Attributes getAttribute(String n) {

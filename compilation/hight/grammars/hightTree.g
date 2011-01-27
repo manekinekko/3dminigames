@@ -248,21 +248,25 @@ valAggregation [SymbolTable st] returns [Attributes c]:
 
 /* Definition */	
 definition [SymbolTable st] returns [Code c]: 
-	^(DEFINITION_KW IDENT consequences[st])
+	^(DEFINITION_KW i=IDENT consequences[st])
+	{ident = i.getText();
+	if(st.get(ident)==null){System.out.println("l'ident "+ ident + " est deja defini");System.exit(-1);}}
 		;
 
 consequences [SymbolTable st] returns [Code c]:
 	^(CONSEQUENCES_KW consequ_list[st])
+	{}
 	;
 
 consequ_list [SymbolTable st] returns [Code c]:
-		consequ[st]+;
+		consequ[st]+
+		{};
 		
 consequ [SymbolTable st] returns [Code c]:
-  siAlors[st]
-  | action[st]
-  | affectation[st]
-  | activCommande[st]
+  i=siAlors[st] {i=st.c;}
+  | action[st] {}
+  | affectation[st] {}
+  | activCommande[st] {}
   | IDENT
   | VICTORY_KW
   | DEFEAT_KW
@@ -469,7 +473,9 @@ mode_mute [SymbolTable st] returns [Code c]:
 	ON|OFF;
 	
 affectation [SymbolTable st] returns [Code c]:
-  ^(ASSIGN_KW operation[st] variable[st])
+  ^(ASSIGN_KW i1=operation[st] i2=variable[st]){//verifier attribute = attributeNum
+	if(i2.getSecond().getClass() != attributeNum.class){System.out.println("la variable "+ i2 + " n'est pas de type entier");System.exit(-1);}
+	c = genAffect(i1,i2);}
   |^(ADD_KW operation[st] variable[st]) 
   |^(SUB_KW operation[st] variable[st]) 
   |^(INVERT_KW variable[st] variable[st])

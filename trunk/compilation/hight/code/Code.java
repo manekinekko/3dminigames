@@ -107,13 +107,26 @@ public class Code {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Assignation//////////////////////////////////////
+
+	public static Code genAffect(Code s1, Code s2){
+		Code cod = new Code();
+		
+		cod.append(s1);
+		cod.append(" = ");
+		cod.append(s2);
+		
+		return cod;
+	}
+
+
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Conditions///////////////////////////////////////
     public static Code genNot(Code c) {
         Code cod = new Code();
 
         cod.append("!(");
-        cod.append(cod);
+        cod.append(c);
         cod.append(")");
 
         return cod;

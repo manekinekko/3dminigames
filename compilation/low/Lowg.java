@@ -32,7 +32,7 @@ public class Lowg {
 	
             
             
-	   Codes codes = tparser.game();
+	   Codes codes = tparser.game(new ClassTab());
 
 	   codes.put("index",new ConcreteCode());
 	   codes.get("index").append(new IndexHTML("GAME","config.js","resources.js" , "entities.js", "main.js", "events.js"));

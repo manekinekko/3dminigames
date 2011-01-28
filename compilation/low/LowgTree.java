@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 LowgTree.g 2011-01-14 21:07:02
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 LowgTree.g 2011-01-19 18:16:35
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -78,8 +78,8 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "game"
-    // LowgTree.g:8:1: game returns [Codes c] : ^( GAME e= entities camera refreshLoop eventManager rs= resourcesSets ) ;
-    public final Codes game() throws RecognitionException {
+    // LowgTree.g:10:1: game[ClassTab ct] returns [Codes c] : ^( GAME e= entities[ct] camera refreshLoop eventManager rs= resourcesSets ) ;
+    public final Codes game(ClassTab ct) throws RecognitionException {
         Codes c = null;
 
         Code e = null;
@@ -87,35 +87,35 @@ public class LowgTree extends TreeParser {
         Code rs = null;
 
 
-         c = null;
+        c = null;
         try {
-            // LowgTree.g:8:40: ( ^( GAME e= entities camera refreshLoop eventManager rs= resourcesSets ) )
-            // LowgTree.g:8:42: ^( GAME e= entities camera refreshLoop eventManager rs= resourcesSets )
+            // LowgTree.g:10:52: ( ^( GAME e= entities[ct] camera refreshLoop eventManager rs= resourcesSets ) )
+            // LowgTree.g:10:54: ^( GAME e= entities[ct] camera refreshLoop eventManager rs= resourcesSets )
             {
-            match(input,GAME,FOLLOW_GAME_in_game46); 
+            match(input,GAME,FOLLOW_GAME_in_game49); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_entities_in_game52);
-            e=entities();
+            pushFollow(FOLLOW_entities_in_game55);
+            e=entities(ct);
 
             state._fsp--;
 
-            pushFollow(FOLLOW_camera_in_game54);
+            pushFollow(FOLLOW_camera_in_game58);
             camera();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_refreshLoop_in_game56);
+            pushFollow(FOLLOW_refreshLoop_in_game60);
             refreshLoop();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_eventManager_in_game58);
+            pushFollow(FOLLOW_eventManager_in_game62);
             eventManager();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_resourcesSets_in_game64);
+            pushFollow(FOLLOW_resourcesSets_in_game68);
             rs=resourcesSets();
 
             state._fsp--;
@@ -139,8 +139,8 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "entities"
-    // LowgTree.g:14:1: entities returns [Code c] : ^( OBJS (ob= object )+ ) ;
-    public final Code entities() throws RecognitionException {
+    // LowgTree.g:16:1: entities[ClassTab ct] returns [Code c] : ^( OBJS (ob= object[ct] )+ ) ;
+    public final Code entities(ClassTab ct) throws RecognitionException {
         Code c = null;
 
         ClassJS ob = null;
@@ -148,13 +148,13 @@ public class LowgTree extends TreeParser {
 
         c = new ConcreteCode();
         try {
-            // LowgTree.g:14:57: ( ^( OBJS (ob= object )+ ) )
-            // LowgTree.g:14:59: ^( OBJS (ob= object )+ )
+            // LowgTree.g:16:71: ( ^( OBJS (ob= object[ct] )+ ) )
+            // LowgTree.g:16:73: ^( OBJS (ob= object[ct] )+ )
             {
-            match(input,OBJS,FOLLOW_OBJS_in_entities93); 
+            match(input,OBJS,FOLLOW_OBJS_in_entities99); 
 
             match(input, Token.DOWN, null); 
-            // LowgTree.g:14:66: (ob= object )+
+            // LowgTree.g:16:80: (ob= object[ct] )+
             int cnt1=0;
             loop1:
             do {
@@ -168,10 +168,10 @@ public class LowgTree extends TreeParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // LowgTree.g:14:67: ob= object
+            	    // LowgTree.g:16:81: ob= object[ct]
             	    {
-            	    pushFollow(FOLLOW_object_in_entities100);
-            	    ob=object();
+            	    pushFollow(FOLLOW_object_in_entities106);
+            	    ob=object(ct);
 
             	    state._fsp--;
 
@@ -192,6 +192,13 @@ public class LowgTree extends TreeParser {
             } while (true);
 
 
+            		for(java.util.Iterator<String> it = ct.getIterator(); it.hasNext(); ){
+            			String tmp = it.next();
+            			c.append(new DecafJS("_" + tmp , new NewDec(tmp).getCode()));
+            		}
+
+            	
+
             match(input, Token.UP, null); 
 
             }
@@ -209,8 +216,8 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "object"
-    // LowgTree.g:22:1: object returns [ClassJS cjs] : ^( OBJ i= ID pms= paramlist ) ;
-    public final ClassJS object() throws RecognitionException {
+    // LowgTree.g:32:1: object[ClassTab ct] returns [ClassJS cjs] : ^( OBJ i= ID pms= paramlist ) ;
+    public final ClassJS object(ClassTab ct) throws RecognitionException {
         ClassJS cjs = null;
 
         CommonTree i=null;
@@ -219,21 +226,23 @@ public class LowgTree extends TreeParser {
 
         cjs = null; 
         try {
-            // LowgTree.g:22:49: ( ^( OBJ i= ID pms= paramlist ) )
-            // LowgTree.g:22:51: ^( OBJ i= ID pms= paramlist )
+            // LowgTree.g:32:63: ( ^( OBJ i= ID pms= paramlist ) )
+            // LowgTree.g:32:65: ^( OBJ i= ID pms= paramlist )
             {
-            match(input,OBJ,FOLLOW_OBJ_in_object128); 
+            match(input,OBJ,FOLLOW_OBJ_in_object141); 
 
             match(input, Token.DOWN, null); 
-            i=(CommonTree)match(input,ID,FOLLOW_ID_in_object134); 
-            pushFollow(FOLLOW_paramlist_in_object140);
+            i=(CommonTree)match(input,ID,FOLLOW_ID_in_object147); 
+            pushFollow(FOLLOW_paramlist_in_object153);
             pms=paramlist();
 
             state._fsp--;
 
 
-
-            		cjs = new ClassJS(i.getText() , new ArrayList() , pms); 
+            		String id = i.getText();
+            		if (!ct.check(id)){ ct.add(id);}		
+            		cjs = new ClassJS(i.getText() , new ArrayList<String>() , pms); 	
+            			
             	
 
             match(input, Token.UP, null); 
@@ -253,7 +262,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "paramlist"
-    // LowgTree.g:31:1: paramlist returns [List<AffJS> l] : ^( PARAMLIST (p= param )+ ) ;
+    // LowgTree.g:43:1: paramlist returns [List<AffJS> l] : ^( PARAMLIST (p= param )+ ) ;
     public final List<AffJS> paramlist() throws RecognitionException {
         List<AffJS> l = null;
 
@@ -262,13 +271,13 @@ public class LowgTree extends TreeParser {
 
         l = new ArrayList<AffJS>();
         try {
-            // LowgTree.g:31:69: ( ^( PARAMLIST (p= param )+ ) )
-            // LowgTree.g:31:71: ^( PARAMLIST (p= param )+ )
+            // LowgTree.g:43:69: ( ^( PARAMLIST (p= param )+ ) )
+            // LowgTree.g:43:71: ^( PARAMLIST (p= param )+ )
             {
-            match(input,PARAMLIST,FOLLOW_PARAMLIST_in_paramlist165); 
+            match(input,PARAMLIST,FOLLOW_PARAMLIST_in_paramlist178); 
 
             match(input, Token.DOWN, null); 
-            // LowgTree.g:31:83: (p= param )+
+            // LowgTree.g:43:83: (p= param )+
             int cnt2=0;
             loop2:
             do {
@@ -282,9 +291,9 @@ public class LowgTree extends TreeParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // LowgTree.g:31:84: p= param
+            	    // LowgTree.g:43:84: p= param
             	    {
-            	    pushFollow(FOLLOW_param_in_paramlist172);
+            	    pushFollow(FOLLOW_param_in_paramlist185);
             	    p=param();
 
             	    state._fsp--;
@@ -323,7 +332,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "param"
-    // LowgTree.g:39:1: param returns [AffJS aff] : ^( PARAM id= ID v= initValue ) ;
+    // LowgTree.g:51:1: param returns [AffJS aff] : ^( PARAM id= ID v= initValue ) ;
     public final AffJS param() throws RecognitionException {
         AffJS aff = null;
 
@@ -333,14 +342,14 @@ public class LowgTree extends TreeParser {
 
         aff = null;
         try {
-            // LowgTree.g:39:45: ( ^( PARAM id= ID v= initValue ) )
-            // LowgTree.g:39:46: ^( PARAM id= ID v= initValue )
+            // LowgTree.g:51:45: ( ^( PARAM id= ID v= initValue ) )
+            // LowgTree.g:51:46: ^( PARAM id= ID v= initValue )
             {
-            match(input,PARAM,FOLLOW_PARAM_in_param200); 
+            match(input,PARAM,FOLLOW_PARAM_in_param213); 
 
             match(input, Token.DOWN, null); 
-            id=(CommonTree)match(input,ID,FOLLOW_ID_in_param206); 
-            pushFollow(FOLLOW_initValue_in_param212);
+            id=(CommonTree)match(input,ID,FOLLOW_ID_in_param219); 
+            pushFollow(FOLLOW_initValue_in_param225);
             v=initValue();
 
             state._fsp--;
@@ -364,21 +373,21 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "camera"
-    // LowgTree.g:48:1: camera : CAMERA ID AD position AF ;
+    // LowgTree.g:60:1: camera : CAMERA ID AD position AF ;
     public final void camera() throws RecognitionException {
         try {
-            // LowgTree.g:48:8: ( CAMERA ID AD position AF )
-            // LowgTree.g:48:10: CAMERA ID AD position AF
+            // LowgTree.g:60:8: ( CAMERA ID AD position AF )
+            // LowgTree.g:60:10: CAMERA ID AD position AF
             {
-            match(input,CAMERA,FOLLOW_CAMERA_in_camera237); 
-            match(input,ID,FOLLOW_ID_in_camera239); 
-            match(input,AD,FOLLOW_AD_in_camera241); 
-            pushFollow(FOLLOW_position_in_camera243);
+            match(input,CAMERA,FOLLOW_CAMERA_in_camera250); 
+            match(input,ID,FOLLOW_ID_in_camera252); 
+            match(input,AD,FOLLOW_AD_in_camera254); 
+            pushFollow(FOLLOW_position_in_camera256);
             position();
 
             state._fsp--;
 
-            match(input,AF,FOLLOW_AF_in_camera245); 
+            match(input,AF,FOLLOW_AF_in_camera258); 
 
             }
 
@@ -395,28 +404,28 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "position"
-    // LowgTree.g:50:1: position : POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG ;
+    // LowgTree.g:62:1: position : POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG ;
     public final void position() throws RecognitionException {
         try {
-            // LowgTree.g:50:10: ( POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG )
-            // LowgTree.g:50:12: POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG
+            // LowgTree.g:62:10: ( POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG )
+            // LowgTree.g:62:12: POSITION DP triplet PTVIRG ANGLE DP triplet PTVIRG
             {
-            match(input,POSITION,FOLLOW_POSITION_in_position253); 
-            match(input,DP,FOLLOW_DP_in_position255); 
-            pushFollow(FOLLOW_triplet_in_position257);
+            match(input,POSITION,FOLLOW_POSITION_in_position266); 
+            match(input,DP,FOLLOW_DP_in_position268); 
+            pushFollow(FOLLOW_triplet_in_position270);
             triplet();
 
             state._fsp--;
 
-            match(input,PTVIRG,FOLLOW_PTVIRG_in_position259); 
-            match(input,ANGLE,FOLLOW_ANGLE_in_position261); 
-            match(input,DP,FOLLOW_DP_in_position263); 
-            pushFollow(FOLLOW_triplet_in_position265);
+            match(input,PTVIRG,FOLLOW_PTVIRG_in_position272); 
+            match(input,ANGLE,FOLLOW_ANGLE_in_position274); 
+            match(input,DP,FOLLOW_DP_in_position276); 
+            pushFollow(FOLLOW_triplet_in_position278);
             triplet();
 
             state._fsp--;
 
-            match(input,PTVIRG,FOLLOW_PTVIRG_in_position267); 
+            match(input,PTVIRG,FOLLOW_PTVIRG_in_position280); 
 
             }
 
@@ -433,23 +442,23 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "triplet"
-    // LowgTree.g:52:1: triplet : initNumValue initNumValue initNumValue ;
+    // LowgTree.g:64:1: triplet : initNumValue initNumValue initNumValue ;
     public final void triplet() throws RecognitionException {
         try {
-            // LowgTree.g:52:9: ( initNumValue initNumValue initNumValue )
-            // LowgTree.g:52:11: initNumValue initNumValue initNumValue
+            // LowgTree.g:64:9: ( initNumValue initNumValue initNumValue )
+            // LowgTree.g:64:11: initNumValue initNumValue initNumValue
             {
-            pushFollow(FOLLOW_initNumValue_in_triplet276);
+            pushFollow(FOLLOW_initNumValue_in_triplet289);
             initNumValue();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_initNumValue_in_triplet278);
+            pushFollow(FOLLOW_initNumValue_in_triplet291);
             initNumValue();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_initNumValue_in_triplet280);
+            pushFollow(FOLLOW_initNumValue_in_triplet293);
             initNumValue();
 
             state._fsp--;
@@ -470,28 +479,28 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "refreshLoop"
-    // LowgTree.g:61:1: refreshLoop : KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF ;
+    // LowgTree.g:73:1: refreshLoop : KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF ;
     public final void refreshLoop() throws RecognitionException {
         try {
-            // LowgTree.g:61:13: ( KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF )
-            // LowgTree.g:61:15: KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF
+            // LowgTree.g:73:13: ( KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF )
+            // LowgTree.g:73:15: KEYLISTENER AD keyboardCommands AF MOUSELISTENER AD mouseCommands AF
             {
-            match(input,KEYLISTENER,FOLLOW_KEYLISTENER_in_refreshLoop299); 
-            match(input,AD,FOLLOW_AD_in_refreshLoop301); 
-            pushFollow(FOLLOW_keyboardCommands_in_refreshLoop303);
+            match(input,KEYLISTENER,FOLLOW_KEYLISTENER_in_refreshLoop312); 
+            match(input,AD,FOLLOW_AD_in_refreshLoop314); 
+            pushFollow(FOLLOW_keyboardCommands_in_refreshLoop316);
             keyboardCommands();
 
             state._fsp--;
 
-            match(input,AF,FOLLOW_AF_in_refreshLoop305); 
-            match(input,MOUSELISTENER,FOLLOW_MOUSELISTENER_in_refreshLoop307); 
-            match(input,AD,FOLLOW_AD_in_refreshLoop309); 
-            pushFollow(FOLLOW_mouseCommands_in_refreshLoop311);
+            match(input,AF,FOLLOW_AF_in_refreshLoop318); 
+            match(input,MOUSELISTENER,FOLLOW_MOUSELISTENER_in_refreshLoop320); 
+            match(input,AD,FOLLOW_AD_in_refreshLoop322); 
+            pushFollow(FOLLOW_mouseCommands_in_refreshLoop324);
             mouseCommands();
 
             state._fsp--;
 
-            match(input,AF,FOLLOW_AF_in_refreshLoop313); 
+            match(input,AF,FOLLOW_AF_in_refreshLoop326); 
 
             }
 
@@ -508,18 +517,18 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "keyboardCommands"
-    // LowgTree.g:63:1: keyboardCommands : ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )* ;
+    // LowgTree.g:75:1: keyboardCommands : ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )* ;
     public final void keyboardCommands() throws RecognitionException {
         try {
-            // LowgTree.g:63:18: ( ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )* )
-            // LowgTree.g:63:20: ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )*
+            // LowgTree.g:75:18: ( ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )* )
+            // LowgTree.g:75:20: ( KEYSTROKE DP signalSets ) ( VIRG KEYSTROKE DP signalSets )*
             {
-            // LowgTree.g:63:20: ( KEYSTROKE DP signalSets )
-            // LowgTree.g:63:21: KEYSTROKE DP signalSets
+            // LowgTree.g:75:20: ( KEYSTROKE DP signalSets )
+            // LowgTree.g:75:21: KEYSTROKE DP signalSets
             {
-            match(input,KEYSTROKE,FOLLOW_KEYSTROKE_in_keyboardCommands322); 
-            match(input,DP,FOLLOW_DP_in_keyboardCommands324); 
-            pushFollow(FOLLOW_signalSets_in_keyboardCommands326);
+            match(input,KEYSTROKE,FOLLOW_KEYSTROKE_in_keyboardCommands335); 
+            match(input,DP,FOLLOW_DP_in_keyboardCommands337); 
+            pushFollow(FOLLOW_signalSets_in_keyboardCommands339);
             signalSets();
 
             state._fsp--;
@@ -527,7 +536,7 @@ public class LowgTree extends TreeParser {
 
             }
 
-            // LowgTree.g:63:45: ( VIRG KEYSTROKE DP signalSets )*
+            // LowgTree.g:75:45: ( VIRG KEYSTROKE DP signalSets )*
             loop3:
             do {
                 int alt3=2;
@@ -540,12 +549,12 @@ public class LowgTree extends TreeParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // LowgTree.g:63:46: VIRG KEYSTROKE DP signalSets
+            	    // LowgTree.g:75:46: VIRG KEYSTROKE DP signalSets
             	    {
-            	    match(input,VIRG,FOLLOW_VIRG_in_keyboardCommands329); 
-            	    match(input,KEYSTROKE,FOLLOW_KEYSTROKE_in_keyboardCommands331); 
-            	    match(input,DP,FOLLOW_DP_in_keyboardCommands333); 
-            	    pushFollow(FOLLOW_signalSets_in_keyboardCommands335);
+            	    match(input,VIRG,FOLLOW_VIRG_in_keyboardCommands342); 
+            	    match(input,KEYSTROKE,FOLLOW_KEYSTROKE_in_keyboardCommands344); 
+            	    match(input,DP,FOLLOW_DP_in_keyboardCommands346); 
+            	    pushFollow(FOLLOW_signalSets_in_keyboardCommands348);
             	    signalSets();
 
             	    state._fsp--;
@@ -575,13 +584,13 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "mouseCommands"
-    // LowgTree.g:66:1: mouseCommands : ( typeofclick DP signalSets )* ;
+    // LowgTree.g:78:1: mouseCommands : ( typeofclick DP signalSets )* ;
     public final void mouseCommands() throws RecognitionException {
         try {
-            // LowgTree.g:66:15: ( ( typeofclick DP signalSets )* )
-            // LowgTree.g:66:17: ( typeofclick DP signalSets )*
+            // LowgTree.g:78:15: ( ( typeofclick DP signalSets )* )
+            // LowgTree.g:78:17: ( typeofclick DP signalSets )*
             {
-            // LowgTree.g:66:17: ( typeofclick DP signalSets )*
+            // LowgTree.g:78:17: ( typeofclick DP signalSets )*
             loop4:
             do {
                 int alt4=2;
@@ -594,15 +603,15 @@ public class LowgTree extends TreeParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // LowgTree.g:66:18: typeofclick DP signalSets
+            	    // LowgTree.g:78:18: typeofclick DP signalSets
             	    {
-            	    pushFollow(FOLLOW_typeofclick_in_mouseCommands348);
+            	    pushFollow(FOLLOW_typeofclick_in_mouseCommands361);
             	    typeofclick();
 
             	    state._fsp--;
 
-            	    match(input,DP,FOLLOW_DP_in_mouseCommands350); 
-            	    pushFollow(FOLLOW_signalSets_in_mouseCommands352);
+            	    match(input,DP,FOLLOW_DP_in_mouseCommands363); 
+            	    pushFollow(FOLLOW_signalSets_in_mouseCommands365);
             	    signalSets();
 
             	    state._fsp--;
@@ -632,13 +641,13 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "signalSets"
-    // LowgTree.g:68:1: signalSets : ( signal )+ ;
+    // LowgTree.g:80:1: signalSets : ( signal )+ ;
     public final void signalSets() throws RecognitionException {
         try {
-            // LowgTree.g:68:12: ( ( signal )+ )
-            // LowgTree.g:68:14: ( signal )+
+            // LowgTree.g:80:12: ( ( signal )+ )
+            // LowgTree.g:80:14: ( signal )+
             {
-            // LowgTree.g:68:14: ( signal )+
+            // LowgTree.g:80:14: ( signal )+
             int cnt5=0;
             loop5:
             do {
@@ -652,9 +661,9 @@ public class LowgTree extends TreeParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // LowgTree.g:68:14: signal
+            	    // LowgTree.g:80:14: signal
             	    {
-            	    pushFollow(FOLLOW_signal_in_signalSets362);
+            	    pushFollow(FOLLOW_signal_in_signalSets375);
             	    signal();
 
             	    state._fsp--;
@@ -688,13 +697,13 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "signal"
-    // LowgTree.g:70:1: signal : ID ;
+    // LowgTree.g:82:1: signal : ID ;
     public final void signal() throws RecognitionException {
         try {
-            // LowgTree.g:70:8: ( ID )
-            // LowgTree.g:70:10: ID
+            // LowgTree.g:82:8: ( ID )
+            // LowgTree.g:82:10: ID
             {
-            match(input,ID,FOLLOW_ID_in_signal371); 
+            match(input,ID,FOLLOW_ID_in_signal384); 
 
             }
 
@@ -711,10 +720,10 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "typeofclick"
-    // LowgTree.g:72:1: typeofclick : ( LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP );
+    // LowgTree.g:84:1: typeofclick : ( LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP );
     public final void typeofclick() throws RecognitionException {
         try {
-            // LowgTree.g:72:13: ( LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP )
+            // LowgTree.g:84:13: ( LEFTCLICK | LEFTDROP | LEFTDRAG | RIGHTCLICK | RIGHTDROP )
             // LowgTree.g:
             {
             if ( (input.LA(1)>=LEFTCLICK && input.LA(1)<=RIGHTDROP) ) {
@@ -742,18 +751,18 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "eventManager"
-    // LowgTree.g:79:1: eventManager : signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )* ;
+    // LowgTree.g:91:1: eventManager : signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )* ;
     public final void eventManager() throws RecognitionException {
         try {
-            // LowgTree.g:79:14: ( signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )* )
-            // LowgTree.g:79:16: signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )*
+            // LowgTree.g:91:14: ( signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )* )
+            // LowgTree.g:91:16: signal ( VIRG signal )* ARROW instructions ( signal ( VIRG signal )* ARROW instructions )*
             {
-            pushFollow(FOLLOW_signal_in_eventManager411);
+            pushFollow(FOLLOW_signal_in_eventManager424);
             signal();
 
             state._fsp--;
 
-            // LowgTree.g:79:23: ( VIRG signal )*
+            // LowgTree.g:91:23: ( VIRG signal )*
             loop6:
             do {
                 int alt6=2;
@@ -766,10 +775,10 @@ public class LowgTree extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // LowgTree.g:79:24: VIRG signal
+            	    // LowgTree.g:91:24: VIRG signal
             	    {
-            	    match(input,VIRG,FOLLOW_VIRG_in_eventManager414); 
-            	    pushFollow(FOLLOW_signal_in_eventManager416);
+            	    match(input,VIRG,FOLLOW_VIRG_in_eventManager427); 
+            	    pushFollow(FOLLOW_signal_in_eventManager429);
             	    signal();
 
             	    state._fsp--;
@@ -783,13 +792,13 @@ public class LowgTree extends TreeParser {
                 }
             } while (true);
 
-            match(input,ARROW,FOLLOW_ARROW_in_eventManager420); 
-            pushFollow(FOLLOW_instructions_in_eventManager422);
+            match(input,ARROW,FOLLOW_ARROW_in_eventManager433); 
+            pushFollow(FOLLOW_instructions_in_eventManager435);
             instructions();
 
             state._fsp--;
 
-            // LowgTree.g:79:58: ( signal ( VIRG signal )* ARROW instructions )*
+            // LowgTree.g:91:58: ( signal ( VIRG signal )* ARROW instructions )*
             loop8:
             do {
                 int alt8=2;
@@ -802,14 +811,14 @@ public class LowgTree extends TreeParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // LowgTree.g:79:60: signal ( VIRG signal )* ARROW instructions
+            	    // LowgTree.g:91:60: signal ( VIRG signal )* ARROW instructions
             	    {
-            	    pushFollow(FOLLOW_signal_in_eventManager427);
+            	    pushFollow(FOLLOW_signal_in_eventManager440);
             	    signal();
 
             	    state._fsp--;
 
-            	    // LowgTree.g:79:66: ( VIRG signal )*
+            	    // LowgTree.g:91:66: ( VIRG signal )*
             	    loop7:
             	    do {
             	        int alt7=2;
@@ -822,10 +831,10 @@ public class LowgTree extends TreeParser {
 
             	        switch (alt7) {
             	    	case 1 :
-            	    	    // LowgTree.g:79:67: VIRG signal
+            	    	    // LowgTree.g:91:67: VIRG signal
             	    	    {
-            	    	    match(input,VIRG,FOLLOW_VIRG_in_eventManager429); 
-            	    	    pushFollow(FOLLOW_signal_in_eventManager431);
+            	    	    match(input,VIRG,FOLLOW_VIRG_in_eventManager442); 
+            	    	    pushFollow(FOLLOW_signal_in_eventManager444);
             	    	    signal();
 
             	    	    state._fsp--;
@@ -839,8 +848,8 @@ public class LowgTree extends TreeParser {
             	        }
             	    } while (true);
 
-            	    match(input,ARROW,FOLLOW_ARROW_in_eventManager435); 
-            	    pushFollow(FOLLOW_instructions_in_eventManager437);
+            	    match(input,ARROW,FOLLOW_ARROW_in_eventManager448); 
+            	    pushFollow(FOLLOW_instructions_in_eventManager450);
             	    instructions();
 
             	    state._fsp--;
@@ -870,10 +879,10 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "instructions"
-    // LowgTree.g:81:1: instructions : ( resourcePath APPLY PG applyExpression PD PTVIRG | conceptInstruction PTVIRG );
+    // LowgTree.g:93:1: instructions : ( resourcePath APPLY PG applyExpression PD PTVIRG | conceptInstruction PTVIRG );
     public final void instructions() throws RecognitionException {
         try {
-            // LowgTree.g:81:14: ( resourcePath APPLY PG applyExpression PD PTVIRG | conceptInstruction PTVIRG )
+            // LowgTree.g:93:14: ( resourcePath APPLY PG applyExpression PD PTVIRG | conceptInstruction PTVIRG )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -891,34 +900,34 @@ public class LowgTree extends TreeParser {
             }
             switch (alt9) {
                 case 1 :
-                    // LowgTree.g:81:17: resourcePath APPLY PG applyExpression PD PTVIRG
+                    // LowgTree.g:93:17: resourcePath APPLY PG applyExpression PD PTVIRG
                     {
-                    pushFollow(FOLLOW_resourcePath_in_instructions452);
+                    pushFollow(FOLLOW_resourcePath_in_instructions465);
                     resourcePath();
 
                     state._fsp--;
 
-                    match(input,APPLY,FOLLOW_APPLY_in_instructions454); 
-                    match(input,PG,FOLLOW_PG_in_instructions456); 
-                    pushFollow(FOLLOW_applyExpression_in_instructions458);
+                    match(input,APPLY,FOLLOW_APPLY_in_instructions467); 
+                    match(input,PG,FOLLOW_PG_in_instructions469); 
+                    pushFollow(FOLLOW_applyExpression_in_instructions471);
                     applyExpression();
 
                     state._fsp--;
 
-                    match(input,PD,FOLLOW_PD_in_instructions460); 
-                    match(input,PTVIRG,FOLLOW_PTVIRG_in_instructions462); 
+                    match(input,PD,FOLLOW_PD_in_instructions473); 
+                    match(input,PTVIRG,FOLLOW_PTVIRG_in_instructions475); 
 
                     }
                     break;
                 case 2 :
-                    // LowgTree.g:81:67: conceptInstruction PTVIRG
+                    // LowgTree.g:93:67: conceptInstruction PTVIRG
                     {
-                    pushFollow(FOLLOW_conceptInstruction_in_instructions466);
+                    pushFollow(FOLLOW_conceptInstruction_in_instructions479);
                     conceptInstruction();
 
                     state._fsp--;
 
-                    match(input,PTVIRG,FOLLOW_PTVIRG_in_instructions468); 
+                    match(input,PTVIRG,FOLLOW_PTVIRG_in_instructions481); 
 
                     }
                     break;
@@ -937,13 +946,13 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "resourcePath"
-    // LowgTree.g:83:1: resourcePath : ( ID | ID PT ID ) ;
+    // LowgTree.g:95:1: resourcePath : ( ID | ID PT ID ) ;
     public final void resourcePath() throws RecognitionException {
         try {
-            // LowgTree.g:83:14: ( ( ID | ID PT ID ) )
-            // LowgTree.g:83:16: ( ID | ID PT ID )
+            // LowgTree.g:95:14: ( ( ID | ID PT ID ) )
+            // LowgTree.g:95:16: ( ID | ID PT ID )
             {
-            // LowgTree.g:83:16: ( ID | ID PT ID )
+            // LowgTree.g:95:16: ( ID | ID PT ID )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -971,18 +980,18 @@ public class LowgTree extends TreeParser {
             }
             switch (alt10) {
                 case 1 :
-                    // LowgTree.g:83:17: ID
+                    // LowgTree.g:95:17: ID
                     {
-                    match(input,ID,FOLLOW_ID_in_resourcePath477); 
+                    match(input,ID,FOLLOW_ID_in_resourcePath490); 
 
                     }
                     break;
                 case 2 :
-                    // LowgTree.g:83:22: ID PT ID
+                    // LowgTree.g:95:22: ID PT ID
                     {
-                    match(input,ID,FOLLOW_ID_in_resourcePath481); 
-                    match(input,PT,FOLLOW_PT_in_resourcePath483); 
-                    match(input,ID,FOLLOW_ID_in_resourcePath485); 
+                    match(input,ID,FOLLOW_ID_in_resourcePath494); 
+                    match(input,PT,FOLLOW_PT_in_resourcePath496); 
+                    match(input,ID,FOLLOW_ID_in_resourcePath498); 
 
                     }
                     break;
@@ -1005,18 +1014,18 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "applyExpression"
-    // LowgTree.g:85:1: applyExpression : arithmeticOperator initNumValue ;
+    // LowgTree.g:97:1: applyExpression : arithmeticOperator initNumValue ;
     public final void applyExpression() throws RecognitionException {
         try {
-            // LowgTree.g:85:17: ( arithmeticOperator initNumValue )
-            // LowgTree.g:85:19: arithmeticOperator initNumValue
+            // LowgTree.g:97:17: ( arithmeticOperator initNumValue )
+            // LowgTree.g:97:19: arithmeticOperator initNumValue
             {
-            pushFollow(FOLLOW_arithmeticOperator_in_applyExpression494);
+            pushFollow(FOLLOW_arithmeticOperator_in_applyExpression507);
             arithmeticOperator();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_initNumValue_in_applyExpression496);
+            pushFollow(FOLLOW_initNumValue_in_applyExpression509);
             initNumValue();
 
             state._fsp--;
@@ -1037,10 +1046,10 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "arithmeticOperator"
-    // LowgTree.g:87:1: arithmeticOperator : ( PLUS | MOINS | MULT | DIV | MOD );
+    // LowgTree.g:99:1: arithmeticOperator : ( PLUS | MOINS | MULT | DIV | MOD );
     public final void arithmeticOperator() throws RecognitionException {
         try {
-            // LowgTree.g:87:20: ( PLUS | MOINS | MULT | DIV | MOD )
+            // LowgTree.g:99:20: ( PLUS | MOINS | MULT | DIV | MOD )
             // LowgTree.g:
             {
             if ( (input.LA(1)>=PLUS && input.LA(1)<=MOD) ) {
@@ -1068,10 +1077,10 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "conceptInstruction"
-    // LowgTree.g:89:1: conceptInstruction : ( GAMEOVER | PAUSE | NEWGAME | SAVEGAME );
+    // LowgTree.g:101:1: conceptInstruction : ( GAMEOVER | PAUSE | NEWGAME | SAVEGAME );
     public final void conceptInstruction() throws RecognitionException {
         try {
-            // LowgTree.g:89:20: ( GAMEOVER | PAUSE | NEWGAME | SAVEGAME )
+            // LowgTree.g:101:20: ( GAMEOVER | PAUSE | NEWGAME | SAVEGAME )
             // LowgTree.g:
             {
             if ( (input.LA(1)>=GAMEOVER && input.LA(1)<=SAVEGAME) ) {
@@ -1099,7 +1108,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "resourcesSets"
-    // LowgTree.g:97:1: resourcesSets returns [Code c] : ^( RESOURCES (r= resource )* ) ;
+    // LowgTree.g:109:1: resourcesSets returns [Code c] : ^( RESOURCES (r= resource )* ) ;
     public final Code resourcesSets() throws RecognitionException {
         Code c = null;
 
@@ -1108,14 +1117,14 @@ public class LowgTree extends TreeParser {
 
          c =new ConcreteCode();
         try {
-            // LowgTree.g:97:62: ( ^( RESOURCES (r= resource )* ) )
-            // LowgTree.g:97:64: ^( RESOURCES (r= resource )* )
+            // LowgTree.g:109:62: ( ^( RESOURCES (r= resource )* ) )
+            // LowgTree.g:109:64: ^( RESOURCES (r= resource )* )
             {
-            match(input,RESOURCES,FOLLOW_RESOURCES_in_resourcesSets563); 
+            match(input,RESOURCES,FOLLOW_RESOURCES_in_resourcesSets576); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // LowgTree.g:99:4: (r= resource )*
+                // LowgTree.g:111:4: (r= resource )*
                 loop11:
                 do {
                     int alt11=2;
@@ -1128,9 +1137,9 @@ public class LowgTree extends TreeParser {
 
                     switch (alt11) {
                 	case 1 :
-                	    // LowgTree.g:99:5: r= resource
+                	    // LowgTree.g:111:5: r= resource
                 	    {
-                	    pushFollow(FOLLOW_resource_in_resourcesSets576);
+                	    pushFollow(FOLLOW_resource_in_resourcesSets589);
                 	    r=resource();
 
                 	    state._fsp--;
@@ -1166,7 +1175,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "resource"
-    // LowgTree.g:104:1: resource returns [Inst ijs] : ^( RESOURCE n= ID i= initNumValue ) ;
+    // LowgTree.g:116:1: resource returns [Inst ijs] : ^( RESOURCE n= ID i= initNumValue ) ;
     public final Inst resource() throws RecognitionException {
         Inst ijs = null;
 
@@ -1176,14 +1185,14 @@ public class LowgTree extends TreeParser {
 
         ijs = null; 
         try {
-            // LowgTree.g:106:3: ( ^( RESOURCE n= ID i= initNumValue ) )
-            // LowgTree.g:106:4: ^( RESOURCE n= ID i= initNumValue )
+            // LowgTree.g:118:3: ( ^( RESOURCE n= ID i= initNumValue ) )
+            // LowgTree.g:118:4: ^( RESOURCE n= ID i= initNumValue )
             {
-            match(input,RESOURCE,FOLLOW_RESOURCE_in_resource601); 
+            match(input,RESOURCE,FOLLOW_RESOURCE_in_resource614); 
 
             match(input, Token.DOWN, null); 
-            n=(CommonTree)match(input,ID,FOLLOW_ID_in_resource611); 
-            pushFollow(FOLLOW_initNumValue_in_resource621);
+            n=(CommonTree)match(input,ID,FOLLOW_ID_in_resource624); 
+            pushFollow(FOLLOW_initNumValue_in_resource634);
             i=initNumValue();
 
             state._fsp--;
@@ -1210,7 +1219,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "initNumValue"
-    // LowgTree.g:118:1: initNumValue returns [String s] : (n= INT | f= FLOAT );
+    // LowgTree.g:130:1: initNumValue returns [String s] : (n= INT | f= FLOAT );
     public final String initNumValue() throws RecognitionException {
         String s = null;
 
@@ -1219,7 +1228,7 @@ public class LowgTree extends TreeParser {
 
         s = null;
         try {
-            // LowgTree.g:119:20: (n= INT | f= FLOAT )
+            // LowgTree.g:131:20: (n= INT | f= FLOAT )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1237,9 +1246,9 @@ public class LowgTree extends TreeParser {
             }
             switch (alt12) {
                 case 1 :
-                    // LowgTree.g:119:22: n= INT
+                    // LowgTree.g:131:22: n= INT
                     {
-                    n=(CommonTree)match(input,INT,FOLLOW_INT_in_initNumValue653); 
+                    n=(CommonTree)match(input,INT,FOLLOW_INT_in_initNumValue666); 
 
                     		s = new String(n.getText());
                     	  
@@ -1247,9 +1256,9 @@ public class LowgTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // LowgTree.g:124:12: f= FLOAT
+                    // LowgTree.g:136:12: f= FLOAT
                     {
-                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_initNumValue677); 
+                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_initNumValue690); 
 
                     		s = new String(f.getText());
 
@@ -1273,7 +1282,7 @@ public class LowgTree extends TreeParser {
 
 
     // $ANTLR start "initValue"
-    // LowgTree.g:132:1: initValue returns [String s] : (inv= initNumValue | st= STRING );
+    // LowgTree.g:144:1: initValue returns [String s] : (inv= initNumValue | st= STRING );
     public final String initValue() throws RecognitionException {
         String s = null;
 
@@ -1283,7 +1292,7 @@ public class LowgTree extends TreeParser {
 
         s = null;
         try {
-            // LowgTree.g:133:20: (inv= initNumValue | st= STRING )
+            // LowgTree.g:145:20: (inv= initNumValue | st= STRING )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1301,9 +1310,9 @@ public class LowgTree extends TreeParser {
             }
             switch (alt13) {
                 case 1 :
-                    // LowgTree.g:133:22: inv= initNumValue
+                    // LowgTree.g:145:22: inv= initNumValue
                     {
-                    pushFollow(FOLLOW_initNumValue_in_initValue703);
+                    pushFollow(FOLLOW_initNumValue_in_initValue716);
                     inv=initNumValue();
 
                     state._fsp--;
@@ -1315,9 +1324,9 @@ public class LowgTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // LowgTree.g:138:12: st= STRING
+                    // LowgTree.g:150:12: st= STRING
                     {
-                    st=(CommonTree)match(input,STRING,FOLLOW_STRING_in_initValue727); 
+                    st=(CommonTree)match(input,STRING,FOLLOW_STRING_in_initValue740); 
 
                     		s = new String(st.getText());
 
@@ -1344,93 +1353,93 @@ public class LowgTree extends TreeParser {
 
  
 
-    public static final BitSet FOLLOW_GAME_in_game46 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_entities_in_game52 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_camera_in_game54 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_refreshLoop_in_game56 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_eventManager_in_game58 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_resourcesSets_in_game64 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OBJS_in_entities93 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_object_in_entities100 = new BitSet(new long[]{0x0000000000000808L});
-    public static final BitSet FOLLOW_OBJ_in_object128 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ID_in_object134 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_paramlist_in_object140 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PARAMLIST_in_paramlist165 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_param_in_paramlist172 = new BitSet(new long[]{0x0000000000000208L});
-    public static final BitSet FOLLOW_PARAM_in_param200 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ID_in_param206 = new BitSet(new long[]{0x0001C00000000000L});
-    public static final BitSet FOLLOW_initValue_in_param212 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_CAMERA_in_camera237 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_ID_in_camera239 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_AD_in_camera241 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_position_in_camera243 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_AF_in_camera245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_POSITION_in_position253 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_DP_in_position255 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_triplet_in_position257 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_PTVIRG_in_position259 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_ANGLE_in_position261 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_DP_in_position263 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_triplet_in_position265 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_PTVIRG_in_position267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_initNumValue_in_triplet276 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_initNumValue_in_triplet278 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_initNumValue_in_triplet280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KEYLISTENER_in_refreshLoop299 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_AD_in_refreshLoop301 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_keyboardCommands_in_refreshLoop303 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_AF_in_refreshLoop305 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_MOUSELISTENER_in_refreshLoop307 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_AD_in_refreshLoop309 = new BitSet(new long[]{0x00000000F8100000L});
-    public static final BitSet FOLLOW_mouseCommands_in_refreshLoop311 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_AF_in_refreshLoop313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KEYSTROKE_in_keyboardCommands322 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_DP_in_keyboardCommands324 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_signalSets_in_keyboardCommands326 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_VIRG_in_keyboardCommands329 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_KEYSTROKE_in_keyboardCommands331 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_DP_in_keyboardCommands333 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_signalSets_in_keyboardCommands335 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_typeofclick_in_mouseCommands348 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_DP_in_mouseCommands350 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_signalSets_in_mouseCommands352 = new BitSet(new long[]{0x00000000F8000002L});
-    public static final BitSet FOLLOW_signal_in_signalSets362 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ID_in_signal371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GAME_in_game49 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_entities_in_game55 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_camera_in_game58 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_refreshLoop_in_game60 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_eventManager_in_game62 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_resourcesSets_in_game68 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OBJS_in_entities99 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_object_in_entities106 = new BitSet(new long[]{0x0000000000000808L});
+    public static final BitSet FOLLOW_OBJ_in_object141 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ID_in_object147 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_paramlist_in_object153 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PARAMLIST_in_paramlist178 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_param_in_paramlist185 = new BitSet(new long[]{0x0000000000000208L});
+    public static final BitSet FOLLOW_PARAM_in_param213 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ID_in_param219 = new BitSet(new long[]{0x0001C00000000000L});
+    public static final BitSet FOLLOW_initValue_in_param225 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_CAMERA_in_camera250 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_ID_in_camera252 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_AD_in_camera254 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_position_in_camera256 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_AF_in_camera258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_POSITION_in_position266 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_DP_in_position268 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_triplet_in_position270 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_PTVIRG_in_position272 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_ANGLE_in_position274 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_DP_in_position276 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_triplet_in_position278 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_PTVIRG_in_position280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_initNumValue_in_triplet289 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_initNumValue_in_triplet291 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_initNumValue_in_triplet293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KEYLISTENER_in_refreshLoop312 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_AD_in_refreshLoop314 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_keyboardCommands_in_refreshLoop316 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_AF_in_refreshLoop318 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_MOUSELISTENER_in_refreshLoop320 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_AD_in_refreshLoop322 = new BitSet(new long[]{0x00000000F8100000L});
+    public static final BitSet FOLLOW_mouseCommands_in_refreshLoop324 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_AF_in_refreshLoop326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KEYSTROKE_in_keyboardCommands335 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_DP_in_keyboardCommands337 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_signalSets_in_keyboardCommands339 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_VIRG_in_keyboardCommands342 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_KEYSTROKE_in_keyboardCommands344 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_DP_in_keyboardCommands346 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_signalSets_in_keyboardCommands348 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_typeofclick_in_mouseCommands361 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_DP_in_mouseCommands363 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_signalSets_in_mouseCommands365 = new BitSet(new long[]{0x00000000F8000002L});
+    public static final BitSet FOLLOW_signal_in_signalSets375 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_ID_in_signal384 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_typeofclick0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_signal_in_eventManager411 = new BitSet(new long[]{0x0000000100020000L});
-    public static final BitSet FOLLOW_VIRG_in_eventManager414 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_signal_in_eventManager416 = new BitSet(new long[]{0x0000000100020000L});
-    public static final BitSet FOLLOW_ARROW_in_eventManager420 = new BitSet(new long[]{0x00003C0000008000L});
-    public static final BitSet FOLLOW_instructions_in_eventManager422 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_signal_in_eventManager427 = new BitSet(new long[]{0x0000000100020000L});
-    public static final BitSet FOLLOW_VIRG_in_eventManager429 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_signal_in_eventManager431 = new BitSet(new long[]{0x0000000100020000L});
-    public static final BitSet FOLLOW_ARROW_in_eventManager435 = new BitSet(new long[]{0x00003C0000008000L});
-    public static final BitSet FOLLOW_instructions_in_eventManager437 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_resourcePath_in_instructions452 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_APPLY_in_instructions454 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_PG_in_instructions456 = new BitSet(new long[]{0x000003E000000000L});
-    public static final BitSet FOLLOW_applyExpression_in_instructions458 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_PD_in_instructions460 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_PTVIRG_in_instructions462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conceptInstruction_in_instructions466 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_PTVIRG_in_instructions468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_resourcePath477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_resourcePath481 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_PT_in_resourcePath483 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_ID_in_resourcePath485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_arithmeticOperator_in_applyExpression494 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_initNumValue_in_applyExpression496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_signal_in_eventManager424 = new BitSet(new long[]{0x0000000100020000L});
+    public static final BitSet FOLLOW_VIRG_in_eventManager427 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_signal_in_eventManager429 = new BitSet(new long[]{0x0000000100020000L});
+    public static final BitSet FOLLOW_ARROW_in_eventManager433 = new BitSet(new long[]{0x00003C0000008000L});
+    public static final BitSet FOLLOW_instructions_in_eventManager435 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_signal_in_eventManager440 = new BitSet(new long[]{0x0000000100020000L});
+    public static final BitSet FOLLOW_VIRG_in_eventManager442 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_signal_in_eventManager444 = new BitSet(new long[]{0x0000000100020000L});
+    public static final BitSet FOLLOW_ARROW_in_eventManager448 = new BitSet(new long[]{0x00003C0000008000L});
+    public static final BitSet FOLLOW_instructions_in_eventManager450 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_resourcePath_in_instructions465 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_APPLY_in_instructions467 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_PG_in_instructions469 = new BitSet(new long[]{0x000003E000000000L});
+    public static final BitSet FOLLOW_applyExpression_in_instructions471 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_PD_in_instructions473 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_PTVIRG_in_instructions475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conceptInstruction_in_instructions479 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_PTVIRG_in_instructions481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_resourcePath490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_resourcePath494 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_PT_in_resourcePath496 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_ID_in_resourcePath498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arithmeticOperator_in_applyExpression507 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_initNumValue_in_applyExpression509 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_arithmeticOperator0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_conceptInstruction0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RESOURCES_in_resourcesSets563 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_resource_in_resourcesSets576 = new BitSet(new long[]{0x0000000000000028L});
-    public static final BitSet FOLLOW_RESOURCE_in_resource601 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ID_in_resource611 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_initNumValue_in_resource621 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INT_in_initNumValue653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_initNumValue677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_initNumValue_in_initValue703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_in_initValue727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RESOURCES_in_resourcesSets576 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_resource_in_resourcesSets589 = new BitSet(new long[]{0x0000000000000028L});
+    public static final BitSet FOLLOW_RESOURCE_in_resource614 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ID_in_resource624 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_initNumValue_in_resource634 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INT_in_initNumValue666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_initNumValue690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_initNumValue_in_initValue716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_in_initValue740 = new BitSet(new long[]{0x0000000000000002L});
 
 }

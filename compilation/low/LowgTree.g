@@ -5,24 +5,36 @@ options {
     ASTLabelType = CommonTree;
 }
 
-game returns[Codes c] @init{ c = null;}: ^(GAME e = entities camera refreshLoop eventManager rs = resourcesSets  {c = new Codes(e,rs);});
+
+
+game[ClassTab ct] returns[Codes c] @init{c = null;}: ^(GAME e = entities[ct] camera refreshLoop eventManager rs = resourcesSets  {c = new Codes(e,rs);});
 	   
 
 
 /* ENTITIES */
 
-entities returns [Code c] @init{c = new ConcreteCode();}: ^(OBJS (ob = object
+entities [ClassTab ct] returns [Code c] @init{c = new ConcreteCode();}: ^(OBJS (ob = object[ct]
 		{
 			c.append(ob);	
 		}
 	)+
+	{
+		for(java.util.Iterator<String> it = ct.getIterator(); it.hasNext(); ){
+			String tmp = it.next();
+			c.append(new DecafJS("_" + tmp , new NewDec(tmp).getCode()));
+		}
+
+	}
+
 	);
 
 
-object returns [ClassJS cjs] @init{cjs = null; }: ^(OBJ i = ID pms = paramlist
+object [ClassTab ct] returns [ClassJS cjs] @init{cjs = null; }: ^(OBJ i = ID pms = paramlist
 	{
-
-		cjs = new ClassJS(i.getText() , new ArrayList() , pms); 
+		String id = i.getText();
+		if (!ct.check(id)){ ct.add(id);}		
+		cjs = new ClassJS(i.getText() , new ArrayList<String>() , pms); 	
+			
 	}
 	
 

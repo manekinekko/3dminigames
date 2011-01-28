@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-14 21:06:58
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Lowg.g 2011-01-19 18:16:34
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -242,8 +242,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:149:17: ( ( ' ' | '\\n' | '\\t' | '\\r' ) )
-            // Lowg.g:149:20: ( ' ' | '\\n' | '\\t' | '\\r' )
+            // Lowg.g:150:17: ( ( ' ' | '\\n' | '\\t' | '\\r' ) )
+            // Lowg.g:150:20: ( ' ' | '\\n' | '\\t' | '\\r' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -271,8 +271,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PTVIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:154:8: ( ';' )
-            // Lowg.g:154:10: ';'
+            // Lowg.g:155:8: ( ';' )
+            // Lowg.g:155:10: ';'
             {
             match(';'); 
 
@@ -291,8 +291,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = VIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:155:6: ( ',' )
-            // Lowg.g:155:8: ','
+            // Lowg.g:156:6: ( ',' )
+            // Lowg.g:156:8: ','
             {
             match(','); 
 
@@ -311,8 +311,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:156:4: ( '.' )
-            // Lowg.g:156:6: '.'
+            // Lowg.g:157:4: ( '.' )
+            // Lowg.g:157:6: '.'
             {
             match('.'); 
 
@@ -331,8 +331,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = AFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:157:5: ( '=' )
-            // Lowg.g:157:7: '='
+            // Lowg.g:158:5: ( '=' )
+            // Lowg.g:158:7: '='
             {
             match('='); 
 
@@ -351,8 +351,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = AD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:158:4: ( '{' )
-            // Lowg.g:158:6: '{'
+            // Lowg.g:159:4: ( '{' )
+            // Lowg.g:159:6: '{'
             {
             match('{'); 
 
@@ -371,8 +371,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = AF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:159:4: ( '}' )
-            // Lowg.g:159:6: '}'
+            // Lowg.g:160:4: ( '}' )
+            // Lowg.g:160:6: '}'
             {
             match('}'); 
 
@@ -391,8 +391,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = DP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:160:4: ( ':' )
-            // Lowg.g:160:6: ':'
+            // Lowg.g:161:4: ( ':' )
+            // Lowg.g:161:6: ':'
             {
             match(':'); 
 
@@ -411,8 +411,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:161:7: ( '->' )
-            // Lowg.g:161:9: '->'
+            // Lowg.g:162:7: ( '->' )
+            // Lowg.g:162:9: '->'
             {
             match("->"); 
 
@@ -432,8 +432,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PIPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:162:6: ( '|' )
-            // Lowg.g:162:8: '|'
+            // Lowg.g:163:6: ( '|' )
+            // Lowg.g:163:8: '|'
             {
             match('|'); 
 
@@ -452,8 +452,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:163:4: ( '(' )
-            // Lowg.g:163:6: '('
+            // Lowg.g:164:4: ( '(' )
+            // Lowg.g:164:6: '('
             {
             match('('); 
 
@@ -472,8 +472,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:164:4: ( ')' )
-            // Lowg.g:164:6: ')'
+            // Lowg.g:165:4: ( ')' )
+            // Lowg.g:165:6: ')'
             {
             match(')'); 
 
@@ -492,8 +492,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:167:7: ( '+' )
-            // Lowg.g:167:9: '+'
+            // Lowg.g:168:7: ( '+' )
+            // Lowg.g:168:9: '+'
             {
             match('+'); 
 
@@ -512,8 +512,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = MOINS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:168:8: ( '-' )
-            // Lowg.g:168:10: '-'
+            // Lowg.g:169:8: ( '-' )
+            // Lowg.g:169:10: '-'
             {
             match('-'); 
 
@@ -532,8 +532,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = MULT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:169:9: ( '*' )
-            // Lowg.g:169:11: '*'
+            // Lowg.g:170:9: ( '*' )
+            // Lowg.g:170:11: '*'
             {
             match('*'); 
 
@@ -552,8 +552,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:170:9: ( '/' )
-            // Lowg.g:170:11: '/'
+            // Lowg.g:171:9: ( '/' )
+            // Lowg.g:171:11: '/'
             {
             match('/'); 
 
@@ -572,8 +572,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:171:9: ( '%' )
-            // Lowg.g:171:17: '%'
+            // Lowg.g:172:9: ( '%' )
+            // Lowg.g:172:17: '%'
             {
             match('%'); 
 
@@ -592,8 +592,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:173:8: ( 'object' )
-            // Lowg.g:173:10: 'object'
+            // Lowg.g:174:8: ( 'object' )
+            // Lowg.g:174:10: 'object'
             {
             match("object"); 
 
@@ -613,8 +613,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = KEYLISTENER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:174:13: ( 'keylistener' )
-            // Lowg.g:174:15: 'keylistener'
+            // Lowg.g:175:13: ( 'keylistener' )
+            // Lowg.g:175:15: 'keylistener'
             {
             match("keylistener"); 
 
@@ -634,8 +634,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = MOUSELISTENER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:175:15: ( 'mouselistener' )
-            // Lowg.g:175:17: 'mouselistener'
+            // Lowg.g:176:15: ( 'mouselistener' )
+            // Lowg.g:176:17: 'mouselistener'
             {
             match("mouselistener"); 
 
@@ -655,8 +655,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:177:8: ( 'camera' )
-            // Lowg.g:177:10: 'camera'
+            // Lowg.g:178:8: ( 'camera' )
+            // Lowg.g:178:10: 'camera'
             {
             match("camera"); 
 
@@ -676,8 +676,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = POSITION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:178:10: ( 'position' )
-            // Lowg.g:178:12: 'position'
+            // Lowg.g:179:10: ( 'position' )
+            // Lowg.g:179:12: 'position'
             {
             match("position"); 
 
@@ -697,8 +697,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = ANGLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:179:7: ( 'angle' )
-            // Lowg.g:179:9: 'angle'
+            // Lowg.g:180:7: ( 'angle' )
+            // Lowg.g:180:9: 'angle'
             {
             match("angle"); 
 
@@ -718,15 +718,15 @@ public class LowgLexer extends Lexer {
         try {
             int _type = KEYSTROKE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:183:11: ( ( 'A' .. 'Z' ) | 'SPACE' | 'LEFT' | 'RIGHT' | 'UP' | 'DOWN' )
+            // Lowg.g:184:11: ( ( 'A' .. 'Z' ) | 'SPACE' | 'LEFT' | 'RIGHT' | 'UP' | 'DOWN' )
             int alt1=6;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-                    // Lowg.g:183:14: ( 'A' .. 'Z' )
+                    // Lowg.g:184:14: ( 'A' .. 'Z' )
                     {
-                    // Lowg.g:183:14: ( 'A' .. 'Z' )
-                    // Lowg.g:183:15: 'A' .. 'Z'
+                    // Lowg.g:184:14: ( 'A' .. 'Z' )
+                    // Lowg.g:184:15: 'A' .. 'Z'
                     {
                     matchRange('A','Z'); 
 
@@ -736,7 +736,7 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Lowg.g:183:27: 'SPACE'
+                    // Lowg.g:184:27: 'SPACE'
                     {
                     match("SPACE"); 
 
@@ -744,7 +744,7 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // Lowg.g:183:37: 'LEFT'
+                    // Lowg.g:184:37: 'LEFT'
                     {
                     match("LEFT"); 
 
@@ -752,7 +752,7 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // Lowg.g:183:46: 'RIGHT'
+                    // Lowg.g:184:46: 'RIGHT'
                     {
                     match("RIGHT"); 
 
@@ -760,7 +760,7 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // Lowg.g:183:56: 'UP'
+                    // Lowg.g:184:56: 'UP'
                     {
                     match("UP"); 
 
@@ -768,7 +768,7 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // Lowg.g:183:63: 'DOWN'
+                    // Lowg.g:184:63: 'DOWN'
                     {
                     match("DOWN"); 
 
@@ -790,8 +790,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = LEFTCLICK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:185:12: ( 'leftclick' )
-            // Lowg.g:185:14: 'leftclick'
+            // Lowg.g:186:12: ( 'leftclick' )
+            // Lowg.g:186:14: 'leftclick'
             {
             match("leftclick"); 
 
@@ -811,8 +811,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = LEFTDROP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:186:10: ( 'leftdrop' )
-            // Lowg.g:186:12: 'leftdrop'
+            // Lowg.g:187:10: ( 'leftdrop' )
+            // Lowg.g:187:12: 'leftdrop'
             {
             match("leftdrop"); 
 
@@ -832,8 +832,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = LEFTDRAG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:187:10: ( 'leftdrag' )
-            // Lowg.g:187:12: 'leftdrag'
+            // Lowg.g:188:10: ( 'leftdrag' )
+            // Lowg.g:188:12: 'leftdrag'
             {
             match("leftdrag"); 
 
@@ -853,8 +853,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = RIGHTCLICK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:188:12: ( 'rightclick' )
-            // Lowg.g:188:14: 'rightclick'
+            // Lowg.g:189:12: ( 'rightclick' )
+            // Lowg.g:189:14: 'rightclick'
             {
             match("rightclick"); 
 
@@ -874,8 +874,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = RIGHTDROP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:189:11: ( 'rightdrop' )
-            // Lowg.g:189:13: 'rightdrop'
+            // Lowg.g:190:11: ( 'rightdrop' )
+            // Lowg.g:190:13: 'rightdrop'
             {
             match("rightdrop"); 
 
@@ -895,8 +895,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = APPLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:191:7: ( 'apply' )
-            // Lowg.g:191:9: 'apply'
+            // Lowg.g:192:7: ( 'apply' )
+            // Lowg.g:192:9: 'apply'
             {
             match("apply"); 
 
@@ -916,8 +916,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = GAMEOVER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:194:11: ( 'gameover' )
-            // Lowg.g:194:13: 'gameover'
+            // Lowg.g:195:11: ( 'gameover' )
+            // Lowg.g:195:13: 'gameover'
             {
             match("gameover"); 
 
@@ -937,8 +937,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = PAUSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:195:10: ( 'pause' )
-            // Lowg.g:195:12: 'pause'
+            // Lowg.g:196:10: ( 'pause' )
+            // Lowg.g:196:12: 'pause'
             {
             match("pause"); 
 
@@ -958,8 +958,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = NEWGAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:196:10: ( 'newgame' )
-            // Lowg.g:196:12: 'newgame'
+            // Lowg.g:197:10: ( 'newgame' )
+            // Lowg.g:197:12: 'newgame'
             {
             match("newgame"); 
 
@@ -979,8 +979,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = SAVEGAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:197:11: ( 'savegame' )
-            // Lowg.g:197:13: 'savegame'
+            // Lowg.g:198:11: ( 'savegame' )
+            // Lowg.g:198:13: 'savegame'
             {
             match("savegame"); 
 
@@ -1000,8 +1000,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = WITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:199:6: ( 'with' )
-            // Lowg.g:199:8: 'with'
+            // Lowg.g:200:6: ( 'with' )
+            // Lowg.g:200:8: 'with'
             {
             match("with"); 
 
@@ -1021,10 +1021,10 @@ public class LowgLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:204:5: ( ( '0' .. '9' )+ )
-            // Lowg.g:204:7: ( '0' .. '9' )+
+            // Lowg.g:205:5: ( ( '0' .. '9' )+ )
+            // Lowg.g:205:7: ( '0' .. '9' )+
             {
-            // Lowg.g:204:7: ( '0' .. '9' )+
+            // Lowg.g:205:7: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -1038,7 +1038,7 @@ public class LowgLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // Lowg.g:204:7: '0' .. '9'
+            	    // Lowg.g:205:7: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1070,7 +1070,7 @@ public class LowgLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:207:8: ( '\"' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\"' | '\\'' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\\'' )
+            // Lowg.g:208:8: ( '\"' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\"' | '\\'' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\\'' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1088,10 +1088,10 @@ public class LowgLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // Lowg.g:207:10: '\"' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\"'
+                    // Lowg.g:208:10: '\"' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\"'
                     {
                     match('\"'); 
-                    // Lowg.g:207:14: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+                    // Lowg.g:208:14: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -1129,10 +1129,10 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Lowg.g:208:4: '\\'' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\\''
+                    // Lowg.g:209:4: '\\'' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* '\\''
                     {
                     match('\''); 
-                    // Lowg.g:208:9: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+                    // Lowg.g:209:9: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
                     loop4:
                     do {
                         int alt4=2;
@@ -1184,14 +1184,14 @@ public class LowgLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:212:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
+            // Lowg.g:213:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ )
             int alt10=3;
             alt10 = dfa10.predict(input);
             switch (alt10) {
                 case 1 :
-                    // Lowg.g:212:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                    // Lowg.g:213:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                     {
-                    // Lowg.g:212:9: ( '0' .. '9' )+
+                    // Lowg.g:213:9: ( '0' .. '9' )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -1205,7 +1205,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // Lowg.g:212:10: '0' .. '9'
+                    	    // Lowg.g:213:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1222,7 +1222,7 @@ public class LowgLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // Lowg.g:212:25: ( '0' .. '9' )*
+                    // Lowg.g:213:25: ( '0' .. '9' )*
                     loop7:
                     do {
                         int alt7=2;
@@ -1235,7 +1235,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // Lowg.g:212:26: '0' .. '9'
+                    	    // Lowg.g:213:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1251,10 +1251,10 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // Lowg.g:213:9: '.' ( '0' .. '9' )+
+                    // Lowg.g:214:9: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // Lowg.g:213:13: ( '0' .. '9' )+
+                    // Lowg.g:214:13: ( '0' .. '9' )+
                     int cnt8=0;
                     loop8:
                     do {
@@ -1268,7 +1268,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // Lowg.g:213:14: '0' .. '9'
+                    	    // Lowg.g:214:14: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1288,9 +1288,9 @@ public class LowgLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // Lowg.g:214:9: ( '0' .. '9' )+
+                    // Lowg.g:215:9: ( '0' .. '9' )+
                     {
-                    // Lowg.g:214:9: ( '0' .. '9' )+
+                    // Lowg.g:215:9: ( '0' .. '9' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -1304,7 +1304,7 @@ public class LowgLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // Lowg.g:214:10: '0' .. '9'
+                    	    // Lowg.g:215:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1338,8 +1338,8 @@ public class LowgLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Lowg.g:217:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
-            // Lowg.g:217:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+            // Lowg.g:218:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
+            // Lowg.g:218:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1350,7 +1350,7 @@ public class LowgLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // Lowg.g:217:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+            // Lowg.g:218:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
             loop11:
             do {
                 int alt11=2;
@@ -1794,7 +1794,7 @@ public class LowgLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "183:1: KEYSTROKE : ( ( 'A' .. 'Z' ) | 'SPACE' | 'LEFT' | 'RIGHT' | 'UP' | 'DOWN' );";
+            return "184:1: KEYSTROKE : ( ( 'A' .. 'Z' ) | 'SPACE' | 'LEFT' | 'RIGHT' | 'UP' | 'DOWN' );";
         }
     }
     static final String DFA10_eotS =
@@ -1847,7 +1847,7 @@ public class LowgLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "211:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
+            return "212:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ );";
         }
     }
     static final String DFA12_eotS =

@@ -21,6 +21,10 @@ var now;
 //    has finished loading
 doc.onLoad = function() {
 	
+	// auto loadings functions
+	M3D.DB.load();
+	
+	// GLGE logic
 	var mouse=new GLGE.MouseInput(canvas);
 	var keys=new GLGE.KeyInput();
 	var pickcolor=doc.getElement("green");
@@ -65,14 +69,16 @@ doc.onLoad = function() {
 	
 	// -- bind import model
 	$('#import').bind('click', function(){
-		M3D.GUI.importModel( $('#importUrl').val() );
+		M3D.GUI.importModel( {
+			docUrl: $('#importUrl').val(),
+			autoAddToScene: false
+		});
 	});
 	
 	// -- open new attribut
 	$('.add-atttributes').bind('click', function(){
 		M3D.GUI.showPopup('entity-new-attribut');
 	});
-	
 	// -- window button
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
 	$('#save-entity-info').bind('click', function(){
@@ -155,6 +161,11 @@ doc.onLoad = function() {
 		M3D.GUI.deleteRule(this);
 	});
 	
+	// --- database bindings
+	// -- delete database
+	$('#clear-db').bind('click', function(){
+		M3D.DB.clear();
+	});
 	
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 	

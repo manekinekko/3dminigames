@@ -87,10 +87,6 @@ M3D.GUI.pickObjectFromSelect = function(e){
 			
 			var parent = objects[i].parent;
 			
-			console.log(parent.uid);
-			console.log(uidSelect);
-			console.log(parent.uid == uidSelect);
-			
 			if (parent.uid == uidSelect) {
 				obj = parent;
 				M3D.GUI.setMaterialEmit(0.1);
@@ -156,23 +152,29 @@ M3D.GUI.handleMouseWheel = function(delta) {
 
 // -- import models	
 M3D.lastImportedModel = null;
-M3D.GUI.importModel = function(url){
+M3D.GUI.importModel = function(data){
     
+	urlCollada = data.docUrl;
 	M3D.GUI.showWaiting();
 	
 	var docCollada = new GLGE.Collada;
-	
-	
-    docCollada.setDocument(url,doc.getAbsolutePath(doc.rootURL,null), function(){
-					
+
+
+    docCollada.setDocument(urlCollada, doc.getAbsolutePath(doc.rootURL,null), function(){
+				
 		M3D.lastImportedModel = docCollada;
 		
-		// ask for entity info
-		var uid = docCollada.uid ? docCollada.uid : (new Date()).getTime();			
-		M3D.GUI.showPopup('entity-info', uid, true);
+		if ( data.autoAddToScene ){
+			M3D.GUI.addObjectToScene();
+		}
+		else {
+			// ask for entity info
+			var uid = docCollada.uid ? docCollada.uid :  (new Date()).getTime();
+			M3D.GUI.showPopup('entity-info', uid);
+		}
 
 		M3D.GUI.hideWaiting();
-		
+			
 	});
     
 };
@@ -448,26 +450,43 @@ M3D.GUI.updateEntityList = function(){
 
 	M3D.GUI.hidePopup();
 	
+// ** DB **
+	var element={};
+	element.name=name;
+	element.value = {
+		url: urlCollada
+	};
+	M3D.DB.set(element);
+	// ** /DB **
 }
 
 
 // -- add object to scene (TODO)
-M3D.GUI.addObjectToScene = function() {
+M3D.GUI.addObjectToScene = function( values ) {
 	
 	// tweak the new object scale
 	var bbox = M3D.lastImportedModel.getBoundingVolume().dims;
 	
 	// TO DO: may be these values should be computed rather than hard coded!
-	var tmp_x = 0.05;
-	var tmp_y = 0.05;
-	var tmp_z = 0.05;
-	M3D.lastImportedModel.setScale(tmp_x, tmp_y, tmp_z);
-	M3D.lastImportedModel.getObjects()[0].parent.uid = $('#entity-info #name').attr('uid');
-	
-	console.log(M3D.lastImportedModel);
+	var v = values || {};
+	var tmp_scale_x = v.scaleX || 0.05;
+	var tmp_scale_y = v.scaleY || 0.05;
+	var tmp_scale_z = v.scaleZ || 0.05;
+	// set object properties 
+	// using the glge quicknotation http://www.glge.org/api-docs/?url=/symbols/GLGE.QuickNotation.html
+	M3D.lastImportedModel._({
+		locX: v.locX || 0.05,
+		locY: v.locY || 12,
+		locZ: v.locZ || 0.05,
+		rotX: v.rotX || 0.05,
+		rotY: v.rotY || 0.05,
+		rotZ: v.rotZ || 0.05
+	}).setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z).getObjects()[0].parent.uid = $('#entity-info #name').attr('uid');
 	
 	scene.addChild(M3D.lastImportedModel);
+	log('Adding new object to scene', M3D.lastImportedModel);
 	
+	// we don't need this reference anymore
 	M3D.lastImportedModel = null;
 
 };
@@ -482,17 +501,17 @@ M3D.GUI.updateValues = function(element){
 	{
 		switch( element.attr('name') )
 		{
-			case 'posX': obj.setDLocX( value ); break;
-			case 'posY': obj.setDLocY( value ); break;
-			case 'posZ': obj.setDLocZ( value ); break;
+			case 'posX': obj.setLocX( value ); break;
+			case 'posY': obj.setLocY( value ); break;
+			case 'posZ': obj.setLocZ( value ); break;
 			
-			case 'scaleX': if ( value > 0 ) obj.setDScaleX( value ); break;
-			case 'scaleY': if ( value > 0 ) obj.setDScaleY( value ); break;
-			case 'scaleZ': if ( value > 0 ) obj.setDScaleZ( value ); break;
+			case 'scaleX': if ( value > 0 ) obj.setScaleX( value ); break;
+			case 'scaleY': if ( value > 0 ) obj.setScaleY( value ); break;
+			case 'scaleZ': if ( value > 0 ) obj.setScaleZ( value ); break;
 			
-			case 'rotX': if ( value > 0 ) obj.setDRotX( value ); break;
-			case 'rotY': if ( value > 0 ) obj.setDRotY( value ); break;
-			case 'rotZ': if ( value > 0 ) obj.setDRotZ( value ); break;							
+			case 'rotX': if ( value > 0 ) obj.setRotX( value ); break;
+			case 'rotY': if ( value > 0 ) obj.setRotY( value ); break;
+			case 'rotZ': if ( value > 0 ) obj.setRotZ( value ); break;							
 			
 		}
 		
@@ -794,7 +813,7 @@ M3D.GUI.updateInfo = function(n){
 M3D.GUI.resetCameraPosition = function(){
 	
 	var c = doc.getElement('maincamera1');
-	console.log(c);
+	log(c);
 	scene.camera.setDRot(c.getDRotX(), c.getDRotY(), c.getDRotZ());
 	scene.camera.setDLoc(c.getDLocX(), c.getDLocY(), c.getDLocZ());
 	scene.camera.setAspect(c.getAspect());

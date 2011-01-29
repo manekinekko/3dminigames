@@ -50,7 +50,14 @@
 		$col_node->setAttribute("rot_y", (float)$collada['rot_Y']);
 		$col_node->setAttribute("rot_z", (float)$collada['rot_Z']);
 		$col_node->setAttribute("scale", (float)$collada['scale']);
-		$scene_node->appendChild($col_node);
+		if((bool)$collada['isDuplicable']==false){
+			$col_node->setAttribute("isDuplicable", "false");
+			$scene_node->appendChild($col_node);
+		}
+		else {
+			$col_node->setAttribute("isDuplicable", "true");
+			$glge->appendChild($col_node);
+		}
 	}
 
 

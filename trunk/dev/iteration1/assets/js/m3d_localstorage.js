@@ -29,6 +29,14 @@ if (!window["M3D"].DB) {
 		}
 	}
 	
+	// Detect previous content
+	M3D.DB.detectPreviousContent = function(){
+		var len = localStorage.length;
+		if ( len>0 ){
+			M3D.GUI.showPopup('confirmation-load');
+		}
+	};
+	
 	// Load data
 	M3D.DB.load = function(){
 		var len = localStorage.length;

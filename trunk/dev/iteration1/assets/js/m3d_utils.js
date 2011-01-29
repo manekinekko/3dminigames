@@ -265,17 +265,27 @@ if (!window["M3D"].GUI){
 	
 		var type = $(el).val();
 		var parent = $(el).closest('.window');
-		
+		var input = parent.find('#new-attribut-value-input');
+		var select = parent.find('#new-attribut-value-select');
 		switch(type){
 			
 			case "boolean":
-				parent.find('#new-attribut-value-input').addClass('hidden').val('');
-				parent.find('#new-attribut-value-select').removeClass('hidden');
+				input.addClass('hidden').val('');
+				select.removeClass('hidden');
+			break;
+			
+			case "string":
+			case "number":
+				select.addClass('hidden');
+				input.removeClass('hidden number alphanumeric').val('');
+				
+				if ( type === "string" ) input.addClass('alphanumeric');
+				else if ( type === "number" ) input.addClass('number');
+				
 			break;
 			
 			default:
-				parent.find('#new-attribut-value-select').addClass('hidden');
-				parent.find('#new-attribut-value-input').removeClass('hidden').val('');
+
 			break;
 			
 		}
@@ -354,15 +364,15 @@ if (!window["M3D"].GUI){
 	
 	M3D.GUI.saveNewAttribut = function(){
 		
-		var name = $('#new-attribut-name').val();
-		var type = $('#new-attribut-type-2').val();
+		var name = $('#quick-new-attribut-name').val();
+		var type = $('#quick-new-attribut-type').val();
 		var value;
 		var html;
 		
 		switch(type){
 			
 			case "boolean": 
-				value = $('#new-attribut-value-select').val(); 
+				value = $('#quick-new-attribut-value-select').val(); 
 	            html = "<select id='attribut-" + name + "' name='attribut-" + name + "' >";
 	            html += "<option value='true' " + M3D.Common.printSelected(value, 'true') + " >True</option>";
 	            html += "<option value='false' " + M3D.Common.printSelected(value, 'true') + " >False</option>";
@@ -371,25 +381,27 @@ if (!window["M3D"].GUI){
 			break;
 			default: 
 				
-				value = $('#new-attribut-value-input').val(); 
+				value = $('#quick-new-attribut-value-input').val(); 
 				html = "<input class='"+type+"' type='text' id='" + name + "' name='" + name + "' value='" + value + "'/><br/>";
 			
 			break;
 			
 		}
-	
+		
+		alert(name);
+		alert(type);
+		alert(value);
+		
 		html = "<label for='" + name + "'>" + name + "</label><br/>" + html;
 		html = "<div class='custom-attributes'>"+html+"</div>";
 		
 		$('#attributes').append(html);
 		
-		// little hack to scoll down the attributes in order to show the new added attribut
-		document.getElementById('attributes').scrollTop += 10000000; // we chose a huge number for purpose !!!
+		// quick hack to scoll down the attributes in order to show the new added attribut
+		document.getElementById('attributes').scrollTop += 10000000; // we chose that huge number for purpose !!!
 		
 		// reset
-		$('#new-attribut-name').val('');	
-		$('#new-attribut-value-input').val('');
-		$('#new-attribut-value-select option[selected]').attr('selected', false);
+		$('#quick-new-attribut-name, #quick-new-attribut-type, #quick-new-attribut-value-input, #quick-new-attribut-value-select').val('');	
 	
 	}
 	
@@ -601,7 +613,7 @@ if (!window["M3D"].GUI){
 		
 		var isOK = true;
 		var parent = $(el).closest('.window');
-		var inputs = parent.find('input[type="text"], select');
+		var inputs = parent.find('input[type="text"]:visible, select:visible');
 		var current, val;
 		
 		inputs.each(function(){
@@ -614,6 +626,9 @@ if (!window["M3D"].GUI){
 			if ( current.hasClass('required') && M3D.Common.isEmpty(val) ){
 				isOK = false;
 				current.addClass('warning');
+			}
+			else {
+				current.removeClass('warning');
 			}
 		});
 		return isOK;
@@ -778,7 +793,19 @@ if (!window["M3D"].GUI){
 			
 		if (n==undefined)
 		{
-			log(parseFloat(obj.parent.getRotX()).toFixed(2), parseFloat(obj.parent.getRotY()).toFixed(2), parseFloat(obj.parent.getRotZ()).toFixed(2) );
+			log('Rot('+
+				parseFloat(obj.parent.getRotX()).toFixed(2)+', '+
+				parseFloat(obj.parent.getRotY()).toFixed(2)+', '+ 
+				parseFloat(obj.parent.getRotZ()).toFixed(2)+') '+
+				'Pos('+
+				parseFloat(obj.parent.getLocX()).toFixed(2)+', '+
+				parseFloat(obj.parent.getLocY()).toFixed(2)+', '+
+				parseFloat(obj.parent.getLocZ()).toFixed(2)+') '+
+				'Scale('+
+				parseFloat(obj.parent.getScaleX()).toFixed(2)+', '+
+				parseFloat(obj.parent.getScaleY()).toFixed(2)+', '+
+				parseFloat(obj.parent.getScaleZ()).toFixed(2)+')'
+			);
 				
 			if (obj.parent.getId()!="") $('#id').val( obj.parent.getId());
 			$('#posX').val( parseFloat(obj.parent.getLocX()).toFixed(2) );

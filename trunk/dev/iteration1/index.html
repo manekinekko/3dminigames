@@ -52,7 +52,7 @@
 				
 				<h2>Model attributes</h2>
 				<div id="attributes"></div>
-				<input type="button" name="add-attributes" class="add-atttributes" value="Add new Attribut">			
+				<input type="button" name="add-attributes" class="add-attributes" value="Add new Attribut">			
 			</div>
 			<!-- end: right info panel -->
 
@@ -115,7 +115,7 @@
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>
 
-					<input type="text" class="alphanumerical required" name="name" id="name" value="" placeholder="Entity name" />
+					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" />
 					<br/>
 					<label for="entity">Attached type<em>*</em></label>
 					<select name="entity" id="entity" class="required" >
@@ -135,7 +135,7 @@
 				<div id="new-entity" class="window close">
 					<h2>New Entity Type</h2>
 					<label for="entity-name">Type Name<em>*</em></label>
-					<input type="text" class="alphanumerical required" name="entity-name" value="" placeholder="Type name" />
+					<input type="text" class="alphanumeric required" name="entity-name" value="" placeholder="Type name"/>
 					 
 					<br/>
 					<label for="entity-type">Type model</label>
@@ -147,14 +147,14 @@
 					<label for="entity-attributes">Add new attributes</label>
 					<br/>
 					<br/>
-					<input class="width-100" class="alphanumerical" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
-					<select class="width-100" id="new-attribut-type-1" name="new-attribut-type-1">
+					<input class="width-100" class="alphanumeric" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
+					<select class="width-100" id="new-attribut-type" name="new-attribut-type">
 						<option value="">--Type--</option>
 						<option value="string">String</option>
 						<option value="number">Number</option>
 						<option value="boolean">Boolean</option>
 					</select>
-					<input class="width-100" class="alphanumerical number" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
+					<input class="width-100" class="alphanumeric number" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
 					<select class="width-100 hidden" id="new-attribut-value-select" name="new-attribut-value-select" >
 						<option value="true">True</option>
 						<option value="false">False</option>
@@ -176,12 +176,12 @@
 				<div id="entity-new-attribut" class="window closed">
 					<h2>New attribut Info</h2>
 		        	
-					<label for="">Name<em>*</em></label>
-					<input name="new-attribut-name" class="alphanumerical required" id="new-attribut-name" type="text" placeholder="Attribut name"/>
+					<label for="quick-new-attribut-name">Name<em>*</em></label>
+					<input name="quick-new-attribut-name" class="alphanumeric required" id="quick-new-attribut-name" value="" type="text" placeholder="Attribut name"/>
 					<br/>
 					
-					<label for="">Type<em>*</em></label>
-					<select id="new-attribut-type-2" name="new-attribut-type-2" class="required">
+					<label for="quick-new-attribut-type">Type<em>*</em></label>
+					<select id="quick-new-attribut-type" name="quick-new-attribut-type" class="required">
 						<option value="">--Type--</option>
 						<option value="string">String</option>
 						<option value="number">Number</option>
@@ -189,9 +189,9 @@
 					</select>
 					<br/>
 					
-					<label for="">Value<em>*</em></label>
-					<input name="new-attribut-value-input" class="alphanumerical number required" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
-					<select class="hidden required" id="new-attribut-value-select" name="new-attribut-value-select" >
+					<label for="quick-new-attribut-value-input">Value<em>*</em></label>
+					<input name="quick-new-attribut-value-input" class="required" id="quick-new-attribut-value-input" type="text" value="" placeholder="Value"/>
+					<select class="hidden required" id="quick-new-attribut-value-select" name="quick-new-attribut-value-select" >
 						<option value="true">True</option>
 						<option value="false">False</option>
 					</select>
@@ -221,7 +221,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<input name="rule-name" class="alphanumerical required" id="rule-name" type="text" placeholder="Rule name"/>
+									<input name="rule-name" class="alphanumeric required" id="rule-name" type="text" placeholder="Rule name"/>
 								</td>
 								<td>
 									<select id="entity-name" name="entity-name" class="required">
@@ -296,6 +296,17 @@
 					</div>
 					<div id="window-buttons">
 						<input type="button" value="YES" name="confirm-clear-canvas" id="confirm-clear-canvas">
+						<input type="button" class="cancel" value="NO" name="cancel">
+					</div>
+				</div>
+				
+				<div id="confirmation-load" class="window closed">
+					<h2>Load saved content!</h2>
+					<div>Do you want to load your previous content ?<br/>
+					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
+					</div>
+					<div id="window-buttons">
+						<input type="button" value="YES" name="confirm-load-content" id="confirm-load-content">
 						<input type="button" class="cancel" value="NO" name="cancel">
 					</div>
 				</div>

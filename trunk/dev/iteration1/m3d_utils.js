@@ -608,6 +608,7 @@ if (!window["M3D"].GUI){
 			
 			current = $(this);
 			val = current.val();
+			
 			// handle required fields for now
 			// TODO : add support for more inputs vallidation
 			if ( current.hasClass('required') && M3D.Common.isEmpty(val) ){
@@ -697,33 +698,33 @@ if (!window["M3D"].GUI){
 			if ( keys.isKeyPressed(GLGE.KI_X) )
 			{
 				
-				obj.parent.setDLocX( -newRotX * deltaLocObject ); 
+				obj.parent.setLocX( -newRotX * deltaLocObject ); 
 			
 			}
 			else if ( keys.isKeyPressed(GLGE.KI_Y) )
 			{
-				obj.parent.setDLocY( newRotY * deltaLocObject );
+				obj.parent.setLocY( newRotY * deltaLocObject );
 			
 			}
 			else if ( keys.isKeyPressed(GLGE.KI_Z) )
 			{
 			
-				obj.parent.setDLocZ( newRotY * deltaLocObject );
+				obj.parent.setLocZ( newRotY * deltaLocObject );
 			
 			}
 			else if ( keys.isKeyPressed(GLGE.KI_SHIFT)){
 								
-				obj.parent.setDRotY( newRotY * deltaRot );
+				obj.parent.setRotY( newRotY * deltaRot );
 	
 			}
 			else if (keys.isKeyPressed(GLGE.KI_ALT)){
 				
-				obj.parent.setDRotX( newRotY * deltaRot );
+				obj.parent.setRotX( newRotY * deltaRot );
 			
 			}
 			else {
-				obj.parent.setDRotX( newRotX * deltaRot ); 
-				obj.parent.setDRotY( newRotY * deltaRot ); 
+				obj.parent.setRotX( newRotX * deltaRot ); 
+				obj.parent.setRotY( newRotY * deltaRot ); 
 				
 			}
 			
@@ -743,8 +744,8 @@ if (!window["M3D"].GUI){
 			}else {
 				
 				scene.camera.setLookat( null );
-				scene.camera.setDLocX( newRotY * deltaLocCamera ); 
-				scene.camera.setDLocY( -newRotX * deltaLocCamera ); 
+				scene.camera.setLocX( newRotY * deltaLocCamera ); 
+				scene.camera.setLocY( -newRotX * deltaLocCamera ); 
 			}
 		}
 		
@@ -777,19 +778,21 @@ if (!window["M3D"].GUI){
 			
 		if (n==undefined)
 		{
-			if (obj.getId()!="") $('#id').val( obj.getId());
-			$('#posX').val( parseFloat(obj.getDLocX()).toFixed(2) );
-			$('#posY').val( parseFloat(obj.getDLocY()).toFixed(2) );
-			$('#posZ').val( parseFloat(obj.getDLocZ()).toFixed(2) );
-			$('#scaleX').val( parseFloat(obj.getScaleX()).toFixed(2) );
-			$('#scaleY').val( parseFloat(obj.getScaleY()).toFixed(2) );
-			$('#scaleZ').val( parseFloat(obj.getScaleZ()).toFixed(2) );
-			$('#rotX').val( parseFloat(obj.getDRotX()).toFixed(2) );
-			$('#rotY').val( parseFloat(obj.getDRotY()).toFixed(2) );
-			$('#rotZ').val( parseFloat(obj.getDRotZ()).toFixed(2) );
-			$('#bboxX').val( parseFloat(obj.boundingVolume.dims[0]).toFixed(2) );
-			$('#bboxY').val( parseFloat(obj.boundingVolume.dims[1]).toFixed(2) );
-			$('#bboxZ').val( parseFloat(obj.boundingVolume.dims[2]).toFixed(2) );						
+			log(parseFloat(obj.parent.getRotX()).toFixed(2), parseFloat(obj.parent.getRotY()).toFixed(2), parseFloat(obj.parent.getRotZ()).toFixed(2) );
+				
+			if (obj.parent.getId()!="") $('#id').val( obj.parent.getId());
+			$('#posX').val( parseFloat(obj.parent.getLocX()).toFixed(2) );
+			$('#posY').val( parseFloat(obj.parent.getLocY()).toFixed(2) );
+			$('#posZ').val( parseFloat(obj.parent.getLocZ()).toFixed(2) );
+			$('#scaleX').val( parseFloat(obj.parent.getScaleX()).toFixed(2) );
+			$('#scaleY').val( parseFloat(obj.parent.getScaleY()).toFixed(2) );
+			$('#scaleZ').val( parseFloat(obj.parent.getScaleZ()).toFixed(2) );
+			$('#rotX').val( parseFloat(obj.parent.getRotX()).toFixed(2) );
+			$('#rotY').val( parseFloat(obj.parent.getRotY()).toFixed(2) );
+			$('#rotZ').val( parseFloat(obj.parent.getRotZ()).toFixed(2) );
+			$('#bboxX').val( parseFloat(obj.parent.boundingVolume.dims[0]).toFixed(2) );
+			$('#bboxY').val( parseFloat(obj.parent.boundingVolume.dims[1]).toFixed(2) );
+			$('#bboxZ').val( parseFloat(obj.parent.boundingVolume.dims[2]).toFixed(2) );						
 		}
 		else {
 			$("#id").val( null );

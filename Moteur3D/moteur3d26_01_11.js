@@ -78,20 +78,73 @@ removeObject en rattachant ces fils au dessus
 changeParent en rattachant ces fils au dessus
 
 ***************** DEPLACEMENT DES OBJETS
-
-TranslateObject(idObject,tabVector,ref)
-ref : argument optionnel
+// a verifie si c'est bien model matrix ou son inverse ...
 
 
-SetPositionObject(idObject,tabPos,ref)
-// teleportation pshhhhhhhhh
+/* Méthode translateObject. Vérifie la collision sur tout le vecteur de déplacement.
+ * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+ *		  tabVector: vecteur de 3 coordornées x y z représentant le déplacement
+ *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu
+ */
+// NON TESTE
+translateObject = function(idObject,tabVector,idRef){
+	if(idRef == null){
+		var M = GLGE.identMatrix();
+	}else{
+		var M = this.getObject(idRef).getModelMatrix();
+	}
+	var V = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+	var D = GLGE.mulMat4Vec4(M,V);
+	// verifie la collision sur toute la trajectoire
+	this.getObject(idObject).setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,1));
+}
+
+/* Méthode setPositionObject. Déplace l'objet à la position donnée et vérifie la collision à l'arrivée seulement
+ * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+ *		  tabPos : vecteur de 3 coordornées x y z représentant la nouvelle position
+ *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu
+ */
+// NON TESTE
+setPositionObject = function(idObject,tabPos,idRef){
+	if(idRef == null){
+		var M = GLGE.identMatrix();
+	}else{
+		var M = this.getObject(idRef).getModelMatrix();
+	}
+	var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+	var D = GLGE.mulMat4Vec4(M,V);
+	// verifie la collision à l'arrivée
+	this.getObject(idObject).setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,1));
+}
+
+/* Méthode rotateObject. Effectue une rotation sur l'objet donné et vérifie la collision à l'arrivée seulement
+ * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+ *		  tabRot : vecteur de 3 coordornées représentant la rotation a effectué
+ *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
+ */
+// NON TESTE
+rotateObject = function(idObject,tabRot,idRef){
+	if(idRef == null){
+		var M = GLGE.identMatrix();
+	}else{
+		var M = this.getObject(idRef).getModelMatrix();
+	}
+	var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+	var D = GLGE.mulMat4Vec4(M,V);
+	// verifie la collision à l'arrivée
+	this.getObject(idObject).setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,1));
+}
 
 
-RotateObject(idObject,tabRot,ref)
-
-
-RescaleObject(idObject,newScale)
-
+/* Méthode rescaleObject. Multiplie l'échelle d'un objet par le coefficient donné.
+ * Param: idObject: identifiant de l'objet que l'on souhaite redimensionner
+ *		  tabRot : coefficient par lequel multiplié la taille de l'objet
+ */
+ // NON TESTE
+rescaleObject = function (idObject,coefScale){
+// vérifié la collision
+	this.getObject(idObject).setScale(this.getObject(idObject).getScale*coefScale);
+}
 
 
 ######## dans le futur .... ou pas

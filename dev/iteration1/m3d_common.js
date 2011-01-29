@@ -1,8 +1,7 @@
-
 /**
- * @name m3d_utils.js
- * @author chegham wassim
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
+
 if (!window["M3D"]) {
     window["M3D"] = {};
 }
@@ -13,15 +12,20 @@ if (!window["M3D"].Common) {
 
 (function(M3D){
 
-
+	// global constants
+	M3D.REGEX_ALPHANUMERIC = /^[A-z0-9_\-]+$/g;
+	M3D.REGEX_NUMBER = /^[0-9]+$/g;
+	
     // -- print a log text
     M3D.Common.log = log = function(){
         if (console) {
-            console.log(arguments[0],arguments[1],arguments[2]);
-			
+            var script = "console.log('[M3D]', arguments[0]";
+			for(var i=1;i<arguments.length;i++){ script += ",arguments["+i+"]"; }
+			script += ")";
+			eval(script);
 		}
         else 
-            alert(arguments[0],arguments[1],arguments[2]);
+            alert('console.log() was not found! Please deactivate the debug mode!');
     }
     
     // -- print selected option for select input
@@ -44,5 +48,17 @@ if (!window["M3D"].Common) {
         };
         return false;
     };
+	
+	// -- validate form inputs
+	M3D.Common.isEmpty = function(val){
+		return val === '';
+	}
+	M3D.Common.isAlphanumeric = function(val){
+		return M3D.REGEX_ALPHANUMERIC.test(val);
+	}
+	M3D.Common.isNumber = function(val){
+		return M3D.REGEX_NUMBER.test(val);
+	}
+	
     
 })(window["M3D"]);

@@ -1,10 +1,6 @@
-
-
 /**
- * @name m3d_gui.js
- * @author chegham wassim
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
-
 
 var canvas = document.getElementById('canvas');
 
@@ -35,7 +31,13 @@ doc.onLoad = function() {
 	renderer.setScene(scene);
 
 	// Start Event Bindings
-
+	setTimeout(function(){ $('#viewmenu').children().animate({top:70}, 200); }, 1500);
+	$('#viewmenu').hover(function(){
+		$(this).children().animate({top:30}, 200);
+	}, function(){
+		$(this).children().animate({top:70}, 200);
+	})
+	
 	// -- is hovering the canvas ?
 	$('#canvas').bind('mouseover', function(e){mouseovercanvas=true;});
 	
@@ -83,7 +85,7 @@ doc.onLoad = function() {
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
 	$('#save-entity-info').bind('click', function(){
 		
-		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+		if ( M3D.GUI.validateFields(this) ){
 			M3D.GUI.updateEntityList();
 			M3D.GUI.addObjectToScene();
 		}
@@ -104,7 +106,7 @@ doc.onLoad = function() {
 	// -- save new attribut
 	$('#save-new-attribut').bind('click', function(){
 		
-		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+		if ( M3D.GUI.validateFields(this) ){
 			M3D.GUI.saveNewAttribut();
 		}
 		
@@ -133,7 +135,7 @@ doc.onLoad = function() {
 	// -- save new attributes
 	$('#save-new-entity').bind('click', function(){
 		
-		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+		if ( M3D.GUI.validateFields(this) ){
 			M3D.GUI.saveNewEntity();
 		}
 		
@@ -151,7 +153,7 @@ doc.onLoad = function() {
 	
 	// -- add a new rule
 	$('#add-rule').bind('click', function(){
-		if ( M3D.GUI.isRequiredFieldsOK(this) ){
+		if ( M3D.GUI.validateFields(this) ){
 			M3D.GUI.saveNewRule();
 		}
 	});
@@ -161,11 +163,17 @@ doc.onLoad = function() {
 		M3D.GUI.deleteRule(this);
 	});
 	
-	// --- database bindings
-	// -- delete database
-	$('#clear-db').bind('click', function(){
-		M3D.DB.clear();
+	// -- clear user canvas
+	$('#clear-canvas').bind('click', function(){
+		M3D.GUI.showPopup('confirmation-clear');
 	});
+	
+	$('#confirm-clear-canvas').bind('click', function(){
+		M3D.GUI.clearCanvas();
+		M3D.DB.clear();
+		M3D.GUI.hidePopup('confirmation-clear');
+	});
+	
 	
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 	

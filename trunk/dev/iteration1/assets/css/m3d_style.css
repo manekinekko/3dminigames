@@ -2,7 +2,7 @@ body {
     position: relative;
     min-width: 1200px;
     font-size: 0.9em;
-    background: #eee url('../../dae/free/images/e8clangfloor.jpg') repeat center center scroll;
+    background: #eee url('../dae/free/images/e8clangfloor.jpg') repeat center center scroll;
     margin: 0;
     padding: 0;
 	cursor: default;

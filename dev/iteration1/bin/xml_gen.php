@@ -1,14 +1,13 @@
 <?php
   function genXML($data) {
-	
-  	//print_r($data); exit();
+	//print_r($data); exit();
   	
   	$camtruc = $data['cam'];
   	$scene = $data['scene'];
   	$tabcollada = $data['colladas']; 
   	$tablight = $data['lights'];
   	
-	$dom = new DomDocument;
+	$dom = new DomDocument();
 	
 	// append comment
     $glge = $dom->createComment("\nAuto generated XML level for GLGE by 3DWIGS on ". date('c', time())."\n");
@@ -43,14 +42,14 @@
 		$col_node = $dom->createElement("collada");
 		$col_node->setAttribute("id", $collada['id']);
 		$col_node->setAttribute("document", $collada['document']);
-		$col_node->setAttribute("loc_x", (float)$collada['loc_X']);
-		$col_node->setAttribute("loc_y", (float)$collada['loc_Y']);
-		$col_node->setAttribute("loc_z", (float)$collada['loc_Z']);
-		$col_node->setAttribute("rot_x", (float)$collada['rot_X']);
-		$col_node->setAttribute("rot_y", (float)$collada['rot_Y']);
-		$col_node->setAttribute("rot_z", (float)$collada['rot_Z']);
+		$col_node->setAttribute("loc_x", (float)$collada['loc_x']);
+		$col_node->setAttribute("loc_y", (float)$collada['loc_y']);
+		$col_node->setAttribute("loc_z", (float)$collada['loc_z']);
+		$col_node->setAttribute("rot_x", (float)$collada['rot_x']);
+		$col_node->setAttribute("rot_y", (float)$collada['rot_y']);
+		$col_node->setAttribute("rot_z", (float)$collada['rot_z']);
 		$col_node->setAttribute("scale", (float)$collada['scale']);
-		if((bool)$collada['isDuplicable']==false){
+		if((bool)$collada['isDuplicable']===false){
 			$col_node->setAttribute("isDuplicable", "false");
 			$scene_node->appendChild($col_node);
 		}
@@ -65,9 +64,9 @@
 	foreach( $tablight as $i=>$light ){
 		$light_node = $dom->createElement("light");
 		$light_node->setAttribute("id", $light['id']);
-		$light_node->setAttribute("loc_x", (float)$light['loc_X']);
-		$light_node->setAttribute("loc_y", (float)$light['loc_Y']);
-		$light_node->setAttribute("loc_z", (float)$light['loc_Z']);
+		$light_node->setAttribute("loc_x", (float)$light['loc_x']);
+		$light_node->setAttribute("loc_y", (float)$light['loc_y']);
+		$light_node->setAttribute("loc_z", (float)$light['loc_z']);
 		$light_node->setAttribute("type", $light['type']);
 		$scene_node->appendChild($light_node);
 	}
@@ -75,18 +74,25 @@
 
 	$glge->appendChild($scene_node);
 	
-	$filename = "level-".time().".xml";
+	$filename = 'level-'.time().'.xml';
+	$path = '../';
+	
 	$dom->preserveWhiteSpace = false;
 	$dom->formatOutput = true;
-	$dom->save($filename);
+	$dom->save($path.$filename);
 	return $filename;
 }	
 
 
+// security check
+$path = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+if ( $path === "" ) exit('You can not access this file directly!');
+  		
+
 header('Content-Type: application/json');
 
-$data = json_decode(stripslashes($_POST['glge']), true); // true for assoc array, 3 for depth
+$data = json_decode(stripslashes($_POST['glge']), true); // true for assoc array
 
 $name = genXML($data);
-echo json_encode(array('filename'=>$name));	
+echo json_encode(array('url'=>$path.$name));	
 ?>

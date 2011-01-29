@@ -31,11 +31,14 @@ doc.onLoad = function() {
 	renderer.setScene(scene);
 
 	// Start Event Bindings
-	setTimeout(function(){ $('#viewmenu').children().animate({top:70}, 200); }, 1500);
+	
+	// -- menu auto hidding
+	function _autoHideMenu(){setTimeout(function(){ $('#viewmenu').children().animate({top:70}, 200); }, 1500);}
+	_autoHideMenu();
 	$('#viewmenu').hover(function(){
 		$(this).children().animate({top:30}, 200);
 	}, function(){
-		$(this).children().animate({top:70}, 200);
+		_autoHideMenu();
 	})
 	
 	// -- is hovering the canvas ?

@@ -1021,7 +1021,7 @@ if (!window["M3D"].GUI){
 		
 		var dataString = JSON.stringify(data);
 		$.ajax({
-			url: 'xml_gen.php',
+			url: 'bin/xml_gen.php',
 			type: 'POST',
 			dataType:'json',
 			data: { glge:dataString },
@@ -1029,7 +1029,7 @@ if (!window["M3D"].GUI){
 				//alert('Generated file name is : '+ a.filename);
 	
 				// FOR DEBUGGING ONLY
-				var newwindow = window.open(a.filename, a.filename, 'height=400,width=400');
+				var newwindow = window.open(a.url, a.url, 'height=400,width=400');
 				if(window.focus) newwindow.focus;
 				//
 			}	

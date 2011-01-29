@@ -205,11 +205,11 @@ em {
 }
 
 .number {
-	width:20px !important;
+	width:50px !important;
 }
 
-.string {
-	width:80px !important;
+.alphanumeric {
+	width:100px !important;
 }
 
 .hidden {
@@ -237,10 +237,13 @@ label {
 	top:3px;
 }
 
-input[type="text"], textarea {
-    width: 40px;
+input[type="text"], textarea, select {
     border: 1px solid #eee;
     padding: 2px;
+}
+
+input[type="text"], textarea {
+    width: 40px;
 }
 
 input[type="button"] {

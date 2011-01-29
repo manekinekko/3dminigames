@@ -17,8 +17,8 @@ var now;
 //    has finished loading
 doc.onLoad = function() {
 	
-	// auto loadings functions
-	M3D.DB.load();
+	// auto loading functions
+	M3D.DB.detectPreviousContent();
 	
 	// GLGE logic
 	var mouse=new GLGE.MouseInput(canvas);
@@ -81,8 +81,8 @@ doc.onLoad = function() {
 	});
 	
 	// -- open new attribut
-	$('.add-atttributes').bind('click', function(){
-		M3D.GUI.showPopup('entity-new-attribut');
+	$('.add-attributes').bind('click', function(){
+		M3D.GUI.showPopup('entity-new-attribut', true);
 	});
 	// -- window button
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
@@ -102,7 +102,7 @@ doc.onLoad = function() {
 	$('#showupload').click(function(){M3D.GUI.toggleShowUpload});
 	
 	// -- add new attributes
-	$('#new-attribut-type-1, #new-attribut-type-2').bind('change', function(){
+	$('#new-attribut-type, #quick-new-attribut-type').bind('change', function(){
 		M3D.GUI.toggleInputSelect(this);
 	});
 	
@@ -151,7 +151,7 @@ doc.onLoad = function() {
 	
 	// -- open the rules manager window
 	$('#manage-rules').bind('click', function(){
-		M3D.GUI.showPopup('rules');
+		M3D.GUI.showPopup('rules', true);
 	});
 	
 	// -- add a new rule
@@ -170,13 +170,18 @@ doc.onLoad = function() {
 	$('#clear-canvas').bind('click', function(){
 		M3D.GUI.showPopup('confirmation-clear');
 	});
-	
 	$('#confirm-clear-canvas').bind('click', function(){
 		M3D.GUI.clearCanvas();
 		M3D.DB.clear();
 		M3D.GUI.hidePopup('confirmation-clear');
 	});
 	
+	
+	// -- load previous content
+	$('#confirm-load-content').bind('click', function(){
+		M3D.DB.load();
+		M3D.GUI.hidePopup('confirmation-load');
+	});
 	
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 	

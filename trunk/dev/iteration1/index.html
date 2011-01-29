@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>M3D GUI v0.0.1alpha</title>
-		<script src="modernizr.min.js"></script>
+		<script src="assets/js/lib/modernizr.min.js"></script>
 	</head>
-	<body onload="new M3D.Upload.uploader('canvas', 'status', 'upload.php', null, doc);">
+	<body onload="new M3D.Upload.uploader('canvas', 'status', 'bin/upload.php', null, doc);">
 		
 		<div id="gui">	
 			
@@ -27,9 +27,9 @@
 						<option value="dae/free/f.dae" >Girl</option>
 					</optgroup>
 					<optgroup label="Presets">
-						<option value="dae/presets/cube.dae">Cube</option>
-						<option value="dae/presets/sphere.dae">Sphere</option>
-						<option value="dae/presets/cylindre.dae">Cylindre</option>
+						<option value="assets/dae/presets/cube.dae">Cube</option>
+						<option value="assets/dae/presets/sphere.dae">Sphere</option>
+						<option value="assets/dae/presets/cylindre.dae">Cylindre</option>
 					</optgroup>
 				</select>
 				<input type="button" name="import" id="import" value="Add a model" />
@@ -325,29 +325,29 @@
 		
 		<!-- start: css parsing -->
 		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
-		<link href="m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
+		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
 		<!-- end: css parsing -->
 		
 		<!-- start: js parsing -->
 		<!-- start: libraries -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script type="text/javascript" src="json.js"></script>
-		<script type="text/javascript" src="glge/glge_math.js"></script>
-		<script type="text/javascript" src="glge/glge.js"></script>
-		<script type="text/javascript" src="glge/glge_collada.js"></script> 
-		<script type="text/javascript" src="glge/glge_input.js"></script>
-		<script type="text/javascript" src="glge/patches/glge.js"></script>
-		<script type="text/javascript" src="glge/patches/glge_collada.js"></script>
+		<script type="text/javascript" src="assets/js/lib/json.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge_math.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge_collada.js"></script> 
+		<script type="text/javascript" src="assets/js/lib/glge/glge_input.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/patches/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/patches/glge_collada.js"></script>
 		<!-- end: libraries -->
 		
 		<!-- start: js custom -->
-		<script type="text/javascript" src="m3d_common.js"></script>
-		<script type="text/javascript" src="m3d_localstorage.js"></script>
-		<script type="text/javascript" src="m3d_utils.js"></script>
-		<script type="text/javascript" src="m3d_upload.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_common.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_utils.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_upload.js"></script>
 		
 		<!-- Please load this script after all the others! -->
-		<script type="text/javascript" src="m3d_gui.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_gui.js"></script>
 		<!-- end: js custom -->
 		<!-- end: js parsing -->
 

@@ -84,9 +84,13 @@ initialization [SymbolTable st] returns [Code c]:
     {
 	Code modelCode = new Code();
 	Code entitiesCode = new Code();
+	Code entitiesFunCode = new Code();
+	List<Entity> lPlayer = new ArrayList<Entity>();
+	lPlayer.add(Genre.player);
 	List<List<Entity>> list = new ArrayList<List<Entity>>();
-	list.add(Genre.enemies);
+	list.add(lPlayer);
 	list.add(Genre.allies);
+	list.add(Genre.enemies);
 	list.add(Genre.neutral);
 
 	Iterator<List<Entity>> genre = list.iterator();
@@ -103,6 +107,9 @@ initialization [SymbolTable st] returns [Code c]:
 		modelCode.append(Code.genModel(model));
 		modelCode.append("\n");
 
+		entitiesFunCode.append(Code.genFuncEntity(ent));
+		entitiesFunCode.append("\n");
+
 		entitiesCode.append(Code.genEntity(ent));
 		entitiesCode.append("\n");
 	    }
@@ -111,6 +118,7 @@ initialization [SymbolTable st] returns [Code c]:
 	c = new Code("/*Models*/\n");
 	c.append(modelCode);
 	c.append("\n/*Entities*/\n");
+	c.append(entitiesFunCode);
 	c.append(entitiesCode);
 	c.append("\n");
     }
@@ -716,7 +724,7 @@ attribut [SymbolTable st] returns [Pair<String,Class<Attributes>> c]:
 	| JUMP_FORCE {c =new Pair("jumpForce", AttributeNum.class);}
 	| JUMP_AIR_MAX {c =new Pair("maxJumpsInTheAir", AttributeNum.class);}
 	| MONEY {c =new Pair("money", AttributeNum.class);}
-	| CLASS {c =new Pair("class",new AttributeString(""));}
+	| CLASS {c =new Pair("classification",new AttributeString(""));}
 	| RACE {c =new Pair("race",new AttributeString(""));}
 	| ACCELERATION {c =new Pair("acceleration", AttributeNum.class);}
 	| SPEED {c =new Pair("speed", AttributeNum.class);}                // attributes of "vehicle" :

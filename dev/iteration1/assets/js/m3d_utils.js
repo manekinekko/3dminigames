@@ -359,7 +359,32 @@ if (!window["M3D"].GUI){
 		M3D.GUI.showPopup('entity-info');
 		
 		// [DB]
-		// Save the new entity into DB
+		// Save the new entity and its attributes into DB
+		
+		M3D.DB.setType({
+			name: val,
+			value:{}
+		});
+		
+		$('.entry-attributes').each(function(){
+			
+			var entry = $(this);
+			var name = entry.find('input[name="attribute-name"]').val();
+			var type = entry.find('input[name="attribute-type"]').val();
+			var value = entry.find('input[name="attribute-value"]').val();
+			var attributeObj = {
+				name: entityInfo.val(),
+				value: {
+					attr_name: name,
+					attr_type: type,
+					attr_value: value
+				}
+			};
+			
+			M3D.DB.setAttributes(attributeObj);
+			
+		});
+		
 	}
 	
 	M3D.GUI.saveNewAttribut = function(){
@@ -422,14 +447,13 @@ if (!window["M3D"].GUI){
 		}
 		
 		if ( !M3D.Common.isEmpty(name.val()) 
-			&& !M3D.Common.isEmpty(type.val()) 
 			&& !M3D.Common.isEmpty(value.val())) 
 		{
 			
 			var attr = '<div class="entry-attributes">\
-							<input class="width-100" disabled="true" type="text" value="'+name.val()+'" />\
-							<input class="width-100" disabled="true" type="text" value="'+type.val()+'" />\
-							<input class="width-100" disabled="true" type="text" value="'+value.val()+'" />\
+							<input name="attributes-name[]" class="width-100" disabled="true" type="text" value="'+name.val()+'" />\
+							<input name="attributes-type[]" class="width-100" disabled="true" type="text" value="'+type.val()+'" />\
+							<input name="attributes-value[]" class="width-100" disabled="true" type="text" value="'+value.val()+'" />\
 							<a href="#" class="detele-attribut">Delete</a>\
 						</div>';
 			
@@ -440,10 +464,6 @@ if (!window["M3D"].GUI){
 			name.val('');
 			type.val('');
 			value.val('');
-			
-			// [DB]
-			// Save the new attribut into DB and add the DB id to the new attribut in the list
-			// so we can easily delete an attribut
 			
 		}
 		
@@ -463,8 +483,9 @@ if (!window["M3D"].GUI){
 	
 	M3D.GUI.updateEntityList = function(){
 		
-		var uid = $('.window #name').attr('uid');
-		var name  = $('.window #name').val();
+		var uid = $('#name').attr('uid');
+		var name  = $('#name').val();
+		var entityName = $('#entity').val();
 		
 		$('#select-model').append('<option value="'+uid+'">'+name+'</option>');
 	
@@ -474,10 +495,11 @@ if (!window["M3D"].GUI){
 		var element={
 				'name' : name,
 				'value' : {
-						'url': urlCollada
+						'url': urlCollada,
+						'type': entityName
 					}
 			};
-		M3D.DB.setType(element);
+		M3D.DB.setObject(element);
 		// [/DB]
 	}
 	
@@ -495,11 +517,11 @@ if (!window["M3D"].GUI){
 		var tmp_scale_z = v.scaleZ || 0.05;
 		
 		// set object placeable properties 
-		// using the glge quicknotation http://www.glge.org/api-docs/?url=/symbols/GLGE.QuickNotation.html
+		// using the glge quicknotatio. See http://www.glge.org/api-docs/?url=/symbols/GLGE.QuickNotation.html
 		M3D.lastImportedModel._({
-			locX: v.locX || 0.05,
-			locY: v.locY || 12,
-			locZ: v.locZ || 0.05,
+			locX: v.locX || 0,
+			locY: v.locY || 0,
+			locZ: v.locZ || 0,
 			rotX: v.rotX || 0.05,
 			rotY: v.rotY || 0.05,
 			rotZ: v.rotZ || 0.05

@@ -413,6 +413,7 @@ if (!window["M3D"].GUI){
 		var type = $('#new-attribut-type');
 		var value;
 		
+		
 		if (type.val() == 'boolean') {
 			value = $('#new-attribut-value-select');
 		}
@@ -420,22 +421,31 @@ if (!window["M3D"].GUI){
 			value = $('#new-attribut-value-input');
 		}
 		
-		var attr = '<div class="entry-attributes"><input class="width-100" disabled="true" type="text" value="'+name.val()+'" />\
-					<input class="width-100" disabled="true" type="text" value="'+type.val()+'" />\
-					<input class="width-100" disabled="true" type="text" value="'+value.val()+'" />\
-					<a href="#" class="detele-attribut">Delete</a></div>';
-		
-		// add html
-		$('#entity-attributes-list').prepend( attr );
-		
-		// clear input
-		name.val('');
-		type.val('');
-		value.val('');
-		
-		// [DB]
-		// Save the new attribut into DB and add the DB id to the new attribut in the list
-		// so we can easily delete an attribut
+		if ( !M3D.Common.isEmpty(name.val()) 
+			&& !M3D.Common.isEmpty(type.val()) 
+			&& !M3D.Common.isEmpty(value.val())) 
+		{
+			
+			var attr = '<div class="entry-attributes">\
+							<input class="width-100" disabled="true" type="text" value="'+name.val()+'" />\
+							<input class="width-100" disabled="true" type="text" value="'+type.val()+'" />\
+							<input class="width-100" disabled="true" type="text" value="'+value.val()+'" />\
+							<a href="#" class="detele-attribut">Delete</a>\
+						</div>';
+			
+			// add html
+			$('#entity-attributes-list').prepend( attr );
+			
+			// clear input
+			name.val('');
+			type.val('');
+			value.val('');
+			
+			// [DB]
+			// Save the new attribut into DB and add the DB id to the new attribut in the list
+			// so we can easily delete an attribut
+			
+		}
 		
 	}
 	

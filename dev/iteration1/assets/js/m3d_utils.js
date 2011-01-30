@@ -460,14 +460,15 @@ if (!window["M3D"].GUI){
 	
 		M3D.GUI.hidePopup();
 		
-	// ** DB **
-		var element={};
-		element.name=name;
-		element.value = {
-			url: urlCollada
-		};
-		M3D.DB.set(element);
-		// ** /DB **
+		// [DB]
+		var element={
+				'name' : name,
+				'value' : {
+						'url': urlCollada
+					}
+			};
+		M3D.DB.setType(element);
+		// [/DB]
 	}
 	
 	

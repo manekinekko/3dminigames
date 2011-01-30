@@ -1,0 +1,22 @@
+#labels Phase-QA,Phase-Implementation,Phase-Design
+= IHM =
+
+== Validé ==
+  * système de fenêtre
+  * picking
+  * import collada
+  * base de données en Local Storage
+  
+
+== En cours ==
+  * génération du descriptif
+  * sauvegarde des attributs en DB
+  * sauvegarde des types crées en DB
+  * génération d'un XML pour GLGE
+
+== A venir ==
+  * graphe de scène
+  * implémentation d'une API alternative pour la base de données basée sur IndexedDB
+  * meilleur gestion de la caméra
+  * meilleur affichage de la bounding box
+  * meilleur validation des champs de saisies

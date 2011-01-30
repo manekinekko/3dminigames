@@ -18,4 +18,5 @@ public interface Attributes {
     public void setValue(float f);
     public void setValue(String s);
     public void setValue(Code s);
+    public String getValue();
 }

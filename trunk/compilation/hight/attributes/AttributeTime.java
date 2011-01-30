@@ -41,11 +41,11 @@ public class AttributeTime implements Attributes {
             last = "rd";
     }
 
-    public Object getValue() {
+    public String getValue() {
         if (last.equals("rd")) {
             return rd;
         } else {
-            return valeur;
+            return valeur+"";
         }
     }
 

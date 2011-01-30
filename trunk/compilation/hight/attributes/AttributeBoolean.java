@@ -21,8 +21,8 @@ public class AttributeBoolean implements Attributes {
         this.b=b;
     }
 
-    public boolean getValue() {
-        return b;
+    public String getValue() {
+        return b+"";
     }
 
     @Override

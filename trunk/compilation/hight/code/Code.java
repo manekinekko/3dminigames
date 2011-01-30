@@ -4,6 +4,11 @@
  */
 package code;
 
+import attributes.*;
+import java.util.Iterator;
+import symbols.Entity;
+import symbols.Model;
+
 /**
  *
  * @author Quentin
@@ -237,6 +242,7 @@ public class Code {
         c.append(c2);
         c.append(") + (");
         c.append(c2);
+	c.append(")");
         return c;
     }
 
@@ -358,4 +364,49 @@ public class Code {
     public static Code genEOL() {
         return new Code(";");
     }
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////Models/Entitées//////////////////////////////////
+    public static Code genModel(Model m) {
+	if(Model.generated(m)) //On vérifie que le model n'est pas déjà généré.
+	    return new Code();
+
+	Code cod = new Code();
+	cod.append("function "+m.getName()+"() {\n");
+	Iterator<String> it = m.listAttributes().iterator();
+	while(it.hasNext()) {
+	    String attribute = it.next();
+	    Attributes value = m.getAttribute(attribute);
+	    cod.append("\tthis."+attribute+" = ");
+
+	    if(value.getClass().equals(AttributeNum.class) || value.getClass().equals(AttributeBoolean.class) || value.getClass().equals(AttributeTime.class))
+		cod.append(value.getValue());
+	    else if(value.getClass().equals(AttributeString.class) || value.getClass().equals(AttributeEnum.class))
+		cod.append("'"+value.getValue()+"'");
+
+	    cod.append(";\n");
+	}
+	cod.append("}\n");
+	Model.addGenerated(m);
+
+	return cod;
+    }
+
+    public static Code genEntity(Entity ent) {
+	Code cod = new Code();
+	cod.append("var "+ent.getName()+" = new "+ent.listModels().get(0).getName()+"();\n");
+
+	Iterator<String> it = ent.listModifyAttributes().iterator();
+	while(it.hasNext()) {
+	    String attribute = it.next();
+	    Attributes value = ent.getAttribute(attribute);
+
+	    if(value.getClass().equals(AttributeNum.class) || value.getClass().equals(AttributeBoolean.class) || value.getClass().equals(AttributeTime.class))
+		cod.append(ent.getName()+"."+attribute+" = "+value.getValue()+";\n");
+	    else if(value.getClass().equals(AttributeString.class) || value.getClass().equals(AttributeEnum.class))
+		cod.append(ent.getName()+"."+attribute+" = '"+value.getValue()+"';\n");
+	}
+	return cod;
+    }
+
 }

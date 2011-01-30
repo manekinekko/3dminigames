@@ -26,5 +26,7 @@ public class AttributeEnum {
             this.value = this.fields.indexOf(value);
     }
 
-    
+    public String getValue() {
+	return fields.get(value);
+    }
 }

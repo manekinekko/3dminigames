@@ -15,11 +15,19 @@ if (!window["M3D"].DB) {
 
     // pre requisites
 	
+	/**
+	 * attr_ : for types attributes
+	 * type_ : for defined types
+	 * obj_ : for imported 3D models
+	 */
+	M3D.DB.REGEX_CONTENT_PATTERN = /^(_attr|_type|_obj)/;
+	
 	// API
+	
 	// Load and store the defaults attributes (as JSON)
 	M3D.DB.storeDefaultAttributes = function(){
 		
-		var key = 'default_attributes';
+		var key = '__default_attributes__';
 		
 		if ( ! M3D.DB.contains(key) ){
 			
@@ -55,7 +63,10 @@ if (!window["M3D"].DB) {
 				return false;
 			}
 			
-			localStorage.setItem(data.name, JSON.stringify(data.value)); 
+			log("Saving '"+data.name+"' into DB. Value: '"+data.value);
+			
+			localStorage.setItem(data.name, JSON.stringify(data.value));
+			
 		} catch (e) {
 			log(e);
 			if (QUOTA_EXCEEDED_ERR && e == QUOTA_EXCEEDED_ERR) {
@@ -63,22 +74,25 @@ if (!window["M3D"].DB) {
 			}
 		}
 	}
+	
+	// Save 3D Objects (only usefull info are stored!)
+	M3D.DB.setObject = function(data){
+		data.name = data.name+'_obj';
+
+		M3D.DB.__set__(data);
+	}
+	
 	// Save Entities
 	M3D.DB.setType = function(data){
-		data.name = "type_"+data.name;
+		data.name = data.name+'_type';
 
 		M3D.DB.__set__(data);
 	}
 	
 	// Save attributes
 	M3D.DB.setAttributes = function(data){
-		data.name = "attr_"+data.name;
-		
-		if ( !data.attr_type ){
-			alert("[DB] An 'attr_type of Integer' key is required to store attributes!");
-			return false;
-		} 
-		
+		data.name = data.name+'_attr';
+
 		M3D.DB.__set__(data);
 	}
 	
@@ -101,36 +115,30 @@ if (!window["M3D"].DB) {
 			
 	// Detect previous content
 	M3D.DB.detectPreviousContent = function(){
-		var len = localStorage.length;
-		if ( len>0 ){
+		if ( M3D.DB.__hasContent__() ){
 			M3D.GUI.showPopup('confirmation-load');
 		}
 	};
 	
 	// Load data
 	M3D.DB.load = function(){
-		var len = localStorage.length;
-		if ( len > 0){
-			
-			var key = null;
-			var value = null;
-			for( var i=0; i<len; i++ ){
-				key = localStorage.key(i);
-	            
-				if ( /^(attr_|type_)/.test(key) ){
-					
-					value = M3D.DB.getType(key);
-					
-					M3D.GUI.importModel({
-						docUrl: value.url,
-						autoAddToScene: true
-					});
-	
-		            log("Importing model '"+key+"' from '"+value.url+"'");
-				}
+		var key = null;
+		var value = null;
+		for( var i=0; i<localStorage.length; i++ ){
+			key = localStorage.key(i);
+            
+			if ( /^(attr_|type_)/.test(key) ){
+				
+				value = M3D.DB.getType(key);
+				
+				M3D.GUI.importModel({
+					docUrl: value.url,
+					autoAddToScene: true
+				});
 
+	            log("Importing model '"+key+"' from '"+value.url+"'");
 			}
-		
+
 		}
 	}; 
 
@@ -155,13 +163,26 @@ if (!window["M3D"].DB) {
 	// Clear all data
 	M3D.DB.clear = function(){
 		for(var i in localStorage){
-			localStorage.removeItem(i);
+			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
+				localStorage.removeItem(i);
+			}
 		}
 	}
 	
 	// Check if the DB contains the key K
 	M3D.DB.contains = function(K){
 		return !!localStorage.getItem(K);
+	}
+	
+	// check if the DB contains a stored content
+	M3D.DB.__hasContent__ = function(){
+		var key = null;
+		for (var i = 0; i < localStorage.length; i++) {
+			if (M3D.DB.REGEX_CONTENT_PATTERN.test( localStorage.key(i) )) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 })(window["M3D"]);

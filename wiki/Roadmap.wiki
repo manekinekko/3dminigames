@@ -1,18 +1,25 @@
 #labels Phase-QA,Phase-Implementation,Phase-Design
-=IHM=
+=UI=
 
 ==Validé==
-  * système de fenêtre
-  * picking
-  * import collada
-  * base de données en Local Storage
+  * Système de fenêtre
+  * Picking
+  * Import collada
+  * Base de données en Local Storage
+  * Import des classes et leurs attributs en JSON
+  * Possibilité de créer des règles (uniquement l'affichage)
+  * Possibilité de créer de nouveaux types
+  * Possibilité de créer de nouveaux attributs
+
   
 
 ==En cours==
-  * génération du descriptif
-  * sauvegarde des attributs en DB
-  * sauvegarde des types crées en DB
-  * génération d'un XML pour GLGE
+  * Génération de la description en langage 3DWIGS
+  * Sauvegarde des attributs en DB
+  * Sauvegarde des types crées en DB
+  * Sauvegarde des modèles importés en DB
+  * Génération d'un XML pour GLGE
+  * 
 
 ==A venir==
   * graphe de scène
@@ -20,16 +27,32 @@
   * meilleur gestion de la caméra
   * meilleur affichage de la bounding box
   * meilleur validation des champs de saisies
+  * Possibilité d'importer des modèles *avec textures*
 
----
+----
 =Moteur 3D=
 à compléter
 ==Validé==
+  *
 ==En cours==
+  *
 ==A venir==
----
+  *
+----
 =Compilation=
 à compléter
 ==Validé==
+  *
 ==En cours==
+  *
 ==A venir==
+  *
+----
+=Documentation=
+à compléter
+==Validé==
+  *
+==En cours==
+  * L'utilisation de l'IHM
+==A venir==
+  *

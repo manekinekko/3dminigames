@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m3d>
+	<model name="Object">
+		<attribute name="mass" type="number" value="0"/>
+		<attribute name="posX" type="number" value="0"/>
+		<attribute name="posY" type="number" value="0"/>
+		<attribute name="posZ" type="number" value="0"/>
+		<attribute name="orX" type="number" value="0"/>
+		<attribute name="orY" type="number" value="0"/>
+		<attribute name="orZ" type="number" value="0"/>
+		<attribute name="tX" type="number" value="0"/>
+		<attribute name="tY" type="number" value="0"/>
+		<attribute name="tZ" type="number" value="0"/>
+		<attribute name="isFix" type="boolean" value="false"/>
+		<attribute name="isTraversable" type="boolean" value="false"/>
+	</model>
+	<model name="Character">
+		<inheritance value="object"/>
+		<attribute name="name" type="string" value=""/>
+		<attribute name="description" type="string" value=""/>
+		<attribute name="life" type="number" value="1"/>
+		<attribute name="lifeMax" type="number" value="1"/>
+		<attribute name="lifeMin" type="number" value="1"/>
+		<attribute name="nbOfLives" type="number" value="1"/>
+		<attribute name="magic" type="number" value="0"/>
+		<attribute name="magicMax" type="number" value="0"/>
+		<attribute name="magicMin" type="number" value="0"/>
+		<attribute name="level" type="number" value="0"/>
+		<attribute name="attack" type="number" value="0"/>
+		<attribute name="defense" type="number" value="0"/>
+		<attribute name="jumpForce" type="number" value="0"/>
+		<attribute name="maxJumpsInTheAir" type="number" value="0"/>
+		<attribute name="money" type="number" value="0"/>
+		<attribute name="class" type="string" value=""/>
+		<attribute name="race" type="string" value=""/>
+		<attribute name="acceleration" type="number" value="1"/>
+		<attribute name="inventory" type="objectList" value="null"/>
+		<attribute name="moveWithCamera" type="boolean" value="false"/>
+		<attribute name="equipedobject" type="objectList" value="null"/>
+		<attribute name="rightHandobject" type="object" value="null"/>
+		<attribute name="leftHandobject" type="object" value="null"/>
+	</model>
+	<model name="Projectile">
+		<inheritance value="object"/>
+		<attribute name="speed" type="number" value="1"/>
+		<attribute name="damages" type="number" value="1"/>
+		<attribute name="damageZone" type="object" value="null"/>
+	</model>
+	<model name="Zone">
+		<inheritance value="object"/>
+		<attribute name="name" type="string" value=""/>
+	</model>
+	<model name="Obstacle">
+		<inheritance value="object"/>
+		<attribute name="name" type="string" value=""/>
+	</model>
+	<model name="Weapon">
+		<inheritance value="object"/>
+		<attribute name="name" type="string" value=""/>
+		<attribute name="nbMunitions" type="number" value="-1"/>
+		<attribute name="nbMunitionsMax" type="number" value="-1"/>
+		<attribute name="shootPower" type="number" value="1"/>
+		<attribute name="shootInterval" type="time"  value="1" unit="s"/>
+		<attribute name="reloadTime" type="time" value="1" unit="s"/>
+	</model>
+	<model name="Ground">
+		<inheritance value="object"/>
+		<attribute name="type" type="string" value=""/>
+	</model>
+</m3d>

@@ -2,22 +2,20 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
 
-var canvas = document.getElementById('canvas');
-
-// -- create a document
-
-var doc = new GLGE.Document();
-var obj;
-var scene;
-var hoverobj;
-var mouseovercanvas;
-var now;
+var canvas = document.getElementById('canvas'),
+	doc = new GLGE.Document(),
+	obj,
+	scene,
+	hoverobj,
+	mouseovercanvas,
+	now;
 
 // -- callback function that is called when the xml document
 //    has finished loading
 doc.onLoad = function() {
 	
 	// auto loading functions
+	M3D.DB.loadDefaultAttributes();
 	M3D.DB.detectPreviousContent();
 	
 	// GLGE logic

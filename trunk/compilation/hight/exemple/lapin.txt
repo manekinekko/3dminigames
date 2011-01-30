@@ -63,7 +63,7 @@ bazooka has shootInterval at 500 ms;  //munitions infinies
 bazooka has position at 0 0 0;
 bazooka has orientation at 0 0 0;
 
-missile is Projectile ally;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
+missile is Projectile ally duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
 missile has damages at 100;
 missile has speed at 100;
 //missile has position at position of bazooka;          //la position et l'orientation du bazooka changent

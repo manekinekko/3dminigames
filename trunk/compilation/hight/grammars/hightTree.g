@@ -110,7 +110,7 @@ initialization [SymbolTable st] returns [Code c]:
 		entitiesFunCode.append(Code.genFuncEntity(ent));
 		entitiesFunCode.append("\n");
 
-		entitiesCode.append(Code.genEntity(ent));
+		//entitiesCode.append(Code.genEntity(ent));
 		entitiesCode.append("\n");
 	    }
 	}

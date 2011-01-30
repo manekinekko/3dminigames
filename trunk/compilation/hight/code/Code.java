@@ -412,11 +412,11 @@ public class Code {
 	return cod;
     }
 
-    public static Code genEntity(Entity ent) {
+   /* public static Code genEntity(Entity ent) {
 	Code cod = new Code();
 	cod.append("var "+ent.getName()+" = gen"+ent.getName()+"();\n");
 
 	return cod;
-    }
+    }*/
 
 }

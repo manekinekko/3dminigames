@@ -89,14 +89,14 @@ if (!window["M3D"].DB) {
 	 	
 	// Get type
 	M3D.DB.getType = function(t){
-		t = "type_"+t;
-		M3D.DB.__get__(t);
+		//t = "type_"+t;
+		return M3D.DB.__get__(t);
 	}
 	
 	// Get attributes
 	M3D.DB.getAttributes = function(t){
 		t = "attr_"+t;
-		M3D.DB.__get__(t);
+		return M3D.DB.__get__(t);
 	}
 			
 	// Detect previous content
@@ -118,9 +118,8 @@ if (!window["M3D"].DB) {
 				key = localStorage.key(i);
 	            
 				if ( /^(attr_|type_)/.test(key) ){
-					value= M3D.DB.get(key);
 					
-					log(value);
+					value = M3D.DB.getType(key);
 					
 					M3D.GUI.importModel({
 						docUrl: value.url,

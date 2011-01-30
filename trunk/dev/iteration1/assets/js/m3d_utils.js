@@ -927,8 +927,26 @@ if (!window["M3D"].GUI){
 			id,
 			css_class = "string",
 			len;
-		
-	    for (att in obj) {
+//		
+//		
+//		var name = "";
+//	   	var attributes = M3D.DB.getAttributes(name);
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+		for (att in obj) {
 			
 	        value = obj[att];
 			

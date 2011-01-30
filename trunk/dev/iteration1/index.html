@@ -124,7 +124,7 @@
 						<option value="type2">Dummy type #2</option>
 					</select>
 					&nbsp;&nbsp;or&nbsp;&nbsp;
-					<a id="add-new-entity" href="#" title="Create a new type entity">Create new type</a>
+					<a id="add-new-entity" href="#" title="Create a new entity type">Create new type</a>
 
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
@@ -147,14 +147,14 @@
 					<label for="entity-attributes">Add new attributes</label>
 					<br/>
 					<br/>
-					<input class="width-100" class="alphanumeric" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
-					<select class="width-100" id="new-attribut-type" name="new-attribut-type">
+					<input class="width-100 alphanumeric nonempty" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
+					<select class="width-100 nonempty" id="new-attribut-type" name="new-attribut-type">
 						<option value="">--Type--</option>
 						<option value="string">String</option>
 						<option value="number">Number</option>
 						<option value="boolean">Boolean</option>
 					</select>
-					<input class="width-100" class="alphanumeric number" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
+					<input class="width-100 nonempty alphanumeric" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
 					<select class="width-100 hidden" id="new-attribut-value-select" name="new-attribut-value-select" >
 						<option value="true">True</option>
 						<option value="false">False</option>
@@ -169,6 +169,7 @@
 					</div>
 					
 					<div id="window-buttons">
+						<input type="button" id="cancel-new-entity" value="Cancel"/>
 						<input type="button" id="save-new-entity" value="Done" name="save" />
 					</div>
 				</div>

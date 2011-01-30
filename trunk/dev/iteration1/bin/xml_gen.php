@@ -1,5 +1,12 @@
 <?php
-  function genXML($data) {
+  
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @author Thomas
+ */
+
+
+function genXML($data) {
 	//print_r($data); exit();
   	
   	$camtruc = $data['cam'];

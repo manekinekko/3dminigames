@@ -17,7 +17,7 @@ if (!window["M3D"].DB) {
 	
 	// API
 	// Load and store the defaults attributes (as JSON)
-	M3D.DB.loadDefaultAttributes = function(){
+	M3D.DB.storeDefaultAttributes = function(){
 		
 		var key = 'default_attributes';
 		
@@ -29,7 +29,7 @@ if (!window["M3D"].DB) {
 				dataType:'json',
 				data:{filename:'attributes.xml'},
 				success:function(d){
-					M3D.DB.set({name:key, value:d.attributes});
+					M3D.DB.__set__({name:key, value:d.attributes});
 				},
 				error:function(){
 					alert('Could not load Models attributes! A server error has occured!');
@@ -43,7 +43,7 @@ if (!window["M3D"].DB) {
 	
 	
 	// Save data
-	M3D.DB.set = function(data){
+	M3D.DB.__set__ = function(data){
 		try {
 			
 			if (!data.name) {
@@ -63,19 +63,42 @@ if (!window["M3D"].DB) {
 			}
 		}
 	}
+	// Save Entities
+	M3D.DB.setType = function(data){
+		data.name = "type_"+data.name;
+
+		M3D.DB.__set__(data);
+	}
 	
 	// Save attributes
 	M3D.DB.setAttributes = function(data){
-		data.name = data.name+"_attr";
+		data.name = "attr_"+data.name;
 		
 		if ( !data.attr_type ){
 			alert("[DB] An 'attr_type of Integer' key is required to store attributes!");
 			return false;
 		} 
 		
-		M3D.DB.set(data);
+		M3D.DB.__set__(data);
 	}
 	
+	// Get data
+	M3D.DB.__get__ = function( objectId ){
+		return JSON.parse(localStorage.getItem( objectId ));
+	}
+	 	
+	// Get type
+	M3D.DB.getType = function(t){
+		t = "type_"+t;
+		M3D.DB.__get__(t);
+	}
+	
+	// Get attributes
+	M3D.DB.getAttributes = function(t){
+		t = "attr_"+t;
+		M3D.DB.__get__(t);
+	}
+			
 	// Detect previous content
 	M3D.DB.detectPreviousContent = function(){
 		var len = localStorage.length;
@@ -93,24 +116,25 @@ if (!window["M3D"].DB) {
 			var value = null;
 			for( var i=0; i<len; i++ ){
 				key = localStorage.key(i);
-	            value= JSON.parse(localStorage.getItem(key));
-				M3D.GUI.importModel({
-					docUrl: value.url,
-					autoAddToScene: true
-				});
-
-	            log("Importing model '"+key+"' from '"+value.url+"'");
+	            
+				if ( /^(attr_|type_)/.test(key) ){
+					value= M3D.DB.get(key);
+					
+					log(value);
+					
+					M3D.GUI.importModel({
+						docUrl: value.url,
+						autoAddToScene: true
+					});
+	
+		            log("Importing model '"+key+"' from '"+value.url+"'");
+				}
 
 			}
 		
 		}
 	}; 
-	
-	// Get data
-	M3D.DB.get = function( objectId ){
-		return JSON.parse(localStorage.getItem( objectId ));
-	}
-	 
+
 	
 	// Delete data
 	M3D.DB.remove = function( objectName ){

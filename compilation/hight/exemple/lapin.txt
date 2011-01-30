@@ -109,13 +109,13 @@ rule init is  Game starts then
 	endWait
 
 rule lapin1 dies then
-	reinitialisation,
+	//reinitialisation,
 	wait 2 sec then
 		generate lapin2 in zoneGenLapin
 	endWait
 	
 rule lapin2 dies then
-	reinitialisation,
+	//reinitialisation,
 	wait 2 sec then
 		generate lapin3 in zoneGenLapin
 	endWait

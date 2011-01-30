@@ -35,11 +35,11 @@ public class AttributeNum implements Attributes {
             last = "rd";
     }
 
-    public Object getValue() {
+    public String getValue() {
         if (last.equals("rd")) {
-            return rd;
+            return rd.getCode();
         } else {
-            return f;
+            return f+"";
         }
     }
 

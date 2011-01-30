@@ -8,6 +8,7 @@ import lib.Pair;
 public class Model implements Symbol {
 
     public static Model object, character, projectile, zone, obstacle, weapon, ground;
+    private static List<Model> generated;
     private String name;
     private Map<String, Attributes> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
     private boolean generate = true;
@@ -26,6 +27,8 @@ public class Model implements Symbol {
     }
 
     public static void init(SymbolTable st) {
+	generated = new ArrayList();
+
 	object = new Model("Object");
         object.addAttributes(new Pair<String, Attributes>("mass", new AttributeNum(0)), new Pair<String, Attributes>("posX", new AttributeNum(0)), new Pair<String, Attributes>("posY", new AttributeNum(0)), new Pair<String, Attributes>("posZ", new AttributeNum(0)), new Pair<String, Attributes>("orX", new AttributeNum(0)), new Pair<String, Attributes>("orY", new AttributeNum(0)), new Pair<String, Attributes>("orZ", new AttributeNum(0)), new Pair<String, Attributes>("tX", new AttributeNum(0)), new Pair<String, Attributes>("tY", new AttributeNum(0)), new Pair<String, Attributes>("tZ", new AttributeNum(0)), new Pair<String, Attributes>("isFix", new AttributeBoolean(false)), new Pair<String, Attributes>("isTraversable", new AttributeBoolean(false)),new Pair<String, Attributes>("URL", new AttributeString("")));
         st.add(object.getName(), object);
@@ -94,5 +97,13 @@ public class Model implements Symbol {
 
     public boolean getGenerate(){
         return generate;
+    }
+
+    public static void addGenerated(Model m) {
+	generated.add(m);
+    }
+
+    public static boolean generated(Model m) {
+	return generated.contains(m);
     }
 }

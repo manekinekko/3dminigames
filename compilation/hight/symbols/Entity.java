@@ -56,6 +56,20 @@ public class Entity implements Symbol{
         return res;
     }
 
+    public List<String> listModifyAttributes() {
+	List<String> res = new ArrayList<String>();
+	
+        String[] tab = (String[])this.attributes.keySet().toArray(new String[0]);
+        res.addAll(Arrays.asList(tab));
+
+        return res;
+    }
+
+    public List<Model> listModels() {
+	List<Model> ret = new ArrayList<Model>(models);
+	return ret;
+    }
+
     public String getName() {
         return this.name;
     }

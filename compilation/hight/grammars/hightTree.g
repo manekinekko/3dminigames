@@ -23,9 +23,12 @@ options {
  *------------------------------------------------------------------*/
  
 game [SymbolTable st] returns [Code c]
-	@init{c = new Code();}:
-	^(GAME_KW gd=gameData[st]? newType[st]* in=init[st]+ def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
-	{st.print();}
+    @init{c = new Code();}:
+    ^(GAME_KW gd=gameData[st]? newType[st]* in=initialization[st] def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+    {
+	st.print();
+	System.out.println(in.getCode());
+    }
     ;
 	
 
@@ -75,7 +78,44 @@ subType [SymbolTable st, List<Model> sub] :
 	}
 	| t=typeObjet{sub.add(t);}
 	;	
-	
+
+initialization [SymbolTable st] returns [Code c]:
+    init[st]+
+    {
+	Code modelCode = new Code();
+	Code entitiesCode = new Code();
+	List<List<Entity>> list = new ArrayList<List<Entity>>();
+	list.add(Genre.enemies);
+	list.add(Genre.allies);
+	list.add(Genre.neutral);
+
+	Iterator<List<Entity>> genre = list.iterator();
+	while(genre.hasNext()) {
+	    Iterator<Entity> it = genre.next().iterator();
+	    while(it.hasNext()) {
+		Entity ent = it.next();
+		Model model = null;
+		if(ent.listModels().size() > 1) {
+
+		} else {
+		    model = ent.listModels().get(0);
+		}
+		modelCode.append(Code.genModel(model));
+		modelCode.append("\n");
+
+		entitiesCode.append(Code.genEntity(ent));
+		entitiesCode.append("\n");
+	    }
+	}
+
+	c = new Code("/*Models*/\n");
+	c.append(modelCode);
+	c.append("\n/*Entities*/\n");
+	c.append(entitiesCode);
+	c.append("\n");
+    }
+    ;
+
 init [SymbolTable st] returns [Code c]:
 	^(INIT_IS_KW i=IDENT d=declarationObjet[st])
 	{   String id = i.getText();
@@ -89,6 +129,7 @@ init [SymbolTable st] returns [Code c]:
 		mode = mode - (duplicable*INT_DUPLICABLE);
 	    
 		Entity t = new Entity(id,d.getFirst());
+		d.getFirst().toGenerate();
 
 		if(mode == INT_PLAYER)
 		    Genre.player = t;
@@ -249,8 +290,8 @@ valAggregation [SymbolTable st] returns [Attributes c]:
 /* Definition */	
 definition [SymbolTable st] returns [Code c]: 
 	^(DEFINITION_KW i=IDENT consequences[st])
-	{ident = i.getText();
-	if(st.get(ident)==null){System.out.println("l'ident "+ ident + " est deja defini");System.exit(-1);}}
+	{String ident = i.getText();
+	if(st.get(ident)!=null){System.out.println("l'ident "+ ident + " est deja defini");System.exit(-1);}}
 		;
 
 consequences [SymbolTable st] returns [Code c]:
@@ -263,7 +304,7 @@ consequ_list [SymbolTable st] returns [Code c]:
 		{};
 		
 consequ [SymbolTable st] returns [Code c]:
-  i=siAlors[st] {i=st.c;}
+  i=siAlors[st] //{i=st.c;}
   | action[st] {}
   | affectation[st] {}
   | activCommande[st] {}
@@ -474,8 +515,8 @@ mode_mute [SymbolTable st] returns [Code c]:
 	
 affectation [SymbolTable st] returns [Code c]:
   ^(ASSIGN_KW i1=operation[st] i2=variable[st]){//verifier attribute = attributeNum
-	if(i2.getSecond().getClass() != attributeNum.class){System.out.println("la variable "+ i2 + " n'est pas de type entier");System.exit(-1);}
-	c = genAffect(i1,i2);}
+	/*if(i2.getSecond().getClass() != attributeNum.class){System.out.println("la variable "+ i2 + " n'est pas de type entier");System.exit(-1);}
+	c = genAffect(i1,i2);*/}
   |^(ADD_KW operation[st] variable[st]) 
   |^(SUB_KW operation[st] variable[st]) 
   |^(INVERT_KW variable[st] variable[st])

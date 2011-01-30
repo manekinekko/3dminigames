@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-26 20:48:44
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-01-30 14:54:29
 
     package grammars;
 
@@ -15,256 +15,256 @@ public class hightParser extends Parser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "GAME_KW", "GAME_ATTRIBUT_KW", "INIT_IS_KW", "INIT_HAS_KW", "DEC", "MEDIA_KW", "CAMERA_KW", "INTERACTION_KW", "GAME_SCORE_KW", "SCORE_KW", "VALUE_KW", "IN_KW", "ALLOCATION_KW", "COORDINATE_KW", "CONSEQUENCES_KW", "AGGREGATION_KW", "VAR_I_KW", "VAR_A_KW", "BECOMES_VAR_KW", "BECOMES_ID_KW", "CONDITION_KW", "ACCESS_KW", "KEY_KW", "MOUSE_KW", "FIN", "GAME", "HAS", "VIRG", "GRAVITY_KW", "AT", "FLOAT", "SCORE", "TYPE", "IDENT", "IS", "AND", "LIST_KW", "OF", "WITH", "CAMERA", "PERSON", "FREE", "MEDIA", "LOOP", "ONCE", "IN", "PLAYER", "ALLY", "ENEMY", "NEUTRAL", "DUPLICABLE", "FIRST", "THIRD", "DEFINITION_KW", "MEANS", "VICTORY_KW", "DEFEAT_KW", "ENDS_KW", "STARTS_KW", "PAUSE_KW", "MUTE_KW", "ON", "OFF", "PLAY_KW", "STOP_KW", "BLOCK_KW", "EFFACE_KW", "GENERATE_KW", "WAIT_KW", "THEN", "ENDWAIT", "SAVE_KW", "DIES_KW", "DURING", "UNTIL", "EQUIP", "NEXT", "PREVIOUS", "TRANSLATION", "ROTATION", "SCALE", "COMMAND_KW", "MOUSE", "FOR", "KEY", "WUP", "WDOWN", "LEFT", "RIGHT", "CLICK_LEFT", "CLICK_CENTER", "CLICK_RIGHT", "SCROLL_UP", "SCROLL_DOWN", "LETTER", "SPACE", "ESCAPE", "ENTER", "JUMP", "MOVE", "FORWARD", "BACKWARD", "TURN", "ACCELERATE", "BRAKE", "ACTIVATE_KW", "DISABLE_KW", "COMMANDS", "KEYBOARD", "RULE_KW", "MOVES_KW", "BECOMES", "TOUCHES_KW", "KILLS_KW", "OTHER", "KILLED_KW", "TOUCHED_KW", "BY", "IF_KW", "ELSE", "ENDIF", "NOT", "OR", "COMP", "EQUALS", "INF", "SUP", "INFEG", "SUPED", "DIFF", "PG", "PD", "DEAD_KW", "ALIVE_KW", "EFFACED_KW", "GENERATED_KW", "TOUCHING_KW", "MOVING_KW", "WAITING_KW", "FINISHED_KW", "STARTED_KW", "PAUSED_KW", "MUTED_KW", "PLAYED_KW", "STOPPED_KW", "ASSIGN_KW", "ADD_KW", "SUB_KW", "INVERT_KW", "IA_KW", "RANDOM_KW", "BETWEEN", "PLUS", "MINUS", "MUL", "DIV", "MOD", "POW", "X", "Y", "Z", "VALUE", "ALL", "NUM", "POSITION", "ORIENTATION", "SIZE", "MIN", "SEC", "MS", "FRAME", "COUNTER", "TIME", "OBJECT", "CHARACTER", "VEHICLE", "PLANE", "SPACECRAFT", "OBSTACLE", "WEAPON", "SWORD", "PROJECTILE", "ZONE", "GROUND", "BONUS", "CHECKPOINT", "BREAKABLE", "CONSTRUCTION", "ROOM", "BALL", "TELEPORTER", "MASS", "IS_FIX", "IS_TRAVERSABLE", "FOV", "ACTIVE", "NAME", "DESCRIPTION", "LIFE", "LIFE_MAX", "LIFE_MIN", "NB_LIVES", "MAGIC", "MAGIC_MAX", "MAGIC_MIN", "LEVEL", "ATTACK", "DEFENSE", "JUMP_FORCE", "JUMP_AIR_MAX", "MONEY", "CLASS", "RACE", "ACCELERATION", "SPEED", "SPEED_MAX", "SPEED_MIN", "BOOST", "BOOST_MAX", "NB_MUNITIONS", "NB_MUNITIONS_MAX", "SHOOT_POWER", "DAMAGES", "UNIT", "OBJECT_NAME", "ATTRIBUT_NAME", "VOLUME", "NUMBER", "MOVE_WITH_CAMERA", "BOOST_INTERVAL", "SHOOT_INTERVAL", "RELOAD_TIME", "INVENTORY", "EQUIPED_OBJECT", "ENTRANCES", "EXITS", "DAMAGE_ZONE", "COLLECTORS", "TYPES_COLLECTORS", "GENERATORS", "TYPE_GENERATORS", "BREAKERS", "TYPES_BREAKERS", "TELEPORTABLES", "TYPES_TELEPORTABLES", "COMMENT", "WS", "'true'", "'false'"
     };
-    public static final int GRAVITY_KW=32;
-    public static final int ENDS_KW=61;
-    public static final int LETTER=98;
-    public static final int MOD=160;
-    public static final int GROUND=187;
-    public static final int TYPES_BREAKERS=246;
-    public static final int CHECKPOINT=189;
-    public static final int SAVE_KW=75;
-    public static final int NOT=125;
-    public static final int STARTS_KW=62;
     public static final int EOF=-1;
-    public static final int DEAD_KW=136;
-    public static final int SPEED_MIN=220;
-    public static final int LIFE_MAX=203;
-    public static final int CHARACTER=178;
-    public static final int TYPE=36;
-    public static final int OBJECT_NAME=228;
-    public static final int LIST_KW=40;
-    public static final int COMMANDS=111;
-    public static final int CAMERA=43;
-    public static final int INTERACTION_KW=11;
-    public static final int BALL=193;
-    public static final int OFF=66;
-    public static final int JUMP_AIR_MAX=213;
-    public static final int ALIVE_KW=137;
-    public static final int LOOP=47;
     public static final int T__251=251;
     public static final int T__252=252;
-    public static final int ATTACK=210;
-    public static final int NB_MUNITIONS_MAX=224;
-    public static final int RACE=216;
-    public static final int BONUS=188;
-    public static final int VAR_A_KW=21;
-    public static final int CONSEQUENCES_KW=18;
-    public static final int WDOWN=90;
-    public static final int COLLECTORS=241;
-    public static final int EFFACED_KW=138;
-    public static final int TYPE_GENERATORS=244;
-    public static final int KEY=88;
-    public static final int STOPPED_KW=148;
-    public static final int ELSE=123;
-    public static final int NUMBER=231;
-    public static final int NB_MUNITIONS=223;
-    public static final int VALUE_KW=14;
-    public static final int VALUE=165;
-    public static final int INF=129;
-    public static final int Y=163;
-    public static final int SHOOT_INTERVAL=234;
-    public static final int X=162;
-    public static final int Z=164;
-    public static final int SCORE_KW=13;
-    public static final int WS=250;
-    public static final int DEFINITION_KW=57;
-    public static final int INIT_HAS_KW=7;
-    public static final int MEANS=58;
-    public static final int LEVEL=209;
-    public static final int DIFF=133;
-    public static final int NB_LIVES=205;
-    public static final int MUTE_KW=64;
-    public static final int KEYBOARD=112;
-    public static final int PERSON=44;
-    public static final int WAITING_KW=142;
-    public static final int WEAPON=183;
-    public static final int SIZE=170;
-    public static final int THIRD=56;
-    public static final int RANDOM_KW=154;
-    public static final int STOP_KW=68;
-    public static final int GENERATED_KW=139;
-    public static final int ACCELERATION=217;
-    public static final int FLOAT=34;
-    public static final int TELEPORTER=194;
-    public static final int WUP=89;
-    public static final int MOVES_KW=114;
-    public static final int SUP=130;
-    public static final int POSITION=168;
-    public static final int BOOST=221;
-    public static final int SHOOT_POWER=225;
-    public static final int AT=33;
-    public static final int FREE=45;
-    public static final int TIME=176;
-    public static final int KILLED_KW=119;
-    public static final int CONSTRUCTION=191;
-    public static final int THEN=73;
-    public static final int SEC=172;
-    public static final int CLICK_RIGHT=95;
-    public static final int VAR_I_KW=20;
-    public static final int LEFT=91;
-    public static final int PREVIOUS=81;
-    public static final int IA_KW=153;
-    public static final int ZONE=186;
-    public static final int IDENT=37;
-    public static final int PLUS=156;
-    public static final int RULE_KW=113;
-    public static final int BLOCK_KW=69;
-    public static final int BY=121;
-    public static final int WAIT_KW=72;
-    public static final int ADD_KW=150;
-    public static final int MOVE_WITH_CAMERA=232;
-    public static final int DEFEAT_KW=60;
+    public static final int GAME_KW=4;
+    public static final int GAME_ATTRIBUT_KW=5;
     public static final int INIT_IS_KW=6;
-    public static final int MAGIC_MIN=208;
-    public static final int MOUSE=86;
-    public static final int BECOMES=115;
-    public static final int RIGHT=92;
-    public static final int BREAKERS=245;
-    public static final int BREAKABLE=190;
-    public static final int MIN=171;
-    public static final int FINISHED_KW=143;
-    public static final int MINUS=157;
-    public static final int OBSTACLE=182;
-    public static final int MAGIC=206;
-    public static final int PLAYED_KW=147;
+    public static final int INIT_HAS_KW=7;
+    public static final int DEC=8;
+    public static final int MEDIA_KW=9;
+    public static final int CAMERA_KW=10;
+    public static final int INTERACTION_KW=11;
     public static final int GAME_SCORE_KW=12;
-    public static final int BECOMES_VAR_KW=22;
-    public static final int DAMAGES=226;
-    public static final int MOVE=103;
-    public static final int VOLUME=230;
-    public static final int ENTER=101;
-    public static final int ENTRANCES=238;
-    public static final int IS_TRAVERSABLE=197;
+    public static final int SCORE_KW=13;
+    public static final int VALUE_KW=14;
     public static final int IN_KW=15;
-    public static final int MONEY=214;
-    public static final int TYPES_TELEPORTABLES=248;
-    public static final int DIV=159;
-    public static final int BETWEEN=155;
-    public static final int MASS=195;
-    public static final int KEY_KW=26;
-    public static final int FIRST=55;
-    public static final int COMMAND_KW=85;
-    public static final int ORIENTATION=169;
-    public static final int DISABLE_KW=110;
-    public static final int IS_FIX=196;
-    public static final int SUB_KW=151;
-    public static final int ACTIVATE_KW=109;
-    public static final int EQUIPED_OBJECT=237;
-    public static final int ATTRIBUT_NAME=229;
-    public static final int DUPLICABLE=54;
-    public static final int ENEMY=52;
-    public static final int PLAYER=50;
-    public static final int EQUALS=128;
-    public static final int MEDIA=46;
-    public static final int CLICK_CENTER=94;
-    public static final int KILLS_KW=117;
-    public static final int FIN=28;
-    public static final int SPEED_MAX=219;
-    public static final int HAS=30;
-    public static final int SUPED=132;
+    public static final int ALLOCATION_KW=16;
+    public static final int COORDINATE_KW=17;
+    public static final int CONSEQUENCES_KW=18;
     public static final int AGGREGATION_KW=19;
+    public static final int VAR_I_KW=20;
+    public static final int VAR_A_KW=21;
+    public static final int BECOMES_VAR_KW=22;
+    public static final int BECOMES_ID_KW=23;
+    public static final int CONDITION_KW=24;
+    public static final int ACCESS_KW=25;
+    public static final int KEY_KW=26;
+    public static final int MOUSE_KW=27;
+    public static final int FIN=28;
+    public static final int GAME=29;
+    public static final int HAS=30;
+    public static final int VIRG=31;
+    public static final int GRAVITY_KW=32;
+    public static final int AT=33;
+    public static final int FLOAT=34;
+    public static final int SCORE=35;
+    public static final int TYPE=36;
+    public static final int IDENT=37;
+    public static final int IS=38;
+    public static final int AND=39;
+    public static final int LIST_KW=40;
+    public static final int OF=41;
+    public static final int WITH=42;
+    public static final int CAMERA=43;
+    public static final int PERSON=44;
+    public static final int FREE=45;
+    public static final int MEDIA=46;
+    public static final int LOOP=47;
+    public static final int ONCE=48;
+    public static final int IN=49;
+    public static final int PLAYER=50;
+    public static final int ALLY=51;
+    public static final int ENEMY=52;
+    public static final int NEUTRAL=53;
+    public static final int DUPLICABLE=54;
+    public static final int FIRST=55;
+    public static final int THIRD=56;
+    public static final int DEFINITION_KW=57;
+    public static final int MEANS=58;
+    public static final int VICTORY_KW=59;
+    public static final int DEFEAT_KW=60;
+    public static final int ENDS_KW=61;
+    public static final int STARTS_KW=62;
+    public static final int PAUSE_KW=63;
+    public static final int MUTE_KW=64;
+    public static final int ON=65;
+    public static final int OFF=66;
+    public static final int PLAY_KW=67;
+    public static final int STOP_KW=68;
+    public static final int BLOCK_KW=69;
+    public static final int EFFACE_KW=70;
+    public static final int GENERATE_KW=71;
+    public static final int WAIT_KW=72;
+    public static final int THEN=73;
+    public static final int ENDWAIT=74;
+    public static final int SAVE_KW=75;
+    public static final int DIES_KW=76;
+    public static final int DURING=77;
+    public static final int UNTIL=78;
+    public static final int EQUIP=79;
+    public static final int NEXT=80;
+    public static final int PREVIOUS=81;
+    public static final int TRANSLATION=82;
+    public static final int ROTATION=83;
+    public static final int SCALE=84;
+    public static final int COMMAND_KW=85;
+    public static final int MOUSE=86;
+    public static final int FOR=87;
+    public static final int KEY=88;
+    public static final int WUP=89;
+    public static final int WDOWN=90;
+    public static final int LEFT=91;
+    public static final int RIGHT=92;
+    public static final int CLICK_LEFT=93;
+    public static final int CLICK_CENTER=94;
+    public static final int CLICK_RIGHT=95;
+    public static final int SCROLL_UP=96;
+    public static final int SCROLL_DOWN=97;
+    public static final int LETTER=98;
+    public static final int SPACE=99;
+    public static final int ESCAPE=100;
+    public static final int ENTER=101;
+    public static final int JUMP=102;
+    public static final int MOVE=103;
+    public static final int FORWARD=104;
+    public static final int BACKWARD=105;
+    public static final int TURN=106;
+    public static final int ACCELERATE=107;
+    public static final int BRAKE=108;
+    public static final int ACTIVATE_KW=109;
+    public static final int DISABLE_KW=110;
+    public static final int COMMANDS=111;
+    public static final int KEYBOARD=112;
+    public static final int RULE_KW=113;
+    public static final int MOVES_KW=114;
+    public static final int BECOMES=115;
+    public static final int TOUCHES_KW=116;
+    public static final int KILLS_KW=117;
+    public static final int OTHER=118;
+    public static final int KILLED_KW=119;
+    public static final int TOUCHED_KW=120;
+    public static final int BY=121;
+    public static final int IF_KW=122;
+    public static final int ELSE=123;
+    public static final int ENDIF=124;
+    public static final int NOT=125;
+    public static final int OR=126;
+    public static final int COMP=127;
+    public static final int EQUALS=128;
+    public static final int INF=129;
+    public static final int SUP=130;
+    public static final int INFEG=131;
+    public static final int SUPED=132;
+    public static final int DIFF=133;
+    public static final int PG=134;
+    public static final int PD=135;
+    public static final int DEAD_KW=136;
+    public static final int ALIVE_KW=137;
+    public static final int EFFACED_KW=138;
+    public static final int GENERATED_KW=139;
+    public static final int TOUCHING_KW=140;
+    public static final int MOVING_KW=141;
+    public static final int WAITING_KW=142;
+    public static final int FINISHED_KW=143;
+    public static final int STARTED_KW=144;
+    public static final int PAUSED_KW=145;
+    public static final int MUTED_KW=146;
+    public static final int PLAYED_KW=147;
+    public static final int STOPPED_KW=148;
+    public static final int ASSIGN_KW=149;
+    public static final int ADD_KW=150;
+    public static final int SUB_KW=151;
+    public static final int INVERT_KW=152;
+    public static final int IA_KW=153;
+    public static final int RANDOM_KW=154;
+    public static final int BETWEEN=155;
+    public static final int PLUS=156;
+    public static final int MINUS=157;
+    public static final int MUL=158;
+    public static final int DIV=159;
+    public static final int MOD=160;
+    public static final int POW=161;
+    public static final int X=162;
+    public static final int Y=163;
+    public static final int Z=164;
+    public static final int VALUE=165;
+    public static final int ALL=166;
+    public static final int NUM=167;
+    public static final int POSITION=168;
+    public static final int ORIENTATION=169;
+    public static final int SIZE=170;
+    public static final int MIN=171;
+    public static final int SEC=172;
+    public static final int MS=173;
+    public static final int FRAME=174;
+    public static final int COUNTER=175;
+    public static final int TIME=176;
+    public static final int OBJECT=177;
+    public static final int CHARACTER=178;
+    public static final int VEHICLE=179;
     public static final int PLANE=180;
+    public static final int SPACECRAFT=181;
+    public static final int OBSTACLE=182;
+    public static final int WEAPON=183;
+    public static final int SWORD=184;
+    public static final int PROJECTILE=185;
+    public static final int ZONE=186;
+    public static final int GROUND=187;
+    public static final int BONUS=188;
+    public static final int CHECKPOINT=189;
+    public static final int BREAKABLE=190;
+    public static final int CONSTRUCTION=191;
+    public static final int ROOM=192;
+    public static final int BALL=193;
+    public static final int TELEPORTER=194;
+    public static final int MASS=195;
+    public static final int IS_FIX=196;
+    public static final int IS_TRAVERSABLE=197;
+    public static final int FOV=198;
+    public static final int ACTIVE=199;
     public static final int NAME=200;
     public static final int DESCRIPTION=201;
-    public static final int POW=161;
-    public static final int ESCAPE=100;
-    public static final int ACCELERATE=107;
-    public static final int BOOST_MAX=222;
-    public static final int PAUSE_KW=63;
-    public static final int TOUCHING_KW=140;
-    public static final int STARTED_KW=144;
-    public static final int MS=173;
-    public static final int ENDIF=124;
-    public static final int COMMENT=249;
-    public static final int ACTIVE=199;
-    public static final int JUMP=102;
-    public static final int EFFACE_KW=70;
-    public static final int ALLY=51;
-    public static final int ON=65;
-    public static final int OF=41;
-    public static final int NEUTRAL=53;
-    public static final int MUL=158;
-    public static final int TURN=106;
-    public static final int CAMERA_KW=10;
-    public static final int CLICK_LEFT=93;
-    public static final int DEFENSE=211;
-    public static final int ACCESS_KW=25;
-    public static final int PROJECTILE=185;
-    public static final int UNIT=227;
-    public static final int SCALE=84;
-    public static final int MUTED_KW=146;
-    public static final int EQUIP=79;
-    public static final int UNTIL=78;
-    public static final int OR=126;
-    public static final int MOVING_KW=141;
-    public static final int INVERT_KW=152;
-    public static final int VICTORY_KW=59;
-    public static final int TOUCHED_KW=120;
-    public static final int RELOAD_TIME=235;
-    public static final int DURING=77;
-    public static final int PD=135;
-    public static final int GAME=29;
-    public static final int PG=134;
-    public static final int VEHICLE=179;
-    public static final int SPACECRAFT=181;
-    public static final int SWORD=184;
-    public static final int DAMAGE_ZONE=240;
-    public static final int DEC=8;
-    public static final int CLASS=215;
-    public static final int COORDINATE_KW=17;
-    public static final int FORWARD=104;
-    public static final int SCROLL_UP=96;
-    public static final int INVENTORY=236;
-    public static final int GAME_KW=4;
-    public static final int FOR=87;
-    public static final int TELEPORTABLES=247;
-    public static final int TYPES_COLLECTORS=242;
-    public static final int FOV=198;
-    public static final int BRAKE=108;
-    public static final int AND=39;
-    public static final int SCROLL_DOWN=97;
-    public static final int SPACE=99;
-    public static final int GENERATE_KW=71;
-    public static final int MAGIC_MAX=207;
-    public static final int IN=49;
-    public static final int DIES_KW=76;
-    public static final int INFEG=131;
-    public static final int OBJECT=177;
-    public static final int IS=38;
-    public static final int SPEED=218;
-    public static final int GENERATORS=243;
-    public static final int IF_KW=122;
-    public static final int ALL=166;
-    public static final int VIRG=31;
-    public static final int NEXT=80;
-    public static final int ONCE=48;
-    public static final int ASSIGN_KW=149;
-    public static final int GAME_ATTRIBUT_KW=5;
-    public static final int MEDIA_KW=9;
-    public static final int WITH=42;
-    public static final int BOOST_INTERVAL=233;
-    public static final int TOUCHES_KW=116;
     public static final int LIFE=202;
-    public static final int OTHER=118;
+    public static final int LIFE_MAX=203;
     public static final int LIFE_MIN=204;
-    public static final int ROTATION=83;
-    public static final int CONDITION_KW=24;
-    public static final int BACKWARD=105;
-    public static final int MOUSE_KW=27;
-    public static final int COMP=127;
-    public static final int PAUSED_KW=145;
-    public static final int TRANSLATION=82;
-    public static final int ENDWAIT=74;
-    public static final int NUM=167;
-    public static final int EXITS=239;
-    public static final int ROOM=192;
-    public static final int ALLOCATION_KW=16;
-    public static final int COUNTER=175;
-    public static final int BECOMES_ID_KW=23;
-    public static final int SCORE=35;
+    public static final int NB_LIVES=205;
+    public static final int MAGIC=206;
+    public static final int MAGIC_MAX=207;
+    public static final int MAGIC_MIN=208;
+    public static final int LEVEL=209;
+    public static final int ATTACK=210;
+    public static final int DEFENSE=211;
     public static final int JUMP_FORCE=212;
-    public static final int PLAY_KW=67;
-    public static final int FRAME=174;
+    public static final int JUMP_AIR_MAX=213;
+    public static final int MONEY=214;
+    public static final int CLASS=215;
+    public static final int RACE=216;
+    public static final int ACCELERATION=217;
+    public static final int SPEED=218;
+    public static final int SPEED_MAX=219;
+    public static final int SPEED_MIN=220;
+    public static final int BOOST=221;
+    public static final int BOOST_MAX=222;
+    public static final int NB_MUNITIONS=223;
+    public static final int NB_MUNITIONS_MAX=224;
+    public static final int SHOOT_POWER=225;
+    public static final int DAMAGES=226;
+    public static final int UNIT=227;
+    public static final int OBJECT_NAME=228;
+    public static final int ATTRIBUT_NAME=229;
+    public static final int VOLUME=230;
+    public static final int NUMBER=231;
+    public static final int MOVE_WITH_CAMERA=232;
+    public static final int BOOST_INTERVAL=233;
+    public static final int SHOOT_INTERVAL=234;
+    public static final int RELOAD_TIME=235;
+    public static final int INVENTORY=236;
+    public static final int EQUIPED_OBJECT=237;
+    public static final int ENTRANCES=238;
+    public static final int EXITS=239;
+    public static final int DAMAGE_ZONE=240;
+    public static final int COLLECTORS=241;
+    public static final int TYPES_COLLECTORS=242;
+    public static final int GENERATORS=243;
+    public static final int TYPE_GENERATORS=244;
+    public static final int BREAKERS=245;
+    public static final int TYPES_BREAKERS=246;
+    public static final int TELEPORTABLES=247;
+    public static final int TYPES_TELEPORTABLES=248;
+    public static final int COMMENT=249;
+    public static final int WS=250;
 
     // delegates
     // delegators
@@ -655,7 +655,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: commande, newType, init, iaBasique, gameData, reglesJeu, definition
+            // elements: gameData, iaBasique, init, definition, reglesJeu, newType, commande
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1204,7 +1204,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: subType, subType, TYPE, IDENT
+            // elements: TYPE, subType, subType, IDENT
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1884,7 +1884,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: operation, IDENT, LIST_KW
+                    // elements: operation, LIST_KW, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2875,7 +2875,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: coordinates, typeCoordonnees
+                    // elements: typeCoordonnees, coordinates
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2921,7 +2921,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, attributListeOuObjet
+                    // elements: attributListeOuObjet, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2976,7 +2976,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: attributTps, timeUnit, operation
+                    // elements: operation, timeUnit, attributTps
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3299,7 +3299,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: operation, timeUnit
+                    // elements: timeUnit, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3940,11 +3940,11 @@ public class hightParser extends Parser {
                 {
                 int LA44_2 = input.LA(2);
 
-                if ( ((LA44_2>=ENDS_KW && LA44_2<=STARTS_KW)) ) {
-                    alt44=2;
-                }
-                else if ( (LA44_2==PAUSE_KW||LA44_2==STOP_KW||LA44_2==DIES_KW||LA44_2==EQUIP||(LA44_2>=JUMP && LA44_2<=MOVE)||(LA44_2>=TURN && LA44_2<=BRAKE)) ) {
+                if ( (LA44_2==PAUSE_KW||LA44_2==STOP_KW||LA44_2==DIES_KW||LA44_2==EQUIP||(LA44_2>=JUMP && LA44_2<=MOVE)||(LA44_2>=TURN && LA44_2<=BRAKE)) ) {
                     alt44=1;
+                }
+                else if ( ((LA44_2>=ENDS_KW && LA44_2<=STARTS_KW)) ) {
+                    alt44=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -6337,12 +6337,6 @@ public class hightParser extends Parser {
                     alt62=4;
                     }
                     break;
-                case ENDS_KW:
-                case STARTS_KW:
-                    {
-                    alt62=2;
-                    }
-                    break;
                 case DIES_KW:
                 case MOVES_KW:
                 case TOUCHES_KW:
@@ -6351,6 +6345,12 @@ public class hightParser extends Parser {
                 case TOUCHED_KW:
                     {
                     alt62=1;
+                    }
+                    break;
+                case ENDS_KW:
+                case STARTS_KW:
+                    {
+                    alt62=2;
                     }
                     break;
                 default:
@@ -6607,7 +6607,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: varOuNB, variable
+                    // elements: variable, varOuNB
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6653,7 +6653,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, playerOuInteraction
+                    // elements: playerOuInteraction, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -7381,7 +7381,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: NOT, conditionOu
+            // elements: conditionOu, NOT
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7961,6 +7961,16 @@ public class hightParser extends Parser {
                         }
                         }
                         break;
+                    case FINISHED_KW:
+                    case STARTED_KW:
+                    case PAUSED_KW:
+                    case MUTED_KW:
+                    case PLAYED_KW:
+                    case STOPPED_KW:
+                        {
+                        alt84=2;
+                        }
+                        break;
                     case DEAD_KW:
                     case ALIVE_KW:
                     case EFFACED_KW:
@@ -7970,16 +7980,6 @@ public class hightParser extends Parser {
                     case WAITING_KW:
                         {
                         alt84=1;
-                        }
-                        break;
-                    case FINISHED_KW:
-                    case STARTED_KW:
-                    case PAUSED_KW:
-                    case MUTED_KW:
-                    case PLAYED_KW:
-                    case STOPPED_KW:
-                        {
-                        alt84=2;
                         }
                         break;
                     default:
@@ -9600,7 +9600,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, accesLocal
+                    // elements: accesLocal, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9649,7 +9649,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesLocal, attribut
+                    // elements: attribut, accesLocal
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10127,7 +10127,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: NOT, notAccess
+                    // elements: notAccess, NOT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10421,7 +10421,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, operation
+                    // elements: operation, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -11020,9 +11020,9 @@ public class hightParser extends Parser {
             "\2\5\100\uffff\1\4\1\uffff\1\5\6\uffff\1\5\37\uffff\2\5\7\uffff"+
             "\24\5",
             "",
-            "\1\5\7\uffff\1\5\5\uffff\1\7\2\uffff\1\10\3\uffff\1\6\3\14"+
+            "\1\5\7\uffff\1\5\5\uffff\1\6\2\uffff\1\7\3\uffff\1\14\3\13"+
             "\5\uffff\2\5\102\uffff\1\5\6\uffff\1\5\37\uffff\2\5\7\uffff"+
-            "\1\11\1\12\22\13",
+            "\1\10\1\11\22\12",
             "",
             "\1\5\140\uffff\1\1",
             "\1\5\140\uffff\1\1",

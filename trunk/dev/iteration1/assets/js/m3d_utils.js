@@ -388,11 +388,7 @@ if (!window["M3D"].GUI){
 			
 		}
 		
-		alert(name);
-		alert(type);
-		alert(value);
-		
-		html = "<label for='" + name + "'>" + name + "</label><br/>" + html;
+		html = "<label for='" + name + "'>" + name + "</label>" + html;
 		html = "<div class='custom-attributes'>"+html+"</div>";
 		
 		$('#attributes').append(html);
@@ -403,13 +399,18 @@ if (!window["M3D"].GUI){
 		// reset
 		$('#quick-new-attribut-name, #quick-new-attribut-type, #quick-new-attribut-value-input, #quick-new-attribut-value-select').val('');	
 	
+	
+		// [DB]
+		// Save the new attribut into DB and add the DB id to the new attribut in the list
+		// so we can easily delete an attribut
+	
 	}
 	
 	
 	M3D.GUI.addNewAttribut = function(){
 		
 		var name = $('#new-attribut-name');
-		var type = $('#new-attribut-type-1');
+		var type = $('#new-attribut-type');
 		var value;
 		
 		if (type.val() == 'boolean') {
@@ -934,7 +935,7 @@ if (!window["M3D"].GUI){
 				
 	            id = "attribut-" + att;
 	            
-	            attr += "<label for='" + att + "'>" + att + "</label><br/>";
+	            attr += "<label for='" + att + "'>" + att + "</label>";
 	            
 	            if (typeof(value) == "number" || typeof(value)  == "string") {
 	            

@@ -14,12 +14,47 @@ if (!window["M3D"].DB) {
 (function(M3D){
 
     // pre requisites
-	M3D.DB._localStorage = localStorage;
 	
 	// API
+	// Load and store the defaults attributes (as JSON)
+	M3D.DB.loadDefaultAttributes = function(){
+		
+		var key = 'default_attributes';
+		
+		if ( ! M3D.DB.contains(key) ){
+			
+			$.ajax({
+				url:'bin/xml_to_json.php',
+				type:'POST',
+				dataType:'json',
+				data:{filename:'attributes.xml'},
+				success:function(d){
+					M3D.DB.set({name:key, value:d.attributes});
+				},
+				error:function(){
+					alert('Could not load Models attributes! A server error has occured!');
+				}
+			});
+			
+		}
+		
+	}
+	
+	
+	
 	// Save data
 	M3D.DB.set = function(data){
 		try {
+			
+			if (!data.name) {
+				alert("[DB] A 'name of String' key is required to store data!");
+				return false;
+			}
+			if (!data.value) {
+				alert("[DB] A 'value of Object' key is required to store data!");
+				return false;
+			}
+			
 			localStorage.setItem(data.name, JSON.stringify(data.value)); 
 		} catch (e) {
 			log(e);
@@ -27,6 +62,18 @@ if (!window["M3D"].DB) {
 				alert('The allocated quota is exceeded! Please use more space!'); 
 			}
 		}
+	}
+	
+	// Save attributes
+	M3D.DB.setAttributes = function(data){
+		data.name = data.name+"_attr";
+		
+		if ( !data.attr_type ){
+			alert("[DB] An 'attr_type of Integer' key is required to store attributes!");
+			return false;
+		} 
+		
+		M3D.DB.set(data);
 	}
 	
 	// Detect previous content
@@ -61,7 +108,7 @@ if (!window["M3D"].DB) {
 	
 	// Get data
 	M3D.DB.get = function( objectId ){
-		log(JSON.parse(localStorage.getItem( objectId )));
+		return JSON.parse(localStorage.getItem( objectId ));
 	}
 	 
 	
@@ -87,6 +134,11 @@ if (!window["M3D"].DB) {
 		for(var i in localStorage){
 			localStorage.removeItem(i);
 		}
+	}
+	
+	// Check if the DB contains the key K
+	M3D.DB.contains = function(K){
+		return !!localStorage.getItem(K);
 	}
 	
 })(window["M3D"]);

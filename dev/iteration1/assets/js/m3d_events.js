@@ -110,6 +110,11 @@ $(function(){
 		
 	});
 	
+	// -- cancel adding a new entity
+	$('#cancel-new-entity').bind('click', function(){
+		M3D.GUI.showPopup('entity-info');
+	});
+	
 	// -- delete attributes
 	$('.detele-attribut').live('click', function(){
 		M3D.GUI.deleteAttributFromList(this);

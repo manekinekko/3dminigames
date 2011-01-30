@@ -392,20 +392,30 @@ public class Code {
 	return cod;
     }
 
-    public static Code genEntity(Entity ent) {
+    public static Code genFuncEntity(Entity ent) {
 	Code cod = new Code();
-	cod.append("var "+ent.getName()+" = new "+ent.listModels().get(0).getName()+"();\n");
+	cod.append("function gen"+ent.getName()+"() {\n");
+	cod.append("\tvar entity = new "+ent.listModels().get(0).getName()+"();\n");
 
 	Iterator<String> it = ent.listModifyAttributes().iterator();
 	while(it.hasNext()) {
 	    String attribute = it.next();
 	    Attributes value = ent.getAttribute(attribute);
-
+	    System.out.println(ent.getName());
 	    if(value.getClass().equals(AttributeNum.class) || value.getClass().equals(AttributeBoolean.class) || value.getClass().equals(AttributeTime.class))
-		cod.append(ent.getName()+"."+attribute+" = "+value.getValue()+";\n");
+		cod.append("\t"+ent.getName()+"."+attribute+" = "+value.getValue()+";\n");
 	    else if(value.getClass().equals(AttributeString.class) || value.getClass().equals(AttributeEnum.class))
-		cod.append(ent.getName()+"."+attribute+" = '"+value.getValue()+"';\n");
+		cod.append("\t"+ent.getName()+"."+attribute+" = '"+value.getValue()+"';\n");
 	}
+
+	cod.append("\treturn entity;\n}\n");
+	return cod;
+    }
+
+    public static Code genEntity(Entity ent) {
+	Code cod = new Code();
+	cod.append("var "+ent.getName()+" = gen"+ent.getName()+"();\n");
+
 	return cod;
     }
 

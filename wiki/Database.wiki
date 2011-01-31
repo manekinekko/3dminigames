@@ -55,7 +55,7 @@ Chaque nouveau type ajouté *peut* (c'est optionnel) avoir des attributs. Le nom
 
 Ils ont comme attributs:
   * *name* (String) : le nom de l'attribut
-  * *type* (String) : le type de l'attribut
+  * *type* (String) : le type de l'attribut. Par exemple: string, boolean, number ...
   * *value* (String) : la valeur de l'attribut
 
 

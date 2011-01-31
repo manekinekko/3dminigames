@@ -4,8 +4,6 @@
 *	Tested on:
 *	Mozilla Firefox 3.6.12
 *	Google Chrome 7.0.517.41
-*	Safari 5.0.2
-*	Safari na iPad
 *	WebKit r70732
 *
 *	The current version does not work on:
@@ -176,7 +174,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			else {
 	
 				var name = file.fileName; 
-				var value = 'dae/custom/'+name;
+				var value = {docUrl: 'assets/dae/custom/'+name};
 				document.getElementById('myModels').innerHTML += "<option value='"+value+"'>"+name+"</option>";
 				
 				if ( doc )

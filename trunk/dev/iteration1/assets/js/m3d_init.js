@@ -16,6 +16,7 @@ doc.onLoad = function() {
 	// auto loading functions
 	M3D.DB.storeDefaultAttributes();
 	M3D.DB.detectPreviousContent();
+	M3D.GUI.init();
 	
 	// GLGE logic
 	var mouse=new GLGE.MouseInput(canvas);

@@ -42,6 +42,7 @@
 =Compilation=
 
 ==Validé==
+  * Parser et Arpenteur d'arbre opérationnels pour le langage "de base" 
   * Gestions des classes prédéfinies
   * Gestions des types des attributs des classes prédéfinies
   * Création des types hérités : le Js est généré

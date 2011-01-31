@@ -20,7 +20,7 @@ if (!window["M3D"].DB) {
 	 * type_ : for defined types
 	 * obj_ : for imported 3D models
 	 */
-	M3D.DB.REGEX_CONTENT_PATTERN = /^(_attr|_type|_obj)/;
+	M3D.DB.REGEX_CONTENT_PATTERN = /(_attr|_type|_obj)$/;
 	
 	// API
 	
@@ -37,7 +37,7 @@ if (!window["M3D"].DB) {
 				dataType:'json',
 				data:{filename:'attributes.xml'},
 				success:function(d){
-					M3D.DB.__set__({name:key, value:d.attributes});
+					M3D.DB._set({name:key, value:d.attributes});
 				},
 				error:function(){
 					alert('Could not load Models attributes! A server error has occured!');
@@ -51,7 +51,7 @@ if (!window["M3D"].DB) {
 	
 	
 	// Save data
-	M3D.DB.__set__ = function(data){
+	M3D.DB._set = function(data){
 		try {
 			
 			if (!data.name) {
@@ -62,8 +62,6 @@ if (!window["M3D"].DB) {
 				alert("[DB] A 'value of Object' key is required to store data!");
 				return false;
 			}
-			
-			log("Saving '"+data.name+"' into DB. Value: '"+data.value);
 			
 			localStorage.setItem(data.name, JSON.stringify(data.value));
 			
@@ -78,39 +76,36 @@ if (!window["M3D"].DB) {
 	// Save 3D Objects (only usefull info are stored!)
 	M3D.DB.setObject = function(data){
 		data.name = data.name+'_obj';
-
-		M3D.DB.__set__(data);
+		M3D.DB._set(data);
 	}
 	
 	// Save Entities
 	M3D.DB.setType = function(data){
 		data.name = data.name+'_type';
-
-		M3D.DB.__set__(data);
+		M3D.DB._set(data);
 	}
 	
 	// Save attributes
 	M3D.DB.setAttributes = function(data){
 		data.name = data.name+'_attr';
-
-		M3D.DB.__set__(data);
+		M3D.DB._set(data);
 	}
 	
 	// Get data
-	M3D.DB.__get__ = function( objectId ){
+	M3D.DB._get = function( objectId ){
 		return JSON.parse(localStorage.getItem( objectId ));
 	}
 	 	
 	// Get type
 	M3D.DB.getType = function(t){
 		//t = "type_"+t;
-		return M3D.DB.__get__(t);
+		return M3D.DB._get(t);
 	}
 	
 	// Get attributes
 	M3D.DB.getAttributes = function(t){
 		t = "attr_"+t;
-		return M3D.DB.__get__(t);
+		return M3D.DB._get(t);
 	}
 			
 	// Detect previous content
@@ -127,7 +122,7 @@ if (!window["M3D"].DB) {
 		for( var i=0; i<localStorage.length; i++ ){
 			key = localStorage.key(i);
             
-			if ( /^(attr_|type_)/.test(key) ){
+			if ( /\_obj$/.test(key) ){
 				
 				value = M3D.DB.getType(key);
 				
@@ -164,6 +159,7 @@ if (!window["M3D"].DB) {
 	M3D.DB.clear = function(){
 		for(var i in localStorage){
 			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
+				log("clearing entry '"+i+"'");
 				localStorage.removeItem(i);
 			}
 		}

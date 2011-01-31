@@ -419,4 +419,17 @@ public class Code {
 	return cod;
     }*/
 
+
+        public static Code genFuncDef(Definition def){
+    	
+    	Code c = new Code();
+
+    	c.append("function " + def.getName() + "(){\n");
+    	c.append(def.getCode());
+    	c.append("}\n");
+	
+    	return c;
+    	
+    }	
+
 }

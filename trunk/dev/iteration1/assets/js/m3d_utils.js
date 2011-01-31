@@ -30,9 +30,14 @@ if (!window["M3D"].GUI){
 	// Init
 	M3D.GUI.init = function(){
 		M3D.GUI.initTypes();
+		
+		// TODO: code the following functions
+		//M3D.GUI.initRules();
+		//M3D.GUI.initAttributes();
 	};
 	
 	
+	// Initialize the attributes list
 	M3D.GUI.initTypes = function(){
 		
 		var types = M3D.DB.getAllTypes();
@@ -528,6 +533,7 @@ if (!window["M3D"].GUI){
 		var element = {
 				'name' : name,
 				'value' : {
+						'uid':uid,
 						'url': urlCollada,
 						'type': entityName
 					}
@@ -992,8 +998,8 @@ if (!window["M3D"].GUI){
 			id,
 			css_class = "string",
 			len;
-//		
-//		
+		
+		
 //		var name = "";
 //	   	var attributes = M3D.DB.getAttributes(name);
 //		
@@ -1010,7 +1016,7 @@ if (!window["M3D"].GUI){
 //		
 //		
 //		
-//		
+		
 		for (att in obj) {
 			
 	        value = obj[att];

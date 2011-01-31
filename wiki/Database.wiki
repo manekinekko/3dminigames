@@ -14,6 +14,7 @@ Le nom des modèles 3D importés par l'utilisateur est converti pour suivre le p
 Ils ont comme attributs:
   * *url* (String) : l'url du fichier 3D physique,
   * *type* (String) : le nom d'un type définit auquel il est rattaché
+  * *uid* ((number) : un identifiant unique
 
 *IMPORTANT:* Les modèles sont stockés dans la base de données avec la fonction *M3D.DB.setObject(o)*. Par exemple:
 {{{
@@ -21,7 +22,8 @@ M3D.DB.setObject({
   'name' : 'duck',
   'value' : {
      'url': 'path/to/collada.dae',
-     'type': 'Ducks'
+     'type': 'Ducks',
+     'uid':'13265'
   }
 });
 

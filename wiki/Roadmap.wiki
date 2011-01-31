@@ -40,13 +40,20 @@
   *
 ----
 =Compilation=
-à compléter
+
 ==Validé==
-  *
+  * Gestions des classes prédéfinies
+  * Gestions des types des attributs des classes prédéfinies
+  * Création des types hérités : le Js est généré
+  * Création des entités de bases (sans graphe de scène et duplicable) : le Js est généré
 ==En cours==
-  *
+  * Gestion des définitions
+  * Notion de graphe de scène
+  * Gestion du duplicable
 ==A venir==
-  *
+  * Gestion des commandes
+  * Gestion des règles
+  * Gestion et approfondissement de la partie IA
 ----
 =Documentation=
 à compléter

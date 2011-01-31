@@ -360,31 +360,39 @@ if (!window["M3D"].GUI){
 		
 		// [DB]
 		// Save the new entity and its attributes into DB
-		
-		M3D.DB.setType({
-			name: val,
-			value:{}
-		});
-		
+		var attributes = [];
 		$('.entry-attributes').each(function(){
 			
-			var entry = $(this);
-			var name = entry.find('input[name="attribute-name"]').val();
-			var type = entry.find('input[name="attribute-type"]').val();
-			var value = entry.find('input[name="attribute-value"]').val();
-			var attributeObj = {
-				name: entityInfo.val(),
-				value: {
-					attr_name: name,
-					attr_type: type,
-					attr_value: value
-				}
-			};
+			var entry = $(this);			
+			var name = entry.find('input[name="attributes-name[]"]').val();
+			var type = entry.find('input[name="attributes-type[]"]').val();
+			var value = entry.find('input[name="attributes-value[]"]').val();
 			
-			M3D.DB.setAttributes(attributeObj);
+			attributes.push({
+					'name': name,
+					'type': type,
+					'value': value
+				});
 			
 		});
-		
+
+		var inheritance = [];
+		$('input[name="entity-type[]"]:checked').each(function(){
+			inheritance.push($(this).val());
+		});
+
+		M3D.DB.setAttributes({
+				'name': entityInfo.val(),
+				'value': attributes
+			});
+					
+		M3D.DB.setType({
+			'name': entityInfo.val(),
+			'value':{
+				'inheritance': inheritance
+			}
+		});	
+			
 	}
 	
 	M3D.GUI.saveNewAttribut = function(){
@@ -492,7 +500,7 @@ if (!window["M3D"].GUI){
 		M3D.GUI.hidePopup();
 		
 		// [DB]
-		var element={
+		var element = {
 				'name' : name,
 				'value' : {
 						'url': urlCollada,
@@ -504,7 +512,7 @@ if (!window["M3D"].GUI){
 	}
 	
 	
-	// -- add object to scene (TODO)
+	// -- add object to scene (TODO see inside)
 	M3D.GUI.addObjectToScene = function( values ) {
 		
 		// tweak the new object scale

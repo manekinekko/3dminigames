@@ -24,12 +24,24 @@ options {
  
 game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
-    ^(GAME_KW gd=gameData[st]? newType[st]* in=initialization[st] def=definition[st]* com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+    ^(GAME_KW gd=gameData[st]? newType[st]* 
+	
+	in=initialization[st]
+
     {
 	st.print();
 	System.out.println(in.getCode());
     }
-    ;
+     
+	(def=definition[st]
+ 
+    {
+	System.out.println(def.getCode());
+    })*
+
+     com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+
+	;
 	
 
 /*------------------------------ Information about game ---------------------------------*/
@@ -295,11 +307,19 @@ valAggregation [SymbolTable st] returns [Attributes c]:
         {c = new AttributeString(i.getText());}
 	; 
 
+
 /* Definition */	
-definition [SymbolTable st] returns [Code c]: 
-	^(DEFINITION_KW i=IDENT consequences[st])
+definition [SymbolTable st] returns [Code c] @init{ c = new Code();}: 
+	^(DEFINITION_KW i=IDENT cons=consequences[st])
 	{String ident = i.getText();
-	if(st.get(ident)!=null){System.out.println("l'ident "+ ident + " est deja defini");System.exit(-1);}}
+	if(st.get(ident)!=null){System.out.println("l'ident "+ ident + " est deja defini");System.exit(-1);}
+		else{
+			Definition def = new Definition(ident,cons);			
+			c.append(Code.genFuncDef(def));
+			st.add(ident,def);
+			
+		}
+	}
 		;
 
 consequences [SymbolTable st] returns [Code c]:

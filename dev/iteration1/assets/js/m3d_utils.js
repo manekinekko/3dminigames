@@ -24,6 +24,29 @@ if (!window["M3D"].GUI){
 	// values in ms
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 	
+	
+	
+		
+	// Init
+	M3D.GUI.init = function(){
+		M3D.GUI.initTypes();
+	};
+	
+	
+	M3D.GUI.initTypes = function(){
+		
+		var types = M3D.DB.getAllTypes();
+		var newEntityHtml = '';
+		for( var i in types){
+			
+			newEntityHtml = "<option value='"+types[i].name+"'>"+types[i].name+"</option>";		
+			$('#entity').append( newEntityHtml );
+			
+		}
+		
+	}
+
+	
 	// -- Event handler for mouse wheel event.
 	M3D.GUI.wheel = function(event){
 	    var delta = 0;
@@ -259,6 +282,8 @@ if (!window["M3D"].GUI){
 		
 		
 	}
+	
+	
 	
 	// -- adapt the correct type input based on user selection
 	M3D.GUI.toggleInputSelect = function(el){

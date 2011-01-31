@@ -98,14 +98,16 @@ if (!window["M3D"].DB) {
 	 	
 	// Get type
 	M3D.DB.getType = function(t){
-		//t = "type_"+t;
 		return M3D.DB._get(t);
 	}
 	
 	// Get attributes
 	M3D.DB.getAttributes = function(t){
-		t = "attr_"+t;
 		return M3D.DB._get(t);
+	}
+	
+	M3D.DB.getAllTypes = function(){
+		return M3D.DB._getAll('type');
 	}
 			
 	// Detect previous content
@@ -151,8 +153,21 @@ if (!window["M3D"].DB) {
 	}
 	
 	// Get all data
-	M3D.DB.getAll = function(){
-		log(localStorage);
+	M3D.DB._getAll = function(str){
+		var t = [];
+		var Exp = new RegExp('\_'+str+'$');
+		
+		for(var i in localStorage){
+			if ( Exp.test(i) ){
+				t.push({
+					'name':i.replace('_'+str, ''), // get rid off of "_str"
+					'value':localStorage.getItem(i)
+				});
+			}
+		}
+		
+		return t;
+		
 	}
 	
 	// Clear all data

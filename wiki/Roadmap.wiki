@@ -6,10 +6,10 @@
   * Picking
   * Import collada
   * Base de données en Local Storage
-  * Import des classes et leurs attributs en JSON
+  * Import des classes prédéfinies et leurs attributs en JSON
   * Possibilité de créer des règles (uniquement l'affichage)
-  * Possibilité de créer de nouveaux types
-  * Possibilité de créer de nouveaux attributs
+  * Possibilité de créer et sauvegarder de nouveaux types
+  * Possibilité de créer et sauvegarder de nouveaux attributs
 
   
 

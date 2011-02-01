@@ -63,4 +63,4 @@
 ==En cours==
   * L'utilisation de l'IHM
 ==A venir==
-  *
+  * Détails sur le langage haut-niveau (pour édition manuelle)

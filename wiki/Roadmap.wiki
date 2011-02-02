@@ -31,13 +31,16 @@
 
 ----
 =Moteur 3D=
-à compléter
+
 ==Validé==
-  *
+  * ajout d'éléments
+  * suppression d'éléments
+  * fonctions de déplacement
 ==En cours==
-  *
+  * système de collision
 ==A venir==
-  *
+  * gestion des caméras
+  * gestion des forces
 ----
 =Compilation=
 

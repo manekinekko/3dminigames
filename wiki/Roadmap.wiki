@@ -76,8 +76,7 @@
 ==A venir==
   * Reste des codes et modèles des mini-jeux
 
-  * Mario (Mario, bonus, 2 ennemis, plateforme)
- +version sans génération aléatoire (avec carte)
+  * Mario (Mario, bonus, 2 ennemis, plateforme) + version sans génération aléatoire (avec carte)
   * Jeu capture du drapeau en FPS
   * Contenu global de modèles
 

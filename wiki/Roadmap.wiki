@@ -98,6 +98,75 @@
   * Jeu capture du drapeau en FPS
   * Contenu global de modèles
 
+==Planning==
+===PLANNING PUR CONTENU (txt + dae)===
+
+SEM 5-6 (aujourd'hui):                                  légende : T(txt), D(dae), /2(fait à moitié) 
+Jeu du lapin                                         T + D
+*Watch’N’Droid                                       T/2 + D
+*Mario (plateformes générées aléatoirement)          T/2
+Mario (niveau défini) 
+
+SEM 6-7:
+*Pacman                                              D
+*Billard                                             T/2 + D
+*1942
+fps deathmatch sans équipe
+fps deathmatch avec équipes (jusquà 3 équipes)
+
+SEM 7-8:
+fps capture the flag (+ ia)
+*Volley
+*Course (expérimenter le f-zero pour le fun)
+
+SEM 8 à 10 (mercredi 9 mars):
+mini rpg style pokémon ou FF avec phases (comment intégrer des éléments de narration ?)
+modèles de base à fournir à l'utilisateur (selon l'idée d'Érik)
+voir avec les autres groupes pour intégrer des médias (musiques...) ou faites vos propres musiques si vous vous sentez un peu artiste
+//sachant qu'on sera 2 ou peut-être 3 à modéliser, la semaine 9 à 10 pour faire le reste de tous les modèles me semble suffisante
+
+
+===PLANNING CONTENU AUTRE===
+
+SEM 5-6:
+regrouper les concepts de chaque jeu pour le groupe compilation
+formaliser précisément les concepts de ces jeux et rajouter les modifications de la classe Game dans la grammaire
+chercher des idées pour l'IA (regrouper les idées générales entre les types d'entités, les types de jeux)
+
+SEM 6-7:
+IA toutes faites à coder en haut niveau ou javascript (voir avec Wassim), rajouter les mots-clés manquants dans la grammaire au besoin
+prévoir la possibilité de paramétrer l'IA
+
+SEM 7 à 9 (mercredi 2 mars):
+IA à coder en haut niveau ou javascript (voir avec Wassim)
+
+
+
+===MODELES DE BASE===
+Character : paladin médiéval, orc, mario, droid, robot...
+Vehicle : jeep, voiture course, vaisseaux (course), bateau (pourquoi pas ?)
+Plane : avions, hélicos (1942)
+Spacecraft : quelques vaisseaux spatiaux, sous-marin (pourquoi pas ?)
+Sword : couteaux, épées
+Weapon : armes à feu de notre époque (9mm, fusil à pompe calibre 12, bazooka, arbalète...), armes à feu futuristes
+Projectile : les munitions associées, missile
+Teleporter : base pour la téléportation
+Ball : balles de golf, de tennis / ballons de volley, de foot / boules de bowling (+quille), de billard
+Obstacle : pierres...
+Platform : plusieurs styles de plateformes allant de la pierre plate au nuage
+Breakable (comment gérer les 2 modèles) : caisse, tonneau
+Checkpoint : un du genre trackmania pour le jeu de course
+Construction : une tour médiévale, une chaumière...
+
+Ground et Bonus : là je sais pas, les possiblités sont trop nombreuses
+
+décors : plusieurs types de vagatations / lapin, chien chat, souris ... / tables, chaises, lampes, lampadaire
+
+autres : drapeau (ctf), table de billard, bombe, tous les modèles créés pour faire les mini-jeux, etc
+
+//penser aux armatures pour la plupart des modèles animables 
+
+
 ----
 
 =Suggestions d'amélioration dans la grammaire=

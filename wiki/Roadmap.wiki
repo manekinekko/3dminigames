@@ -59,6 +59,38 @@
   * Gestion des règles
   * Gestion et approfondissement de la partie IA
 ----
+
+=Contenu=
+
+==Validé==
+  * Modèles du jeu lapin + code
+  * Modèles du Game&Watch
+  * Modèles du billard
+==En cours==
+  * Code du 1942
+  * Code du billard
+  * code du Game&Watch
+  * Code du Mario
+  * Spécification d'IA paramétrable
+  * Modèles du jeu de course
+==A venir==
+  * Reste des codes et modèles des mini-jeux
+
+  * Mario (Mario, bonus, 2 ennemis, plateforme)
+ +version sans génération aléatoire (avec carte)
+  * Jeu capture du drapeau en FPS
+  * Contenu global de modèles
+
+----
+
+=Suggestions d'amélioration dans la grammaire=
+  * Ajout du déplacement sur l'axe z
+  * Ajout des phases de jeu
+  * Ajout de la sélection d'objet
+  * Ajout de liste de joueurs (humain ou IA) + nb de joueurs dans la classe Game (ex : billard à 2)
+  * Ajout de l'affichage d'un texte à la fin du jeu
+
+----
 =Documentation=
 à compléter
 ==Validé==

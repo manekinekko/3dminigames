@@ -6,14 +6,69 @@
 	</head>
 	<body onload="new M3D.Upload.uploader('canvas', 'status', 'bin/upload.php', null, doc);">
 		
-		<div id="gui">	
+		<div id="m3d-ui">	
 			
 			<!-- start: canvas container -->
 			<div id="container">
 				<div id="modal" ></div>
 				<div id="loading"></div>
 				<h1><span>3D</span>WIGS</span></h1>
-				<canvas id="canvas" width="1000" height="500"></canvas>
+				<div class="float-right" id="editor">
+					<div id="editor-header"></div>
+					<textarea row="10" cols="10">type Lapin is Character and Projectile;
+type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+
+//////////// INIT
+Lapin has life at 1;
+Lapin has compteurPas at 3;
+Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (random between 0 and 360);   //lorsque le lapin est généré
+Lapin has size at 1 1 1;
+
+
+//cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
+
+chasseur is Character player;
+chasseur has life at 5;
+chasseur has position at 0 0 0;
+chasseur has orientation at 0 0 0;
+chasseur has size at 1 1 1;
+
+arretGauche is Zobstacle;
+arretGauche has position at 0 0 0;
+arretGauche has orientation at 0 0 0;
+arretGauche has size at 1 1 1;
+
+arretDroit is Zobstacle; 
+arretDroit has position at 0 0 0;
+arretDroit has orientation at 0 0 0; //verif 0=<orientation<=360
+arretDroit has size at 1 1 1;
+
+
+lapin1 is Lapin enemy;
+lapin1 has speed at 10;
+lapin2 is Lapin enemy;
+lapin2 has speed at 20;
+lapin3 is Lapin enemy;
+lapin3 has speed at 30;
+
+zoneGenLapin is Zone;  //la zone ou va générer les lapins
+zoneGenLapin has position at 0 0 0;
+zoneGenLapin has orientation at 0 0 0;
+zoneGenLapin has size at 1 1 1;
+
+bazooka is Weapon;              
+bazooka has shootInterval at 500 ms;  //munitions infinies
+bazooka has position at 0 0 0;
+bazooka has orientation at 0 0 0;
+
+missile is Projectile ally duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
+missile has damages at 100;
+missile has speed at 100;
+//missile has position at position of bazooka;          //la position et l'orientation du bazooka changent
+//missile has orientation at orientation of bazooka;</textarea>
+				</div>
+				<div id="canvas-border" ></div>
+				<canvas id="canvas" width="700" height="500"></canvas>
 			</div>
 			<!-- end: canvas container -->
 
@@ -25,16 +80,15 @@
 					<optgroup label="Free models">
 						<option value="assets/dae/free/duck.dae" selected="true">Duck</option>
 						<option value="assets/dae/free/f.dae" >Girl</option>
+						<option value="assets/dae/free/avion.dae" >Plane</option>
 					</optgroup>
 					<optgroup label="Presets">
 						<option value="assets/dae/presets/cube.dae">Cube</option>
 						<option value="assets/dae/presets/sphere.dae">Sphere</option>
-						<option value="assets/dae/presets/cylindre.dae">Cylindre</option>
+						<option value="assets/dae/presets/cylinder.dae">Cylindre</option>
 					</optgroup>
 				</select>
 				<input type="button" name="import" id="import" value="Add a model" />
-				
-				<input type="button" name="manage-rules" id="manage-rules" value="Manage Game Rules" />
 				
 				<input type="button" name="clear-canvas" id="clear-canvas" value="Clear Canvas" />
 				
@@ -46,15 +100,6 @@
 				</select>
 			</div>
 			<!-- end: menu -->
-
-			<!-- start: right info panel -->
-			<div id="info-right">
-				
-				<h2>Model attributes</h2>
-				<div id="attributes"></div>
-				<input type="button" name="add-attributes" class="add-attributes" value="Add new Attribut">			
-			</div>
-			<!-- end: right info panel -->
 
 			<!-- start: bottom info panel -->
 			<div id="info-bottom" class="animate">
@@ -100,14 +145,7 @@
 				<br class="clear"/>
 			</div>
 			<!-- end: right info panel -->
-
-			<!-- start: upload panel -->
-			<div id="upload" class="animate">
-				<div id="status">Drag & Drop your Collada models into the canva above.</div>
-				<div id="list"></div> 
-			</div>
-			<!-- end: upload panel -->
-
+			
 			<!-- start: windows container -->
 			<div id="windows-container">
 				
@@ -171,100 +209,7 @@
 						<input type="button" id="save-new-entity" value="Done" name="save" />
 					</div>
 				</div>
-				
-				<div id="entity-new-attribut" class="window closed">
-					<h2>New attribut Info</h2>
-		        	
-					<label for="quick-new-attribut-name">Name<em>*</em></label>
-					<input name="quick-new-attribut-name" class="alphanumeric required" id="quick-new-attribut-name" value="" type="text" placeholder="Attribut name"/>
-					<br/>
-					
-					<label for="quick-new-attribut-type">Type<em>*</em></label>
-					<select id="quick-new-attribut-type" name="quick-new-attribut-type" class="required">
-						<option value="">--Type--</option>
-						<option value="string">String</option>
-						<option value="number">Number</option>
-						<option value="boolean">Boolean</option>
-					</select>
-					<br/>
-					
-					<label for="quick-new-attribut-value-input">Value<em>*</em></label>
-					<input name="quick-new-attribut-value-input" class="required" id="quick-new-attribut-value-input" type="text" value="" placeholder="Value"/>
-					<select class="hidden required" id="quick-new-attribut-value-select" name="quick-new-attribut-value-select" >
-						<option value="true">True</option>
-						<option value="false">False</option>
-					</select>
-					<br/>
-					
-					<div id="window-buttons">
-						<input type="button" class="cancel" value="Cancel" name="cancel">
-						<input type="button" id="save-new-attribut" value="Add" name="save-new-attribut" />
-					</div>
-				</div>
-				
-				<div id="rules" class="window closed">
-					<h2>Game Rules</h2>
-					
-					<table>
-						<thead>
-							<tr>
-								<th>Name<em>*</em></th>
-								<th>Entity<em>*</em></th>
-								<th>Attribut<em>*</em></th>
-								<th>Condition<em>*</em></th>
-								<th>Value<em>*</em></th>
-								<th>Action<em>*</em></th>
-							</tr>
-						</thead>
-						
-						<tbody>
-							<tr>
-								<td>
-									<input name="rule-name" class="alphanumeric required" id="rule-name" type="text" placeholder="Rule name"/>
-								</td>
-								<td>
-									<select id="entity-name" name="entity-name" class="required">
-										<option value="">--select type--</option>
-									</select>
-								</td>
-								<td>
-									<select id="entity-attribut" name="entity-attribut" class="required">
-										<option value="">--select attribut--</option>
-									</select>
-								</td>
-								<td>
-									<select id="rule-condition" name="rule-condition" class="required">
-										<option value="">--select condition--</option>
-										<option value="is equals to">equals to</option>
-										<option value="is greater than">greater than</option>
-										<option value="is less than">less than</option>
-										<option value="is greater or equal to">greater or equal to</option>
-										<option value="is less or equal to">less or equal to</option>
-									</select>
-								</td>
-								<td>
-									<input name="rule-condition-value" id="rule-condition-value" class="required" type="text" placeholder="Value"/>
-								</td>
-								<td>
-									<select id="rule-action" name="rule-action" class="required">
-										<option value="">--select action--</option>
-									</select>
-								</td>
-								<td>
-									<a href="#" title="Add" id="add-rule" >Add rule</a>
-								</td>
-							</tr>
-						</tbody>
-						
-					</table>
-	
-					<div id="rules-list" ></div>
-					
-					<div id="window-buttons">
-						<input type="button" class="cancel" value="OK" name="cancel">
-					</div>
-				</div>
-				
+			
 				<div id="help" class="window closed">
 					<h2>Help</h2>
 					<div>
@@ -335,12 +280,7 @@
 		<!-- start: libraries -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/lib/json.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge/glge_math.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge/glge.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge/glge_collada.js"></script> 
-		<script type="text/javascript" src="assets/js/lib/glge/glge_input.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge/patches/glge.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge/patches/glge_collada.js"></script>
+		<script type="text/javascript" src="assets/js/lib/newGLGE/glge-compiled.js"></script>
 		<!-- end: libraries -->
 		
 		<!-- start: js custom libraries -->

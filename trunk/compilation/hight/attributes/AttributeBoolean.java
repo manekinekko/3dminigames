@@ -22,7 +22,10 @@ public class AttributeBoolean implements Attributes {
     }
 
     public String getValue() {
-        return b+"";
+	if(b)
+	    return "true";
+	else
+	    return "false";
     }
 
     @Override

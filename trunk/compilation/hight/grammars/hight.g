@@ -100,7 +100,6 @@ declarationObjet :
 
 typeEntity :
 	IDENT
-	| typeObjet3D
 	;
 
 entityMode:
@@ -127,8 +126,6 @@ view :
 allocationObject :
 	IDENT (AT valAggregation )?       //aggregation
 	  -> ^( ALLOCATION_KW IDENT valAggregation?)
-	| attribut AT typeAllocation           //life at 5, name at "Gandalf Le Gris"
-	  -> ^( ALLOCATION_KW attribut typeAllocation)
 	| typeCoordonnees AT coordinates            //size at 20 30 40
 	  -> ^( ALLOCATION_KW typeCoordonnees coordinates)
 	| attributListeOuObjet AT IDENT             //inventory at listeArmesJoueur
@@ -337,8 +334,6 @@ variable :
   (X^ | Y^ | Z^) OF! typeCoordonnees OF! accesLocal
   | IDENT OF accesLocal
     -> ^(VAR_I_KW IDENT accesLocal)
-  | attribut OF accesLocal
-    -> ^(VAR_A_KW attribut accesLocal)
   | SCORE OF GAME
     -> GAME_SCORE_KW
   | VALUE OF attributTps OF accesLocal
@@ -390,74 +385,7 @@ typeObjet :
 	| MEDIA
 	| COUNTER
 	| TIME
-	| typeObjet3D
   ;
- 
-// every predefined classe
-
-typeObjet3D:
-	OBJECT                      // -> position(x,y,z), orientation(x,y,z), size(x,y,z)
-	| CHARACTER                 // -> life, lifeMax, magic, magicMax , level, experience, attack, defense
-	| VEHICLE                   // -> acceleration, speedMax,
-	| PLANE | SPACECRAFT
-	| OBSTACLE                  // a fixed entity, used for collisions
-	| WEAPON                    // -> nbMunitions, nbMaxMunitions, intervalleTirs, timeRecharge
-	| SWORD                     // -> damages, level
-	| PROJECTILE                // -> vitesse, damages, level(pourquoi pas)
-	| ZONE                      // an invisible and traversable entity
-	| GROUND                    // -> type of ground (water, snow ...)
-	| BONUS                     // an object which disappears when something touches it-> valeur(entier), nomObjet(type),listeObjets 
-	| CHECKPOINT
-	| BREAKABLE
-	| CONSTRUCTION
-	| ROOM
-	| BALL
-	| TELEPORTER
-	;
-	
-// every attributes of predefined classes
-attribut : 
-	MASS                  // attributes of object :
-	| IS_FIX
-	| IS_TRAVERSABLE
-	| FOV                    // attributes of "camera"
-	| TYPE
-	| ACTIVE
-	| NAME                   // attributes of "character" :
-	| DESCRIPTION
-	| LIFE
-	| LIFE_MAX
-	| LIFE_MIN
-	| NB_LIVES
-	| MAGIC
-	| MAGIC_MAX
-	| MAGIC_MIN
-	| LEVEL
-	| ATTACK
-	| DEFENSE
-	| JUMP_FORCE
-	| JUMP_AIR_MAX
-	| MONEY
-	| CLASS
-	| RACE
-	| ACCELERATION
-	| SPEED                // attributes of "vehicle" :
-	| SPEED_MAX
-	| SPEED_MIN
-	| BOOST
-	| BOOST_MAX
-	| NB_MUNITIONS           // attributes of"weapon" :
-	| NB_MUNITIONS_MAX
-	| SHOOT_POWER
-	| DAMAGES               //attributes of "projectile"
-	| VALUE                // attributes of "bonus" :
-	| UNIT
-	| OBJECT_NAME
-	| ATTRIBUT_NAME
-	| VOLUME                 //attributes of "media"
-	| NUMBER              //attributes of "ball"
-	| MOVE_WITH_CAMERA
-	;
 	
 attributTps :
 	BOOST_INTERVAL
@@ -637,65 +565,7 @@ MEDIA	: 'Media';
 COUNTER	: 'Counter';
 TIME	: 'Time';
 
-OBJECT		: 'Object';
-CHARACTER	: 'Character';
-VEHICLE		: 'Vehicle';
-PLANE		: 'Plane';
-SPACECRAFT	: 'SpaceCraft';
-OBSTACLE	: 'Obstacle';
-WEAPON		: 'Weapon';
-SWORD		: 'Sword';
-PROJECTILE	: 'Projectile';
-ZONE		: 'Zone';
-GROUND		: 'Ground';
-BONUS		: 'Bonus';
-CHECKPOINT	: 'CheckPoint';
-BREAKABLE	: 'Breakable';
-CONSTRUCTION	: 'Construction';
-ROOM		: 'Room';
-BALL		: 'Ball';
-TELEPORTER	: 'Teleporter';
-
-/* List of attribut */
-MASS		: 'mass';
-IS_FIX		: 'isFix';
-IS_TRAVERSABLE	: 'isTraversable';
-FOV		: 'fov';
-ACTIVE		: 'active';
-NAME		: 'name';
-DESCRIPTION	: 'description';
-LIFE		: 'life';
-LIFE_MAX	: 'lifeMax';
-LIFE_MIN	: 'lifeMin';
-NB_LIVES	: 'nbOfLives';
-MAGIC		: 'magic';
-MAGIC_MAX	: 'magicMax';
-MAGIC_MIN	: 'magicMin';
-LEVEL		: 'level';
-ATTACK		: 'attack';
-DEFENSE		: 'defense';
-JUMP_FORCE	: 'jumpForce';
-JUMP_AIR_MAX	: 'maxJumpsInTheAir';
-MONEY		: 'money';
-CLASS		: 'class';
-RACE		: 'race';
-ACCELERATION	: 'acceleration';
-SPEED		: 'speed';
-SPEED_MAX	: 'maxSpeed';
-SPEED_MIN	: 'minSpeed';
-BOOST		: 'boost';
-BOOST_MAX	: 'maxBoost';
-NB_MUNITIONS	: 'nbMunitions';
-NB_MUNITIONS_MAX: 'nbMunitionsMax';
-SHOOT_POWER	: 'shootPower';
-DAMAGES		: 'damages';
 VALUE		: 'value';
-UNIT		: 'unit';
-OBJECT_NAME	: 'objectname';
-ATTRIBUT_NAME	: 'attributName';
-VOLUME		: 'volume';
-NUMBER		: 'number';
-MOVE_WITH_CAMERA: 'moveWithCamera';
 
 BOOST_INTERVAL	: 'boostInterval';
 SHOOT_INTERVAL	: 'shootInterval';

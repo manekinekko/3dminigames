@@ -2,6 +2,7 @@
 package symbols;
 
 import attributes.Attributes;
+import attributes.Tmp;
 import java.util.*;
 
 /**
@@ -12,21 +13,21 @@ public class Entity implements Symbol{
 
     private String name;
     private List<Model> models;
-    private Map<String, Attributes> attributes;
+    private Map<String, Tmp> attributes;
     private boolean generate = true;
 
     public Entity(String name, Model ... m) {
         this.name = name;
         this.models = new ArrayList<Model>();
-        this.attributes = new HashMap<String, Attributes>();
+        this.attributes = new HashMap<String, Tmp>();
         this.models.addAll(Arrays.asList(m));
     }
 
-    public void addAttribute(String attr, Attributes value) {
+    public void addAttribute(String attr, Tmp value) {
         this.attributes.put(attr, value);
     }
 
-    public Attributes getAttribute(String n) {
+    public Tmp getAttribute(String n) {
         if(this.attributes.containsKey(n))
             return this.attributes.get(n);
         else {

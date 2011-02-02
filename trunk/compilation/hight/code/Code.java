@@ -6,6 +6,7 @@ package code;
 
 import attributes.*;
 import java.util.Iterator;
+import symbols.Definition;
 import symbols.Entity;
 import symbols.Model;
 
@@ -37,6 +38,11 @@ public class Code {
 
     public String getCode() {
         return c;
+    }
+
+    @Override
+    public String toString() {
+	return c;
     }
 
     public static Code genEntity(String name) {
@@ -376,13 +382,12 @@ public class Code {
 	Iterator<String> it = m.listAttributes().iterator();
 	while(it.hasNext()) {
 	    String attribute = it.next();
-	    Attributes value = m.getAttribute(attribute);
+	    Tmp value = m.getAttribute(attribute);
 	    cod.append("\tthis."+attribute+" = ");
-
-	    if(value.getClass().equals(AttributeNum.class) || value.getClass().equals(AttributeBoolean.class) || value.getClass().equals(AttributeTime.class))
-		cod.append(value.getValue());
-	    else if(value.getClass().equals(AttributeString.class) || value.getClass().equals(AttributeEnum.class))
-		cod.append("'"+value.getValue()+"'");
+	    if(value.getType() == Tmp.Type.NUMBER || value.getType() == Tmp.Type.BOOLEAN || value.getType() == Tmp.Type.TIME)
+		cod.append(value.getCode());
+	    else if(value.getType() == Tmp.Type.STRING || value.getType() == Tmp.Type.ENUM)
+		cod.append("'"+value.getCode()+"'");
 
 	    cod.append(";\n");
 	}
@@ -400,12 +405,11 @@ public class Code {
 	Iterator<String> it = ent.listModifyAttributes().iterator();
 	while(it.hasNext()) {
 	    String attribute = it.next();
-	    Attributes value = ent.getAttribute(attribute);
-	    System.out.println(ent.getName());
-	    if(value.getClass().equals(AttributeNum.class) || value.getClass().equals(AttributeBoolean.class) || value.getClass().equals(AttributeTime.class))
-		cod.append("\t"+ent.getName()+"."+attribute+" = "+value.getValue()+";\n");
-	    else if(value.getClass().equals(AttributeString.class) || value.getClass().equals(AttributeEnum.class))
-		cod.append("\t"+ent.getName()+"."+attribute+" = '"+value.getValue()+"';\n");
+	    Tmp value = ent.getAttribute(attribute);
+	    if(value.getType() == Tmp.Type.NUMBER || value.getType() == Tmp.Type.BOOLEAN || value.getType() == Tmp.Type.TIME)
+		cod.append("\t"+ent.getName()+"."+attribute+" = "+value.getCode()+";\n");
+	    else if(value.getType() == Tmp.Type.STRING || value.getType() == Tmp.Type.ENUM)
+		cod.append("\t"+ent.getName()+"."+attribute+" = '"+value.getCode()+"';\n");
 	}
 
 	cod.append("\treturn entity;\n}\n");

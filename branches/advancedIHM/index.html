@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>M3D GUI v0.0.1alpha</title>
+		<script src="assets/js/lib/modernizr.min.js"></script>
+	</head>
+	<body onload="new M3D.Upload.uploader('canvas', 'status', 'bin/upload.php', null, doc);">
+		
+		<div id="gui">	
+			
+			<!-- start: canvas container -->
+			<div id="container">
+				<div id="modal" ></div>
+				<div id="loading"></div>
+				<h1><span>3D</span>WIGS</span></h1>
+				<canvas id="canvas" width="1000" height="500"></canvas>
+			</div>
+			<!-- end: canvas container -->
+
+			<!-- start: menu -->
+			<div id="viewmenu">
+				<select style="width:100px;" id="importUrl" name="importUrl">
+					<optgroup id="myModels" label="My models">
+					</optgroup>
+					<optgroup label="Free models">
+						<option value="assets/dae/free/duck.dae" selected="true">Duck</option>
+						<option value="assets/dae/free/f.dae" >Girl</option>
+					</optgroup>
+					<optgroup label="Presets">
+						<option value="assets/dae/presets/cube.dae">Cube</option>
+						<option value="assets/dae/presets/sphere.dae">Sphere</option>
+						<option value="assets/dae/presets/cylindre.dae">Cylindre</option>
+					</optgroup>
+				</select>
+				<input type="button" name="import" id="import" value="Add a model" />
+				
+				<input type="button" name="manage-rules" id="manage-rules" value="Manage Game Rules" />
+				
+				<input type="button" name="clear-canvas" id="clear-canvas" value="Clear Canvas" />
+				
+				<input type="button" name="generate-xml" id="generate-xml" value="Generate Game Scene" />
+				
+				<!--<input type="button" name="resetcamera" id="resetcamera" value="Reset Camera" />-->
+				<select id="select-model">
+						<option value="">--select model--</option>
+				</select>
+			</div>
+			<!-- end: menu -->
+
+			<!-- start: right info panel -->
+			<div id="info-right">
+				
+				<h2>Model attributes</h2>
+				<div id="attributes"></div>
+				<input type="button" name="add-attributes" class="add-attributes" value="Add new Attribut">			
+			</div>
+			<!-- end: right info panel -->
+
+			<!-- start: bottom info panel -->
+			<div id="info-bottom" class="animate">
+	
+				<div class="column">
+					<h4>Position</h4>
+		        	<label for="posX">X</label>
+					<input type="text" name="posX" id="posX" value="" placeholder="#" /><br/>
+					<label for="posY">Y</label>
+					<input type="text" name="posY" id="posY" value="" placeholder="#" /><br/>
+					<label for="posZ">Z</label>
+					<input type="text" name="posZ" id="posZ" value="" placeholder="#" /><br/>
+				</div>
+				<div class="column">				
+					<h4>Scale</h4>
+					<label for="scaleX">X</label>
+					<input type="text" name="scaleX" id="scaleX" value="" placeholder="#"/><br/>
+					<label for="scaleY">Y</label>
+					<input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /><br/>
+					<label for="scaleZ">Z</label>
+					<input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" />
+				</div>
+				<div class="column">				
+					<h4>Rotation</h4>
+					<label for="rotX">X</label>
+					<input type="text" name="rotX" id="rotX" value="" placeholder="#"/><br/>
+					<label for="rotY">Y</label>
+					<input type="text" name="rotY" id="rotY" value="" placeholder="#" /><br/>
+					<label for="rotZ">Z</label>
+					<input type="text" name="rotZ" id="rotZ" value="" placeholder="#" />
+				</div>
+				<div class="column">
+					<h4>Bounding box</h4>
+					<label for="bboxX">X</label>
+					<input type="text" name="bboxX" id="bboxX" value="" placeholder="#"/><br/>
+					<label for="bboxY">Y</label>
+					<input type="text" name="bboxY" id="bboxY" value="" placeholder="#"/><br/>
+					<label for="bboxZ">Z</label>
+					<input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#"/><br/>
+					<label style="width:60px;" for="switchBbox">Show/Hide</label>
+					<input type="checkbox" name="switchBbox" id="switchBbox" />
+				</div>
+				<br class="clear"/>
+			</div>
+			<!-- end: right info panel -->
+
+			<!-- start: upload panel -->
+			<div id="upload" class="animate">
+				<div id="status">Drag & Drop your Collada models into the canva above.</div>
+				<div id="list"></div> 
+			</div>
+			<!-- end: upload panel -->
+
+			<!-- start: windows container -->
+			<div id="windows-container">
+				
+				<div id="entity-info" class="window closed">
+					<h2>Entity information</h2>
+					<label for="name">Name<em>*</em></label>
+
+					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" />
+					<br/>
+					<label for="entity">Attached type<em>*</em></label>
+					<select name="entity" id="entity" class="required" >
+						<option value="">--select type--</option>
+					</select>
+					&nbsp;&nbsp;or&nbsp;&nbsp;
+					<a id="add-new-entity" href="#" title="Create a new entity type">Create new type</a>
+
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Cancel" name="cancel">
+						<input type="button" id="save-entity-info" value="Save" name="save" />
+					</div>
+				</div>
+				
+				<div id="new-entity" class="window close">
+					<h2>New Entity Type</h2>
+					<label for="entity-name">Type Name<em>*</em></label>
+					<input type="text" class="alphanumeric required" name="entity-name" value="" placeholder="Type name"/>
+					 
+					<br/>
+					<label for="entity-type">Type model</label>
+					<input type="checkbox" name="entity-type[]" value="object"/> Object
+					<input type="checkbox" name="entity-type[]" value="character"/> Character
+					<input type="checkbox" name="entity-type[]" value="vehicle"/> Vehicle
+					<br/>
+					
+					<label for="entity-attributes">Add new attributes</label>
+					<br/>
+					<br/>
+					<input class="width-100 alphanumeric nonempty" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
+					<select class="width-100 nonempty" id="new-attribut-type" name="new-attribut-type">
+						<option value="">--Type--</option>
+						<option value="string">String</option>
+						<option value="number">Number</option>
+						<option value="boolean">Boolean</option>
+					</select>
+					<input class="width-100 nonempty alphanumeric" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
+					<select class="width-100 hidden" id="new-attribut-value-select" name="new-attribut-value-select" >
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+					   
+					<a href="#" id="add-new-attribut" title="Add this attribut">Add</a>
+					
+					<br/>
+					
+					<div id="entity-attributes-list" >
+						<!-- all new attributes are shown in here -->
+					</div>
+					
+					<div id="window-buttons">
+						<input type="button" id="cancel-new-entity" value="Cancel"/>
+						<input type="button" id="save-new-entity" value="Done" name="save" />
+					</div>
+				</div>
+				
+				<div id="entity-new-attribut" class="window closed">
+					<h2>New attribut Info</h2>
+		        	
+					<label for="quick-new-attribut-name">Name<em>*</em></label>
+					<input name="quick-new-attribut-name" class="alphanumeric required" id="quick-new-attribut-name" value="" type="text" placeholder="Attribut name"/>
+					<br/>
+					
+					<label for="quick-new-attribut-type">Type<em>*</em></label>
+					<select id="quick-new-attribut-type" name="quick-new-attribut-type" class="required">
+						<option value="">--Type--</option>
+						<option value="string">String</option>
+						<option value="number">Number</option>
+						<option value="boolean">Boolean</option>
+					</select>
+					<br/>
+					
+					<label for="quick-new-attribut-value-input">Value<em>*</em></label>
+					<input name="quick-new-attribut-value-input" class="required" id="quick-new-attribut-value-input" type="text" value="" placeholder="Value"/>
+					<select class="hidden required" id="quick-new-attribut-value-select" name="quick-new-attribut-value-select" >
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+					<br/>
+					
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Cancel" name="cancel">
+						<input type="button" id="save-new-attribut" value="Add" name="save-new-attribut" />
+					</div>
+				</div>
+				
+				<div id="rules" class="window closed">
+					<h2>Game Rules</h2>
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Name<em>*</em></th>
+								<th>Entity<em>*</em></th>
+								<th>Attribut<em>*</em></th>
+								<th>Condition<em>*</em></th>
+								<th>Value<em>*</em></th>
+								<th>Action<em>*</em></th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td>
+									<input name="rule-name" class="alphanumeric required" id="rule-name" type="text" placeholder="Rule name"/>
+								</td>
+								<td>
+									<select id="entity-name" name="entity-name" class="required">
+										<option value="">--select type--</option>
+									</select>
+								</td>
+								<td>
+									<select id="entity-attribut" name="entity-attribut" class="required">
+										<option value="">--select attribut--</option>
+									</select>
+								</td>
+								<td>
+									<select id="rule-condition" name="rule-condition" class="required">
+										<option value="">--select condition--</option>
+										<option value="is equals to">equals to</option>
+										<option value="is greater than">greater than</option>
+										<option value="is less than">less than</option>
+										<option value="is greater or equal to">greater or equal to</option>
+										<option value="is less or equal to">less or equal to</option>
+									</select>
+								</td>
+								<td>
+									<input name="rule-condition-value" id="rule-condition-value" class="required" type="text" placeholder="Value"/>
+								</td>
+								<td>
+									<select id="rule-action" name="rule-action" class="required">
+										<option value="">--select action--</option>
+									</select>
+								</td>
+								<td>
+									<a href="#" title="Add" id="add-rule" >Add rule</a>
+								</td>
+							</tr>
+						</tbody>
+						
+					</table>
+	
+					<div id="rules-list" ></div>
+					
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+					</div>
+				</div>
+				
+				<div id="help" class="window closed">
+					<h2>Help</h2>
+					<div>
+						&#187;Use mouse wheel to zoom in/out<br/>
+						&#187;Use Shift key to rotate a model around Y-axis<br/>
+						&#187;Use Alt key to rotate a model around X-axis<br/>
+						&#187;Use mouse drag + X/Y/Z keys to move a model along with the X/Y/Z-axis<br/>
+						&#187;Use mouse wheel + S key to scale a model<br/> 
+						<i><strong>Hint&nbsp;</strong>You can import your collada models easily by 
+						draging and dropping them onto onto the canvas!</i>
+					</div>
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+					</div>
+				</div>
+				
+				<div id="confirmation-clear" class="window closed">
+					<h2>Confirmation!</h2>
+					<div>Do you really want to clear the canvas?<br/>
+					<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
+					</div>
+					<div id="window-buttons">
+						<input type="button" value="YES" name="confirm-clear-canvas" id="confirm-clear-canvas">
+						<input type="button" class="cancel" value="NO" name="cancel">
+					</div>
+				</div>
+				
+				<div id="confirmation-load" class="window closed">
+					<h2>Welcome back!</h2>
+					<div>Do you want to load your previous content ?<br/>
+					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
+					</div>
+					<div id="window-buttons">
+						<input type="button" value="YES" name="confirm-load-content" id="confirm-load-content">
+						<input type="button" class="cancel" value="NO" name="cancel">
+					</div>
+				</div>
+				
+				<div id="about" class="window closed">
+					<h2>About</h2>
+					<p>
+						<strong>3DWIGS</strong> - 3D Web Interactive Game Studio is a new way of creating 3D mini-games for the web.<br/>
+					</p>
+					<p>
+						<strong>Author: </strong>Professor R&eacute;mi Cozot.
+						<strong>Developers: </strong>Berlon Antoine, Bouzillard Jer&ocirc;me, Chegham Wassim, Clergeau Thomas, Faghihi Afshin,
+						Guichaoua Mathieu, Israel Quentin, Kien Emeric, Le Corronc Thibault, Le Galludec Benjamin,
+						Le Normand Erik, Lubecki Aur&eacute;lien, Marginier David, Sanvoisin Aur&eacute;lien, Tolba Mohamed Amine,
+						Weinzaepfel Philippe &amp; Zadith Ludovic.
+					</p>
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="OK" name="cancel">
+						<input type="button" value="Help" id="showhelp" name="showhelp">
+					</div>
+				</div>
+				
+			</div>
+			<!-- end: windows container -->
+
+		</div>
+		
+		<!-- start: css parsing -->
+		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
+		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
+		<!-- end: css parsing -->
+		
+		<!-- start: js parsing -->
+		<!-- start: libraries -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/json.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge_math.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/glge_collada.js"></script> 
+		<script type="text/javascript" src="assets/js/lib/glge/glge_input.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/patches/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge/patches/glge_collada.js"></script>
+		<!-- end: libraries -->
+		
+		<!-- start: js custom libraries -->
+		<script type="text/javascript" src="assets/js/m3d_common.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_utils.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_upload.js"></script>
+		
+		<!-- Please load these scripts after all the others and in the following order! -->
+		<script type="text/javascript" src="assets/js/m3d_init.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_events.js"></script>
+		<!-- end: js custom -->
+		<!-- end: js parsing -->
+
+	</body>
+</html>

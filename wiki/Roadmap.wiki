@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation,Phase-Design
-=UI=
+=UI (avancé)=
 
 ==Validé==
   * Système de fenêtre
@@ -28,6 +28,24 @@
   * meilleur affichage de la bounding box
   * meilleur validation des champs de saisies
   * Possibilité d'importer des modèles *avec textures*
+
+
+----
+=UI (rustique)=
+
+==Validé==
+ *
+
+==EN cours==
+  * Mettre à jour de la position/rotation/scale des objets en IndexedDB
+  * Mettre à jour de la position/rotation/scale des objets en Local Storage
+  * Gestion de la caméra (à la FPS)
+  * Gestion du parseur
+  * Ajout d'un sol dans le canvas
+
+==A venir==
+  * Positionnement des objets sur le canvas
+  * Gestion de la caméra (à la Sketchup)
 
 ----
 =Moteur 3D=

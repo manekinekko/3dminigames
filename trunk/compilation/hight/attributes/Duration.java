@@ -29,8 +29,11 @@ public class Duration {
     public Code getCode() {
 	int u = this.calcUnit();
 	Code c = new Code();
-	if(u != 1)
-	    c.append("(");c.append(c);c.append(")*"+u);
+	if(u != 1) {
+	    c.append("(");c.append(value);c.append(")*"+u);
+	} else {
+	    c.append(value);
+	}
 	return c;
     }
 

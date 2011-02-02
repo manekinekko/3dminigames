@@ -382,11 +382,11 @@ public class Code {
 	Iterator<String> it = m.listAttributes().iterator();
 	while(it.hasNext()) {
 	    String attribute = it.next();
-	    Tmp value = m.getAttribute(attribute);
+	    AttributeValue value = m.getAttribute(attribute);
 	    cod.append("\tthis."+attribute+" = ");
-	    if(value.getType() == Tmp.Type.NUMBER || value.getType() == Tmp.Type.BOOLEAN || value.getType() == Tmp.Type.TIME)
+	    if(value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME)
 		cod.append(value.getCode());
-	    else if(value.getType() == Tmp.Type.STRING || value.getType() == Tmp.Type.ENUM)
+	    else if(value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM)
 		cod.append("'"+value.getCode()+"'");
 
 	    cod.append(";\n");
@@ -405,11 +405,11 @@ public class Code {
 	Iterator<String> it = ent.listModifyAttributes().iterator();
 	while(it.hasNext()) {
 	    String attribute = it.next();
-	    Tmp value = ent.getAttribute(attribute);
-	    if(value.getType() == Tmp.Type.NUMBER || value.getType() == Tmp.Type.BOOLEAN || value.getType() == Tmp.Type.TIME)
-		cod.append("\t"+ent.getName()+"."+attribute+" = "+value.getCode()+";\n");
-	    else if(value.getType() == Tmp.Type.STRING || value.getType() == Tmp.Type.ENUM)
-		cod.append("\t"+ent.getName()+"."+attribute+" = '"+value.getCode()+"';\n");
+	    AttributeValue value = ent.getAttribute(attribute);
+	    if(value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME)
+		cod.append("\tentity."+attribute+" = "+value.getCode()+";\n");
+	    else if(value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM)
+		cod.append("\tentity."+attribute+" = '"+value.getCode()+"';\n");
 	}
 
 	cod.append("\treturn entity;\n}\n");

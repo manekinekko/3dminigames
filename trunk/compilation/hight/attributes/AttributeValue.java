@@ -6,40 +6,39 @@ import code.Code;
  *
  * @author Quentin
  */
-public class Tmp {
+public class AttributeValue {
 
     public static enum Type {NIL, BOOLEAN, ENUM, NUMBER, STRING, TIME};
 
     private Code value;
     private Type type;
 
-    public Tmp() {
+    public AttributeValue() {
 	value = null;
 	type = Type.NIL;
     }
 
-    public Tmp(Boolean b,String t) {
-	System.out.println("plop "+t);
+    public AttributeValue(Boolean b,String t) {
 	value = new Code(b.toString());
 	type = Type.BOOLEAN;
     }
 
-    public Tmp(Number n) {
+    public AttributeValue(Number n) {
 	value = new Code(n.floatValue()+"");
 	type = Type.NUMBER;
     }
 
-    public Tmp(String s) {
+    public AttributeValue(String s) {
 	value = new Code(s);
 	type = Type.STRING;
     }
 
-    public Tmp(Duration d) {
+    public AttributeValue(Duration d) {
 	value = d.getCode();
 	type = Type.TIME;
     }
 
-    public Tmp(Code c, Type t) {
+    public AttributeValue(Code c, Type t) {
 	value = c;
 	type = t;
     }

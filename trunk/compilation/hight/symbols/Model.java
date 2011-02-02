@@ -10,17 +10,17 @@ public class Model implements Symbol {
     public static Model object, character, projectile, zone, obstacle, weapon, ground;
     private static List<Model> generated;
     private String name;
-    private Map<String, Tmp> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
+    private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
     private boolean generate = true;
 
     public Model(String name) {
 	this.name = name;
-	attributs = new HashMap<String, Tmp>();
+	attributs = new HashMap<String, AttributeValue>();
     }
 
     public Model(String name, Model... subtypes) {
 	this.name = name;
-	attributs = new HashMap<String, Tmp>();
+	attributs = new HashMap<String, AttributeValue>();
 	for (int i = 0; i < subtypes.length; i++) {
 	    attributs.putAll(subtypes[i].getAllAttributes());
 	}
@@ -30,26 +30,25 @@ public class Model implements Symbol {
 	generated = new ArrayList();
 
 	object = new Model("Object");
-        object.addAttributes(new Pair<String, Tmp>("mass", new Tmp(0)), new Pair<String, Tmp>("posX", new Tmp(0)), new Pair<String, Tmp>("posY", new Tmp(0)), new Pair<String, Tmp>("posZ", new Tmp(0)), new Pair<String, Tmp>("orX", new Tmp(0)), new Pair<String, Tmp>("orY", new Tmp(0)), new Pair<String, Tmp>("orZ", new Tmp(0)), new Pair<String, Tmp>("tX", new Tmp(0)), new Pair<String, Tmp>("tY", new Tmp(0)), new Pair<String, Tmp>("tZ", new Tmp(0)), new Pair<String, Tmp>("isFix", new Tmp(false,"isFix")), new Pair<String, Tmp>("isTraversable", new Tmp(false,"isTraversable")),new Pair<String, Tmp>("URL", new Tmp("")));
-	System.out.println(object.getAttribute("isFix").getType());
+        object.addAttributes(new Pair<String, AttributeValue>("mass", new AttributeValue(0)), new Pair<String, AttributeValue>("posX", new AttributeValue(0)), new Pair<String, AttributeValue>("posY", new AttributeValue(0)), new Pair<String, AttributeValue>("posZ", new AttributeValue(0)), new Pair<String, AttributeValue>("orX", new AttributeValue(0)), new Pair<String, AttributeValue>("orY", new AttributeValue(0)), new Pair<String, AttributeValue>("orZ", new AttributeValue(0)), new Pair<String, AttributeValue>("tX", new AttributeValue(0)), new Pair<String, AttributeValue>("tY", new AttributeValue(0)), new Pair<String, AttributeValue>("tZ", new AttributeValue(0)), new Pair<String, AttributeValue>("isFix", new AttributeValue(false,"isFix")), new Pair<String, AttributeValue>("isTraversable", new AttributeValue(false,"isTraversable")),new Pair<String, AttributeValue>("URL", new AttributeValue("")));
         st.add(object.getName(), object);
 	character = new Model("Character", object);
-	character.addAttributes(new Pair<String, Tmp>("name", new Tmp("")), new Pair<String, Tmp>("description", new Tmp("")), new Pair<String, Tmp>("life", new Tmp(1)), new Pair<String, Tmp>("lifeMax", new Tmp(1)), new Pair<String, Tmp>("lifeMin", new Tmp(1)), new Pair<String, Tmp>("nbOfLives", new Tmp(1)), new Pair<String, Tmp>("magic", new Tmp(0)), new Pair<String, Tmp>("magicMax", new Tmp(0)), new Pair<String, Tmp>("magicMin", new Tmp(0)), new Pair<String, Tmp>("level", new Tmp(0)), new Pair<String, Tmp>("attack", new Tmp(0)), new Pair<String, Tmp>("defense", new Tmp(0)), new Pair<String, Tmp>("jumpForce", new Tmp(0)), new Pair<String, Tmp>("maxJumpsInTheAir", new Tmp(0)), new Pair<String, Tmp>("money", new Tmp(0)), new Pair<String, Tmp>("classification", new Tmp("")), new Pair<String, Tmp>("race", new Tmp("")), new Pair<String, Tmp>("acceleration", new Tmp(1)), new Pair<String, Tmp>("inventory", new Tmp(0)/*a revoir*/), new Pair<String, Tmp>("moveWithCamera", new Tmp(false,"moveWithCamera")), new Pair<String, Tmp>("equipedObject", new Tmp(0)/*a revoir*/), new Pair<String, Tmp>("rightHandObject", new Tmp(0)/*a revoir*/), new Pair<String, Tmp>("leftHandObject", new Tmp(0)/*a revoir*/));
+	character.addAttributes(new Pair<String, AttributeValue>("name", new AttributeValue("")), new Pair<String, AttributeValue>("description", new AttributeValue("")), new Pair<String, AttributeValue>("life", new AttributeValue(1)), new Pair<String, AttributeValue>("lifeMax", new AttributeValue(1)), new Pair<String, AttributeValue>("lifeMin", new AttributeValue(1)), new Pair<String, AttributeValue>("nbOfLives", new AttributeValue(1)), new Pair<String, AttributeValue>("magic", new AttributeValue(0)), new Pair<String, AttributeValue>("magicMax", new AttributeValue(0)), new Pair<String, AttributeValue>("magicMin", new AttributeValue(0)), new Pair<String, AttributeValue>("level", new AttributeValue(0)), new Pair<String, AttributeValue>("attack", new AttributeValue(0)), new Pair<String, AttributeValue>("defense", new AttributeValue(0)), new Pair<String, AttributeValue>("jumpForce", new AttributeValue(0)), new Pair<String, AttributeValue>("maxJumpsInTheAir", new AttributeValue(0)), new Pair<String, AttributeValue>("money", new AttributeValue(0)), new Pair<String, AttributeValue>("classification", new AttributeValue("")), new Pair<String, AttributeValue>("race", new AttributeValue("")), new Pair<String, AttributeValue>("acceleration", new AttributeValue(1)), new Pair<String, AttributeValue>("inventory", new AttributeValue(0)/*a revoir*/), new Pair<String, AttributeValue>("moveWithCamera", new AttributeValue(false,"moveWithCamera")), new Pair<String, AttributeValue>("equipedObject", new AttributeValue(0)/*a revoir*/), new Pair<String, AttributeValue>("rightHandObject", new AttributeValue(0)/*a revoir*/), new Pair<String, AttributeValue>("leftHandObject", new AttributeValue(0)/*a revoir*/));
 	st.add(character.getName(), character);
         projectile = new Model("Projectile", object);
-	projectile.addAttributes(new Pair<String, Tmp>("speed", new Tmp(1)), new Pair<String, Tmp>("damages", new Tmp(1)), new Pair<String, Tmp>("damageZone", new Tmp()/*a revoir*/));
+	projectile.addAttributes(new Pair<String, AttributeValue>("speed", new AttributeValue(1)), new Pair<String, AttributeValue>("damages", new AttributeValue(1)), new Pair<String, AttributeValue>("damageZone", new AttributeValue()/*a revoir*/));
 	st.add(projectile.getName(), projectile);
         zone = new Model("Zone", object);
-	zone.addAttributes(new Pair<String, Tmp>("name", new Tmp("")));
+	zone.addAttributes(new Pair<String, AttributeValue>("name", new AttributeValue("")));
         st.add(zone.getName(), zone);
 	obstacle = new Model("Obstacle", object);
-	obstacle.addAttributes(new Pair<String, Tmp>("name", new Tmp("")));
+	obstacle.addAttributes(new Pair<String, AttributeValue>("name", new AttributeValue("")));
         st.add(obstacle.getName(), obstacle);
 	weapon = new Model("Weapon", object);
-	weapon.addAttributes(new Pair<String, Tmp>("name", new Tmp("")), new Pair<String, Tmp>("nbMunitions", new Tmp(-1)), new Pair<String, Tmp>("nbMunitionsMax", new Tmp(-1)), new Pair<String, Tmp>("shootPower", new Tmp(1)), new Pair<String, Tmp>("shootInterval", new Tmp(new Duration(1, "s"))), new Pair<String, Tmp>("reloadTime", new Tmp(new Duration(1, "s"))));
+	weapon.addAttributes(new Pair<String, AttributeValue>("name", new AttributeValue("")), new Pair<String, AttributeValue>("nbMunitions", new AttributeValue(-1)), new Pair<String, AttributeValue>("nbMunitionsMax", new AttributeValue(-1)), new Pair<String, AttributeValue>("shootPower", new AttributeValue(1)), new Pair<String, AttributeValue>("shootInterval", new AttributeValue(new Duration(1, "s"))), new Pair<String, AttributeValue>("reloadTime", new AttributeValue(new Duration(1, "s"))));
         st.add(weapon.getName(), weapon);
         ground = new Model("Ground", object);
-        ground.addAttribute("type", new Tmp(""));
+        ground.addAttribute("type", new AttributeValue(""));
         st.add(ground.getName(), ground);
     }
 
@@ -57,27 +56,25 @@ public class Model implements Symbol {
 	this.attributs.put(attr, null);
     }
 
-    public void addAttribute(String attr, Tmp value) {
+    public void addAttribute(String attr, AttributeValue value) {
 	this.attributs.put(attr, value);
     }
 
-    public void addAttributes(Pair<String,Tmp>...attr) {
+    public void addAttributes(Pair<String,AttributeValue>...attr) {
 	for(int i=0; i<attr.length; i++){
 	    attributs.put(attr[i].getFirst(), attr[i].getSecond());
 	}
     }
 
-    public Map<String, Tmp> getAllAttributes() {
-	return new HashMap<String, Tmp>(attributs);
+    public Map<String, AttributeValue> getAllAttributes() {
+	return new HashMap<String, AttributeValue>(attributs);
     }
 
     public boolean contains(String attr) {
 	return attributs.containsKey(attr);
     }
 
-    public Tmp getAttribute(String n){
-	System.out.println(n);
-	System.out.println(this.attributs.get(n).getType());
+    public AttributeValue getAttribute(String n){
         return this.attributs.get(n);
     }
 

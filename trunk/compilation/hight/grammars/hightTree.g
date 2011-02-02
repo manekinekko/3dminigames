@@ -168,15 +168,14 @@ init [SymbolTable st] returns [Code c]:
 	    Iterator<Symbol> it = ac.iterator();
 	    while(it.hasNext()) {
 		Symbol s = it.next();
-		Iterator<Pair<String,Tmp>> ite = ao.iterator();
+		Iterator<Pair<String,AttributeValue>> ite = ao.iterator();
 		while(ite.hasNext()) {
-		    Pair<String,Tmp> p = ite.next();
-		    String tmp = p.getFirst();
-		    System.out.println(tmp);
-		    System.out.println(p.getSecond().getCode()+":"+p.getSecond().getType());
-		    Tmp attr = s.getAttribute(tmp);
+		    Pair<String,AttributeValue> p = ite.next();
+		    String AttributeValue = p.getFirst();
+		    AttributeValue attr = s.getAttribute(AttributeValue);
                     if(attr != null && attr.getType() != p.getSecond().getType()) {
                         System.out.println("Erreur : Type incompatible");
+			System.exit(-1);
                     }
 		    s.addAttribute(p.getFirst(),p.getSecond());
 		}
@@ -252,55 +251,54 @@ view [SymbolTable st] returns [Code c]:
 	FIRST
 	| THIRD
 	;
-affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,Tmp>> c] @init{c = new ArrayList();}:
+affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
         (a=affectationObjet[st]{c.addAll(a);} )+;
 
-affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Tmp>> c] @init{c = new ArrayList();}:
+affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
         {c.add(new Pair(i.getText(),t));}
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
         {String mode = tc.getCode();
         if(mode.equals("position")){
-                c.add(new Pair("posX", new Tmp(coo.x,Tmp.Type.NUMBER)));
-                c.add(new Pair("posY", new Tmp(coo.y,Tmp.Type.NUMBER)));
-                c.add(new Pair("posZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
+                c.add(new Pair("posX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("posY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("posZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }else if(mode.equals("angle")){
-                c.add(new Pair("orX", new Tmp(coo.x,Tmp.Type.NUMBER)));
-                c.add(new Pair("orY", new Tmp(coo.y,Tmp.Type.NUMBER)));
-                c.add(new Pair("orZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
+                c.add(new Pair("orX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("orY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("orZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }else{
-                c.add(new Pair("tX", new Tmp(coo.x,Tmp.Type.NUMBER)));
-                c.add(new Pair("tY", new Tmp(coo.y,Tmp.Type.NUMBER)));
-                c.add(new Pair("tZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
+                c.add(new Pair("tX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("tY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair("tZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }
         }
 	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
 	| ^( ALLOCATION_KW att=attributTps[st] v=operation[st] u=timeUnit[st])
-        {c.add(new Pair(att,new Tmp(new Duration(v,u))));}
+        {c.add(new Pair(att,new AttributeValue(new Duration(v,u))));}
     ;
     
 	
-valAggregation [SymbolTable st] returns [Tmp c]:
+valAggregation [SymbolTable st] returns [AttributeValue c]:
 	^(AGGREGATION_KW o=operation[st] t=timeUnit[st]?)
         {if(t!=null){
-            c= new Tmp(new Duration(o,t));
+            c= new AttributeValue(new Duration(o,t));
         }else{
-                c=new Tmp(o, Tmp.Type.NUMBER);
+                c=new AttributeValue(o, AttributeValue.Type.NUMBER);
             }
         }
 	|^(AGGREGATION_KW i=IDENT)
         {
-	    /*String value = i.getText();
+	    String value = i.getText();
 	    try {
-		System.out.println("Plop");
-		float tmpValue = Float.parseFloat(value);
-		c = new AttributeNum(tmpValue);
-	    } catch(NumberFormatException e) {*/
-		c = new Tmp(i.getText());
-	    //}
+		float tmp = Float.parseFloat(value);
+		c = new AttributeValue(tmp);
+	    } catch(NumberFormatException e) {
+		c = new AttributeValue(value);
+	    }
 	}
-	| 'true' {c = new Tmp(true,"true");}
-	| 'false' {c = new Tmp(false,"false");}
+	| 'true' {c = new AttributeValue(true,"true");}
+	| 'false' {c = new AttributeValue(false,"false");}
 	; 
 
 
@@ -610,11 +608,11 @@ variable [SymbolTable st] returns [Code c]:
             }
         }
   |^(VAR_I_KW i=IDENT e=accesClass[st])
-  {Symbol si = e.get(0);String ident= i.getText(); Tmp a = si.getAttribute(ident);
+  {Symbol si = e.get(0);String ident= i.getText(); AttributeValue a = si.getAttribute(ident);
     if(a==null){
         System.out.println(si.getName()+"n'a pas l'attribut"+ident);
         System.exit(-1);}
-    else if(a.getType()!= Tmp.Type.NUMBER){
+    else if(a.getType()!= AttributeValue.Type.NUMBER){
         System.out.println(ident+"n'est pas un nombre.");
         System.exit(-1);
    }else{
@@ -622,7 +620,7 @@ variable [SymbolTable st] returns [Code c]:
     }}
   |GAME_SCORE_KW
   |^(VALUE_KW at=attributTps[st] ac=accesClass[st])
-  {Symbol si = ac.get(0); Tmp a = si.getAttribute(at);
+  {Symbol si = ac.get(0); AttributeValue a = si.getAttribute(at);
     if(a==null){
     System.out.println(si.getName()+"n'a pas l'attribut"+at);
     System.exit(-1);}

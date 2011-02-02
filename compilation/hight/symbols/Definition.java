@@ -5,8 +5,7 @@
 
 package symbols;
 
-import attributes.Attributes;
-import attributes.Tmp;
+import attributes.AttributeValue;
 import code.Code;
 import java.util.List;
 
@@ -40,11 +39,11 @@ public class Definition implements Symbol{
         return generate;
     }
 
-    public Tmp getAttribute(String n) {
+    public AttributeValue getAttribute(String n) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void addAttribute(String attr, Tmp value) {
+    public void addAttribute(String attr, AttributeValue value) {
 	throw new UnsupportedOperationException("Not supported yet.");
     }
 

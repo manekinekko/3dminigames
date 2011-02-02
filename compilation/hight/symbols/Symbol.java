@@ -1,12 +1,11 @@
 package symbols;
 
-import attributes.Attributes;
-import attributes.Tmp;
+import attributes.AttributeValue;
 
 public interface Symbol {
     public String getName();
-    public Tmp getAttribute(String n);
-    public void addAttribute(String attr, Tmp value);
+    public AttributeValue getAttribute(String n);
+    public void addAttribute(String attr, AttributeValue value);
     public void toGenerate();
     public boolean getGenerate();
 }

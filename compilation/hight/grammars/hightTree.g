@@ -81,7 +81,7 @@ subType [SymbolTable st, List<Model> sub] :
 	    if(verif == null) {
 		System.out.println("Model \""+id+"\" non défini.");
 		System.exit(-1);
-	    } else if(verif.getName() != id) {
+	    } else if(!verif.getName().equals(id)) {
 		System.out.println("Gros Gros bug !!!");
 		System.exit(-1);
 	    } else {
@@ -168,9 +168,16 @@ init [SymbolTable st] returns [Code c]:
 	    Iterator<Symbol> it = ac.iterator();
 	    while(it.hasNext()) {
 		Symbol s = it.next();
-		Iterator<Pair<String,Attributes>> ite = ao.iterator();
+		Iterator<Pair<String,Tmp>> ite = ao.iterator();
 		while(ite.hasNext()) {
-		    Pair<String,Attributes> p = ite.next();
+		    Pair<String,Tmp> p = ite.next();
+		    String tmp = p.getFirst();
+		    System.out.println(tmp);
+		    System.out.println(p.getSecond().getCode()+":"+p.getSecond().getType());
+		    Tmp attr = s.getAttribute(tmp);
+                    if(attr != null && attr.getType() != p.getSecond().getType()) {
+                        System.out.println("Erreur : Type incompatible");
+                    }
 		    s.addAttribute(p.getFirst(),p.getSecond());
 		}
 	    }
@@ -217,7 +224,6 @@ typeEntity [SymbolTable st] returns [Model t]:
 		t = (Model)verif;
 	    }
 	}
-	| to=typeObjet3D{t = to;}
 	;
 
 entityMode returns [Integer i]
@@ -246,65 +252,55 @@ view [SymbolTable st] returns [Code c]:
 	FIRST
 	| THIRD
 	;
-affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c] @init{c = new ArrayList();}:
+affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,Tmp>> c] @init{c = new ArrayList();}:
         (a=affectationObjet[st]{c.addAll(a);} )+;
 
-affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Attributes>> c] @init{c = new ArrayList();}:
+affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,Tmp>> c] @init{c = new ArrayList();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
         {c.add(new Pair(i.getText(),t));}
-	| ^( ALLOCATION_KW a=attribut[st] ta=typeAllocation[st]) //Controle de type a voir, c'est moche !!!
-            {
-		if(!a.getSecond().equals(ta.getFirst())) {
-		    System.out.println("Erreur : Erreur de type");
-		    System.exit(-1);
-		}
-
-		try {
-		    Attributes attr = ta.getFirst().getConstructor(Code.class).newInstance(ta.getSecond());
-		    c.add(new Pair(a.getFirst(), attr));
-		} catch(Exception e) {
-		    System.out.println("Erreur Critique !!!");
-		    System.exit(-1);
-		}
-	    }
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
         {String mode = tc.getCode();
         if(mode.equals("position")){
-                c.add(new Pair("posX", new AttributeNum(coo.x)));
-                c.add(new Pair("posY", new AttributeNum(coo.y)));
-                c.add(new Pair("posZ", new AttributeNum(coo.z)));
+                c.add(new Pair("posX", new Tmp(coo.x,Tmp.Type.NUMBER)));
+                c.add(new Pair("posY", new Tmp(coo.y,Tmp.Type.NUMBER)));
+                c.add(new Pair("posZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
             }else if(mode.equals("angle")){
-                c.add(new Pair("orX", new AttributeNum(coo.x)));
-                c.add(new Pair("orY", new AttributeNum(coo.y)));
-                c.add(new Pair("orZ", new AttributeNum(coo.z)));
+                c.add(new Pair("orX", new Tmp(coo.x,Tmp.Type.NUMBER)));
+                c.add(new Pair("orY", new Tmp(coo.y,Tmp.Type.NUMBER)));
+                c.add(new Pair("orZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
             }else{
-                c.add(new Pair("tX", new AttributeNum(coo.x)));
-                c.add(new Pair("tY", new AttributeNum(coo.y)));
-                c.add(new Pair("tZ", new AttributeNum(coo.z)));
+                c.add(new Pair("tX", new Tmp(coo.x,Tmp.Type.NUMBER)));
+                c.add(new Pair("tY", new Tmp(coo.y,Tmp.Type.NUMBER)));
+                c.add(new Pair("tZ", new Tmp(coo.z,Tmp.Type.NUMBER)));
             }
         }
 	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
 	| ^( ALLOCATION_KW att=attributTps[st] v=operation[st] u=timeUnit[st])
-        {c.add(new Pair(att,new AttributeTime(v.getCode(),u)));}
+        {c.add(new Pair(att,new Tmp(new Duration(v,u))));}
     ;
     
-typeAllocation [SymbolTable st] returns [Pair<Class<Attributes>, Code> p]:
-	co = operation[st] {p = new Pair(AttributeNum.class,co);}
-	| i=IDENT {p = new Pair(AttributeString.class,new Code(i.getText()));}
-	| 'true' {p = new Pair(AttributeBoolean.class, new Code ("true"));}
-	| 'false' {p = new Pair(AttributeBoolean.class, new Code ("false"));}
-	;
 	
-valAggregation [SymbolTable st] returns [Attributes c]:
+valAggregation [SymbolTable st] returns [Tmp c]:
 	^(AGGREGATION_KW o=operation[st] t=timeUnit[st]?)
         {if(t!=null){
-            c= new AttributeTime(o.getCode(),t);
+            c= new Tmp(new Duration(o,t));
         }else{
-                c=new AttributeNum(o);
+                c=new Tmp(o, Tmp.Type.NUMBER);
             }
         }
 	|^(AGGREGATION_KW i=IDENT)
-        {c = new AttributeString(i.getText());}
+        {
+	    /*String value = i.getText();
+	    try {
+		System.out.println("Plop");
+		float tmpValue = Float.parseFloat(value);
+		c = new AttributeNum(tmpValue);
+	    } catch(NumberFormatException e) {*/
+		c = new Tmp(i.getText());
+	    //}
+	}
+	| 'true' {c = new Tmp(true,"true");}
+	| 'false' {c = new Tmp(false,"false");}
 	; 
 
 
@@ -614,30 +610,19 @@ variable [SymbolTable st] returns [Code c]:
             }
         }
   |^(VAR_I_KW i=IDENT e=accesClass[st])
-  {Symbol si = e.get(0);String ident= i.getText(); Attributes a = si.getAttribute(ident);
+  {Symbol si = e.get(0);String ident= i.getText(); Tmp a = si.getAttribute(ident);
     if(a==null){
         System.out.println(si.getName()+"n'a pas l'attribut"+ident);
         System.exit(-1);}
-    else if(a.getClass()!= AttributeNum.class){
+    else if(a.getType()!= Tmp.Type.NUMBER){
         System.out.println(ident+"n'est pas un nombre.");
         System.exit(-1);
    }else{
         c=Code.genAccess(si.getName(),ident);
     }}
-  |^(VAR_A_KW att=attribut[st] en=accesClass[st])
-  {Symbol si = en.get(0); Attributes a = si.getAttribute(att.getFirst());
-    if(a==null){
-        System.out.println(si.getName()+"n'a pas l'attribut"+att.getFirst());
-        System.exit(-1);}
-    else if(a.getClass()!= AttributeNum.class){
-        System.out.println(att.getFirst()+"n'est pas un nombre.");
-        System.exit(-1);
-   }else{
-        c=Code.genAccess(si.getName(),att.getFirst());
-    }}
   |GAME_SCORE_KW
   |^(VALUE_KW at=attributTps[st] ac=accesClass[st])
-  {Symbol si = ac.get(0); Attributes a = si.getAttribute(at);
+  {Symbol si = ac.get(0); Tmp a = si.getAttribute(at);
     if(a==null){
     System.out.println(si.getName()+"n'a pas l'attribut"+at);
     System.exit(-1);}
@@ -665,7 +650,7 @@ accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayL
   | ^(ACCESS_KW i=IDENT co=operation[st]?) //acces a un tableau.
     {String ident = i.getText(); Symbol s = st.get(ident);
     if(s==null){
-        System.out.println("L'identifiant"+ident+"n'est pas défini.");
+        System.out.println("L'identifiant "+ident+" n'est pas défini.");
         System.exit(-1);
     }else{
         sb.add(s);
@@ -696,75 +681,8 @@ typeObjet returns [Model t]:
 	| MEDIA
 	| COUNTER
 	| TIME
-	| to=typeObjet3D {t = to;}
   ;
- 
-// every predefined classe
 
-typeObjet3D returns [Model t]:
-	OBJECT {t = Model.object;}
-	| CHARACTER {t = Model.character;}
-	| VEHICLE                   // -> acceleration, speedMax,
-	| PLANE | SPACECRAFT
-	| OBSTACLE {t = Model.obstacle;}
-	| WEAPON {t = Model.weapon;}
-	| SWORD                     // -> damages, level
-	| PROJECTILE {t = Model.projectile;}
-	| ZONE {t = Model.zone;}
-	| GROUND                    // -> type of ground (water, snow ...)
-	| BONUS                     // an object which disappears when something touches it-> valeur(entier), nomObjet(type),listeObjets 
-	| CHECKPOINT
-	| BREAKABLE
-	| CONSTRUCTION
-	| ROOM
-	| BALL
-	| TELEPORTER
-	;
-	
-// every attributes of predefined classes
-attribut [SymbolTable st] returns [Pair<String,Class<Attributes>> c]:
-	MASS {c =new Pair("mass", AttributeNum.class);}                 // attributes of object :
-	| IS_FIX {c =new Pair("isFix", AttributeBoolean.class);}
-	| IS_TRAVERSABLE {c =new Pair("isTraversable", AttributeBoolean.class);}
-	| FOV //{c ="fov";}                    // attributes of "camera"
-	| TYPE //{c ="type";}
-	| ACTIVE //{c ="active";}
-	| NAME {c =new Pair("name", AttributeString.class);}                   // attributes of "character" :
-	| DESCRIPTION {c =new Pair("description", AttributeString.class);}
-	| LIFE {c =new Pair("life", AttributeNum.class);}
-	| LIFE_MAX {c =new Pair("lifeMax", AttributeNum.class);}
-	| LIFE_MIN {c =new Pair("lifeMin", AttributeNum.class);}
-	| NB_LIVES {c =new Pair("nbOfLives", AttributeNum.class);}
-	| MAGIC {c =new Pair("magic", AttributeNum.class);}
-	| MAGIC_MAX {c =new Pair("magicMax", AttributeNum.class);}
-	| MAGIC_MIN {c =new Pair("magicMin", AttributeNum.class);}
-	| LEVEL {c =new Pair("level", AttributeNum.class);}
-	| ATTACK {c =new Pair("attack", AttributeNum.class);}
-	| DEFENSE {c =new Pair("defense", AttributeNum.class);}
-	| JUMP_FORCE {c =new Pair("jumpForce", AttributeNum.class);}
-	| JUMP_AIR_MAX {c =new Pair("maxJumpsInTheAir", AttributeNum.class);}
-	| MONEY {c =new Pair("money", AttributeNum.class);}
-	| CLASS {c =new Pair("classification",new AttributeString(""));}
-	| RACE {c =new Pair("race",new AttributeString(""));}
-	| ACCELERATION {c =new Pair("acceleration", AttributeNum.class);}
-	| SPEED {c =new Pair("speed", AttributeNum.class);}                // attributes of "vehicle" :
-	| SPEED_MAX //{c ="maxSpeed";}
-	| SPEED_MIN //{c ="minSpeed";}
-	| BOOST //{c ="boost";}
-	| BOOST_MAX //{c ="maxBoost";}
-	| NB_MUNITIONS {c =new Pair("nbMunitions", AttributeNum.class);}           // attributes of"weapon" :
-	| NB_MUNITIONS_MAX {c =new Pair("nbMunitionsMax", AttributeNum.class);}
-	| SHOOT_POWER {c =new Pair("boostInterval", AttributeNum.class);}
-	| DAMAGES {c =new Pair("damages", AttributeNum.class);}               //attributes of "projectile"
-	| VALUE //{c ="value";}                // attributes of "bonus" :
-	| UNIT //{c ="unit";}
-	| OBJECT_NAME //{c ="objectname";}
-	| ATTRIBUT_NAME //{c ="attributName";}
-	| VOLUME  //{c ="volume";}                //attributes of "media"
-	| NUMBER //{c ="number";}           //attributes of "ball"
-	| MOVE_WITH_CAMERA {c =new Pair("moveWithCamera", AttributeBoolean.class);}
-	;
-	
 attributTps [SymbolTable st] returns [String c]:
 	BOOST_INTERVAL{c ="boostInterval";}
 	| SHOOT_INTERVAL {c = "shootInterval";}        //attributes of "weapon" :

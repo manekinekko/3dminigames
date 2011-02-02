@@ -5,6 +5,7 @@
 
 package attributes;
 
+import code.Code;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author Quentin
  */
-public class AttributeEnum {
+public class AttributeEnum implements Attributes{
     private List<String> fields;
     private int value;
 
@@ -28,5 +29,25 @@ public class AttributeEnum {
 
     public String getValue() {
 	return fields.get(value);
+    }
+
+    public void setValue(String r, String u) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(boolean b) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(float f) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(String s) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setValue(Code s) {
+	throw new UnsupportedOperationException("Not supported yet.");
     }
 }

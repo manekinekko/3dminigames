@@ -6,7 +6,9 @@
 package symbols;
 
 import attributes.Attributes;
+import attributes.Tmp;
 import code.Code;
+import java.util.List;
 
 /**
  *
@@ -38,11 +40,15 @@ public class Definition implements Symbol{
         return generate;
     }
 
-    public Attributes getAttribute(String n) {
+    public Tmp getAttribute(String n) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void addAttribute(String attr, Attributes value) {
+    public void addAttribute(String attr, Tmp value) {
+	throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public List<String> listAttributes() {
 	throw new UnsupportedOperationException("Not supported yet.");
     }
 

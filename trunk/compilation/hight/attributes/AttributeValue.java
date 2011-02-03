@@ -8,7 +8,7 @@ import code.Code;
  */
 public class AttributeValue {
 
-    public static enum Type {NIL, BOOLEAN, ENUM, NUMBER, STRING, TIME};
+    public static enum Type {NIL, BOOLEAN, ENUM, NUMBER, STRING, TIME, AGGR};
 
     private Code value;
     private Type type;

@@ -151,6 +151,10 @@ init [SymbolTable st] returns [Code c]:
 		Entity t = new Entity(id,d.getFirst());
 		d.getFirst().toGenerate();
 
+                if(duplicable==1){
+                    t.setDuplicable();
+                }
+
 		if(mode == INT_PLAYER)
 		    Genre.player = t;
 		else if(mode == INT_ENEMY)
@@ -256,7 +260,11 @@ affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeVa
 
 affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
-        {c.add(new Pair(i.getText(),t));}
+        {if(t==null){
+            //déclaration agrégation ici
+        }else{
+            c.add(new Pair(i.getText(),t));
+        }}
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
         {String mode = tc.getCode();
         if(mode.equals("position")){

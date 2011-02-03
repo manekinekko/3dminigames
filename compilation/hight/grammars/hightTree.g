@@ -12,10 +12,12 @@ options {
     import lib.*;
     import attributes.*;
     import java.util.Iterator;
+    import java.util.Hashtable;
 }
 
 @members {
     private int INT_PLAYER=1, INT_ALLY=2, INT_ENEMY=3, INT_NEUTRAL=4, INT_DUPLICABLE=10;
+    private Hashtable<String, String> aggreg = new Hashtable<String, String>();
 }
 
 /*------------------------------------------------------------------
@@ -36,7 +38,7 @@ game [SymbolTable st] returns [Code c]
 	(def=definition[st]
  
     {
-	System.out.println(def.getCode());
+	System.out.println(def.getCode()+"\n");
     })*
 
      com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
@@ -175,14 +177,18 @@ init [SymbolTable st] returns [Code c]:
 		Iterator<Pair<String,AttributeValue>> ite = ao.iterator();
 		while(ite.hasNext()) {
 		    Pair<String,AttributeValue> p = ite.next();
-		    String AttributeValue = p.getFirst();
-		    AttributeValue attr = s.getAttribute(AttributeValue);
-                    if(attr != null && attr.getType() != p.getSecond().getType()) {
-                        System.out.println("Erreur : Type incompatible");
-			System.exit(-1);
+		    String attributeValue = p.getFirst();
+                    if(p.getSecond().getType()==AttributeValue.Type.AGGR){
+                        aggreg.put(attributeValue,s.getName());
+                    }else{
+                        AttributeValue attr = s.getAttribute(attributeValue);
+                        if(attr != null && attr.getType() != p.getSecond().getType()) {
+                            System.out.println("Erreur : Type incompatible");
+                            System.exit(-1);
+                        }
+                        s.addAttribute(p.getFirst(),p.getSecond());
                     }
-		    s.addAttribute(p.getFirst(),p.getSecond());
-		}
+                }
 	    }
 	}
 	;
@@ -261,7 +267,8 @@ affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeVa
 affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
         {if(t==null){
-            //déclaration agrégation ici
+            AttributeValue av = new AttributeValue(new Code(i.getText()),AttributeValue.Type.AGGR);
+            c.add(new Pair(i.getText(),av));
         }else{
             c.add(new Pair(i.getText(),t));
         }}

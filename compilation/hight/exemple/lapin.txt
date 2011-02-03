@@ -70,7 +70,7 @@ missile has speed at 100;
 //missile has orientation at orientation of bazooka;
 
 // (bazooka has missile ; )     // faux selon Emeric et il a raison
-//chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
+chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 
 
 //sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut

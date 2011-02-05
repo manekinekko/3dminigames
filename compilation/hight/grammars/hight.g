@@ -133,15 +133,14 @@ allocationObject :
 	| attributTps AT operation timeUnit         //
 	  -> ^( ALLOCATION_KW attributTps operation timeUnit)
 	  ;
-  
-typeAllocation 
-	:	(operation | IDENT | 'true' | 'false');
 
 valAggregation :
 	operation (timeUnit)? 
 	  -> ^(AGGREGATION_KW operation timeUnit?)
 	| IDENT
 	  -> ^(AGGREGATION_KW IDENT)
+	| 'true'
+	| 'false'
 	;
 
 /* Definition */	

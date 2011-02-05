@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="M3D" company="" webLink="http://sandbox.cheghamwassim.com/m3d/" view-date="2011-01-31" view-index="0" gantt-divider-location="505" resource-divider-location="301" version="2.0">
+<project name="M3D" company="" webLink="http://sandbox.cheghamwassim.com/m3d/" view-date="2011-01-25" view-index="1" gantt-divider-location="373" resource-divider-location="301" version="2.0">
     <description/>
-    <view zooming-state="default:3" id="gantt-chart"/>
+    <view zooming-state="default:2" id="gantt-chart"/>
     <view id="resource-table">
         <field id="0" name="Nom" width="55" order="0"/>
         <field id="1" name="Rôle par défaut" width="44" order="1"/>
@@ -40,7 +40,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="UI" color="#8cb6ce" meeting="false" start="2011-02-03" duration="13" complete="0" priority="1" expand="false">
+        <task id="0" name="UI" color="#8cb6ce" meeting="false" start="2011-02-03" duration="13" complete="0" priority="1" expand="true">
             <task id="10" name="UI design" color="#8cb6ce" meeting="false" start="2011-02-03" duration="3" complete="0" priority="1" expand="true">
                 <notes><![CDATA[Mettre en place la nouvelle IHM]]></notes>
             </task>
@@ -66,7 +66,14 @@
                 <notes><![CDATA[Gestion du parseur]]></notes>
             </task>
         </task>
-        <task id="1" name="Compiler" color="#8cb6ce" meeting="false" start="2011-02-03" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="1" name="Compiler" color="#8cb6ce" meeting="false" start="2011-02-04" duration="29" complete="0" priority="1" expand="true">
+            <task id="33" name="Entities" color="#8cb6ce" meeting="false" start="2011-02-04" duration="4" complete="0" priority="1" expand="true"/>
+            <task id="32" name="Definitions" color="#8cb6ce" meeting="false" start="2011-02-04" duration="9" complete="0" priority="1" expand="true"/>
+            <task id="34" name="Commands" color="#8cb6ce" meeting="false" start="2011-02-10" duration="5" complete="0" priority="1" expand="true"/>
+            <task id="35" name="Rules" color="#8cb6ce" meeting="false" start="2011-02-10" duration="10" complete="0" priority="1" expand="true"/>
+            <task id="36" name="IA" color="#8cb6ce" meeting="false" start="2011-03-09" duration="6" complete="0" priority="1" expand="true"/>
+            <task id="37" name="Media" color="#8cb6ce" meeting="false" start="2011-03-09" duration="6" complete="0" priority="1" expand="true"/>
+        </task>
         <task id="2" name="3D Content" color="#8cb6ce" meeting="false" start="2011-02-03" duration="25" complete="0" priority="1" expand="false">
             <task id="11" name="Contenu pur" color="#8cb6ce" meeting="false" start="2011-02-03" duration="25" complete="0" priority="1" expand="true">
                 <task id="13" name="jeu du lapin" color="#8cb6ce" meeting="false" start="2011-02-03" duration="5" complete="0" priority="1" expand="true"/>

@@ -53,12 +53,8 @@ $(function(){
 	// -- window button
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
 	$('#save-entity-info').bind('click', function(){
-		
-		if ( M3D.GUI.validateFields(this) ){
 			M3D.GUI.updateEntityList();
-			M3D.GUI.addObjectToScene();
-		}
-		
+			M3D.GUI.addObjectToScene();		
 	});
 	
 	// -- object picking from select box

@@ -68,8 +68,8 @@
   * Gestions des types des attributs des classes prédéfinies
   * Création des types hérités : le Js est généré
   * Création des entités de bases (sans graphe de scène) : le Js est généré
-  *Génération du code pour les opération numériques et booléennes
-  *Génération de l'affectation, incrémentation, décrémentation et inversement de variables
+  * Génération du code pour les opération numériques et booléennes
+  * Génération de l'affectation, incrémentation, décrémentation et inversement de variables
 ==En cours==
   * Gestion des définitions
   * Notion de graphe de scène

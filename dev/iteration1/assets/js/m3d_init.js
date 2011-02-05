@@ -11,13 +11,7 @@ var canvas = document.getElementById('canvas'),
 
 // -- callback function that is called when the xml document
 //    has finished loading
-doc.onLoad = function() {
-	
-	// auto loading functions
-	M3D.DB.storeDefaultAttributes();
-	M3D.DB.detectPreviousContent();
-	M3D.GUI.init();
-	
+doc.onLoad = function() {	
 	// GLGE logic
 	var mouse=new GLGE.MouseInput(canvas);
 	var keys=new GLGE.KeyInput();

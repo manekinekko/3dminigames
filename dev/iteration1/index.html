@@ -155,58 +155,9 @@ missile has speed at 100;
 
 					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" />
 					<br/>
-					<label for="entity">Attached type<em>*</em></label>
-					<select name="entity" id="entity" class="required" >
-						<option value="">--select type--</option>
-					</select>
-					&nbsp;&nbsp;or&nbsp;&nbsp;
-					<a id="add-new-entity" href="#" title="Create a new entity type">Create new type</a>
-
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
 						<input type="button" id="save-entity-info" value="Save" name="save" />
-					</div>
-				</div>
-				
-				<div id="new-entity" class="window close">
-					<h2>New Entity Type</h2>
-					<label for="entity-name">Type Name<em>*</em></label>
-					<input type="text" class="alphanumeric required" name="entity-name" value="" placeholder="Type name"/>
-					 
-					<br/>
-					<label for="entity-type">Type model</label>
-					<input type="checkbox" name="entity-type[]" value="object"/> Object
-					<input type="checkbox" name="entity-type[]" value="character"/> Character
-					<input type="checkbox" name="entity-type[]" value="vehicle"/> Vehicle
-					<br/>
-					
-					<label for="entity-attributes">Add new attributes</label>
-					<br/>
-					<br/>
-					<input class="width-100 alphanumeric nonempty" name="new-attribut-name" id="new-attribut-name" type="text" placeholder="Attribut name"/>
-					<select class="width-100 nonempty" id="new-attribut-type" name="new-attribut-type">
-						<option value="">--Type--</option>
-						<option value="string">String</option>
-						<option value="number">Number</option>
-						<option value="boolean">Boolean</option>
-					</select>
-					<input class="width-100 nonempty alphanumeric" name="new-attribut-value-input" id="new-attribut-value-input" type="text" placeholder="Attribut value"/>
-					<select class="width-100 hidden" id="new-attribut-value-select" name="new-attribut-value-select" >
-						<option value="true">True</option>
-						<option value="false">False</option>
-					</select>
-					   
-					<a href="#" id="add-new-attribut" title="Add this attribut">Add</a>
-					
-					<br/>
-					
-					<div id="entity-attributes-list" >
-						<!-- all new attributes are shown in here -->
-					</div>
-					
-					<div id="window-buttons">
-						<input type="button" id="cancel-new-entity" value="Cancel"/>
-						<input type="button" id="save-new-entity" value="Done" name="save" />
 					</div>
 				</div>
 			
@@ -285,7 +236,7 @@ missile has speed at 100;
 		
 		<!-- start: js custom libraries -->
 		<script type="text/javascript" src="assets/js/m3d_common.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_db.js"></script>
 		<script type="text/javascript" src="assets/js/m3d_utils.js"></script>
 		<script type="text/javascript" src="assets/js/m3d_upload.js"></script>
 		

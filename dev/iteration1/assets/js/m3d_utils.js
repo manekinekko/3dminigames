@@ -24,34 +24,6 @@ if (!window["M3D"].GUI){
 	// values in ms
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 	
-	
-	
-		
-	// Init
-	M3D.GUI.init = function(){
-		M3D.GUI.initTypes();
-		
-		// TODO: code the following functions
-		//M3D.GUI.initRules();
-		//M3D.GUI.initAttributes();
-	};
-	
-	
-	// Initialize the attributes list
-	M3D.GUI.initTypes = function(){
-		
-		var types = M3D.DB.getAllTypes();
-		var newEntityHtml = '';
-		for( var i in types){
-			
-			newEntityHtml = "<option value='"+types[i].name+"'>"+types[i].name+"</option>";		
-			$('#entity').append( newEntityHtml );
-			
-		}
-		
-	}
-
-	
 	// -- Event handler for mouse wheel event.
 	M3D.GUI.wheel = function(event){
 	    var delta = 0;
@@ -194,7 +166,7 @@ if (!window["M3D"].GUI){
 			}
 			else {
 				// ask for entity info
-				var uid = docCollada.uid ? docCollada.uid :  (new Date()).getTime();
+				var uid = docCollada.uid ? docCollada.uid : (new Date()).getTime();
 				M3D.GUI.showPopup('entity-info', uid);
 			}
 	
@@ -523,7 +495,6 @@ if (!window["M3D"].GUI){
 		
 		var uid = $('#name').attr('uid');
 		var name  = $('#name').val();
-		var entityName = $('#entity').val();
 		
 		$('#select-model').append('<option value="'+uid+'">'+name+'</option>');
 	
@@ -534,9 +505,9 @@ if (!window["M3D"].GUI){
 				'name' : name,
 				'value' : {
 						'uid':uid,
-						'url': urlCollada,
-						'type': entityName
-					}
+						'url': urlCollada
+					},
+				'position' : {posX: 0.00, posY: 0.00, posZ: 0.00, scaleX: 1.00, scaleY: 1.00, scaleZ: 1.00, rotX: 0.00, rotY: 0.00, rotZ: 0.00}
 			};
 		M3D.DB.setObject(element);
 		// [/DB]
@@ -1098,7 +1069,7 @@ if (!window["M3D"].GUI){
 			// don't remove the axises!
 			if ( o[i].getId() != 'xaxis' && o[i].getId() != 'yaxis' && o[i].getId() != 'zaxis' ){
 				scene.removeChild(o[i]);
-				o[i].removeInstance();
+				//o[i].removeInstance();
 				log(o[i]);
 			} 
 		}

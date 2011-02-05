@@ -261,36 +261,36 @@ view [SymbolTable st] returns [Code c]:
 	FIRST
 	| THIRD
 	;
-affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
+affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList<Pair<String,AttributeValue>>();}:
         (a=affectationObjet[st]{c.addAll(a);} )+;
 
-affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList();}:
+affectationObjet [SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] @init{c = new ArrayList<Pair<String,AttributeValue>>();}:
 	^( ALLOCATION_KW i=IDENT t=valAggregation[st]?)
         {if(t==null){
             AttributeValue av = new AttributeValue(new Code(i.getText()),AttributeValue.Type.AGGR);
-            c.add(new Pair(i.getText(),av));
+            c.add(new Pair<String,AttributeValue>(i.getText(),av));
         }else{
-            c.add(new Pair(i.getText(),t));
+            c.add(new Pair<String,AttributeValue>(i.getText(),t));
         }}
 	| ^( ALLOCATION_KW tc=typeCoordonnees[st] coo=coordinates[st])
         {String mode = tc.getCode();
         if(mode.equals("position")){
-                c.add(new Pair("posX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("posY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("posZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("posX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("posY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("posZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }else if(mode.equals("angle")){
-                c.add(new Pair("orX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("orY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("orZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("orX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("orY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("orZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }else{
-                c.add(new Pair("tX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("tY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
-                c.add(new Pair("tZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("tX", new AttributeValue(coo.x,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("tY", new AttributeValue(coo.y,AttributeValue.Type.NUMBER)));
+                c.add(new Pair<String,AttributeValue>("tZ", new AttributeValue(coo.z,AttributeValue.Type.NUMBER)));
             }
         }
 	| ^( ALLOCATION_KW attributListeOuObjet[st] IDENT)
 	| ^( ALLOCATION_KW att=attributTps[st] v=operation[st] u=timeUnit[st])
-        {c.add(new Pair(att,new AttributeValue(new Duration(v,u))));}
+        {c.add(new Pair<String,AttributeValue>(att,new AttributeValue(new Duration(v,u))));}
     ;
     
 	
@@ -343,7 +343,7 @@ consequ_list [SymbolTable st] returns [Code c]:
 consequ [SymbolTable st] returns [Code c]:
   i=siAlors[st] {c=i;}
   | action[st] {}
-  | a=affectation[st] {c=a}
+  | a=affectation[st] {c=a;}
   | activCommande[st] {}
   | IDENT
   | VICTORY_KW
@@ -655,7 +655,7 @@ variable [SymbolTable st] returns [Code c]:
     }}
   ;
 
-accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList();}:
+accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList<Symbol>();}:
     ^(ACCESS_KW ALL)
     {sb.add(Genre.player);sb.addAll(Genre.allies);sb.addAll(Genre.enemies);sb.addAll(Genre.neutral);}
   | ^(ACCESS_KW mo=typeObjet)

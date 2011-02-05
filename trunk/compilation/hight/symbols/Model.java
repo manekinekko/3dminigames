@@ -26,8 +26,9 @@ public class Model implements Symbol {
 	}
     }
 
+    @SuppressWarnings("unchecked")
     public static void init(SymbolTable st) {
-	generated = new ArrayList();
+	generated = new ArrayList<Model>();
 
 	object = new Model("Object");
         object.addAttributes(new Pair<String, AttributeValue>("mass", new AttributeValue(0)), new Pair<String, AttributeValue>("posX", new AttributeValue(0)), new Pair<String, AttributeValue>("posY", new AttributeValue(0)), new Pair<String, AttributeValue>("posZ", new AttributeValue(0)), new Pair<String, AttributeValue>("orX", new AttributeValue(0)), new Pair<String, AttributeValue>("orY", new AttributeValue(0)), new Pair<String, AttributeValue>("orZ", new AttributeValue(0)), new Pair<String, AttributeValue>("tX", new AttributeValue(0)), new Pair<String, AttributeValue>("tY", new AttributeValue(0)), new Pair<String, AttributeValue>("tZ", new AttributeValue(0)), new Pair<String, AttributeValue>("isFix", new AttributeValue(false,"isFix")), new Pair<String, AttributeValue>("isTraversable", new AttributeValue(false,"isTraversable")),new Pair<String, AttributeValue>("URL", new AttributeValue("")));

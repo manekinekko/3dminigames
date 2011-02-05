@@ -341,9 +341,9 @@ consequ_list [SymbolTable st] returns [Code c]:
 		{};
 		
 consequ [SymbolTable st] returns [Code c]:
-  i=siAlors[st] //{i=st.c;}
+  i=siAlors[st] {c=i;}
   | action[st] {}
-  | affectation[st] {}
+  | a=affectation[st] {c=a}
   | activCommande[st] {}
   | IDENT
   | VICTORY_KW
@@ -551,12 +551,22 @@ mode_mute [SymbolTable st] returns [Code c]:
 	ON|OFF;
 	
 affectation [SymbolTable st] returns [Code c]:
-  ^(ASSIGN_KW i1=operation[st] i2=variable[st]){//verifier attribute = attributeNum
-	/*if(i2.getSecond().getClass() != attributeNum.class){System.out.println("la variable "+ i2 + " n'est pas de type entier");System.exit(-1);}
-	c = genAffect(i1,i2);*/}
-  |^(ADD_KW operation[st] variable[st]) 
-  |^(SUB_KW operation[st] variable[st]) 
+  ^(ASSIGN_KW i1=operation[st] i2=variable[st])
+  {
+	c = Code.genAffect(i2,i1);
+    }
+  |^(ADD_KW o=operation[st] v=variable[st])
+  {
+        c = Code.genIncr(v,o);
+    }
+  |^(SUB_KW op=operation[st] var=variable[st])
+  {
+        c = Code.genSub(var,op);
+    }
   |^(INVERT_KW variable[st] variable[st])
+  {
+        c = Code.genInvert(var,op);
+    }
   ;
   
 iaBasique [SymbolTable st] returns [Code c]: ^(IA_KW accesClass[st] actionObjetList[st]);
@@ -583,7 +593,8 @@ operation [SymbolTable st] returns [Code c]:
         {c=Code.genMOD(c1,c2);}
 	|^(POW operation[st] operation[st])
         {c=Code.genPOW(c1,c2);}
-	|variable[st]
+	|v = variable[st]
+        {c = v;}
 	|f = FLOAT
         {c = new Code(f.getText());}
         ;

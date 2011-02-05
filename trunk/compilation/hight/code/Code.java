@@ -125,11 +125,44 @@ public class Code {
 		cod.append(s1);
 		cod.append(" = ");
 		cod.append(s2);
-		
+		cod.append(";\n");
 		return cod;
 	}
 
+        public static Code genIncr(Code s1, Code s2){
+		Code cod = new Code();
 
+		cod.append(s1);
+		cod.append(" += ");
+		cod.append(s2);
+                cod.append(";\n");
+		return cod;
+	}
+
+        public static Code genSub(Code s1, Code s2){
+		Code cod = new Code();
+
+		cod.append(s1);
+		cod.append(" -= ");
+		cod.append(s2);
+                cod.append(";\n");
+		return cod;
+	}
+
+        public static Code genInvert(Code s1, Code s2){
+		Code cod = new Code("var tmp = ");
+
+		cod.append(s1);
+		cod.append(";\n");
+                cod.append(s1);
+                cod.append(" = ");
+		cod.append(s2);
+                cod.append(";\n");
+                cod.append(s2);
+                cod.append(" = tmp ;\n");
+
+		return cod;
+	}
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Conditions///////////////////////////////////////

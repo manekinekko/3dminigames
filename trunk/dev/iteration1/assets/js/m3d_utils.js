@@ -204,7 +204,7 @@ if (!window["M3D"].GUI){
 			{
 	
 		        if(delta!=0){
-					scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
+					scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
 		        }
 				
 			}

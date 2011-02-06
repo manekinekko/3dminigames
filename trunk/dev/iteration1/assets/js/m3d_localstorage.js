@@ -14,11 +14,11 @@ if (!window["M3D"].DB) {
 (function(M3D){
 
     // pre requisites
-	
+
 	/**
-	 * attr_ : for types attributes
-	 * type_ : for defined types
-	 * obj_ : for imported 3D models
+	 * _attr : for types attributes
+	 * _type : for defined types
+	 * _obj : for imported 3D models
 	 */
 	M3D.DB.REGEX_CONTENT_PATTERN = /(_attr|_type|_obj)$/;
 	

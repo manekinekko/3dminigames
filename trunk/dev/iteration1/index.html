@@ -15,57 +15,7 @@
 				<h1><span>3D</span>WIGS</span></h1>
 				<div class="float-right" id="editor">
 					<div id="editor-header"></div>
-					<textarea row="10" cols="10">type Lapin is Character and Projectile;
-type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
-
-//////////// INIT
-Lapin has life at 1;
-Lapin has compteurPas at 3;
-Lapin has orientation at (random between 0 and 360) (random between 0 and 360) (random between 0 and 360);   //lorsque le lapin est généré
-Lapin has size at 1 1 1;
-
-
-//cam1 is Camera third person;    //comment va-on faire avec la caméra pour viser le lapin ?
-
-chasseur is Character player;
-chasseur has life at 5;
-chasseur has position at 0 0 0;
-chasseur has orientation at 0 0 0;
-chasseur has size at 1 1 1;
-
-arretGauche is Zobstacle;
-arretGauche has position at 0 0 0;
-arretGauche has orientation at 0 0 0;
-arretGauche has size at 1 1 1;
-
-arretDroit is Zobstacle; 
-arretDroit has position at 0 0 0;
-arretDroit has orientation at 0 0 0; //verif 0=<orientation<=360
-arretDroit has size at 1 1 1;
-
-
-lapin1 is Lapin enemy;
-lapin1 has speed at 10;
-lapin2 is Lapin enemy;
-lapin2 has speed at 20;
-lapin3 is Lapin enemy;
-lapin3 has speed at 30;
-
-zoneGenLapin is Zone;  //la zone ou va générer les lapins
-zoneGenLapin has position at 0 0 0;
-zoneGenLapin has orientation at 0 0 0;
-zoneGenLapin has size at 1 1 1;
-
-bazooka is Weapon;              
-bazooka has shootInterval at 500 ms;  //munitions infinies
-bazooka has position at 0 0 0;
-bazooka has orientation at 0 0 0;
-
-missile is Projectile ally duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
-missile has damages at 100;
-missile has speed at 100;
-//missile has position at position of bazooka;          //la position et l'orientation du bazooka changent
-//missile has orientation at orientation of bazooka;</textarea>
+					<textarea row="10" cols="10"></textarea>
 				</div>
 				<div id="canvas-border" ></div>
 				<canvas id="canvas" width="700" height="500"></canvas>
@@ -231,7 +181,13 @@ missile has speed at 100;
 		<!-- start: libraries -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/lib/json.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.8/glge-compiled.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_math.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_input.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_collada.js"></script> 
+		
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/patches/glge.js"></script>
+		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/patches/glge_collada.js"></script>		
 		<!-- end: libraries -->
 		
 		<!-- start: js custom libraries -->
@@ -239,6 +195,8 @@ missile has speed at 100;
 		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
 		<script type="text/javascript" src="assets/js/m3d_utils.js"></script>
 		<script type="text/javascript" src="assets/js/m3d_upload.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_parser.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_editor.js"></script>
 		
 		<!-- Please load these scripts after all the others and in the following order! -->
 		<script type="text/javascript" src="assets/js/m3d_init.js"></script>

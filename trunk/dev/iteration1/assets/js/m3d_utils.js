@@ -23,6 +23,74 @@ if (!window["M3D"].GUI){
 	
 	// values in ms
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
+
+	// Init
+	M3D.GUI.init = function(){
+		M3D.GUI.initTypes();
+		M3D.GUI.drawGrid();
+
+	};
+	
+	
+	// Initialize the attributes list
+	M3D.GUI.initTypes = function(){
+		
+		var types = M3D.DB.getAllTypes();
+		var newEntityHtml = '';
+		for( var i in types){
+			
+			newEntityHtml = "<option value='"+types[i].name+"'>"+types[i].name+"</option>";		
+			$('#entity').append( newEntityHtml );
+			
+		}
+		
+	}
+	
+	M3D.GUI.drawGrid = function(){
+		
+		var sn = scene || doc.getElement("mainscene");
+		var boundries = 10;
+		var positions=[];
+		
+		var push=function(x,y){
+			positions.push(x);
+			positions.push(y);
+			positions.push(0);
+		}
+		
+		// horizontal
+		for(var y=-boundries; y<boundries;y++){
+			var x=-boundries;
+			push(x,y);
+			for(; x<boundries;x+=0.5){
+				push(x,y);
+				push(x,y);
+			}
+			push(x,y);
+		}
+		// vertical	
+		for(var y=-boundries; y<boundries;y++){
+			var x=-boundries;
+			push(y,x);
+			for(; x<boundries;x+=0.5){
+				push(y,x);
+				push(y,x);
+			}
+			push(y,x);
+		}
+		
+		var black=doc.getElement( "black" );
+		/**
+		create new object and mesh and set the positions we've previously calculated
+		**/
+		var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
+		line.setMesh((new GLGE.Mesh).setPositions(positions));
+		line.setMaterial(black);
+		line.setZtransparent(true);
+		line.setId('grid');
+		sn.addObject(line);
+		
+	}
 	
 	// -- Event handler for mouse wheel event.
 	M3D.GUI.wheel = function(event){
@@ -1067,7 +1135,7 @@ if (!window["M3D"].GUI){
 		var o = scene.getObjects();
 		for (var i in o) {
 			// don't remove the axises!
-			if ( o[i].getId() != 'xaxis' && o[i].getId() != 'yaxis' && o[i].getId() != 'zaxis' ){
+			if ( o[i].getId() != 'grid' && o[i].getId() != 'xaxis' && o[i].getId() != 'yaxis' && o[i].getId() != 'zaxis' ){
 				scene.removeChild(o[i]);
 				//o[i].removeInstance();
 				log(o[i]);

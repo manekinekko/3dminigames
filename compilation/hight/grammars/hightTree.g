@@ -342,7 +342,7 @@ consequ_list [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 		
 consequ [SymbolTable st] returns [Code c]@init{ c = new Code();}:
   i=siAlors[st] {c=i;}
-  | act=action[st] {c=act;}
+  | act=action[st] {c.append(act);}
   | a=affectation[st] {c=a;} 
   | activCommande[st] {}
   | IDENT
@@ -364,8 +364,12 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	|^(EFFACE_KW typeAcces[st] typeDestination[st]?)
 	|^(GENERATE_KW ta=typeAcces[st]{
 		for(Iterator<Symbol> it = ta.iterator() ; it.hasNext();){
-			c.append(Code.genEntity(it.next()));
+			Symbol e = it.next();
+			c.append("\t");		c.append(Code.genEntity((Entity) e));
+			c.append("\t");		c.append(Code.genAddObject((Entity) e));
 		}	
+	
+	// TO DO -> MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
 	
 	} typeDestination[st]?)				//TO DO
 	|^(WAIT_KW operation[st] timeUnit[st] consequences[st])

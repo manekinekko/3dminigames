@@ -462,7 +462,7 @@ public class Code {
     	
     	Code c = new Code();
 
-    	c.append("function " + def.getName() + "(){\n");
+    	c.append("function " + def.getName() + "() {\n");
     	c.append(def.getCode());
     	c.append("}\n");
 	
@@ -470,12 +470,44 @@ public class Code {
     	
         }
        
-        public static Code genEntity(Symbol ent) {
+        public static Code genEntity(Entity ent) {
     	Code c = new Code();
     	c.append(ent.getName()+" = gen"+ent.getName()+"();\n");
 
     	return c;
-        }        
+        }      
         
-
+        /* Appel de la fonction addObject du moteur3D 
+        	MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
+        */
+        
+        public static Code genAddObject(Entity ent){
+        	
+        	Code c = new Code("MOTEUR3D.addObject(");
+        	String name = ent.getName();
+        	
+        	c.append(name + ",");
+        	c.append(name + ".obj" + ",");
+         	c.append("new Array(");
+        	c.append(ent.getAttribute("posX").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("posY").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("posZ").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("orX").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("orY").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("orZ").getCode());
+        	c.append(",");
+        	c.append(ent.getAttribute("tX").getCode());
+        	c.append(")");
+        	c.append(")\n");
+        	
+        	return c;
+        }
+        	
+        	
+        	
 }

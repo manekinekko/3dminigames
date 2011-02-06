@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-02-05 15:39:06
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g 2011-02-06 20:11:37
 
     package grammars;
 
@@ -232,7 +232,7 @@ public class hightParser extends Parser {
     }
 
     public String[] getTokenNames() { return hightParser.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g"; }
+    public String getGrammarFileName() { return "/home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g"; }
 
 
     public static class game_return extends ParserRuleReturnScope {
@@ -241,7 +241,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "game"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:44:1: game : ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:44:1: game : ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) ;
     public final hightParser.game_return game() throws RecognitionException {
         hightParser.game_return retval = new hightParser.game_return();
         retval.start = input.LT(1);
@@ -286,10 +286,10 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_commande=new RewriteRuleSubtreeStream(adaptor,"rule commande");
         RewriteRuleSubtreeStream stream_iaBasique=new RewriteRuleSubtreeStream(adaptor,"rule iaBasique");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:44:6: ( ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:45:2: ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:44:6: ( ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:45:2: ( gameData FIN )? ( newType FIN )* ( init FIN )+ ( definition ( FIN )? )* ( commande ( FIN )? )+ ( reglesJeu ( FIN )? )+ ( iaBasique ( FIN )? )*
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:45:2: ( gameData FIN )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:45:2: ( gameData FIN )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -298,15 +298,15 @@ public class hightParser extends Parser {
             }
             switch (alt1) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:45:3: gameData FIN
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:45:3: gameData FIN
                     {
-                    pushFollow(FOLLOW_gameData_in_game233);
+                    pushFollow(FOLLOW_gameData_in_game235);
                     gameData1=gameData();
 
                     state._fsp--;
 
                     stream_gameData.add(gameData1.getTree());
-                    FIN2=(Token)match(input,FIN,FOLLOW_FIN_in_game235);  
+                    FIN2=(Token)match(input,FIN,FOLLOW_FIN_in_game237);  
                     stream_FIN.add(FIN2);
 
 
@@ -315,7 +315,7 @@ public class hightParser extends Parser {
 
             }
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:46:2: ( newType FIN )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:46:2: ( newType FIN )*
             loop2:
             do {
                 int alt2=2;
@@ -328,15 +328,15 @@ public class hightParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:46:3: newType FIN
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:46:3: newType FIN
             	    {
-            	    pushFollow(FOLLOW_newType_in_game241);
+            	    pushFollow(FOLLOW_newType_in_game243);
             	    newType3=newType();
 
             	    state._fsp--;
 
             	    stream_newType.add(newType3.getTree());
-            	    FIN4=(Token)match(input,FIN,FOLLOW_FIN_in_game243);  
+            	    FIN4=(Token)match(input,FIN,FOLLOW_FIN_in_game245);  
             	    stream_FIN.add(FIN4);
 
 
@@ -348,7 +348,7 @@ public class hightParser extends Parser {
                 }
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:47:2: ( init FIN )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:47:2: ( init FIN )+
             int cnt3=0;
             loop3:
             do {
@@ -362,15 +362,15 @@ public class hightParser extends Parser {
 
                 switch (alt3) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:47:3: init FIN
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:47:3: init FIN
             	    {
-            	    pushFollow(FOLLOW_init_in_game249);
+            	    pushFollow(FOLLOW_init_in_game251);
             	    init5=init();
 
             	    state._fsp--;
 
             	    stream_init.add(init5.getTree());
-            	    FIN6=(Token)match(input,FIN,FOLLOW_FIN_in_game251);  
+            	    FIN6=(Token)match(input,FIN,FOLLOW_FIN_in_game253);  
             	    stream_FIN.add(FIN6);
 
 
@@ -386,7 +386,7 @@ public class hightParser extends Parser {
                 cnt3++;
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:48:2: ( definition ( FIN )? )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:48:2: ( definition ( FIN )? )*
             loop5:
             do {
                 int alt5=2;
@@ -399,15 +399,15 @@ public class hightParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:48:3: definition ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:48:3: definition ( FIN )?
             	    {
-            	    pushFollow(FOLLOW_definition_in_game257);
+            	    pushFollow(FOLLOW_definition_in_game259);
             	    definition7=definition();
 
             	    state._fsp--;
 
             	    stream_definition.add(definition7.getTree());
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:48:14: ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:48:14: ( FIN )?
             	    int alt4=2;
             	    int LA4_0 = input.LA(1);
 
@@ -416,9 +416,9 @@ public class hightParser extends Parser {
             	    }
             	    switch (alt4) {
             	        case 1 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:48:15: FIN
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:48:15: FIN
             	            {
-            	            FIN8=(Token)match(input,FIN,FOLLOW_FIN_in_game260);  
+            	            FIN8=(Token)match(input,FIN,FOLLOW_FIN_in_game262);  
             	            stream_FIN.add(FIN8);
 
 
@@ -436,7 +436,7 @@ public class hightParser extends Parser {
                 }
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:49:2: ( commande ( FIN )? )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:49:2: ( commande ( FIN )? )+
             int cnt7=0;
             loop7:
             do {
@@ -450,15 +450,15 @@ public class hightParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:49:3: commande ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:49:3: commande ( FIN )?
             	    {
-            	    pushFollow(FOLLOW_commande_in_game268);
+            	    pushFollow(FOLLOW_commande_in_game270);
             	    commande9=commande();
 
             	    state._fsp--;
 
             	    stream_commande.add(commande9.getTree());
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:49:12: ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:49:12: ( FIN )?
             	    int alt6=2;
             	    int LA6_0 = input.LA(1);
 
@@ -467,9 +467,9 @@ public class hightParser extends Parser {
             	    }
             	    switch (alt6) {
             	        case 1 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:49:13: FIN
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:49:13: FIN
             	            {
-            	            FIN10=(Token)match(input,FIN,FOLLOW_FIN_in_game271);  
+            	            FIN10=(Token)match(input,FIN,FOLLOW_FIN_in_game273);  
             	            stream_FIN.add(FIN10);
 
 
@@ -491,7 +491,7 @@ public class hightParser extends Parser {
                 cnt7++;
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:50:2: ( reglesJeu ( FIN )? )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:50:2: ( reglesJeu ( FIN )? )+
             int cnt9=0;
             loop9:
             do {
@@ -505,15 +505,15 @@ public class hightParser extends Parser {
 
                 switch (alt9) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:50:3: reglesJeu ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:50:3: reglesJeu ( FIN )?
             	    {
-            	    pushFollow(FOLLOW_reglesJeu_in_game279);
+            	    pushFollow(FOLLOW_reglesJeu_in_game281);
             	    reglesJeu11=reglesJeu();
 
             	    state._fsp--;
 
             	    stream_reglesJeu.add(reglesJeu11.getTree());
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:50:13: ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:50:13: ( FIN )?
             	    int alt8=2;
             	    int LA8_0 = input.LA(1);
 
@@ -522,9 +522,9 @@ public class hightParser extends Parser {
             	    }
             	    switch (alt8) {
             	        case 1 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:50:14: FIN
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:50:14: FIN
             	            {
-            	            FIN12=(Token)match(input,FIN,FOLLOW_FIN_in_game282);  
+            	            FIN12=(Token)match(input,FIN,FOLLOW_FIN_in_game284);  
             	            stream_FIN.add(FIN12);
 
 
@@ -546,7 +546,7 @@ public class hightParser extends Parser {
                 cnt9++;
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:51:2: ( iaBasique ( FIN )? )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:51:2: ( iaBasique ( FIN )? )*
             loop11:
             do {
                 int alt11=2;
@@ -559,15 +559,15 @@ public class hightParser extends Parser {
 
                 switch (alt11) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:51:3: iaBasique ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:51:3: iaBasique ( FIN )?
             	    {
-            	    pushFollow(FOLLOW_iaBasique_in_game290);
+            	    pushFollow(FOLLOW_iaBasique_in_game292);
             	    iaBasique13=iaBasique();
 
             	    state._fsp--;
 
             	    stream_iaBasique.add(iaBasique13.getTree());
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:51:13: ( FIN )?
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:51:13: ( FIN )?
             	    int alt10=2;
             	    int LA10_0 = input.LA(1);
 
@@ -576,9 +576,9 @@ public class hightParser extends Parser {
             	    }
             	    switch (alt10) {
             	        case 1 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:51:14: FIN
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:51:14: FIN
             	            {
-            	            FIN14=(Token)match(input,FIN,FOLLOW_FIN_in_game293);  
+            	            FIN14=(Token)match(input,FIN,FOLLOW_FIN_in_game295);  
             	            stream_FIN.add(FIN14);
 
 
@@ -599,7 +599,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: init, gameData, commande, reglesJeu, definition, iaBasique, newType
+            // elements: reglesJeu, init, iaBasique, definition, commande, newType, gameData
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -611,18 +611,18 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 52:4: -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:52:7: ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:52:7: ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(GAME_KW, "GAME_KW"), root_1);
 
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:52:17: ( gameData )?
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:52:17: ( gameData )?
                 if ( stream_gameData.hasNext() ) {
                     adaptor.addChild(root_1, stream_gameData.nextTree());
 
                 }
                 stream_gameData.reset();
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:52:27: ( newType )*
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:52:27: ( newType )*
                 while ( stream_newType.hasNext() ) {
                     adaptor.addChild(root_1, stream_newType.nextTree());
 
@@ -636,7 +636,7 @@ public class hightParser extends Parser {
 
                 }
                 stream_init.reset();
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:52:42: ( definition )*
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:52:42: ( definition )*
                 while ( stream_definition.hasNext() ) {
                     adaptor.addChild(root_1, stream_definition.nextTree());
 
@@ -658,7 +658,7 @@ public class hightParser extends Parser {
 
                 }
                 stream_reglesJeu.reset();
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:52:75: ( iaBasique )*
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:52:75: ( iaBasique )*
                 while ( stream_iaBasique.hasNext() ) {
                     adaptor.addChild(root_1, stream_iaBasique.nextTree());
 
@@ -697,7 +697,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "gameData"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:56:1: gameData : GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:56:1: gameData : GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) ;
     public final hightParser.gameData_return gameData() throws RecognitionException {
         hightParser.gameData_return retval = new hightParser.gameData_return();
         retval.start = input.LT(1);
@@ -720,22 +720,22 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_VIRG=new RewriteRuleTokenStream(adaptor,"token VIRG");
         RewriteRuleSubtreeStream stream_attributGame=new RewriteRuleSubtreeStream(adaptor,"rule attributGame");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:56:10: ( GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:57:2: GAME HAS attributGame ( VIRG attributGame )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:56:10: ( GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:57:2: GAME HAS attributGame ( VIRG attributGame )*
             {
-            GAME15=(Token)match(input,GAME,FOLLOW_GAME_in_gameData340);  
+            GAME15=(Token)match(input,GAME,FOLLOW_GAME_in_gameData342);  
             stream_GAME.add(GAME15);
 
-            HAS16=(Token)match(input,HAS,FOLLOW_HAS_in_gameData342);  
+            HAS16=(Token)match(input,HAS,FOLLOW_HAS_in_gameData344);  
             stream_HAS.add(HAS16);
 
-            pushFollow(FOLLOW_attributGame_in_gameData344);
+            pushFollow(FOLLOW_attributGame_in_gameData346);
             attributGame17=attributGame();
 
             state._fsp--;
 
             stream_attributGame.add(attributGame17.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:57:24: ( VIRG attributGame )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:57:24: ( VIRG attributGame )*
             loop12:
             do {
                 int alt12=2;
@@ -748,12 +748,12 @@ public class hightParser extends Parser {
 
                 switch (alt12) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:57:25: VIRG attributGame
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:57:25: VIRG attributGame
             	    {
-            	    VIRG18=(Token)match(input,VIRG,FOLLOW_VIRG_in_gameData347);  
+            	    VIRG18=(Token)match(input,VIRG,FOLLOW_VIRG_in_gameData349);  
             	    stream_VIRG.add(VIRG18);
 
-            	    pushFollow(FOLLOW_attributGame_in_gameData349);
+            	    pushFollow(FOLLOW_attributGame_in_gameData351);
             	    attributGame19=attributGame();
 
             	    state._fsp--;
@@ -783,7 +783,7 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 58:4: -> ^( GAME_ATTRIBUT_KW ( attributGame )+ )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:58:7: ^( GAME_ATTRIBUT_KW ( attributGame )+ )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:58:7: ^( GAME_ATTRIBUT_KW ( attributGame )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(GAME_ATTRIBUT_KW, "GAME_ATTRIBUT_KW"), root_1);
@@ -829,7 +829,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "attributGame"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:61:1: attributGame : ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | SCORE AT FLOAT -> ^( SCORE_KW FLOAT ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:61:1: attributGame : ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | SCORE AT FLOAT -> ^( SCORE_KW FLOAT ) );
     public final hightParser.attributGame_return attributGame() throws RecognitionException {
         hightParser.attributGame_return retval = new hightParser.attributGame_return();
         retval.start = input.LT(1);
@@ -861,7 +861,7 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_SCORE=new RewriteRuleTokenStream(adaptor,"token SCORE");
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:61:14: ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | SCORE AT FLOAT -> ^( SCORE_KW FLOAT ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:61:14: ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | SCORE AT FLOAT -> ^( SCORE_KW FLOAT ) )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -879,15 +879,15 @@ public class hightParser extends Parser {
             }
             switch (alt14) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:62:2: GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:62:2: GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
                     {
-                    GRAVITY_KW20=(Token)match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame374);  
+                    GRAVITY_KW20=(Token)match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame376);  
                     stream_GRAVITY_KW.add(GRAVITY_KW20);
 
-                    AT21=(Token)match(input,AT,FOLLOW_AT_in_attributGame376);  
+                    AT21=(Token)match(input,AT,FOLLOW_AT_in_attributGame378);  
                     stream_AT.add(AT21);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:62:16: ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:62:16: ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -915,9 +915,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt13) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:62:17: FLOAT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:62:17: FLOAT
                             {
-                            FLOAT22=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame379);  
+                            FLOAT22=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame381);  
                             stream_FLOAT.add(FLOAT22);
 
 
@@ -935,7 +935,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 63:5: -> ^( GRAVITY_KW FLOAT )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:63:8: ^( GRAVITY_KW FLOAT )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:63:8: ^( GRAVITY_KW FLOAT )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot(stream_GRAVITY_KW.nextNode(), root_1);
@@ -951,21 +951,21 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:64:5: FLOAT FLOAT FLOAT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:64:5: FLOAT FLOAT FLOAT
                             {
-                            FLOAT23=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame397);  
+                            FLOAT23=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame399);  
                             stream_FLOAT.add(FLOAT23);
 
-                            FLOAT24=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame399);  
+                            FLOAT24=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame401);  
                             stream_FLOAT.add(FLOAT24);
 
-                            FLOAT25=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame401);  
+                            FLOAT25=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame403);  
                             stream_FLOAT.add(FLOAT25);
 
 
 
                             // AST REWRITE
-                            // elements: FLOAT, FLOAT, GRAVITY_KW, FLOAT
+                            // elements: GRAVITY_KW, FLOAT, FLOAT, FLOAT
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -977,7 +977,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 65:5: -> ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:65:8: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:65:8: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot(stream_GRAVITY_KW.nextNode(), root_1);
@@ -1001,15 +1001,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:66:4: SCORE AT FLOAT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:66:4: SCORE AT FLOAT
                     {
-                    SCORE26=(Token)match(input,SCORE,FOLLOW_SCORE_in_attributGame424);  
+                    SCORE26=(Token)match(input,SCORE,FOLLOW_SCORE_in_attributGame426);  
                     stream_SCORE.add(SCORE26);
 
-                    AT27=(Token)match(input,AT,FOLLOW_AT_in_attributGame426);  
+                    AT27=(Token)match(input,AT,FOLLOW_AT_in_attributGame428);  
                     stream_AT.add(AT27);
 
-                    FLOAT28=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame428);  
+                    FLOAT28=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame430);  
                     stream_FLOAT.add(FLOAT28);
 
 
@@ -1027,7 +1027,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 67:4: -> ^( SCORE_KW FLOAT )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:67:7: ^( SCORE_KW FLOAT )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:67:7: ^( SCORE_KW FLOAT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SCORE_KW, "SCORE_KW"), root_1);
@@ -1068,7 +1068,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "newType"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:71:1: newType : TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:71:1: newType : TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) ;
     public final hightParser.newType_return newType() throws RecognitionException {
         hightParser.newType_return retval = new hightParser.newType_return();
         retval.start = input.LT(1);
@@ -1094,25 +1094,25 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_TYPE=new RewriteRuleTokenStream(adaptor,"token TYPE");
         RewriteRuleSubtreeStream stream_subType=new RewriteRuleSubtreeStream(adaptor,"rule subType");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:71:9: ( TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:72:2: TYPE IDENT IS subType ( AND subType )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:71:9: ( TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:72:2: TYPE IDENT IS subType ( AND subType )*
             {
-            TYPE29=(Token)match(input,TYPE,FOLLOW_TYPE_in_newType452);  
+            TYPE29=(Token)match(input,TYPE,FOLLOW_TYPE_in_newType454);  
             stream_TYPE.add(TYPE29);
 
-            IDENT30=(Token)match(input,IDENT,FOLLOW_IDENT_in_newType454);  
+            IDENT30=(Token)match(input,IDENT,FOLLOW_IDENT_in_newType456);  
             stream_IDENT.add(IDENT30);
 
-            IS31=(Token)match(input,IS,FOLLOW_IS_in_newType456);  
+            IS31=(Token)match(input,IS,FOLLOW_IS_in_newType458);  
             stream_IS.add(IS31);
 
-            pushFollow(FOLLOW_subType_in_newType458);
+            pushFollow(FOLLOW_subType_in_newType460);
             subType32=subType();
 
             state._fsp--;
 
             stream_subType.add(subType32.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:72:24: ( AND subType )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:72:24: ( AND subType )*
             loop15:
             do {
                 int alt15=2;
@@ -1125,12 +1125,12 @@ public class hightParser extends Parser {
 
                 switch (alt15) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:72:25: AND subType
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:72:25: AND subType
             	    {
-            	    AND33=(Token)match(input,AND,FOLLOW_AND_in_newType461);  
+            	    AND33=(Token)match(input,AND,FOLLOW_AND_in_newType463);  
             	    stream_AND.add(AND33);
 
-            	    pushFollow(FOLLOW_subType_in_newType463);
+            	    pushFollow(FOLLOW_subType_in_newType465);
             	    subType34=subType();
 
             	    state._fsp--;
@@ -1160,14 +1160,14 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 73:4: -> ^( TYPE IDENT subType ( subType )* )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:73:7: ^( TYPE IDENT subType ( subType )* )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:73:7: ^( TYPE IDENT subType ( subType )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(stream_TYPE.nextNode(), root_1);
 
                 adaptor.addChild(root_1, stream_IDENT.nextNode());
                 adaptor.addChild(root_1, stream_subType.nextTree());
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:73:28: ( subType )*
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:73:28: ( subType )*
                 while ( stream_subType.hasNext() ) {
                     adaptor.addChild(root_1, stream_subType.nextTree());
 
@@ -1206,7 +1206,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "subType"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:76:1: subType : ( IDENT | typeObjet );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:76:1: subType : ( IDENT | typeObjet );
     public final hightParser.subType_return subType() throws RecognitionException {
         hightParser.subType_return retval = new hightParser.subType_return();
         retval.start = input.LT(1);
@@ -1220,7 +1220,7 @@ public class hightParser extends Parser {
         CommonTree IDENT35_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:76:9: ( IDENT | typeObjet )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:76:9: ( IDENT | typeObjet )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1238,11 +1238,11 @@ public class hightParser extends Parser {
             }
             switch (alt16) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:77:2: IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:77:2: IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT35=(Token)match(input,IDENT,FOLLOW_IDENT_in_subType494); 
+                    IDENT35=(Token)match(input,IDENT,FOLLOW_IDENT_in_subType496); 
                     IDENT35_tree = (CommonTree)adaptor.create(IDENT35);
                     adaptor.addChild(root_0, IDENT35_tree);
 
@@ -1250,11 +1250,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:78:4: typeObjet
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:78:4: typeObjet
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeObjet_in_subType499);
+                    pushFollow(FOLLOW_typeObjet_in_subType501);
                     typeObjet36=typeObjet();
 
                     state._fsp--;
@@ -1289,7 +1289,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "init"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:83:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:83:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) );
     public final hightParser.init_return init() throws RecognitionException {
         hightParser.init_return retval = new hightParser.init_return();
         retval.start = input.LT(1);
@@ -1321,7 +1321,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_allocationObject=new RewriteRuleSubtreeStream(adaptor,"rule allocationObject");
         RewriteRuleSubtreeStream stream_declarationObjet=new RewriteRuleSubtreeStream(adaptor,"rule declarationObjet");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:83:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:83:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1352,15 +1352,15 @@ public class hightParser extends Parser {
             }
             switch (alt18) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:84:2: IDENT IS declarationObjet
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:84:2: IDENT IS declarationObjet
                     {
-                    IDENT37=(Token)match(input,IDENT,FOLLOW_IDENT_in_init516);  
+                    IDENT37=(Token)match(input,IDENT,FOLLOW_IDENT_in_init518);  
                     stream_IDENT.add(IDENT37);
 
-                    IS38=(Token)match(input,IS,FOLLOW_IS_in_init518);  
+                    IS38=(Token)match(input,IS,FOLLOW_IS_in_init520);  
                     stream_IS.add(IS38);
 
-                    pushFollow(FOLLOW_declarationObjet_in_init520);
+                    pushFollow(FOLLOW_declarationObjet_in_init522);
                     declarationObjet39=declarationObjet();
 
                     state._fsp--;
@@ -1369,7 +1369,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: declarationObjet, IDENT
+                    // elements: IDENT, declarationObjet
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1381,7 +1381,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 85:4: -> ^( INIT_IS_KW IDENT declarationObjet )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:85:7: ^( INIT_IS_KW IDENT declarationObjet )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:85:7: ^( INIT_IS_KW IDENT declarationObjet )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INIT_IS_KW, "INIT_IS_KW"), root_1);
@@ -1398,24 +1398,24 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:86:4: accesClasse HAS allocationObject ( VIRG allocationObject )*
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:86:4: accesClasse HAS allocationObject ( VIRG allocationObject )*
                     {
-                    pushFollow(FOLLOW_accesClasse_in_init538);
+                    pushFollow(FOLLOW_accesClasse_in_init540);
                     accesClasse40=accesClasse();
 
                     state._fsp--;
 
                     stream_accesClasse.add(accesClasse40.getTree());
-                    HAS41=(Token)match(input,HAS,FOLLOW_HAS_in_init540);  
+                    HAS41=(Token)match(input,HAS,FOLLOW_HAS_in_init542);  
                     stream_HAS.add(HAS41);
 
-                    pushFollow(FOLLOW_allocationObject_in_init542);
+                    pushFollow(FOLLOW_allocationObject_in_init544);
                     allocationObject42=allocationObject();
 
                     state._fsp--;
 
                     stream_allocationObject.add(allocationObject42.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:86:37: ( VIRG allocationObject )*
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:86:37: ( VIRG allocationObject )*
                     loop17:
                     do {
                         int alt17=2;
@@ -1428,12 +1428,12 @@ public class hightParser extends Parser {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:86:38: VIRG allocationObject
+                    	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:86:38: VIRG allocationObject
                     	    {
-                    	    VIRG43=(Token)match(input,VIRG,FOLLOW_VIRG_in_init545);  
+                    	    VIRG43=(Token)match(input,VIRG,FOLLOW_VIRG_in_init547);  
                     	    stream_VIRG.add(VIRG43);
 
-                    	    pushFollow(FOLLOW_allocationObject_in_init547);
+                    	    pushFollow(FOLLOW_allocationObject_in_init549);
                     	    allocationObject44=allocationObject();
 
                     	    state._fsp--;
@@ -1463,7 +1463,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 87:4: -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:87:7: ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:87:7: ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INIT_HAS_KW, "INIT_HAS_KW"), root_1);
@@ -1512,7 +1512,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "declarationObjet"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:91:1: declarationObjet : ( typeEntity ( entityMode )? -> ^( DEC typeEntity ( entityMode )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )? | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:91:1: declarationObjet : ( typeEntity ( entityMode )? -> ^( DEC typeEntity ( entityMode )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )? | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) );
     public final hightParser.declarationObjet_return declarationObjet() throws RecognitionException {
         hightParser.declarationObjet_return retval = new hightParser.declarationObjet_return();
         retval.start = input.LT(1);
@@ -1572,7 +1572,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_entityMode=new RewriteRuleSubtreeStream(adaptor,"rule entityMode");
         RewriteRuleSubtreeStream stream_view=new RewriteRuleSubtreeStream(adaptor,"rule view");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:91:18: ( typeEntity ( entityMode )? -> ^( DEC typeEntity ( entityMode )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )? | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:91:18: ( typeEntity ( entityMode )? -> ^( DEC typeEntity ( entityMode )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )? | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) )
             int alt26=5;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -1609,15 +1609,15 @@ public class hightParser extends Parser {
 
             switch (alt26) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:92:2: typeEntity ( entityMode )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:92:2: typeEntity ( entityMode )?
                     {
-                    pushFollow(FOLLOW_typeEntity_in_declarationObjet576);
+                    pushFollow(FOLLOW_typeEntity_in_declarationObjet578);
                     typeEntity45=typeEntity();
 
                     state._fsp--;
 
                     stream_typeEntity.add(typeEntity45.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:92:13: ( entityMode )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:92:13: ( entityMode )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -1626,9 +1626,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt19) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:92:13: entityMode
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:92:13: entityMode
                             {
-                            pushFollow(FOLLOW_entityMode_in_declarationObjet578);
+                            pushFollow(FOLLOW_entityMode_in_declarationObjet580);
                             entityMode46=entityMode();
 
                             state._fsp--;
@@ -1643,7 +1643,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: entityMode, typeEntity
+                    // elements: typeEntity, entityMode
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1655,13 +1655,13 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 93:4: -> ^( DEC typeEntity ( entityMode )? )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:93:7: ^( DEC typeEntity ( entityMode )? )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:93:7: ^( DEC typeEntity ( entityMode )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DEC, "DEC"), root_1);
 
                         adaptor.addChild(root_1, stream_typeEntity.nextTree());
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:93:24: ( entityMode )?
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:93:24: ( entityMode )?
                         if ( stream_entityMode.hasNext() ) {
                             adaptor.addChild(root_1, stream_entityMode.nextTree());
 
@@ -1677,12 +1677,12 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:4: LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:4: LIST_KW ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
                     {
-                    LIST_KW47=(Token)match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet602);  
+                    LIST_KW47=(Token)match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet604);  
                     stream_LIST_KW.add(LIST_KW47);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:12: ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:12: ( OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )* )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -1691,12 +1691,12 @@ public class hightParser extends Parser {
                     }
                     switch (alt23) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:13: OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )*
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:13: OF ( operation )? ( IDENT ) ( WITH ( operation )? ( IDENT ) )*
                             {
-                            OF48=(Token)match(input,OF,FOLLOW_OF_in_declarationObjet605);  
+                            OF48=(Token)match(input,OF,FOLLOW_OF_in_declarationObjet607);  
                             stream_OF.add(OF48);
 
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:16: ( operation )?
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:16: ( operation )?
                             int alt20=2;
                             int LA20_0 = input.LA(1);
 
@@ -1712,9 +1712,9 @@ public class hightParser extends Parser {
                             }
                             switch (alt20) {
                                 case 1 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:17: operation
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:17: operation
                                     {
-                                    pushFollow(FOLLOW_operation_in_declarationObjet608);
+                                    pushFollow(FOLLOW_operation_in_declarationObjet610);
                                     operation49=operation();
 
                                     state._fsp--;
@@ -1726,16 +1726,16 @@ public class hightParser extends Parser {
 
                             }
 
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:29: ( IDENT )
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:30: IDENT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:29: ( IDENT )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:30: IDENT
                             {
-                            IDENT50=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet613);  
+                            IDENT50=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet615);  
                             stream_IDENT.add(IDENT50);
 
 
                             }
 
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:37: ( WITH ( operation )? ( IDENT ) )*
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:37: ( WITH ( operation )? ( IDENT ) )*
                             loop22:
                             do {
                                 int alt22=2;
@@ -1748,12 +1748,12 @@ public class hightParser extends Parser {
 
                                 switch (alt22) {
                             	case 1 :
-                            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:38: WITH ( operation )? ( IDENT )
+                            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:38: WITH ( operation )? ( IDENT )
                             	    {
-                            	    WITH51=(Token)match(input,WITH,FOLLOW_WITH_in_declarationObjet617);  
+                            	    WITH51=(Token)match(input,WITH,FOLLOW_WITH_in_declarationObjet619);  
                             	    stream_WITH.add(WITH51);
 
-                            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:43: ( operation )?
+                            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:43: ( operation )?
                             	    int alt21=2;
                             	    int LA21_0 = input.LA(1);
 
@@ -1769,9 +1769,9 @@ public class hightParser extends Parser {
                             	    }
                             	    switch (alt21) {
                             	        case 1 :
-                            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:44: operation
+                            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:44: operation
                             	            {
-                            	            pushFollow(FOLLOW_operation_in_declarationObjet620);
+                            	            pushFollow(FOLLOW_operation_in_declarationObjet622);
                             	            operation52=operation();
 
                             	            state._fsp--;
@@ -1783,10 +1783,10 @@ public class hightParser extends Parser {
 
                             	    }
 
-                            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:56: ( IDENT )
-                            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:94:57: IDENT
+                            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:56: ( IDENT )
+                            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:94:57: IDENT
                             	    {
-                            	    IDENT53=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet625);  
+                            	    IDENT53=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet627);  
                             	    stream_IDENT.add(IDENT53);
 
 
@@ -1810,7 +1810,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: LIST_KW, IDENT, operation
+                    // elements: operation, LIST_KW, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1822,7 +1822,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 95:4: -> ^( LIST_KW ( ( operation )? IDENT )+ )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:95:6: ^( LIST_KW ( ( operation )? IDENT )+ )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:95:6: ^( LIST_KW ( ( operation )? IDENT )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(stream_LIST_KW.nextNode(), root_1);
@@ -1831,7 +1831,7 @@ public class hightParser extends Parser {
                             throw new RewriteEarlyExitException();
                         }
                         while ( stream_IDENT.hasNext() ) {
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:95:17: ( operation )?
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:95:17: ( operation )?
                             if ( stream_operation.hasNext() ) {
                                 adaptor.addChild(root_1, stream_operation.nextTree());
 
@@ -1851,12 +1851,12 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:4: CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:4: CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
                     {
-                    CAMERA54=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_declarationObjet654);  
+                    CAMERA54=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_declarationObjet656);  
                     stream_CAMERA.add(CAMERA54);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:11: ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:11: ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) )?
                     int alt24=3;
                     int LA24_0 = input.LA(1);
 
@@ -1868,21 +1868,21 @@ public class hightParser extends Parser {
                     }
                     switch (alt24) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:12: view PERSON
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:12: view PERSON
                             {
-                            pushFollow(FOLLOW_view_in_declarationObjet657);
+                            pushFollow(FOLLOW_view_in_declarationObjet659);
                             view55=view();
 
                             state._fsp--;
 
                             stream_view.add(view55.getTree());
-                            PERSON56=(Token)match(input,PERSON,FOLLOW_PERSON_in_declarationObjet659);  
+                            PERSON56=(Token)match(input,PERSON,FOLLOW_PERSON_in_declarationObjet661);  
                             stream_PERSON.add(PERSON56);
 
 
 
                             // AST REWRITE
-                            // elements: PERSON, view
+                            // elements: view, PERSON
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -1894,7 +1894,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 96:24: -> ^( CAMERA_KW PERSON view )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:27: ^( CAMERA_KW PERSON view )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:27: ^( CAMERA_KW PERSON view )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAMERA_KW, "CAMERA_KW"), root_1);
@@ -1911,9 +1911,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:54: FREE
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:54: FREE
                             {
-                            FREE57=(Token)match(input,FREE,FOLLOW_FREE_in_declarationObjet673);  
+                            FREE57=(Token)match(input,FREE,FOLLOW_FREE_in_declarationObjet675);  
                             stream_FREE.add(FREE57);
 
 
@@ -1931,7 +1931,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 96:59: -> ^( CAMERA_KW FREE )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:96:62: ^( CAMERA_KW FREE )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:96:62: ^( CAMERA_KW FREE )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAMERA_KW, "CAMERA_KW"), root_1);
@@ -1953,12 +1953,12 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:4: MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:4: MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
                     {
-                    MEDIA58=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_declarationObjet688);  
+                    MEDIA58=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_declarationObjet690);  
                     stream_MEDIA.add(MEDIA58);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:10: ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:10: ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
                     int alt25=3;
                     int LA25_0 = input.LA(1);
 
@@ -1970,9 +1970,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt25) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:11: LOOP
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:11: LOOP
                             {
-                            LOOP59=(Token)match(input,LOOP,FOLLOW_LOOP_in_declarationObjet691);  
+                            LOOP59=(Token)match(input,LOOP,FOLLOW_LOOP_in_declarationObjet693);  
                             stream_LOOP.add(LOOP59);
 
 
@@ -1990,7 +1990,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 97:16: -> ^( MEDIA_KW LOOP )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:18: ^( MEDIA_KW LOOP )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:18: ^( MEDIA_KW LOOP )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MEDIA_KW, "MEDIA_KW"), root_1);
@@ -2006,9 +2006,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:37: ONCE
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:37: ONCE
                             {
-                            ONCE60=(Token)match(input,ONCE,FOLLOW_ONCE_in_declarationObjet702);  
+                            ONCE60=(Token)match(input,ONCE,FOLLOW_ONCE_in_declarationObjet704);  
                             stream_ONCE.add(ONCE60);
 
 
@@ -2026,7 +2026,7 @@ public class hightParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 97:42: -> ^( MEDIA_KW ONCE )
                             {
-                                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:97:44: ^( MEDIA_KW ONCE )
+                                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:97:44: ^( MEDIA_KW ONCE )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MEDIA_KW, "MEDIA_KW"), root_1);
@@ -2048,12 +2048,12 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:98:4: IN IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:98:4: IN IDENT
                     {
-                    IN61=(Token)match(input,IN,FOLLOW_IN_in_declarationObjet724);  
+                    IN61=(Token)match(input,IN,FOLLOW_IN_in_declarationObjet726);  
                     stream_IN.add(IN61);
 
-                    IDENT62=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet726);  
+                    IDENT62=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet728);  
                     stream_IDENT.add(IDENT62);
 
 
@@ -2071,7 +2071,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 98:13: -> ^( IN_KW IDENT )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:98:16: ^( IN_KW IDENT )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:98:16: ^( IN_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(IN_KW, "IN_KW"), root_1);
@@ -2112,7 +2112,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "typeEntity"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:101:1: typeEntity : IDENT ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:101:1: typeEntity : IDENT ;
     public final hightParser.typeEntity_return typeEntity() throws RecognitionException {
         hightParser.typeEntity_return retval = new hightParser.typeEntity_return();
         retval.start = input.LT(1);
@@ -2124,12 +2124,12 @@ public class hightParser extends Parser {
         CommonTree IDENT63_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:101:12: ( IDENT )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:102:2: IDENT
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:101:12: ( IDENT )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:102:2: IDENT
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            IDENT63=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeEntity757); 
+            IDENT63=(Token)match(input,IDENT,FOLLOW_IDENT_in_typeEntity759); 
             IDENT63_tree = (CommonTree)adaptor.create(IDENT63);
             adaptor.addChild(root_0, IDENT63_tree);
 
@@ -2160,7 +2160,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "entityMode"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:105:1: entityMode : ( PLAYER | interaction ( dupli )? -> ^( INTERACTION_KW interaction ( dupli )? ) | dupli );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:105:1: entityMode : ( PLAYER | interaction ( dupli )? -> ^( INTERACTION_KW interaction ( dupli )? ) | dupli );
     public final hightParser.entityMode_return entityMode() throws RecognitionException {
         hightParser.entityMode_return retval = new hightParser.entityMode_return();
         retval.start = input.LT(1);
@@ -2179,7 +2179,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_dupli=new RewriteRuleSubtreeStream(adaptor,"rule dupli");
         RewriteRuleSubtreeStream stream_interaction=new RewriteRuleSubtreeStream(adaptor,"rule interaction");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:105:11: ( PLAYER | interaction ( dupli )? -> ^( INTERACTION_KW interaction ( dupli )? ) | dupli )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:105:11: ( PLAYER | interaction ( dupli )? -> ^( INTERACTION_KW interaction ( dupli )? ) | dupli )
             int alt28=3;
             switch ( input.LA(1) ) {
             case PLAYER:
@@ -2208,11 +2208,11 @@ public class hightParser extends Parser {
 
             switch (alt28) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:106:2: PLAYER
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:106:2: PLAYER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PLAYER64=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_entityMode767); 
+                    PLAYER64=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_entityMode769); 
                     PLAYER64_tree = (CommonTree)adaptor.create(PLAYER64);
                     adaptor.addChild(root_0, PLAYER64_tree);
 
@@ -2220,15 +2220,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:107:4: interaction ( dupli )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:107:4: interaction ( dupli )?
                     {
-                    pushFollow(FOLLOW_interaction_in_entityMode772);
+                    pushFollow(FOLLOW_interaction_in_entityMode774);
                     interaction65=interaction();
 
                     state._fsp--;
 
                     stream_interaction.add(interaction65.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:107:16: ( dupli )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:107:16: ( dupli )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -2237,9 +2237,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt27) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:107:16: dupli
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:107:16: dupli
                             {
-                            pushFollow(FOLLOW_dupli_in_entityMode774);
+                            pushFollow(FOLLOW_dupli_in_entityMode776);
                             dupli66=dupli();
 
                             state._fsp--;
@@ -2254,7 +2254,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: interaction, dupli
+                    // elements: dupli, interaction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2266,13 +2266,13 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 107:23: -> ^( INTERACTION_KW interaction ( dupli )? )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:107:25: ^( INTERACTION_KW interaction ( dupli )? )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:107:25: ^( INTERACTION_KW interaction ( dupli )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INTERACTION_KW, "INTERACTION_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_interaction.nextTree());
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:107:54: ( dupli )?
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:107:54: ( dupli )?
                         if ( stream_dupli.hasNext() ) {
                             adaptor.addChild(root_1, stream_dupli.nextTree());
 
@@ -2288,11 +2288,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:108:4: dupli
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:108:4: dupli
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dupli_in_entityMode790);
+                    pushFollow(FOLLOW_dupli_in_entityMode792);
                     dupli67=dupli();
 
                     state._fsp--;
@@ -2327,7 +2327,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "interaction"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:111:1: interaction : ( ALLY | ENEMY | NEUTRAL );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:111:1: interaction : ( ALLY | ENEMY | NEUTRAL );
     public final hightParser.interaction_return interaction() throws RecognitionException {
         hightParser.interaction_return retval = new hightParser.interaction_return();
         retval.start = input.LT(1);
@@ -2339,8 +2339,8 @@ public class hightParser extends Parser {
         CommonTree set68_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:111:13: ( ALLY | ENEMY | NEUTRAL )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:111:13: ( ALLY | ENEMY | NEUTRAL )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -2382,7 +2382,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "dupli"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:117:1: dupli : DUPLICABLE ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:117:1: dupli : DUPLICABLE ;
     public final hightParser.dupli_return dupli() throws RecognitionException {
         hightParser.dupli_return retval = new hightParser.dupli_return();
         retval.start = input.LT(1);
@@ -2394,12 +2394,12 @@ public class hightParser extends Parser {
         CommonTree DUPLICABLE69_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:117:7: ( DUPLICABLE )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:118:2: DUPLICABLE
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:117:7: ( DUPLICABLE )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:118:2: DUPLICABLE
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            DUPLICABLE69=(Token)match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli823); 
+            DUPLICABLE69=(Token)match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli825); 
             DUPLICABLE69_tree = (CommonTree)adaptor.create(DUPLICABLE69);
             adaptor.addChild(root_0, DUPLICABLE69_tree);
 
@@ -2430,7 +2430,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "view"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:121:1: view : ( FIRST | THIRD );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:121:1: view : ( FIRST | THIRD );
     public final hightParser.view_return view() throws RecognitionException {
         hightParser.view_return retval = new hightParser.view_return();
         retval.start = input.LT(1);
@@ -2442,8 +2442,8 @@ public class hightParser extends Parser {
         CommonTree set70_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:121:6: ( FIRST | THIRD )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:121:6: ( FIRST | THIRD )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -2485,7 +2485,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "allocationObject"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:126:1: allocationObject : ( IDENT ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:126:1: allocationObject : ( IDENT ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) );
     public final hightParser.allocationObject_return allocationObject() throws RecognitionException {
         hightParser.allocationObject_return retval = new hightParser.allocationObject_return();
         retval.start = input.LT(1);
@@ -2529,7 +2529,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_typeCoordonnees=new RewriteRuleSubtreeStream(adaptor,"rule typeCoordonnees");
         RewriteRuleSubtreeStream stream_coordinates=new RewriteRuleSubtreeStream(adaptor,"rule coordinates");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:126:18: ( IDENT ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:126:18: ( IDENT ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) )
             int alt30=4;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -2577,12 +2577,12 @@ public class hightParser extends Parser {
 
             switch (alt30) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:127:2: IDENT ( AT valAggregation )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:127:2: IDENT ( AT valAggregation )?
                     {
-                    IDENT71=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject852);  
+                    IDENT71=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject854);  
                     stream_IDENT.add(IDENT71);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:127:8: ( AT valAggregation )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:127:8: ( AT valAggregation )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -2591,12 +2591,12 @@ public class hightParser extends Parser {
                     }
                     switch (alt29) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:127:9: AT valAggregation
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:127:9: AT valAggregation
                             {
-                            AT72=(Token)match(input,AT,FOLLOW_AT_in_allocationObject855);  
+                            AT72=(Token)match(input,AT,FOLLOW_AT_in_allocationObject857);  
                             stream_AT.add(AT72);
 
-                            pushFollow(FOLLOW_valAggregation_in_allocationObject857);
+                            pushFollow(FOLLOW_valAggregation_in_allocationObject859);
                             valAggregation73=valAggregation();
 
                             state._fsp--;
@@ -2611,7 +2611,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, valAggregation
+                    // elements: valAggregation, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2623,13 +2623,13 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 128:4: -> ^( ALLOCATION_KW IDENT ( valAggregation )? )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:128:7: ^( ALLOCATION_KW IDENT ( valAggregation )? )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:128:7: ^( ALLOCATION_KW IDENT ( valAggregation )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_IDENT.nextNode());
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:128:30: ( valAggregation )?
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:128:30: ( valAggregation )?
                         if ( stream_valAggregation.hasNext() ) {
                             adaptor.addChild(root_1, stream_valAggregation.nextTree());
 
@@ -2645,18 +2645,18 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:129:4: typeCoordonnees AT coordinates
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:129:4: typeCoordonnees AT coordinates
                     {
-                    pushFollow(FOLLOW_typeCoordonnees_in_allocationObject887);
+                    pushFollow(FOLLOW_typeCoordonnees_in_allocationObject889);
                     typeCoordonnees74=typeCoordonnees();
 
                     state._fsp--;
 
                     stream_typeCoordonnees.add(typeCoordonnees74.getTree());
-                    AT75=(Token)match(input,AT,FOLLOW_AT_in_allocationObject889);  
+                    AT75=(Token)match(input,AT,FOLLOW_AT_in_allocationObject891);  
                     stream_AT.add(AT75);
 
-                    pushFollow(FOLLOW_coordinates_in_allocationObject891);
+                    pushFollow(FOLLOW_coordinates_in_allocationObject893);
                     coordinates76=coordinates();
 
                     state._fsp--;
@@ -2677,7 +2677,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 130:4: -> ^( ALLOCATION_KW typeCoordonnees coordinates )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:130:7: ^( ALLOCATION_KW typeCoordonnees coordinates )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:130:7: ^( ALLOCATION_KW typeCoordonnees coordinates )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2694,18 +2694,18 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:131:4: attributListeOuObjet AT IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:131:4: attributListeOuObjet AT IDENT
                     {
-                    pushFollow(FOLLOW_attributListeOuObjet_in_allocationObject922);
+                    pushFollow(FOLLOW_attributListeOuObjet_in_allocationObject924);
                     attributListeOuObjet77=attributListeOuObjet();
 
                     state._fsp--;
 
                     stream_attributListeOuObjet.add(attributListeOuObjet77.getTree());
-                    AT78=(Token)match(input,AT,FOLLOW_AT_in_allocationObject924);  
+                    AT78=(Token)match(input,AT,FOLLOW_AT_in_allocationObject926);  
                     stream_AT.add(AT78);
 
-                    IDENT79=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject926);  
+                    IDENT79=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject928);  
                     stream_IDENT.add(IDENT79);
 
 
@@ -2723,7 +2723,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 132:4: -> ^( ALLOCATION_KW attributListeOuObjet IDENT )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:132:7: ^( ALLOCATION_KW attributListeOuObjet IDENT )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:132:7: ^( ALLOCATION_KW attributListeOuObjet IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2740,24 +2740,24 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:133:4: attributTps AT operation timeUnit
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:133:4: attributTps AT operation timeUnit
                     {
-                    pushFollow(FOLLOW_attributTps_in_allocationObject958);
+                    pushFollow(FOLLOW_attributTps_in_allocationObject960);
                     attributTps80=attributTps();
 
                     state._fsp--;
 
                     stream_attributTps.add(attributTps80.getTree());
-                    AT81=(Token)match(input,AT,FOLLOW_AT_in_allocationObject960);  
+                    AT81=(Token)match(input,AT,FOLLOW_AT_in_allocationObject962);  
                     stream_AT.add(AT81);
 
-                    pushFollow(FOLLOW_operation_in_allocationObject962);
+                    pushFollow(FOLLOW_operation_in_allocationObject964);
                     operation82=operation();
 
                     state._fsp--;
 
                     stream_operation.add(operation82.getTree());
-                    pushFollow(FOLLOW_timeUnit_in_allocationObject964);
+                    pushFollow(FOLLOW_timeUnit_in_allocationObject966);
                     timeUnit83=timeUnit();
 
                     state._fsp--;
@@ -2766,7 +2766,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: attributTps, operation, timeUnit
+                    // elements: operation, timeUnit, attributTps
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2778,7 +2778,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 134:4: -> ^( ALLOCATION_KW attributTps operation timeUnit )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:134:7: ^( ALLOCATION_KW attributTps operation timeUnit )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:134:7: ^( ALLOCATION_KW attributTps operation timeUnit )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2821,7 +2821,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "valAggregation"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:137:1: valAggregation : ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | 'true' | 'false' );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:137:1: valAggregation : ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | 'true' | 'false' );
     public final hightParser.valAggregation_return valAggregation() throws RecognitionException {
         hightParser.valAggregation_return retval = new hightParser.valAggregation_return();
         retval.start = input.LT(1);
@@ -2843,7 +2843,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         RewriteRuleSubtreeStream stream_timeUnit=new RewriteRuleSubtreeStream(adaptor,"rule timeUnit");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:137:16: ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | 'true' | 'false' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:137:16: ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | 'true' | 'false' )
             int alt32=4;
             switch ( input.LA(1) ) {
             case FLOAT:
@@ -2895,15 +2895,15 @@ public class hightParser extends Parser {
 
             switch (alt32) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:138:2: operation ( timeUnit )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:138:2: operation ( timeUnit )?
                     {
-                    pushFollow(FOLLOW_operation_in_valAggregation1002);
+                    pushFollow(FOLLOW_operation_in_valAggregation1004);
                     operation84=operation();
 
                     state._fsp--;
 
                     stream_operation.add(operation84.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:138:12: ( timeUnit )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:138:12: ( timeUnit )?
                     int alt31=2;
                     int LA31_0 = input.LA(1);
 
@@ -2912,9 +2912,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt31) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:138:13: timeUnit
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:138:13: timeUnit
                             {
-                            pushFollow(FOLLOW_timeUnit_in_valAggregation1005);
+                            pushFollow(FOLLOW_timeUnit_in_valAggregation1007);
                             timeUnit85=timeUnit();
 
                             state._fsp--;
@@ -2941,13 +2941,13 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 139:4: -> ^( AGGREGATION_KW operation ( timeUnit )? )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:139:7: ^( AGGREGATION_KW operation ( timeUnit )? )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:139:7: ^( AGGREGATION_KW operation ( timeUnit )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(AGGREGATION_KW, "AGGREGATION_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_operation.nextTree());
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:139:34: ( timeUnit )?
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:139:34: ( timeUnit )?
                         if ( stream_timeUnit.hasNext() ) {
                             adaptor.addChild(root_1, stream_timeUnit.nextTree());
 
@@ -2963,9 +2963,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:140:4: IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:140:4: IDENT
                     {
-                    IDENT86=(Token)match(input,IDENT,FOLLOW_IDENT_in_valAggregation1027);  
+                    IDENT86=(Token)match(input,IDENT,FOLLOW_IDENT_in_valAggregation1029);  
                     stream_IDENT.add(IDENT86);
 
 
@@ -2983,7 +2983,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 141:4: -> ^( AGGREGATION_KW IDENT )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:141:7: ^( AGGREGATION_KW IDENT )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:141:7: ^( AGGREGATION_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(AGGREGATION_KW, "AGGREGATION_KW"), root_1);
@@ -2999,11 +2999,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:142:4: 'true'
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:142:4: 'true'
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    string_literal87=(Token)match(input,195,FOLLOW_195_in_valAggregation1043); 
+                    string_literal87=(Token)match(input,195,FOLLOW_195_in_valAggregation1045); 
                     string_literal87_tree = (CommonTree)adaptor.create(string_literal87);
                     adaptor.addChild(root_0, string_literal87_tree);
 
@@ -3011,11 +3011,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:143:4: 'false'
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:143:4: 'false'
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    string_literal88=(Token)match(input,196,FOLLOW_196_in_valAggregation1048); 
+                    string_literal88=(Token)match(input,196,FOLLOW_196_in_valAggregation1050); 
                     string_literal88_tree = (CommonTree)adaptor.create(string_literal88);
                     adaptor.addChild(root_0, string_literal88_tree);
 
@@ -3048,7 +3048,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "definition"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:147:1: definition : DEFINITION_KW IDENT MEANS consequences ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:147:1: definition : DEFINITION_KW IDENT MEANS consequences ;
     public final hightParser.definition_return definition() throws RecognitionException {
         hightParser.definition_return retval = new hightParser.definition_return();
         retval.start = input.LT(1);
@@ -3066,21 +3066,21 @@ public class hightParser extends Parser {
         CommonTree MEANS91_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:147:12: ( DEFINITION_KW IDENT MEANS consequences )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:147:14: DEFINITION_KW IDENT MEANS consequences
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:147:12: ( DEFINITION_KW IDENT MEANS consequences )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:147:14: DEFINITION_KW IDENT MEANS consequences
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            DEFINITION_KW89=(Token)match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition1061); 
+            DEFINITION_KW89=(Token)match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition1063); 
             DEFINITION_KW89_tree = (CommonTree)adaptor.create(DEFINITION_KW89);
             root_0 = (CommonTree)adaptor.becomeRoot(DEFINITION_KW89_tree, root_0);
 
-            IDENT90=(Token)match(input,IDENT,FOLLOW_IDENT_in_definition1064); 
+            IDENT90=(Token)match(input,IDENT,FOLLOW_IDENT_in_definition1066); 
             IDENT90_tree = (CommonTree)adaptor.create(IDENT90);
             adaptor.addChild(root_0, IDENT90_tree);
 
-            MEANS91=(Token)match(input,MEANS,FOLLOW_MEANS_in_definition1066); 
-            pushFollow(FOLLOW_consequences_in_definition1069);
+            MEANS91=(Token)match(input,MEANS,FOLLOW_MEANS_in_definition1068); 
+            pushFollow(FOLLOW_consequences_in_definition1071);
             consequences92=consequences();
 
             state._fsp--;
@@ -3113,7 +3113,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "consequences"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:149:1: consequences : consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:149:1: consequences : consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) ;
     public final hightParser.consequences_return consequences() throws RecognitionException {
         hightParser.consequences_return retval = new hightParser.consequences_return();
         retval.start = input.LT(1);
@@ -3130,16 +3130,16 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_VIRG=new RewriteRuleTokenStream(adaptor,"token VIRG");
         RewriteRuleSubtreeStream stream_consequ=new RewriteRuleSubtreeStream(adaptor,"rule consequ");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:149:14: ( consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:150:2: consequ ( VIRG consequ )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:149:14: ( consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:150:2: consequ ( VIRG consequ )*
             {
-            pushFollow(FOLLOW_consequ_in_consequences1078);
+            pushFollow(FOLLOW_consequ_in_consequences1080);
             consequ93=consequ();
 
             state._fsp--;
 
             stream_consequ.add(consequ93.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:150:10: ( VIRG consequ )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:150:10: ( VIRG consequ )*
             loop33:
             do {
                 int alt33=2;
@@ -3152,12 +3152,12 @@ public class hightParser extends Parser {
 
                 switch (alt33) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:150:11: VIRG consequ
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:150:11: VIRG consequ
             	    {
-            	    VIRG94=(Token)match(input,VIRG,FOLLOW_VIRG_in_consequences1081);  
+            	    VIRG94=(Token)match(input,VIRG,FOLLOW_VIRG_in_consequences1083);  
             	    stream_VIRG.add(VIRG94);
 
-            	    pushFollow(FOLLOW_consequ_in_consequences1083);
+            	    pushFollow(FOLLOW_consequ_in_consequences1085);
             	    consequ95=consequ();
 
             	    state._fsp--;
@@ -3187,7 +3187,7 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 151:4: -> ^( CONSEQUENCES_KW ( consequ )+ )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:151:6: ^( CONSEQUENCES_KW ( consequ )+ )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:151:6: ^( CONSEQUENCES_KW ( consequ )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CONSEQUENCES_KW, "CONSEQUENCES_KW"), root_1);
@@ -3233,7 +3233,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "consequ"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:154:1: consequ : ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW | DEFEAT_KW );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:154:1: consequ : ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW | DEFEAT_KW );
     public final hightParser.consequ_return consequ() throws RecognitionException {
         hightParser.consequ_return retval = new hightParser.consequ_return();
         retval.start = input.LT(1);
@@ -3257,7 +3257,7 @@ public class hightParser extends Parser {
         CommonTree DEFEAT_KW102_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:154:9: ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW | DEFEAT_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:154:9: ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW | DEFEAT_KW )
             int alt34=7;
             switch ( input.LA(1) ) {
             case IF_KW:
@@ -3341,11 +3341,11 @@ public class hightParser extends Parser {
 
             switch (alt34) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:155:3: siAlors
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:155:3: siAlors
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_siAlors_in_consequ1109);
+                    pushFollow(FOLLOW_siAlors_in_consequ1111);
                     siAlors96=siAlors();
 
                     state._fsp--;
@@ -3355,11 +3355,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:156:5: action
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:156:5: action
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_action_in_consequ1115);
+                    pushFollow(FOLLOW_action_in_consequ1117);
                     action97=action();
 
                     state._fsp--;
@@ -3369,11 +3369,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:157:5: affectation
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:157:5: affectation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_affectation_in_consequ1121);
+                    pushFollow(FOLLOW_affectation_in_consequ1123);
                     affectation98=affectation();
 
                     state._fsp--;
@@ -3383,11 +3383,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:158:5: activCommande
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:158:5: activCommande
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_activCommande_in_consequ1127);
+                    pushFollow(FOLLOW_activCommande_in_consequ1129);
                     activCommande99=activCommande();
 
                     state._fsp--;
@@ -3397,11 +3397,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:159:5: IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:159:5: IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT100=(Token)match(input,IDENT,FOLLOW_IDENT_in_consequ1133); 
+                    IDENT100=(Token)match(input,IDENT,FOLLOW_IDENT_in_consequ1135); 
                     IDENT100_tree = (CommonTree)adaptor.create(IDENT100);
                     adaptor.addChild(root_0, IDENT100_tree);
 
@@ -3409,11 +3409,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:160:5: VICTORY_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:160:5: VICTORY_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW101=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1139); 
+                    VICTORY_KW101=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1141); 
                     VICTORY_KW101_tree = (CommonTree)adaptor.create(VICTORY_KW101);
                     adaptor.addChild(root_0, VICTORY_KW101_tree);
 
@@ -3421,11 +3421,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:161:5: DEFEAT_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:161:5: DEFEAT_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW102=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1145); 
+                    DEFEAT_KW102=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1147); 
                     DEFEAT_KW102_tree = (CommonTree)adaptor.create(DEFEAT_KW102);
                     adaptor.addChild(root_0, DEFEAT_KW102_tree);
 
@@ -3458,7 +3458,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "action"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:164:1: action : ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:164:1: action : ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW );
     public final hightParser.action_return action() throws RecognitionException {
         hightParser.action_return retval = new hightParser.action_return();
         retval.start = input.LT(1);
@@ -3536,7 +3536,7 @@ public class hightParser extends Parser {
         CommonTree SAVE_KW136_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:164:8: ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:164:8: ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW )
             int alt42=7;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -3615,17 +3615,17 @@ public class hightParser extends Parser {
 
             switch (alt42) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:165:2: accesClasse actionObjet
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:165:2: accesClasse actionObjet
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_action1157);
+                    pushFollow(FOLLOW_accesClasse_in_action1159);
                     accesClasse103=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse103.getTree());
-                    pushFollow(FOLLOW_actionObjet_in_action1159);
+                    pushFollow(FOLLOW_actionObjet_in_action1161);
                     actionObjet104=actionObjet();
 
                     state._fsp--;
@@ -3635,7 +3635,7 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:166:4: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:166:4: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3650,7 +3650,7 @@ public class hightParser extends Parser {
                         throw mse;
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:166:19: ( ENDS_KW | STARTS_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:166:19: ( ENDS_KW | STARTS_KW )
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -3668,9 +3668,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:166:20: ENDS_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:166:20: ENDS_KW
                             {
-                            ENDS_KW106=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1173); 
+                            ENDS_KW106=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1175); 
                             ENDS_KW106_tree = (CommonTree)adaptor.create(ENDS_KW106);
                             root_0 = (CommonTree)adaptor.becomeRoot(ENDS_KW106_tree, root_0);
 
@@ -3678,9 +3678,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:166:30: STARTS_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:166:30: STARTS_KW
                             {
-                            STARTS_KW107=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1177); 
+                            STARTS_KW107=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1179); 
                             STARTS_KW107_tree = (CommonTree)adaptor.create(STARTS_KW107);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTS_KW107_tree, root_0);
 
@@ -3694,11 +3694,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:4: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:4: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:4: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:4: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW )
                     int alt36=4;
                     switch ( input.LA(1) ) {
                     case PAUSE_KW:
@@ -3730,9 +3730,9 @@ public class hightParser extends Parser {
 
                     switch (alt36) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:5: PAUSE_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:5: PAUSE_KW
                             {
-                            PAUSE_KW108=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1185); 
+                            PAUSE_KW108=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1187); 
                             PAUSE_KW108_tree = (CommonTree)adaptor.create(PAUSE_KW108);
                             root_0 = (CommonTree)adaptor.becomeRoot(PAUSE_KW108_tree, root_0);
 
@@ -3740,9 +3740,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:17: MUTE_KW ( ON | OFF )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:17: MUTE_KW ( ON | OFF )
                             {
-                            MUTE_KW109=(Token)match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1190); 
+                            MUTE_KW109=(Token)match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1192); 
                             MUTE_KW109_tree = (CommonTree)adaptor.create(MUTE_KW109);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUTE_KW109_tree, root_0);
 
@@ -3761,9 +3761,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:39: PLAY_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:39: PLAY_KW
                             {
-                            PLAY_KW111=(Token)match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1203); 
+                            PLAY_KW111=(Token)match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1205); 
                             PLAY_KW111_tree = (CommonTree)adaptor.create(PLAY_KW111);
                             root_0 = (CommonTree)adaptor.becomeRoot(PLAY_KW111_tree, root_0);
 
@@ -3771,9 +3771,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:167:50: STOP_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:167:50: STOP_KW
                             {
-                            STOP_KW112=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_action1208); 
+                            STOP_KW112=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_action1210); 
                             STOP_KW112_tree = (CommonTree)adaptor.create(STOP_KW112);
                             root_0 = (CommonTree)adaptor.becomeRoot(STOP_KW112_tree, root_0);
 
@@ -3783,7 +3783,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    IDENT113=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1213); 
+                    IDENT113=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1215); 
                     IDENT113_tree = (CommonTree)adaptor.create(IDENT113);
                     adaptor.addChild(root_0, IDENT113_tree);
 
@@ -3791,28 +3791,28 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:168:4: BLOCK_KW transformation OF accesClasse coordinates
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:168:4: BLOCK_KW transformation OF accesClasse coordinates
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    BLOCK_KW114=(Token)match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1218); 
+                    BLOCK_KW114=(Token)match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1220); 
                     BLOCK_KW114_tree = (CommonTree)adaptor.create(BLOCK_KW114);
                     root_0 = (CommonTree)adaptor.becomeRoot(BLOCK_KW114_tree, root_0);
 
-                    pushFollow(FOLLOW_transformation_in_action1221);
+                    pushFollow(FOLLOW_transformation_in_action1223);
                     transformation115=transformation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, transformation115.getTree());
-                    OF116=(Token)match(input,OF,FOLLOW_OF_in_action1223); 
-                    pushFollow(FOLLOW_accesClasse_in_action1226);
+                    OF116=(Token)match(input,OF,FOLLOW_OF_in_action1225); 
+                    pushFollow(FOLLOW_accesClasse_in_action1228);
                     accesClasse117=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse117.getTree());
-                    pushFollow(FOLLOW_coordinates_in_action1228);
+                    pushFollow(FOLLOW_coordinates_in_action1230);
                     coordinates118=coordinates();
 
                     state._fsp--;
@@ -3822,11 +3822,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:4: ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:4: ( EFFACE_KW | GENERATE_KW ) ( accesLocal | operation ( IDENT | accesGlobal ) ) ( ( IN | ON ) accesLocal | AT coordinates )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:4: ( EFFACE_KW | GENERATE_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:4: ( EFFACE_KW | GENERATE_KW )
                     int alt37=2;
                     int LA37_0 = input.LA(1);
 
@@ -3844,9 +3844,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt37) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:5: EFFACE_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:5: EFFACE_KW
                             {
-                            EFFACE_KW119=(Token)match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1234); 
+                            EFFACE_KW119=(Token)match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1236); 
                             EFFACE_KW119_tree = (CommonTree)adaptor.create(EFFACE_KW119);
                             root_0 = (CommonTree)adaptor.becomeRoot(EFFACE_KW119_tree, root_0);
 
@@ -3854,9 +3854,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:18: GENERATE_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:18: GENERATE_KW
                             {
-                            GENERATE_KW120=(Token)match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1239); 
+                            GENERATE_KW120=(Token)match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1241); 
                             GENERATE_KW120_tree = (CommonTree)adaptor.create(GENERATE_KW120);
                             root_0 = (CommonTree)adaptor.becomeRoot(GENERATE_KW120_tree, root_0);
 
@@ -3866,7 +3866,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:32: ( accesLocal | operation ( IDENT | accesGlobal ) )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:32: ( accesLocal | operation ( IDENT | accesGlobal ) )
                     int alt39=2;
                     switch ( input.LA(1) ) {
                     case IDENT:
@@ -3914,9 +3914,9 @@ public class hightParser extends Parser {
 
                     switch (alt39) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:33: accesLocal
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:33: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_action1244);
+                            pushFollow(FOLLOW_accesLocal_in_action1246);
                             accesLocal121=accesLocal();
 
                             state._fsp--;
@@ -3926,15 +3926,15 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:46: operation ( IDENT | accesGlobal )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:46: operation ( IDENT | accesGlobal )
                             {
-                            pushFollow(FOLLOW_operation_in_action1248);
+                            pushFollow(FOLLOW_operation_in_action1250);
                             operation122=operation();
 
                             state._fsp--;
 
                             adaptor.addChild(root_0, operation122.getTree());
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:56: ( IDENT | accesGlobal )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:56: ( IDENT | accesGlobal )
                             int alt38=2;
                             int LA38_0 = input.LA(1);
 
@@ -3952,9 +3952,9 @@ public class hightParser extends Parser {
                             }
                             switch (alt38) {
                                 case 1 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:57: IDENT
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:57: IDENT
                                     {
-                                    IDENT123=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1251); 
+                                    IDENT123=(Token)match(input,IDENT,FOLLOW_IDENT_in_action1253); 
                                     IDENT123_tree = (CommonTree)adaptor.create(IDENT123);
                                     adaptor.addChild(root_0, IDENT123_tree);
 
@@ -3962,9 +3962,9 @@ public class hightParser extends Parser {
                                     }
                                     break;
                                 case 2 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:65: accesGlobal
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:65: accesGlobal
                                     {
-                                    pushFollow(FOLLOW_accesGlobal_in_action1255);
+                                    pushFollow(FOLLOW_accesGlobal_in_action1257);
                                     accesGlobal124=accesGlobal();
 
                                     state._fsp--;
@@ -3982,7 +3982,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:79: ( ( IN | ON ) accesLocal | AT coordinates )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:79: ( ( IN | ON ) accesLocal | AT coordinates )?
                     int alt41=3;
                     int LA41_0 = input.LA(1);
 
@@ -3994,9 +3994,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt41) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:80: ( IN | ON ) accesLocal
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:80: ( IN | ON ) accesLocal
                             {
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:80: ( IN | ON )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:80: ( IN | ON )
                             int alt40=2;
                             int LA40_0 = input.LA(1);
 
@@ -4014,23 +4014,23 @@ public class hightParser extends Parser {
                             }
                             switch (alt40) {
                                 case 1 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:81: IN
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:81: IN
                                     {
-                                    IN125=(Token)match(input,IN,FOLLOW_IN_in_action1261); 
+                                    IN125=(Token)match(input,IN,FOLLOW_IN_in_action1263); 
 
                                     }
                                     break;
                                 case 2 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:85: ON
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:85: ON
                                     {
-                                    ON126=(Token)match(input,ON,FOLLOW_ON_in_action1264); 
+                                    ON126=(Token)match(input,ON,FOLLOW_ON_in_action1266); 
 
                                     }
                                     break;
 
                             }
 
-                            pushFollow(FOLLOW_accesLocal_in_action1268);
+                            pushFollow(FOLLOW_accesLocal_in_action1270);
                             accesLocal127=accesLocal();
 
                             state._fsp--;
@@ -4040,10 +4040,10 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:169:103: AT coordinates
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:169:103: AT coordinates
                             {
-                            AT128=(Token)match(input,AT,FOLLOW_AT_in_action1272); 
-                            pushFollow(FOLLOW_coordinates_in_action1275);
+                            AT128=(Token)match(input,AT,FOLLOW_AT_in_action1274); 
+                            pushFollow(FOLLOW_coordinates_in_action1277);
                             coordinates129=coordinates();
 
                             state._fsp--;
@@ -4059,43 +4059,43 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:170:4: WAIT_KW operation timeUnit THEN consequences ENDWAIT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:170:4: WAIT_KW operation timeUnit THEN consequences ENDWAIT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    WAIT_KW130=(Token)match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1282); 
+                    WAIT_KW130=(Token)match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1284); 
                     WAIT_KW130_tree = (CommonTree)adaptor.create(WAIT_KW130);
                     root_0 = (CommonTree)adaptor.becomeRoot(WAIT_KW130_tree, root_0);
 
-                    pushFollow(FOLLOW_operation_in_action1285);
+                    pushFollow(FOLLOW_operation_in_action1287);
                     operation131=operation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation131.getTree());
-                    pushFollow(FOLLOW_timeUnit_in_action1287);
+                    pushFollow(FOLLOW_timeUnit_in_action1289);
                     timeUnit132=timeUnit();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, timeUnit132.getTree());
-                    THEN133=(Token)match(input,THEN,FOLLOW_THEN_in_action1289); 
-                    pushFollow(FOLLOW_consequences_in_action1292);
+                    THEN133=(Token)match(input,THEN,FOLLOW_THEN_in_action1291); 
+                    pushFollow(FOLLOW_consequences_in_action1294);
                     consequences134=consequences();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, consequences134.getTree());
-                    ENDWAIT135=(Token)match(input,ENDWAIT,FOLLOW_ENDWAIT_in_action1294); 
+                    ENDWAIT135=(Token)match(input,ENDWAIT,FOLLOW_ENDWAIT_in_action1296); 
 
                     }
                     break;
                 case 7 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:171:4: SAVE_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:171:4: SAVE_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    SAVE_KW136=(Token)match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1300); 
+                    SAVE_KW136=(Token)match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1302); 
                     SAVE_KW136_tree = (CommonTree)adaptor.create(SAVE_KW136);
                     adaptor.addChild(root_0, SAVE_KW136_tree);
 
@@ -4128,7 +4128,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "actionObjet"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:174:1: actionObjet : ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions ) | EQUIP ( accesLocal | NEXT | PREVIOUS ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:174:1: actionObjet : ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions ) | EQUIP ( accesLocal | NEXT | PREVIOUS ) );
     public final hightParser.actionObjet_return actionObjet() throws RecognitionException {
         hightParser.actionObjet_return retval = new hightParser.actionObjet_return();
         retval.start = input.LT(1);
@@ -4162,7 +4162,7 @@ public class hightParser extends Parser {
         CommonTree PREVIOUS148_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:174:13: ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions ) | EQUIP ( accesLocal | NEXT | PREVIOUS ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:174:13: ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions ) | EQUIP ( accesLocal | NEXT | PREVIOUS ) )
             int alt45=4;
             switch ( input.LA(1) ) {
             case DIES_KW:
@@ -4199,11 +4199,11 @@ public class hightParser extends Parser {
 
             switch (alt45) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:175:3: DIES_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:175:3: DIES_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DIES_KW137=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1312); 
+                    DIES_KW137=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1314); 
                     DIES_KW137_tree = (CommonTree)adaptor.create(DIES_KW137);
                     adaptor.addChild(root_0, DIES_KW137_tree);
 
@@ -4211,11 +4211,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:176:5: actionCommandePressee
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:176:5: actionCommandePressee
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1318);
+                    pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1320);
                     actionCommandePressee138=actionCommandePressee();
 
                     state._fsp--;
@@ -4225,17 +4225,17 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:177:5: actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:177:5: actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionObjet1324);
+                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionObjet1326);
                     actionCommandeMaintenue139=actionCommandeMaintenue();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, actionCommandeMaintenue139.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:177:29: ( DURING operation timeUnit | UNTIL conditions )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:177:29: ( DURING operation timeUnit | UNTIL conditions )
                     int alt43=2;
                     int LA43_0 = input.LA(1);
 
@@ -4253,19 +4253,19 @@ public class hightParser extends Parser {
                     }
                     switch (alt43) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:177:30: DURING operation timeUnit
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:177:30: DURING operation timeUnit
                             {
-                            DURING140=(Token)match(input,DURING,FOLLOW_DURING_in_actionObjet1327); 
+                            DURING140=(Token)match(input,DURING,FOLLOW_DURING_in_actionObjet1329); 
                             DURING140_tree = (CommonTree)adaptor.create(DURING140);
                             root_0 = (CommonTree)adaptor.becomeRoot(DURING140_tree, root_0);
 
-                            pushFollow(FOLLOW_operation_in_actionObjet1330);
+                            pushFollow(FOLLOW_operation_in_actionObjet1332);
                             operation141=operation();
 
                             state._fsp--;
 
                             adaptor.addChild(root_0, operation141.getTree());
-                            pushFollow(FOLLOW_timeUnit_in_actionObjet1332);
+                            pushFollow(FOLLOW_timeUnit_in_actionObjet1334);
                             timeUnit142=timeUnit();
 
                             state._fsp--;
@@ -4275,13 +4275,13 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:177:59: UNTIL conditions
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:177:59: UNTIL conditions
                             {
-                            UNTIL143=(Token)match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1336); 
+                            UNTIL143=(Token)match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1338); 
                             UNTIL143_tree = (CommonTree)adaptor.create(UNTIL143);
                             root_0 = (CommonTree)adaptor.becomeRoot(UNTIL143_tree, root_0);
 
-                            pushFollow(FOLLOW_conditions_in_actionObjet1339);
+                            pushFollow(FOLLOW_conditions_in_actionObjet1341);
                             conditions144=conditions();
 
                             state._fsp--;
@@ -4297,15 +4297,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:178:5: EQUIP ( accesLocal | NEXT | PREVIOUS )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:178:5: EQUIP ( accesLocal | NEXT | PREVIOUS )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    EQUIP145=(Token)match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1346); 
+                    EQUIP145=(Token)match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1348); 
                     EQUIP145_tree = (CommonTree)adaptor.create(EQUIP145);
                     root_0 = (CommonTree)adaptor.becomeRoot(EQUIP145_tree, root_0);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:178:12: ( accesLocal | NEXT | PREVIOUS )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:178:12: ( accesLocal | NEXT | PREVIOUS )
                     int alt44=3;
                     switch ( input.LA(1) ) {
                     case IDENT:
@@ -4334,9 +4334,9 @@ public class hightParser extends Parser {
 
                     switch (alt44) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:178:13: accesLocal
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:178:13: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_actionObjet1350);
+                            pushFollow(FOLLOW_accesLocal_in_actionObjet1352);
                             accesLocal146=accesLocal();
 
                             state._fsp--;
@@ -4346,9 +4346,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:178:26: NEXT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:178:26: NEXT
                             {
-                            NEXT147=(Token)match(input,NEXT,FOLLOW_NEXT_in_actionObjet1354); 
+                            NEXT147=(Token)match(input,NEXT,FOLLOW_NEXT_in_actionObjet1356); 
                             NEXT147_tree = (CommonTree)adaptor.create(NEXT147);
                             adaptor.addChild(root_0, NEXT147_tree);
 
@@ -4356,9 +4356,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:178:33: PREVIOUS
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:178:33: PREVIOUS
                             {
-                            PREVIOUS148=(Token)match(input,PREVIOUS,FOLLOW_PREVIOUS_in_actionObjet1358); 
+                            PREVIOUS148=(Token)match(input,PREVIOUS,FOLLOW_PREVIOUS_in_actionObjet1360); 
                             PREVIOUS148_tree = (CommonTree)adaptor.create(PREVIOUS148);
                             adaptor.addChild(root_0, PREVIOUS148_tree);
 
@@ -4397,7 +4397,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "transformation"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:181:1: transformation : ( TRANSLATION | ROTATION | SCALE );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:181:1: transformation : ( TRANSLATION | ROTATION | SCALE );
     public final hightParser.transformation_return transformation() throws RecognitionException {
         hightParser.transformation_return retval = new hightParser.transformation_return();
         retval.start = input.LT(1);
@@ -4409,8 +4409,8 @@ public class hightParser extends Parser {
         CommonTree set149_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:181:16: ( TRANSLATION | ROTATION | SCALE )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:181:16: ( TRANSLATION | ROTATION | SCALE )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4452,7 +4452,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "coordinates"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:187:1: coordinates : operation operation operation -> ^( COORDINATE_KW operation operation operation ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:187:1: coordinates : operation operation operation -> ^( COORDINATE_KW operation operation operation ) ;
     public final hightParser.coordinates_return coordinates() throws RecognitionException {
         hightParser.coordinates_return retval = new hightParser.coordinates_return();
         retval.start = input.LT(1);
@@ -4468,22 +4468,22 @@ public class hightParser extends Parser {
 
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:187:13: ( operation operation operation -> ^( COORDINATE_KW operation operation operation ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:188:2: operation operation operation
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:187:13: ( operation operation operation -> ^( COORDINATE_KW operation operation operation ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:188:2: operation operation operation
             {
-            pushFollow(FOLLOW_operation_in_coordinates1398);
+            pushFollow(FOLLOW_operation_in_coordinates1400);
             operation150=operation();
 
             state._fsp--;
 
             stream_operation.add(operation150.getTree());
-            pushFollow(FOLLOW_operation_in_coordinates1400);
+            pushFollow(FOLLOW_operation_in_coordinates1402);
             operation151=operation();
 
             state._fsp--;
 
             stream_operation.add(operation151.getTree());
-            pushFollow(FOLLOW_operation_in_coordinates1402);
+            pushFollow(FOLLOW_operation_in_coordinates1404);
             operation152=operation();
 
             state._fsp--;
@@ -4504,7 +4504,7 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 189:4: -> ^( COORDINATE_KW operation operation operation )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:189:7: ^( COORDINATE_KW operation operation operation )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:189:7: ^( COORDINATE_KW operation operation operation )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(COORDINATE_KW, "COORDINATE_KW"), root_1);
@@ -4545,7 +4545,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "commande"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:194:1: commande : COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )* ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:194:1: commande : COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )* ;
     public final hightParser.commande_return commande() throws RecognitionException {
         hightParser.commande_return retval = new hightParser.commande_return();
         retval.start = input.LT(1);
@@ -4567,16 +4567,16 @@ public class hightParser extends Parser {
         CommonTree VIRG157_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:194:10: ( COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:195:2: COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:194:10: ( COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:195:2: COMMAND_KW ( IDENT IS )? actionCommande ( VIRG actionCommande )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            COMMAND_KW153=(Token)match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande1431); 
+            COMMAND_KW153=(Token)match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande1433); 
             COMMAND_KW153_tree = (CommonTree)adaptor.create(COMMAND_KW153);
             root_0 = (CommonTree)adaptor.becomeRoot(COMMAND_KW153_tree, root_0);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:195:14: ( IDENT IS )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:195:14: ( IDENT IS )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -4585,26 +4585,26 @@ public class hightParser extends Parser {
             }
             switch (alt46) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:195:15: IDENT IS
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:195:15: IDENT IS
                     {
-                    IDENT154=(Token)match(input,IDENT,FOLLOW_IDENT_in_commande1435); 
+                    IDENT154=(Token)match(input,IDENT,FOLLOW_IDENT_in_commande1437); 
                     IDENT154_tree = (CommonTree)adaptor.create(IDENT154);
                     adaptor.addChild(root_0, IDENT154_tree);
 
-                    IS155=(Token)match(input,IS,FOLLOW_IS_in_commande1437); 
+                    IS155=(Token)match(input,IS,FOLLOW_IS_in_commande1439); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_actionCommande_in_commande1442);
+            pushFollow(FOLLOW_actionCommande_in_commande1444);
             actionCommande156=actionCommande();
 
             state._fsp--;
 
             adaptor.addChild(root_0, actionCommande156.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:195:42: ( VIRG actionCommande )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:195:42: ( VIRG actionCommande )*
             loop47:
             do {
                 int alt47=2;
@@ -4617,10 +4617,10 @@ public class hightParser extends Parser {
 
                 switch (alt47) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:195:43: VIRG actionCommande
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:195:43: VIRG actionCommande
             	    {
-            	    VIRG157=(Token)match(input,VIRG,FOLLOW_VIRG_in_commande1445); 
-            	    pushFollow(FOLLOW_actionCommande_in_commande1448);
+            	    VIRG157=(Token)match(input,VIRG,FOLLOW_VIRG_in_commande1447); 
+            	    pushFollow(FOLLOW_actionCommande_in_commande1450);
             	    actionCommande158=actionCommande();
 
             	    state._fsp--;
@@ -4662,7 +4662,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "actionCommande"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:198:1: actionCommande : ( MOUSE souris FOR actionCommandeType -> ^( MOUSE_KW souris actionCommandeType ) | KEY clavier FOR actionCommandeType -> ^( KEY_KW clavier actionCommandeType ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:198:1: actionCommande : ( MOUSE souris FOR actionCommandeType -> ^( MOUSE_KW souris actionCommandeType ) | KEY clavier FOR actionCommandeType -> ^( KEY_KW clavier actionCommandeType ) );
     public final hightParser.actionCommande_return actionCommande() throws RecognitionException {
         hightParser.actionCommande_return retval = new hightParser.actionCommande_return();
         retval.start = input.LT(1);
@@ -4693,7 +4693,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_actionCommandeType=new RewriteRuleSubtreeStream(adaptor,"rule actionCommandeType");
         RewriteRuleSubtreeStream stream_clavier=new RewriteRuleSubtreeStream(adaptor,"rule clavier");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:198:16: ( MOUSE souris FOR actionCommandeType -> ^( MOUSE_KW souris actionCommandeType ) | KEY clavier FOR actionCommandeType -> ^( KEY_KW clavier actionCommandeType ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:198:16: ( MOUSE souris FOR actionCommandeType -> ^( MOUSE_KW souris actionCommandeType ) | KEY clavier FOR actionCommandeType -> ^( KEY_KW clavier actionCommandeType ) )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -4711,21 +4711,21 @@ public class hightParser extends Parser {
             }
             switch (alt48) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:199:2: MOUSE souris FOR actionCommandeType
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:199:2: MOUSE souris FOR actionCommandeType
                     {
-                    MOUSE159=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_actionCommande1461);  
+                    MOUSE159=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_actionCommande1463);  
                     stream_MOUSE.add(MOUSE159);
 
-                    pushFollow(FOLLOW_souris_in_actionCommande1463);
+                    pushFollow(FOLLOW_souris_in_actionCommande1465);
                     souris160=souris();
 
                     state._fsp--;
 
                     stream_souris.add(souris160.getTree());
-                    FOR161=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1465);  
+                    FOR161=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1467);  
                     stream_FOR.add(FOR161);
 
-                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1467);
+                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1469);
                     actionCommandeType162=actionCommandeType();
 
                     state._fsp--;
@@ -4734,7 +4734,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: actionCommandeType, souris
+                    // elements: souris, actionCommandeType
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4746,7 +4746,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 200:4: -> ^( MOUSE_KW souris actionCommandeType )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:200:7: ^( MOUSE_KW souris actionCommandeType )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:200:7: ^( MOUSE_KW souris actionCommandeType )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MOUSE_KW, "MOUSE_KW"), root_1);
@@ -4763,21 +4763,21 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:201:4: KEY clavier FOR actionCommandeType
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:201:4: KEY clavier FOR actionCommandeType
                     {
-                    KEY163=(Token)match(input,KEY,FOLLOW_KEY_in_actionCommande1485);  
+                    KEY163=(Token)match(input,KEY,FOLLOW_KEY_in_actionCommande1487);  
                     stream_KEY.add(KEY163);
 
-                    pushFollow(FOLLOW_clavier_in_actionCommande1487);
+                    pushFollow(FOLLOW_clavier_in_actionCommande1489);
                     clavier164=clavier();
 
                     state._fsp--;
 
                     stream_clavier.add(clavier164.getTree());
-                    FOR165=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1489);  
+                    FOR165=(Token)match(input,FOR,FOLLOW_FOR_in_actionCommande1491);  
                     stream_FOR.add(FOR165);
 
-                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1491);
+                    pushFollow(FOLLOW_actionCommandeType_in_actionCommande1493);
                     actionCommandeType166=actionCommandeType();
 
                     state._fsp--;
@@ -4798,7 +4798,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 202:4: -> ^( KEY_KW clavier actionCommandeType )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:202:7: ^( KEY_KW clavier actionCommandeType )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:202:7: ^( KEY_KW clavier actionCommandeType )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(KEY_KW, "KEY_KW"), root_1);
@@ -4840,7 +4840,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "actionCommandeType"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:205:1: actionCommandeType : ( IDENT | actionCommandePressee | actionCommandeMaintenue );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:205:1: actionCommandeType : ( IDENT | actionCommandePressee | actionCommandeMaintenue );
     public final hightParser.actionCommandeType_return actionCommandeType() throws RecognitionException {
         hightParser.actionCommandeType_return retval = new hightParser.actionCommandeType_return();
         retval.start = input.LT(1);
@@ -4856,7 +4856,7 @@ public class hightParser extends Parser {
         CommonTree IDENT167_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:205:20: ( IDENT | actionCommandePressee | actionCommandeMaintenue )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:205:20: ( IDENT | actionCommandePressee | actionCommandeMaintenue )
             int alt49=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -4888,11 +4888,11 @@ public class hightParser extends Parser {
 
             switch (alt49) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:206:2: IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:206:2: IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDENT167=(Token)match(input,IDENT,FOLLOW_IDENT_in_actionCommandeType1516); 
+                    IDENT167=(Token)match(input,IDENT,FOLLOW_IDENT_in_actionCommandeType1518); 
                     IDENT167_tree = (CommonTree)adaptor.create(IDENT167);
                     adaptor.addChild(root_0, IDENT167_tree);
 
@@ -4900,11 +4900,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:206:10: actionCommandePressee
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:206:10: actionCommandePressee
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandePressee_in_actionCommandeType1520);
+                    pushFollow(FOLLOW_actionCommandePressee_in_actionCommandeType1522);
                     actionCommandePressee168=actionCommandePressee();
 
                     state._fsp--;
@@ -4914,11 +4914,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:206:34: actionCommandeMaintenue
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:206:34: actionCommandeMaintenue
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionCommandeType1524);
+                    pushFollow(FOLLOW_actionCommandeMaintenue_in_actionCommandeType1526);
                     actionCommandeMaintenue169=actionCommandeMaintenue();
 
                     state._fsp--;
@@ -4953,7 +4953,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "souris"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:209:1: souris : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:209:1: souris : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
     public final hightParser.souris_return souris() throws RecognitionException {
         hightParser.souris_return retval = new hightParser.souris_return();
         retval.start = input.LT(1);
@@ -4965,8 +4965,8 @@ public class hightParser extends Parser {
         CommonTree set170_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:209:8: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:209:8: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5008,7 +5008,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "clavier"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:213:1: clavier : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:213:1: clavier : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
     public final hightParser.clavier_return clavier() throws RecognitionException {
         hightParser.clavier_return retval = new hightParser.clavier_return();
         retval.start = input.LT(1);
@@ -5020,8 +5020,8 @@ public class hightParser extends Parser {
         CommonTree set171_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:213:9: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:213:9: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5063,7 +5063,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "actionCommandePressee"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:217:1: actionCommandePressee : ( JUMP operation | PAUSE_KW | STOP_KW );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:217:1: actionCommandePressee : ( JUMP operation | PAUSE_KW | STOP_KW );
     public final hightParser.actionCommandePressee_return actionCommandePressee() throws RecognitionException {
         hightParser.actionCommandePressee_return retval = new hightParser.actionCommandePressee_return();
         retval.start = input.LT(1);
@@ -5081,7 +5081,7 @@ public class hightParser extends Parser {
         CommonTree STOP_KW175_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:217:23: ( JUMP operation | PAUSE_KW | STOP_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:217:23: ( JUMP operation | PAUSE_KW | STOP_KW )
             int alt50=3;
             switch ( input.LA(1) ) {
             case JUMP:
@@ -5108,15 +5108,15 @@ public class hightParser extends Parser {
 
             switch (alt50) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:218:3: JUMP operation
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:218:3: JUMP operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    JUMP172=(Token)match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1636); 
+                    JUMP172=(Token)match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1638); 
                     JUMP172_tree = (CommonTree)adaptor.create(JUMP172);
                     adaptor.addChild(root_0, JUMP172_tree);
 
-                    pushFollow(FOLLOW_operation_in_actionCommandePressee1638);
+                    pushFollow(FOLLOW_operation_in_actionCommandePressee1640);
                     operation173=operation();
 
                     state._fsp--;
@@ -5126,11 +5126,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:219:5: PAUSE_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:219:5: PAUSE_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PAUSE_KW174=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_actionCommandePressee1644); 
+                    PAUSE_KW174=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_actionCommandePressee1646); 
                     PAUSE_KW174_tree = (CommonTree)adaptor.create(PAUSE_KW174);
                     adaptor.addChild(root_0, PAUSE_KW174_tree);
 
@@ -5138,11 +5138,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:220:5: STOP_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:220:5: STOP_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    STOP_KW175=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_actionCommandePressee1650); 
+                    STOP_KW175=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_actionCommandePressee1652); 
                     STOP_KW175_tree = (CommonTree)adaptor.create(STOP_KW175);
                     adaptor.addChild(root_0, STOP_KW175_tree);
 
@@ -5175,7 +5175,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "actionCommandeMaintenue"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:223:1: actionCommandeMaintenue : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:223:1: actionCommandeMaintenue : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE );
     public final hightParser.actionCommandeMaintenue_return actionCommandeMaintenue() throws RecognitionException {
         hightParser.actionCommandeMaintenue_return retval = new hightParser.actionCommandeMaintenue_return();
         retval.start = input.LT(1);
@@ -5197,7 +5197,7 @@ public class hightParser extends Parser {
         CommonTree BRAKE181_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:223:25: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:223:25: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE )
             int alt51=4;
             switch ( input.LA(1) ) {
             case MOVE:
@@ -5229,11 +5229,11 @@ public class hightParser extends Parser {
 
             switch (alt51) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:224:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:224:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    MOVE176=(Token)match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1665); 
+                    MOVE176=(Token)match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1667); 
                     MOVE176_tree = (CommonTree)adaptor.create(MOVE176);
                     adaptor.addChild(root_0, MOVE176_tree);
 
@@ -5252,11 +5252,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:225:5: TURN ( LEFT | RIGHT )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:225:5: TURN ( LEFT | RIGHT )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    TURN178=(Token)match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue1687); 
+                    TURN178=(Token)match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue1689); 
                     TURN178_tree = (CommonTree)adaptor.create(TURN178);
                     adaptor.addChild(root_0, TURN178_tree);
 
@@ -5275,11 +5275,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:226:5: ACCELERATE
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:226:5: ACCELERATE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    ACCELERATE180=(Token)match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue1701); 
+                    ACCELERATE180=(Token)match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue1703); 
                     ACCELERATE180_tree = (CommonTree)adaptor.create(ACCELERATE180);
                     adaptor.addChild(root_0, ACCELERATE180_tree);
 
@@ -5287,11 +5287,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:227:5: BRAKE
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:227:5: BRAKE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    BRAKE181=(Token)match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue1707); 
+                    BRAKE181=(Token)match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue1709); 
                     BRAKE181_tree = (CommonTree)adaptor.create(BRAKE181);
                     adaptor.addChild(root_0, BRAKE181_tree);
 
@@ -5324,7 +5324,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "activCommande"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:230:1: activCommande : ( ACTIVATE_KW | DISABLE_KW ) typeCommand ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:230:1: activCommande : ( ACTIVATE_KW | DISABLE_KW ) typeCommand ;
     public final hightParser.activCommande_return activCommande() throws RecognitionException {
         hightParser.activCommande_return retval = new hightParser.activCommande_return();
         retval.start = input.LT(1);
@@ -5340,12 +5340,12 @@ public class hightParser extends Parser {
         CommonTree DISABLE_KW183_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:230:15: ( ( ACTIVATE_KW | DISABLE_KW ) typeCommand )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:231:3: ( ACTIVATE_KW | DISABLE_KW ) typeCommand
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:230:15: ( ( ACTIVATE_KW | DISABLE_KW ) typeCommand )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:231:3: ( ACTIVATE_KW | DISABLE_KW ) typeCommand
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:231:3: ( ACTIVATE_KW | DISABLE_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:231:3: ( ACTIVATE_KW | DISABLE_KW )
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -5363,9 +5363,9 @@ public class hightParser extends Parser {
             }
             switch (alt52) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:231:4: ACTIVATE_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:231:4: ACTIVATE_KW
                     {
-                    ACTIVATE_KW182=(Token)match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande1723); 
+                    ACTIVATE_KW182=(Token)match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande1725); 
                     ACTIVATE_KW182_tree = (CommonTree)adaptor.create(ACTIVATE_KW182);
                     root_0 = (CommonTree)adaptor.becomeRoot(ACTIVATE_KW182_tree, root_0);
 
@@ -5373,9 +5373,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:231:19: DISABLE_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:231:19: DISABLE_KW
                     {
-                    DISABLE_KW183=(Token)match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande1728); 
+                    DISABLE_KW183=(Token)match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande1730); 
                     DISABLE_KW183_tree = (CommonTree)adaptor.create(DISABLE_KW183);
                     root_0 = (CommonTree)adaptor.becomeRoot(DISABLE_KW183_tree, root_0);
 
@@ -5385,7 +5385,7 @@ public class hightParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_typeCommand_in_activCommande1732);
+            pushFollow(FOLLOW_typeCommand_in_activCommande1734);
             typeCommand184=typeCommand();
 
             state._fsp--;
@@ -5418,7 +5418,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "typeCommand"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:234:1: typeCommand : ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:234:1: typeCommand : ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD );
     public final hightParser.typeCommand_return typeCommand() throws RecognitionException {
         hightParser.typeCommand_return retval = new hightParser.typeCommand_return();
         retval.start = input.LT(1);
@@ -5452,7 +5452,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_souris=new RewriteRuleSubtreeStream(adaptor,"rule souris");
         RewriteRuleSubtreeStream stream_clavier=new RewriteRuleSubtreeStream(adaptor,"rule clavier");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:234:13: ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:234:13: ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD )
             int alt56=4;
             switch ( input.LA(1) ) {
             case COMMANDS:
@@ -5484,11 +5484,11 @@ public class hightParser extends Parser {
 
             switch (alt56) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:235:5: COMMANDS
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:235:5: COMMANDS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    COMMANDS185=(Token)match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand1746); 
+                    COMMANDS185=(Token)match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand1748); 
                     COMMANDS185_tree = (CommonTree)adaptor.create(COMMANDS185);
                     adaptor.addChild(root_0, COMMANDS185_tree);
 
@@ -5496,12 +5496,12 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:236:7: MOUSE ( souris ( VIRG souris )* )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:236:7: MOUSE ( souris ( VIRG souris )* )?
                     {
-                    MOUSE186=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_typeCommand1754);  
+                    MOUSE186=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_typeCommand1756);  
                     stream_MOUSE.add(MOUSE186);
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:236:13: ( souris ( VIRG souris )* )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:236:13: ( souris ( VIRG souris )* )?
                     int alt54=2;
                     int LA54_0 = input.LA(1);
 
@@ -5510,15 +5510,15 @@ public class hightParser extends Parser {
                     }
                     switch (alt54) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:236:14: souris ( VIRG souris )*
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:236:14: souris ( VIRG souris )*
                             {
-                            pushFollow(FOLLOW_souris_in_typeCommand1757);
+                            pushFollow(FOLLOW_souris_in_typeCommand1759);
                             souris187=souris();
 
                             state._fsp--;
 
                             stream_souris.add(souris187.getTree());
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:236:21: ( VIRG souris )*
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:236:21: ( VIRG souris )*
                             loop53:
                             do {
                                 int alt53=2;
@@ -5537,12 +5537,12 @@ public class hightParser extends Parser {
 
                                 switch (alt53) {
                             	case 1 :
-                            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:236:22: VIRG souris
+                            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:236:22: VIRG souris
                             	    {
-                            	    VIRG188=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1760);  
+                            	    VIRG188=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1762);  
                             	    stream_VIRG.add(VIRG188);
 
-                            	    pushFollow(FOLLOW_souris_in_typeCommand1762);
+                            	    pushFollow(FOLLOW_souris_in_typeCommand1764);
                             	    souris189=souris();
 
                             	    state._fsp--;
@@ -5578,12 +5578,12 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 237:7: -> ^( MOUSE_KW ( souris )* )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:237:10: ^( MOUSE_KW ( souris )* )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:237:10: ^( MOUSE_KW ( souris )* )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MOUSE_KW, "MOUSE_KW"), root_1);
 
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:237:21: ( souris )*
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:237:21: ( souris )*
                         while ( stream_souris.hasNext() ) {
                             adaptor.addChild(root_1, stream_souris.nextTree());
 
@@ -5599,18 +5599,18 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:238:7: KEY clavier ( VIRG clavier )*
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:238:7: KEY clavier ( VIRG clavier )*
                     {
-                    KEY190=(Token)match(input,KEY,FOLLOW_KEY_in_typeCommand1789);  
+                    KEY190=(Token)match(input,KEY,FOLLOW_KEY_in_typeCommand1791);  
                     stream_KEY.add(KEY190);
 
-                    pushFollow(FOLLOW_clavier_in_typeCommand1791);
+                    pushFollow(FOLLOW_clavier_in_typeCommand1793);
                     clavier191=clavier();
 
                     state._fsp--;
 
                     stream_clavier.add(clavier191.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:238:19: ( VIRG clavier )*
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:238:19: ( VIRG clavier )*
                     loop55:
                     do {
                         int alt55=2;
@@ -5629,12 +5629,12 @@ public class hightParser extends Parser {
 
                         switch (alt55) {
                     	case 1 :
-                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:238:20: VIRG clavier
+                    	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:238:20: VIRG clavier
                     	    {
-                    	    VIRG192=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1794);  
+                    	    VIRG192=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand1796);  
                     	    stream_VIRG.add(VIRG192);
 
-                    	    pushFollow(FOLLOW_clavier_in_typeCommand1796);
+                    	    pushFollow(FOLLOW_clavier_in_typeCommand1798);
                     	    clavier193=clavier();
 
                     	    state._fsp--;
@@ -5664,7 +5664,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 239:7: -> ^( KEY_KW ( clavier )+ )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:239:10: ^( KEY_KW ( clavier )+ )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:239:10: ^( KEY_KW ( clavier )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(KEY_KW, "KEY_KW"), root_1);
@@ -5687,11 +5687,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:240:7: KEYBOARD
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:240:7: KEYBOARD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    KEYBOARD194=(Token)match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand1821); 
+                    KEYBOARD194=(Token)match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand1823); 
                     KEYBOARD194_tree = (CommonTree)adaptor.create(KEYBOARD194);
                     adaptor.addChild(root_0, KEYBOARD194_tree);
 
@@ -5724,7 +5724,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "reglesJeu"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:242:1: reglesJeu : RULE_KW ( IDENT IS )? declencheur THEN consequences ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:242:1: reglesJeu : RULE_KW ( IDENT IS )? declencheur THEN consequences ;
     public final hightParser.reglesJeu_return reglesJeu() throws RecognitionException {
         hightParser.reglesJeu_return retval = new hightParser.reglesJeu_return();
         retval.start = input.LT(1);
@@ -5746,16 +5746,16 @@ public class hightParser extends Parser {
         CommonTree THEN199_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:242:11: ( RULE_KW ( IDENT IS )? declencheur THEN consequences )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:243:3: RULE_KW ( IDENT IS )? declencheur THEN consequences
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:242:11: ( RULE_KW ( IDENT IS )? declencheur THEN consequences )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:243:3: RULE_KW ( IDENT IS )? declencheur THEN consequences
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            RULE_KW195=(Token)match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu1831); 
+            RULE_KW195=(Token)match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu1833); 
             RULE_KW195_tree = (CommonTree)adaptor.create(RULE_KW195);
             root_0 = (CommonTree)adaptor.becomeRoot(RULE_KW195_tree, root_0);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:243:12: ( IDENT IS )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:243:12: ( IDENT IS )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -5768,27 +5768,27 @@ public class hightParser extends Parser {
             }
             switch (alt57) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:243:13: IDENT IS
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:243:13: IDENT IS
                     {
-                    IDENT196=(Token)match(input,IDENT,FOLLOW_IDENT_in_reglesJeu1835); 
+                    IDENT196=(Token)match(input,IDENT,FOLLOW_IDENT_in_reglesJeu1837); 
                     IDENT196_tree = (CommonTree)adaptor.create(IDENT196);
                     adaptor.addChild(root_0, IDENT196_tree);
 
-                    IS197=(Token)match(input,IS,FOLLOW_IS_in_reglesJeu1837); 
+                    IS197=(Token)match(input,IS,FOLLOW_IS_in_reglesJeu1839); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_declencheur_in_reglesJeu1843);
+            pushFollow(FOLLOW_declencheur_in_reglesJeu1845);
             declencheur198=declencheur();
 
             state._fsp--;
 
             adaptor.addChild(root_0, declencheur198.getTree());
-            THEN199=(Token)match(input,THEN,FOLLOW_THEN_in_reglesJeu1845); 
-            pushFollow(FOLLOW_consequences_in_reglesJeu1848);
+            THEN199=(Token)match(input,THEN,FOLLOW_THEN_in_reglesJeu1847); 
+            pushFollow(FOLLOW_consequences_in_reglesJeu1850);
             consequences200=consequences();
 
             state._fsp--;
@@ -5821,7 +5821,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "declencheur"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:246:1: declencheur : ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | IDENT BECOMES playerOuInteraction -> ^( BECOMES_ID_KW IDENT playerOuInteraction ) | VICTORY_KW | DEFEAT_KW );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:246:1: declencheur : ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | IDENT BECOMES playerOuInteraction -> ^( BECOMES_ID_KW IDENT playerOuInteraction ) | VICTORY_KW | DEFEAT_KW );
     public final hightParser.declencheur_return declencheur() throws RecognitionException {
         hightParser.declencheur_return retval = new hightParser.declencheur_return();
         retval.start = input.LT(1);
@@ -5867,7 +5867,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_playerOuInteraction=new RewriteRuleSubtreeStream(adaptor,"rule playerOuInteraction");
         RewriteRuleSubtreeStream stream_variable=new RewriteRuleSubtreeStream(adaptor,"rule variable");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:246:13: ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | IDENT BECOMES playerOuInteraction -> ^( BECOMES_ID_KW IDENT playerOuInteraction ) | VICTORY_KW | DEFEAT_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:246:13: ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | IDENT BECOMES playerOuInteraction -> ^( BECOMES_ID_KW IDENT playerOuInteraction ) | VICTORY_KW | DEFEAT_KW )
             int alt60=6;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -5956,17 +5956,17 @@ public class hightParser extends Parser {
 
             switch (alt60) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:3: accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:3: accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_declencheur1862);
+                    pushFollow(FOLLOW_accesClasse_in_declencheur1864);
                     accesClasse201=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse201.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:15: ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:15: ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
                     int alt58=4;
                     switch ( input.LA(1) ) {
                     case MOVES_KW:
@@ -6000,9 +6000,9 @@ public class hightParser extends Parser {
 
                     switch (alt58) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:16: MOVES_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:16: MOVES_KW
                             {
-                            MOVES_KW202=(Token)match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur1865); 
+                            MOVES_KW202=(Token)match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur1867); 
                             MOVES_KW202_tree = (CommonTree)adaptor.create(MOVES_KW202);
                             adaptor.addChild(root_0, MOVES_KW202_tree);
 
@@ -6010,9 +6010,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:27: DIES_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:27: DIES_KW
                             {
-                            DIES_KW203=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur1869); 
+                            DIES_KW203=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur1871); 
                             DIES_KW203_tree = (CommonTree)adaptor.create(DIES_KW203);
                             adaptor.addChild(root_0, DIES_KW203_tree);
 
@@ -6020,9 +6020,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:37: declencheurTK
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:37: declencheurTK
                             {
-                            pushFollow(FOLLOW_declencheurTK_in_declencheur1873);
+                            pushFollow(FOLLOW_declencheurTK_in_declencheur1875);
                             declencheurTK204=declencheurTK();
 
                             state._fsp--;
@@ -6032,9 +6032,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:247:53: declencheurKT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:247:53: declencheurKT
                             {
-                            pushFollow(FOLLOW_declencheurKT_in_declencheur1877);
+                            pushFollow(FOLLOW_declencheurKT_in_declencheur1879);
                             declencheurKT205=declencheurKT();
 
                             state._fsp--;
@@ -6050,7 +6050,7 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:248:5: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:248:5: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6065,7 +6065,7 @@ public class hightParser extends Parser {
                         throw mse;
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:248:20: ( ENDS_KW | STARTS_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:248:20: ( ENDS_KW | STARTS_KW )
                     int alt59=2;
                     int LA59_0 = input.LA(1);
 
@@ -6083,9 +6083,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt59) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:248:21: ENDS_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:248:21: ENDS_KW
                             {
-                            ENDS_KW207=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur1894); 
+                            ENDS_KW207=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur1896); 
                             ENDS_KW207_tree = (CommonTree)adaptor.create(ENDS_KW207);
                             root_0 = (CommonTree)adaptor.becomeRoot(ENDS_KW207_tree, root_0);
 
@@ -6093,9 +6093,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:248:31: STARTS_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:248:31: STARTS_KW
                             {
-                            STARTS_KW208=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur1898); 
+                            STARTS_KW208=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur1900); 
                             STARTS_KW208_tree = (CommonTree)adaptor.create(STARTS_KW208);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTS_KW208_tree, root_0);
 
@@ -6109,18 +6109,18 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:249:5: variable BECOMES varOuNB
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:249:5: variable BECOMES varOuNB
                     {
-                    pushFollow(FOLLOW_variable_in_declencheur1916);
+                    pushFollow(FOLLOW_variable_in_declencheur1918);
                     variable209=variable();
 
                     state._fsp--;
 
                     stream_variable.add(variable209.getTree());
-                    BECOMES210=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1918);  
+                    BECOMES210=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1920);  
                     stream_BECOMES.add(BECOMES210);
 
-                    pushFollow(FOLLOW_varOuNB_in_declencheur1920);
+                    pushFollow(FOLLOW_varOuNB_in_declencheur1922);
                     varOuNB211=varOuNB();
 
                     state._fsp--;
@@ -6129,7 +6129,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: varOuNB, variable
+                    // elements: variable, varOuNB
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6141,7 +6141,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 250:5: -> ^( BECOMES_VAR_KW variable varOuNB )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:250:8: ^( BECOMES_VAR_KW variable varOuNB )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:250:8: ^( BECOMES_VAR_KW variable varOuNB )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(BECOMES_VAR_KW, "BECOMES_VAR_KW"), root_1);
@@ -6158,15 +6158,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:251:5: IDENT BECOMES playerOuInteraction
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:251:5: IDENT BECOMES playerOuInteraction
                     {
-                    IDENT212=(Token)match(input,IDENT,FOLLOW_IDENT_in_declencheur1940);  
+                    IDENT212=(Token)match(input,IDENT,FOLLOW_IDENT_in_declencheur1942);  
                     stream_IDENT.add(IDENT212);
 
-                    BECOMES213=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1942);  
+                    BECOMES213=(Token)match(input,BECOMES,FOLLOW_BECOMES_in_declencheur1944);  
                     stream_BECOMES.add(BECOMES213);
 
-                    pushFollow(FOLLOW_playerOuInteraction_in_declencheur1944);
+                    pushFollow(FOLLOW_playerOuInteraction_in_declencheur1946);
                     playerOuInteraction214=playerOuInteraction();
 
                     state._fsp--;
@@ -6187,7 +6187,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 252:5: -> ^( BECOMES_ID_KW IDENT playerOuInteraction )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:252:8: ^( BECOMES_ID_KW IDENT playerOuInteraction )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:252:8: ^( BECOMES_ID_KW IDENT playerOuInteraction )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(BECOMES_ID_KW, "BECOMES_ID_KW"), root_1);
@@ -6204,11 +6204,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:253:5: VICTORY_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:253:5: VICTORY_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW215=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur1964); 
+                    VICTORY_KW215=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur1966); 
                     VICTORY_KW215_tree = (CommonTree)adaptor.create(VICTORY_KW215);
                     adaptor.addChild(root_0, VICTORY_KW215_tree);
 
@@ -6216,11 +6216,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:254:5: DEFEAT_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:254:5: DEFEAT_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW216=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur1970); 
+                    DEFEAT_KW216=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur1972); 
                     DEFEAT_KW216_tree = (CommonTree)adaptor.create(DEFEAT_KW216);
                     adaptor.addChild(root_0, DEFEAT_KW216_tree);
 
@@ -6253,7 +6253,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "varOuNB"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:257:1: varOuNB : ( variable | FLOAT );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:257:1: varOuNB : ( variable | FLOAT );
     public final hightParser.varOuNB_return varOuNB() throws RecognitionException {
         hightParser.varOuNB_return retval = new hightParser.varOuNB_return();
         retval.start = input.LT(1);
@@ -6267,7 +6267,7 @@ public class hightParser extends Parser {
         CommonTree FLOAT218_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:257:9: ( variable | FLOAT )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:257:9: ( variable | FLOAT )
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -6285,11 +6285,11 @@ public class hightParser extends Parser {
             }
             switch (alt61) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:257:11: variable
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:257:11: variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_variable_in_varOuNB1981);
+                    pushFollow(FOLLOW_variable_in_varOuNB1983);
                     variable217=variable();
 
                     state._fsp--;
@@ -6299,11 +6299,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:257:22: FLOAT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:257:22: FLOAT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    FLOAT218=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB1985); 
+                    FLOAT218=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB1987); 
                     FLOAT218_tree = (CommonTree)adaptor.create(FLOAT218);
                     adaptor.addChild(root_0, FLOAT218_tree);
 
@@ -6336,7 +6336,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "playerOuInteraction"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:259:1: playerOuInteraction : ( PLAYER | interaction ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:259:1: playerOuInteraction : ( PLAYER | interaction ) ;
     public final hightParser.playerOuInteraction_return playerOuInteraction() throws RecognitionException {
         hightParser.playerOuInteraction_return retval = new hightParser.playerOuInteraction_return();
         retval.start = input.LT(1);
@@ -6350,12 +6350,12 @@ public class hightParser extends Parser {
         CommonTree PLAYER219_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:260:2: ( ( PLAYER | interaction ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:260:4: ( PLAYER | interaction )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:260:2: ( ( PLAYER | interaction ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:260:4: ( PLAYER | interaction )
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:260:4: ( PLAYER | interaction )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:260:4: ( PLAYER | interaction )
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -6373,9 +6373,9 @@ public class hightParser extends Parser {
             }
             switch (alt62) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:260:5: PLAYER
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:260:5: PLAYER
                     {
-                    PLAYER219=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_playerOuInteraction1995); 
+                    PLAYER219=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_playerOuInteraction1997); 
                     PLAYER219_tree = (CommonTree)adaptor.create(PLAYER219);
                     adaptor.addChild(root_0, PLAYER219_tree);
 
@@ -6383,9 +6383,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:260:13: interaction
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:260:13: interaction
                     {
-                    pushFollow(FOLLOW_interaction_in_playerOuInteraction1998);
+                    pushFollow(FOLLOW_interaction_in_playerOuInteraction2000);
                     interaction220=interaction();
 
                     state._fsp--;
@@ -6424,7 +6424,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "declencheurTK"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:262:1: declencheurTK : ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:262:1: declencheurTK : ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal ) ;
     public final hightParser.declencheurTK_return declencheurTK() throws RecognitionException {
         hightParser.declencheurTK_return retval = new hightParser.declencheurTK_return();
         retval.start = input.LT(1);
@@ -6444,12 +6444,12 @@ public class hightParser extends Parser {
         CommonTree OTHER223_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:2: ( ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:4: ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:2: ( ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:4: ( TOUCHES_KW | KILLS_KW ) ( ( OTHER )? accesGlobal | accesLocal )
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:4: ( TOUCHES_KW | KILLS_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:4: ( TOUCHES_KW | KILLS_KW )
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -6467,9 +6467,9 @@ public class hightParser extends Parser {
             }
             switch (alt63) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:5: TOUCHES_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:5: TOUCHES_KW
                     {
-                    TOUCHES_KW221=(Token)match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2010); 
+                    TOUCHES_KW221=(Token)match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2012); 
                     TOUCHES_KW221_tree = (CommonTree)adaptor.create(TOUCHES_KW221);
                     root_0 = (CommonTree)adaptor.becomeRoot(TOUCHES_KW221_tree, root_0);
 
@@ -6477,9 +6477,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:19: KILLS_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:19: KILLS_KW
                     {
-                    KILLS_KW222=(Token)match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2015); 
+                    KILLS_KW222=(Token)match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2017); 
                     KILLS_KW222_tree = (CommonTree)adaptor.create(KILLS_KW222);
                     root_0 = (CommonTree)adaptor.becomeRoot(KILLS_KW222_tree, root_0);
 
@@ -6489,7 +6489,7 @@ public class hightParser extends Parser {
 
             }
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:30: ( ( OTHER )? accesGlobal | accesLocal )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:30: ( ( OTHER )? accesGlobal | accesLocal )
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -6507,9 +6507,9 @@ public class hightParser extends Parser {
             }
             switch (alt65) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:31: ( OTHER )? accesGlobal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:31: ( OTHER )? accesGlobal
                     {
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:31: ( OTHER )?
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:31: ( OTHER )?
                     int alt64=2;
                     int LA64_0 = input.LA(1);
 
@@ -6518,9 +6518,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt64) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:32: OTHER
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:32: OTHER
                             {
-                            OTHER223=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2021); 
+                            OTHER223=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2023); 
                             OTHER223_tree = (CommonTree)adaptor.create(OTHER223);
                             adaptor.addChild(root_0, OTHER223_tree);
 
@@ -6530,7 +6530,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_accesGlobal_in_declencheurTK2025);
+                    pushFollow(FOLLOW_accesGlobal_in_declencheurTK2027);
                     accesGlobal224=accesGlobal();
 
                     state._fsp--;
@@ -6540,9 +6540,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:263:54: accesLocal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:263:54: accesLocal
                     {
-                    pushFollow(FOLLOW_accesLocal_in_declencheurTK2029);
+                    pushFollow(FOLLOW_accesLocal_in_declencheurTK2031);
                     accesLocal225=accesLocal();
 
                     state._fsp--;
@@ -6581,7 +6581,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "declencheurKT"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:265:1: declencheurKT : ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )? ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:265:1: declencheurKT : ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )? ;
     public final hightParser.declencheurKT_return declencheurKT() throws RecognitionException {
         hightParser.declencheurKT_return retval = new hightParser.declencheurKT_return();
         retval.start = input.LT(1);
@@ -6603,12 +6603,12 @@ public class hightParser extends Parser {
         CommonTree OTHER229_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:2: ( ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )? )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:4: ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:2: ( ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )? )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:4: ( KILLED_KW | TOUCHED_KW ) ( BY ( ( OTHER )? accesGlobal | accesLocal ) )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:4: ( KILLED_KW | TOUCHED_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:4: ( KILLED_KW | TOUCHED_KW )
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -6626,9 +6626,9 @@ public class hightParser extends Parser {
             }
             switch (alt66) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:5: KILLED_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:5: KILLED_KW
                     {
-                    KILLED_KW226=(Token)match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2041); 
+                    KILLED_KW226=(Token)match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2043); 
                     KILLED_KW226_tree = (CommonTree)adaptor.create(KILLED_KW226);
                     root_0 = (CommonTree)adaptor.becomeRoot(KILLED_KW226_tree, root_0);
 
@@ -6636,9 +6636,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:18: TOUCHED_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:18: TOUCHED_KW
                     {
-                    TOUCHED_KW227=(Token)match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2046); 
+                    TOUCHED_KW227=(Token)match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2048); 
                     TOUCHED_KW227_tree = (CommonTree)adaptor.create(TOUCHED_KW227);
                     root_0 = (CommonTree)adaptor.becomeRoot(TOUCHED_KW227_tree, root_0);
 
@@ -6648,7 +6648,7 @@ public class hightParser extends Parser {
 
             }
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:31: ( BY ( ( OTHER )? accesGlobal | accesLocal ) )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:31: ( BY ( ( OTHER )? accesGlobal | accesLocal ) )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -6657,10 +6657,10 @@ public class hightParser extends Parser {
             }
             switch (alt69) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:32: BY ( ( OTHER )? accesGlobal | accesLocal )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:32: BY ( ( OTHER )? accesGlobal | accesLocal )
                     {
-                    BY228=(Token)match(input,BY,FOLLOW_BY_in_declencheurKT2051); 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:36: ( ( OTHER )? accesGlobal | accesLocal )
+                    BY228=(Token)match(input,BY,FOLLOW_BY_in_declencheurKT2053); 
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:36: ( ( OTHER )? accesGlobal | accesLocal )
                     int alt68=2;
                     int LA68_0 = input.LA(1);
 
@@ -6678,9 +6678,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt68) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:37: ( OTHER )? accesGlobal
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:37: ( OTHER )? accesGlobal
                             {
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:37: ( OTHER )?
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:37: ( OTHER )?
                             int alt67=2;
                             int LA67_0 = input.LA(1);
 
@@ -6689,9 +6689,9 @@ public class hightParser extends Parser {
                             }
                             switch (alt67) {
                                 case 1 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:38: OTHER
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:38: OTHER
                                     {
-                                    OTHER229=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2056); 
+                                    OTHER229=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2058); 
                                     OTHER229_tree = (CommonTree)adaptor.create(OTHER229);
                                     adaptor.addChild(root_0, OTHER229_tree);
 
@@ -6701,7 +6701,7 @@ public class hightParser extends Parser {
 
                             }
 
-                            pushFollow(FOLLOW_accesGlobal_in_declencheurKT2060);
+                            pushFollow(FOLLOW_accesGlobal_in_declencheurKT2062);
                             accesGlobal230=accesGlobal();
 
                             state._fsp--;
@@ -6711,9 +6711,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:266:60: accesLocal
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:266:60: accesLocal
                             {
-                            pushFollow(FOLLOW_accesLocal_in_declencheurKT2064);
+                            pushFollow(FOLLOW_accesLocal_in_declencheurKT2066);
                             accesLocal231=accesLocal();
 
                             state._fsp--;
@@ -6758,7 +6758,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "siAlors"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:269:1: siAlors : IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:269:1: siAlors : IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF ;
     public final hightParser.siAlors_return siAlors() throws RecognitionException {
         hightParser.siAlors_return retval = new hightParser.siAlors_return();
         retval.start = input.LT(1);
@@ -6782,29 +6782,29 @@ public class hightParser extends Parser {
         CommonTree ENDIF238_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:269:9: ( IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:270:3: IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:269:9: ( IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:270:3: IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            IF_KW232=(Token)match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2081); 
+            IF_KW232=(Token)match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2083); 
             IF_KW232_tree = (CommonTree)adaptor.create(IF_KW232);
             root_0 = (CommonTree)adaptor.becomeRoot(IF_KW232_tree, root_0);
 
-            pushFollow(FOLLOW_conditions_in_siAlors2084);
+            pushFollow(FOLLOW_conditions_in_siAlors2086);
             conditions233=conditions();
 
             state._fsp--;
 
             adaptor.addChild(root_0, conditions233.getTree());
-            THEN234=(Token)match(input,THEN,FOLLOW_THEN_in_siAlors2086); 
-            pushFollow(FOLLOW_consequences_in_siAlors2089);
+            THEN234=(Token)match(input,THEN,FOLLOW_THEN_in_siAlors2088); 
+            pushFollow(FOLLOW_consequences_in_siAlors2091);
             consequences235=consequences();
 
             state._fsp--;
 
             adaptor.addChild(root_0, consequences235.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:270:40: ( ELSE consequences )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:270:40: ( ELSE consequences )?
             int alt70=2;
             int LA70_0 = input.LA(1);
 
@@ -6813,10 +6813,10 @@ public class hightParser extends Parser {
             }
             switch (alt70) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:270:41: ELSE consequences
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:270:41: ELSE consequences
                     {
-                    ELSE236=(Token)match(input,ELSE,FOLLOW_ELSE_in_siAlors2092); 
-                    pushFollow(FOLLOW_consequences_in_siAlors2095);
+                    ELSE236=(Token)match(input,ELSE,FOLLOW_ELSE_in_siAlors2094); 
+                    pushFollow(FOLLOW_consequences_in_siAlors2097);
                     consequences237=consequences();
 
                     state._fsp--;
@@ -6828,7 +6828,7 @@ public class hightParser extends Parser {
 
             }
 
-            ENDIF238=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_siAlors2099); 
+            ENDIF238=(Token)match(input,ENDIF,FOLLOW_ENDIF_in_siAlors2101); 
 
             }
 
@@ -6856,7 +6856,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "conditions"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:273:1: conditions : ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:273:1: conditions : ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) ;
     public final hightParser.conditions_return conditions() throws RecognitionException {
         hightParser.conditions_return retval = new hightParser.conditions_return();
         retval.start = input.LT(1);
@@ -6871,10 +6871,10 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_NOT=new RewriteRuleTokenStream(adaptor,"token NOT");
         RewriteRuleSubtreeStream stream_conditionOu=new RewriteRuleSubtreeStream(adaptor,"rule conditionOu");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:273:12: ( ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:274:3: ( NOT )? conditionOu
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:273:12: ( ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:274:3: ( NOT )? conditionOu
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:274:3: ( NOT )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:274:3: ( NOT )?
             int alt71=2;
             int LA71_0 = input.LA(1);
 
@@ -6883,9 +6883,9 @@ public class hightParser extends Parser {
             }
             switch (alt71) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:274:4: NOT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:274:4: NOT
                     {
-                    NOT239=(Token)match(input,NOT,FOLLOW_NOT_in_conditions2114);  
+                    NOT239=(Token)match(input,NOT,FOLLOW_NOT_in_conditions2116);  
                     stream_NOT.add(NOT239);
 
 
@@ -6894,7 +6894,7 @@ public class hightParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_conditionOu_in_conditions2118);
+            pushFollow(FOLLOW_conditionOu_in_conditions2120);
             conditionOu240=conditionOu();
 
             state._fsp--;
@@ -6903,7 +6903,7 @@ public class hightParser extends Parser {
 
 
             // AST REWRITE
-            // elements: NOT, conditionOu
+            // elements: conditionOu, NOT
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6915,12 +6915,12 @@ public class hightParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 275:3: -> ^( CONDITION_KW ( NOT )? conditionOu )
             {
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:275:6: ^( CONDITION_KW ( NOT )? conditionOu )
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:275:6: ^( CONDITION_KW ( NOT )? conditionOu )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CONDITION_KW, "CONDITION_KW"), root_1);
 
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:275:21: ( NOT )?
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:275:21: ( NOT )?
                 if ( stream_NOT.hasNext() ) {
                     adaptor.addChild(root_1, stream_NOT.nextNode());
 
@@ -6960,7 +6960,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "conditionOu"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:278:1: conditionOu : conditionEt ( OR conditionEt )* ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:278:1: conditionOu : conditionEt ( OR conditionEt )* ;
     public final hightParser.conditionOu_return conditionOu() throws RecognitionException {
         hightParser.conditionOu_return retval = new hightParser.conditionOu_return();
         retval.start = input.LT(1);
@@ -6976,18 +6976,18 @@ public class hightParser extends Parser {
         CommonTree OR242_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:278:13: ( conditionEt ( OR conditionEt )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:279:3: conditionEt ( OR conditionEt )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:278:13: ( conditionEt ( OR conditionEt )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:279:3: conditionEt ( OR conditionEt )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_conditionEt_in_conditionOu2144);
+            pushFollow(FOLLOW_conditionEt_in_conditionOu2146);
             conditionEt241=conditionEt();
 
             state._fsp--;
 
             adaptor.addChild(root_0, conditionEt241.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:279:15: ( OR conditionEt )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:279:15: ( OR conditionEt )*
             loop72:
             do {
                 int alt72=2;
@@ -7000,13 +7000,13 @@ public class hightParser extends Parser {
 
                 switch (alt72) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:279:16: OR conditionEt
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:279:16: OR conditionEt
             	    {
-            	    OR242=(Token)match(input,OR,FOLLOW_OR_in_conditionOu2147); 
+            	    OR242=(Token)match(input,OR,FOLLOW_OR_in_conditionOu2149); 
             	    OR242_tree = (CommonTree)adaptor.create(OR242);
             	    root_0 = (CommonTree)adaptor.becomeRoot(OR242_tree, root_0);
 
-            	    pushFollow(FOLLOW_conditionEt_in_conditionOu2150);
+            	    pushFollow(FOLLOW_conditionEt_in_conditionOu2152);
             	    conditionEt243=conditionEt();
 
             	    state._fsp--;
@@ -7048,7 +7048,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "conditionEt"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:282:1: conditionEt : cond ( AND cond )* ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:282:1: conditionEt : cond ( AND cond )* ;
     public final hightParser.conditionEt_return conditionEt() throws RecognitionException {
         hightParser.conditionEt_return retval = new hightParser.conditionEt_return();
         retval.start = input.LT(1);
@@ -7064,18 +7064,18 @@ public class hightParser extends Parser {
         CommonTree AND245_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:282:13: ( cond ( AND cond )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:283:3: cond ( AND cond )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:282:13: ( cond ( AND cond )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:283:3: cond ( AND cond )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_cond_in_conditionEt2165);
+            pushFollow(FOLLOW_cond_in_conditionEt2167);
             cond244=cond();
 
             state._fsp--;
 
             adaptor.addChild(root_0, cond244.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:283:8: ( AND cond )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:283:8: ( AND cond )*
             loop73:
             do {
                 int alt73=2;
@@ -7088,13 +7088,13 @@ public class hightParser extends Parser {
 
                 switch (alt73) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:283:9: AND cond
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:283:9: AND cond
             	    {
-            	    AND245=(Token)match(input,AND,FOLLOW_AND_in_conditionEt2168); 
+            	    AND245=(Token)match(input,AND,FOLLOW_AND_in_conditionEt2170); 
             	    AND245_tree = (CommonTree)adaptor.create(AND245);
             	    root_0 = (CommonTree)adaptor.becomeRoot(AND245_tree, root_0);
 
-            	    pushFollow(FOLLOW_cond_in_conditionEt2171);
+            	    pushFollow(FOLLOW_cond_in_conditionEt2173);
             	    cond246=cond();
 
             	    state._fsp--;
@@ -7136,7 +7136,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "cond"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:286:1: cond : ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:286:1: cond : ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD );
     public final hightParser.cond_return cond() throws RecognitionException {
         hightParser.cond_return retval = new hightParser.cond_return();
         retval.start = input.LT(1);
@@ -7172,7 +7172,7 @@ public class hightParser extends Parser {
         CommonTree PD259_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:286:6: ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:286:6: ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD )
             int alt75=3;
             switch ( input.LA(1) ) {
             case GAME:
@@ -7303,11 +7303,11 @@ public class hightParser extends Parser {
 
             switch (alt75) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:287:3: etat
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:287:3: etat
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_etat_in_cond2186);
+                    pushFollow(FOLLOW_etat_in_cond2188);
                     etat247=etat();
 
                     state._fsp--;
@@ -7317,18 +7317,18 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:5: COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:5: COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    COMP248=(Token)match(input,COMP,FOLLOW_COMP_in_cond2192); 
-                    pushFollow(FOLLOW_operation_in_cond2195);
+                    COMP248=(Token)match(input,COMP,FOLLOW_COMP_in_cond2194); 
+                    pushFollow(FOLLOW_operation_in_cond2197);
                     operation249=operation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation249.getTree());
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:21: ( EQUALS | INF | SUP | INFEG | SUPED | DIFF )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:21: ( EQUALS | INF | SUP | INFEG | SUPED | DIFF )
                     int alt74=6;
                     switch ( input.LA(1) ) {
                     case EQUALS:
@@ -7370,9 +7370,9 @@ public class hightParser extends Parser {
 
                     switch (alt74) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:22: EQUALS
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:22: EQUALS
                             {
-                            EQUALS250=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cond2198); 
+                            EQUALS250=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cond2200); 
                             EQUALS250_tree = (CommonTree)adaptor.create(EQUALS250);
                             root_0 = (CommonTree)adaptor.becomeRoot(EQUALS250_tree, root_0);
 
@@ -7380,9 +7380,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:32: INF
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:32: INF
                             {
-                            INF251=(Token)match(input,INF,FOLLOW_INF_in_cond2203); 
+                            INF251=(Token)match(input,INF,FOLLOW_INF_in_cond2205); 
                             INF251_tree = (CommonTree)adaptor.create(INF251);
                             root_0 = (CommonTree)adaptor.becomeRoot(INF251_tree, root_0);
 
@@ -7390,9 +7390,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:39: SUP
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:39: SUP
                             {
-                            SUP252=(Token)match(input,SUP,FOLLOW_SUP_in_cond2208); 
+                            SUP252=(Token)match(input,SUP,FOLLOW_SUP_in_cond2210); 
                             SUP252_tree = (CommonTree)adaptor.create(SUP252);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUP252_tree, root_0);
 
@@ -7400,9 +7400,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:46: INFEG
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:46: INFEG
                             {
-                            INFEG253=(Token)match(input,INFEG,FOLLOW_INFEG_in_cond2213); 
+                            INFEG253=(Token)match(input,INFEG,FOLLOW_INFEG_in_cond2215); 
                             INFEG253_tree = (CommonTree)adaptor.create(INFEG253);
                             root_0 = (CommonTree)adaptor.becomeRoot(INFEG253_tree, root_0);
 
@@ -7410,9 +7410,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:55: SUPED
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:55: SUPED
                             {
-                            SUPED254=(Token)match(input,SUPED,FOLLOW_SUPED_in_cond2218); 
+                            SUPED254=(Token)match(input,SUPED,FOLLOW_SUPED_in_cond2220); 
                             SUPED254_tree = (CommonTree)adaptor.create(SUPED254);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUPED254_tree, root_0);
 
@@ -7420,9 +7420,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:288:64: DIFF
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:288:64: DIFF
                             {
-                            DIFF255=(Token)match(input,DIFF,FOLLOW_DIFF_in_cond2223); 
+                            DIFF255=(Token)match(input,DIFF,FOLLOW_DIFF_in_cond2225); 
                             DIFF255_tree = (CommonTree)adaptor.create(DIFF255);
                             root_0 = (CommonTree)adaptor.becomeRoot(DIFF255_tree, root_0);
 
@@ -7432,7 +7432,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operation_in_cond2227);
+                    pushFollow(FOLLOW_operation_in_cond2229);
                     operation256=operation();
 
                     state._fsp--;
@@ -7442,21 +7442,21 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:289:5: PG conditions PD
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:289:5: PG conditions PD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PG257=(Token)match(input,PG,FOLLOW_PG_in_cond2244); 
+                    PG257=(Token)match(input,PG,FOLLOW_PG_in_cond2246); 
                     PG257_tree = (CommonTree)adaptor.create(PG257);
                     adaptor.addChild(root_0, PG257_tree);
 
-                    pushFollow(FOLLOW_conditions_in_cond2246);
+                    pushFollow(FOLLOW_conditions_in_cond2248);
                     conditions258=conditions();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, conditions258.getTree());
-                    PD259=(Token)match(input,PD,FOLLOW_PD_in_cond2248); 
+                    PD259=(Token)match(input,PD,FOLLOW_PD_in_cond2250); 
                     PD259_tree = (CommonTree)adaptor.create(PD259);
                     adaptor.addChild(root_0, PD259_tree);
 
@@ -7489,7 +7489,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "etat"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:292:1: etat : ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW | DEFEAT_KW );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:292:1: etat : ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW | DEFEAT_KW );
     public final hightParser.etat_return etat() throws RecognitionException {
         hightParser.etat_return retval = new hightParser.etat_return();
         retval.start = input.LT(1);
@@ -7549,7 +7549,7 @@ public class hightParser extends Parser {
         CommonTree DEFEAT_KW284_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:292:6: ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW | DEFEAT_KW )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:292:6: ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW | DEFEAT_KW )
             int alt82=4;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -7652,18 +7652,18 @@ public class hightParser extends Parser {
 
             switch (alt82) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:3: accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:3: accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesClasse_in_etat2262);
+                    pushFollow(FOLLOW_accesClasse_in_etat2264);
                     accesClasse260=accesClasse();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse260.getTree());
-                    IS261=(Token)match(input,IS,FOLLOW_IS_in_etat2264); 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:19: ( NOT )?
+                    IS261=(Token)match(input,IS,FOLLOW_IS_in_etat2266); 
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:19: ( NOT )?
                     int alt76=2;
                     int LA76_0 = input.LA(1);
 
@@ -7672,9 +7672,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt76) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:20: NOT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:20: NOT
                             {
-                            NOT262=(Token)match(input,NOT,FOLLOW_NOT_in_etat2268); 
+                            NOT262=(Token)match(input,NOT,FOLLOW_NOT_in_etat2270); 
                             NOT262_tree = (CommonTree)adaptor.create(NOT262);
                             adaptor.addChild(root_0, NOT262_tree);
 
@@ -7684,7 +7684,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:26: ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:26: ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal ) | MOVING_KW | WAITING_KW )
                     int alt79=7;
                     switch ( input.LA(1) ) {
                     case DEAD_KW:
@@ -7731,9 +7731,9 @@ public class hightParser extends Parser {
 
                     switch (alt79) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:27: DEAD_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:27: DEAD_KW
                             {
-                            DEAD_KW263=(Token)match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2273); 
+                            DEAD_KW263=(Token)match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2275); 
                             DEAD_KW263_tree = (CommonTree)adaptor.create(DEAD_KW263);
                             root_0 = (CommonTree)adaptor.becomeRoot(DEAD_KW263_tree, root_0);
 
@@ -7741,9 +7741,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:38: ALIVE_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:38: ALIVE_KW
                             {
-                            ALIVE_KW264=(Token)match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2278); 
+                            ALIVE_KW264=(Token)match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2280); 
                             ALIVE_KW264_tree = (CommonTree)adaptor.create(ALIVE_KW264);
                             root_0 = (CommonTree)adaptor.becomeRoot(ALIVE_KW264_tree, root_0);
 
@@ -7751,9 +7751,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:50: EFFACED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:50: EFFACED_KW
                             {
-                            EFFACED_KW265=(Token)match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2283); 
+                            EFFACED_KW265=(Token)match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2285); 
                             EFFACED_KW265_tree = (CommonTree)adaptor.create(EFFACED_KW265);
                             root_0 = (CommonTree)adaptor.becomeRoot(EFFACED_KW265_tree, root_0);
 
@@ -7761,9 +7761,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:64: GENERATED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:64: GENERATED_KW
                             {
-                            GENERATED_KW266=(Token)match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2288); 
+                            GENERATED_KW266=(Token)match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2290); 
                             GENERATED_KW266_tree = (CommonTree)adaptor.create(GENERATED_KW266);
                             root_0 = (CommonTree)adaptor.becomeRoot(GENERATED_KW266_tree, root_0);
 
@@ -7771,13 +7771,13 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:80: TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:80: TOUCHING_KW ( ( OTHER )? accesGlobal | accesLocal )
                             {
-                            TOUCHING_KW267=(Token)match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat2293); 
+                            TOUCHING_KW267=(Token)match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat2295); 
                             TOUCHING_KW267_tree = (CommonTree)adaptor.create(TOUCHING_KW267);
                             root_0 = (CommonTree)adaptor.becomeRoot(TOUCHING_KW267_tree, root_0);
 
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:93: ( ( OTHER )? accesGlobal | accesLocal )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:93: ( ( OTHER )? accesGlobal | accesLocal )
                             int alt78=2;
                             int LA78_0 = input.LA(1);
 
@@ -7795,9 +7795,9 @@ public class hightParser extends Parser {
                             }
                             switch (alt78) {
                                 case 1 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:94: ( OTHER )? accesGlobal
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:94: ( OTHER )? accesGlobal
                                     {
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:94: ( OTHER )?
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:94: ( OTHER )?
                                     int alt77=2;
                                     int LA77_0 = input.LA(1);
 
@@ -7806,9 +7806,9 @@ public class hightParser extends Parser {
                                     }
                                     switch (alt77) {
                                         case 1 :
-                                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:95: OTHER
+                                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:95: OTHER
                                             {
-                                            OTHER268=(Token)match(input,OTHER,FOLLOW_OTHER_in_etat2298); 
+                                            OTHER268=(Token)match(input,OTHER,FOLLOW_OTHER_in_etat2300); 
                                             OTHER268_tree = (CommonTree)adaptor.create(OTHER268);
                                             adaptor.addChild(root_0, OTHER268_tree);
 
@@ -7818,7 +7818,7 @@ public class hightParser extends Parser {
 
                                     }
 
-                                    pushFollow(FOLLOW_accesGlobal_in_etat2302);
+                                    pushFollow(FOLLOW_accesGlobal_in_etat2304);
                                     accesGlobal269=accesGlobal();
 
                                     state._fsp--;
@@ -7828,9 +7828,9 @@ public class hightParser extends Parser {
                                     }
                                     break;
                                 case 2 :
-                                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:117: accesLocal
+                                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:117: accesLocal
                                     {
-                                    pushFollow(FOLLOW_accesLocal_in_etat2306);
+                                    pushFollow(FOLLOW_accesLocal_in_etat2308);
                                     accesLocal270=accesLocal();
 
                                     state._fsp--;
@@ -7846,9 +7846,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:131: MOVING_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:131: MOVING_KW
                             {
-                            MOVING_KW271=(Token)match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat2311); 
+                            MOVING_KW271=(Token)match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat2313); 
                             MOVING_KW271_tree = (CommonTree)adaptor.create(MOVING_KW271);
                             root_0 = (CommonTree)adaptor.becomeRoot(MOVING_KW271_tree, root_0);
 
@@ -7856,9 +7856,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 7 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:293:144: WAITING_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:293:144: WAITING_KW
                             {
-                            WAITING_KW272=(Token)match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat2316); 
+                            WAITING_KW272=(Token)match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat2318); 
                             WAITING_KW272_tree = (CommonTree)adaptor.create(WAITING_KW272);
                             root_0 = (CommonTree)adaptor.becomeRoot(WAITING_KW272_tree, root_0);
 
@@ -7872,7 +7872,7 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:5: ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:5: ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7887,8 +7887,8 @@ public class hightParser extends Parser {
                         throw mse;
                     }
 
-                    IS274=(Token)match(input,IS,FOLLOW_IS_in_etat2334); 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:24: ( NOT )?
+                    IS274=(Token)match(input,IS,FOLLOW_IS_in_etat2336); 
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:24: ( NOT )?
                     int alt80=2;
                     int LA80_0 = input.LA(1);
 
@@ -7897,9 +7897,9 @@ public class hightParser extends Parser {
                     }
                     switch (alt80) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:25: NOT
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:25: NOT
                             {
-                            NOT275=(Token)match(input,NOT,FOLLOW_NOT_in_etat2338); 
+                            NOT275=(Token)match(input,NOT,FOLLOW_NOT_in_etat2340); 
                             NOT275_tree = (CommonTree)adaptor.create(NOT275);
                             adaptor.addChild(root_0, NOT275_tree);
 
@@ -7909,7 +7909,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:31: ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:31: ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
                     int alt81=6;
                     switch ( input.LA(1) ) {
                     case FINISHED_KW:
@@ -7951,9 +7951,9 @@ public class hightParser extends Parser {
 
                     switch (alt81) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:32: FINISHED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:32: FINISHED_KW
                             {
-                            FINISHED_KW276=(Token)match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat2343); 
+                            FINISHED_KW276=(Token)match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat2345); 
                             FINISHED_KW276_tree = (CommonTree)adaptor.create(FINISHED_KW276);
                             root_0 = (CommonTree)adaptor.becomeRoot(FINISHED_KW276_tree, root_0);
 
@@ -7961,9 +7961,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:46: STARTED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:46: STARTED_KW
                             {
-                            STARTED_KW277=(Token)match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat2347); 
+                            STARTED_KW277=(Token)match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat2349); 
                             STARTED_KW277_tree = (CommonTree)adaptor.create(STARTED_KW277);
                             root_0 = (CommonTree)adaptor.becomeRoot(STARTED_KW277_tree, root_0);
 
@@ -7971,9 +7971,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:60: PAUSED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:60: PAUSED_KW
                             {
-                            PAUSED_KW278=(Token)match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat2352); 
+                            PAUSED_KW278=(Token)match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat2354); 
                             PAUSED_KW278_tree = (CommonTree)adaptor.create(PAUSED_KW278);
                             root_0 = (CommonTree)adaptor.becomeRoot(PAUSED_KW278_tree, root_0);
 
@@ -7981,9 +7981,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:73: MUTED_KW ( ON | OFF )
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:73: MUTED_KW ( ON | OFF )
                             {
-                            MUTED_KW279=(Token)match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat2357); 
+                            MUTED_KW279=(Token)match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat2359); 
                             MUTED_KW279_tree = (CommonTree)adaptor.create(MUTED_KW279);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUTED_KW279_tree, root_0);
 
@@ -8002,9 +8002,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:96: PLAYED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:96: PLAYED_KW
                             {
-                            PLAYED_KW281=(Token)match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat2370); 
+                            PLAYED_KW281=(Token)match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat2372); 
                             PLAYED_KW281_tree = (CommonTree)adaptor.create(PLAYED_KW281);
                             root_0 = (CommonTree)adaptor.becomeRoot(PLAYED_KW281_tree, root_0);
 
@@ -8012,9 +8012,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:294:109: STOPPED_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:294:109: STOPPED_KW
                             {
-                            STOPPED_KW282=(Token)match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat2375); 
+                            STOPPED_KW282=(Token)match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat2377); 
                             STOPPED_KW282_tree = (CommonTree)adaptor.create(STOPPED_KW282);
                             root_0 = (CommonTree)adaptor.becomeRoot(STOPPED_KW282_tree, root_0);
 
@@ -8028,11 +8028,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:296:5: VICTORY_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:296:5: VICTORY_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    VICTORY_KW283=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat2389); 
+                    VICTORY_KW283=(Token)match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat2391); 
                     VICTORY_KW283_tree = (CommonTree)adaptor.create(VICTORY_KW283);
                     adaptor.addChild(root_0, VICTORY_KW283_tree);
 
@@ -8040,11 +8040,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:297:5: DEFEAT_KW
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:297:5: DEFEAT_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    DEFEAT_KW284=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat2395); 
+                    DEFEAT_KW284=(Token)match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat2397); 
                     DEFEAT_KW284_tree = (CommonTree)adaptor.create(DEFEAT_KW284);
                     adaptor.addChild(root_0, DEFEAT_KW284_tree);
 
@@ -8077,7 +8077,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "affectation"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:300:1: affectation : ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:300:1: affectation : ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable );
     public final hightParser.affectation_return affectation() throws RecognitionException {
         hightParser.affectation_return retval = new hightParser.affectation_return();
         retval.start = input.LT(1);
@@ -8107,7 +8107,7 @@ public class hightParser extends Parser {
         CommonTree WITH293_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:300:13: ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:300:13: ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable )
             int alt84=2;
             int LA84_0 = input.LA(1);
 
@@ -8125,14 +8125,14 @@ public class hightParser extends Parser {
             }
             switch (alt84) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation )
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:4: ( ASSIGN_KW | ADD_KW | SUB_KW ) operation
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:4: ( ASSIGN_KW | ADD_KW | SUB_KW ) operation
                     {
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:4: ( ASSIGN_KW | ADD_KW | SUB_KW )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:4: ( ASSIGN_KW | ADD_KW | SUB_KW )
                     int alt83=3;
                     switch ( input.LA(1) ) {
                     case ASSIGN_KW:
@@ -8159,9 +8159,9 @@ public class hightParser extends Parser {
 
                     switch (alt83) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:5: ASSIGN_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:5: ASSIGN_KW
                             {
-                            ASSIGN_KW285=(Token)match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation2412); 
+                            ASSIGN_KW285=(Token)match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation2414); 
                             ASSIGN_KW285_tree = (CommonTree)adaptor.create(ASSIGN_KW285);
                             root_0 = (CommonTree)adaptor.becomeRoot(ASSIGN_KW285_tree, root_0);
 
@@ -8169,9 +8169,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:18: ADD_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:18: ADD_KW
                             {
-                            ADD_KW286=(Token)match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation2417); 
+                            ADD_KW286=(Token)match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation2419); 
                             ADD_KW286_tree = (CommonTree)adaptor.create(ADD_KW286);
                             root_0 = (CommonTree)adaptor.becomeRoot(ADD_KW286_tree, root_0);
 
@@ -8179,9 +8179,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:301:28: SUB_KW
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:301:28: SUB_KW
                             {
-                            SUB_KW287=(Token)match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation2422); 
+                            SUB_KW287=(Token)match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation2424); 
                             SUB_KW287_tree = (CommonTree)adaptor.create(SUB_KW287);
                             root_0 = (CommonTree)adaptor.becomeRoot(SUB_KW287_tree, root_0);
 
@@ -8191,7 +8191,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operation_in_affectation2426);
+                    pushFollow(FOLLOW_operation_in_affectation2428);
                     operation288=operation();
 
                     state._fsp--;
@@ -8200,8 +8200,8 @@ public class hightParser extends Parser {
 
                     }
 
-                    FOR289=(Token)match(input,FOR,FOLLOW_FOR_in_affectation2429); 
-                    pushFollow(FOLLOW_variable_in_affectation2432);
+                    FOR289=(Token)match(input,FOR,FOLLOW_FOR_in_affectation2431); 
+                    pushFollow(FOLLOW_variable_in_affectation2434);
                     variable290=variable();
 
                     state._fsp--;
@@ -8211,22 +8211,22 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:302:5: INVERT_KW variable WITH variable
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:302:5: INVERT_KW variable WITH variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    INVERT_KW291=(Token)match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation2439); 
+                    INVERT_KW291=(Token)match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation2441); 
                     INVERT_KW291_tree = (CommonTree)adaptor.create(INVERT_KW291);
                     root_0 = (CommonTree)adaptor.becomeRoot(INVERT_KW291_tree, root_0);
 
-                    pushFollow(FOLLOW_variable_in_affectation2442);
+                    pushFollow(FOLLOW_variable_in_affectation2444);
                     variable292=variable();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, variable292.getTree());
-                    WITH293=(Token)match(input,WITH,FOLLOW_WITH_in_affectation2444); 
-                    pushFollow(FOLLOW_variable_in_affectation2447);
+                    WITH293=(Token)match(input,WITH,FOLLOW_WITH_in_affectation2446); 
+                    pushFollow(FOLLOW_variable_in_affectation2449);
                     variable294=variable();
 
                     state._fsp--;
@@ -8261,7 +8261,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "iaBasique"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:305:1: iaBasique : IA_KW accesClasse IS actionObjet ( VIRG actionObjet )* ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:305:1: iaBasique : IA_KW accesClasse IS actionObjet ( VIRG actionObjet )* ;
     public final hightParser.iaBasique_return iaBasique() throws RecognitionException {
         hightParser.iaBasique_return retval = new hightParser.iaBasique_return();
         retval.start = input.LT(1);
@@ -8283,29 +8283,29 @@ public class hightParser extends Parser {
         CommonTree VIRG299_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:305:11: ( IA_KW accesClasse IS actionObjet ( VIRG actionObjet )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:305:13: IA_KW accesClasse IS actionObjet ( VIRG actionObjet )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:305:11: ( IA_KW accesClasse IS actionObjet ( VIRG actionObjet )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:305:13: IA_KW accesClasse IS actionObjet ( VIRG actionObjet )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            IA_KW295=(Token)match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique2460); 
+            IA_KW295=(Token)match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique2462); 
             IA_KW295_tree = (CommonTree)adaptor.create(IA_KW295);
             root_0 = (CommonTree)adaptor.becomeRoot(IA_KW295_tree, root_0);
 
-            pushFollow(FOLLOW_accesClasse_in_iaBasique2463);
+            pushFollow(FOLLOW_accesClasse_in_iaBasique2465);
             accesClasse296=accesClasse();
 
             state._fsp--;
 
             adaptor.addChild(root_0, accesClasse296.getTree());
-            IS297=(Token)match(input,IS,FOLLOW_IS_in_iaBasique2465); 
-            pushFollow(FOLLOW_actionObjet_in_iaBasique2468);
+            IS297=(Token)match(input,IS,FOLLOW_IS_in_iaBasique2467); 
+            pushFollow(FOLLOW_actionObjet_in_iaBasique2470);
             actionObjet298=actionObjet();
 
             state._fsp--;
 
             adaptor.addChild(root_0, actionObjet298.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:305:48: ( VIRG actionObjet )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:305:48: ( VIRG actionObjet )*
             loop85:
             do {
                 int alt85=2;
@@ -8318,10 +8318,10 @@ public class hightParser extends Parser {
 
                 switch (alt85) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:305:49: VIRG actionObjet
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:305:49: VIRG actionObjet
             	    {
-            	    VIRG299=(Token)match(input,VIRG,FOLLOW_VIRG_in_iaBasique2471); 
-            	    pushFollow(FOLLOW_actionObjet_in_iaBasique2474);
+            	    VIRG299=(Token)match(input,VIRG,FOLLOW_VIRG_in_iaBasique2473); 
+            	    pushFollow(FOLLOW_actionObjet_in_iaBasique2476);
             	    actionObjet300=actionObjet();
 
             	    state._fsp--;
@@ -8363,7 +8363,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "operation"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:309:1: operation : ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:309:1: operation : ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus );
     public final hightParser.operation_return operation() throws RecognitionException {
         hightParser.operation_return retval = new hightParser.operation_return();
         retval.start = input.LT(1);
@@ -8385,7 +8385,7 @@ public class hightParser extends Parser {
         CommonTree AND305_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:309:11: ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:309:11: ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus )
             int alt86=2;
             int LA86_0 = input.LA(1);
 
@@ -8403,11 +8403,11 @@ public class hightParser extends Parser {
             }
             switch (alt86) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:310:2: operationPlus
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:310:2: operationPlus
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_operationPlus_in_operation2488);
+                    pushFollow(FOLLOW_operationPlus_in_operation2490);
                     operationPlus301=operationPlus();
 
                     state._fsp--;
@@ -8417,23 +8417,23 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:311:4: RANDOM_KW BETWEEN operationPlus AND operationPlus
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:311:4: RANDOM_KW BETWEEN operationPlus AND operationPlus
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    RANDOM_KW302=(Token)match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation2493); 
+                    RANDOM_KW302=(Token)match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation2495); 
                     RANDOM_KW302_tree = (CommonTree)adaptor.create(RANDOM_KW302);
                     root_0 = (CommonTree)adaptor.becomeRoot(RANDOM_KW302_tree, root_0);
 
-                    BETWEEN303=(Token)match(input,BETWEEN,FOLLOW_BETWEEN_in_operation2496); 
-                    pushFollow(FOLLOW_operationPlus_in_operation2499);
+                    BETWEEN303=(Token)match(input,BETWEEN,FOLLOW_BETWEEN_in_operation2498); 
+                    pushFollow(FOLLOW_operationPlus_in_operation2501);
                     operationPlus304=operationPlus();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operationPlus304.getTree());
-                    AND305=(Token)match(input,AND,FOLLOW_AND_in_operation2501); 
-                    pushFollow(FOLLOW_operationPlus_in_operation2504);
+                    AND305=(Token)match(input,AND,FOLLOW_AND_in_operation2503); 
+                    pushFollow(FOLLOW_operationPlus_in_operation2506);
                     operationPlus306=operationPlus();
 
                     state._fsp--;
@@ -8468,7 +8468,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "operationPlus"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:314:1: operationPlus : operationMul ( ( PLUS | MINUS ) operationMul )* ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:314:1: operationPlus : operationMul ( ( PLUS | MINUS ) operationMul )* ;
     public final hightParser.operationPlus_return operationPlus() throws RecognitionException {
         hightParser.operationPlus_return retval = new hightParser.operationPlus_return();
         retval.start = input.LT(1);
@@ -8486,18 +8486,18 @@ public class hightParser extends Parser {
         CommonTree MINUS309_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:314:15: ( operationMul ( ( PLUS | MINUS ) operationMul )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:2: operationMul ( ( PLUS | MINUS ) operationMul )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:314:15: ( operationMul ( ( PLUS | MINUS ) operationMul )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:2: operationMul ( ( PLUS | MINUS ) operationMul )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationMul_in_operationPlus2516);
+            pushFollow(FOLLOW_operationMul_in_operationPlus2518);
             operationMul307=operationMul();
 
             state._fsp--;
 
             adaptor.addChild(root_0, operationMul307.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:15: ( ( PLUS | MINUS ) operationMul )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:15: ( ( PLUS | MINUS ) operationMul )*
             loop88:
             do {
                 int alt88=2;
@@ -8510,9 +8510,9 @@ public class hightParser extends Parser {
 
                 switch (alt88) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:16: ( PLUS | MINUS ) operationMul
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:16: ( PLUS | MINUS ) operationMul
             	    {
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:16: ( PLUS | MINUS )
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:16: ( PLUS | MINUS )
             	    int alt87=2;
             	    int LA87_0 = input.LA(1);
 
@@ -8530,9 +8530,9 @@ public class hightParser extends Parser {
             	    }
             	    switch (alt87) {
             	        case 1 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:17: PLUS
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:17: PLUS
             	            {
-            	            PLUS308=(Token)match(input,PLUS,FOLLOW_PLUS_in_operationPlus2520); 
+            	            PLUS308=(Token)match(input,PLUS,FOLLOW_PLUS_in_operationPlus2522); 
             	            PLUS308_tree = (CommonTree)adaptor.create(PLUS308);
             	            root_0 = (CommonTree)adaptor.becomeRoot(PLUS308_tree, root_0);
 
@@ -8540,9 +8540,9 @@ public class hightParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:315:25: MINUS
+            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:315:25: MINUS
             	            {
-            	            MINUS309=(Token)match(input,MINUS,FOLLOW_MINUS_in_operationPlus2525); 
+            	            MINUS309=(Token)match(input,MINUS,FOLLOW_MINUS_in_operationPlus2527); 
             	            MINUS309_tree = (CommonTree)adaptor.create(MINUS309);
             	            root_0 = (CommonTree)adaptor.becomeRoot(MINUS309_tree, root_0);
 
@@ -8552,7 +8552,7 @@ public class hightParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_operationMul_in_operationPlus2529);
+            	    pushFollow(FOLLOW_operationMul_in_operationPlus2531);
             	    operationMul310=operationMul();
 
             	    state._fsp--;
@@ -8594,7 +8594,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "operationMul"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:318:1: operationMul : operationPow ( ( MUL | DIV | MOD ) operationPow )? ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:318:1: operationMul : operationPow ( ( MUL | DIV | MOD ) operationPow )? ;
     public final hightParser.operationMul_return operationMul() throws RecognitionException {
         hightParser.operationMul_return retval = new hightParser.operationMul_return();
         retval.start = input.LT(1);
@@ -8614,18 +8614,18 @@ public class hightParser extends Parser {
         CommonTree MOD314_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:318:14: ( operationPow ( ( MUL | DIV | MOD ) operationPow )? )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:2: operationPow ( ( MUL | DIV | MOD ) operationPow )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:318:14: ( operationPow ( ( MUL | DIV | MOD ) operationPow )? )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:2: operationPow ( ( MUL | DIV | MOD ) operationPow )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationPow_in_operationMul2542);
+            pushFollow(FOLLOW_operationPow_in_operationMul2544);
             operationPow311=operationPow();
 
             state._fsp--;
 
             adaptor.addChild(root_0, operationPow311.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:15: ( ( MUL | DIV | MOD ) operationPow )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:15: ( ( MUL | DIV | MOD ) operationPow )?
             int alt90=2;
             int LA90_0 = input.LA(1);
 
@@ -8634,9 +8634,9 @@ public class hightParser extends Parser {
             }
             switch (alt90) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:16: ( MUL | DIV | MOD ) operationPow
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:16: ( MUL | DIV | MOD ) operationPow
                     {
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:16: ( MUL | DIV | MOD )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:16: ( MUL | DIV | MOD )
                     int alt89=3;
                     switch ( input.LA(1) ) {
                     case MUL:
@@ -8663,9 +8663,9 @@ public class hightParser extends Parser {
 
                     switch (alt89) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:17: MUL
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:17: MUL
                             {
-                            MUL312=(Token)match(input,MUL,FOLLOW_MUL_in_operationMul2546); 
+                            MUL312=(Token)match(input,MUL,FOLLOW_MUL_in_operationMul2548); 
                             MUL312_tree = (CommonTree)adaptor.create(MUL312);
                             root_0 = (CommonTree)adaptor.becomeRoot(MUL312_tree, root_0);
 
@@ -8673,9 +8673,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:24: DIV
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:24: DIV
                             {
-                            DIV313=(Token)match(input,DIV,FOLLOW_DIV_in_operationMul2551); 
+                            DIV313=(Token)match(input,DIV,FOLLOW_DIV_in_operationMul2553); 
                             DIV313_tree = (CommonTree)adaptor.create(DIV313);
                             root_0 = (CommonTree)adaptor.becomeRoot(DIV313_tree, root_0);
 
@@ -8683,9 +8683,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:319:31: MOD
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:319:31: MOD
                             {
-                            MOD314=(Token)match(input,MOD,FOLLOW_MOD_in_operationMul2556); 
+                            MOD314=(Token)match(input,MOD,FOLLOW_MOD_in_operationMul2558); 
                             MOD314_tree = (CommonTree)adaptor.create(MOD314);
                             root_0 = (CommonTree)adaptor.becomeRoot(MOD314_tree, root_0);
 
@@ -8695,7 +8695,7 @@ public class hightParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_operationPow_in_operationMul2560);
+                    pushFollow(FOLLOW_operationPow_in_operationMul2562);
                     operationPow315=operationPow();
 
                     state._fsp--;
@@ -8734,7 +8734,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "operationPow"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:322:1: operationPow : operationBracket ( POW operationBracket )? ;
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:322:1: operationPow : operationBracket ( POW operationBracket )? ;
     public final hightParser.operationPow_return operationPow() throws RecognitionException {
         hightParser.operationPow_return retval = new hightParser.operationPow_return();
         retval.start = input.LT(1);
@@ -8750,18 +8750,18 @@ public class hightParser extends Parser {
         CommonTree POW317_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:322:14: ( operationBracket ( POW operationBracket )? )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:323:2: operationBracket ( POW operationBracket )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:322:14: ( operationBracket ( POW operationBracket )? )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:323:2: operationBracket ( POW operationBracket )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_operationBracket_in_operationPow2575);
+            pushFollow(FOLLOW_operationBracket_in_operationPow2577);
             operationBracket316=operationBracket();
 
             state._fsp--;
 
             adaptor.addChild(root_0, operationBracket316.getTree());
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:323:19: ( POW operationBracket )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:323:19: ( POW operationBracket )?
             int alt91=2;
             int LA91_0 = input.LA(1);
 
@@ -8770,13 +8770,13 @@ public class hightParser extends Parser {
             }
             switch (alt91) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:323:20: POW operationBracket
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:323:20: POW operationBracket
                     {
-                    POW317=(Token)match(input,POW,FOLLOW_POW_in_operationPow2578); 
+                    POW317=(Token)match(input,POW,FOLLOW_POW_in_operationPow2580); 
                     POW317_tree = (CommonTree)adaptor.create(POW317);
                     root_0 = (CommonTree)adaptor.becomeRoot(POW317_tree, root_0);
 
-                    pushFollow(FOLLOW_operationBracket_in_operationPow2581);
+                    pushFollow(FOLLOW_operationBracket_in_operationPow2583);
                     operationBracket318=operationBracket();
 
                     state._fsp--;
@@ -8815,7 +8815,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "operationBracket"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:326:1: operationBracket : ( PG operation PD | variable | FLOAT );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:326:1: operationBracket : ( PG operation PD | variable | FLOAT );
     public final hightParser.operationBracket_return operationBracket() throws RecognitionException {
         hightParser.operationBracket_return retval = new hightParser.operationBracket_return();
         retval.start = input.LT(1);
@@ -8835,7 +8835,7 @@ public class hightParser extends Parser {
         CommonTree FLOAT323_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:326:18: ( PG operation PD | variable | FLOAT )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:326:18: ( PG operation PD | variable | FLOAT )
             int alt92=3;
             switch ( input.LA(1) ) {
             case PG:
@@ -8867,27 +8867,27 @@ public class hightParser extends Parser {
 
             switch (alt92) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:327:2: PG operation PD
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:327:2: PG operation PD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PG319=(Token)match(input,PG,FOLLOW_PG_in_operationBracket2596); 
-                    pushFollow(FOLLOW_operation_in_operationBracket2599);
+                    PG319=(Token)match(input,PG,FOLLOW_PG_in_operationBracket2598); 
+                    pushFollow(FOLLOW_operation_in_operationBracket2601);
                     operation320=operation();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation320.getTree());
-                    PD321=(Token)match(input,PD,FOLLOW_PD_in_operationBracket2601); 
+                    PD321=(Token)match(input,PD,FOLLOW_PD_in_operationBracket2603); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:328:4: variable
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:328:4: variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_variable_in_operationBracket2607);
+                    pushFollow(FOLLOW_variable_in_operationBracket2609);
                     variable322=variable();
 
                     state._fsp--;
@@ -8897,11 +8897,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:329:4: FLOAT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:329:4: FLOAT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    FLOAT323=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_operationBracket2612); 
+                    FLOAT323=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_operationBracket2614); 
                     FLOAT323_tree = (CommonTree)adaptor.create(FLOAT323);
                     adaptor.addChild(root_0, FLOAT323_tree);
 
@@ -8934,7 +8934,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "variable"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:332:1: variable : ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:332:1: variable : ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) );
     public final hightParser.variable_return variable() throws RecognitionException {
         hightParser.variable_return retval = new hightParser.variable_return();
         retval.start = input.LT(1);
@@ -8986,7 +8986,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_accesLocal=new RewriteRuleSubtreeStream(adaptor,"rule accesLocal");
         RewriteRuleSubtreeStream stream_attributTps=new RewriteRuleSubtreeStream(adaptor,"rule attributTps");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:332:10: ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:332:10: ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) )
             int alt94=4;
             switch ( input.LA(1) ) {
             case X:
@@ -9020,11 +9020,11 @@ public class hightParser extends Parser {
 
             switch (alt94) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:333:3: ( X | Y | Z ) OF typeCoordonnees OF accesLocal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:333:3: ( X | Y | Z ) OF typeCoordonnees OF accesLocal
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:333:3: ( X | Y | Z )
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:333:3: ( X | Y | Z )
                     int alt93=3;
                     switch ( input.LA(1) ) {
                     case X:
@@ -9051,9 +9051,9 @@ public class hightParser extends Parser {
 
                     switch (alt93) {
                         case 1 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:333:4: X
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:333:4: X
                             {
-                            X324=(Token)match(input,X,FOLLOW_X_in_variable2625); 
+                            X324=(Token)match(input,X,FOLLOW_X_in_variable2627); 
                             X324_tree = (CommonTree)adaptor.create(X324);
                             root_0 = (CommonTree)adaptor.becomeRoot(X324_tree, root_0);
 
@@ -9061,9 +9061,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:333:9: Y
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:333:9: Y
                             {
-                            Y325=(Token)match(input,Y,FOLLOW_Y_in_variable2630); 
+                            Y325=(Token)match(input,Y,FOLLOW_Y_in_variable2632); 
                             Y325_tree = (CommonTree)adaptor.create(Y325);
                             root_0 = (CommonTree)adaptor.becomeRoot(Y325_tree, root_0);
 
@@ -9071,9 +9071,9 @@ public class hightParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:333:14: Z
+                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:333:14: Z
                             {
-                            Z326=(Token)match(input,Z,FOLLOW_Z_in_variable2635); 
+                            Z326=(Token)match(input,Z,FOLLOW_Z_in_variable2637); 
                             Z326_tree = (CommonTree)adaptor.create(Z326);
                             root_0 = (CommonTree)adaptor.becomeRoot(Z326_tree, root_0);
 
@@ -9083,15 +9083,15 @@ public class hightParser extends Parser {
 
                     }
 
-                    OF327=(Token)match(input,OF,FOLLOW_OF_in_variable2639); 
-                    pushFollow(FOLLOW_typeCoordonnees_in_variable2642);
+                    OF327=(Token)match(input,OF,FOLLOW_OF_in_variable2641); 
+                    pushFollow(FOLLOW_typeCoordonnees_in_variable2644);
                     typeCoordonnees328=typeCoordonnees();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, typeCoordonnees328.getTree());
-                    OF329=(Token)match(input,OF,FOLLOW_OF_in_variable2644); 
-                    pushFollow(FOLLOW_accesLocal_in_variable2647);
+                    OF329=(Token)match(input,OF,FOLLOW_OF_in_variable2646); 
+                    pushFollow(FOLLOW_accesLocal_in_variable2649);
                     accesLocal330=accesLocal();
 
                     state._fsp--;
@@ -9101,15 +9101,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:334:5: IDENT OF accesLocal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:334:5: IDENT OF accesLocal
                     {
-                    IDENT331=(Token)match(input,IDENT,FOLLOW_IDENT_in_variable2653);  
+                    IDENT331=(Token)match(input,IDENT,FOLLOW_IDENT_in_variable2655);  
                     stream_IDENT.add(IDENT331);
 
-                    OF332=(Token)match(input,OF,FOLLOW_OF_in_variable2655);  
+                    OF332=(Token)match(input,OF,FOLLOW_OF_in_variable2657);  
                     stream_OF.add(OF332);
 
-                    pushFollow(FOLLOW_accesLocal_in_variable2657);
+                    pushFollow(FOLLOW_accesLocal_in_variable2659);
                     accesLocal333=accesLocal();
 
                     state._fsp--;
@@ -9130,7 +9130,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 335:5: -> ^( VAR_I_KW IDENT accesLocal )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:335:8: ^( VAR_I_KW IDENT accesLocal )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:335:8: ^( VAR_I_KW IDENT accesLocal )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(VAR_I_KW, "VAR_I_KW"), root_1);
@@ -9147,15 +9147,15 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:336:5: SCORE OF GAME
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:336:5: SCORE OF GAME
                     {
-                    SCORE334=(Token)match(input,SCORE,FOLLOW_SCORE_in_variable2677);  
+                    SCORE334=(Token)match(input,SCORE,FOLLOW_SCORE_in_variable2679);  
                     stream_SCORE.add(SCORE334);
 
-                    OF335=(Token)match(input,OF,FOLLOW_OF_in_variable2679);  
+                    OF335=(Token)match(input,OF,FOLLOW_OF_in_variable2681);  
                     stream_OF.add(OF335);
 
-                    GAME336=(Token)match(input,GAME,FOLLOW_GAME_in_variable2681);  
+                    GAME336=(Token)match(input,GAME,FOLLOW_GAME_in_variable2683);  
                     stream_GAME.add(GAME336);
 
 
@@ -9181,24 +9181,24 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:338:5: VALUE OF attributTps OF accesLocal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:338:5: VALUE OF attributTps OF accesLocal
                     {
-                    VALUE337=(Token)match(input,VALUE,FOLLOW_VALUE_in_variable2695);  
+                    VALUE337=(Token)match(input,VALUE,FOLLOW_VALUE_in_variable2697);  
                     stream_VALUE.add(VALUE337);
 
-                    OF338=(Token)match(input,OF,FOLLOW_OF_in_variable2697);  
+                    OF338=(Token)match(input,OF,FOLLOW_OF_in_variable2699);  
                     stream_OF.add(OF338);
 
-                    pushFollow(FOLLOW_attributTps_in_variable2699);
+                    pushFollow(FOLLOW_attributTps_in_variable2701);
                     attributTps339=attributTps();
 
                     state._fsp--;
 
                     stream_attributTps.add(attributTps339.getTree());
-                    OF340=(Token)match(input,OF,FOLLOW_OF_in_variable2701);  
+                    OF340=(Token)match(input,OF,FOLLOW_OF_in_variable2703);  
                     stream_OF.add(OF340);
 
-                    pushFollow(FOLLOW_accesLocal_in_variable2703);
+                    pushFollow(FOLLOW_accesLocal_in_variable2705);
                     accesLocal341=accesLocal();
 
                     state._fsp--;
@@ -9207,7 +9207,7 @@ public class hightParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesLocal, attributTps
+                    // elements: attributTps, accesLocal
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9219,7 +9219,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 339:5: -> ^( VALUE_KW attributTps accesLocal )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:339:8: ^( VALUE_KW attributTps accesLocal )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:339:8: ^( VALUE_KW attributTps accesLocal )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(VALUE_KW, "VALUE_KW"), root_1);
@@ -9261,7 +9261,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "accesClasse"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:342:1: accesClasse : ( ALL -> ^( ACCESS_KW ALL ) | accesLocal | accesGlobal );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:342:1: accesClasse : ( ALL -> ^( ACCESS_KW ALL ) | accesLocal | accesGlobal );
     public final hightParser.accesClasse_return accesClasse() throws RecognitionException {
         hightParser.accesClasse_return retval = new hightParser.accesClasse_return();
         retval.start = input.LT(1);
@@ -9278,7 +9278,7 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_ALL=new RewriteRuleTokenStream(adaptor,"token ALL");
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:342:13: ( ALL -> ^( ACCESS_KW ALL ) | accesLocal | accesGlobal )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:342:13: ( ALL -> ^( ACCESS_KW ALL ) | accesLocal | accesGlobal )
             int alt95=3;
             switch ( input.LA(1) ) {
             case ALL:
@@ -9314,9 +9314,9 @@ public class hightParser extends Parser {
 
             switch (alt95) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:343:3: ALL
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:343:3: ALL
                     {
-                    ALL342=(Token)match(input,ALL,FOLLOW_ALL_in_accesClasse2731);  
+                    ALL342=(Token)match(input,ALL,FOLLOW_ALL_in_accesClasse2733);  
                     stream_ALL.add(ALL342);
 
 
@@ -9334,7 +9334,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 344:5: -> ^( ACCESS_KW ALL )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:344:8: ^( ACCESS_KW ALL )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:344:8: ^( ACCESS_KW ALL )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9350,11 +9350,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:345:5: accesLocal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:345:5: accesLocal
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesLocal_in_accesClasse2749);
+                    pushFollow(FOLLOW_accesLocal_in_accesClasse2751);
                     accesLocal343=accesLocal();
 
                     state._fsp--;
@@ -9364,11 +9364,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:346:5: accesGlobal
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:346:5: accesGlobal
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_accesGlobal_in_accesClasse2755);
+                    pushFollow(FOLLOW_accesGlobal_in_accesClasse2757);
                     accesGlobal344=accesGlobal();
 
                     state._fsp--;
@@ -9403,7 +9403,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "accesGlobal"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:349:1: accesGlobal : ( typeObjet -> ^( ACCESS_KW typeObjet ) | interaction -> ^( ACCESS_KW interaction ) | PG NOT notAccess PD -> ^( ACCESS_KW NOT notAccess ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:349:1: accesGlobal : ( typeObjet -> ^( ACCESS_KW typeObjet ) | interaction -> ^( ACCESS_KW interaction ) | PG NOT notAccess PD -> ^( ACCESS_KW NOT notAccess ) );
     public final hightParser.accesGlobal_return accesGlobal() throws RecognitionException {
         hightParser.accesGlobal_return retval = new hightParser.accesGlobal_return();
         retval.start = input.LT(1);
@@ -9430,7 +9430,7 @@ public class hightParser extends Parser {
         RewriteRuleSubtreeStream stream_typeObjet=new RewriteRuleSubtreeStream(adaptor,"rule typeObjet");
         RewriteRuleSubtreeStream stream_notAccess=new RewriteRuleSubtreeStream(adaptor,"rule notAccess");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:349:13: ( typeObjet -> ^( ACCESS_KW typeObjet ) | interaction -> ^( ACCESS_KW interaction ) | PG NOT notAccess PD -> ^( ACCESS_KW NOT notAccess ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:349:13: ( typeObjet -> ^( ACCESS_KW typeObjet ) | interaction -> ^( ACCESS_KW interaction ) | PG NOT notAccess PD -> ^( ACCESS_KW NOT notAccess ) )
             int alt96=3;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -9462,9 +9462,9 @@ public class hightParser extends Parser {
 
             switch (alt96) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:350:3: typeObjet
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:350:3: typeObjet
                     {
-                    pushFollow(FOLLOW_typeObjet_in_accesGlobal2768);
+                    pushFollow(FOLLOW_typeObjet_in_accesGlobal2770);
                     typeObjet345=typeObjet();
 
                     state._fsp--;
@@ -9485,7 +9485,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 351:5: -> ^( ACCESS_KW typeObjet )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:351:8: ^( ACCESS_KW typeObjet )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:351:8: ^( ACCESS_KW typeObjet )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9501,9 +9501,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:352:5: interaction
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:352:5: interaction
                     {
-                    pushFollow(FOLLOW_interaction_in_accesGlobal2786);
+                    pushFollow(FOLLOW_interaction_in_accesGlobal2788);
                     interaction346=interaction();
 
                     state._fsp--;
@@ -9524,7 +9524,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 353:5: -> ^( ACCESS_KW interaction )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:353:8: ^( ACCESS_KW interaction )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:353:8: ^( ACCESS_KW interaction )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9540,21 +9540,21 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:354:5: PG NOT notAccess PD
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:354:5: PG NOT notAccess PD
                     {
-                    PG347=(Token)match(input,PG,FOLLOW_PG_in_accesGlobal2804);  
+                    PG347=(Token)match(input,PG,FOLLOW_PG_in_accesGlobal2806);  
                     stream_PG.add(PG347);
 
-                    NOT348=(Token)match(input,NOT,FOLLOW_NOT_in_accesGlobal2806);  
+                    NOT348=(Token)match(input,NOT,FOLLOW_NOT_in_accesGlobal2808);  
                     stream_NOT.add(NOT348);
 
-                    pushFollow(FOLLOW_notAccess_in_accesGlobal2808);
+                    pushFollow(FOLLOW_notAccess_in_accesGlobal2810);
                     notAccess349=notAccess();
 
                     state._fsp--;
 
                     stream_notAccess.add(notAccess349.getTree());
-                    PD350=(Token)match(input,PD,FOLLOW_PD_in_accesGlobal2810);  
+                    PD350=(Token)match(input,PD,FOLLOW_PD_in_accesGlobal2812);  
                     stream_PD.add(PD350);
 
 
@@ -9572,7 +9572,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 355:5: -> ^( ACCESS_KW NOT notAccess )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:355:8: ^( ACCESS_KW NOT notAccess )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:355:8: ^( ACCESS_KW NOT notAccess )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9614,7 +9614,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "notAccess"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:358:1: notAccess : ( typeObjet | interaction | PLAYER );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:358:1: notAccess : ( typeObjet | interaction | PLAYER );
     public final hightParser.notAccess_return notAccess() throws RecognitionException {
         hightParser.notAccess_return retval = new hightParser.notAccess_return();
         retval.start = input.LT(1);
@@ -9630,7 +9630,7 @@ public class hightParser extends Parser {
         CommonTree PLAYER353_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:358:11: ( typeObjet | interaction | PLAYER )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:358:11: ( typeObjet | interaction | PLAYER )
             int alt97=3;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -9662,11 +9662,11 @@ public class hightParser extends Parser {
 
             switch (alt97) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:359:1: typeObjet
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:359:1: typeObjet
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeObjet_in_notAccess2835);
+                    pushFollow(FOLLOW_typeObjet_in_notAccess2837);
                     typeObjet351=typeObjet();
 
                     state._fsp--;
@@ -9676,11 +9676,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:359:13: interaction
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:359:13: interaction
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_interaction_in_notAccess2839);
+                    pushFollow(FOLLOW_interaction_in_notAccess2841);
                     interaction352=interaction();
 
                     state._fsp--;
@@ -9690,11 +9690,11 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:359:27: PLAYER
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:359:27: PLAYER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    PLAYER353=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_notAccess2843); 
+                    PLAYER353=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_notAccess2845); 
                     PLAYER353_tree = (CommonTree)adaptor.create(PLAYER353);
                     adaptor.addChild(root_0, PLAYER353_tree);
 
@@ -9727,7 +9727,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "accesLocal"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:361:1: accesLocal : ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:361:1: accesLocal : ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) );
     public final hightParser.accesLocal_return accesLocal() throws RecognitionException {
         hightParser.accesLocal_return retval = new hightParser.accesLocal_return();
         retval.start = input.LT(1);
@@ -9753,7 +9753,7 @@ public class hightParser extends Parser {
         RewriteRuleTokenStream stream_NUM=new RewriteRuleTokenStream(adaptor,"token NUM");
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:361:12: ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:361:12: ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) )
             int alt98=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -9780,9 +9780,9 @@ public class hightParser extends Parser {
 
             switch (alt98) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:362:3: IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:362:3: IDENT
                     {
-                    IDENT354=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2853);  
+                    IDENT354=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2855);  
                     stream_IDENT.add(IDENT354);
 
 
@@ -9800,7 +9800,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 363:5: -> ^( ACCESS_KW IDENT )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:363:8: ^( ACCESS_KW IDENT )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:363:8: ^( ACCESS_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9816,21 +9816,21 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:364:5: NUM operation IN IDENT
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:364:5: NUM operation IN IDENT
                     {
-                    NUM355=(Token)match(input,NUM,FOLLOW_NUM_in_accesLocal2871);  
+                    NUM355=(Token)match(input,NUM,FOLLOW_NUM_in_accesLocal2873);  
                     stream_NUM.add(NUM355);
 
-                    pushFollow(FOLLOW_operation_in_accesLocal2873);
+                    pushFollow(FOLLOW_operation_in_accesLocal2875);
                     operation356=operation();
 
                     state._fsp--;
 
                     stream_operation.add(operation356.getTree());
-                    IN357=(Token)match(input,IN,FOLLOW_IN_in_accesLocal2875);  
+                    IN357=(Token)match(input,IN,FOLLOW_IN_in_accesLocal2877);  
                     stream_IN.add(IN357);
 
-                    IDENT358=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2877);  
+                    IDENT358=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal2879);  
                     stream_IDENT.add(IDENT358);
 
 
@@ -9848,7 +9848,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 365:5: -> ^( ACCESS_KW IDENT operation )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:365:8: ^( ACCESS_KW IDENT operation )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:365:8: ^( ACCESS_KW IDENT operation )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9865,9 +9865,9 @@ public class hightParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:366:5: PLAYER
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:366:5: PLAYER
                     {
-                    PLAYER359=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_accesLocal2897);  
+                    PLAYER359=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_accesLocal2899);  
                     stream_PLAYER.add(PLAYER359);
 
 
@@ -9885,7 +9885,7 @@ public class hightParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 367:5: -> ^( ACCESS_KW PLAYER )
                     {
-                        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:367:8: ^( ACCESS_KW PLAYER )
+                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:367:8: ^( ACCESS_KW PLAYER )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9926,7 +9926,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "typeCoordonnees"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:370:1: typeCoordonnees : ( POSITION | ORIENTATION | SIZE );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:370:1: typeCoordonnees : ( POSITION | ORIENTATION | SIZE );
     public final hightParser.typeCoordonnees_return typeCoordonnees() throws RecognitionException {
         hightParser.typeCoordonnees_return retval = new hightParser.typeCoordonnees_return();
         retval.start = input.LT(1);
@@ -9938,8 +9938,8 @@ public class hightParser extends Parser {
         CommonTree set360_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:370:17: ( POSITION | ORIENTATION | SIZE )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:370:17: ( POSITION | ORIENTATION | SIZE )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9981,7 +9981,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "timeUnit"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:374:1: timeUnit : ( MIN | SEC | MS | FRAME );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:374:1: timeUnit : ( MIN | SEC | MS | FRAME );
     public final hightParser.timeUnit_return timeUnit() throws RecognitionException {
         hightParser.timeUnit_return retval = new hightParser.timeUnit_return();
         retval.start = input.LT(1);
@@ -9993,8 +9993,8 @@ public class hightParser extends Parser {
         CommonTree set361_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:374:10: ( MIN | SEC | MS | FRAME )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:374:10: ( MIN | SEC | MS | FRAME )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -10036,7 +10036,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "typeObjet"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:382:1: typeObjet : ( CAMERA | MEDIA | COUNTER | TIME );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:382:1: typeObjet : ( CAMERA | MEDIA | COUNTER | TIME );
     public final hightParser.typeObjet_return typeObjet() throws RecognitionException {
         hightParser.typeObjet_return retval = new hightParser.typeObjet_return();
         retval.start = input.LT(1);
@@ -10048,8 +10048,8 @@ public class hightParser extends Parser {
         CommonTree set362_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:382:11: ( CAMERA | MEDIA | COUNTER | TIME )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:382:11: ( CAMERA | MEDIA | COUNTER | TIME )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -10091,7 +10091,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "attributTps"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:389:1: attributTps : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:389:1: attributTps : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
     public final hightParser.attributTps_return attributTps() throws RecognitionException {
         hightParser.attributTps_return retval = new hightParser.attributTps_return();
         retval.start = input.LT(1);
@@ -10103,8 +10103,8 @@ public class hightParser extends Parser {
         CommonTree set363_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:389:13: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:389:13: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -10146,7 +10146,7 @@ public class hightParser extends Parser {
     };
 
     // $ANTLR start "attributListeOuObjet"
-    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:395:1: attributListeOuObjet : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
+    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:395:1: attributListeOuObjet : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
     public final hightParser.attributListeOuObjet_return attributListeOuObjet() throws RecognitionException {
         hightParser.attributListeOuObjet_return retval = new hightParser.attributListeOuObjet_return();
         retval.start = input.LT(1);
@@ -10158,8 +10158,8 @@ public class hightParser extends Parser {
         CommonTree set364_tree=null;
 
         try {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:395:22: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:395:22: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -10200,365 +10200,365 @@ public class hightParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_gameData_in_game233 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_FIN_in_game235 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_newType_in_game241 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_FIN_in_game243 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_init_in_game249 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_FIN_in_game251 = new BitSet(new long[]{0x023C483000000000L,0x0000000000200000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_definition_in_game257 = new BitSet(new long[]{0x0200000010000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_FIN_in_game260 = new BitSet(new long[]{0x0200000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_commande_in_game268 = new BitSet(new long[]{0x0200000010000000L,0x0002000000200000L});
-    public static final BitSet FOLLOW_FIN_in_game271 = new BitSet(new long[]{0x0200000000000000L,0x0002000000200000L});
-    public static final BitSet FOLLOW_reglesJeu_in_game279 = new BitSet(new long[]{0x0000000010000002L,0x0002000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_FIN_in_game282 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_iaBasique_in_game290 = new BitSet(new long[]{0x0000000010000002L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_FIN_in_game293 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_GAME_in_gameData340 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_HAS_in_gameData342 = new BitSet(new long[]{0x0000000900000000L});
-    public static final BitSet FOLLOW_attributGame_in_gameData344 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_gameData347 = new BitSet(new long[]{0x0000000900000000L});
-    public static final BitSet FOLLOW_attributGame_in_gameData349 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_GRAVITY_KW_in_attributGame374 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_attributGame376 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_FLOAT_in_attributGame379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_attributGame397 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_gameData_in_game235 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_FIN_in_game237 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_newType_in_game243 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_FIN_in_game245 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_init_in_game251 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_FIN_in_game253 = new BitSet(new long[]{0x023C483000000000L,0x0000000000200000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_definition_in_game259 = new BitSet(new long[]{0x0200000010000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_FIN_in_game262 = new BitSet(new long[]{0x0200000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_commande_in_game270 = new BitSet(new long[]{0x0200000010000000L,0x0002000000200000L});
+    public static final BitSet FOLLOW_FIN_in_game273 = new BitSet(new long[]{0x0200000000000000L,0x0002000000200000L});
+    public static final BitSet FOLLOW_reglesJeu_in_game281 = new BitSet(new long[]{0x0000000010000002L,0x0002000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_FIN_in_game284 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_iaBasique_in_game292 = new BitSet(new long[]{0x0000000010000002L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_FIN_in_game295 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_GAME_in_gameData342 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_HAS_in_gameData344 = new BitSet(new long[]{0x0000000900000000L});
+    public static final BitSet FOLLOW_attributGame_in_gameData346 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_gameData349 = new BitSet(new long[]{0x0000000900000000L});
+    public static final BitSet FOLLOW_attributGame_in_gameData351 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_GRAVITY_KW_in_attributGame376 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_attributGame378 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_FLOAT_in_attributGame381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FLOAT_in_attributGame399 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_FLOAT_in_attributGame401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_attributGame424 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_attributGame426 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_FLOAT_in_attributGame428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TYPE_in_newType452 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_newType454 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_newType456 = new BitSet(new long[]{0x0000482000000000L,0x0000000000000000L,0x0001800000000000L});
-    public static final BitSet FOLLOW_subType_in_newType458 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_AND_in_newType461 = new BitSet(new long[]{0x0000482000000000L,0x0000000000000000L,0x0001800000000000L});
-    public static final BitSet FOLLOW_subType_in_newType463 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_IDENT_in_subType494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet_in_subType499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_init516 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_init518 = new BitSet(new long[]{0x0002492000000000L});
-    public static final BitSet FOLLOW_declarationObjet_in_init520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_init538 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_HAS_in_init540 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_allocationObject_in_init542 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_init545 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_allocationObject_in_init547 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_typeEntity_in_declarationObjet576 = new BitSet(new long[]{0x007C000000000002L});
-    public static final BitSet FOLLOW_entityMode_in_declarationObjet578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LIST_KW_in_declarationObjet602 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_OF_in_declarationObjet605 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_declarationObjet608 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet613 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_WITH_in_declarationObjet617 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_declarationObjet620 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet625 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_CAMERA_in_declarationObjet654 = new BitSet(new long[]{0x0180200000000002L});
-    public static final BitSet FOLLOW_view_in_declarationObjet657 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_PERSON_in_declarationObjet659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FREE_in_declarationObjet673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MEDIA_in_declarationObjet688 = new BitSet(new long[]{0x0001800000000002L});
-    public static final BitSet FOLLOW_LOOP_in_declarationObjet691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONCE_in_declarationObjet702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_declarationObjet724 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_declarationObjet726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_typeEntity757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_entityMode767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_entityMode772 = new BitSet(new long[]{0x007C000000000002L});
-    public static final BitSet FOLLOW_dupli_in_entityMode774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dupli_in_entityMode790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_attributGame401 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_FLOAT_in_attributGame403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_attributGame426 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_attributGame428 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_FLOAT_in_attributGame430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TYPE_in_newType454 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_newType456 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_newType458 = new BitSet(new long[]{0x0000482000000000L,0x0000000000000000L,0x0001800000000000L});
+    public static final BitSet FOLLOW_subType_in_newType460 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_AND_in_newType463 = new BitSet(new long[]{0x0000482000000000L,0x0000000000000000L,0x0001800000000000L});
+    public static final BitSet FOLLOW_subType_in_newType465 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_IDENT_in_subType496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet_in_subType501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_init518 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_init520 = new BitSet(new long[]{0x0002492000000000L});
+    public static final BitSet FOLLOW_declarationObjet_in_init522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_init540 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_HAS_in_init542 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_allocationObject_in_init544 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_init547 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_allocationObject_in_init549 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_typeEntity_in_declarationObjet578 = new BitSet(new long[]{0x007C000000000002L});
+    public static final BitSet FOLLOW_entityMode_in_declarationObjet580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LIST_KW_in_declarationObjet604 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_OF_in_declarationObjet607 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_declarationObjet610 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet615 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_WITH_in_declarationObjet619 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_declarationObjet622 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet627 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_CAMERA_in_declarationObjet656 = new BitSet(new long[]{0x0180200000000002L});
+    public static final BitSet FOLLOW_view_in_declarationObjet659 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_PERSON_in_declarationObjet661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FREE_in_declarationObjet675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MEDIA_in_declarationObjet690 = new BitSet(new long[]{0x0001800000000002L});
+    public static final BitSet FOLLOW_LOOP_in_declarationObjet693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONCE_in_declarationObjet704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_declarationObjet726 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_declarationObjet728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_typeEntity759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_entityMode769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_entityMode774 = new BitSet(new long[]{0x007C000000000002L});
+    public static final BitSet FOLLOW_dupli_in_entityMode776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dupli_in_entityMode792 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_interaction0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DUPLICABLE_in_dupli823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DUPLICABLE_in_dupli825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_view0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_allocationObject852 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_AT_in_allocationObject855 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L,0x0000000000000018L});
-    public static final BitSet FOLLOW_valAggregation_in_allocationObject857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_allocationObject887 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject889 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_coordinates_in_allocationObject891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributListeOuObjet_in_allocationObject922 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject924 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_allocationObject926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributTps_in_allocationObject958 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_AT_in_allocationObject960 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_allocationObject962 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_allocationObject964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_valAggregation1002 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_valAggregation1005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_valAggregation1027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_valAggregation1043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_196_in_valAggregation1048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFINITION_KW_in_definition1061 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_definition1064 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_MEANS_in_definition1066 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequences_in_definition1069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_consequ_in_consequences1078 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_consequences1081 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequ_in_consequences1083 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_siAlors_in_consequ1109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_action_in_consequ1115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_affectation_in_consequ1121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_activCommande_in_consequ1127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_consequ1133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_consequ1139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_consequ1145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_action1157 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_action1159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_action1164 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_ENDS_KW_in_action1173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTS_KW_in_action1177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSE_KW_in_action1185 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_MUTE_KW_in_action1190 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_set_in_action1193 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_PLAY_KW_in_action1203 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_STOP_KW_in_action1208 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_action1213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BLOCK_KW_in_action1218 = new BitSet(new long[]{0x0000000000000000L,0x00000000001C0000L});
-    public static final BitSet FOLLOW_transformation_in_action1221 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_action1223 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_accesClasse_in_action1226 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_coordinates_in_action1228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EFFACE_KW_in_action1234 = new BitSet(new long[]{0x0004002C00000000L,0x0000000000000000L,0x000000BC04000040L});
-    public static final BitSet FOLLOW_GENERATE_KW_in_action1239 = new BitSet(new long[]{0x0004002C00000000L,0x0000000000000000L,0x000000BC04000040L});
-    public static final BitSet FOLLOW_accesLocal_in_action1244 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_action1248 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_IDENT_in_action1251 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_accesGlobal_in_action1255 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_action1261 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_ON_in_action1264 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_action1268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_action1272 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_coordinates_in_action1275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WAIT_KW_in_action1282 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_action1285 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_action1287 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_action1289 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequences_in_action1292 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ENDWAIT_in_action1294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SAVE_KW_in_action1300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIES_KW_in_actionObjet1312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandePressee_in_actionObjet1318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1324 = new BitSet(new long[]{0x0000000000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_DURING_in_actionObjet1327 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_actionObjet1330 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
-    public static final BitSet FOLLOW_timeUnit_in_actionObjet1332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNTIL_in_actionObjet1336 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_conditions_in_actionObjet1339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUIP_in_actionObjet1346 = new BitSet(new long[]{0x0004002000000000L,0x0000000000030000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_actionObjet1350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEXT_in_actionObjet1354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREVIOUS_in_actionObjet1358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_allocationObject854 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_AT_in_allocationObject857 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L,0x0000000000000018L});
+    public static final BitSet FOLLOW_valAggregation_in_allocationObject859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_allocationObject889 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject891 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_coordinates_in_allocationObject893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributListeOuObjet_in_allocationObject924 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject926 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_allocationObject928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributTps_in_allocationObject960 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_AT_in_allocationObject962 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_allocationObject964 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_allocationObject966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_valAggregation1004 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_valAggregation1007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_valAggregation1029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_valAggregation1045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_196_in_valAggregation1050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFINITION_KW_in_definition1063 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_definition1066 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_MEANS_in_definition1068 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequences_in_definition1071 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_consequ_in_consequences1080 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_consequences1083 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequ_in_consequences1085 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_siAlors_in_consequ1111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_action_in_consequ1117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_affectation_in_consequ1123 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_activCommande_in_consequ1129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_consequ1135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_consequ1141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_consequ1147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_action1159 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_action1161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_action1166 = new BitSet(new long[]{0x6000000000000000L});
+    public static final BitSet FOLLOW_ENDS_KW_in_action1175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTS_KW_in_action1179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSE_KW_in_action1187 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_MUTE_KW_in_action1192 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_set_in_action1195 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_PLAY_KW_in_action1205 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_STOP_KW_in_action1210 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_action1215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BLOCK_KW_in_action1220 = new BitSet(new long[]{0x0000000000000000L,0x00000000001C0000L});
+    public static final BitSet FOLLOW_transformation_in_action1223 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_action1225 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_accesClasse_in_action1228 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_coordinates_in_action1230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EFFACE_KW_in_action1236 = new BitSet(new long[]{0x0004002C00000000L,0x0000000000000000L,0x000000BC04000040L});
+    public static final BitSet FOLLOW_GENERATE_KW_in_action1241 = new BitSet(new long[]{0x0004002C00000000L,0x0000000000000000L,0x000000BC04000040L});
+    public static final BitSet FOLLOW_accesLocal_in_action1246 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_action1250 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_IDENT_in_action1253 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_accesGlobal_in_action1257 = new BitSet(new long[]{0x0002000200000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_action1263 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_ON_in_action1266 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_action1270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_action1274 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_coordinates_in_action1277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WAIT_KW_in_action1284 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_action1287 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_action1289 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_action1291 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequences_in_action1294 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ENDWAIT_in_action1296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SAVE_KW_in_action1302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIES_KW_in_actionObjet1314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandePressee_in_actionObjet1320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionObjet1326 = new BitSet(new long[]{0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_DURING_in_actionObjet1329 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_actionObjet1332 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000780000000000L});
+    public static final BitSet FOLLOW_timeUnit_in_actionObjet1334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNTIL_in_actionObjet1338 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_conditions_in_actionObjet1341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUIP_in_actionObjet1348 = new BitSet(new long[]{0x0004002000000000L,0x0000000000030000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_actionObjet1352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEXT_in_actionObjet1356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PREVIOUS_in_actionObjet1360 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_transformation0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operation_in_coordinates1398 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
     public static final BitSet FOLLOW_operation_in_coordinates1400 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_coordinates1402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMAND_KW_in_commande1431 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_IDENT_in_commande1435 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_commande1437 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_actionCommande_in_commande1442 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_commande1445 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
-    public static final BitSet FOLLOW_actionCommande_in_commande1448 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_MOUSE_in_actionCommande1461 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_actionCommande1463 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_actionCommande1465 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
-    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KEY_in_actionCommande1485 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_actionCommande1487 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_actionCommande1489 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
-    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_actionCommandeType1516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandePressee_in_actionCommandeType1520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionCommandeType1524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operation_in_coordinates1402 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_coordinates1404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMAND_KW_in_commande1433 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_IDENT_in_commande1437 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_commande1439 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_actionCommande_in_commande1444 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_commande1447 = new BitSet(new long[]{0x0000002000000000L,0x0000000001400000L});
+    public static final BitSet FOLLOW_actionCommande_in_commande1450 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_MOUSE_in_actionCommande1463 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_actionCommande1465 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_actionCommande1467 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
+    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KEY_in_actionCommande1487 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_actionCommande1489 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_actionCommande1491 = new BitSet(new long[]{0x8000002000000000L,0x00001CC000000010L});
+    public static final BitSet FOLLOW_actionCommandeType_in_actionCommande1493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_actionCommandeType1518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandePressee_in_actionCommandeType1522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_actionCommandeMaintenue_in_actionCommandeType1526 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_souris0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_clavier0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1636 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_actionCommandePressee1638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSE_KW_in_actionCommandePressee1644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_KW_in_actionCommandePressee1650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1665 = new BitSet(new long[]{0x0000000000000000L,0x0000030018000000L});
-    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1687 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
-    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ACCELERATE_in_actionCommandeMaintenue1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BRAKE_in_actionCommandeMaintenue1707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande1723 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
-    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande1728 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
-    public static final BitSet FOLLOW_typeCommand_in_activCommande1732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMANDS_in_typeCommand1746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOUSE_in_typeCommand1754 = new BitSet(new long[]{0x0000000000000002L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_typeCommand1757 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_typeCommand1760 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
-    public static final BitSet FOLLOW_souris_in_typeCommand1762 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_KEY_in_typeCommand1789 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_typeCommand1791 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_typeCommand1794 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
-    public static final BitSet FOLLOW_clavier_in_typeCommand1796 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand1821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu1831 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0x000180FC00000040L});
-    public static final BitSet FOLLOW_IDENT_in_reglesJeu1835 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_reglesJeu1837 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0x000180FC00000040L});
-    public static final BitSet FOLLOW_declencheur_in_reglesJeu1843 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_reglesJeu1845 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequences_in_reglesJeu1848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_declencheur1862 = new BitSet(new long[]{0x0000000000000000L,0x01B4000000001000L});
-    public static final BitSet FOLLOW_MOVES_KW_in_declencheur1865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIES_KW_in_declencheur1869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurTK_in_declencheur1873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurKT_in_declencheur1877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_declencheur1885 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_ENDS_KW_in_declencheur1894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTS_KW_in_declencheur1898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_declencheur1916 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_BECOMES_in_declencheur1918 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000000L});
-    public static final BitSet FOLLOW_varOuNB_in_declencheur1920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_declencheur1940 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_BECOMES_in_declencheur1942 = new BitSet(new long[]{0x003C000000000000L});
-    public static final BitSet FOLLOW_playerOuInteraction_in_declencheur1944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur1964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur1970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_varOuNB1981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_varOuNB1985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_playerOuInteraction1995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_playerOuInteraction1998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2010 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2015 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2021 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_accesGlobal_in_declencheurTK2025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_declencheurTK2029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2041 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
-    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2046 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
-    public static final BitSet FOLLOW_BY_in_declencheurKT2051 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2056 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_accesGlobal_in_declencheurKT2060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_declencheurKT2064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_KW_in_siAlors2081 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_conditions_in_siAlors2084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_THEN_in_siAlors2086 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2089 = new BitSet(new long[]{0x0000000000000000L,0x1800000000000000L});
-    public static final BitSet FOLLOW_ELSE_in_siAlors2092 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2095 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_ENDIF_in_siAlors2099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_conditions2114 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_conditionOu_in_conditions2118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_conditionEt_in_conditionOu2144 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
-    public static final BitSet FOLLOW_OR_in_conditionOu2147 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_conditionEt_in_conditionOu2150 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
-    public static final BitSet FOLLOW_cond_in_conditionEt2165 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_AND_in_conditionEt2168 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_cond_in_conditionEt2171 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_etat_in_cond2186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMP_in_cond2192 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_cond2195 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000003FL});
-    public static final BitSet FOLLOW_EQUALS_in_cond2198 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_INF_in_cond2203 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_SUP_in_cond2208 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_INFEG_in_cond2213 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_SUPED_in_cond2218 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_DIFF_in_cond2223 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_cond2227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_cond2244 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_conditions_in_cond2246 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_cond2248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesClasse_in_etat2262 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_etat2264 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x0000000000007F00L});
-    public static final BitSet FOLLOW_NOT_in_etat2268 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000007F00L});
-    public static final BitSet FOLLOW_DEAD_KW_in_etat2273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALIVE_KW_in_etat2278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EFFACED_KW_in_etat2283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GENERATED_KW_in_etat2288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOUCHING_KW_in_etat2293 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_OTHER_in_etat2298 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_accesGlobal_in_etat2302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_etat2306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOVING_KW_in_etat2311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WAITING_KW_in_etat2316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_etat2326 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_etat2334 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x00000000001F8000L});
-    public static final BitSet FOLLOW_NOT_in_etat2338 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001F8000L});
-    public static final BitSet FOLLOW_FINISHED_KW_in_etat2343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARTED_KW_in_etat2347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAUSED_KW_in_etat2352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MUTED_KW_in_etat2357 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_set_in_etat2360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYED_KW_in_etat2370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOPPED_KW_in_etat2375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_etat2389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_etat2395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation2412 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_ADD_KW_in_affectation2417 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_SUB_KW_in_affectation2422 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_affectation2426 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_FOR_in_affectation2429 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
-    public static final BitSet FOLLOW_variable_in_affectation2432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INVERT_KW_in_affectation2439 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
-    public static final BitSet FOLLOW_variable_in_affectation2442 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_WITH_in_affectation2444 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
-    public static final BitSet FOLLOW_variable_in_affectation2447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IA_KW_in_iaBasique2460 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
-    public static final BitSet FOLLOW_accesClasse_in_iaBasique2463 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_IS_in_iaBasique2465 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_iaBasique2468 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_VIRG_in_iaBasique2471 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
-    public static final BitSet FOLLOW_actionObjet_in_iaBasique2474 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RANDOM_KW_in_operation2493 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_BETWEEN_in_operation2496 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2499 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_AND_in_operation2501 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_operationPlus_in_operation2504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operationMul_in_operationPlus2516 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_PLUS_in_operationPlus2520 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_MINUS_in_operationPlus2525 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_operationMul_in_operationPlus2529 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_operationPow_in_operationMul2542 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
-    public static final BitSet FOLLOW_MUL_in_operationMul2546 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_DIV_in_operationMul2551 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_MOD_in_operationMul2556 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_operationPow_in_operationMul2560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_operationBracket_in_operationPow2575 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_POW_in_operationPow2578 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
-    public static final BitSet FOLLOW_operationBracket_in_operationPow2581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_operationBracket2596 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_operationBracket2599 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_operationBracket2601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_operationBracket2607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_operationBracket2612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_X_in_variable2625 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_Y_in_variable2630 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_Z_in_variable2635 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2639 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000070000000000L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable2642 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2644 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_variable2647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_variable2653 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2655 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_variable2657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_variable2677 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2679 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_GAME_in_variable2681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALUE_in_variable2695 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2697 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_attributTps_in_variable2699 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_OF_in_variable2701 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_accesLocal_in_variable2703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALL_in_accesClasse2731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesLocal_in_accesClasse2749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_accesGlobal_in_accesClasse2755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_accesGlobal2786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PG_in_accesGlobal2804 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_NOT_in_accesGlobal2806 = new BitSet(new long[]{0x003C480000000000L,0x0000000000000000L,0x0001800000000000L});
-    public static final BitSet FOLLOW_notAccess_in_accesGlobal2808 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_PD_in_accesGlobal2810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeObjet_in_notAccess2835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_interaction_in_notAccess2839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_notAccess2843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_accesLocal2853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NUM_in_accesLocal2871 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
-    public static final BitSet FOLLOW_operation_in_accesLocal2873 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_IN_in_accesLocal2875 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_IDENT_in_accesLocal2877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLAYER_in_accesLocal2897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_JUMP_in_actionCommandePressee1638 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_actionCommandePressee1640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSE_KW_in_actionCommandePressee1646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_KW_in_actionCommandePressee1652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVE_in_actionCommandeMaintenue1667 = new BitSet(new long[]{0x0000000000000000L,0x0000030018000000L});
+    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TURN_in_actionCommandeMaintenue1689 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
+    public static final BitSet FOLLOW_set_in_actionCommandeMaintenue1691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ACCELERATE_in_actionCommandeMaintenue1703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BRAKE_in_actionCommandeMaintenue1709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande1725 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
+    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande1730 = new BitSet(new long[]{0x0000000000000000L,0x0001800001400000L});
+    public static final BitSet FOLLOW_typeCommand_in_activCommande1734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMANDS_in_typeCommand1748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOUSE_in_typeCommand1756 = new BitSet(new long[]{0x0000000000000002L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_typeCommand1759 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_typeCommand1762 = new BitSet(new long[]{0x0000000000000000L,0x00000003FE000000L});
+    public static final BitSet FOLLOW_souris_in_typeCommand1764 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_KEY_in_typeCommand1791 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_typeCommand1793 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_typeCommand1796 = new BitSet(new long[]{0x0000000000000000L,0x0000003C1E000000L});
+    public static final BitSet FOLLOW_clavier_in_typeCommand1798 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand1823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu1833 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0x000180FC00000040L});
+    public static final BitSet FOLLOW_IDENT_in_reglesJeu1837 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_reglesJeu1839 = new BitSet(new long[]{0x183C483820000000L,0x0000000000000000L,0x000180FC00000040L});
+    public static final BitSet FOLLOW_declencheur_in_reglesJeu1845 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_reglesJeu1847 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequences_in_reglesJeu1850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_declencheur1864 = new BitSet(new long[]{0x0000000000000000L,0x01B4000000001000L});
+    public static final BitSet FOLLOW_MOVES_KW_in_declencheur1867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIES_KW_in_declencheur1871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurTK_in_declencheur1875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurKT_in_declencheur1879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_declencheur1887 = new BitSet(new long[]{0x6000000000000000L});
+    public static final BitSet FOLLOW_ENDS_KW_in_declencheur1896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTS_KW_in_declencheur1900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_declencheur1918 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_BECOMES_in_declencheur1920 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000000L});
+    public static final BitSet FOLLOW_varOuNB_in_declencheur1922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_declencheur1942 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_BECOMES_in_declencheur1944 = new BitSet(new long[]{0x003C000000000000L});
+    public static final BitSet FOLLOW_playerOuInteraction_in_declencheur1946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur1966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur1972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_varOuNB1983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_varOuNB1987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_playerOuInteraction1997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_playerOuInteraction2000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2012 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2017 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2023 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_accesGlobal_in_declencheurTK2027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_declencheurTK2031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2043 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
+    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2048 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
+    public static final BitSet FOLLOW_BY_in_declencheurKT2053 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2058 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_accesGlobal_in_declencheurKT2062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_declencheurKT2066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_KW_in_siAlors2083 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_conditions_in_siAlors2086 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_THEN_in_siAlors2088 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2091 = new BitSet(new long[]{0x0000000000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_ELSE_in_siAlors2094 = new BitSet(new long[]{0x983C483020000000L,0x04006000000009F9L,0x000180C001E00040L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2097 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_ENDIF_in_siAlors2101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_conditions2116 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_conditionOu_in_conditions2120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_conditionEt_in_conditionOu2146 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
+    public static final BitSet FOLLOW_OR_in_conditionOu2149 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_conditionEt_in_conditionOu2152 = new BitSet(new long[]{0x0000000000000002L,0x4000000000000000L});
+    public static final BitSet FOLLOW_cond_in_conditionEt2167 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_AND_in_conditionEt2170 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_cond_in_conditionEt2173 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_etat_in_cond2188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMP_in_cond2194 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_cond2197 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000003FL});
+    public static final BitSet FOLLOW_EQUALS_in_cond2200 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_INF_in_cond2205 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_SUP_in_cond2210 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_INFEG_in_cond2215 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_SUPED_in_cond2220 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_DIFF_in_cond2225 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_cond2229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_cond2246 = new BitSet(new long[]{0x183C483020000000L,0xA000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_conditions_in_cond2248 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_cond2250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesClasse_in_etat2264 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_etat2266 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x0000000000007F00L});
+    public static final BitSet FOLLOW_NOT_in_etat2270 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000007F00L});
+    public static final BitSet FOLLOW_DEAD_KW_in_etat2275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALIVE_KW_in_etat2280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EFFACED_KW_in_etat2285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GENERATED_KW_in_etat2290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOUCHING_KW_in_etat2295 = new BitSet(new long[]{0x003C483000000000L,0x0040000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_OTHER_in_etat2300 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_accesGlobal_in_etat2304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_etat2308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOVING_KW_in_etat2313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WAITING_KW_in_etat2318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_etat2328 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_etat2336 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L,0x00000000001F8000L});
+    public static final BitSet FOLLOW_NOT_in_etat2340 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001F8000L});
+    public static final BitSet FOLLOW_FINISHED_KW_in_etat2345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARTED_KW_in_etat2349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAUSED_KW_in_etat2354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MUTED_KW_in_etat2359 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_set_in_etat2362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYED_KW_in_etat2372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOPPED_KW_in_etat2377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_etat2391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_etat2397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation2414 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_ADD_KW_in_affectation2419 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_SUB_KW_in_affectation2424 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_affectation2428 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_FOR_in_affectation2431 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
+    public static final BitSet FOLLOW_variable_in_affectation2434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INVERT_KW_in_affectation2441 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
+    public static final BitSet FOLLOW_variable_in_affectation2444 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_WITH_in_affectation2446 = new BitSet(new long[]{0x0000002800000000L,0x0000000000000000L,0x0000003C00000000L});
+    public static final BitSet FOLLOW_variable_in_affectation2449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IA_KW_in_iaBasique2462 = new BitSet(new long[]{0x003C483000000000L,0x0000000000000000L,0x000180C000000040L});
+    public static final BitSet FOLLOW_accesClasse_in_iaBasique2465 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_IS_in_iaBasique2467 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_iaBasique2470 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_VIRG_in_iaBasique2473 = new BitSet(new long[]{0x8000000000000000L,0x00001CC000009010L});
+    public static final BitSet FOLLOW_actionObjet_in_iaBasique2476 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RANDOM_KW_in_operation2495 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_BETWEEN_in_operation2498 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2501 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_AND_in_operation2503 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_operationPlus_in_operation2506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operationMul_in_operationPlus2518 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
+    public static final BitSet FOLLOW_PLUS_in_operationPlus2522 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_MINUS_in_operationPlus2527 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_operationMul_in_operationPlus2531 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000030000000L});
+    public static final BitSet FOLLOW_operationPow_in_operationMul2544 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000001C0000000L});
+    public static final BitSet FOLLOW_MUL_in_operationMul2548 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_DIV_in_operationMul2553 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_MOD_in_operationMul2558 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_operationPow_in_operationMul2562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_operationBracket_in_operationPow2577 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_POW_in_operationPow2580 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C00000040L});
+    public static final BitSet FOLLOW_operationBracket_in_operationPow2583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_operationBracket2598 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_operationBracket2601 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_operationBracket2603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variable_in_operationBracket2609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_operationBracket2614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_X_in_variable2627 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_Y_in_variable2632 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_Z_in_variable2637 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2641 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000070000000000L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable2644 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2646 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_variable2649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_variable2655 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2657 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_variable2659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_variable2679 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2681 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_GAME_in_variable2683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALUE_in_variable2697 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2699 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0xFFFE070000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_attributTps_in_variable2701 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_OF_in_variable2703 = new BitSet(new long[]{0x0004002000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_accesLocal_in_variable2705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALL_in_accesClasse2733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesLocal_in_accesClasse2751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_accesGlobal_in_accesClasse2757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet_in_accesGlobal2770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_accesGlobal2788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PG_in_accesGlobal2806 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_NOT_in_accesGlobal2808 = new BitSet(new long[]{0x003C480000000000L,0x0000000000000000L,0x0001800000000000L});
+    public static final BitSet FOLLOW_notAccess_in_accesGlobal2810 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_PD_in_accesGlobal2812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeObjet_in_notAccess2837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_interaction_in_notAccess2841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_notAccess2845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_accesLocal2855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NUM_in_accesLocal2873 = new BitSet(new long[]{0x0000002C00000000L,0x0000000000000000L,0x0000003C04000040L});
+    public static final BitSet FOLLOW_operation_in_accesLocal2875 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_IN_in_accesLocal2877 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_IDENT_in_accesLocal2879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLAYER_in_accesLocal2899 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_typeCoordonnees0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_timeUnit0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_typeObjet0 = new BitSet(new long[]{0x0000000000000002L});

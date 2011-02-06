@@ -9,6 +9,7 @@ import java.util.Iterator;
 import symbols.Definition;
 import symbols.Entity;
 import symbols.Model;
+import symbols.Symbol;
 
 /**
  *
@@ -467,6 +468,14 @@ public class Code {
 	
     	return c;
     	
-    }	
+        }
+       
+        public static Code genEntity(Symbol ent) {
+    	Code c = new Code();
+    	c.append(ent.getName()+" = gen"+ent.getName()+"();\n");
+
+    	return c;
+        }        
+        
 
 }

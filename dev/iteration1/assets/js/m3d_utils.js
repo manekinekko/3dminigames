@@ -59,20 +59,20 @@ if (!window["M3D"].GUI){
 		}
 		
 		// horizontal
-		for(var y=-boundries; y<boundries;y++){
+		for(var y=-boundries; y<=boundries;y++){
 			var x=-boundries;
 			push(x,y);
-			for(; x<boundries;x+=0.5){
+			for(; x<=boundries;x+=0.5){
 				push(x,y);
 				push(x,y);
 			}
 			push(x,y);
 		}
 		// vertical	
-		for(var y=-boundries; y<boundries;y++){
+		for(var y=-boundries; y<=boundries;y++){
 			var x=-boundries;
 			push(y,x);
-			for(; x<boundries;x+=0.5){
+			for(; x<=boundries;x+=0.5){
 				push(y,x);
 				push(y,x);
 			}
@@ -204,7 +204,8 @@ if (!window["M3D"].GUI){
 			{
 	
 		        if(delta!=0){
-					scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
+					//scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
+					scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
 		        }
 				
 			}

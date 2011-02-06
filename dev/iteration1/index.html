@@ -4,7 +4,7 @@
 		<title>M3D GUI v0.0.1alpha</title>
 		<script src="assets/js/lib/modernizr.min.js"></script>
 	</head>
-	<body onload="new M3D.Upload.uploader('canvas', 'status', 'bin/upload.php', null, doc);">
+	<body onload="new M3D.Upload.uploader('container', 'status', 'bin/upload.php', null, doc);">
 		
 		<div id="m3d-ui">	
 			
@@ -98,6 +98,8 @@
 			
 			<!-- start: windows container -->
 			<div id="windows-container">
+				
+				<div id="status"></div>
 				
 				<div id="entity-info" class="window closed">
 					<h2>Entity information</h2>

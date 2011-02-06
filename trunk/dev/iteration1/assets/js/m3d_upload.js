@@ -174,7 +174,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			else {
 	
 				var name = file.fileName; 
-				var value = {docUrl: 'assets/dae/custom/'+name};
+				var value = {name: name, docUrl: 'assets/dae/custom/'+name};
 				document.getElementById('myModels').innerHTML += "<option value='"+value+"'>"+name+"</option>";
 				
 				if ( doc )
@@ -215,7 +215,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			var size = file.size;
 			if ( size > 5242880 )
 			{
-				alert("Collada files must be lower than 5Mo each! Found:"+file.size);
+				alert("Collada files must be lower than 5Mo each!");
 				return false;
 			}
 			
@@ -223,7 +223,6 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			upload(file);
 	 	}
 		
-		event.target.style.backgroundColor = "transparent";
 		document.getElementById('loading').style.display = "block";
 	}
 	
@@ -233,12 +232,12 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	this.uploadPlace.addEventListener("dragover", function(event) {
 		event.stopPropagation(); 
 		event.preventDefault();
+		document.getElementById('status').innerHTML = "Drop your model here";
 	}, true);
 	this.uploadPlace.addEventListener("dragenter", function(event){
-		event.target.style.backgroundColor = "#ff8";
 	}, false);
 	this.uploadPlace.addEventListener("dragleave", function(event){
-		event.target.style.backgroundColor = "transparent";
+		document.getElementById('status').innerHTML = "";
 	}, false)
 	this.uploadPlace.addEventListener("drop", this.drop, false); 
 

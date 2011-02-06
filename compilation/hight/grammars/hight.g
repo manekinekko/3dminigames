@@ -5,7 +5,7 @@ options {
     ASTLabelType=CommonTree; // type of $stat.tree ref etc...
 }
 
-
+  
 tokens {
     GAME_KW='GAME_KW';
     GAME_ATTRIBUT_KW='GAME_ATTRIBUT_KW';
@@ -87,7 +87,7 @@ init :
 	  -> ^(INIT_HAS_KW accesClasse allocationObject+)
 	;
 
-// A revoir : CAMERA : si rien n'est ajout� on fait quoi ?, MEDIA pareil
+// A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet :
 	typeEntity entityMode? 
 	  -> ^(DEC typeEntity entityMode?)   // interaction is neutral by default
@@ -285,7 +285,7 @@ conditionEt :
 
 cond :
   etat
-  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   � cause des parenth�ses qu'on retrouve dans operation
+  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   a cause des parentheses qu'on retrouve dans operation
   | PG conditions PD 
   ;
 
@@ -413,7 +413,7 @@ COMMENT     : '//'(~'\n')* {skip();}
    ;
 PD	: ')';
 PG	: '(';
-FIN	: ';' ; //op�rateur de fin de r�gles
+FIN	: ';' ; //operateur de fin de regles
 VIRG	: ',';
 HAS	: 'has';
 AT	: 'at';

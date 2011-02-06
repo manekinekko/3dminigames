@@ -3,7 +3,7 @@ tree grammar hightTree;
 options {
     tokenVocab=hight;
     ASTLabelType=CommonTree;
-}
+} 
 
 @header {
     package grammars;
@@ -331,26 +331,26 @@ definition [SymbolTable st] returns [Code c] @init{ c = new Code();}:
 	}
 		;
 
-consequences [SymbolTable st] returns [Code c]:
-	^(CONSEQUENCES_KW consequ_list[st])
-	{}
+consequences [SymbolTable st] returns [Code c]@init{ c = new Code();}:
+	^(CONSEQUENCES_KW conslist=consequ_list[st])
+	{c.append(conslist);}
 	;
 
-consequ_list [SymbolTable st] returns [Code c]:
-		consequ[st]+
-		{};
+consequ_list [SymbolTable st] returns [Code c]@init{ c = new Code();}:
+		(cons=consequ[st]{c.append(cons);})+
+		;
 		
-consequ [SymbolTable st] returns [Code c]:
+consequ [SymbolTable st] returns [Code c]@init{ c = new Code();}:
   i=siAlors[st] {c=i;}
-  | action[st] {}
-  | a=affectation[st] {c=a;}
+  | act=action[st] {c=act;}
+  | a=affectation[st] {c=a;} 
   | activCommande[st] {}
   | IDENT
   | VICTORY_KW
   | DEFEAT_KW
   ;
 
-action [SymbolTable st] returns [Code c]:
+action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	accesClass[st] actionObjet[st]
 	|^(ENDS_KW IDENT) 
 	|^(ENDS_KW GAME) 
@@ -362,13 +362,18 @@ action [SymbolTable st] returns [Code c]:
 	|^(STOP_KW IDENT)
 	|^(BLOCK_KW transformation[st] accesClass[st] coordinates[st])
 	|^(EFFACE_KW typeAcces[st] typeDestination[st]?)
-	|^(GENERATE_KW typeAcces[st] typeDestination[st]?)
+	|^(GENERATE_KW ta=typeAcces[st]{
+		for(Iterator<Symbol> it = ta.iterator() ; it.hasNext();){
+			c.append(Code.genEntity(it.next()));
+		}	
+	
+	} typeDestination[st]?)				//TO DO
 	|^(WAIT_KW operation[st] timeUnit[st] consequences[st])
 	|SAVE_KW
 	;
 
-typeAcces [SymbolTable st] returns [Code c]:
-	accesClass[st] | operation[st] (IDENT | accesClass[st]);
+typeAcces [SymbolTable st] returns [ArrayList<Symbol> l]:
+	ac=accesClass[st] {l=ac;}| operation[st] (IDENT | accesClass[st]);		//TO DO
 
 typeDestination [SymbolTable st] returns [Code c]: 
 	accesClass[st] | coordinates[st];
@@ -655,7 +660,7 @@ variable [SymbolTable st] returns [Code c]:
     }}
   ;
 
-accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList<Symbol>();}:
+accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList<Symbol>();}:	//TO DO
     ^(ACCESS_KW ALL)
     {sb.add(Genre.player);sb.addAll(Genre.allies);sb.addAll(Genre.enemies);sb.addAll(Genre.neutral);}
   | ^(ACCESS_KW mo=typeObjet)

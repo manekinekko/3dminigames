@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class Definition implements Symbol {
 
-    String name;
-    Code c;
-    boolean duplicable = false;
-    boolean generate = false;
+    private String name;
+    private Code c;
+    private boolean duplicable = false;
+    private boolean generate = false;
 
     public Definition(String s, Code c) {
         name = s;

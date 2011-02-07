@@ -165,12 +165,16 @@ max-height:100px;
 }
 
 #editor textarea {
-width: 530px;
-min-width: 530px;
-max-width: 530px;
-height: 494px;
-min-height: 494px;
-max-height: 494px;
+width: 560px;
+min-width: 560px;
+max-width: 560px;
+height: 498px;
+min-height: 498px;
+max-height: 498px;
+}
+
+#editor textarea:disabled {
+visibility:hidden;
 }
 
 #canvas-border {

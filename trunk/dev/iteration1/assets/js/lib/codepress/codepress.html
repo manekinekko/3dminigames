@@ -20,6 +20,7 @@
 
 	document.write('<link type="text/css" href="codepress.css?ts='+ts+'" rel="stylesheet" />');
 	document.write('<link type="text/css" href="languages/'+language+'.css?ts='+ts+'" rel="stylesheet" id="cp-lang-style" />');
+	document.write('<scr'+'ipt type="text/javascript" src="codepress.js?ts='+ts+'"></scr'+'ipt>');
 	document.write('<scr'+'ipt type="text/javascript" src="engines/'+engine+'.js?ts='+ts+'"></scr'+'ipt>');
 	document.write('<scr'+'ipt type="text/javascript" src="languages/'+language+'.js?ts='+ts+'"></scr'+'ipt>');
 	</script>
@@ -27,9 +28,12 @@
 </head>
 
 <script type="text/javascript">
+/*
 if(engine == "msie" || engine == "gecko") document.write('<body><pre> </pre></body>');
-else if(engine == "opera") document.write('<body></body>');
-// else if(engine == "khtml") document.write('<body> </body>');
+else if(engine == "khtml") document.write('<body> </body>');
+// opera and others
+else document.write('<body></body>');
+*/
 </script>
-
+<body><pre></pre></body>
 </html>

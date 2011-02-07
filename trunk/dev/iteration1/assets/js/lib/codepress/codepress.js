@@ -24,7 +24,18 @@ CodePress = function(obj) {
 	self.options = self.textarea.className;
 	
 	self.initialize = function() {
+		
+		// -- fix me: contentWindow is not valid in chrome & safari
+		// -- use contentDocument instead!
+		if (!self.contentWindow) {
+			self.contentWindow = self.contentDocument;
+		}
+		// --
+		
 		self.editor = self.contentWindow.CodePress;
+		
+		console.log(self.editor);
+		
 		self.editor.body = self.contentWindow.document.getElementsByTagName('body')[0];
 		self.editor.setCode(self.textarea.value);
 		self.setOptions();
@@ -38,8 +49,10 @@ CodePress = function(obj) {
 	// obj can by a textarea id or a string (code)
 	self.edit = function(obj,language) {
 		
-		// hack !!
-		CodePress.path = window.location.pathname+'assets/js/lib/codepress/';
+		// -- fix me: set the new path to codepress directory
+		var _path = window.location.pathname.replace('index.html', '');
+		CodePress.path = _path+'assets/js/lib/codepress/';
+		// --
 		
 		if(obj) self.textarea.value = document.getElementById(obj) ? document.getElementById(obj).value : obj;
 		if(!self.textarea.disabled) return;

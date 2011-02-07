@@ -6,8 +6,8 @@ if(!window["M3D"]){
 	window["M3D"]={};	
 }
 
-if (!window["M3D"].PARSER){
-		window["M3D"].PARSER={};
+if (!window["M3D"].Parser){
+		window["M3D"].Parser={};
 }
 
 (function(M3D){

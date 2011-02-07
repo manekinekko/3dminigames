@@ -56,6 +56,10 @@ $(function(){
 		if (M3D.GUI.validateFields(this)) {
 			M3D.GUI.updateEntityList();
 			M3D.GUI.addObjectToScene();
+			
+			var _name = $(this).closest('.window').find('#name').val();
+			_name = M3D.Common.ucfirst(_name);
+			M3D.Editor.setContent('type '+_name+' is Object;');
 		}
 	});
 	

@@ -60,5 +60,14 @@ if (!window["M3D"].Common) {
 		return M3D.REGEX_NUMBER.test(val);
 	}
 	
+	// -- Upper case the first letter
+	M3D.Common.ucfirst = function(value){
+		
+		if ( value === "" ) return "";
+		
+		var _first = value.substring(0,1).toUpperCase();
+		return _first+value.substring(1);
+	}
+	
     
 })(window["M3D"]);

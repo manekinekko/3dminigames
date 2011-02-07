@@ -1,15 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file assets/js/m3d_common.js
  */
-
-if (!window["M3D"]) {
-    window["M3D"] = {};
-}
-
-if (!window["M3D"].Common) {
-    window["M3D"].Common = {};
-}
-
 (function(M3D){
 
 	// global constants
@@ -70,4 +62,4 @@ if (!window["M3D"].Common) {
 	}
 	
     
-})(window["M3D"]);
+})(window.M3D);

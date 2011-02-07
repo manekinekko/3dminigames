@@ -37,6 +37,10 @@ CodePress = function(obj) {
 	
 	// obj can by a textarea id or a string (code)
 	self.edit = function(obj,language) {
+		
+		// hack !!
+		CodePress.path = window.location.pathname+'assets/js/lib/codepress/';
+		
 		if(obj) self.textarea.value = document.getElementById(obj) ? document.getElementById(obj).value : obj;
 		if(!self.textarea.disabled) return;
 		self.language = language ? language : self.getLanguage();
@@ -100,19 +104,7 @@ CodePress = function(obj) {
 	return self;
 }
 
-CodePress.languages = {	
-	csharp : 'C#', 
-	css : 'CSS', 
-	generic : 'Generic',
-	html : 'HTML',
-	java : 'Java', 
-	javascript : 'JavaScript', 
-	perl : 'Perl', 
-	ruby : 'Ruby',	
-	php : 'PHP', 
-	text : 'Text', 
-	sql : 'SQL',
-	vbscript : 'VBScript',
+CodePress.languages = {
 	edwigs: 'edwigs'
 }
 

@@ -1,15 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file assets/js/m3d_utils.js
  */
-
-if(!window.M3D){
-	window.M3D={};	
-}
-
-if (!window.M3D.GUI){
-		window.M3D.GUI={};
-}
-
 (function(M3D){
 	
 	// Contants
@@ -28,7 +20,6 @@ if (!window.M3D.GUI){
 	M3D.GUI.init = function(){
 		M3D.GUI.initTypes();
 		M3D.GUI.drawGrid();
-
 	};
 	
 	

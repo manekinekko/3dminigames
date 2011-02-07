@@ -2,7 +2,17 @@
 <html>
 	<head>
 		<title>M3D GUI v0.0.1alpha</title>
-		<script src="assets/js/lib/modernizr.min.js"></script>
+		
+		<!-- start: css parsing -->
+		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
+		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
+		<!-- end: css parsing -->
+		
+		<script type="text/javascript" src="assets/js/lib/modernizr.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/codepress/codepress.js"></script>
+		
 	</head>
 	<body onload="new M3D.Upload.uploader('container', 'status', 'bin/upload.php', null, doc);">
 		
@@ -14,8 +24,10 @@
 				<div id="loading"></div>
 				<h1><span>3D</span>WIGS</span></h1>
 				<div class="float-right" id="editor">
-					<div id="editor-header"></div>
-					<textarea row="10" cols="10"></textarea>
+					<div id="editor-header">
+					</div>
+					<textarea id="edwigs" class="codepress edwigs"></textarea>
+					<div id="editor-info"></div>
 				</div>
 				<div id="canvas-border" ></div>
 				<canvas id="canvas" width="700" height="500"></canvas>
@@ -35,7 +47,7 @@
 					<optgroup label="Presets">
 						<option value="assets/dae/presets/cube.dae">Cube</option>
 						<option value="assets/dae/presets/sphere.dae">Sphere</option>
-						<option value="assets/dae/presets/cylinder.dae">Cylindre</option>
+						<option value="assets/dae/presets/cylinder.dae">Cylinder</option>
 					</optgroup>
 				</select>
 				<input type="button" name="import" id="import" value="Add a model" />
@@ -174,14 +186,8 @@
 
 		</div>
 		
-		<!-- start: css parsing -->
-		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
-		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
-		<!-- end: css parsing -->
-		
 		<!-- start: js parsing -->
 		<!-- start: libraries -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/lib/json.js"></script>
 		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_math.js"></script>
 		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge.js"></script>

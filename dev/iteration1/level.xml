@@ -138,7 +138,7 @@
 	<material id="black" specular="0" color="#000" alpha="0.3" emit="1" />
 	<material id="cyan" specular="0" color="#00FFFF" alpha="0.3" emit="1" />
 	
-	<camera id="mainCamera1" rot_x="0.2" rot_y="0" rot_z="0" loc_x="-0.2" loc_y="0.1" loc_z="150" />
+	<camera id="mainCamera1" fov_y="40"  rot_x="0.5" rot_y="0" rot_z="0" loc_x="-5" loc_y="-30" loc_z="50" />
 	
 	<!-- n'est pas adaptée -->
 	<camera id="mainCamera2" loc_z="10" loc_y="-150"  loc_x="-150"  rot_x="0.2" rot_y="0" rot_z="0"/>

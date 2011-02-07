@@ -13,7 +13,7 @@ $(function(){
 		$(this).children().animate({top:30}, 200);
 	}, function(){
 		_autoHideMenu();
-	})
+	});
 	
 	// -- picking
 	$('#canvas').bind('mousedown', M3D.GUI.pickObject);	
@@ -23,7 +23,7 @@ $(function(){
 	window.document.getElementById("canvas").onmousewheel = document.getElementById("canvas").onmousewheel = M3D.GUI.wheel;
 	
 	// -- values manual updating
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)) });
+	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); });
 
 	
 	// -- toggling the bbox
@@ -67,7 +67,7 @@ $(function(){
 	$('#select-model').bind('change', M3D.GUI.pickObjectFromSelect);
 	
 	// -- show upload area
-	$('#showupload').click(function(){M3D.GUI.toggleShowUpload});
+	$('#showupload').click(function(){M3D.GUI.toggleShowUpload();});
 	
 	// -- add new attributes
 	$('#new-attribut-type, #quick-new-attribut-type').bind('change', function(){
@@ -156,6 +156,39 @@ $(function(){
 		M3D.GUI.hidePopup('confirmation-load');
 	});
 	
+	// -- generate the GLGE XML level file
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
+	
+	
+	// -- handle the autocomplete feature into the editor
+	/*
+	var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+	$( "#editor textarea" ).autocomplete({
+		source: availableTags
+	});
+	*/
 	
 });

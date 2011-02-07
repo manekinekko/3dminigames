@@ -1027,16 +1027,7 @@ if (!window.M3D.GUI){
 	            top: M3D.GUI.ANIMATE_BOTTOM_END_POS
 	        }, 150);
 	    });
-	    
-	    $('#info-right').show(10, function(){
-	        
-			M3D.GUI.updateObjectAttributesList();
-			
-			$(this).animate({
-	            right: M3D.GUI.ANIMATE_RIGHT_END_POS
-	        }, 150);
-	    });
-	
+	 
 	}
 	
 	

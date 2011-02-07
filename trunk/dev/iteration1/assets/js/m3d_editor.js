@@ -14,14 +14,15 @@ if (!window.M3D.Editor){
 	
 	// get the current content
 	M3D.Editor.getContent = function(){
-		return $('#editor textarea').val();
-	}
+		return edwigs.getCode();
+	};
 	
 	// set the new content
 	M3D.Editor.setContent = function(value){
 		var _old = M3D.Editor.getContent();
 		_old = _old === '' ? _old : _old+"\n";
-		$('#editor textarea').val( _old + value );
-	}	 
+		edwigs.edit( _old + value, 'edwigs' );
+		edwigs.focus();
+	};	 
 	
 })(window.M3D);

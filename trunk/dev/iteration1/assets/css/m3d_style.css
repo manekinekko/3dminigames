@@ -169,10 +169,25 @@ height:90px;
 width:100%;
 }
 
+#editor-info {
+width: 100px;
+min-width: 100px;
+max-width: 100px;
+height: 390px;
+min-height: 390px;
+max-height: 390px;
+border: 1px solid #AAA;
+overrflow: auto;
+margin: 0px 10px 10px 0;
+padding:6px;
+float:right;
+overflow:auto;
+}
+
 #editor textarea {
-width: 530px;
-min-width: 530px;
-max-width: 530px;
+width: 400px;
+min-width: 400px;
+max-width: 400px;
 height: 390px;
 min-height: 390px;
 max-height: 390px;

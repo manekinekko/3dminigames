@@ -2,12 +2,12 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
 
-if(!window["M3D"]){
-	window["M3D"]={};	
+if(!window.M3D){
+	window.M3D={};	
 }
 
-if (!window["M3D"].GUI){
-		window["M3D"].GUI={};
+if (!window.M3D.GUI){
+		window.M3D.GUI={};
 }
 
 (function(M3D){
@@ -44,23 +44,24 @@ if (!window["M3D"].GUI){
 			
 		}
 		
-	}
+	};
 	
 	M3D.GUI.drawGrid = function(){
 		
+		var x,y;
 		var sn = scene || doc.getElement("mainscene");
-		var boundries = 10;
+		var boundries = 20;
 		var positions=[];
 		
 		var push=function(x,y){
 			positions.push(x);
 			positions.push(y);
 			positions.push(0);
-		}
+		};
 		
 		// horizontal
-		for(var y=-boundries; y<=boundries;y++){
-			var x=-boundries;
+		for(y=-boundries; y<=boundries;y++){
+			x=-boundries;
 			push(x,y);
 			for(; x<=boundries;x+=0.5){
 				push(x,y);
@@ -69,8 +70,8 @@ if (!window["M3D"].GUI){
 			push(x,y);
 		}
 		// vertical	
-		for(var y=-boundries; y<=boundries;y++){
-			var x=-boundries;
+		for(y=-boundries; y<=boundries;y++){
+			x=-boundries;
 			push(y,x);
 			for(; x<=boundries;x+=0.5){
 				push(y,x);
@@ -83,30 +84,36 @@ if (!window["M3D"].GUI){
 		/**
 		create new object and mesh and set the positions we've previously calculated
 		**/
-		var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
-		line.setMesh((new GLGE.Mesh).setPositions(positions));
+		var _o = new GLGE.Object(); 
+		var _m = new GLGE.Mesh();
+		var line=_o.setDrawType(GLGE.DRAW_LINES);
+		line.setMesh(_m.setPositions(positions));
 		line.setMaterial(black);
 		line.setZtransparent(true);
 		line.setId('grid');
 		sn.addObject(line);
 		
-	}
+	};
 	
 	// -- Event handler for mouse wheel event.
 	M3D.GUI.wheel = function(event){
 	    var delta = 0;
 		
-	    if (!event) /* For IE. */
-	    	event = window.event;
+		/* For IE. */ 
+	    if (!event){
+			event = window.event;
+		}
 			
-			
-	    if (event.wheelDelta) { /* IE/Opera. */
+		/* IE/Opera. */	
+	    if (event.wheelDelta) {
 	        delta = event.wheelDelta/120;
 	        /** In Opera 9, delta differs in sign as compared to IE.
 	         */
-	        if (window.opera)
+	        if (window.opera){
 	            delta = -delta;
-	    } else if (event.detail) { /** Mozilla case. */
+			}
+	    } else if (event.detail) { 
+	   		/** Mozilla case. */
 	        /** In Mozilla, sign of delta is different than in IE.
 	         * Also, delta is multiple of 3.
 	         */
@@ -130,7 +137,7 @@ if (!window["M3D"].GUI){
 	        event.preventDefault();
 		}
 		event.returnValue = false;
-	}
+	};
 	
 	
 	
@@ -144,7 +151,7 @@ if (!window["M3D"].GUI){
 	
 	    var objects = scene.getObjects();
 	
-		if ( uidSelect == "" ){	
+		if ( uidSelect === "" ){	
 			M3D.GUI.unpickObject();
 		}
 		else {
@@ -170,7 +177,7 @@ if (!window["M3D"].GUI){
 			}
 		}
 		
-	}
+	};
 	
 	
 	
@@ -203,7 +210,7 @@ if (!window["M3D"].GUI){
 			else 
 			{
 	
-		        if(delta!=0){
+		        if(delta !== 0){
 					//scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
 					scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
 		        }
@@ -212,7 +219,7 @@ if (!window["M3D"].GUI){
 			
 		}
 		
-	}
+	};
 	
 	
 	
@@ -223,7 +230,7 @@ if (!window["M3D"].GUI){
 		urlCollada = data.docUrl;
 		M3D.GUI.showWaiting();
 		
-		var docCollada = new GLGE.Collada;
+		var docCollada = new GLGE.Collada();
 	
 	
 	    docCollada.setDocument(urlCollada, doc.getAbsolutePath(doc.rootURL,null), function(){
@@ -249,13 +256,13 @@ if (!window["M3D"].GUI){
 	M3D.GUI.showWaiting = function(){
 		var loading = document.getElementById('loading').style;
 		loading.display = "block";
-	}
+	};
 	
 	
 	M3D.GUI.hideWaiting = function(){
 		var loading = document.getElementById('loading').style;
 		loading.display = "none";
-	}
+	};
 	
 	
 	// -- show a pop up window
@@ -294,7 +301,7 @@ if (!window["M3D"].GUI){
 						$('#'+name).addClass('opened').removeClass('closed').animate({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS }, M3D.GUI.ANIMATE_WINDOW_SPEED);
 						
 						
-					})
+					});
 					
 				}
 				
@@ -310,10 +317,7 @@ if (!window["M3D"].GUI){
 		});
 		
 		
-	}
-	
-	
-	
+	};
 	
 	
 	M3D.GUI.hidePopup = function(){
@@ -327,7 +331,7 @@ if (!window["M3D"].GUI){
 		});
 		
 		
-	}
+	};
 	
 	
 	
@@ -350,18 +354,20 @@ if (!window["M3D"].GUI){
 				select.addClass('hidden');
 				input.removeClass('hidden number alphanumeric').val('');
 				
-				if ( type === "string" ) input.addClass('alphanumeric');
-				else if ( type === "number" ) input.addClass('number');
+				if (type === "string") {
+					input.addClass('alphanumeric');
+				}
+				else {
+					if (type === "number"){
+						input.addClass('number');
+					}
+				}
 				
-			break;
-			
-			default:
-
 			break;
 			
 		}
 		
-	}
+	};
 	
 	
 	M3D.GUI.saveNewRule = function(){
@@ -399,7 +405,9 @@ if (!window["M3D"].GUI){
 			var len = inputs.length;
 			for(var i=0; i<len; i++){
 	
-				if ( inputs[i].value === v ) return false;
+				if (inputs[i].value === v) {
+					return false;
+				}
 				
 			}
 	
@@ -529,12 +537,12 @@ if (!window["M3D"].GUI){
 			&& !M3D.Common.isEmpty(value.val())) 
 		{
 			
-			var attr = '<div class="entry-attributes">\
-							<input name="attributes-name[]" class="width-100" disabled="true" type="text" value="'+name.val()+'" />\
-							<input name="attributes-type[]" class="width-100" disabled="true" type="text" value="'+type.val()+'" />\
-							<input name="attributes-value[]" class="width-100" disabled="true" type="text" value="'+value.val()+'" />\
-							<a href="#" class="detele-attribut">Delete</a>\
-						</div>';
+			var attr = '<div class="entry-attributes">'+
+							'<input name="attributes-name[]" class="width-100" disabled="true" type="text" value="'+name.val()+'" />'+
+							'<input name="attributes-type[]" class="width-100" disabled="true" type="text" value="'+type.val()+'" />'+
+							'<input name="attributes-value[]" class="width-100" disabled="true" type="text" value="'+value.val()+'" />'+
+							'<a href="#" class="detele-attribut">Delete</a>'+
+						'</div>';
 			
 			// add html
 			$('#entity-attributes-list').prepend( attr );
@@ -904,7 +912,7 @@ if (!window["M3D"].GUI){
 	// -- update the selected object's info
 	M3D.GUI.updateInfo = function(n){
 			
-		if (n==undefined)
+		if (n===undefined)
 		{
 			log('Rot('+
 				parseFloat(obj.parent.getRotX()).toFixed(2)+', '+
@@ -920,7 +928,9 @@ if (!window["M3D"].GUI){
 				parseFloat(obj.parent.getScaleZ()).toFixed(2)+')'
 			);
 				
-			if (obj.parent.getId()!="") $('#id').val( obj.parent.getId());
+			if (obj.parent.getId() !== "") {
+				$('#id').val(obj.parent.getId());
+			}
 			$('#posX').val( parseFloat(obj.parent.getLocX()).toFixed(2) );
 			$('#posY').val( parseFloat(obj.parent.getLocY()).toFixed(2) );
 			$('#posZ').val( parseFloat(obj.parent.getLocZ()).toFixed(2) );
@@ -1119,8 +1129,8 @@ if (!window["M3D"].GUI){
 	
 	
 	// -- scaling
-	M3D.GUI.scaleObject = function(delta) {
-		var delta = delta * 0.02; // reduce the delta coz 1 is too high for scaling!
+	M3D.GUI.scaleObject = function(d) {
+		var delta = d * 0.02; // reduce the delta coz 1 is too high for scaling!
 		if ( obj ){
 						
 			obj.setScaleX( parseFloat(obj.getScaleX())+delta );
@@ -1188,7 +1198,9 @@ if (!window["M3D"].GUI){
 	
 				// FOR DEBUGGING ONLY
 				var newwindow = window.open(a.url, a.url, 'height=400,width=400');
-				if(window.focus) newwindow.focus;
+				if (window.focus()) {
+					newwindow.focus();
+				}
 				//
 			}	
 		});
@@ -1243,7 +1255,7 @@ if (!window["M3D"].GUI){
 	//				                controller.xRot = 90;
 	//				            }
 	            // Send the onchange event to any listener.
-	            if (controller.onchange != null) {
+	            if (controller.onchange !== null) {
 	                controller.onchange(controller.xRot, controller.yRot);
 	            }
 	        }
@@ -1327,4 +1339,4 @@ if (!window["M3D"].GUI){
 	}
 
 
-})(window["M3D"]);
+})(window.M3D);

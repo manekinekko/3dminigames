@@ -1,32 +1,19 @@
-/*
-*	Upload files to the server using HTML 5 Drag and drop the folders on your local computer
-*
-*	Tested on:
-*	Mozilla Firefox 3.6.12
-*	Google Chrome 7.0.517.41
-*	WebKit r70732
-*
-*	The current version does not work on:
-*	Opera 10.63 
-*	Opera 11 alpha
-*	IE 6+
-*/
-
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file assets/js/m3d_localstorage.js
+ *
+ * Upload files to the server using HTML 5 Drag and drop the folders on your local computer
+ *
+ * Tested on:
+ * Mozilla Firefox 3.6.12
+ * Google Chrome 7.0.517.41
+ * WebKit r70732
+ *
+ * The current version does not work on:
+ * Opera 10.63 
+ * Opera 11 alpha
+ * IE 6+
  */
-
-
-if(!window["M3D"]){
-	window["M3D"]={};	
-}
-
-if (!window["M3D"].Upload){
-		window["M3D"].Upload={};
-}
-
-
-
 M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	
 	// Upload image files

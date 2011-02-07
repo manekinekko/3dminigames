@@ -1,7 +1,6 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
-
 $(function(){
 	
 	// Start Event Bindings

@@ -1,16 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file assets/js/m3d_localstorage.js
  */
-
-if (!window["M3D"]) {
-    window["M3D"] = {};
-}
-
-if (!window["M3D"].DB) {
-    window["M3D"].DB = {};
-}
-
-
 (function(M3D){
 
     // pre requisites
@@ -21,6 +12,13 @@ if (!window["M3D"].DB) {
 	 * _obj : for imported 3D models
 	 */
 	M3D.DB.REGEX_CONTENT_PATTERN = /(_attr|_type|_obj)$/;
+	
+	
+	// DB initialization
+	M3D.DB.init = function(){
+		M3D.DB.storeDefaultAttributes();		
+		M3D.DB.detectPreviousContent();
+	}
 	
 	// API
 	
@@ -196,4 +194,4 @@ if (!window["M3D"].DB) {
 		return false;
 	}
 	
-})(window["M3D"]);
+})(window.M3D);

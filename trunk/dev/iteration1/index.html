@@ -7,11 +7,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
 		<!-- end: css parsing -->
-		
-		<script type="text/javascript" src="assets/js/lib/modernizr.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="assets/js/lib/codepress/codepress.js"></script>
+
 		
 	</head>
 	<body onload="new M3D.Upload.uploader('container', 'status', 'bin/upload.php', null, doc);">
@@ -187,29 +183,10 @@
 		</div>
 		
 		<!-- start: js parsing -->
-		<!-- start: libraries -->
-		<script type="text/javascript" src="assets/js/lib/json.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_math.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_input.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/glge_collada.js"></script> 
-		
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/patches/glge.js"></script>
-		<script type="text/javascript" src="assets/js/lib/glge_v0.5.2/patches/glge_collada.js"></script>		
-		<!-- end: libraries -->
-		
-		<!-- start: js custom libraries -->
-		<script type="text/javascript" src="assets/js/m3d_common.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_utils.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_upload.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_parser.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_editor.js"></script>
-		
-		<!-- Please load these scripts after all the others and in the following order! -->
-		<script type="text/javascript" src="assets/js/m3d_init.js"></script>
-		<script type="text/javascript" src="assets/js/m3d_events.js"></script>
-		<!-- end: js custom -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="assets/js/load.php"></script>
+		<script type="text/javascript" src="assets/js/lib/codepress/codepress.js"></script>
 		<!-- end: js parsing -->
 
 	</body>

@@ -27,12 +27,18 @@ $files = array(
 				
 				/* and the other scripts */
 				'm3d_common.js',
-				/*'m3d_localstorage.js'*/'m3d_db.js',
 				'm3d_parser.js',
 				'm3d_editor.js',
 				'm3d_upload.js',
 				'm3d_events.js'
 		);
+
+if ( isset($_GET['db']) && $_GET['db'] ) {
+	$files[] = 'm3d_db.js';
+}
+else {
+	$files[] = 'm3d_localstorage.js';
+}
 
 
 foreach( $files as $f ){

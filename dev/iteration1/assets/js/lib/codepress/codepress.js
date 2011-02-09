@@ -34,7 +34,7 @@ CodePress = function(obj) {
 		
 		self.editor = self.contentWindow.CodePress;
 		
-		console.log(self.editor);
+		//console.log(self.editor);
 		
 		self.editor.body = self.contentWindow.document.getElementsByTagName('body')[0];
 		self.editor.setCode(self.textarea.value);

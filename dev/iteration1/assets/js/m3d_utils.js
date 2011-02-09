@@ -18,13 +18,13 @@
 
 	// Init
 	M3D.GUI.init = function(){
-		M3D.GUI.initTypes();
+		/*M3D.GUI.initTypes();*/ //local storage
 		M3D.GUI.drawGrid();
 	};
 	
 	
 	// Initialize the attributes list
-	M3D.GUI.initTypes = function(){
+	/*M3D.GUI.initTypes = function(){
 		
 		var types = M3D.DB.getAllTypes();
 		var newEntityHtml = '';
@@ -35,7 +35,7 @@
 			
 		}
 		
-	};
+	};*/	//local storage
 	
 	M3D.GUI.drawGrid = function(){
 		

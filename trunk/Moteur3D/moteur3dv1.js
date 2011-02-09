@@ -1,6 +1,6 @@
 /*
- * Squellette du moteur3d
- * version 1.02
+ * Squellette du moteur3d de 3DWIGS
+ * version 1.02.08
  */
  
  
@@ -8,33 +8,34 @@
  * @author: Jérôme BOUZILLARD, Emeric KIEN, Thibault LE CORRONC, Philippe WEINZAEPFEL and Ludovic ZADITH
  */
 
-
- if(!window["MOTEUR3D"]){
-	/**
-	* @namespace Holds the functionality of the library
-	*/
-	window["MOTEUR3D"]={};
+ if(!window["M3D"]){
+	window["M3D"] = {};
 }
 
-(function(MOTEUR3D){
+if(!window["M3D"].MOTEUR){
+	window["M3D"].MOTEUR = {};
+}
+
+(function(M3D){
+// Variables du moteur
+	var tabObject = new Array;
+	var tabIdObject = new Array;
  
 /* Méthode initialisation.
  * Param: xmlDoc: fichier xml contenant la scène à charger à l'initialisation.
  */
- // INITIALISER LES TABLEAUX
-MOTEUR3D.initialisation = function(xmlDoc){
-	var tabObject = new Array;
-	var tabGroup = new Array;
-	var tabIdObject = new Array;
-	var tabIdGroup = new Array;
-	var tabCamera = new Array;
-	
+M3D.MOTEUR.initialisation = function(xmlDoc){
 	var doc = new GLGE.Document();
 	doc.onLoad = function(){
 		var gameRenderer = new GLGE.Renderer(document.getElementById('canvas'));
 		gameScene = new GLGE.Scene();
 		gameScene = doc.getElement("mainscene");
 		gameRenderer.setScene(gameScene);
+		
+		// Initialisation du tableau des objects/IdObject
+		var indice1 = 0;
+		init(gameScene);
+		
 	}
 	doc.load(xmlDoc);
 },
@@ -43,12 +44,36 @@ MOTEUR3D.initialisation = function(xmlDoc){
 /***************************************************************
  * Liste de fonctions outils
  ***************************************************************/
-
+/* Fonction récursive init.
+ * Param: racine: object.
+ */
+M3D.MOTEUR.init = function(racine){
+	var tabO = racine.getChildren();
+	var tabL = racine.getLights();
+	var present = false;
+	var indice2 = 0;
+	var j;
+	while(indice1<tabO.length-1){
+		while(indice2<tabO.length-1){
+			for(j=0; j<tabL.length-1; j++){	if(tabO[indice2]==tabL[j]) present = true; }
+			if(!present){
+				if(tabO[indice2].id != undefined){
+					tabObject[tabO[indice2].id] = tabO[indice2];
+					tabIdObject[tabIdObject.length] = tabO[indice2].id;
+					init(tabO[indice2]);
+				}
+			} present = false;
+			indice2++;
+		}
+		indice1++;
+	}
+},
+ 
 /* Méthode getObject.
  * Param: idObject: identifiant de l'objet que l'on veut récupérer
  * Return: l'objet sinon -1
  */
-MOTEUR3D.getObject = function(idObject){
+M3D.MOTEUR.getObject = function(idObject){
   	var object = tabObject[idObject];
 	if(object != null ) return object;
 	else{ alert("The object named "+idObject+" doesn't exist in the scene."); return -1; }
@@ -65,12 +90,13 @@ MOTEUR3D.getObject = function(idObject){
  *        tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
  *		  [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
-MOTEUR3D.addObject = function(idObject,urlObject, tabCoord, idParent){
+M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, idParent){
 	tabObject[idObject] = new GLGE.Collada();
 	tabObject[idObject].setDocument(urlObject);
 	tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
 	tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabObject[idObject].setScale(tabCoord[6]);
+	tabIdObject[tabIdObject.length] = idObject;
 	
 	if(tabObject[idParent] == undefined) gameScene.addChild(tabObject[idObject]);
 	else{ 
@@ -85,20 +111,22 @@ MOTEUR3D.addObject = function(idObject,urlObject, tabCoord, idParent){
  *        tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
  *		  idGroup: identifiant du group auquel on rattache l'objet, s'il n'existe pas, il est créé.
  */
-MOTEUR3D.addObjectIn = function(idObject,urlObject, tabCoord, idGroup){
+M3D.MOTEUR.addObjectIn = function(idObject,urlObject, tabCoord, idGroup){
 	tabObject[idObject] = new GLGE.Collada();
 	tabObject[idObject].setDocument(urlObject);
 	tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
 	tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabObject[idObject].setScale(tabCoord[6]);
+	tabIdObject[tabIdObject.length] = idObject;
 	
-	if(tabGroup[idGroup] == undefined){
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabObject[idObject]);
-		gameScene.addChild(tabGroup[idGroup]);
-	} else{	tabGroup[idGroup].addChild(tabObject[idObject]); }
+	if(tabObject[idGroup] == undefined){
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabObject[idObject]);
+		gameScene.addChild(tabObject[idGroup]);
+		tabIdObject[tabIdObject.length] = idGroup;
+	} else {	tabObject[idGroup].addChild(tabObject[idObject]); }
 },
 
 
@@ -109,20 +137,22 @@ MOTEUR3D.addObjectIn = function(idObject,urlObject, tabCoord, idGroup){
  *        tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
  *		  [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
-MOTEUR3D.addObjectGroup = function(idObject, idGroup, urlObject, tabCoord, idParent){
+M3D.MOTEUR.addObjectGroup = function(idObject, idGroup, urlObject, tabCoord, idParent){
 	tabObject[idObject] = new GLGE.Collada();
 	tabObject[idObject].setDocument(urlObject);
 	tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
 	tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabObject[idObject].setScale(tabCoord[6]);
+	tabIdObject[tabIdObject.length] = idObject;
 	
-	if(tabGroup[idGroup] == undefined){
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabObject[idObject]);
-	
-		if(idParent == null) gameScene.addChild(tabGroup[idGroup]);
+	if(tabObject[idGroup] == undefined){
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabObject[idObject]);
+		tabIdObject[tabIdObject.length] = idGroup;
+		
+		if(idParent == null) gameScene.addChild(tabObject[idGroup]);
 		else{ 
 			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
 		}
@@ -137,22 +167,24 @@ MOTEUR3D.addObjectGroup = function(idObject, idGroup, urlObject, tabCoord, idPar
  *        tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
  *		  [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
-MOTEUR3D.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, idParent){
+M3D.MOTEUR.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, idParent){
 	tabObject[idObject] = new GLGE.Collada();
 	tabObject[idObject].setDocument(urlObject);
 	tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
 	tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabObject[idObject].setScale(tabCoord[6]);
+	tabIdObject[tabIdObject.length] = idObject;
 	
-	if(tabGroup[idGroup] == undefined){
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabObject[idObject]);
-	
-		if(idParent == null) gameScene.addChild(tabGroup[idGroup]);
+	if(tabObject[idGroup] == undefined){
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabObject[idObject]);
+		tabIdObject[tabIdObject.length] = idGroup;
+		
+		if(idParent == null) gameScene.addChild(tabObject[idGroup]);
 		else{ 
-			if(tabGroup[idParent] != undefined) tabGroup[idParent].addChild(tabObject[idObject]);
+			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
 		}
 	}
 },
@@ -162,7 +194,7 @@ MOTEUR3D.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, idP
  * Param: idObject: identifiant de l'objet à supprimer de la scène.
  * WARNING: les fils de l'objet seront supprimés
  */
-MOTEUR3D.removeObject = function(idObject){
+M3D.MOTEUR.removeObject = function(idObject){
 	if(tabObject[idObject] != undefined) tabObject[idObject].parent.removeChild(tabObject[idObject]);
 },
 
@@ -172,7 +204,7 @@ MOTEUR3D.removeObject = function(idObject){
  * Param: idObject: identifiant de l'objet à supprimer de la scène.
  */
  /*
-MOTEUR3D.removeObjectOnly = function(idObject){
+M3D.MOTEUR.removeObjectOnly = function(idObject){
 	if(tabObject[idObject] != null){ 
 		var fils = tabObject[idObject].getChildren();
 		for(int i = 0; i<fils.length; i++){
@@ -187,8 +219,8 @@ MOTEUR3D.removeObjectOnly = function(idObject){
  * Param: idGroup: identifiant du groupe à supprimer de la scène.
  * WARNING: les fils du groupe seront supprimés
  */
-MOTEUR3D.removeGroup = function(idGroup){
-	if(tabGroup[idGroup] != undefined) tabGroup[idGroup].parent.removeChild(tabGroup[idGroup]);
+M3D.MOTEUR.removeGroup = function(idGroup){
+	if(tabObject[idGroup] != undefined) tabObject[idGroup].parent.removeChild(tabObject[idGroup]);
 },
 
 
@@ -197,13 +229,13 @@ MOTEUR3D.removeGroup = function(idGroup){
  * Param: idGroup: identifiant du groupe à supprimer de la scène.
  */
  /*
-MOTEUR3D.removeGroupOnly = function(idGroup){
-	if(tabGroup[idGroup] != undefined){
-		var fils = tabGroup[idGroup].getChildren();
+M3D.MOTEUR.removeGroupOnly = function(idGroup){
+	if(tabObject[idGroup] != undefined){
+		var fils = tabObject[idGroup].getChildren();
 		for(int i = 0; i<fils.length; i++){
-			tabGroup[idGroup].parent.addChild(fils[i]);
+			tabObject[idGroup].parent.addChild(fils[i]);
 		}
-		tabGroup[idGroup].parent.removeChild(tabGroup[idGroup]);
+		tabObject[idGroup].parent.removeChild(tabObject[idGroup]);
 	}
 },
 */
@@ -213,7 +245,7 @@ MOTEUR3D.removeGroupOnly = function(idGroup){
  *		  idNewParent: identifiant du nouveau parent auquel on veut rattacher l'objet
  * WARNING: les fils de l'objet changeront aussi de parent
  */
-MOTEUR3D.changeParentObject = function(idObject,idNewParent){
+M3D.MOTEUR.changeParentObject = function(idObject,idNewParent){
 	if(tabObject[idObject] != undefined && tabObject[idNewParent] != undefined){
 		tabObject[idObject].parent = tabObject[idNewParent]; 
 		tabObject[idNewParent].addChild(tabObject[idObject]);
@@ -225,12 +257,12 @@ MOTEUR3D.changeParentObject = function(idObject,idNewParent){
  * Liste de fonctions de gestion du déplacement
  ***************************************************************/
 
-/* Méthode translateObject: Vérifie la collision sur tout le vecteur de déplacement.
- * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+/* Méthode translate: Vérifie la collision sur tout le vecteur de déplacement.
+ * Param: id: identifiant de l'élement que l'on souhaite déplacer
  *		  tabVector: vecteur de 3 coordornées x y z représentant le déplacement
  *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu
  */
-MOTEUR3D.translateObject = function(idObject,tabVector,idRef){
+M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	if(idRef == null){
 		var M = GLGE.identMatrix();
 	}else{
@@ -239,34 +271,16 @@ MOTEUR3D.translateObject = function(idObject,tabVector,idRef){
 	var V = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
 	var D = GLGE.mulMat4Vec4(M,V);
 	// verifie la collision sur toute la trajectoire
-	tabObject[idObject].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
 
-/* Méthode translateGroup: Vérifie la collision sur tout le vecteur de déplacement.
- * Param: idGroup: identifiant du groupe que l'on souhaite déplacer
- *		  tabVector: vecteur de 3 coordornées x y z représentant le déplacement
- *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu
- */
-MOTEUR3D.translateGroup = function(idGroup,tabVector,idRef){
-	if(idRef == null){
-		var M = GLGE.identMatrix();
-	}else{
-		var M = tabObject[idRef].getModelMatrix();
-	}
-	var V = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	// verifie la collision sur toute la trajectoire
-	tabGroup[idGroup].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-},
-
-
-/* Méthode setPositionObject: Déplace l'objet à la position donnée et vérifie la collision à l'arrivée seulement
- * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+/* Méthode setPosition: Déplace l'élément à la position donnée et vérifie la collision à l'arrivée seulement
+ * Param: id: identifiant de l'élément que l'on souhaite déplacer
  *		  tabPos : vecteur de 3 coordornées x y z représentant la nouvelle position
  *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu
  */
-MOTEUR3D.setPositionObject = function(idObject,tabPos,idRef){
+M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	if(idRef == null){
 		var M = GLGE.identMatrix();
 	}else{
@@ -274,33 +288,16 @@ MOTEUR3D.setPositionObject = function(idObject,tabPos,idRef){
 	}
 	var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
 	var D = GLGE.mulMat4Vec4(M,V);
-	if(!liveCollision(idObject)) tabObject[idObject].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	if(!M3D.MOTEUR.liveCollision(id)) tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
 
-/* Méthode setPositionGroup: Déplace le groupe à la position donnée et vérifie la collision à l'arrivée seulement
- * Param: idGroup: identifiant du groupe que l'on souhaite déplacer
- *		  tabPos : vecteur de 3 coordornées x y z représentant la nouvelle position
- *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu
- */
-MOTEUR3D.setPositionGroup = function(idGroup,tabPos,idRef){
-	if(idRef == null){
-		var M = GLGE.identMatrix();
-	}else{
-		var M = tabObject[idRef].getModelMatrix();
-	}
-	var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	if(!liveCollision(idGroup)) tabGroup[idGroup].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-},
-
-
-/* Méthode rotateObject: Effectue une rotation sur l'objet donné et vérifie la collision à l'arrivée seulement
- * Param: idObject: identifiant de l'objet que l'on souhaite déplacer
+/* Méthode rotate: Effectue une rotation sur l'élément donné et vérifie la collision à l'arrivée seulement
+ * Param: id: identifiant de l'élément que l'on souhaite déplacer
  *		  tabRot : vecteur de 3 coordornées représentant la rotation a effectué
  *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
  */
-MOTEUR3D.rotateObject = function(idObject,tabRot,idRef){
+M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	if(idRef == null){
 		var M = GLGE.identMatrix();
 	}else{
@@ -309,59 +306,46 @@ MOTEUR3D.rotateObject = function(idObject,tabRot,idRef){
 	var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
 	var D = GLGE.mulMat4Vec4(M,V);
 	// verifie la collision à l'arrivée
-	tabObject[idObject].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	tabObject[id].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
 
-/* Méthode rotateGroup: Effectue une rotation sur le groupe donné et vérifie la collision à l'arrivée seulement
- * Param: idGroup: identifiant de l'objet que l'on souhaite déplacer
- *		  tabRot : vecteur de 3 coordornées représentant la rotation a effectué
- *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
- */
-MOTEUR3D.rotateGroup = function(idGroup,tabRot,idRef){
-	if(idRef == null){
-		var M = GLGE.identMatrix();
-	}else{
-		var M = tabObject[idRef].getModelMatrix();
-	}
-	var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	// verifie la collision à l'arrivée
-	tabGroup[idGroup].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-},
-
-
-/* Méthode rescaleObject: Multiplie l'échelle d'un objet par le coefficient donné.
- * Param: idObject: identifiant de l'objet que l'on souhaite redimensionner
+/* Méthode rescale: Multiplie l'échelle d'un objet par le coefficient donné.
+ * Param: id: identifiant de l'objet que l'on souhaite redimensionner
  *		  tabRot : coefficient par lequel multiplié la taille de l'objet
  */
-MOTEUR3D.rescaleObject = function (idObject,coefScale){
-	var scale = tabObject[idObject].getScale()
-	tabObject[idObject].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
-},
-
-
-/* Méthode rescaleGroup: Multiplie l'échelle du groupe par le coefficient donné.
- * Param: idGroup: identifiant du groupe que l'on souhaite redimensionner
- *		  tabRot : coefficient par lequel multiplié la taille de l'objet
- */
-MOTEUR3D.rescaleGroup = function (idGroup,coefScale){
-	var scale = tabGroup[idGroup].getScale()
-	tabGroup[idGroup].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
+M3D.MOTEUR.rescaleObject = function (id,coefScale){
+	var scale = tabObject[id].getScale()
+	tabObject[id].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
 },
 
 
 /***************************************************************
  * Partie de la gestion de la collision
  ***************************************************************/
-
+/* Méthode listingTarget: Retourne un tableau de nom
+ * Param: idObject: élément concerné
+ * Return: tableau des id d'objet à tester
+ */
+M3D.MOTEUR.listingTarget = function(idObject){
+	tabR = new Array;
+	tabO = tabObject[idObject].getChildren();
+	present = false;
+	
+	for(i=0; i<tabIdObject.length; i++){
+		for(j=0; j<tabO.length; j++){ if(tabO[j] == tabObject[tabIdObject[i]]) present = true; }
+		if(!present && tabIdObject[i] != idObject) tabR[tabR.length] = tabIdObject[i];
+		present = false;
+	} return tabR;
+}
+ 
 /* Méthode collisionPointBoxSimple: Test si un pointX (ptX,ptY,ptZ) est en collision avec un object O.
  * Param: idObject: identifiant de l'objet à tester.
  * 	   ptX: coordonnée X du point à tester.
  * 	   ptY: coordonnée Y du point à tester.
  * 	   ptZ: coordonnée Z du point à tester.
  */
-MOTEUR3D.collisionPointBoxSimple = function(idObject, ptX, ptY, ptZ){
+M3D.MOTEUR.collisionPointBoxSimple = function(idObject, ptX, ptY, ptZ){
 	var box = tabObject[idObject].getBoundingVolume().dims;
 	var pos = tabObject[idObject].getPosition();
 	if(ptX >= pos.x 
@@ -378,9 +362,9 @@ MOTEUR3D.collisionPointBoxSimple = function(idObject, ptX, ptY, ptZ){
  * Param: idObjectOne: identifiant d'un des objets à tester.
  *        idObjectTwo: identifiant du 2nd objets.
  */
-MOTEUR3D.collisionBoxBox = function(idObjectOne, idObjectTwo){
+M3D.MOTEUR.collisionBoxBox = function(idObjectOne, idObjectTwo){
 	var posTwo = tabObject[idObjectTwo].getPosition();
-	if(this.collisionPointBoxSimple(idObjectOne, posTwo.x, posTwo.y, posTwo.z)) return true;
+	if(M3D.MOTEUR.collisionPointBoxSimple(idObjectOne, posTwo.x, posTwo.y, posTwo.z)) return true;
 	else {
 		var boxOne = tabObject[idObjectOne].getBoundingVolume().dims;
 		var posOne = tabObject[idObjectOne].getPosition();
@@ -416,9 +400,9 @@ MOTEUR3D.collisionBoxBox = function(idObjectOne, idObjectTwo){
  * 	   ptY: coordonnée Y du point à tester.
  * 	   ptZ: coordonnée Z du point à tester.
  */
-MOTEUR3D.collisionPointGroupSimple = function(idGroup, ptX, ptY, ptZ){
-	var box = tabGroup[idGroup].getBoundingVolume().dims;
-	var pos = tabGroup[idGroup].getPosition();
+M3D.MOTEUR.collisionPointGroupSimple = function(idGroup, ptX, ptY, ptZ){
+	var box = tabObject[idGroup].getBoundingVolume().dims;
+	var pos = tabObject[idGroup].getPosition();
 	if(ptX >= pos.x 
 		&& ptX < pos.x + box[0]
 		&& ptY >= pos.y 
@@ -433,12 +417,12 @@ MOTEUR3D.collisionPointGroupSimple = function(idGroup, ptX, ptY, ptZ){
  * Param: idGroup: identifiant du groupe.
  *	      idObject: identifiant de l'objet à tester.       
  */
-MOTEUR3D.collisionBoxGroup = function(idGroup, idObject){
+M3D.MOTEUR.collisionBoxGroup = function(idGroup, idObject){
 	var posObject = tabObject[idObject].getPosition();
-	if(this.collisionPointGroupSimple(idGroup, posObject.x, posObject.y, posObject.z)) return true;
+	if(M3D.MOTEUR.collisionPointGroupSimple(idGroup, posObject.x, posObject.y, posObject.z)) return true;
 	else {
-		var boxGroup = tabGroup[idGroup].getBoundingVolume();
-		var posGroup = tabGroup[idGroup].getPosition();
+		var boxGroup = tabObject[idGroup].getBoundingVolume();
+		var posGroup = tabObject[idGroup].getPosition();
 		var boxObject = tabObject[idObject].getBoundingVolume();
 		
 		var xminGroup = posGroup.x+boxGroup.center[0]-boxGroup.dims[0]/2;
@@ -469,13 +453,13 @@ MOTEUR3D.collisionBoxGroup = function(idGroup, idObject){
  * Param: idGroupOne: identifiant du 1er groupe.
  *	      idGroupTwo: identifiant du 2nd groupe.       
  */
-MOTEUR3D.collisionGroupGroup = function(idGroupOne, idGroupTwo){
-	var posGroupTwo = tabGroup[idGroupTwo].getPosition();
-	if(this.collisionPointGroupSimple(idGroupOne, posGroupTwo.x, posGroupTwo.y, posGroupTwo.z)) return true;
+M3D.MOTEUR.collisionGroupGroup = function(idGroupOne, idGroupTwo){
+	var posGroupTwo = tabObject[idGroupTwo].getPosition();
+	if(M3D.MOTEUR.collisionPointGroupSimple(idGroupOne, posGroupTwo.x, posGroupTwo.y, posGroupTwo.z)) return true;
 	else {
-		var boxGroupOne = tabGroup[idGroupOne].getBoundingVolume();
-		var posGroupOne = tabGroup[idGroupOne].getPosition();
-		var boxGroupTwo = tabGroup[idGroupTwo].getBoundingVolume();
+		var boxGroupOne = tabObject[idGroupOne].getBoundingVolume();
+		var posGroupOne = tabObject[idGroupOne].getPosition();
+		var boxGroupTwo = tabObject[idGroupTwo].getBoundingVolume();
 		
 		var xminGroupOne = posGroupOne.x+boxGroupOne.center[0]-boxGroupOne.dims[0]/2;
 		var xmaxGroupOne = posGroupOne.x+boxGroupOne.center[0]+boxGroupOne.dims[0]/2;
@@ -504,19 +488,11 @@ MOTEUR3D.collisionGroupGroup = function(idGroupOne, idGroupTwo){
 /* Méthode liveCollision: Test si un object est en collision avec un element de la scène.
  * Param: id: identifiant de l'élément à tester.
  */
-MOTEUR3D.liveCollision = function(id){
-	if(tabObject[id] != undefined){
-		for(i=0; i<tabIdObject.length; i++){
-			if(tabIdObject[i] !=  id){
-				if(collisionBoxBox(tabIdObject[i], id)) return true;
-			}
-		}
-	} else {
-		for(i=0; i<tabIdObject.length; i++){
-			if(collisionBoxGroup(id, tabIdObject[i])) return true;
-		}
-		for(i=0; i<tabIdGroup.length; i++){
-			if(collisionGroupGroup(id, tabIdGroup[i])) return true;
+M3D.MOTEUR.liveCollision = function(id){
+	tab = listingTarget(id);
+	for(i=0; i<tab.length; i++){
+		if(tab[i] !=  id){
+			if(collisionBoxBox(tab[i], id)) return true;
 		}
 	} return false;
 },
@@ -531,8 +507,8 @@ MOTEUR3D.liveCollision = function(id){
 /***************************************************************
  * Partie de la gestion de la caméra
  ***************************************************************/
-
-MOTEUR3D.getCamera = function(idCamera){
+ 
+ MOTEUR3D.getCamera = function(idCamera){
     var camera = tabCamera[idCamera];
     if(camera != null) return camera;
     else{ alert("The camera named "+idCamera+" doesn't exist in the scene."); return -1;}
@@ -556,13 +532,13 @@ MOTEUR3D.getCamera = function(idCamera){
 	tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabCamera[idCamera].setScale(tabCoord[6]);
 	
-	if(tabGroup[idGroup] == undefined){ // Vérifier la gestion du addChild dans un Group...
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabCamera[idCamera]);
-		gameScene.addChild(tabGroup[idGroup]);
-	} else{	tabGroup[idGroup].addChild(tabCamera[idCamera]); }
+	if(tabObject[idGroup] == undefined){ // Vérifier la gestion du addChild dans un Group...
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabCamera[idCamera]);
+		gameScene.addChild(tabObject[idGroup]);
+	} else{	tabObject[idGroup].addChild(tabCamera[idCamera]); }
 },
 
 MOTEUR3D.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
@@ -571,13 +547,13 @@ MOTEUR3D.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
 	tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabCamera[idCamera].setScale(tabCoord[6]);
 	
-	if(tabGroup[idGroup] == undefined){
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabCamera[idCamera]);
+	if(tabObject[idGroup] == undefined){
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabCamera[idCamera]);
 	
-		if(idParent == null) gameScene.addChild(tabGroup[idGroup]);
+		if(idParent == null) gameScene.addChild(tabObject[idGroup]);
 		else{ 
 			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabCamera[idCamera]);
 		}
@@ -590,15 +566,15 @@ MOTEUR3D.addCameraGroupIn = function(idCamera, idGroup, tabCoord, idParent){
 	tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
 	tabCamera[idCamera].setScale(tabCoord[6]);
 	
-	if(tabGroup[idGroup] == undefined){
-		tabGroup[idGroup] = new GLGE.Group();
-		tabGroup[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabGroup[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabGroup[idGroup].addChild(tabCamera[idCamera]);
+	if(tabObject[idGroup] == undefined){
+		tabObject[idGroup] = new GLGE.Group();
+		tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		tabObject[idGroup].addChild(tabCamera[idCamera]);
 	
-		if(idParent == null) gameScene.addChild(tabGroup[idGroup]);
+		if(idParent == null) gameScene.addChild(tabObject[idGroup]);
 		else{ 
-			if(tabGroup[idParent] != undefined) tabGroup[idParent].addChild(tabCamera[idCamera]);
+			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabCamera[idCamera]);
 		}
 	}
 },
@@ -614,19 +590,25 @@ MOTEUR3D.changeParentCamera = function(idCamera,idNewParent){
 	}
 },
 
-MOTEUR3D.translateCamera = function(idCamera,tabVector,idRef){
+translateCamera = function(idCamera,tabVector,idRef){
+	var Mcamera = tabCamera[idCamera].getModelMatrix();
 	if(idRef == null){
-		var M = GLGE.identMatrix();
+		var Mref = tabCamera[idCamera].getModelMatrix();
 	}else{
-		var M = tabCamera[idRef].getModelMatrix();
+		var Mref = tabObject[idRef].getModelMatrix();
 	}
-	var V = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
+	
+	var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+	var etape1 = GLGE.mulMat4Vec4(Mref,vector);
+	var camera=tabCamera[idCamera];
+	var actualposition = GLGE.Vec4(camera.getLocX(),camera.getLocY(),camera.getLocZ(),1);
+	var etape2 = GLGE.mulMat4Vec4(Mcamera,actualposition);
+	var etape3 = GLGE.addVec4(etape1,etape2);
+	var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape3);
 	tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
-    /* Vérifier que le tabPos de translate et de setPosition ne donnent pas la même chose... (Object)
-
+    /* 
       MOTEUR3D.setPositionCamera = function(idCamera,tabPos,idRef){
 	if(idRef == null){
 		var M = GLGE.identMatrix();
@@ -648,7 +630,8 @@ MOTEUR3D.rotateCamera = function(idCamera,tabRot,idRef){
 	var D = GLGE.mulMat4Vec4(M,V);
 	tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
-
+ 
+/*
  function (){
 	var camera=gameScene.camera;
 	camerapos=camera.getPosition();
@@ -686,6 +669,6 @@ MOTEUR3D.rotateCamera = function(idCamera,tabRot,idRef){
 		
 	if(keys.isKeyPressed(GLGE.KI_UP_ARROW)) {camera.setLocX(camerapos.x+cam[4]*0.05*(now-lasttime));camera.setLocY(camerapos.y+cam[5]*0.05*(now-lasttime));camera.setLocZ(camerapos.z+cam[6]*0.05*(now-lasttime));}		
 
-}
+}*/
 
 }

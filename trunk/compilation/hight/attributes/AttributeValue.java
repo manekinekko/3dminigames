@@ -46,6 +46,11 @@ public class AttributeValue {
     public Code getCode() {
 	return value;
     }
+    
+    
+    public void setCode(Code c){
+    	value = c;
+    }
 
     public Type getType() {
 	return type;

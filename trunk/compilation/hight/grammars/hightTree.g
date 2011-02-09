@@ -411,7 +411,7 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 /* Initialization of commands */
 
 commande [SymbolTable st] returns [Code c]:
-	^(COMMAND_KW IDENT? actionCommande_list[st])
+	^(COMMAND_KW (i=IDENT|f=FLOAT)? actionCommande_list[st])
 	;
 	
 actionCommande_list[SymbolTable st] returns [Code c]:

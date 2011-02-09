@@ -326,7 +326,6 @@ definition [SymbolTable st] returns [Code c] @init{ c = new Code();}:
 			Definition def = new Definition(ident,cons);			
 			c.append(Code.genFuncDef(def));
 			st.add(ident,def);
-			
 		}
 	}
 		;
@@ -365,7 +364,12 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	|^(GENERATE_KW ta=typeAcces[st]{
 		for(Iterator<Symbol> it = ta.iterator() ; it.hasNext();){
 			Symbol e = it.next();
-			c.append("\t");		c.append(Code.genEntity((Entity) e));
+			
+			//Erreur entité déja générée
+			if(!((Entity)e).getDuplicable() && (e.getGenerate()>=1)){System.out.println("L'entité " + e.getName() + " n'est pas duplicable!"); System.exit(-1);} 
+			
+			e.toGenerate();
+			c.append("\t");		c.append(Code.genEntity((Entity) e));	
 			c.append("\t");		c.append(Code.genAddObject((Entity) e));
 		}	
 	
@@ -380,7 +384,7 @@ typeAcces [SymbolTable st] returns [ArrayList<Symbol> l]:
 	ac=accesClass[st] {l=ac;}| operation[st] (IDENT | accesClass[st]);		//TO DO
 
 typeDestination [SymbolTable st] returns [Code c]: 
-	accesClass[st] | coordinates[st];
+	accesClass[st] | coordinates[st]{};
 
 actionObjet [SymbolTable st] returns [Code c]:
   DIES_KW

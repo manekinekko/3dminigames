@@ -87,6 +87,7 @@ definition  tirer  means
 
 definition  reinitialisation  means 
 	generate chasseur,
+	generate chasseur,
 	generate bazooka,
 	generate arretDroit,
 	generate arretGauche,

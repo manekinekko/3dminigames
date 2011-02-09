@@ -11,7 +11,7 @@ public class Model implements Symbol {
     private static List<Model> generated;
     private String name;
     private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
-    private boolean generate = true;
+    private int generate = 0;
 
     public Model(String name) {
 	this.name = name;
@@ -93,10 +93,10 @@ public class Model implements Symbol {
     }
 
     public void toGenerate(){
-        generate = true;
+        generate++;;
     }
 
-    public boolean getGenerate(){
+    public int getGenerate(){
         return generate;
     }
 

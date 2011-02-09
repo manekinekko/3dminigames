@@ -7,5 +7,5 @@ public interface Symbol {
     public AttributeValue getAttribute(String n);
     public void addAttribute(String attr, AttributeValue value);
     public void toGenerate();
-    public boolean getGenerate();
+    public int getGenerate();
 }

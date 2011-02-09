@@ -7,9 +7,7 @@
 	// Contants
 	// values in pixels
 	M3D.GUI.ANIMATE_BOTTOM_START_POS = 300;
-	M3D.GUI.ANIMATE_BOTTOM_END_POS = 495;
-	M3D.GUI.ANIMATE_RIGHT_START_POS = 300;
-	M3D.GUI.ANIMATE_RIGHT_END_POS = -222;
+	M3D.GUI.ANIMATE_BOTTOM_END_POS = 480;
 	M3D.GUI.ANIMATE_WINDOW_OPEN_POS = 150;
 	M3D.GUI.ANIMATE_WINDOW_CLOSE_POS = -300;
 	
@@ -41,7 +39,7 @@
 		
 		var x,y;
 		var sn = scene || doc.getElement("mainscene");
-		var boundries = 20;
+		var boundries = 50;
 		var positions=[];
 		
 		var push=function(x,y){
@@ -54,7 +52,7 @@
 		for(y=-boundries; y<=boundries;y++){
 			x=-boundries;
 			push(x,y);
-			for(; x<=boundries;x+=0.5){
+			for(; x<=boundries;x++){
 				push(x,y);
 				push(x,y);
 			}
@@ -64,7 +62,7 @@
 		for(y=-boundries; y<=boundries;y++){
 			x=-boundries;
 			push(y,x);
-			for(; x<=boundries;x+=0.5){
+			for(; x<=boundries;x++){
 				push(y,x);
 				push(y,x);
 			}
@@ -561,13 +559,14 @@
 	
 	M3D.GUI.updateEntityList = function(){
 		
-		var uid = $('#name').attr('uid');
-		var name  = $('#name').val();
-		
+		var _nameElement = $('#name');
+		var uid = _nameElement.attr('uid');
+		var name  = _nameElement.val();
+			
 		$('#select-model').append('<option value="'+uid+'">'+name+'</option>');
-	
+
 		M3D.GUI.hidePopup();
-		
+
 		// [DB]
 		var element = {
 				'name' : name,
@@ -579,6 +578,7 @@
 			};
 		M3D.DB.setObject(element);
 		// [/DB]
+
 	}
 	
 	
@@ -734,7 +734,7 @@
 			val = current.val();
 			
 			// handle required fields for now
-			// TODO : add support for more inputs vallidation
+			// TODO : add support for more inputs validation
 			if ( current.hasClass('required') && M3D.Common.isEmpty(val) ){
 				isOK = false;
 				current.addClass('warning');
@@ -904,36 +904,26 @@
 	M3D.GUI.updateInfo = function(n){
 			
 		if (n===undefined)
-		{
-			log('Rot('+
-				parseFloat(obj.parent.getRotX()).toFixed(2)+', '+
-				parseFloat(obj.parent.getRotY()).toFixed(2)+', '+ 
-				parseFloat(obj.parent.getRotZ()).toFixed(2)+') '+
-				'Pos('+
-				parseFloat(obj.parent.getLocX()).toFixed(2)+', '+
-				parseFloat(obj.parent.getLocY()).toFixed(2)+', '+
-				parseFloat(obj.parent.getLocZ()).toFixed(2)+') '+
-				'Scale('+
-				parseFloat(obj.parent.getScaleX()).toFixed(2)+', '+
-				parseFloat(obj.parent.getScaleY()).toFixed(2)+', '+
-				parseFloat(obj.parent.getScaleZ()).toFixed(2)+')'
-			);
-				
-			if (obj.parent.getId() !== "") {
-				$('#id').val(obj.parent.getId());
+		{	
+			var _float = function(v){ return parseFloat(v).toFixed(2); }
+			var _obj = obj.parent;
+			
+			if (_obj.getId() !== "") {
+				$('#id').val(_obj.getId());
 			}
-			$('#posX').val( parseFloat(obj.parent.getLocX()).toFixed(2) );
-			$('#posY').val( parseFloat(obj.parent.getLocY()).toFixed(2) );
-			$('#posZ').val( parseFloat(obj.parent.getLocZ()).toFixed(2) );
-			$('#scaleX').val( parseFloat(obj.parent.getScaleX()).toFixed(2) );
-			$('#scaleY').val( parseFloat(obj.parent.getScaleY()).toFixed(2) );
-			$('#scaleZ').val( parseFloat(obj.parent.getScaleZ()).toFixed(2) );
-			$('#rotX').val( parseFloat(obj.parent.getRotX()).toFixed(2) );
-			$('#rotY').val( parseFloat(obj.parent.getRotY()).toFixed(2) );
-			$('#rotZ').val( parseFloat(obj.parent.getRotZ()).toFixed(2) );
-			$('#bboxX').val( parseFloat(obj.parent.boundingVolume.dims[0]).toFixed(2) );
-			$('#bboxY').val( parseFloat(obj.parent.boundingVolume.dims[1]).toFixed(2) );
-			$('#bboxZ').val( parseFloat(obj.parent.boundingVolume.dims[2]).toFixed(2) );						
+			
+			if (_obj.getLocX) $('#posX').val( _float(_obj.getLocX()) );
+			if (_obj.getLocY) $('#posY').val( _float(_obj.getLocY()) );
+			if (_obj.getLocZ) $('#posZ').val( _float(_obj.getLocZ()) );
+			if (_obj.getScaleX) $('#scaleX').val( _float(_obj.getScaleX()) );
+			if (_obj.getScaleY) $('#scaleY').val( _float(_obj.getScaleY()) );
+			if (_obj.getScaleZ) $('#scaleZ').val( _float(_obj.getScaleZ()) );
+			if (_obj.getRotX) $('#rotX').val( _float(_obj.getRotX()) );
+			if (_obj.getRotY) $('#rotY').val( _float(_obj.getRotY()) );
+			if (_obj.getRotZ) $('#rotZ').val( _float(_obj.getRotZ()) );
+			if (_obj.boundingVolume) $('#bboxX').val( _float(_obj.boundingVolume.dims[0]) );
+			if (_obj.boundingVolume) $('#bboxY').val( _float(_obj.boundingVolume.dims[1]) );
+			if (_obj.boundingVolume) $('#bboxZ').val( _float(_obj.boundingVolume.dims[2]) );
 		}
 		else {
 			$("#id").val( null );
@@ -1128,7 +1118,11 @@
 		var o = scene.getObjects();
 		for (var i in o) {
 			// don't remove the axises!
-			if ( o[i].getId() != 'grid' && o[i].getId() != 'xaxis' && o[i].getId() != 'yaxis' && o[i].getId() != 'zaxis' ){
+			if ( o[i].getId() != 'grid' 
+				&& o[i].getId() != 'xyzaxis'
+				&& o[i].getId() != 'xaxis' 
+				&& o[i].getId() != 'yaxis' 
+				&& o[i].getId() != 'zaxis' ){
 				scene.removeChild(o[i]);
 				//o[i].removeInstance();
 				log(o[i]);

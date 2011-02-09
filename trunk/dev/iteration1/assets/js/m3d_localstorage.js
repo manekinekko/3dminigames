@@ -12,11 +12,13 @@
 	 * _obj : for imported 3D models
 	 */
 	M3D.DB.REGEX_CONTENT_PATTERN = /(_attr|_type|_obj)$/;
-	
+	M3D.DB.PATTERN_OBJ = '_obj';
+	M3D.DB.PATTERN_TYPE = '_type';
+	M3D.DB.PATTERN_ATTR = '_attr';
 	
 	// DB initialization
 	M3D.DB.init = function(){
-		M3D.DB.storeDefaultAttributes();		
+		M3D.DB.storeDefaultAttributes();
 		M3D.DB.detectPreviousContent();
 	}
 	
@@ -73,19 +75,19 @@
 	
 	// Save 3D Objects (only usefull info are stored!)
 	M3D.DB.setObject = function(data){
-		data.name = data.name+'_obj';
+		data.name = data.name+M3D.DB.PATTERN_OBJ;
 		M3D.DB._set(data);
 	}
 	
 	// Save Entities
 	M3D.DB.setType = function(data){
-		data.name = data.name+'_type';
+		data.name = data.name+M3D.DB.PATTERN_TYPE;
 		M3D.DB._set(data);
 	}
 	
 	// Save attributes
 	M3D.DB.setAttributes = function(data){
-		data.name = data.name+'_attr';
+		data.name = data.name+M3D.DB.PATTERN_ATTR;
 		M3D.DB._set(data);
 	}
 	
@@ -122,7 +124,8 @@
 		for( var i=0; i<localStorage.length; i++ ){
 			key = localStorage.key(i);
             
-			if ( /\_obj$/.test(key) ){
+			var Exp = new RegExp('/\\'+M3D.DB.PATTERN_OBJ+'$/');
+			if ( Exp.test(key) ){
 				
 				value = M3D.DB.getType(key);
 				
@@ -181,6 +184,12 @@
 	// Check if the DB contains the key K
 	M3D.DB.contains = function(K){
 		return !!localStorage.getItem(K);
+	}
+	
+	// check if the DB conatains an obj entry
+	M3D.DB.containsObj = function(v){
+		log(v+M3D.DB.PATTERN_OBJ);
+		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
 	}
 	
 	// check if the DB contains a stored content

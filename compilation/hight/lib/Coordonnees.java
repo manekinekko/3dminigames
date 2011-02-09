@@ -21,4 +21,16 @@ public Coordonnees(Code x, Code y, Code z){
     this.z = z;
 }
 
+
+public Coordonnees(){
+    this.x = new Code();
+    this.y = new Code();
+    this.z = new Code();
+}
+
+public Code getX(){return x;};
+public Code getY(){return y;};
+public Code getZ(){return z;};
+
+
 }

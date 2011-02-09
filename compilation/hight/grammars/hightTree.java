@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g 2011-02-09 15:10:24
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-02-09 15:26:03
 
     package grammars;
     import code.*;
@@ -227,7 +227,7 @@ public class hightTree extends TreeParser {
         
 
     public String[] getTokenNames() { return hightTree.tokenNames; }
-    public String getGrammarFileName() { return "/home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g"; }
+    public String getGrammarFileName() { return "H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g"; }
 
 
         private int INT_PLAYER=1, INT_ALLY=2, INT_ENEMY=3, INT_NEUTRAL=4, INT_DUPLICABLE=10;
@@ -236,7 +236,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "game"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:27:1: game[SymbolTable st] returns [Code c] : ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:27:1: game[SymbolTable st] returns [Code c] : ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) ;
     public final Code game(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -255,13 +255,13 @@ public class hightTree extends TreeParser {
 
         c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:28:27: ( ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:29:5: ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:28:27: ( ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:29:5: ^( GAME_KW (gd= gameData[st] )? ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* )
             {
             match(input,GAME_KW,FOLLOW_GAME_KW_in_game70); 
 
             match(input, Token.DOWN, null); 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:29:17: (gd= gameData[st] )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:29:17: (gd= gameData[st] )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -270,7 +270,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt1) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:29:17: gd= gameData[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:29:17: gd= gameData[st]
                     {
                     pushFollow(FOLLOW_gameData_in_game74);
                     gd=gameData(st);
@@ -283,7 +283,7 @@ public class hightTree extends TreeParser {
 
             }
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:29:32: ( newType[st] )*
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:29:32: ( newType[st] )*
             loop2:
             do {
                 int alt2=2;
@@ -296,7 +296,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:29:32: newType[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:29:32: newType[st]
             	    {
             	    pushFollow(FOLLOW_newType_in_game78);
             	    newType(st);
@@ -320,8 +320,9 @@ public class hightTree extends TreeParser {
 
             	st.print();
             	System.out.println(in.getCode());
+                    c.append(in);
                 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:38:2: (def= definition[st] )*
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:39:2: (def= definition[st] )*
             loop3:
             do {
                 int alt3=2;
@@ -334,7 +335,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:38:3: def= definition[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:39:3: def= definition[st]
             	    {
             	    pushFollow(FOLLOW_definition_in_game108);
             	    def=definition(st);
@@ -342,7 +343,7 @@ public class hightTree extends TreeParser {
             	    state._fsp--;
 
 
-            	    	System.out.println(def.getCode()+"\n");
+            	    	System.out.println(def.getCode()+"\n");c.append(in);
             	        
 
             	    }
@@ -353,7 +354,7 @@ public class hightTree extends TreeParser {
                 }
             } while (true);
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:9: (com= commande[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:9: (com= commande[st] )+
             int cnt4=0;
             loop4:
             do {
@@ -367,7 +368,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:9: com= commande[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:9: com= commande[st]
             	    {
             	    pushFollow(FOLLOW_commande_in_game129);
             	    com=commande(st);
@@ -387,7 +388,7 @@ public class hightTree extends TreeParser {
                 cnt4++;
             } while (true);
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:27: (reg= reglesJeu[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:27: (reg= reglesJeu[st] )+
             int cnt5=0;
             loop5:
             do {
@@ -401,7 +402,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:27: reg= reglesJeu[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:27: reg= reglesJeu[st]
             	    {
             	    pushFollow(FOLLOW_reglesJeu_in_game135);
             	    reg=reglesJeu(st);
@@ -421,7 +422,7 @@ public class hightTree extends TreeParser {
                 cnt5++;
             } while (true);
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:45: (ia= iaBasique[st] )*
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:45: (ia= iaBasique[st] )*
             loop6:
             do {
                 int alt6=2;
@@ -434,7 +435,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:44:45: ia= iaBasique[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:45:45: ia= iaBasique[st]
             	    {
             	    pushFollow(FOLLOW_iaBasique_in_game141);
             	    ia=iaBasique(st);
@@ -468,13 +469,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "gameData"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:51:1: gameData[SymbolTable st] returns [Code c] : ^( GAME_ATTRIBUT_KW attributGame_list[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:52:1: gameData[SymbolTable st] returns [Code c] : ^( GAME_ATTRIBUT_KW attributGame_list[st] ) ;
     public final Code gameData(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:51:43: ( ^( GAME_ATTRIBUT_KW attributGame_list[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:52:2: ^( GAME_ATTRIBUT_KW attributGame_list[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:52:43: ( ^( GAME_ATTRIBUT_KW attributGame_list[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:53:2: ^( GAME_ATTRIBUT_KW attributGame_list[st] )
             {
             match(input,GAME_ATTRIBUT_KW,FOLLOW_GAME_ATTRIBUT_KW_in_gameData167); 
 
@@ -502,15 +503,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributGame_list"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:54:1: attributGame_list[SymbolTable st] returns [Code c] : ( attributGame[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:55:1: attributGame_list[SymbolTable st] returns [Code c] : ( attributGame[st] )+ ;
     public final Code attributGame_list(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:54:52: ( ( attributGame[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:55:2: ( attributGame[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:55:52: ( ( attributGame[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:56:2: ( attributGame[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:55:2: ( attributGame[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:56:2: ( attributGame[st] )+
             int cnt7=0;
             loop7:
             do {
@@ -524,7 +525,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:55:2: attributGame[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:56:2: attributGame[st]
             	    {
             	    pushFollow(FOLLOW_attributGame_in_attributGame_list186);
             	    attributGame(st);
@@ -560,12 +561,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributGame"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:57:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( SCORE_KW FLOAT ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:58:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( SCORE_KW FLOAT ) );
     public final Code attributGame(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:57:47: ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( SCORE_KW FLOAT ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:58:47: ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( SCORE_KW FLOAT ) )
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -616,7 +617,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt8) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:58:2: ^( GRAVITY_KW FLOAT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:59:2: ^( GRAVITY_KW FLOAT )
                     {
                     match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame204); 
 
@@ -628,7 +629,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:59:3: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:60:3: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                     {
                     match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame212); 
 
@@ -642,7 +643,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:60:3: ^( SCORE_KW FLOAT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:61:3: ^( SCORE_KW FLOAT )
                     {
                     match(input,SCORE_KW,FOLLOW_SCORE_KW_in_attributGame224); 
 
@@ -668,20 +669,20 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "newType"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:63:1: newType[SymbolTable st] : ^( TYPE i= IDENT ( subType[st,sub] )+ ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:64:1: newType[SymbolTable st] : ^( TYPE i= IDENT ( subType[st,sub] )+ ) ;
     public final void newType(SymbolTable st) throws RecognitionException {
         CommonTree i=null;
 
         List<Model> sub = new ArrayList<Model>();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:64:50: ( ^( TYPE i= IDENT ( subType[st,sub] )+ ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:65:2: ^( TYPE i= IDENT ( subType[st,sub] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:65:50: ( ^( TYPE i= IDENT ( subType[st,sub] )+ ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:66:2: ^( TYPE i= IDENT ( subType[st,sub] )+ )
             {
             match(input,TYPE,FOLLOW_TYPE_in_newType247); 
 
             match(input, Token.DOWN, null); 
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_newType251); 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:65:17: ( subType[st,sub] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:66:17: ( subType[st,sub] )+
             int cnt9=0;
             loop9:
             do {
@@ -695,7 +696,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:65:17: subType[st,sub]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:66:17: subType[st,sub]
             	    {
             	    pushFollow(FOLLOW_subType_in_newType253);
             	    subType(st, sub);
@@ -744,14 +745,14 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "subType"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:79:1: subType[SymbolTable st, List<Model> sub] : (i= IDENT | t= typeObjet );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:80:1: subType[SymbolTable st, List<Model> sub] : (i= IDENT | t= typeObjet );
     public final void subType(SymbolTable st, List<Model> sub) throws RecognitionException {
         CommonTree i=null;
         Model t = null;
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:79:43: (i= IDENT | t= typeObjet )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:80:43: (i= IDENT | t= typeObjet )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -769,7 +770,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt10) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:80:2: i= IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:81:2: i= IDENT
                     {
                     i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_subType274); 
                        String id = i.getText();
@@ -788,7 +789,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:93:4: t= typeObjet
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:94:4: t= typeObjet
                     {
                     pushFollow(FOLLOW_typeObjet_in_subType284);
                     t=typeObjet();
@@ -814,15 +815,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "initialization"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:96:1: initialization[SymbolTable st] returns [Code c] : ( init[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:97:1: initialization[SymbolTable st] returns [Code c] : ( init[st] )+ ;
     public final Code initialization(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:96:49: ( ( init[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:97:5: ( init[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:97:49: ( ( init[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:98:5: ( init[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:97:5: ( init[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:98:5: ( init[st] )+
             int cnt11=0;
             loop11:
             do {
@@ -836,7 +837,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:97:5: init[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:98:5: init[st]
             	    {
             	    pushFollow(FOLLOW_init_in_initialization305);
             	    init(st);
@@ -913,7 +914,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "init"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:141:1: init[SymbolTable st] returns [Code c] : ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:142:1: init[SymbolTable st] returns [Code c] : ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) );
     public final Code init(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -926,7 +927,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:141:39: ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:142:39: ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -944,7 +945,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt12) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:142:2: ^( INIT_IS_KW i= IDENT d= declarationObjet[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:143:2: ^( INIT_IS_KW i= IDENT d= declarationObjet[st] )
                     {
                     match(input,INIT_IS_KW,FOLLOW_INIT_IS_KW_in_init333); 
 
@@ -990,7 +991,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:172:3: ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:173:3: ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] )
                     {
                     match(input,INIT_HAS_KW,FOLLOW_INIT_HAS_KW_in_init351); 
 
@@ -1046,7 +1047,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declarationObjet"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:201:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:202:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) );
     public final Pair<Model, Integer> declarationObjet(SymbolTable st) throws RecognitionException {
         Pair<Model, Integer> p = null;
 
@@ -1057,12 +1058,12 @@ public class hightTree extends TreeParser {
 
         em=null;
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:202:17: ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:203:17: ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) )
             int alt14=7;
             alt14 = dfa14.predict(input);
             switch (alt14) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:203:2: ^( DEC te= typeEntity[st] (em= entityMode )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:204:2: ^( DEC te= typeEntity[st] (em= entityMode )? )
                     {
                     match(input,DEC,FOLLOW_DEC_in_declarationObjet392); 
 
@@ -1072,7 +1073,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:203:26: (em= entityMode )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:204:26: (em= entityMode )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -1081,7 +1082,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt13) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:203:27: em= entityMode
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:204:27: em= entityMode
                             {
                             pushFollow(FOLLOW_entityMode_in_declarationObjet402);
                             em=entityMode();
@@ -1106,7 +1107,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:210:3: ^( LIST_KW list_declaration[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:211:3: ^( LIST_KW list_declaration[st] )
                     {
                     match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet413); 
 
@@ -1122,7 +1123,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:211:3: ^( CAMERA_KW PERSON view[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:212:3: ^( CAMERA_KW PERSON view[st] )
                     {
                     match(input,CAMERA_KW,FOLLOW_CAMERA_KW_in_declarationObjet422); 
 
@@ -1139,7 +1140,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:212:3: ^( CAMERA_KW FREE )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:213:3: ^( CAMERA_KW FREE )
                     {
                     match(input,CAMERA_KW,FOLLOW_CAMERA_KW_in_declarationObjet434); 
 
@@ -1151,7 +1152,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:213:3: ^( MEDIA_KW LOOP )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:214:3: ^( MEDIA_KW LOOP )
                     {
                     match(input,MEDIA_KW,FOLLOW_MEDIA_KW_in_declarationObjet442); 
 
@@ -1163,7 +1164,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:214:3: ^( MEDIA_KW ONCE )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:215:3: ^( MEDIA_KW ONCE )
                     {
                     match(input,MEDIA_KW,FOLLOW_MEDIA_KW_in_declarationObjet451); 
 
@@ -1175,7 +1176,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:215:3: ^( IN_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:216:3: ^( IN_KW IDENT )
                     {
                     match(input,IN_KW,FOLLOW_IN_KW_in_declarationObjet467); 
 
@@ -1201,15 +1202,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "list_declaration"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:218:1: list_declaration[SymbolTable st] returns [Code c] : ( ( operation[st] )? IDENT )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:219:1: list_declaration[SymbolTable st] returns [Code c] : ( ( operation[st] )? IDENT )+ ;
     public final Code list_declaration(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:218:51: ( ( ( operation[st] )? IDENT )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:219:2: ( ( operation[st] )? IDENT )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:219:51: ( ( ( operation[st] )? IDENT )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:220:2: ( ( operation[st] )? IDENT )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:219:2: ( ( operation[st] )? IDENT )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:220:2: ( ( operation[st] )? IDENT )+
             int cnt16=0;
             loop16:
             do {
@@ -1223,9 +1224,9 @@ public class hightTree extends TreeParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:219:3: ( operation[st] )? IDENT
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:220:3: ( operation[st] )? IDENT
             	    {
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:219:3: ( operation[st] )?
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:220:3: ( operation[st] )?
             	    int alt15=2;
             	    int LA15_0 = input.LA(1);
 
@@ -1234,7 +1235,7 @@ public class hightTree extends TreeParser {
             	    }
             	    switch (alt15) {
             	        case 1 :
-            	            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:219:3: operation[st]
+            	            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:220:3: operation[st]
             	            {
             	            pushFollow(FOLLOW_operation_in_list_declaration501);
             	            operation(st);
@@ -1277,15 +1278,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeEntity"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:222:1: typeEntity[SymbolTable st] returns [Model t] : i= IDENT ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:223:1: typeEntity[SymbolTable st] returns [Model t] : i= IDENT ;
     public final Model typeEntity(SymbolTable st) throws RecognitionException {
         Model t = null;
 
         CommonTree i=null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:222:46: (i= IDENT )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:223:2: i= IDENT
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:223:46: (i= IDENT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:224:2: i= IDENT
             {
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_typeEntity526); 
                String id = i.getText();
@@ -1316,7 +1317,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "entityMode"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:238:1: entityMode returns [Integer i] : ( PLAYER | ^( INTERACTION_KW in= interaction (d= dupli )? ) | d= dupli );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:239:1: entityMode returns [Integer i] : ( PLAYER | ^( INTERACTION_KW in= interaction (d= dupli )? ) | d= dupli );
     public final Integer entityMode() throws RecognitionException {
         Integer i = null;
 
@@ -1327,7 +1328,7 @@ public class hightTree extends TreeParser {
 
         d=null;
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:239:19: ( PLAYER | ^( INTERACTION_KW in= interaction (d= dupli )? ) | d= dupli )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:240:19: ( PLAYER | ^( INTERACTION_KW in= interaction (d= dupli )? ) | d= dupli )
             int alt18=3;
             switch ( input.LA(1) ) {
             case PLAYER:
@@ -1354,7 +1355,7 @@ public class hightTree extends TreeParser {
 
             switch (alt18) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:240:2: PLAYER
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:241:2: PLAYER
                     {
                     match(input,PLAYER,FOLLOW_PLAYER_in_entityMode551); 
                     i=INT_PLAYER;
@@ -1362,7 +1363,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:242:4: ^( INTERACTION_KW in= interaction (d= dupli )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:243:4: ^( INTERACTION_KW in= interaction (d= dupli )? )
                     {
                     match(input,INTERACTION_KW,FOLLOW_INTERACTION_KW_in_entityMode560); 
 
@@ -1372,7 +1373,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:242:37: (d= dupli )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:243:37: (d= dupli )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -1381,7 +1382,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt17) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:242:37: d= dupli
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:243:37: d= dupli
                             {
                             pushFollow(FOLLOW_dupli_in_entityMode568);
                             d=dupli();
@@ -1401,7 +1402,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:243:4: d= dupli
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:244:4: d= dupli
                     {
                     pushFollow(FOLLOW_dupli_in_entityMode579);
                     d=dupli();
@@ -1427,12 +1428,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "interaction"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:246:1: interaction returns [Integer i] : ( ALLY | ENEMY | NEUTRAL );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:247:1: interaction returns [Integer i] : ( ALLY | ENEMY | NEUTRAL );
     public final Integer interaction() throws RecognitionException {
         Integer i = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:246:32: ( ALLY | ENEMY | NEUTRAL )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:247:32: ( ALLY | ENEMY | NEUTRAL )
             int alt19=3;
             switch ( input.LA(1) ) {
             case ALLY:
@@ -1459,7 +1460,7 @@ public class hightTree extends TreeParser {
 
             switch (alt19) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:247:2: ALLY
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:248:2: ALLY
                     {
                     match(input,ALLY,FOLLOW_ALLY_in_interaction596); 
                     i=INT_ALLY;
@@ -1467,7 +1468,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:249:4: ENEMY
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:250:4: ENEMY
                     {
                     match(input,ENEMY,FOLLOW_ENEMY_in_interaction604); 
                     i=INT_ENEMY;
@@ -1475,7 +1476,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:251:4: NEUTRAL
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:252:4: NEUTRAL
                     {
                     match(input,NEUTRAL,FOLLOW_NEUTRAL_in_interaction612); 
                     i=INT_NEUTRAL;
@@ -1497,13 +1498,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "dupli"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:255:1: dupli returns [Integer i] : DUPLICABLE ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:256:1: dupli returns [Integer i] : DUPLICABLE ;
     public final Integer dupli() throws RecognitionException {
         Integer i = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:255:26: ( DUPLICABLE )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:256:2: DUPLICABLE
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:256:26: ( DUPLICABLE )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:257:2: DUPLICABLE
             {
             match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli629); 
             i=INT_DUPLICABLE;
@@ -1523,13 +1524,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "view"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:260:1: view[SymbolTable st] returns [Code c] : ( FIRST | THIRD );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:261:1: view[SymbolTable st] returns [Code c] : ( FIRST | THIRD );
     public final Code view(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:260:39: ( FIRST | THIRD )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:261:39: ( FIRST | THIRD )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=FIRST && input.LA(1)<=THIRD) ) {
                 input.consume();
@@ -1556,7 +1557,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "affectationObjet_list"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:264:1: affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : (a= affectationObjet[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:265:1: affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : (a= affectationObjet[st] )+ ;
     public final ArrayList<Pair<String,AttributeValue>> affectationObjet_list(SymbolTable st) throws RecognitionException {
         ArrayList<Pair<String,AttributeValue>> c = null;
 
@@ -1565,10 +1566,10 @@ public class hightTree extends TreeParser {
 
         c = new ArrayList<Pair<String,AttributeValue>>();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:264:146: ( (a= affectationObjet[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:265:9: (a= affectationObjet[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:265:146: ( (a= affectationObjet[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:266:9: (a= affectationObjet[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:265:9: (a= affectationObjet[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:266:9: (a= affectationObjet[st] )+
             int cnt20=0;
             loop20:
             do {
@@ -1582,7 +1583,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:265:10: a= affectationObjet[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:266:10: a= affectationObjet[st]
             	    {
             	    pushFollow(FOLLOW_affectationObjet_in_affectationObjet_list682);
             	    a=affectationObjet(st);
@@ -1619,7 +1620,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "affectationObjet"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:267:1: affectationObjet[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:268:1: affectationObjet[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) );
     public final ArrayList<Pair<String,AttributeValue>> affectationObjet(SymbolTable st) throws RecognitionException {
         ArrayList<Pair<String,AttributeValue>> c = null;
 
@@ -1639,7 +1640,7 @@ public class hightTree extends TreeParser {
 
         c = new ArrayList<Pair<String,AttributeValue>>();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:267:142: ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:268:142: ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) )
             int alt22=4;
             int LA22_0 = input.LA(1);
 
@@ -1707,13 +1708,13 @@ public class hightTree extends TreeParser {
             }
             switch (alt22) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:268:2: ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:269:2: ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet707); 
 
                     match(input, Token.DOWN, null); 
                     i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_affectationObjet711); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:268:28: (t= valAggregation[st] )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:269:28: (t= valAggregation[st] )?
                     int alt21=2;
                     int LA21_0 = input.LA(1);
 
@@ -1722,7 +1723,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt21) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:268:28: t= valAggregation[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:269:28: t= valAggregation[st]
                             {
                             pushFollow(FOLLOW_valAggregation_in_affectationObjet715);
                             t=valAggregation(st);
@@ -1747,7 +1748,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:275:4: ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:276:4: ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet735); 
 
@@ -1783,7 +1784,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:291:4: ^( ALLOCATION_KW attributListeOuObjet[st] IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:292:4: ^( ALLOCATION_KW attributListeOuObjet[st] IDENT )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet763); 
 
@@ -1800,7 +1801,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:292:4: ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:293:4: ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet776); 
 
@@ -1841,7 +1842,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "valAggregation"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:297:1: valAggregation[SymbolTable st] returns [AttributeValue c] : ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | 'true' | 'false' );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:298:1: valAggregation[SymbolTable st] returns [AttributeValue c] : ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | 'true' | 'false' );
     public final AttributeValue valAggregation(SymbolTable st) throws RecognitionException {
         AttributeValue c = null;
 
@@ -1852,7 +1853,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:297:59: ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | 'true' | 'false' )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:298:59: ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | 'true' | 'false' )
             int alt24=4;
             switch ( input.LA(1) ) {
             case AGGREGATION_KW:
@@ -1902,7 +1903,7 @@ public class hightTree extends TreeParser {
 
             switch (alt24) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:298:2: ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:299:2: ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? )
                     {
                     match(input,AGGREGATION_KW,FOLLOW_AGGREGATION_KW_in_valAggregation828); 
 
@@ -1912,7 +1913,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:298:36: (t= timeUnit[st] )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:299:36: (t= timeUnit[st] )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -1921,7 +1922,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt23) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:298:36: t= timeUnit[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:299:36: t= timeUnit[st]
                             {
                             pushFollow(FOLLOW_timeUnit_in_valAggregation837);
                             t=timeUnit(st);
@@ -1946,7 +1947,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:305:3: ^( AGGREGATION_KW i= IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:306:3: ^( AGGREGATION_KW i= IDENT )
                     {
                     match(input,AGGREGATION_KW,FOLLOW_AGGREGATION_KW_in_valAggregation855); 
 
@@ -1967,7 +1968,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:315:4: 'true'
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:316:4: 'true'
                     {
                     match(input,195,FOLLOW_195_in_valAggregation875); 
                     c = new AttributeValue(true,"true");
@@ -1975,7 +1976,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:316:4: 'false'
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:317:4: 'false'
                     {
                     match(input,196,FOLLOW_196_in_valAggregation882); 
                     c = new AttributeValue(false,"false");
@@ -1997,7 +1998,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "definition"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:321:1: definition[SymbolTable st] returns [Code c] : ^( DEFINITION_KW i= IDENT cons= consequences[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:322:1: definition[SymbolTable st] returns [Code c] : ^( DEFINITION_KW i= IDENT cons= consequences[st] ) ;
     public final Code definition(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2007,8 +2008,8 @@ public class hightTree extends TreeParser {
 
          c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:321:69: ( ^( DEFINITION_KW i= IDENT cons= consequences[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:322:2: ^( DEFINITION_KW i= IDENT cons= consequences[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:322:69: ( ^( DEFINITION_KW i= IDENT cons= consequences[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:323:2: ^( DEFINITION_KW i= IDENT cons= consequences[st] )
             {
             match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition911); 
 
@@ -2045,7 +2046,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "consequences"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:333:1: consequences[SymbolTable st] returns [Code c] : ^( CONSEQUENCES_KW conslist= consequ_list[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:334:1: consequences[SymbolTable st] returns [Code c] : ^( CONSEQUENCES_KW conslist= consequ_list[st] ) ;
     public final Code consequences(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2054,8 +2055,8 @@ public class hightTree extends TreeParser {
 
          c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:333:70: ( ^( CONSEQUENCES_KW conslist= consequ_list[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:334:2: ^( CONSEQUENCES_KW conslist= consequ_list[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:334:70: ( ^( CONSEQUENCES_KW conslist= consequ_list[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:335:2: ^( CONSEQUENCES_KW conslist= consequ_list[st] )
             {
             match(input,CONSEQUENCES_KW,FOLLOW_CONSEQUENCES_KW_in_consequences945); 
 
@@ -2084,7 +2085,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "consequ_list"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:338:1: consequ_list[SymbolTable st] returns [Code c] : (cons= consequ[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:339:1: consequ_list[SymbolTable st] returns [Code c] : (cons= consequ[st] )+ ;
     public final Code consequ_list(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2093,10 +2094,10 @@ public class hightTree extends TreeParser {
 
          c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:338:70: ( (cons= consequ[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:339:3: (cons= consequ[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:339:70: ( (cons= consequ[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:340:3: (cons= consequ[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:339:3: (cons= consequ[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:340:3: (cons= consequ[st] )+
             int cnt25=0;
             loop25:
             do {
@@ -2110,7 +2111,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt25) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:339:4: cons= consequ[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:340:4: cons= consequ[st]
             	    {
             	    pushFollow(FOLLOW_consequ_in_consequ_list977);
             	    cons=consequ(st);
@@ -2147,7 +2148,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "consequ"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:342:1: consequ[SymbolTable st] returns [Code c] : (i= siAlors[st] | act= action[st] | a= affectation[st] | activCommande[st] | IDENT | VICTORY_KW | DEFEAT_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:343:1: consequ[SymbolTable st] returns [Code c] : (i= siAlors[st] | act= action[st] | a= affectation[st] | activCommande[st] | IDENT | VICTORY_KW | DEFEAT_KW );
     public final Code consequ(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2160,7 +2161,7 @@ public class hightTree extends TreeParser {
 
          c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:342:65: (i= siAlors[st] | act= action[st] | a= affectation[st] | activCommande[st] | IDENT | VICTORY_KW | DEFEAT_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:343:65: (i= siAlors[st] | act= action[st] | a= affectation[st] | activCommande[st] | IDENT | VICTORY_KW | DEFEAT_KW )
             int alt26=7;
             switch ( input.LA(1) ) {
             case IF_KW:
@@ -2222,7 +2223,7 @@ public class hightTree extends TreeParser {
 
             switch (alt26) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:343:3: i= siAlors[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:344:3: i= siAlors[st]
                     {
                     pushFollow(FOLLOW_siAlors_in_consequ1006);
                     i=siAlors(st);
@@ -2234,7 +2235,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:344:5: act= action[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:345:5: act= action[st]
                     {
                     pushFollow(FOLLOW_action_in_consequ1017);
                     act=action(st);
@@ -2246,7 +2247,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:345:5: a= affectation[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:346:5: a= affectation[st]
                     {
                     pushFollow(FOLLOW_affectation_in_consequ1028);
                     a=affectation(st);
@@ -2258,7 +2259,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:346:5: activCommande[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:347:5: activCommande[st]
                     {
                     pushFollow(FOLLOW_activCommande_in_consequ1038);
                     activCommande(st);
@@ -2270,21 +2271,21 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:347:5: IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:348:5: IDENT
                     {
                     match(input,IDENT,FOLLOW_IDENT_in_consequ1047); 
 
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:348:5: VICTORY_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:349:5: VICTORY_KW
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1053); 
 
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:349:5: DEFEAT_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:350:5: DEFEAT_KW
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1059); 
 
@@ -2305,7 +2306,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "action"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:352:1: action[SymbolTable st] returns [Code c] : ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:353:1: action[SymbolTable st] returns [Code c] : ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW );
     public final Code action(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2314,12 +2315,12 @@ public class hightTree extends TreeParser {
 
          c = new Code();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:352:64: ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:353:64: ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW )
             int alt29=14;
             alt29 = dfa29.predict(input);
             switch (alt29) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:353:2: accesClass[st] actionObjet[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:354:2: accesClass[st] actionObjet[st]
                     {
                     pushFollow(FOLLOW_accesClass_in_action1079);
                     accesClass(st);
@@ -2335,7 +2336,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:354:3: ^( ENDS_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:355:3: ^( ENDS_KW IDENT )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1088); 
 
@@ -2347,7 +2348,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:355:3: ^( ENDS_KW GAME )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:356:3: ^( ENDS_KW GAME )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1097); 
 
@@ -2359,7 +2360,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:356:3: ^( STARTS_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:357:3: ^( STARTS_KW IDENT )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1106); 
 
@@ -2371,7 +2372,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:357:3: ^( STARTS_KW GAME )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:358:3: ^( STARTS_KW GAME )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1114); 
 
@@ -2383,7 +2384,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:358:3: ^( PAUSE_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:359:3: ^( PAUSE_KW IDENT )
                     {
                     match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1122); 
 
@@ -2395,7 +2396,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:359:3: ^( MUTE_KW mode_mute[st] IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:360:3: ^( MUTE_KW mode_mute[st] IDENT )
                     {
                     match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1130); 
 
@@ -2412,7 +2413,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:360:3: ^( PLAY_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:361:3: ^( PLAY_KW IDENT )
                     {
                     match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1141); 
 
@@ -2424,7 +2425,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:361:3: ^( STOP_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:362:3: ^( STOP_KW IDENT )
                     {
                     match(input,STOP_KW,FOLLOW_STOP_KW_in_action1149); 
 
@@ -2436,7 +2437,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:362:3: ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:363:3: ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] )
                     {
                     match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1157); 
 
@@ -2462,7 +2463,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:363:3: ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:364:3: ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? )
                     {
                     match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1172); 
 
@@ -2472,7 +2473,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:363:29: ( typeDestination[st] )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:364:29: ( typeDestination[st] )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -2481,7 +2482,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt27) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:363:29: typeDestination[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:364:29: typeDestination[st]
                             {
                             pushFollow(FOLLOW_typeDestination_in_action1177);
                             typeDestination(st);
@@ -2500,7 +2501,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:364:3: ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:365:3: ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? )
                     {
                     match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1185); 
 
@@ -2525,7 +2526,7 @@ public class hightTree extends TreeParser {
                     	// TO DO -> MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
                     	
                     	
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:378:4: ( typeDestination[st] )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:379:4: ( typeDestination[st] )?
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
@@ -2534,7 +2535,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt28) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:378:4: typeDestination[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:379:4: typeDestination[st]
                             {
                             pushFollow(FOLLOW_typeDestination_in_action1193);
                             typeDestination(st);
@@ -2553,7 +2554,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:379:3: ^( WAIT_KW operation[st] timeUnit[st] consequences[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:380:3: ^( WAIT_KW operation[st] timeUnit[st] consequences[st] )
                     {
                     match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1205); 
 
@@ -2579,7 +2580,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:380:3: SAVE_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:381:3: SAVE_KW
                     {
                     match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1219); 
 
@@ -2600,7 +2601,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeAcces"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:383:1: typeAcces[SymbolTable st] returns [ArrayList<Symbol> l] : (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:384:1: typeAcces[SymbolTable st] returns [ArrayList<Symbol> l] : (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) );
     public final ArrayList<Symbol> typeAcces(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> l = null;
 
@@ -2608,7 +2609,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:383:57: (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:384:57: (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -2626,7 +2627,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt31) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:384:2: ac= accesClass[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:385:2: ac= accesClass[st]
                     {
                     pushFollow(FOLLOW_accesClass_in_typeAcces1237);
                     ac=accesClass(st);
@@ -2638,14 +2639,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:384:29: operation[st] ( IDENT | accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:385:29: operation[st] ( IDENT | accesClass[st] )
                     {
                     pushFollow(FOLLOW_operation_in_typeAcces1243);
                     operation(st);
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:384:43: ( IDENT | accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:385:43: ( IDENT | accesClass[st] )
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
@@ -2663,14 +2664,14 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt30) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:384:44: IDENT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:385:44: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_typeAcces1247); 
 
                             }
                             break;
                         case 2 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:384:52: accesClass[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:385:52: accesClass[st]
                             {
                             pushFollow(FOLLOW_accesClass_in_typeAcces1251);
                             accesClass(st);
@@ -2701,12 +2702,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeDestination"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:386:1: typeDestination[SymbolTable st] returns [Code c] : ( accesClass[st] | coordinates[st] );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:387:1: typeDestination[SymbolTable st] returns [Code c] : ( accesClass[st] | coordinates[st] );
     public final Code typeDestination(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:386:50: ( accesClass[st] | coordinates[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:387:50: ( accesClass[st] | coordinates[st] )
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -2724,7 +2725,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt32) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:387:2: accesClass[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:388:2: accesClass[st]
                     {
                     pushFollow(FOLLOW_accesClass_in_typeDestination1270);
                     accesClass(st);
@@ -2735,7 +2736,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:387:19: coordinates[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:388:19: coordinates[st]
                     {
                     pushFollow(FOLLOW_coordinates_in_typeDestination1275);
                     coordinates(st);
@@ -2761,24 +2762,24 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionObjet"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:389:1: actionObjet[SymbolTable st] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:390:1: actionObjet[SymbolTable st] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );
     public final Code actionObjet(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:389:46: ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:390:46: ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) )
             int alt33=7;
             alt33 = dfa33.predict(input);
             switch (alt33) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:390:3: DIES_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:391:3: DIES_KW
                     {
                     match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1292); 
 
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:391:5: actionCommandePressee[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:392:5: actionCommandePressee[st]
                     {
                     pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1298);
                     actionCommandePressee(st);
@@ -2789,7 +2790,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:392:4: ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:393:4: ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] )
                     {
                     match(input,DURING,FOLLOW_DURING_in_actionObjet1305); 
 
@@ -2815,7 +2816,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:393:4: ^( UNTIL actionCommandeMaintenue[st] conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:394:4: ^( UNTIL actionCommandeMaintenue[st] conditions[st] )
                     {
                     match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1321); 
 
@@ -2836,7 +2837,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:394:4: ^( EQUIP accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:395:4: ^( EQUIP accesClass[st] )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1334); 
 
@@ -2852,7 +2853,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:395:4: ^( EQUIP NEXT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:396:4: ^( EQUIP NEXT )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1344); 
 
@@ -2864,7 +2865,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:396:4: ^( EQUIP PREVIOUS )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:397:4: ^( EQUIP PREVIOUS )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1354); 
 
@@ -2890,13 +2891,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "transformation"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:399:1: transformation[SymbolTable st] returns [Code c] : ( TRANSLATION | ROTATION | SCALE );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:400:1: transformation[SymbolTable st] returns [Code c] : ( TRANSLATION | ROTATION | SCALE );
     public final Code transformation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:399:49: ( TRANSLATION | ROTATION | SCALE )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:400:49: ( TRANSLATION | ROTATION | SCALE )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=TRANSLATION && input.LA(1)<=SCALE) ) {
                 input.consume();
@@ -2923,7 +2924,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "coordinates"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:405:1: coordinates[SymbolTable st] returns [Coordonnees coo] : ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:406:1: coordinates[SymbolTable st] returns [Coordonnees coo] : ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) ;
     public final Coordonnees coordinates(SymbolTable st) throws RecognitionException {
         Coordonnees coo = null;
 
@@ -2935,8 +2936,8 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:405:55: ( ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:406:2: ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:406:55: ( ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:407:2: ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] )
             {
             match(input,COORDINATE_KW,FOLLOW_COORDINATE_KW_in_coordinates1407); 
 
@@ -2975,18 +2976,18 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "commande"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:412:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW ( IDENT )? actionCommande_list[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:413:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW ( IDENT )? actionCommande_list[st] ) ;
     public final Code commande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:412:43: ( ^( COMMAND_KW ( IDENT )? actionCommande_list[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:413:2: ^( COMMAND_KW ( IDENT )? actionCommande_list[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:413:43: ( ^( COMMAND_KW ( IDENT )? actionCommande_list[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:414:2: ^( COMMAND_KW ( IDENT )? actionCommande_list[st] )
             {
             match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande1453); 
 
             match(input, Token.DOWN, null); 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:413:15: ( IDENT )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:414:15: ( IDENT )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -2995,7 +2996,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt34) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:413:15: IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:414:15: IDENT
                     {
                     match(input,IDENT,FOLLOW_IDENT_in_commande1455); 
 
@@ -3027,15 +3028,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommande_list"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:416:1: actionCommande_list[SymbolTable st] returns [Code c] : ( actionCommande[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:417:1: actionCommande_list[SymbolTable st] returns [Code c] : ( actionCommande[st] )+ ;
     public final Code actionCommande_list(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:416:53: ( ( actionCommande[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:417:2: ( actionCommande[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:417:53: ( ( actionCommande[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:418:2: ( actionCommande[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:417:2: ( actionCommande[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:418:2: ( actionCommande[st] )+
             int cnt35=0;
             loop35:
             do {
@@ -3049,7 +3050,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:417:2: actionCommande[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:418:2: actionCommande[st]
             	    {
             	    pushFollow(FOLLOW_actionCommande_in_actionCommande_list1476);
             	    actionCommande(st);
@@ -3085,12 +3086,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommande"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:420:1: actionCommande[SymbolTable st] returns [Code c] : ( ^( MOUSE_KW souris[st] actionCommandeType[st] ) | ^( KEY_KW clavier[st] actionCommandeType[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:421:1: actionCommande[SymbolTable st] returns [Code c] : ( ^( MOUSE_KW souris[st] actionCommandeType[st] ) | ^( KEY_KW clavier[st] actionCommandeType[st] ) );
     public final Code actionCommande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:420:49: ( ^( MOUSE_KW souris[st] actionCommandeType[st] ) | ^( KEY_KW clavier[st] actionCommandeType[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:421:49: ( ^( MOUSE_KW souris[st] actionCommandeType[st] ) | ^( KEY_KW clavier[st] actionCommandeType[st] ) )
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -3108,7 +3109,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt36) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:421:2: ^( MOUSE_KW souris[st] actionCommandeType[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:422:2: ^( MOUSE_KW souris[st] actionCommandeType[st] )
                     {
                     match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_actionCommande1496); 
 
@@ -3129,7 +3130,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:422:3: ^( KEY_KW clavier[st] actionCommandeType[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:423:3: ^( KEY_KW clavier[st] actionCommandeType[st] )
                     {
                     match(input,KEY_KW,FOLLOW_KEY_KW_in_actionCommande1509); 
 
@@ -3164,12 +3165,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommandeType"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:425:1: actionCommandeType[SymbolTable st] returns [Code c] : ( IDENT | actionCommandePressee[st] | actionCommandeMaintenue[st] );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:426:1: actionCommandeType[SymbolTable st] returns [Code c] : ( IDENT | actionCommandePressee[st] | actionCommandeMaintenue[st] );
     public final Code actionCommandeType(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:425:53: ( IDENT | actionCommandePressee[st] | actionCommandeMaintenue[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:426:53: ( IDENT | actionCommandePressee[st] | actionCommandeMaintenue[st] )
             int alt37=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -3201,14 +3202,14 @@ public class hightTree extends TreeParser {
 
             switch (alt37) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:426:2: IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:427:2: IDENT
                     {
                     match(input,IDENT,FOLLOW_IDENT_in_actionCommandeType1533); 
 
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:426:10: actionCommandePressee[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:427:10: actionCommandePressee[st]
                     {
                     pushFollow(FOLLOW_actionCommandePressee_in_actionCommandeType1537);
                     actionCommandePressee(st);
@@ -3219,7 +3220,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:426:38: actionCommandeMaintenue[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:427:38: actionCommandeMaintenue[st]
                     {
                     pushFollow(FOLLOW_actionCommandeMaintenue_in_actionCommandeType1542);
                     actionCommandeMaintenue(st);
@@ -3244,13 +3245,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "souris"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:429:1: souris[SymbolTable st] returns [Code c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:430:1: souris[SymbolTable st] returns [Code c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
     public final Code souris(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:429:41: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:430:41: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=WUP && input.LA(1)<=SCROLL_DOWN) ) {
                 input.consume();
@@ -3277,13 +3278,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "clavier"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:433:1: clavier[SymbolTable st] returns [Code c] : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:434:1: clavier[SymbolTable st] returns [Code c] : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
     public final Code clavier(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:433:42: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:434:42: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=WUP && input.LA(1)<=RIGHT)||(input.LA(1)>=LETTER && input.LA(1)<=ENTER) ) {
                 input.consume();
@@ -3310,12 +3311,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommandePressee"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:437:1: actionCommandePressee[SymbolTable st] returns [Code c] : ( JUMP operation[st] | PAUSE_KW | STOP_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:438:1: actionCommandePressee[SymbolTable st] returns [Code c] : ( JUMP operation[st] | PAUSE_KW | STOP_KW );
     public final Code actionCommandePressee(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:437:56: ( JUMP operation[st] | PAUSE_KW | STOP_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:438:56: ( JUMP operation[st] | PAUSE_KW | STOP_KW )
             int alt38=3;
             switch ( input.LA(1) ) {
             case JUMP:
@@ -3342,7 +3343,7 @@ public class hightTree extends TreeParser {
 
             switch (alt38) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:438:3: JUMP operation[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:439:3: JUMP operation[st]
                     {
                     match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1670); 
                     pushFollow(FOLLOW_operation_in_actionCommandePressee1672);
@@ -3354,14 +3355,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:439:5: PAUSE_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:440:5: PAUSE_KW
                     {
                     match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_actionCommandePressee1679); 
 
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:440:5: STOP_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:441:5: STOP_KW
                     {
                     match(input,STOP_KW,FOLLOW_STOP_KW_in_actionCommandePressee1685); 
 
@@ -3382,12 +3383,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommandeMaintenue"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:443:1: actionCommandeMaintenue[SymbolTable st] returns [Code c] : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:444:1: actionCommandeMaintenue[SymbolTable st] returns [Code c] : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE );
     public final Code actionCommandeMaintenue(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:443:58: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:444:58: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD ) | TURN ( LEFT | RIGHT ) | ACCELERATE | BRAKE )
             int alt39=4;
             switch ( input.LA(1) ) {
             case MOVE:
@@ -3419,7 +3420,7 @@ public class hightTree extends TreeParser {
 
             switch (alt39) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:444:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:445:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD )
                     {
                     match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1705); 
                     if ( (input.LA(1)>=LEFT && input.LA(1)<=RIGHT)||(input.LA(1)>=FORWARD && input.LA(1)<=BACKWARD) ) {
@@ -3435,7 +3436,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:445:5: TURN ( LEFT | RIGHT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:446:5: TURN ( LEFT | RIGHT )
                     {
                     match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue1727); 
                     if ( (input.LA(1)>=LEFT && input.LA(1)<=RIGHT) ) {
@@ -3451,14 +3452,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:446:5: ACCELERATE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:447:5: ACCELERATE
                     {
                     match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue1741); 
 
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:447:5: BRAKE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:448:5: BRAKE
                     {
                     match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue1747); 
 
@@ -3479,12 +3480,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "activCommande"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:450:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:451:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
     public final Code activCommande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:450:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:451:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -3502,7 +3503,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt40) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:451:3: ^( ACTIVATE_KW typeCommand[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:452:3: ^( ACTIVATE_KW typeCommand[st] )
                     {
                     match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande1768); 
 
@@ -3518,7 +3519,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:452:4: ^( DISABLE_KW typeCommand[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:453:4: ^( DISABLE_KW typeCommand[st] )
                     {
                     match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande1779); 
 
@@ -3548,12 +3549,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeCommand"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:455:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:456:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
     public final Code typeCommand(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:455:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:456:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
             int alt43=4;
             switch ( input.LA(1) ) {
             case COMMANDS:
@@ -3585,20 +3586,20 @@ public class hightTree extends TreeParser {
 
             switch (alt43) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:456:2: COMMANDS
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:457:2: COMMANDS
                     {
                     match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand1799); 
 
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:457:4: ^( MOUSE_KW ( souris[st] )* )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:458:4: ^( MOUSE_KW ( souris[st] )* )
                     {
                     match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_typeCommand1806); 
 
                     if ( input.LA(1)==Token.DOWN ) {
                         match(input, Token.DOWN, null); 
-                        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:457:15: ( souris[st] )*
+                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:458:15: ( souris[st] )*
                         loop41:
                         do {
                             int alt41=2;
@@ -3611,7 +3612,7 @@ public class hightTree extends TreeParser {
 
                             switch (alt41) {
                         	case 1 :
-                        	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:457:15: souris[st]
+                        	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:458:15: souris[st]
                         	    {
                         	    pushFollow(FOLLOW_souris_in_typeCommand1808);
                         	    souris(st);
@@ -3634,12 +3635,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:458:4: ^( KEY_KW ( clavier[st] )+ )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:459:4: ^( KEY_KW ( clavier[st] )+ )
                     {
                     match(input,KEY_KW,FOLLOW_KEY_KW_in_typeCommand1817); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:458:13: ( clavier[st] )+
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:459:13: ( clavier[st] )+
                     int cnt42=0;
                     loop42:
                     do {
@@ -3653,7 +3654,7 @@ public class hightTree extends TreeParser {
 
                         switch (alt42) {
                     	case 1 :
-                    	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:458:13: clavier[st]
+                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:459:13: clavier[st]
                     	    {
                     	    pushFollow(FOLLOW_clavier_in_typeCommand1819);
                     	    clavier(st);
@@ -3679,7 +3680,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:459:4: KEYBOARD
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:460:4: KEYBOARD
                     {
                     match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand1827); 
 
@@ -3700,18 +3701,18 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "reglesJeu"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:461:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:462:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] ) ;
     public final Code reglesJeu(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:461:44: ( ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:462:3: ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:462:44: ( ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:463:3: ^( RULE_KW ( IDENT )? declencheur[st] consequences[st] )
             {
             match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu1845); 
 
             match(input, Token.DOWN, null); 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:462:13: ( IDENT )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:463:13: ( IDENT )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -3720,7 +3721,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt44) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:462:13: IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:463:13: IDENT
                     {
                     match(input,IDENT,FOLLOW_IDENT_in_reglesJeu1847); 
 
@@ -3757,12 +3758,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheur"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:465:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( BECOMES_ID_KW IDENT playerOuInteraction[st] ) | VICTORY_KW | DEFEAT_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( BECOMES_ID_KW IDENT playerOuInteraction[st] ) | VICTORY_KW | DEFEAT_KW );
     public final Code declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:465:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( BECOMES_ID_KW IDENT playerOuInteraction[st] ) | VICTORY_KW | DEFEAT_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( BECOMES_ID_KW IDENT playerOuInteraction[st] ) | VICTORY_KW | DEFEAT_KW )
             int alt46=7;
             switch ( input.LA(1) ) {
             case ACCESS_KW:
@@ -3809,14 +3810,14 @@ public class hightTree extends TreeParser {
 
             switch (alt46) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:3: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:3: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     {
                     pushFollow(FOLLOW_accesClass_in_declencheur1874);
                     accesClass(st);
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:18: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:18: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     int alt45=4;
                     switch ( input.LA(1) ) {
                     case MOVES_KW:
@@ -3850,21 +3851,21 @@ public class hightTree extends TreeParser {
 
                     switch (alt45) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:19: MOVES_KW
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:19: MOVES_KW
                             {
                             match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur1878); 
 
                             }
                             break;
                         case 2 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:30: DIES_KW
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:30: DIES_KW
                             {
                             match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur1882); 
 
                             }
                             break;
                         case 3 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:40: declencheurTK[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:40: declencheurTK[st]
                             {
                             pushFollow(FOLLOW_declencheurTK_in_declencheur1886);
                             declencheurTK(st);
@@ -3875,7 +3876,7 @@ public class hightTree extends TreeParser {
                             }
                             break;
                         case 4 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:466:60: declencheurKT[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:60: declencheurKT[st]
                             {
                             pushFollow(FOLLOW_declencheurKT_in_declencheur1891);
                             declencheurKT(st);
@@ -3892,7 +3893,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:467:4: ^( ENDS_KW type_declencheur[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:468:4: ^( ENDS_KW type_declencheur[st] )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur1899); 
 
@@ -3908,7 +3909,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:468:4: ^( STARTS_KW type_declencheur[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:469:4: ^( STARTS_KW type_declencheur[st] )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur1909); 
 
@@ -3924,7 +3925,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:469:4: ^( BECOMES_VAR_KW variable[st] varOuNB[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:4: ^( BECOMES_VAR_KW variable[st] varOuNB[st] )
                     {
                     match(input,BECOMES_VAR_KW,FOLLOW_BECOMES_VAR_KW_in_declencheur1929); 
 
@@ -3945,7 +3946,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:470:4: ^( BECOMES_ID_KW IDENT playerOuInteraction[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:471:4: ^( BECOMES_ID_KW IDENT playerOuInteraction[st] )
                     {
                     match(input,BECOMES_ID_KW,FOLLOW_BECOMES_ID_KW_in_declencheur1942); 
 
@@ -3962,14 +3963,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:471:4: VICTORY_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:472:4: VICTORY_KW
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur1953); 
 
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:472:4: DEFEAT_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:473:4: DEFEAT_KW
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur1959); 
 
@@ -3990,13 +3991,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "type_declencheur"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:475:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:476:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
     public final Code type_declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:475:51: ( IDENT | GAME )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:476:51: ( IDENT | GAME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( input.LA(1)==GAME||input.LA(1)==IDENT ) {
                 input.consume();
@@ -4023,12 +4024,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "varOuNB"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:478:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st] | FLOAT );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st] | FLOAT );
     public final Code varOuNB(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:478:42: ( variable[st] | FLOAT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:42: ( variable[st] | FLOAT )
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -4046,7 +4047,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt47) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:478:44: variable[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:44: variable[st]
                     {
                     pushFollow(FOLLOW_variable_in_varOuNB1995);
                     variable(st);
@@ -4057,7 +4058,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:478:59: FLOAT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:59: FLOAT
                     {
                     match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2000); 
 
@@ -4078,15 +4079,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "playerOuInteraction"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:480:1: playerOuInteraction[SymbolTable st] returns [Code c] : ( PLAYER | interaction ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:481:1: playerOuInteraction[SymbolTable st] returns [Code c] : ( PLAYER | interaction ) ;
     public final Code playerOuInteraction(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:481:2: ( ( PLAYER | interaction ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:481:4: ( PLAYER | interaction )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:2: ( ( PLAYER | interaction ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:4: ( PLAYER | interaction )
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:481:4: ( PLAYER | interaction )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:4: ( PLAYER | interaction )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -4104,14 +4105,14 @@ public class hightTree extends TreeParser {
             }
             switch (alt48) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:481:5: PLAYER
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:5: PLAYER
                     {
                     match(input,PLAYER,FOLLOW_PLAYER_in_playerOuInteraction2016); 
 
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:481:13: interaction
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:13: interaction
                     {
                     pushFollow(FOLLOW_interaction_in_playerOuInteraction2019);
                     interaction();
@@ -4140,12 +4141,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheurTK"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:483:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:484:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurTK(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:484:2: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:2: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -4163,12 +4164,12 @@ public class hightTree extends TreeParser {
             }
             switch (alt51) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:484:4: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:4: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2036); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:484:17: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:17: ( OTHER )?
                     int alt49=2;
                     int LA49_0 = input.LA(1);
 
@@ -4177,7 +4178,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt49) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:484:18: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:18: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2039); 
 
@@ -4197,12 +4198,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:485:4: ^( KILLS_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:4: ^( KILLS_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2051); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:485:15: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:15: ( OTHER )?
                     int alt50=2;
                     int LA50_0 = input.LA(1);
 
@@ -4211,7 +4212,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt50) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:485:16: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:16: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2054); 
 
@@ -4245,12 +4246,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheurKT"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:489:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurKT(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:490:2: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:2: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) )
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -4268,12 +4269,12 @@ public class hightTree extends TreeParser {
             }
             switch (alt54) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:490:4: ^( KILLED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:4: ^( KILLED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2080); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:490:16: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:16: ( OTHER )?
                     int alt52=2;
                     int LA52_0 = input.LA(1);
 
@@ -4282,7 +4283,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt52) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:490:17: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:17: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2083); 
 
@@ -4302,12 +4303,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:491:4: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:492:4: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2095); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:491:17: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:492:17: ( OTHER )?
                     int alt53=2;
                     int LA53_0 = input.LA(1);
 
@@ -4316,7 +4317,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt53) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:491:18: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:492:18: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2098); 
 
@@ -4350,7 +4351,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "siAlors"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:494:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) ;
     public final Code siAlors(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -4362,8 +4363,8 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:494:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:495:3: ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:496:3: ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? )
             {
             match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2125); 
 
@@ -4378,7 +4379,7 @@ public class hightTree extends TreeParser {
 
             state._fsp--;
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:495:53: (r2= consequences[st] )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:496:53: (r2= consequences[st] )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4387,7 +4388,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt55) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:495:53: r2= consequences[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:496:53: r2= consequences[st]
                     {
                     pushFollow(FOLLOW_consequences_in_siAlors2139);
                     r2=consequences(st);
@@ -4419,7 +4420,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "conditions"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:499:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:500:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
     public final Code conditions(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -4433,7 +4434,7 @@ public class hightTree extends TreeParser {
 
         not=null;
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:500:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:501:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
             int alt57=10;
             switch ( input.LA(1) ) {
             case CONDITION_KW:
@@ -4509,12 +4510,12 @@ public class hightTree extends TreeParser {
 
             switch (alt57) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:501:3: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:502:3: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
                     {
                     match(input,CONDITION_KW,FOLLOW_CONDITION_KW_in_conditions2173); 
 
                     match(input, Token.DOWN, null); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:501:18: (not= NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:502:18: (not= NOT )?
                     int alt56=2;
                     int LA56_0 = input.LA(1);
 
@@ -4523,7 +4524,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt56) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:501:19: not= NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:502:19: not= NOT
                             {
                             not=(CommonTree)match(input,NOT,FOLLOW_NOT_in_conditions2178); 
 
@@ -4550,7 +4551,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:509:4: ^( OR cond1= conditions[st] cond2= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:510:4: ^( OR cond1= conditions[st] cond2= conditions[st] )
                     {
                     match(input,OR,FOLLOW_OR_in_conditions2198); 
 
@@ -4574,7 +4575,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:513:4: ^( AND cond1= conditions[st] cond2= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:4: ^( AND cond1= conditions[st] cond2= conditions[st] )
                     {
                     match(input,AND,FOLLOW_AND_in_conditions2221); 
 
@@ -4598,7 +4599,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:517:4: ^( EQUALS cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:518:4: ^( EQUALS cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,EQUALS,FOLLOW_EQUALS_in_conditions2244); 
 
@@ -4622,7 +4623,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:521:4: ^( INF cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:522:4: ^( INF cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,INF,FOLLOW_INF_in_conditions2267); 
 
@@ -4646,7 +4647,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:525:4: ^( SUP cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:526:4: ^( SUP cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,SUP,FOLLOW_SUP_in_conditions2290); 
 
@@ -4670,7 +4671,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:529:4: ^( INFEG cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:530:4: ^( INFEG cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,INFEG,FOLLOW_INFEG_in_conditions2313); 
 
@@ -4694,7 +4695,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:533:4: ^( SUPED cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:534:4: ^( SUPED cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,SUPED,FOLLOW_SUPED_in_conditions2336); 
 
@@ -4718,7 +4719,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:537:4: ^( DIFF cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:538:4: ^( DIFF cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,DIFF,FOLLOW_DIFF_in_conditions2359); 
 
@@ -4742,7 +4743,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:541:5: etat[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:542:5: etat[st]
                     {
                     pushFollow(FOLLOW_etat_in_conditions2382);
                     etat(st);
@@ -4767,12 +4768,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "etat"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:544:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | VICTORY_KW | DEFEAT_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:545:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | VICTORY_KW | DEFEAT_KW );
     public final Code etat(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:544:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | VICTORY_KW | DEFEAT_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:545:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | VICTORY_KW | DEFEAT_KW )
             int alt78=15;
             switch ( input.LA(1) ) {
             case DEAD_KW:
@@ -4859,7 +4860,7 @@ public class hightTree extends TreeParser {
 
             switch (alt78) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:545:2: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:2: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2401); 
 
@@ -4869,7 +4870,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:545:27: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:27: ( NOT )?
                     int alt58=2;
                     int LA58_0 = input.LA(1);
 
@@ -4878,7 +4879,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt58) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:545:28: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:28: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2407); 
 
@@ -4887,7 +4888,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:545:34: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:34: ( OTHER )?
                     int alt59=2;
                     int LA59_0 = input.LA(1);
 
@@ -4896,7 +4897,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt59) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:545:35: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:35: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2412); 
 
@@ -4916,7 +4917,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:546:4: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:4: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2424); 
 
@@ -4926,7 +4927,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:546:30: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:30: ( NOT )?
                     int alt60=2;
                     int LA60_0 = input.LA(1);
 
@@ -4935,7 +4936,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt60) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:546:31: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:31: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2430); 
 
@@ -4944,7 +4945,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:546:37: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:37: ( OTHER )?
                     int alt61=2;
                     int LA61_0 = input.LA(1);
 
@@ -4953,7 +4954,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt61) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:546:38: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:38: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2435); 
 
@@ -4973,7 +4974,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:547:4: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:4: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2447); 
 
@@ -4983,7 +4984,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:547:32: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:32: ( NOT )?
                     int alt62=2;
                     int LA62_0 = input.LA(1);
 
@@ -4992,7 +4993,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt62) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:547:33: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:33: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2453); 
 
@@ -5001,7 +5002,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:547:39: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:39: ( OTHER )?
                     int alt63=2;
                     int LA63_0 = input.LA(1);
 
@@ -5010,7 +5011,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt63) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:547:40: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:40: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2458); 
 
@@ -5030,7 +5031,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:548:4: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:549:4: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2470); 
 
@@ -5040,7 +5041,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:548:34: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:549:34: ( NOT )?
                     int alt64=2;
                     int LA64_0 = input.LA(1);
 
@@ -5049,7 +5050,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt64) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:548:35: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:549:35: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2476); 
 
@@ -5058,7 +5059,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:548:41: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:549:41: ( OTHER )?
                     int alt65=2;
                     int LA65_0 = input.LA(1);
 
@@ -5067,7 +5068,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt65) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:548:42: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:549:42: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2481); 
 
@@ -5087,7 +5088,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:549:4: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:4: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat2493); 
 
@@ -5097,7 +5098,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:549:33: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:33: ( NOT )?
                     int alt66=2;
                     int LA66_0 = input.LA(1);
 
@@ -5106,7 +5107,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt66) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:549:34: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:34: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2499); 
 
@@ -5115,7 +5116,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:549:40: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:40: ( OTHER )?
                     int alt67=2;
                     int LA67_0 = input.LA(1);
 
@@ -5124,7 +5125,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt67) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:549:41: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:41: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2504); 
 
@@ -5144,7 +5145,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:550:4: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:4: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat2516); 
 
@@ -5154,7 +5155,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:550:31: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:31: ( NOT )?
                     int alt68=2;
                     int LA68_0 = input.LA(1);
 
@@ -5163,7 +5164,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt68) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:550:32: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:32: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2522); 
 
@@ -5172,7 +5173,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:550:38: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:38: ( OTHER )?
                     int alt69=2;
                     int LA69_0 = input.LA(1);
 
@@ -5181,7 +5182,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt69) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:550:39: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:39: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2527); 
 
@@ -5201,7 +5202,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:551:4: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:4: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat2539); 
 
@@ -5211,7 +5212,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:551:32: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:32: ( NOT )?
                     int alt70=2;
                     int LA70_0 = input.LA(1);
 
@@ -5220,7 +5221,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt70) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:551:33: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:33: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2545); 
 
@@ -5229,7 +5230,7 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:551:39: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:39: ( OTHER )?
                     int alt71=2;
                     int LA71_0 = input.LA(1);
 
@@ -5238,7 +5239,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt71) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:551:40: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:40: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat2550); 
 
@@ -5258,7 +5259,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:552:4: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:4: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat2562); 
 
@@ -5268,7 +5269,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:552:39: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:39: ( NOT )?
                     int alt72=2;
                     int LA72_0 = input.LA(1);
 
@@ -5277,7 +5278,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt72) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:552:40: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:40: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2568); 
 
@@ -5292,7 +5293,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:553:4: ^( STARTED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:4: ^( STARTED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat2577); 
 
@@ -5302,7 +5303,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:553:37: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:37: ( NOT )?
                     int alt73=2;
                     int LA73_0 = input.LA(1);
 
@@ -5311,7 +5312,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt73) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:553:38: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:38: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2582); 
 
@@ -5326,7 +5327,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:554:4: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:555:4: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat2591); 
 
@@ -5336,7 +5337,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:554:36: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:555:36: ( NOT )?
                     int alt74=2;
                     int LA74_0 = input.LA(1);
 
@@ -5345,7 +5346,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt74) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:554:37: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:555:37: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2596); 
 
@@ -5360,7 +5361,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:555:4: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:556:4: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
                     {
                     match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat2605); 
 
@@ -5370,7 +5371,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:555:36: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:556:36: ( NOT )?
                     int alt75=2;
                     int LA75_0 = input.LA(1);
 
@@ -5379,7 +5380,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt75) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:555:37: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:556:37: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2611); 
 
@@ -5399,7 +5400,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:556:4: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:557:4: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat2623); 
 
@@ -5409,7 +5410,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:556:37: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:557:37: ( NOT )?
                     int alt76=2;
                     int LA76_0 = input.LA(1);
 
@@ -5418,7 +5419,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt76) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:556:38: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:557:38: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2629); 
 
@@ -5433,7 +5434,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:557:4: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:558:4: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat2638); 
 
@@ -5443,7 +5444,7 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:557:38: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:558:38: ( NOT )?
                     int alt77=2;
                     int LA77_0 = input.LA(1);
 
@@ -5452,7 +5453,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt77) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:557:39: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:558:39: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat2644); 
 
@@ -5467,14 +5468,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:559:4: VICTORY_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:560:4: VICTORY_KW
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat2655); 
 
                     }
                     break;
                 case 15 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:560:4: DEFEAT_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:561:4: DEFEAT_KW
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat2660); 
 
@@ -5495,13 +5496,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "mode_mute"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:563:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:564:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
     public final Code mode_mute(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:563:44: ( ON | OFF )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:564:44: ( ON | OFF )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=ON && input.LA(1)<=OFF) ) {
                 input.consume();
@@ -5528,7 +5529,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "affectation"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:566:1: affectation[SymbolTable st] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:567:1: affectation[SymbolTable st] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) );
     public final Code affectation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -5546,7 +5547,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:566:46: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:567:46: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) )
             int alt79=4;
             switch ( input.LA(1) ) {
             case ASSIGN_KW:
@@ -5578,7 +5579,7 @@ public class hightTree extends TreeParser {
 
             switch (alt79) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:567:3: ^( ASSIGN_KW i1= operation[st] i2= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:568:3: ^( ASSIGN_KW i1= operation[st] i2= variable[st] )
                     {
                     match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation2699); 
 
@@ -5602,7 +5603,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:571:4: ^( ADD_KW o= operation[st] v= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:572:4: ^( ADD_KW o= operation[st] v= variable[st] )
                     {
                     match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation2720); 
 
@@ -5626,7 +5627,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:575:4: ^( SUB_KW op= operation[st] var= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:576:4: ^( SUB_KW op= operation[st] var= variable[st] )
                     {
                     match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation2741); 
 
@@ -5650,7 +5651,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:579:4: ^( INVERT_KW variable[st] variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:580:4: ^( INVERT_KW variable[st] variable[st] )
                     {
                     match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation2762); 
 
@@ -5688,13 +5689,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "iaBasique"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:585:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW accesClass[st] actionObjetList[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:586:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW accesClass[st] actionObjetList[st] ) ;
     public final Code iaBasique(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:585:44: ( ^( IA_KW accesClass[st] actionObjetList[st] ) )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:585:46: ^( IA_KW accesClass[st] actionObjetList[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:586:44: ( ^( IA_KW accesClass[st] actionObjetList[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:586:46: ^( IA_KW accesClass[st] actionObjetList[st] )
             {
             match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique2792); 
 
@@ -5727,15 +5728,15 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionObjetList"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:587:1: actionObjetList[SymbolTable st] returns [Code c] : ( actionObjet[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:1: actionObjetList[SymbolTable st] returns [Code c] : ( actionObjet[st] )+ ;
     public final Code actionObjetList(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:587:50: ( ( actionObjet[st] )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:587:52: ( actionObjet[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:50: ( ( actionObjet[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:52: ( actionObjet[st] )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:587:52: ( actionObjet[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:52: ( actionObjet[st] )+
             int cnt80=0;
             loop80:
             do {
@@ -5749,7 +5750,7 @@ public class hightTree extends TreeParser {
 
                 switch (alt80) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:587:52: actionObjet[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:52: actionObjet[st]
             	    {
             	    pushFollow(FOLLOW_actionObjet_in_actionObjetList2812);
             	    actionObjet(st);
@@ -5785,7 +5786,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "operation"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:594:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:595:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT );
     public final Code operation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -5798,7 +5799,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:594:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:595:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT )
             int alt81=9;
             switch ( input.LA(1) ) {
             case RANDOM_KW:
@@ -5860,7 +5861,7 @@ public class hightTree extends TreeParser {
 
             switch (alt81) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:595:2: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:2: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
                     {
                     match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation2837); 
 
@@ -5882,7 +5883,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:597:3: ^( PLUS operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:3: ^( PLUS operation[st] operation[st] )
                     {
                     match(input,PLUS,FOLLOW_PLUS_in_operation2866); 
 
@@ -5904,7 +5905,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:599:3: ^( MINUS operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:3: ^( MINUS operation[st] operation[st] )
                     {
                     match(input,MINUS,FOLLOW_MINUS_in_operation2888); 
 
@@ -5926,7 +5927,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:601:3: ^( MUL operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:3: ^( MUL operation[st] operation[st] )
                     {
                     match(input,MUL,FOLLOW_MUL_in_operation2910); 
 
@@ -5948,7 +5949,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:603:3: ^( DIV operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:604:3: ^( DIV operation[st] operation[st] )
                     {
                     match(input,DIV,FOLLOW_DIV_in_operation2932); 
 
@@ -5970,7 +5971,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:605:3: ^( MOD operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:606:3: ^( MOD operation[st] operation[st] )
                     {
                     match(input,MOD,FOLLOW_MOD_in_operation2954); 
 
@@ -5992,7 +5993,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:607:3: ^( POW operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:608:3: ^( POW operation[st] operation[st] )
                     {
                     match(input,POW,FOLLOW_POW_in_operation2976); 
 
@@ -6014,7 +6015,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:609:3: v= variable[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:610:3: v= variable[st]
                     {
                     pushFollow(FOLLOW_variable_in_operation3001);
                     v=variable(st);
@@ -6026,7 +6027,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:611:3: f= FLOAT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:612:3: f= FLOAT
                     {
                     f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_operation3020); 
                     c = new Code(f.getText());
@@ -6048,7 +6049,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "variable"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:616:1: variable[SymbolTable st] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:1: variable[SymbolTable st] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
     public final Code variable(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -6065,7 +6066,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:616:43: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:43: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
             int alt82=6;
             switch ( input.LA(1) ) {
             case X:
@@ -6107,7 +6108,7 @@ public class hightTree extends TreeParser {
 
             switch (alt82) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:617:3: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:3: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,X,FOLLOW_X_in_variable3057); 
 
@@ -6138,7 +6139,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:628:4: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:629:4: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,Y,FOLLOW_Y_in_variable3078); 
 
@@ -6169,7 +6170,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:639:4: ^( Z typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:640:4: ^( Z typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,Z,FOLLOW_Z_in_variable3100); 
 
@@ -6199,7 +6200,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:649:4: ^( VAR_I_KW i= IDENT e= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:650:4: ^( VAR_I_KW i= IDENT e= accesClass[st] )
                     {
                     match(input,VAR_I_KW,FOLLOW_VAR_I_KW_in_variable3121); 
 
@@ -6226,14 +6227,14 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:660:4: GAME_SCORE_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:661:4: GAME_SCORE_KW
                     {
                     match(input,GAME_SCORE_KW,FOLLOW_GAME_SCORE_KW_in_variable3140); 
 
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:661:4: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:662:4: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
                     {
                     match(input,VALUE_KW,FOLLOW_VALUE_KW_in_variable3146); 
 
@@ -6275,7 +6276,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "accesClass"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:671:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW mo= typeObjet ) | ^( ACCESS_KW val= interaction ) | ^( ACCESS_KW NOT notAccess[st] ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:672:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW mo= typeObjet ) | ^( ACCESS_KW val= interaction ) | ^( ACCESS_KW NOT notAccess[st] ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
     public final ArrayList<Symbol> accesClass(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> sb = null;
 
@@ -6289,7 +6290,7 @@ public class hightTree extends TreeParser {
 
         sb = new ArrayList<Symbol>();
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:671:96: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW mo= typeObjet ) | ^( ACCESS_KW val= interaction ) | ^( ACCESS_KW NOT notAccess[st] ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:672:96: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW mo= typeObjet ) | ^( ACCESS_KW val= interaction ) | ^( ACCESS_KW NOT notAccess[st] ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
             int alt84=6;
             int LA84_0 = input.LA(1);
 
@@ -6356,7 +6357,7 @@ public class hightTree extends TreeParser {
             }
             switch (alt84) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:672:5: ^( ACCESS_KW ALL )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:673:5: ^( ACCESS_KW ALL )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3187); 
 
@@ -6369,7 +6370,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:674:5: ^( ACCESS_KW mo= typeObjet )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:675:5: ^( ACCESS_KW mo= typeObjet )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3203); 
 
@@ -6386,7 +6387,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:676:5: ^( ACCESS_KW val= interaction )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:677:5: ^( ACCESS_KW val= interaction )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3221); 
 
@@ -6410,7 +6411,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:685:5: ^( ACCESS_KW NOT notAccess[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:686:5: ^( ACCESS_KW NOT notAccess[st] )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3239); 
 
@@ -6428,13 +6429,13 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:687:5: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:688:5: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3258); 
 
                     match(input, Token.DOWN, null); 
                     i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_accesClass3262); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:687:27: (co= operation[st] )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:688:27: (co= operation[st] )?
                     int alt83=2;
                     int LA83_0 = input.LA(1);
 
@@ -6443,7 +6444,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt83) {
                         case 1 :
-                            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:687:27: co= operation[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:688:27: co= operation[st]
                             {
                             pushFollow(FOLLOW_operation_in_accesClass3266);
                             co=operation(st);
@@ -6470,7 +6471,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:696:5: ^( ACCESS_KW PLAYER )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:697:5: ^( ACCESS_KW PLAYER )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass3283); 
 
@@ -6497,12 +6498,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "notAccess"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:700:1: notAccess[SymbolTable st] returns [Code c] : ( typeObjet | interaction | PLAYER );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:701:1: notAccess[SymbolTable st] returns [Code c] : ( typeObjet | interaction | PLAYER );
     public final Code notAccess(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:700:45: ( typeObjet | interaction | PLAYER )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:701:45: ( typeObjet | interaction | PLAYER )
             int alt85=3;
             switch ( input.LA(1) ) {
             case CAMERA:
@@ -6534,7 +6535,7 @@ public class hightTree extends TreeParser {
 
             switch (alt85) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:701:1: typeObjet
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:702:1: typeObjet
                     {
                     pushFollow(FOLLOW_typeObjet_in_notAccess3309);
                     typeObjet();
@@ -6545,7 +6546,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:701:13: interaction
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:702:13: interaction
                     {
                     pushFollow(FOLLOW_interaction_in_notAccess3313);
                     interaction();
@@ -6556,7 +6557,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:701:27: PLAYER
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:702:27: PLAYER
                     {
                     match(input,PLAYER,FOLLOW_PLAYER_in_notAccess3317); 
 
@@ -6577,12 +6578,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeCoordonnees"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:703:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:704:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
     public final Code typeCoordonnees(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:703:50: ( POSITION | ORIENTATION | SIZE )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:704:50: ( POSITION | ORIENTATION | SIZE )
             int alt86=3;
             switch ( input.LA(1) ) {
             case POSITION:
@@ -6609,7 +6610,7 @@ public class hightTree extends TreeParser {
 
             switch (alt86) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:704:2: POSITION
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:705:2: POSITION
                     {
                     match(input,POSITION,FOLLOW_POSITION_in_typeCoordonnees3333); 
                     c = new Code("position");
@@ -6617,7 +6618,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:704:40: ORIENTATION
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:705:40: ORIENTATION
                     {
                     match(input,ORIENTATION,FOLLOW_ORIENTATION_in_typeCoordonnees3338); 
                     c = new Code("angle");
@@ -6625,7 +6626,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:704:78: SIZE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:705:78: SIZE
                     {
                     match(input,SIZE,FOLLOW_SIZE_in_typeCoordonnees3343); 
                     c = new Code("taille");
@@ -6647,12 +6648,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "timeUnit"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:707:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:708:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
     public final String timeUnit(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:707:45: ( MIN | SEC | MS | FRAME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:708:45: ( MIN | SEC | MS | FRAME )
             int alt87=4;
             switch ( input.LA(1) ) {
             case MIN:
@@ -6684,21 +6685,21 @@ public class hightTree extends TreeParser {
 
             switch (alt87) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:708:2: MIN
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:709:2: MIN
                     {
                     match(input,MIN,FOLLOW_MIN_in_timeUnit3361); 
 
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:709:4: SEC
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:710:4: SEC
                     {
                     match(input,SEC,FOLLOW_SEC_in_timeUnit3366); 
 
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:710:4: MS
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:711:4: MS
                     {
                     match(input,MS,FOLLOW_MS_in_timeUnit3371); 
                     c = "ms";
@@ -6706,7 +6707,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:712:4: FRAME
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:713:4: FRAME
                     {
                     match(input,FRAME,FOLLOW_FRAME_in_timeUnit3386); 
 
@@ -6727,13 +6728,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeObjet"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:716:1: typeObjet returns [Model t] : ( CAMERA | MEDIA | COUNTER | TIME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:717:1: typeObjet returns [Model t] : ( CAMERA | MEDIA | COUNTER | TIME );
     public final Model typeObjet() throws RecognitionException {
         Model t = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:716:28: ( CAMERA | MEDIA | COUNTER | TIME )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:717:28: ( CAMERA | MEDIA | COUNTER | TIME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( input.LA(1)==CAMERA||input.LA(1)==MEDIA||(input.LA(1)>=COUNTER && input.LA(1)<=TIME) ) {
                 input.consume();
@@ -6760,12 +6761,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributTps"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:723:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:724:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
     public final String attributTps(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:723:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:724:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
             int alt88=3;
             switch ( input.LA(1) ) {
             case BOOST_INTERVAL:
@@ -6792,7 +6793,7 @@ public class hightTree extends TreeParser {
 
             switch (alt88) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:724:2: BOOST_INTERVAL
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:725:2: BOOST_INTERVAL
                     {
                     match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps3434); 
                     c ="boostInterval";
@@ -6800,7 +6801,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:725:4: SHOOT_INTERVAL
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:726:4: SHOOT_INTERVAL
                     {
                     match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps3440); 
                     c = "shootInterval";
@@ -6808,7 +6809,7 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:726:4: RELOAD_TIME
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:727:4: RELOAD_TIME
                     {
                     match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps3455); 
                     c = "reloadTime";
@@ -6830,13 +6831,13 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributListeOuObjet"
-    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:729:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:730:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
     public final Code attributListeOuObjet(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:729:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hightTree.g:
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:730:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=INVENTORY && input.LA(1)<=TYPES_TELEPORTABLES) ) {
                 input.consume();
@@ -6924,7 +6925,7 @@ public class hightTree extends TreeParser {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "201:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) );";
+            return "202:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC te= typeEntity[st] (em= entityMode )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) );";
         }
     }
     static final String DFA29_eotS =
@@ -6993,7 +6994,7 @@ public class hightTree extends TreeParser {
             this.transition = DFA29_transition;
         }
         public String getDescription() {
-            return "352:1: action[SymbolTable st] returns [Code c] : ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW );";
+            return "353:1: action[SymbolTable st] returns [Code c] : ( accesClass[st] actionObjet[st] | ^( ENDS_KW IDENT ) | ^( ENDS_KW GAME ) | ^( STARTS_KW IDENT ) | ^( STARTS_KW GAME ) | ^( PAUSE_KW IDENT ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] ( typeDestination[st] )? ) | ^( WAIT_KW operation[st] timeUnit[st] consequences[st] ) | SAVE_KW );";
         }
     }
     static final String DFA33_eotS =
@@ -7051,7 +7052,7 @@ public class hightTree extends TreeParser {
             this.transition = DFA33_transition;
         }
         public String getDescription() {
-            return "389:1: actionObjet[SymbolTable st] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );";
+            return "390:1: actionObjet[SymbolTable st] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | ^( DURING actionCommandeMaintenue[st] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );";
         }
     }
  

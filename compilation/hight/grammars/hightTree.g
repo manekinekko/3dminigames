@@ -33,12 +33,13 @@ game [SymbolTable st] returns [Code c]
     {
 	st.print();
 	System.out.println(in.getCode());
+        c.append(in);
     }
      
 	(def=definition[st]
  
     {
-	System.out.println(def.getCode()+"\n");
+	System.out.println(def.getCode()+"\n");c.append(in);
     })*
 
      com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)

@@ -13,7 +13,7 @@ public class Entity implements Symbol {
     private List<Model> models;
     private Map<String, AttributeValue> attributes;
     private boolean duplicable = false;
-    private boolean generate = false;
+    private int generate = 0;
 
     public Entity(String name, Model... m) {
         this.name = name;
@@ -84,10 +84,10 @@ public class Entity implements Symbol {
     }
 
     public void toGenerate() {
-        generate = true;
+        generate++;;
     }
 
-    public boolean getGenerate() {
+    public int getGenerate() {
         return generate;
     }
 }

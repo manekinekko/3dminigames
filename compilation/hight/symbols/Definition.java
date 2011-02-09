@@ -16,8 +16,8 @@ public class Definition implements Symbol {
 
     private String name;
     private Code c;
-    private boolean duplicable = false;
-    private boolean generate = false;
+    private boolean duplicable = true;
+    private int generate = 0;
 
     public Definition(String s, Code c) {
         name = s;
@@ -41,10 +41,10 @@ public class Definition implements Symbol {
     }
 
     public void toGenerate() {
-        generate = true;
+        generate++;
     }
 
-    public boolean getGenerate() {
+    public int getGenerate() {
         return generate;
     }
 

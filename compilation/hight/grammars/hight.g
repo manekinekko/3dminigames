@@ -192,7 +192,7 @@ coordinates :
 /* Initialization of commands */
 
 commande :
-	COMMAND_KW^ (IDENT IS!)? actionCommande (VIRG! actionCommande)*
+	COMMAND_KW^ (IDENT IS!|PLAYER! FLOAT)? actionCommande (VIRG! actionCommande)*
 	;
 
 actionCommande :

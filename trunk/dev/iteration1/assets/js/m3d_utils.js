@@ -572,7 +572,7 @@
 				'name' : name,
 				'value' : {
 						'uid':uid,
-						'url': urlCollada
+						'url': urlCollada,
 						'position' : {
 							'X': M3D.lastImportedModel.getLocX(),
 							'Y': M3D.lastImportedModel.getLocY(), 

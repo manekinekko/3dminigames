@@ -5,15 +5,6 @@ $(function(){
 	
 	// Start Event Bindings
 	
-	// -- menu auto hidding
-	function _autoHideMenu(){setTimeout(function(){ $('#viewmenu').children().animate({top:70}, 200); }, 1500);}
-	_autoHideMenu();
-	$('#viewmenu').hover(function(){
-		$(this).children().animate({top:30}, 200);
-	}, function(){
-		_autoHideMenu();
-	});
-	
 	// -- picking
 	$('#canvas').bind('mousedown', M3D.GUI.pickObject);	
 	
@@ -52,13 +43,21 @@ $(function(){
 	// -- window button
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
 	$('#save-entity-info').bind('click', function(){
-		if (M3D.GUI.validateFields(this)) {
+		var _nameElement = $('#name');
+		var _name = _nameElement.val();
+		if (M3D.GUI.validateFields(this) && !M3D.DB.containsObj( _name )) {
+			
+			_nameElement.removeClass('required');
+			
 			M3D.GUI.updateEntityList();
 			M3D.GUI.addObjectToScene();
 			
 			var _name = $(this).closest('.window').find('#name').val();
 			_name = M3D.Common.ucfirst(_name);
 			M3D.Editor.setContent('type '+_name+' is Object;');
+		}
+		else {
+			_nameElement.addClass('required');
 		}
 	});
 	

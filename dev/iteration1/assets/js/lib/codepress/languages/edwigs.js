@@ -14,12 +14,12 @@ Language.syntax = [
 ]
 
 Language.snippets = [
-	{ input : 'type', output : 'type $0 is Object;\n' },
-	{ input : 'hasat', output : '$0 has /*attribut*/ at /*value*/' },
-	{ input : 'is', output : '$0 is /*type*/;\n' },
-	{ input : 'def', output : 'definition $0 means\n  // definition body here...\n' },
-	{ input : 'rule', output : 'rule $0 is /*condition*/ then \n  // rule action here...\n' },
-	{ input : 'wait', output : 'wait $0 sec then \n  // your actions here... \nendwait;\n' }
+	{ input : 'type', output : 'type $0 is Object ;\n\n' },
+	{ input : 'hasat', output : '$0 has /*attribut*/ at /*value*/ ;\n\n' },
+	{ input : 'is', output : '$0 is /*type*/;\n\n' },
+	{ input : 'def', output : 'definition $0 means\n  // definition body here...\n\n' },
+	{ input : 'rule', output : 'rule $0 is /*condition*/ then \n  // rule action here...\n\n' },
+	{ input : 'wait', output : 'wait $0 sec then \n  // your actions here... \nendwait;\n\n' }
 ]
 
 Language.complete = [

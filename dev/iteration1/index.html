@@ -57,44 +57,47 @@
 
 			<!-- start: bottom info panel -->
 			<div id="info-bottom" class="animate">
-	
 				<div class="column">
-					<h4>Position</h4>
-		        	<label for="posX">X</label>
-					<input type="text" name="posX" id="posX" value="" placeholder="#" /><br/>
-					<label for="posY">Y</label>
-					<input type="text" name="posY" id="posY" value="" placeholder="#" /><br/>
-					<label for="posZ">Z</label>
-					<input type="text" name="posZ" id="posZ" value="" placeholder="#" /><br/>
-				</div>
-				<div class="column">				
-					<h4>Scale</h4>
-					<label for="scaleX">X</label>
-					<input type="text" name="scaleX" id="scaleX" value="" placeholder="#"/><br/>
-					<label for="scaleY">Y</label>
-					<input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /><br/>
-					<label for="scaleZ">Z</label>
-					<input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" />
-				</div>
-				<div class="column">				
-					<h4>Rotation</h4>
-					<label for="rotX">X</label>
-					<input type="text" name="rotX" id="rotX" value="" placeholder="#"/><br/>
-					<label for="rotY">Y</label>
-					<input type="text" name="rotY" id="rotY" value="" placeholder="#" /><br/>
-					<label for="rotZ">Z</label>
-					<input type="text" name="rotZ" id="rotZ" value="" placeholder="#" />
-				</div>
-				<div class="column">
-					<h4>Bounding box</h4>
-					<label for="bboxX">X</label>
-					<input type="text" name="bboxX" id="bboxX" value="" placeholder="#"/><br/>
-					<label for="bboxY">Y</label>
-					<input type="text" name="bboxY" id="bboxY" value="" placeholder="#"/><br/>
-					<label for="bboxZ">Z</label>
-					<input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#"/><br/>
-					<label style="width:60px;" for="switchBbox">Show/Hide</label>
-					<input type="checkbox" name="switchBbox" id="switchBbox" />
+					<table>
+						<thead>
+							<th></th>
+							<th>X</th>
+							<th>Y</th>
+							<th>Z</th>
+							<th></th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Position</td>
+								<td><input type="text" name="posX" id="posX" value="" placeholder="#" /></td>
+								<td><input type="text" name="posY" id="posY" value="" placeholder="#" /></td>
+								<td><input type="text" name="posZ" id="posZ" value="" placeholder="#" /></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Rotation</td>
+								<td><input type="text" name="rotX" id="rotX" value="" placeholder="#" /></td>
+								<td><input type="text" name="rotY" id="rotY" value="" placeholder="#" /></td>
+								<td><input type="text" name="rotZ" id="rotZ" value="" placeholder="#" /></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Scale</td>
+								<td><input type="text" name="scaleX" id="scaleX" value="" placeholder="#" /></td>
+								<td><input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /></td>
+								<td><input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" /></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Bounding Box</td>
+								<td><input type="text" name="bboxX" id="bboxX" value="" placeholder="#" /></td>
+								<td><input type="text" name="bboxY" id="bboxY" value="" placeholder="#" /></td>
+								<td><input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#" /></td>
+								<td><input type="checkbox" name="switchBbox" id="switchBbox" />Show/Hide</td>
+							</tr>
+						</tbody>
+						<tfooter></tfooter>
+					</table>
 				</div>
 				<br class="clear"/>
 			</div>

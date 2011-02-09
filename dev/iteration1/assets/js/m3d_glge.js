@@ -19,7 +19,7 @@ doc.onLoad = function() {
 		M3D.DB.init();
 		M3D.Editor.init();
 	}
-
+	
 	// -- objet and camera rotation
 	controller.onchange = function(xRot, yRot) { 
 		M3D.GUI.handleCamera(xRot, yRot);

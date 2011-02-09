@@ -3,9 +3,7 @@
  * @file assets/js/m3d_localstorage.js
  */
 (function(M3D){
-
     // pre requisites
-
 	/**
 	 * _attr : for types attributes
 	 * _type : for defined types
@@ -145,6 +143,11 @@
 	M3D.DB.remove = function( objectName ){
 		localStorage.removeItem( objectName );
 	} 
+	
+	// Update Datas as we move one object
+	M3D.DB.updateEntries = function (objectName){
+			alert("C'est un test");
+	}
 	
 	// Update data
 	M3D.DB.update = function(modifiedData){

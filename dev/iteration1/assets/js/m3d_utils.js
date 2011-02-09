@@ -573,8 +573,29 @@
 				'value' : {
 						'uid':uid,
 						'url': urlCollada
-					},
-				'position' : {posX: 0.00, posY: 0.00, posZ: 0.00, scaleX: 1.00, scaleY: 1.00, scaleZ: 1.00, rotX: 0.00, rotY: 0.00, rotZ: 0.00}
+						'position' : {
+							'X': M3D.lastImportedModel.getLocX(),
+							'Y': M3D.lastImportedModel.getLocY(), 
+							'Z': M3D.lastImportedModel.getLocZ()
+						},
+
+						'scale' : {
+							'X': M3D.lastImportedModel.getScaleX(), 
+							'Y': M3D.lastImportedModel.getScaleY(), 
+							'Z': M3D.lastImportedModel.getScaleZ()
+						},
+						'rotation' : {
+							'X': M3D.lastImportedModel.getRotX(), 
+							'Y': M3D.lastImportedModel.getRotY(), 
+							'Z': M3D.lastImportedModel.getRotZ()
+						},
+						'bbox' : {
+							'X': M3D.lastImportedModel.boundingVolume.dims[0],
+							'Y': M3D.lastImportedModel.boundingVolume.dims[1],
+							'Z': M3D.lastImportedModel.boundingVolume.dims[2]
+						}
+					}
+				};
 			};
 		M3D.DB.setObject(element);
 		// [/DB]
@@ -924,6 +945,7 @@
 			if (_obj.boundingVolume) $('#bboxX').val( _float(_obj.boundingVolume.dims[0]) );
 			if (_obj.boundingVolume) $('#bboxY').val( _float(_obj.boundingVolume.dims[1]) );
 			if (_obj.boundingVolume) $('#bboxZ').val( _float(_obj.boundingVolume.dims[2]) );
+			$('#canvas').bind('mouseup', M3D.DB.updateEntries());
 		}
 		else {
 			$("#id").val( null );

@@ -155,6 +155,13 @@ $(function(){
 		M3D.GUI.hidePopup('confirmation-load');
 	});
 	
+	// -- save grammar
+	$('#iframe').keydown(function (e){
+		/*if(e.keyCode==13)*/	//13 = enter
+		console.log("ici");
+		M3D.DB.update_grammar(M3D.Editor.getContent());
+	});
+
 	// -- generate the GLGE XML level file
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 	

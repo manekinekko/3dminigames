@@ -35,8 +35,29 @@ height="500"></canvas>
 </div>
 
 <script type="text/javascript">
+var tabObject = new Array;
+var tabIdObject = new Array;
 
-
+init = function(list){
+	if(list.length!=0){
+		var x = list.pop();
+		var tabL = x.getLights();
+		var tabO = x.getChildren();
+		var present = false;
+		var j;
+		for(var i = 0 ; i<tabO.length ; i++){
+			for(j=0; j<tabL.length; j++){ if(tabO[i]==tabL[j]) present = true; }
+			if(!present){
+				if(tabO[i].id != undefined){
+					tabObject[tabO[i].id] = tabO[i];
+					tabIdObject[tabIdObject.length] = tabO[i].id;
+					list.push(tabO[i]);
+				}
+			} present = false;
+		} 
+		init(list);
+	} 
+}
 
 var doc = new GLGE.Document();
 doc.onLoad=function(){
@@ -52,10 +73,7 @@ var red=doc.getElement( "red" );
 var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
 var positions = [];
 
-var tabObject = new Array;
-var tabIdObject = new Array;
-var indice1 = 0;
-//init(gameScene);
+
 
 var mouse=new GLGE.MouseInput(document.getElementById('canvas'));
 var keys=new GLGE.KeyInput();
@@ -64,9 +82,9 @@ var hoverobj;
 lock = true;
 
 var depla = [0,0,0];
-//var depla2 = [[0,0,0],[0,0,0],[0,0,0]];
-console.log(gameScene);
 
+console.log(gameScene);
+init([gameScene]);
 function move(){
 	if(keys.isKeyPressed(GLGE.KI_I)) depla[0] += 0.1;
 	if(keys.isKeyPressed(GLGE.KI_K)) depla[0] -= 0.1;
@@ -106,24 +124,30 @@ function move(){
 	var maxZ=(test.center[2]+test.dims[2]/2);
 	test.center=[dims[0]/2+minX,dims[1]/2+minY,dims[2]/2+minZ];
 	tabObject["lapin1"].boundingVolume = new GLGE.BoundingVolume(minX,maxX,minY,maxY,minZ,maxZ);*/
-	drawBB(tabObject["lapin1"]);
-//	alert(tabObject["lapin"].id);
+	
+	//tab = tabObject["voiture"].getChildren();
+	//tab2 = tabObject["perso"].getChildren();
+	//alert(tab2);
+	
 	}
 	//alert(tabObject["lapin1"].getObjects().length);
-	setPosition("lapin1", depla);
+	
+	setPosition("voiture", depla);
 	//translate("voiture", depla2);
 	
 }
 
+
+/*
 init = function(racine){
 	var tabO = racine.getChildren();
 	var tabL = racine.getLights();
 	var present = false;
-	var indice2 = 0;
 	var j;
-	while(indice1<tabO.length-1){
-		while(indice2<tabO.length-1){
-			for(j=0; j<tabL.length-1; j++){	if(tabO[indice2]==tabL[j]) present = true; }
+	while(indice1<tabO.length){
+		var indice2 = 0;
+		while(indice2<tabO.length){
+			for(j=0; j<tabL.length; j++){ if(tabO[indice2]==tabL[j]) present = true; }
 			if(!present){
 				if(tabO[indice2].id != undefined){
 					tabObject[tabO[indice2].id] = tabO[indice2];
@@ -136,6 +160,7 @@ init = function(racine){
 		indice1++;
 	}
 }
+*/
 
 addObject = function(idObject,urlObject, tabCoord, idParent){
 	tabObject[idObject] = new GLGE.Collada();
@@ -347,12 +372,13 @@ listingTarget = function(idObject){
 }
 
 liveCollision = function(id){
-	tab = listingTarget(id);
+    var objectCol = new Array;
+	var tab = listingTarget(id);
 	for(i=0; i<tab.length; i++){
 		if(tab[i] !=  id){
-			if(collisionBoxBox(tab[i], id)) return true;
+			if(collisionBoxBox(tab[i], id)) objectCol.push(tab[i]);
 		}
-	} return false;
+	} return objectCol;
 }
 
 function mouselook(){
@@ -424,7 +450,6 @@ function checkkeys(){
 
 levelmap=new GLGE.HeightMap("images/map.png",120,120,-50,50,-50,50,0,50);
 
-
 var lasttime=0;
 var frameratebuffer=60;
 start=parseInt(new Date().getTime());
@@ -434,7 +459,7 @@ function render(){
 	    frameratebuffer=Math.round(((frameratebuffer*9)+1000/(now-lasttime))/10);
 	    document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
   // mouselook();
-	init(gameScene);
+
 	positions =[];
 	checkkeys();
 	move();

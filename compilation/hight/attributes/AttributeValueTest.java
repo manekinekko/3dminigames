@@ -10,6 +10,7 @@ public class AttributeValueTest extends TestCase {
 	AttributeValue av2;
 	AttributeValue av3;
 	AttributeValue av4;
+	AttributeValue av5;
 	protected void setUp() throws Exception {
 		super.setUp();
 		av = new AttributeValue();
@@ -17,6 +18,7 @@ public class AttributeValueTest extends TestCase {
 		av2 = new AttributeValue(666);
 		av3 = new AttributeValue("bleu");
 		av4 = new AttributeValue(new Duration(1, "ms"));
+		av5 = new AttributeValue(av3.getCode(), AttributeValue.Type.STRING);
 	}
 	
 	private Code value;
@@ -37,10 +39,13 @@ public class AttributeValueTest extends TestCase {
     	assertEquals(av3.getCode().getCode(), "bleu");
     	assertNotNull(av4.getCode());
     	assertEquals(av4.getCode().getCode(), "1");
+    	assertNotNull(av5.getCode());
+    	assertEquals(av5.getCode().getCode(), "bleu");
     }
     
     public void testGetType(){
     	assertNotNull(av.getType());
+    	assertEquals(av.getType(), AttributeValue.Type.NIL);
     	assertNotNull(av1.getType());
     	assertEquals(av1.getType(), AttributeValue.Type.BOOLEAN);
     	assertNotNull(av2.getType());
@@ -49,6 +54,8 @@ public class AttributeValueTest extends TestCase {
     	assertEquals(av3.getType(), AttributeValue.Type.STRING);
     	assertNotNull(av4.getType());
     	assertEquals(av4.getType(), AttributeValue.Type.TIME);
+    	assertNotNull(av5.getType());
+    	assertEquals(av5.getType(), AttributeValue.Type.STRING);
     }
 
 }

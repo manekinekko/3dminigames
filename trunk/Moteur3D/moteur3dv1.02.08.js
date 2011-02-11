@@ -20,54 +20,72 @@ if(!window["M3D"].MOTEUR){
 // Variables du moteur
 	var tabObject = new Array;
 	var tabIdObject = new Array;
+	var gameScene;
  
 /* Méthode initialisation.
- * Param: xmlDoc: fichier xml contenant la scène à charger à l'initialisation.
+ * Param: gScene.
+ * Return: un tableau contenant le tableau des objets et le tableau des identifiants d'objets
  */
-M3D.MOTEUR.initialisation = function(xmlDoc){
-	var doc = new GLGE.Document();
+M3D.MOTEUR.initialisation = function(gScene){
+/*	var doc = new GLGE.Document();
 	doc.onLoad = function(){
-		var gameRenderer = new GLGE.Renderer(document.getElementById('canvas'));
+		gameRenderer = new GLGE.Renderer(document.getElementById(canvas));
 		gameScene = new GLGE.Scene();
 		gameScene = doc.getElement("mainscene");
 		gameRenderer.setScene(gameScene);
-		
-		// Initialisation du tableau des objects/IdObject
-		var indice1 = 0;
-		init(gameScene);
-		
+ */		
+	gameScene = gScene;
+	// Initialisation du tableau des objects/IdObject
+	M3D.MOTEUR.init([gameScene]);
+	return [tabObject,tabIdObject];
+/*
+		var lasttime=0;
+		var frameratebuffer=60;
+		start=parseInt(new Date().getTime());
+		var now;
+		function render(){
+			now=parseInt(new Date().getTime());
+			frameratebuffer=Math.round(((frameratebuffer*9)+1000/(now-lasttime))/10);
+			document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
+			
+			gameRenderer.render();
+			lasttime=now;
+		}
+		setInterval(render,1);
 	}
 	doc.load(xmlDoc);
+ */	
+},
+
+
+/* Fonction init: permet l'initialisation du tableau d'objet.
+ * Param: liste des objets à parcourir.
+ */
+M3D.MOTEUR.init = function(list){
+	if(list.length!=0){
+		var x = list.pop();
+		var tabL = x.getLights();
+		var tabO = x.getChildren();
+		var present = false;
+		var j;
+		for(var i = 0 ; i<tabO.length ; i++){
+			for(j=0; j<tabL.length; j++){ if(tabO[i]==tabL[j]) present = true; }
+			if(!present){
+				if(tabO[i].id != undefined){
+					tabObject[tabO[i].id] = tabO[i];
+					tabIdObject[tabIdObject.length] = tabO[i].id;
+					list.push(tabO[i]);
+				}
+			} present = false;
+		} 
+		M3D.MOTEUR.init(list);
+	} 
 },
 
 
 /***************************************************************
  * Liste de fonctions outils
  ***************************************************************/
-/* Fonction récursive init.
- * Param: racine: object.
- */
-M3D.MOTEUR.init = function(racine){
-	var tabO = racine.getChildren();
-	var tabL = racine.getLights();
-	var present = false;
-	var indice2 = 0;
-	var j;
-	while(indice1<tabO.length-1){
-		while(indice2<tabO.length-1){
-			for(j=0; j<tabL.length-1; j++){	if(tabO[indice2]==tabL[j]) present = true; }
-			if(!present){
-				if(tabO[indice2].id != undefined){
-					tabObject[tabO[indice2].id] = tabO[indice2];
-					tabIdObject[tabIdObject.length] = tabO[indice2].id;
-					init(tabO[indice2]);
-				}
-			} present = false;
-			indice2++;
-		}
-		indice1++;
-	}
-},
  
 /* Méthode getObject.
  * Param: idObject: identifiant de l'objet que l'on veut récupérer
@@ -102,6 +120,7 @@ M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, idParent){
 	else{ 
 		tabObject[idParent].addChild(tabObject[idObject]);
 	}
+	return [tabObject,tabIdObject];
 },
 
 
@@ -127,6 +146,7 @@ M3D.MOTEUR.addObjectIn = function(idObject,urlObject, tabCoord, idGroup){
 		gameScene.addChild(tabGroup[idGroup]);
 		tabIdObject[tabIdObject.length] = idGroup;
 	} else { tabObject[idGroup].addChild(tabObject[idObject]); }
+	return [tabObject,tabIdObject];
 },
 
 
@@ -157,6 +177,7 @@ M3D.MOTEUR.addObjectGroup = function(idObject, idGroup, urlObject, tabCoord, idP
 			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
 		}
 	}
+	return [tabObject,tabIdObject];
 },
 
 
@@ -187,6 +208,7 @@ M3D.MOTEUR.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, i
 			if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
 		}
 	}
+	return [tabObject,tabIdObject];
 },
 
 
@@ -196,6 +218,7 @@ M3D.MOTEUR.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, i
  */
 M3D.MOTEUR.removeObject = function(idObject){
 	if(tabObject[idObject] != undefined) tabObject[idObject].parent.removeChild(tabObject[idObject]);
+	return [tabObject,tabIdObject];
 },
 
 /*
@@ -221,6 +244,7 @@ M3D.MOTEUR.removeObjectOnly = function(idObject){
  */
 M3D.MOTEUR.removeGroup = function(idGroup){
 	if(tabObject[idGroup] != undefined) tabObject[idGroup].parent.removeChild(tabObject[idGroup]);
+	return [tabObject,tabIdObject];
 },
 
 
@@ -250,6 +274,7 @@ M3D.MOTEUR.changeParentObject = function(idObject,idNewParent){
 		tabObject[idObject].parent = tabObject[idNewParent]; 
 		tabObject[idNewParent].addChild(tabObject[idObject]);
 	}
+	return [tabObject,tabIdObject];
 },
 
 
@@ -272,6 +297,7 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	var D = GLGE.mulMat4Vec4(M,V);
 	// verifie la collision sur toute la trajectoire
 	tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	return tabObject[id];
 },
 
 
@@ -288,7 +314,9 @@ M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	}
 	var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
 	var D = GLGE.mulMat4Vec4(M,V);
-	if(!M3D.MOTEUR.liveCollision(id)) tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	//if(!M3D.MOTEUR.liveCollision(id)) tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	return tabObject[id];
 },
 
 
@@ -307,6 +335,7 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	var D = GLGE.mulMat4Vec4(M,V);
 	// verifie la collision à l'arrivée
 	tabObject[id].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	return tabObject[id];
 },
 
 
@@ -317,12 +346,14 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 M3D.MOTEUR.rescaleObject = function (id,coefScale){
 	var scale = tabObject[id].getScale()
 	tabObject[id].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
+	return tabObject[id];
 },
 
 
 /***************************************************************
  * Partie de la gestion de la collision
  ***************************************************************/
+ 
 /* Méthode listingTarget: Retourne un tableau de nom
  * Param: idObject: élément concerné
  * Return: tableau des id d'objet à tester
@@ -337,7 +368,8 @@ M3D.MOTEUR.listingTarget = function(idObject){
 		if(!present && tabIdObject[i] != idObject) tabR[tabR.length] = tabIdObject[i];
 		present = false;
 	} return tabR;
-}
+},
+ 
  
 /* Méthode collisionPointBoxSimple: Test si un pointX (ptX,ptY,ptZ) est en collision avec un object O.
  * Param: idObject: identifiant de l'objet à tester.
@@ -394,108 +426,19 @@ M3D.MOTEUR.collisionBoxBox = function(idObjectOne, idObjectTwo){
 },
   
 
-/* Méthode collisionPointGroupSimple: Test si un pointX (ptX,ptY,ptZ) est en collision avec un groupe G.
- * Param: idGroup: identifiant du groupe à tester.
- * 	   ptX: coordonnée X du point à tester.
- * 	   ptY: coordonnée Y du point à tester.
- * 	   ptZ: coordonnée Z du point à tester.
- */
-M3D.MOTEUR.collisionPointGroupSimple = function(idGroup, ptX, ptY, ptZ){
-	var box = tabGroup[idGroup].getBoundingVolume().dims;
-	var pos = tabGroup[idGroup].getPosition();
-	if(ptX >= pos.x 
-		&& ptX < pos.x + box[0]
-		&& ptY >= pos.y 
-		&& ptY < pos.y + box[1]
-		&& ptZ >= pos.z 
-		&& ptZ < pos.z + box[2]) return true;
-	return false;
-},
-
-
-/* Méthode collisionBoxGroup: Test si un objet et un groupe sont en collision.
- * Param: idGroup: identifiant du groupe.
- *	      idObject: identifiant de l'objet à tester.       
- */
-M3D.MOTEUR.collisionBoxGroup = function(idGroup, idObject){
-	var posObject = tabObject[idObject].getPosition();
-	if(M3D.MOTEUR.collisionPointGroupSimple(idGroup, posObject.x, posObject.y, posObject.z)) return true;
-	else {
-		var boxGroup = tabGroup[idGroup].getBoundingVolume();
-		var posGroup = tabGroup[idGroup].getPosition();
-		var boxObject = tabObject[idObject].getBoundingVolume();
-		
-		var xminGroup = posGroup.x+boxGroup.center[0]-boxGroup.dims[0]/2;
-		var xmaxGroup = posGroup.x+boxGroup.center[0]+boxGroup.dims[0]/2;
-		var yminGroup = posGroup.y+boxGroup.center[1]-boxGroup.dims[1]/2;
-		var ymaxGroup = posGroup.y+boxGroup.center[1]+boxGroup.dims[1]/2;
-		var zminGroup = posGroup.z+boxGroup.center[2]-boxGroup.dims[2]/2;
-		var zmaxGroup = posGroup.z+boxGroup.center[2]+boxGroup.dims[2]/2;
-		var xminObject = posObject.x+boxObject.center[0]-boxObject.dims[0]/2;
-		var xmaxObject = posObject.x+boxObject.center[0]+boxObject.dims[0]/2;
-		var yminObject = posObject.y+boxObject.center[1]-boxObject.dims[1]/2;
-		var ymaxObject = posObject.y+boxObject.center[1]+boxObject.dims[1]/2;
-		var zminObject = posObject.z+boxObject.center[2]-boxObject.dims[2]/2;
-		var zmaxObject = posObject.z+boxObject.center[2]+boxObject.dims[2]/2;
-		
-		if(  xminGroup >= xmaxObject      
-		||   xmaxGroup <= xminObject
-		||   yminGroup >= ymaxObject
-		||   ymaxGroup <= yminObject
-		||   zminGroup >= zmaxObject
-		||   zmaxGroup <= zminObject) return false;
-	} 
-	return true;
-},
-
-
-/* Méthode collisionGroupGroup: Test si 2 groupes sont en collision.
- * Param: idGroupOne: identifiant du 1er groupe.
- *	      idGroupTwo: identifiant du 2nd groupe.       
- */
-M3D.MOTEUR.collisionGroupGroup = function(idGroupOne, idGroupTwo){
-	var posGroupTwo = tabGroup[idGroupTwo].getPosition();
-	if(M3D.MOTEUR.collisionPointGroupSimple(idGroupOne, posGroupTwo.x, posGroupTwo.y, posGroupTwo.z)) return true;
-	else {
-		var boxGroupOne = tabGroup[idGroupOne].getBoundingVolume();
-		var posGroupOne = tabGroup[idGroupOne].getPosition();
-		var boxGroupTwo = tabGroup[idGroupTwo].getBoundingVolume();
-		
-		var xminGroupOne = posGroupOne.x+boxGroupOne.center[0]-boxGroupOne.dims[0]/2;
-		var xmaxGroupOne = posGroupOne.x+boxGroupOne.center[0]+boxGroupOne.dims[0]/2;
-		var yminGroupOne = posGroupOne.y+boxGroupOne.center[1]-boxGroupOne.dims[1]/2;
-		var ymaxGroupOne = posGroupOne.y+boxGroupOne.center[1]+boxGroupOne.dims[1]/2;
-		var zminGroupOne = posGroupOne.z+boxGroupOne.center[2]-boxGroupOne.dims[2]/2;
-		var zmaxGroupOne = posGroupOne.z+boxGroupOne.center[2]+boxGroupOne.dims[2]/2;
-		var xminGroupTwo = posGroupTwo.x+boxGroupTwo.center[0]-boxGroupTwo.dims[0]/2;
-		var xmaxGroupTwo = posGroupTwo.x+boxGroupTwo.center[0]+boxGroupTwo.dims[0]/2;
-		var yminGroupTwo = posGroupTwo.y+boxGroupTwo.center[1]-boxGroupTwo.dims[1]/2;
-		var ymaxGroupTwo = posGroupTwo.y+boxGroupTwo.center[1]+boxGroupTwo.dims[1]/2;
-		var zminGroupTwo = posGroupTwo.z+boxGroupTwo.center[2]-boxGroupTwo.dims[2]/2;
-		var zmaxGroupTwo = posGroupTwo.z+boxGroupTwo.center[2]+boxGroupTwo.dims[2]/2;
-		
-		if(  xminGroupOne >= xmaxGroupTwo      
-		||   xmaxGroupOne <= xminGroupTwo
-		||   yminGroupOne >= ymaxGroupTwo
-		||   ymaxGroupOne <= yminGroupTwo
-		||   zminGroupOne >= zmaxGroupTwo
-		||   zmaxGroupOne <= zminGroupTwo) return false;
-	} 
-	return true;
-},
-
-
 /* Méthode liveCollision: Test si un object est en collision avec un element de la scène.
  * Param: id: identifiant de l'élément à tester.
+ * Return: un tableau avec les objets qui sont en collision avec l'objet cible.
  */
 M3D.MOTEUR.liveCollision = function(id){
-	tab = listingTarget(id);
+    var objectCol = new Array;
+	var tab = M3D.MOTEUR.listingTarget(id);
 	for(i=0; i<tab.length; i++){
 		if(tab[i] !=  id){
-			if(collisionBoxBox(tab[i], id)) return true;
+			if(M3D.MOTEUR.collisionBoxBox(tab[i], id)) objectCol.push(tab[i]);
 		}
-	} return false;
-},
+	} return objectCol;
+}
  
 /***************************************************************
  * Partie de la gestion des forces
@@ -507,44 +450,5 @@ M3D.MOTEUR.liveCollision = function(id){
 /***************************************************************
  * Partie de la gestion de la caméra
  ***************************************************************/
-/*
- function (){
-	var camera=gameScene.camera;
-	camerapos=camera.getPosition();
-	camerarot=camera.getRotation();
-	var cam = camera.getRotMatrix();
-	cam = GLGE.inverseMat4(cam);	
 
-	if(keys.isKeyPressed(GLGE.KI_G))
-		camLookAt = true; 
-	
-	if(keys.isKeyPressed(GLGE.KI_F))
-		camLookAt = false; 
-			
-	if(camLookAt){
-		var objpos={x:0,y:0,z:0};		
-		var coord=[camerapos.x-objpos.x,camerapos.y-objpos.y,camerapos.z-objpos.z];
-		var zvec=GLGE.toUnitVec3(coord);
-		var xvec=GLGE.toUnitVec3(GLGE.crossVec3([cam[4],cam[5],cam[6]],zvec));
-		var yvec=GLGE.toUnitVec3(GLGE.crossVec3(zvec,xvec));		
-		camera.setRotMatrix(GLGE.Mat4([xvec[0], yvec[0], zvec[0], 0,
-						xvec[1], yvec[1], zvec[1], 0,
-						xvec[2], yvec[2], zvec[2], 0,
-						0, 0, 0, 1]));
-	}
-
-	if(keys.isKeyPressed(GLGE.KI_Z)) {camera.setLocX(camerapos.x-cam[8]*0.05*(now-lasttime));camera.setLocY(camerapos.y-cam[9]*0.05*(now-lasttime));camera.setLocZ(camerapos.z-cam[10]*0.05*(now-lasttime));}
-
-	if(keys.isKeyPressed(GLGE.KI_S)) {camera.setLocX(camerapos.x+cam[8]*0.05*(now-lasttime));camera.setLocY(camerapos.y+cam[9]*0.05*(now-lasttime));camera.setLocZ(camerapos.z+cam[10]*0.05*(now-lasttime));}
-
-	if(keys.isKeyPressed(GLGE.KI_Q)) {camera.setLocX(camerapos.x-cam[0]*0.05*(now-lasttime));camera.setLocY(camerapos.y-cam[1]*0.05*(now-lasttime));camera.setLocZ(camerapos.z-cam[2]*0.05*(now-lasttime));}
-
-	if(keys.isKeyPressed(GLGE.KI_D)) {camera.setLocX(camerapos.x+cam[0]*0.05*(now-lasttime));camera.setLocY(camerapos.y+cam[1]*0.05*(now-lasttime));camera.setLocZ(camerapos.z+cam[2]*0.05*(now-lasttime));}
-
-	if(keys.isKeyPressed(GLGE.KI_DOWN_ARROW)) {camera.setLocX(camerapos.x-cam[4]*0.05*(now-lasttime));camera.setLocY(camerapos.y-cam[5]*0.05*(now-lasttime));camera.setLocZ(camerapos.z-cam[6]*0.05*(now-lasttime));}		
-		
-	if(keys.isKeyPressed(GLGE.KI_UP_ARROW)) {camera.setLocX(camerapos.x+cam[4]*0.05*(now-lasttime));camera.setLocY(camerapos.y+cam[5]*0.05*(now-lasttime));camera.setLocZ(camerapos.z+cam[6]*0.05*(now-lasttime));}		
-
-}*/
-
-}
+})(M3D);

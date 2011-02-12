@@ -1,8 +1,8 @@
-package symbols;
-
+package tests;
+import code.SymbolTable;
 import junit.framework.TestCase;
 
-public class DefinitionTest extends TestCase {
+public class SymbolTableTest extends TestCase {
 
 	protected void setUp() throws Exception {
 		super.setUp();

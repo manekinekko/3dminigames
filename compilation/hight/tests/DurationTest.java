@@ -1,5 +1,5 @@
-package attributes;
-
+package tests;
+import attributes.Duration;
 import attributes.AttributeValue.Type;
 import code.Code;
 import junit.framework.TestCase;
@@ -16,7 +16,7 @@ public class DurationTest extends TestCase {
     
     public void testGetCode(){
     	assertNotNull(d1.getCode());
-    	assertEquals(d1.getCode().getCode(), "1");
+    	assertEquals(d1.getCode(), "1");
     }
     
 }

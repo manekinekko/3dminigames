@@ -11,13 +11,14 @@
 
 CodePress = function(obj) {
 	var self = document.createElement('iframe');
+	self.setAttribute('id', 'codepress');
 	self.textarea = obj;
 	self.textarea.disabled = true;
 	self.textarea.style.overflow = 'hidden';
 	self.style.height = self.textarea.clientHeight +'px';
 	self.style.width = self.textarea.clientWidth +'px';
 	self.textarea.style.overflow = 'auto';
-	self.style.border = '1px solid gray';
+	self.style.border = '0px solid gray';
 	self.frameBorder = 0; // remove IE internal iframe border
 	self.style.visibility = 'hidden';
 	self.style.position = 'absolute';
@@ -140,5 +141,9 @@ CodePress.run = function() {
 	}
 }
 
-if(window.attachEvent) window.attachEvent('onload',CodePress.run);
-else window.addEventListener('DOMContentLoaded',CodePress.run,false);
+if(window.attachEvent){
+	window.attachEvent('onload',CodePress.run);
+}
+else {
+	window.addEventListener('DOMContentLoaded',CodePress.run,false);
+}

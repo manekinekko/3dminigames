@@ -104,7 +104,7 @@ CodePress = {
 	
 	// syntax highlighting parser
 	syntaxHighlight : function(flag) {
-		//if(document.designMode=='off') document.designMode='on'
+		if(document.designMode=='off') document.designMode='on'
 		if(flag != 'init') { window.getSelection().getRangeAt(0).insertNode(document.createTextNode(cc));}
 		editor = CodePress.getEditor();
 		o = editor.innerHTML;

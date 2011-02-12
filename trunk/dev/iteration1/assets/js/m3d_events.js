@@ -6,7 +6,10 @@ $(function(){
 	// Start Event Bindings
 	
 	// -- picking
-	$('#canvas').bind('mousedown', M3D.GUI.pickObject);	
+	$('#canvas').bind('mousedown', M3D.GUI.pickObject)	
+	// -- editor's updating
+	.bind('mouseup', M3D.GUI.updateEditor);
+	
 	
 	// -- mouse wheel for camera
 	document.getElementById("canvas").addEventListener('DOMMouseScroll', M3D.GUI.wheel, false);
@@ -54,7 +57,10 @@ $(function(){
 			
 			var _name = $(this).closest('.window').find('#name').val();
 			_name = M3D.Common.ucfirst(_name);
-			M3D.Editor.setContent('type '+_name+' is Object;');
+			M3D.Editor.setContent('type '+_name+' is Object;\n'+
+									_name+' has position at 0.00 0.00 0.00;\n'+
+									_name+' has rotation at 0.00 0.00 0.00;\n'+
+									_name+' has scale at 0.00 0.00 0.00;\n');
 		}
 		else {
 			_nameElement.addClass('required');
@@ -155,45 +161,19 @@ $(function(){
 	});
 	
 	// -- save grammar
-	$('#iframe').keydown(function (e){
-		/*if(e.keyCode==13)*/	//13 = enter
-		console.log("ici");
-		M3D.DB.update_grammar(M3D.Editor.getContent());
+	$('#editor iframe').bind('keypress', function (e){
+		alert(e);
+		k = e.keyCode ? e.keyCode : e.which;
+		if (k==13)	//13 = enter
+		{
+			alert("ici");
+			if ( M3D.DB.update_grammar ) {
+				M3D.DB.update_grammar(M3D.Editor.getContent());
+			}
+		}
 	});
 
 	// -- generate the GLGE XML level file
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
-	
-	
-	// -- handle the autocomplete feature into the editor
-	/*
-	var availableTags = [
-			"ActionScript",
-			"AppleScript",
-			"Asp",
-			"BASIC",
-			"C",
-			"C++",
-			"Clojure",
-			"COBOL",
-			"ColdFusion",
-			"Erlang",
-			"Fortran",
-			"Groovy",
-			"Haskell",
-			"Java",
-			"JavaScript",
-			"Lisp",
-			"Perl",
-			"PHP",
-			"Python",
-			"Ruby",
-			"Scala",
-			"Scheme"
-		];
-	$( "#editor textarea" ).autocomplete({
-		source: availableTags
-	});
-	*/
-	
+
 });

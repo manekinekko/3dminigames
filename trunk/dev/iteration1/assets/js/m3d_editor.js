@@ -25,10 +25,34 @@
 		_setContent(_old+value);
 	};	 
 	
+	// update the selected object's properties
+	M3D.Editor.updateObjectAttributes = function(o){
+		var NEWLINE = '\n';
+		var content = M3D.Editor.getContent().split(NEWLINE);
+		for(var i=0; i<content.length; i++){
+			
+			if ( (new RegExp(o.id+' has position')).test(content[i]) ){
+				var p = o.position;
+				content[i] = content[i].replace(/position at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
+												'position at '+p.x+' '+p.y+' '+p.z);
+			}
+			else if ( (new RegExp(o.id+' has scale')).test(content[i]) ){
+				var s = o.scale;
+				content[i] = content[i].replace(/scale at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
+												'scale at '+s.x+' '+s.y+' '+s.z);
+			}
+			else if ( (new RegExp(o.id+' has rotation')).test(content[i]) ){
+				var r = o.rotation;
+				content[i] = content[i].replace(/rotation at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
+												'rotation at '+r.x+' '+r.y+' '+r.z);
+			}
+		}
+		_setContent( content.join(NEWLINE) );
+		delete p, s, r, content;
+	}
 	// set the editor's content
 	var _setContent = function(value){
 		edwigs.edit( value, 'edwigs' );
-		edwigs.focus();
 	}
 	
 })(window.M3D);

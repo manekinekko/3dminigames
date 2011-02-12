@@ -289,15 +289,20 @@ M3D.MOTEUR.changeParentObject = function(idObject,idNewParent){
  */
 M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	if(idRef == null){
-		var M = GLGE.identMatrix();
+		var matrixRef = GLGE.identMatrix();
 	}else{
-		var M = tabObject[idRef].getModelMatrix();
+		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var V = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	// verifie la collision sur toute la trajectoire
-	tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-	return tabObject[id];
+	var vectorTranslate = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+	var absoluteTranslation = GLGE.mulMat4Vec4(matrixRef,vectorTranslate);
+	var matrixObject = tabObject[id].getModelMatrix();
+	var currentRelativePosition = GLGE.Vec4(tabObject[id].getLocX(),tabObject[id].getLocY(),tabObject[id].getLocZ(),1);
+	var currentAbsolutePosition = GLGE.mulMat4Vec4(matrixObject,currentRelativePosition);
+	var newAbsolutePosition = GLGE.addMat4(currentAbsolutePosition,absoluteTranslation);
+	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
+	// COLLISION trajectoire
+	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
+//	return tabObject[id];
 },
 
 
@@ -308,15 +313,17 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
  */
 M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	if(idRef == null){
-		var M = GLGE.identMatrix();
+		var matrixRef = GLGE.identMatrix();
 	}else{
-		var M = tabObject[idRef].getModelMatrix();
+		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	//if(!M3D.MOTEUR.liveCollision(id)) tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-	tabObject[id].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-	return tabObject[id];
+	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+	var newAbsolutePosition = GLGE.mulMat4Vec4(matrixRef,vectorPos);
+	var matrixObject = tabObject[id].getModelMatrix();
+	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
+	// COLLISION
+	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
+//	return tabObject[id];
 },
 
 
@@ -327,15 +334,41 @@ M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
  */
 M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	if(idRef == null){
-		var M = GLGE.identMatrix();
+		var matrixRef = GLGE.identMatrix();
 	}else{
-		var M = tabObject[idRef].getModelMatrix();
+		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
-	var D = GLGE.mulMat4Vec4(M,V);
-	// verifie la collision à l'arrivée
-	tabObject[id].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-	return tabObject[id];
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+	var absoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
+	var matrixObject = tabObject[id].getModelMatrix();
+	var currentRelativeRotation = GLGE.Vec4(tabObject[id].getRotX(),tabObject[id].getRotY(),tabObject[id].getRotZ(),1);
+	var currentAbsoluteRotation = GLGE.mulMat4Vec4(matrixObject,currentRelativeRotation);
+	var newAbsoluteRotation = GLGE.addMat4(currentAbsoluteRotation,absoluteRotation);
+	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
+	// COLLISION
+	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
+//	return tabObject[id];
+},
+
+
+/* Méthode rotate: Change la rotation d'un objet par rapport à un référentiel
+ * Param: id: identifiant de l'élément que l'on souhaite déplacer
+ *		  tabRot : vecteur de 3 coordornées représentant la rotation a effectué
+ *		  [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
+ */
+M3D.MOTEUR.setAngle = function(id,tabRot,idRef){
+	if(idRef == null){
+		var matrixRef = GLGE.identMatrix();
+	}else{
+		var matrixRef = tabObject[idRef].getModelMatrix();
+	}
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+	var newAbsoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
+	var matrixObject = tabObject[id].getModelMatrix();
+	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
+	// COLLISION
+	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
+//	return tabObject[id];
 },
 
 
@@ -344,7 +377,7 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
  *		  tabRot : coefficient par lequel multiplié la taille de l'objet
  */
 M3D.MOTEUR.rescaleObject = function (id,coefScale){
-	var scale = tabObject[id].getScale()
+	var scale = tabObject[id].getScale();
 	tabObject[id].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
 	return tabObject[id];
 },

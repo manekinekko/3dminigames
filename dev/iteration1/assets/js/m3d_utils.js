@@ -624,10 +624,10 @@
 			rotX: v.rotX || 0.05,
 			rotY: v.rotY || 0.05,
 			rotZ: v.rotZ || 0.05
-		}).setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z).getObjects()[0].parent.uid = $('#entity-info #name').attr('uid');
+		}).setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+			.getObjects()[0].parent.uid = $('#entity-info #name').attr('uid');
 		
 		scene.addChild(M3D.lastImportedModel);
-		log('Adding new object to scene', M3D.lastImportedModel);
 		
 		// we don't need this reference anymore
 		M3D.lastImportedModel = null;
@@ -945,7 +945,7 @@
 			if (_obj.boundingVolume) $('#bboxX').val( _float(_obj.boundingVolume.dims[0]) );
 			if (_obj.boundingVolume) $('#bboxY').val( _float(_obj.boundingVolume.dims[1]) );
 			if (_obj.boundingVolume) $('#bboxZ').val( _float(_obj.boundingVolume.dims[2]) );
-			$('#canvas').bind('mouseup', M3D.DB.updateEntries());
+			
 		}
 		else {
 			$("#id").val( null );
@@ -964,6 +964,32 @@
 		}
 	}
 	
+	// -- update the editor content
+	M3D.GUI.updateEditor = function(){
+		if (obj){
+			var _float = function(v){ return parseFloat(v).toFixed(2); }
+			var _getId = function(uid){return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());}
+			var _obj = obj.parent;
+			M3D.Editor.updateObjectAttributes({
+				id: _getId(_obj.uid),
+				position:{
+							x:_float(_obj.getLocX()), 
+							y:_float(_obj.getLocY()), 
+							z:_float(_obj.getLocZ())
+				},
+				rotation:{
+							x:_float(_obj.getRotX()), 
+							y:_float(_obj.getRotY()), 
+							z:_float(_obj.getRotZ())
+				},
+				scale:{
+						x:_float(_obj.getScaleX()), 
+						y:_float(_obj.getScaleY()), 
+						z:_float(_obj.getScaleZ())
+				}
+			});
+		}
+	}
 	
 	// -- reset the camera's position
 	M3D.GUI.resetCameraPosition = function(){

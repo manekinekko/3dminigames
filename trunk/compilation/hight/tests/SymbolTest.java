@@ -1,8 +1,8 @@
-package lib;
-
+package tests;
+import symbols.Symbol;
 import junit.framework.TestCase;
 
-public class CoordonneesTest extends TestCase {
+public class SymbolTest extends TestCase {
 
 	protected void setUp() throws Exception {
 		super.setUp();

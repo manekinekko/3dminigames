@@ -1,7 +1,9 @@
-package attributes;
+package tests;
 
+import attributes.AttributeValue;
 import attributes.AttributeValue.Type;
 import code.Code;
+import attributes.Duration;
 import junit.framework.TestCase;
 
 public class AttributeValueTest extends TestCase {

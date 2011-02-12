@@ -1,5 +1,6 @@
-package code;
+package tests;
 
+import code.Code;
 import junit.framework.TestCase;
 
 public class CodeTest extends TestCase {
@@ -25,6 +26,25 @@ public class CodeTest extends TestCase {
 	Code c20;
 	Code c21;
 	Code c22;
+	Code c23;
+	Code c24;
+	Code c25;
+	Code c26;
+	Code c27;
+	Code c28;
+	Code c29;
+	Code c30;
+	Code c31;
+	Code c32;
+	Code c33;
+	Code c34;
+	Code c35;
+	Code c36;
+	Code c37;
+	Code c38;
+	Code c39;
+	Code c40;
+	Code c41;
 	protected void setUp() throws Exception {
 		super.setUp();
 		c1 = new Code();
@@ -51,6 +71,25 @@ public class CodeTest extends TestCase {
 		c20 = Code.genSup(c2, c2);
 		c21 = Code.genEquals(c2, c2);
 		c22 = Code.genDiff(c2, c2);
+		c23 = Code.genRD(c2,c2);
+		c24 = Code.genPLUS(c2,c2);
+		c25 = Code.genMINUS(c2,c2);
+		c26 = Code.genMUL(c2,c2);
+		c27 = Code.genDIV(c2,c2);
+		c28 = Code.genMOD(c2,c2);
+		c29 = Code.genPOW(c2,c2);
+		c30 = Code.genPosX("bob");
+		c31 = Code.genoRX("bob");
+		c32 = Code.genTX("bob");
+		c33 = Code.genPosY("bob");
+		c34 = Code.genoRY("bob");
+		c35 = Code.genTY("bob");
+		c36 = Code.genPosZ("bob");
+		c37 = Code.genoRZ("bob");
+		c38 = Code.genTZ("bob");
+		c39 = Code.genIF(c2,c2,c2);
+		c40 = Code.genAccess("vert","hulk");
+		c41 = Code.genEOL();
 		}
 	public void testAppend(){
 		assertNotNull(c1.getCode());
@@ -95,5 +134,43 @@ public class CodeTest extends TestCase {
 		assertEquals(c21.getCode(),"(bleu) == (bleu)");
 		assertNotNull(c22.getCode());
 		assertEquals(c22.getCode(),"(bleu) != (bleu)");
+		assertNotNull(c23.getCode());
+		assertEquals(c23.getCode(),"Math.random()*(bleu-bleu) + (bleu)");
+		assertNotNull(c24.getCode());
+		assertEquals(c24.getCode(),"(bleu) + (bleu)");
+		assertNotNull(c25.getCode());
+		assertEquals(c25.getCode(),"(bleu) - (bleu)");
+		assertNotNull(c26.getCode());
+		assertEquals(c26.getCode(),"(bleu) * (bleu)");
+		assertNotNull(c27.getCode());
+		assertEquals(c27.getCode(),"(bleu) / (bleu)");
+		assertNotNull(c28.getCode());
+		assertEquals(c28.getCode(),"(bleu) % (bleu)");
+		assertNotNull(c29.getCode());
+		assertEquals(c29.getCode(),"Math.pow(bleu,bleu)");
+		assertNotNull(c30.getCode());
+		assertEquals(c30.getCode(),"bob.posX");
+		assertNotNull(c31.getCode());
+		assertEquals(c31.getCode(),"bob.orX");
+		assertNotNull(c32.getCode());
+		assertEquals(c32.getCode(),"bob.tX");
+		assertNotNull(c33.getCode());
+		assertEquals(c33.getCode(),"bob.posY");
+		assertNotNull(c34.getCode());
+		assertEquals(c34.getCode(),"bob.orY");
+		assertNotNull(c35.getCode());
+		assertEquals(c35.getCode(),"bob.tY");
+		assertNotNull(c36.getCode());
+		assertEquals(c36.getCode(),"bob.posZ");
+		assertNotNull(c37.getCode());
+		assertEquals(c37.getCode(),"bob.orZ");
+		assertNotNull(c38.getCode());
+		assertEquals(c38.getCode(),"bob.tZ");
+		assertNotNull(c39.getCode());
+		assertEquals(c39.getCode(),"if(bleu){ \nbleu} \nelse{ \nbleu} \n");
+		assertNotNull(c40.getCode());
+		assertEquals(c40.getCode(),"vert.hulk");
+		assertNotNull(c41.getCode());
+		assertEquals(c41.getCode(),";");
 	}
 }

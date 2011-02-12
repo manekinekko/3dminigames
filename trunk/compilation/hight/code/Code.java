@@ -507,7 +507,22 @@ public class Code {
         	
         	return c;
         }
-        	
-        	
+        /*
+         * Classe qui permet de générer le code pour un tableau en JS.
+         * name : nom du tableau
+         * x : taille du tabbleau si c'est tableau a deux dimensions (argument facultatif)
+         * Exemple : Tab[x][y] -> genTab("Tab",x);
+         *           Tab[v]-> genTab("Tab");
+         */
+        public static Code genTab(String name,Integer x){
+            Code c = new Code();
+            c.append(name+"= new Array();");
+            if(x!=null){
+                c.append("for(var i = 0; i<"+String.valueOf(x)+";i++) {\n");
+                c.append("\t"+name+"[i] = new Array();\n");
+                c.append("}");
+            }
+            return c;
+        }
         	
 }

@@ -15,8 +15,8 @@ public class DurationTest extends TestCase {
     private String unit;
     
     public void testGetCode(){
-    	//assertNotNull(d1.getCode());
-    	//assertEquals(d1.getCode().getCode(), "1");
+    	assertNotNull(d1.getCode());
+    	assertEquals(d1.getCode().getCode(), "1");
     }
     
 }

@@ -571,7 +571,7 @@
 		var element = {
 				'name' : name,
 				'value' : {
-						'uid':uid,
+						'uid': uid,
 						'url': urlCollada,
 						'position' : {
 							'X': M3D.lastImportedModel.getLocX(),
@@ -588,15 +588,20 @@
 							'X': M3D.lastImportedModel.getRotX(), 
 							'Y': M3D.lastImportedModel.getRotY(), 
 							'Z': M3D.lastImportedModel.getRotZ()
-						},
-						'bbox' : {
-							'X': M3D.lastImportedModel.boundingVolume.dims[0],
-							'Y': M3D.lastImportedModel.boundingVolume.dims[1],
-							'Z': M3D.lastImportedModel.boundingVolume.dims[2]
 						}
 					}
-				};
-			};
+				}
+		
+		// handle the bbox
+		var _bbox = {'X':'#','Y':'#','Z':'#'};
+		if ( M3D.lastImportedModel.boundingVolume ) {
+			var _bv = M3D.lastImportedModel.boundingVolume.dim;
+			_bbox = {'X': _bv[0],
+					'Y': _bv[1],
+					'Z': _bv[2]};
+		}
+		element.value.bbox = _bbox;
+		
 		M3D.DB.setObject(element);
 		// [/DB]
 

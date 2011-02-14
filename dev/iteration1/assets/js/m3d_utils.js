@@ -892,7 +892,7 @@
 		}
 		else {
 			
-			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE || keys.isKeyPressed(GLGE.KI_R) )
+			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE )
 			{
 				
 				M3D.GUI.cameraRotate();

@@ -10,8 +10,9 @@
  */
 
 CodePress = function(obj) {
+	
 	var self = document.createElement('iframe');
-	self.setAttribute('id', 'codepress');
+	self.setAttribute('name', 'codepress');
 	self.textarea = obj;
 	self.textarea.disabled = true;
 	self.textarea.style.overflow = 'hidden';
@@ -26,17 +27,7 @@ CodePress = function(obj) {
 	
 	self.initialize = function() {
 		
-		// -- fix me: contentWindow is not valid in chrome & safari
-		// -- use contentDocument instead!
-		if (!self.contentWindow) {
-			self.contentWindow = self.contentDocument;
-		}
-		// --
-		
 		self.editor = self.contentWindow.CodePress;
-		
-		//console.log(self.editor);
-		
 		self.editor.body = self.contentWindow.document.getElementsByTagName('body')[0];
 		self.editor.setCode(self.textarea.value);
 		self.setOptions();
@@ -51,7 +42,7 @@ CodePress = function(obj) {
 	self.edit = function(obj,language) {
 		
 		// -- fix me: set the new path to codepress directory
-		var _path = window.location.pathname.replace('index.html', '');
+		var _path = window.location.href.replace('index.html', '');
 		CodePress.path = _path+'assets/js/lib/codepress/';
 		// --
 		

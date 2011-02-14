@@ -42,9 +42,9 @@
 
 ==EN cours==
   * Gestion de la caméra (à la FPS) *[T]*
-  * Synchronisation de l'IHM avec l'éditeur *[W]*
-  * Synchonisation du contenu de l'éditeur avec l'IndexedDB *[A]*
-  * Synchonisation du contenu de l'éditeur avec le Local Storage *[D]*
+  * Synchronisation de l'IHM avec l'éditeur *(W)*
+  * Synchonisation du contenu de l'éditeur avec l'IndexedDB *(A)*
+  * Synchonisation du contenu de l'éditeur avec le Local Storage *(D)*
 
 ==A venir==
   * Positionnement des objets sur le canvas

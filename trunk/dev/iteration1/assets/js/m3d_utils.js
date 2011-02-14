@@ -889,11 +889,8 @@
 			if ( keys.isKeyPressed(GLGE.KI_R) )
 			{
 				
-				scene.camera.setRotOrder( GLGE.ROT_YXZ );
-				scene.camera.setRotX( -newRotX * deltaRot ); 
-				scene.camera.setRotY( -newRotY * deltaRot ); 
-	
-				
+				M3D.GUI.cameraRotate();
+		
 			}else {
 				
 				scene.camera.setLookat( null );
@@ -904,6 +901,57 @@
 		
 	}
 	
+	
+	M3D.GUI.cameraRotate = function(){
+		var mousepos = mouse.getMousePosition();
+		mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
+		var width = document.getElementById('canvas').offsetWidth;
+		
+		// Position souris gauche ou droite ?
+		var gauche = mousepos.x <= width/2;
+		
+		// rotation selon position souris
+		var cam = scene.camera;
+		var camPos = cam.getPosition();
+		var sens;
+		if (gauche){
+			sens = 1;
+		} 
+		else {
+			sens = -1;
+		}									
+		
+		if(!cam.lookAt){
+			cam.setLookat([0,0,0]);
+		}
+	
+		if(camPos.x <= cam.lookAt[0]){
+	
+			// si camera sud-ouest de l'obj
+			if(camPos.y <= cam.lookAt[1]){	
+				cam.setLocX(camPos.x - sens);	
+				cam.setLocY(camPos.y + sens);
+			}
+			// si camera nord-ouest de l'obj
+			else {
+				cam.setLocX(camPos.x + sens);	
+				cam.setLocY(camPos.y + sens);
+			}		
+		}
+		else{
+	
+			// si camera nord-est de l'obj
+			if(camPos.y >= cam.lookAt[1]){	
+				cam.setLocX(camPos.x + sens);	
+				cam.setLocY(camPos.y - sens);
+			}		
+			// si camera sud-est de l'obj
+			else {
+				cam.setLocX(camPos.x - sens);	
+				cam.setLocY(camPos.y - sens);
+			}		
+		}
+	}
 	
 	M3D.GUI.toggleBbox = function(){
 		

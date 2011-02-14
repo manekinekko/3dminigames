@@ -2,62 +2,10 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  */
 
-if(!window["M3D"]){
-	window["M3D"]={};	
-}
-
-if (!window["M3D"].Parser){
-		window["M3D"].Parser={};
-}
-
 (function(M3D){
-	
- 
-	 var M3DSyntax = [
-	 
-		{
-		    regex:  /^(?:break|case|catch|continue|default|delete|do|else|false|finally|for|function|if|in|instanceof|let|new|null|return|switch|this|throw|true|try|typeof|var|void|while|with)(?![a-zA-Z0-9_])/,
-		    tag:    'keyword'
-	    },
-	    {
-		    regex:  /^[A-Za-z_][A-Za-z0-9_]*/,
-		    tag:    'identifier'
-	    },
-	    {
-		    regex:  /^[^'"/ \tA-Za-z0-9_]+/,
-		    tag:    'plain'
-	    },
-	    {
-		    regex:  /^[ \t]+/,
-		    tag:    'plain'
-	    },
-	    {
-		    regex:  /^'/,
-		    tag:    'string',
-		    then:   'qstring'
-	    },
-	    {
-		    regex:  /^"/,
-		    tag:    'string',
-		    then:   'qqstring'
-	    },
-	    {
-		    regex:  /^\/\/.*/,
-		    tag:    'comment'
-	    },
-	    {
-		    regex:  /^\/\*/,
-		    tag:    'comment',
-		    then:   'comment'
-	    },
-	    {
-	    	regex:  /^./,
-		   	tag:    'plain'
-		}
-	 ];
  
  
- })(window["M3D"]);
+})(window["M3D"]);
  
  /*****
 PD	: ')';

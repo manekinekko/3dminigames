@@ -183,17 +183,25 @@ $(function(){
 			$('.cursor.active').removeClass('active');
 			$(this).addClass('active');
 			
-			if ( $(this).hasClass('move') ){
+			if ( $(this).hasClass('camera-move') ){
 			// move the camera
 			M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_MOVE;
 			}	
-			else if ( $(this).hasClass('zoom') ) {
+			else if ( $(this).hasClass('camera-zoom') ) {
 				// do a zoom
 				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ZOOM;			
 			}	
-			else if ( $(this).hasClass('rotate') ) {
+			else if ( $(this).hasClass('camera-rotate') ) {
 				// rotate the camera
 				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ROTATE;			
+			}
+			else if ( $(this).hasClass('model-rotate') ) {
+				// rotate the model
+				
+			}
+			else if ( $(this).hasClass('model-move') ) {
+				// move the model
+				
 			}
 			else {
 				M3D.GUI.CAMERA_STATE = null;

@@ -344,12 +344,18 @@ border-radius: 5px;
 background-color:#fff !important;
 }
 
-.cursor.move {
+.cursor.camera-move {
 background:transparent url('img/cursor-hand.png') no-repeat center center scroll;
 }
-.cursor.rotate {
+.cursor.camera-rotate {
 background:transparent url('img/cursor-orbit.png') no-repeat center center scroll;
 }
-.cursor.zoom {
+.cursor.camera-zoom {
 background:transparent url('img/cursor-zoom.png') no-repeat center center scroll;
+}
+.cursor.model-move {
+background:transparent url('img/cursor-move.png') no-repeat center center scroll;
+}
+.cursor.model-rotate {
+background:transparent url('img/cursor-rotate.png') no-repeat center center scroll;
 }

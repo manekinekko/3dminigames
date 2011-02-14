@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation,Phase-Design
-=UI (avancé)=
+=UI (avancé) (en attente)=
 
 ==Validé==
   * Système de fenêtre
@@ -32,16 +32,19 @@
 
 ----
 =UI (rustique)=
+===A: Antoine / D: David / T: Thomas / W: Wassim===
 
 ==Validé==
- *
-
-==EN cours==
   * Mettre à jour de la position/rotation/scale des objets en IndexedDB
   * Mettre à jour de la position/rotation/scale des objets en Local Storage
-  * Gestion de la caméra (à la FPS)
-  * Gestion du parseur
+  * Synchronisation de l'éditeur avec l'IHM
   * Ajout d'un sol dans le canvas
+
+==EN cours==
+  * Gestion de la caméra (à la FPS) *[T]*
+  * Synchronisation de l'IHM avec l'éditeur *[W]*
+  * Synchonisation du contenu de l'éditeur avec l'IndexedDB *[A]*
+  * Synchonisation du contenu de l'éditeur avec le Local Storage *[D]*
 
 ==A venir==
   * Positionnement des objets sur le canvas

@@ -11,6 +11,12 @@
 	M3D.GUI.ANIMATE_WINDOW_OPEN_POS = 150;
 	M3D.GUI.ANIMATE_WINDOW_CLOSE_POS = -300;
 	
+	// camera states
+	M3D.GUI.CAMERA_MOVE = 1;
+	M3D.GUI.CAMERA_ROTATE = 2;
+	M3D.GUI.CAMERA_ZOOM = 3;
+	M3D.GUI.CAMERA_STATE = null;
+	
 	// values in ms
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 
@@ -886,12 +892,12 @@
 		}
 		else {
 			
-			if ( keys.isKeyPressed(GLGE.KI_R) )
+			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE || keys.isKeyPressed(GLGE.KI_R) )
 			{
 				
 				M3D.GUI.cameraRotate();
 		
-			}else {
+			}else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_MOVE ) {
 				
 				scene.camera.setLookat( null );
 				scene.camera.setLocX( newRotY * deltaLocCamera ); 

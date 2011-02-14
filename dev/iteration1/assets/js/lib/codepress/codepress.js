@@ -64,6 +64,7 @@ CodePress = function(obj) {
 		if(self.options.match('autocomplete-off')) self.toggleAutoComplete();
 		if(self.options.match('readonly-on')) self.toggleReadOnly();
 		if(self.options.match('linenumbers-off')) self.toggleLineNumbers();
+		if(self.options.match('wrap')) self.toggleWrap();
 	}
 	
 	self.getCode = function() {
@@ -85,10 +86,16 @@ CodePress = function(obj) {
 	}
 	
 	self.toggleLineNumbers = function() {
-		var cn = self.editor.body.className;
-		self.editor.body.className = (cn==''||cn=='show-line-numbers') ? 'hide-line-numbers' : 'show-line-numbers';
+		var b=self.editor.body, c=b.className;
+		b.className=(c.match('hide-line-numbers'))?c.replace(/hide-line-numbers/g,''):c+' hide-line-numbers';
 	}
-	
+
+	// http://sourceforge.net/tracker/?func=detail&aid=2465125&group_id=186981&atid=919469
+	self.toggleWrap = function(){
+		var b=self.editor.body, c=b.className;
+		b.className=(c.match('wrap'))?c.replace(/wrap/g,''):c+' wrap';
+	}
+
 	self.toggleEditor = function() {
 		if(self.textarea.disabled) {
 			self.textarea.value = self.getCode();

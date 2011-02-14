@@ -1,28 +1,50 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @namespace M3D.DB
  * @file assets/js/m3d_localstorage.js
+ * @projectDescription This file contains all the necessary Local Storage functions.
  */
 (function(M3D){
-    // pre requisites
+
 	/**
-	 * _attr : for types attributes
-	 * _type : for defined types
 	 * _obj : for imported 3D models
 	 */
-	M3D.DB.REGEX_CONTENT_PATTERN = /(_attr|_type|_obj)$/;
-	M3D.DB.PATTERN_OBJ = '_obj';
-	M3D.DB.PATTERN_TYPE = '_type';
-	M3D.DB.PATTERN_ATTR = '_attr';
+	DB_PATTERN_OBJ = '_obj';
 	
-	// DB initialization
+	/**
+	 * _type : for defined types
+	 */
+	DB_PATTERN_TYPE = '_type';
+
+	/**
+	 * _attr : for types attributes
+	 */
+	DB_PATTERN_ATTR = '_attr';
+	
+	/**
+	 * Entries name
+	 */
+	M3D.DB.REGEX_CONTENT_PATTERN = new RegExp('('+
+											DB_PATTERN_ATTR+
+										'|'+DB_PATTERN_TYPE+
+										'|'+DB_PATTERN_OBJ+
+										')$');
+	
+	/**
+	 * The local storage initialization process.
+	 * @see Object.storeDefaultAttributes
+	 * @see Object.detectPreviousContent
+	 */
 	M3D.DB.init = function(){
 		M3D.DB.storeDefaultAttributes();
 		M3D.DB.detectPreviousContent();
-	}
+	};
 	
-	// API
-	
-	// Load and store the defaults attributes (as JSON)
+	/**
+	 * Get the default attributes catalog from the server and store it into the local storage.
+	 * @see Object.contains
+	 * @see Object._set
+	 */
 	M3D.DB.storeDefaultAttributes = function(){
 		
 		var key = '__default_attributes__';
@@ -35,7 +57,7 @@
 				dataType:'json',
 				data:{filename:'attributes.xml'},
 				success:function(d){
-					M3D.DB._set({name:key, value:d.attributes});
+					_set({name:key, value:d.attributes});
 				},
 				error:function(){
 					alert('Could not load Models attributes! A server error has occured!');
@@ -44,78 +66,86 @@
 			
 		}
 		
-	}
+	};
 	
-	
-	
-	// Save data
-	M3D.DB._set = function(data){
-		try {
-			
-			if (!data.name) {
-				alert("[DB] A 'name of String' key is required to store data!");
-				return false;
-			}
-			if (!data.value) {
-				alert("[DB] A 'value of Object' key is required to store data!");
-				return false;
-			}
-			
-			localStorage.setItem(data.name, JSON.stringify(data.value));
-			
-		} catch (e) {
-			log(e);
-			if (QUOTA_EXCEEDED_ERR && e == QUOTA_EXCEEDED_ERR) {
-				alert('The allocated quota is exceeded! Please use more space!'); 
-			}
-		}
-	}
-	
-	// Save 3D Objects (only usefull info are stored!)
+	/**
+	 * Store a 3D object's position/rotation/scale and id into the local storage.
+	 * @param {Object} data The object containing the 3D objet info
+	 * @return {Boolean} (see _set)
+	 * @see Object._set
+	 */
 	M3D.DB.setObject = function(data){
-		data.name = data.name+M3D.DB.PATTERN_OBJ;
-		M3D.DB._set(data);
-	}
+		data.name += DB_PATTERN_OBJ;
+		return _set(data);
+	};
 	
-	// Save Entities
+	/**
+	 * Store a new type's info into the local storage.
+	 * @param {Object} data The object containing the type info
+	 * @return {Boolean} (see _set)
+	 * @see Object._set
+	 */
 	M3D.DB.setType = function(data){
-		data.name = data.name+M3D.DB.PATTERN_TYPE;
-		M3D.DB._set(data);
-	}
+		data.name += DB_PATTERN_TYPE;
+		return _set(data);
+	};
 	
-	// Save attributes
+	/**
+	 * Store a given type's attributes into the local storage.
+	 * @param {Object} data The object containing the type's attributes
+	 * @return {Boolean} (see _set)
+	 * @see Object._set
+	 */
 	M3D.DB.setAttributes = function(data){
-		data.name = data.name+M3D.DB.PATTERN_ATTR;
-		M3D.DB._set(data);
-	}
-	
-	// Get data
-	M3D.DB._get = function( objectId ){
-		return JSON.parse(localStorage.getItem( objectId ));
-	}
+		data.name += DB_PATTERN_ATTR;
+		return _set(data);
+	};
 	 	
-	// Get type
+	/**
+	 * Get a stored type's info from the local storage.
+	 * @param {String} t The type name
+	 * @return {Object} (see _get)
+	 * @see Object._get
+	 */
 	M3D.DB.getType = function(t){
-		return M3D.DB._get(t);
-	}
+		return _get(t+DB_PATTERN_TYPE);
+	};
 	
-	// Get attributes
+	/**
+	 * Get a stored type's attributes from the local storage.
+	 * @param {String} t The type name
+	 * @return {Object} (see _get)
+	 * @see Object._get
+	 */
 	M3D.DB.getAttributes = function(t){
-		return M3D.DB._get(t);
-	}
+		return _get(t+DB_PATTERN_ATTR);
+	};
 	
+	/**
+	 * Get all stored types info from the local storage.
+	 * @return {Object} (see _getAll)
+	 * @see Object._getAll
+	 */
 	M3D.DB.getAllTypes = function(){
-		return M3D.DB._getAll('type');
-	}
+		return _getAll('type');
+	};
 			
-	// Detect previous content
+	/**
+	 * Check if there was a previous content that was stored.
+	 * @see Object._hasContent
+	 * @see Object.M3D.GUI.showPopup
+	 */
 	M3D.DB.detectPreviousContent = function(){
-		if ( M3D.DB.__hasContent__() ){
+		if ( _hasContent() ){
 			M3D.GUI.showPopup('confirmation-load');
 		}
 	};
 	
-	// Load data
+	/**
+	 * Load and add stored 3D models into canvas.
+	 * @see Object.getType
+	 * @see Object.M3D.GUI.importModel
+	 */
 	M3D.DB.load = function(){
 		var key = null;
 		var value = null;
@@ -139,25 +169,119 @@
 	}; 
 
 	
-	// Delete data
+	/**
+	 * Remove an entry from the Local Storage.
+	 * @param {String} objectName The given key's name of the entry to be removed
+	 */
 	M3D.DB.remove = function( objectName ){
 		localStorage.removeItem( objectName );
-	} 
+	};
 	
-	// Update Datas as we move one object
+	/**
+	 * Update Datas as we move one object ... ???
+	 * @param {Object} objectName ???
+	 * @deprecated This function is not yet implemented
+	 */
 	M3D.DB.updateEntries = function (objectName){
 			alert("C'est un test");
-	}
+	};
 	
-	// Update data
+	/**
+	 * Update data ... ??? 
+	 * @param {Object} modifiedData ???
+	 * @deprecated This function is not yet implemented
+	 */
 	M3D.DB.update = function(modifiedData){
-		
-		
 		M3D.DB.SaveData(modifiedData);
-	}
+	};
+	
+	/**
+	 * Clear all the valid content from the Local Storage.
+	 */
+	M3D.DB.clear = function(){
+		for(var i in localStorage){
+			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
+				log("clearing entry '"+i+"'");
+				localStorage.removeItem(i);
+			}
+		}
+	};
+	
+	/**
+	 * Check if the Local Storage contains an entry whose key matched a given key K.
+	 * @param {Object} K The given key
+	 * @return True if the entry was found, False if not
+	 * @type {Boolean}
+	 */
+	M3D.DB.contains = function(K){
+		return !!localStorage.getItem(K);
+	};
+	
+	/**
+	 * Check if the Local Storage contains an entry of a 3D model.
+	 * @param {Object} v the 3D model name
+	 * @return (see M3D.DB.contains)
+	 * @see Object.contains
+	 */
+	M3D.DB.containsObj = function(v){
+		log(v+M3D.DB.PATTERN_OBJ);
+		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
+	};
+	
+	/**
+	 * Store a given content into the local storage.
+	 * @param {Object} data The object that contains the 'name' and 'value' of the content to be stored.
+	 * @return True if the content was stored successfully, False if not
+	 * @type {Boolean}
+	 * @private
+	 */
+	_set = function(data){
+		try {
+			
+			if (typeof(data) !== "object") {
+				alert("[DB] An object is required to store data!");
+				return false;				
+			}
+			if (!data.name) {
+				alert("[DB] A 'name of String' key is required to store data!");
+				return false;
+			}
+			if (!data.value) {
+				alert("[DB] A 'value of Object' key is required to store data!");
+				return false;
+			}
+			
+			localStorage.setItem(data.name, JSON.stringify(data.value));
+			return true;
+			
+		} catch (e) {
+			log(e);
+			if (QUOTA_EXCEEDED_ERR && e == QUOTA_EXCEEDED_ERR) {
+				alert('The allocated quota has exceeded! Please allow 3DWIGS to use more space!'); 
+			}
+		}
+	};
+		
+	/**
+	 * Get a value of a given key.
+	 * @param {Object} objectId The key name
+	 * @return The value of the given key
+	 * @type {Object}
+	 * @private
+	 */
+	_get = function( objectId ){
+		return JSON.parse(localStorage.getItem( objectId ));
+	};
 	
 	// Get all data
-	M3D.DB._getAll = function(str){
+	/**
+	 * Get all the values of a given type
+	 * @param {String} str The type that must be used to get its content
+	 * @return An array of objects of name/value of all found elements that matched to given type
+	 * @type {Array}
+	 * @private
+	 */
+	_getAll = function(str){
 		var t = [];
 		var Exp = new RegExp('\_'+str+'$');
 		
@@ -172,31 +296,15 @@
 		
 		return t;
 		
-	}
+	};
 	
-	// Clear all data
-	M3D.DB.clear = function(){
-		for(var i in localStorage){
-			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
-				log("clearing entry '"+i+"'");
-				localStorage.removeItem(i);
-			}
-		}
-	}
-	
-	// Check if the DB contains the key K
-	M3D.DB.contains = function(K){
-		return !!localStorage.getItem(K);
-	}
-	
-	// check if the DB conatains an obj entry
-	M3D.DB.containsObj = function(v){
-		log(v+M3D.DB.PATTERN_OBJ);
-		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
-	}
-	
-	// check if the DB contains a stored content
-	M3D.DB.__hasContent__ = function(){
+	/**
+	 * Check if the DB contains a stored content
+	 * @return True if the Local Storage has a stored and valid content, False if not
+	 * @type {Boolean}
+	 * @private 
+	 */
+	_hasContent = function(){
 		var key = null;
 		for (var i = 0; i < localStorage.length; i++) {
 			if (M3D.DB.REGEX_CONTENT_PATTERN.test( localStorage.key(i) )) {

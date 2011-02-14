@@ -1,24 +1,35 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @namespace M3D.Editor
  * @file assets/js/m3d_editor.js
+ * @projectDescription This file contains all necessary functions that are used by the editor.
  */
 (function(M3D){
 	
-	// Init the editor
+	/**
+	 * Initializes the editor. This function is called once the document is loaded.
+	 */
 	M3D.Editor.init = function(){
 		// TODO: get previous content
 		var _c = ''; 
 		if ( _c === '' ){
 			_setContent('/* Game created on '+(new Date()).toGMTString()+' */\n\n');
 		}
-	}
+	};
 	
-	// get the current content
+	/**
+	 * Get the current content of the editor.
+	 * @return The current content of the editor
+	 * @type {String}
+	 */
 	M3D.Editor.getContent = function(){
 		return edwigs.getCode();
 	};
 	
-	// set the new content
+	/**
+	 * Set the new content of the editor.
+	 * @param {String} value The new content
+	 */
 	M3D.Editor.setContent = function(value){
 		var _old = M3D.Editor.getContent();
 		_old = _old === '' ? _old : _old+"\n";
@@ -26,6 +37,10 @@
 	};	 
 	
 	// update the selected object's properties
+	/**
+	 * Update a given 3D model's position/rotation/scale's values inside the editor. 
+	 * @param {Object} o An object containing the id string of the 3D model, its position, rotation and scale X/Y/Z values.
+	 */
 	M3D.Editor.updateObjectAttributes = function(o){
 		var NEWLINE = '\n';
 		var content = M3D.Editor.getContent().split(NEWLINE);
@@ -48,11 +63,17 @@
 			}
 		}
 		_setContent( content.join(NEWLINE) );
-		delete p, s, r, content;
-	}
+		
+	};
+	
 	// set the editor's content
+	/**
+	 * Set the editor's content
+	 * @param {Object} value The new content of the editor
+	 * @private
+	 */
 	var _setContent = function(value){
 		edwigs.edit( value, 'edwigs' );
-	}
+	};
 	
 })(window.M3D);

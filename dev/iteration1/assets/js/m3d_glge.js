@@ -1,6 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_glge.js
+ * @projectDescription This file handles the GLGE environment initialization. 
  */
 doc.onLoad = function() {
 	mouse = new GLGE.MouseInput(canvas);
@@ -28,13 +29,13 @@ doc.onLoad = function() {
 	///////////////////////////			
 	// -- the rendering loop
 	///////////////////////////
-	function render() {
+	function _render() {
 		// render the canvas
 		renderer.render();
 	}
 
 	// -- render each millisecond
-	setInterval(render, 1);	
+	setInterval(_render, 1);
 	
 }
 

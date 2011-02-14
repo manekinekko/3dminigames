@@ -1,25 +1,46 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @namespace M3D.Events
+ * @file assets/js/m3d_events.js
+ * @projectDescription This file contains all the binding events.
  */
 $(function(){
+
+	/**
+	 * Prevent default event for all anchor tags whose href attribute begins with a '#'.
+	 */
+	$('a[href^="#"]').live("click", function(e){ e.preventDefault(); });
 	
-	// Start Event Bindings
+	/**
+	 * Bind the canvas mouse down event to the picking function, and the mouse up to the editor update function.
+	 * @see M3D.GUI.pickObject
+	 */
+	$('#canvas').bind('mousedown', M3D.GUI.pickObject).bind('mouseup', M3D.GUI.updateEditor);
+		
+	/**
+	 * Allow picking 3D models from the select box
+	 * @see M3D.GUI.pickObjectFromSelect
+	 */
+	$('#select-model').bind('change', M3D.GUI.pickObjectFromSelect);
 	
-	// -- picking
-	$('#canvas').bind('mousedown', M3D.GUI.pickObject)	
-	// -- editor's updating
-	.bind('mouseup', M3D.GUI.updateEditor);
-	
-	
-	// -- mouse wheel for camera
+	/**
+	 * Bind the mouse scroll event to the wheel function.
+	 * @see M3D.GUI.wheel
+	 */
 	document.getElementById("canvas").addEventListener('DOMMouseScroll', M3D.GUI.wheel, false);
 	window.document.getElementById("canvas").onmousewheel = document.getElementById("canvas").onmousewheel = M3D.GUI.wheel;
 	
-	// -- values manual updating
+	/**
+	 * Bind the live update of the 3D model position/rotation/scale's values.
+	 * @see M3D.GUI.updateValues
+	 */
 	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); });
 
-	
-	// -- toggling the bbox
+	/**
+	 * Bind the toggle view of the bounding box, weither when clicking on the switchBbox check box
+	 * or when pressing the b key.
+	 * @see M3D.GUI.toggleBbox
+	 */
 	$('#switchBbox').bind('click', M3D.GUI.toggleBbox);
 	$('#canvas').bind('keypress', function(){
 		if ( obj && keys.isKeyPressed(GLGE.KI_B) ){
@@ -28,10 +49,16 @@ $(function(){
 		}
 	});
 
-	// -- reset camera
+	/**
+	 * Bind the camera's properties reset.
+	 * @see M3D.GUI.resetCameraPosition
+	 */
 	$('#resetcamera').bind('click', M3D.GUI.resetCameraPosition);
 	
-	// -- bind import model
+	/**
+	 * Bind the 3D model importing.
+	 * @see M3D.GUI.importModel
+	 */
 	$('#import').bind('click', function(){
 		M3D.GUI.importModel( {
 			docUrl: $('#importUrl').val(),
@@ -39,12 +66,20 @@ $(function(){
 		});
 	});
 	
-	// -- open new attribut
-	$('.add-attributes').bind('click', function(){
-		M3D.GUI.showPopup('entity-new-attribut', true);
-	});
-	// -- window button
+	/**
+	 * Bind "cancel" buttons.
+	 * @see M3D.GUI.hidePopup
+	 */
 	$('.cancel').bind('click', M3D.GUI.hidePopup);
+	
+	/**
+	 * Bind the save entity info event.
+	 * @see M3D.DB.containsObj
+	 * @see M3D.GUI.validateFields
+	 * @see M3D.GUI.updateEntityList
+	 * @see M3D.GUI.addObjectToScene
+	 * @see M3D.Editor.setContent
+	 */
 	$('#save-entity-info').bind('click', function(){
 		var _nameElement = $('#name');
 		var _name = _nameElement.val();
@@ -66,84 +101,31 @@ $(function(){
 			_nameElement.addClass('required');
 		}
 	});
-	
-	// -- object picking from select box
-	$('#select-model').bind('change', M3D.GUI.pickObjectFromSelect);
-	
-	// -- show upload area
-	$('#showupload').click(function(){M3D.GUI.toggleShowUpload();});
-	
-	// -- add new attributes
-	$('#new-attribut-type, #quick-new-attribut-type').bind('change', function(){
-		M3D.GUI.toggleInputSelect(this);
-	});
-	
-	// -- save new attribut
-	$('#save-new-attribut').bind('click', function(){
-		
-		if ( M3D.GUI.validateFields(this) ){
-			M3D.GUI.saveNewAttribut();
-		}
-		
-	});
-	
-	$('#add-new-attribut').bind('click', M3D.GUI.addNewAttribut);
-	
-	// -- show the help window
+
+	/**
+	 * Bind showing the help window
+	 * @see M3D.GUI.showPopup
+	 */
 	$('#showhelp').bind('click', function(){
 		M3D.GUI.showPopup('help');
 	});
 
-	// -- easter egg :)
+	/**
+	 * EASTER EGG :)
+	 * Bind showing the about window
+	 * @see M3D.GUI.showPopup
+	 */
 	$('#container h1').bind('click', function(){
 		M3D.GUI.showPopup('about');
 	});
 	
-	// -- prevent default
-	$('a[href="#"]').live("click", function(e){ e.preventDefault(); });
-	
-	// -- add new entity type
-	$('#add-new-entity').bind('click', function(){
-		M3D.GUI.showPopup('new-entity');
-	});
-	
-	// -- save new attributes
-	$('#save-new-entity').bind('click', function(){
-		
-		if ( M3D.GUI.validateFields(this) ){
-			M3D.GUI.saveNewEntity();
-		}
-		
-	});
-	
-	// -- cancel adding a new entity
-	$('#cancel-new-entity').bind('click', function(){
-		M3D.GUI.showPopup('entity-info');
-	});
-	
-	// -- delete attributes
-	$('.detele-attribut').live('click', function(){
-		M3D.GUI.deleteAttributFromList(this);
-	});
-	
-	// -- open the rules manager window
-	$('#manage-rules').bind('click', function(){
-		M3D.GUI.showPopup('rules', true);
-	});
-	
-	// -- add a new rule
-	$('#add-rule').bind('click', function(){
-		if ( M3D.GUI.validateFields(this) ){
-			M3D.GUI.saveNewRule();
-		}
-	});
-	
-	// -- delete a rule
-	$('.delete-rule').live('click', function(){
-		M3D.GUI.deleteRule(this);
-	});
-	
-	// -- clear user canvas
+	/**
+	 * Bind clearing the canvas.
+	 * @see M3D.GUI.showPopup
+	 * @see M3D.GUI.clearCanvas
+	 * @see M3D.DB.clear
+	 * @see M3D.GUI.hidePopup
+	 */
 	$('#clear-canvas').bind('click', function(){
 		M3D.GUI.showPopup('confirmation-clear');
 	});
@@ -153,27 +135,39 @@ $(function(){
 		M3D.GUI.hidePopup('confirmation-clear');
 	});
 	
-	
-	// -- load previous content
+	/**
+	 * Bind loading the previous saved content.
+	 * @see M3D.DB.load
+	 * @see M3D.GUI.hidePopup
+	 */
 	$('#confirm-load-content').bind('click', function(){
 		M3D.DB.load();
 		M3D.GUI.hidePopup('confirmation-load');
 	});
 	
-	// -- save grammar
-	$('#editor iframe').bind('keypress', function (e){
+	/**
+	 * Bind generating a GLGE xml level file from the current canvas.
+	 * @see M3D.GUI.generateLevelFile
+	 * @deprecated This binding will probably be moved elsewhere!
+	 */
+	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
+
+	/**
+	 * Bind the editor content storing into the DB.
+	 * @see M3D.DB.update_grammar
+	 * @deprecated This binding is not really done yet!
+	 */
+	$('#editor iframe').live('keypress', function (e){
 		alert(e);
 		k = e.keyCode ? e.keyCode : e.which;
 		if (k==13)	//13 = enter
 		{
 			alert("ici");
-			if ( M3D.DB.update_grammar ) {
+			if ( M3D.DB.update_grammar() ) {
 				M3D.DB.update_grammar(M3D.Editor.getContent());
 			}
 		}
 	});
 
-	// -- generate the GLGE XML level file
-	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
 
 });

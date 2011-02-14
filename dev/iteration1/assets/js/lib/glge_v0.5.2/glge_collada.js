@@ -460,7 +460,6 @@ GLGE.Collada.prototype.getSurface=function(profile,sid){
 GLGE.Collada.prototype.getImage=function(id){
 	var image=this.xml.getElementById(id);
 	return this.getAbsolutePath(image.getElementsByTagName("init_from")[0].firstChild.nodeValue,this.docURL);
-
 }
 
 /**

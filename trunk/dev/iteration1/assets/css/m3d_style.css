@@ -1,8 +1,9 @@
+@charset "UTF-8";
+
 /**
 * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+* @file assets/css/m3d_style.css
 */
-
-@charset "UTF-8";
 
 body {
 position: relative;
@@ -76,6 +77,7 @@ left: 10px;
 top: 298px;
 -moz-border-radius: 0 0 10px 10px;
 -webkit-border-radius: 0 0 10px 10px;
+border-radius: 0 0 10px 10px;
 }
 
 #info-right {
@@ -87,6 +89,7 @@ top: 6px;
 right: 500px;
 -moz-border-radius: 0 10px 10px 0;
 -webkit-border-radius: 0 10px 10px 0;
+border-radius: 0 10px 10px 0;
 }
 
 #attributes {
@@ -196,6 +199,7 @@ padding: 5px 10px;
 box-shadow: 0 0 10px #000;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
+border-radius: 5px;
 }
 
 .window.closed { display: none; }
@@ -216,6 +220,7 @@ margin: -5px -10px 20px -10px;
 padding: 10px;
 -webkit-border-radius: 5px 5px 0 0;
 -moz-border-radius: 5px 5px 0 0;
+border-radius: 5px 5px 0 0;
 }
 
 #rules.window {
@@ -288,6 +293,7 @@ border: 1px solid;
 background: #eee;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
+border-radius: 5px;
 }
 
 input[type="button"], select {
@@ -296,4 +302,54 @@ cursor: pointer;
 
 .input-rule {
 width:700px !important;
+}
+
+#tools-panel {
+position:absolute;
+height:100px;
+width:50px;
+top:100px;
+}
+
+.cursor {
+z-index:100;
+width:31px;
+height:31px;
+display:block;
+position:relative;
+margin:6px;
+cursor:pointer;
+border:1px solid transparent;
+-moz-transition: all 0.5s ease; 
+-webkit-transition: all 0.5s ease; 
+transition: all 0.5s ease;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px; 
+}
+
+.cursor:hover, .cursor:active {
+border-color:#aaa !important;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color:#fff !important;
+}
+
+.cursor.active {
+border-color:#ff0080 !important;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color:#fff !important;
+}
+
+.cursor.move {
+background:transparent url('img/cursor-hand.png') no-repeat center center scroll;
+}
+.cursor.rotate {
+background:transparent url('img/cursor-orbit.png') no-repeat center center scroll;
+}
+.cursor.zoom {
+background:transparent url('img/cursor-zoom.png') no-repeat center center scroll;
 }

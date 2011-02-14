@@ -168,6 +168,40 @@ $(function(){
 			}
 		}
 	});
-
+	
+	/**
+	 * Bind the camera operations: move, ratation and zoom.
+	 */
+	$('.cursor').bind('click', function(){
+		
+		if ( $(this).hasClass('active') ) {
+			$(this).removeClass('active');
+			M3D.GUI.CAMERA_STATE = null;
+		}
+		else {
+			
+			$('.cursor.active').removeClass('active');
+			$(this).addClass('active');
+			
+			if ( $(this).hasClass('move') ){
+			// move the camera
+			M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_MOVE;
+			}	
+			else if ( $(this).hasClass('zoom') ) {
+				// do a zoom
+				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ZOOM;			
+			}	
+			else if ( $(this).hasClass('rotate') ) {
+				// rotate the camera
+				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ROTATE;			
+			}
+			else {
+				M3D.GUI.CAMERA_STATE = null;
+			}
+			
+		}
+		
+		
+	});
 
 });

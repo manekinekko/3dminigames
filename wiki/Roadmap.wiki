@@ -19,7 +19,6 @@
   * Sauvegarde des types crées en DB
   * Sauvegarde des modèles importés en DB
   * Génération d'un XML pour GLGE (exploitable)
-  * 
 
 ==A venir==
   * graphe de scène
@@ -33,6 +32,7 @@
 ----
 =UI (rustique)=
 ===A: Antoine / D: David / T: Thomas / W: Wassim===
+===X: X priorité de la tâche===
 
 ==Validé==
   * Mettre à jour de la position/rotation/scale des objets en IndexedDB
@@ -41,14 +41,16 @@
   * Ajout d'un sol dans le canvas
 
 ==EN cours==
-  * Gestion de la caméra (à la FPS) *[T]*
+  * Gestion de la caméra (à la FPS) *(T)*
   * Synchronisation de l'IHM avec l'éditeur *(W)*
   * Synchonisation du contenu de l'éditeur avec l'IndexedDB *(A)*
   * Synchonisation du contenu de l'éditeur avec le Local Storage *(D)*
 
 ==A venir==
-  * Positionnement des objets sur le canvas
-  * Gestion de la caméra (à la Sketchup)
+  * Positionnement des objets sur le canvas *1*
+  * Gestion de la caméra (à la Sketchup) *2*
+  * Possibilité d'importer des modèles *avec textures* *4*
+  * graphe de scène *3*
 
 ----
 =Moteur 3D=

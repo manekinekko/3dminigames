@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation,Phase-Design
-=UI (avancé) (en attente)=
+=UI (avancée) (suspendue)=
 
 ==Validé==
   * Système de fenêtre
@@ -10,8 +10,6 @@
   * Possibilité de créer des règles (uniquement l'affichage)
   * Possibilité de créer et sauvegarder de nouveaux types
   * Possibilité de créer et sauvegarder de nouveaux attributs
-
-  
 
 ==En cours==
   * Génération de la description en langage 3DWIGS
@@ -39,11 +37,11 @@
   * Synchronisation de l'éditeur avec l'IHM
   * Ajout d'un sol dans le canvas
 
-==EN cours==
+==En cours==
   * Gestion de la caméra (à la FPS) *(T)*
   * Synchronisation de l'IHM avec l'éditeur *(W)*
-  * Synchonisation du contenu de l'éditeur avec l'IndexedDB *(A)*
-  * Synchonisation du contenu de l'éditeur avec le Local Storage *(D)*
+  * Synchronisation du contenu de l'éditeur avec l'IndexedDB *(A)*
+  * Synchronisation du contenu de l'éditeur avec le Local Storage *(D)*
 
 ==A venir==
 ===Par ordre de priorité===

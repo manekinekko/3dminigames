@@ -28,7 +28,7 @@ M3D.DB.setObject({
 });
 
 // Produit le résultat JSON suivant:
-{name:"duck_obj", value:{"url":"assets/dae/free/duck.dae","type":"zzzz"}}
+{name:"duck_obj", value:{"url":"assets/dae/free/duck.dae","type":"Ducks", "uid":"1296435932125"}}
 }}}
 
 =Les types=

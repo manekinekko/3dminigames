@@ -26,7 +26,7 @@ if(!window["M3D"].MOTEUR){
  
 /* Méthode initialisation.
  * Param: gScene.
- * Return: un tableau contenant le tableau des objets et le tableau des identifiants d'objets
+ * Return: un tableau contenant le tableau des objets, le tableau des identifiants d'objets et le tableau des caméras
  */
 M3D.MOTEUR.initialisation = function(gScene){
 /*	var doc = new GLGE.Document();
@@ -340,7 +340,7 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorTranslate = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+	var vectorTranslate = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
 	var absoluteTranslation = GLGE.mulMat4Vec4(matrixRef,vectorTranslate);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var currentRelativePosition = GLGE.Vec4(tabObject[id].getLocX(),tabObject[id].getLocY(),tabObject[id].getLocZ(),1);
@@ -349,7 +349,7 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
 	// COLLISION trajectoire
 	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
-//	return tabObject[id];
+	return tabObject[id];
 },
 
 
@@ -366,11 +366,12 @@ M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	}
 	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
 	var newAbsolutePosition = GLGE.mulMat4Vec4(matrixRef,vectorPos);
+	
 	var matrixObject = tabObject[id].getModelMatrix();
 	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
 	// COLLISION
 	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
-//	return tabObject[id];
+	return tabObject[id];
 },
 
 
@@ -393,8 +394,8 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	var newAbsoluteRotation = GLGE.addMat4(currentAbsoluteRotation,absoluteRotation);
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
 	// COLLISION
-	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
-//	return tabObject[id];
+	tabObject[id].setRot(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
+	return tabObject[id];
 },
 
 
@@ -414,8 +415,8 @@ M3D.MOTEUR.setAngle = function(id,tabRot,idRef){
 	var matrixObject = tabObject[id].getModelMatrix();
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
 	// COLLISION
-	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
-//	return tabObject[id];
+	tabObject[id].setRot(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
+	return tabObject[id];
 },
 
 

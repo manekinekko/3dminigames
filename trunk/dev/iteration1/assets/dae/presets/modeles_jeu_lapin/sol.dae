@@ -8,8 +8,8 @@
 			<copyright></copyright>
 			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_lapin/jeu_chasseur_lapin.blend</source_data>
 		</contributor>
-		<created>2011-01-19T17:13:07.497896</created>
-		<modified>2011-01-19T17:13:07.497939</modified>
+		<created>2011-02-15T20:48:35.807115</created>
+		<modified>2011-02-15T20:48:35.807158</modified>
 		<unit meter="0.01" name="centimeter"/>
 		<up_axis>Z_UP</up_axis>
 	</asset>
@@ -50,44 +50,44 @@
 		</material>
 	</library_materials>
 	<library_geometries>
-		<geometry id="Sol-Geometry" name="Sol-Geometry">
+		<geometry id="Sol_003" name="Sol_003">
 			<mesh>
-				<source id="Sol-Geometry-Position">
-					<float_array count="12" id="Sol-Geometry-Position-array">13.00000 17.00000 0.00000 13.00000 -3.00000 0.00000 -13.00000 -3.00000 0.00000 -13.00000 17.00000 0.00000</float_array>
+				<source id="Sol_003-Position">
+					<float_array count="12" id="Sol_003-Position-array">-23.79999 18.20000 0.00000 4.20000 18.20000 0.00000 4.20000 -18.20000 0.00000 -23.80000 -18.20000 0.00000</float_array>
 					<technique_common>
-						<accessor count="4" source="#Sol-Geometry-Position-array" stride="3">
+						<accessor count="4" source="#Sol_003-Position-array" stride="3">
 							<param type="float" name="X"></param>
 							<param type="float" name="Y"></param>
 							<param type="float" name="Z"></param>
 						</accessor>
 					</technique_common>
 				</source>
-				<source id="Sol-Geometry-Normals">
-					<float_array count="3" id="Sol-Geometry-Normals-array">0.00000 -0.00000 1.00000</float_array>
+				<source id="Sol_003-Normals">
+					<float_array count="3" id="Sol_003-Normals-array">0.00000 0.00000 1.00000</float_array>
 					<technique_common>
-						<accessor count="1" source="#Sol-Geometry-Normals-array" stride="3">
+						<accessor count="1" source="#Sol_003-Normals-array" stride="3">
 							<param type="float" name="X"></param>
 							<param type="float" name="Y"></param>
 							<param type="float" name="Z"></param>
 						</accessor>
 					</technique_common>
 				</source>
-				<source id="Sol-Geometry-UV">
-					<float_array count="8" id="Sol-Geometry-UV-array">0.00000 0.00000 1.00000 0.00000 1.00000 1.00000 0.00000 1.00000</float_array>
+				<source id="Sol_003-UV">
+					<float_array count="8" id="Sol_003-UV-array">0.00000 0.00000 1.00000 0.00000 1.00000 1.00000 0.00000 1.00000</float_array>
 					<technique_common>
-						<accessor count="4" source="#Sol-Geometry-UV-array" stride="2">
+						<accessor count="4" source="#Sol_003-UV-array" stride="2">
 							<param type="float" name="S"></param>
 							<param type="float" name="T"></param>
 						</accessor>
 					</technique_common>
 				</source>
-				<vertices id="Sol-Geometry-Vertex">
-					<input semantic="POSITION" source="#Sol-Geometry-Position"/>
+				<vertices id="Sol_003-Vertex">
+					<input semantic="POSITION" source="#Sol_003-Position"/>
 				</vertices>
 				<polygons count="1" material="Material">
-					<input offset="0" semantic="VERTEX" source="#Sol-Geometry-Vertex"/>
-					<input offset="1" semantic="NORMAL" source="#Sol-Geometry-Normals"/>
-					<input offset="2" semantic="TEXCOORD" source="#Sol-Geometry-UV"/>
+					<input offset="0" semantic="VERTEX" source="#Sol_003-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Sol_003-Normals"/>
+					<input offset="2" semantic="TEXCOORD" source="#Sol_003-UV"/>
 					<p>0 0 0 3 0 1 2 0 2 1 0 3</p>
 				</polygons>
 			</mesh>
@@ -96,12 +96,12 @@
 	<library_visual_scenes>
 		<visual_scene id="Scene" name="Scene">
 			<node layer="L11" id="Sol" name="Sol">
-				<translate sid="translate">1.97162 -3.18960 0.00000</translate>
-				<rotate sid="rotateZ">0 0 1 90.00000</rotate>
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
 				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
 				<rotate sid="rotateX">1 0 0 0.00000</rotate>
-				<scale sid="scale">1.40000 1.40000 1.40000</scale>
-				<instance_geometry url="#Sol-Geometry">
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Sol_003">
 					<bind_material>
 						<technique_common>
 							<instance_material symbol="Material" target="#Material">
@@ -130,7 +130,7 @@
 					<mass>0</mass>
 					<instance_physics_material url="#Sol-PhysicsMaterial"/>
 					<shape>
-						<instance_geometry url="#Sol-Geometry"/>
+						<instance_geometry url="#Sol_003"/>
 					</shape>
 				</technique_common>
 			</rigid_body>

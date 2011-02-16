@@ -576,7 +576,7 @@ M3D.MOTEUR.addCameraIn = function(idCamera, tabCoord, idGroup){
 },
 
 M3D.MOTEUR.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
-    tabCamera[idCamera] = new GLGE.Collada();
+    tabCamera[idCamera] = new GLGE.Camera();
     tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
     tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
     tabCamera[idCamera].setScale(tabCoord[6]);
@@ -595,7 +595,7 @@ M3D.MOTEUR.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
 },
 
 M3D.MOTEUR.addCameraGroupIn = function(idCamera, idGroup, tabCoord, idParent){
-    tabCamera[idCamera] = new GLGE.Collada();
+    tabCamera[idCamera] = new GLGE.Camera();
     tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
     tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
     tabCamera[idCamera].setScale(tabCoord[6]);
@@ -631,7 +631,6 @@ M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
     }else{
         var Mref = tabObject[idRef].getModelMatrix();
     }
-        
     var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
     var etape1 = GLGE.mulMat4Vec4(Mref,vector);
     var camera=tabCamera[idCamera];
@@ -642,28 +641,49 @@ M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
     tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
-/* 
+
 M3D.MOTEUR.setPositionCamera = function(idCamera,tabPos,idRef){
+    var Mcamera = tabCamera[idCamera].getModelMatrix();
     if(idRef == null){
-        var M = GLGE.identMatrix();
+        var Mref = tabCamera[idCamera].getModelMatrix();
     }else{
-        var M = tabCamera[idRef].getModelMatrix();
-    }
-    var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
-    var D = GLGE.mulMat4Vec4(M,V);
+        var Mref = tabObject[idRef].getModelMatrix();
+    }   
+    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
+    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape1);
     tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 }, 
-*/
+
 
 M3D.MOTEUR.rotateCamera = function(idCamera,tabRot,idRef){
+    var Mcamera = tabCamera[idCamera].getModelMatrix();
     if(idRef == null){
-        var M = GLGE.identMatrix();
+        var Mref = tabCamera[idCamera].getModelMatrix();
     }else{
-        var M = tabCamera[idRef].getModelMatrix();
+        var Mref = tabObject[idRef].getModelMatrix();
     }
-    var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
-    var D = GLGE.mulMat4Vec4(M,V);
+    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
+    var camera=tabCamera[idCamera];
+    var actualrotation = GLGE.Vec4(camera.getRotX(),camera.getRotY(),camera.getRotZ(),1);
+    var etape2 = GLGE.mulMat4Vec4(Mcamera,actualrotation);
+    var etape3 = GLGE.addVec4(etape1,etape2);
+    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape3);
     tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-}
+},
+
+    M3D.MOTEUR.setAngleCamera = function(idCamera,tabRot,idRef){
+    var Mcamera = tabCamera[idCamera].getModelMatrix();
+    if(idRef == null){
+        var Mref = tabCamera[idCamera].getModelMatrix();
+    }else{
+        var Mref = tabObject[idRef].getModelMatrix();
+    }
+    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
+    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape1);
+    tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+    },
 
 })(M3D);

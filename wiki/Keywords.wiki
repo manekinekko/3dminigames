@@ -3,7 +3,7 @@
 
 *Classer les mots-clés par catégorie*
 
-* Definition de jeu :::::::::::::::::::::::::::::::::::::::*
+*Definition de jeu* :::::::::::::::::::::::::::::::::::::::
 
 *AT*
 
@@ -26,6 +26,14 @@ Définie la gravité de environnement. ça peux être définie par un vecteur (t
 ex: game has *gravity* at 1 1 1; 
 {{{
 }}}
+*HAS*
+
+Définie attachement d'un attribut à un identificateur.
+
+ex: rabbit *has* Life at 10; rabbit *has* size at 1 1 1; 
+
+{{{
+}}}
 *SCORE*
 
 Les points obtenus par jouer initialisé ici par un chiffre.
@@ -33,3 +41,8 @@ Les points obtenus par jouer initialisé ici par un chiffre.
 ex: game has *score* at 0;
 {{{
 }}}
+
+*Héritage* ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+

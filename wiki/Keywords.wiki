@@ -166,25 +166,33 @@ Appartenance d'un identificateur à une liste.
 lapin5 is IN LapinList;
 }}}
 
-*ALLY*
+*AT*
 
-Pour déclarer les caractères amis.
+Attribue une/plusieurs valeur(s) (chiffre/booléen/chaine) à un identificateur.
 {{{
-chasseurNoir is Chasseur ALLY; 
+life at 5, name at "Gandalf Le Gris";
+size at 20 30 40;
+inventory at listeArmesJoueur;
 }}}
 
-*ENEMY*
+*COUNTER*
 
-Pour déclarer les caractères ennemis.
+Un type de compteur.
 {{{
-lapin2 is Lapin ENEMY; 
+cmp1 is COUNTER at 0; ?????
 }}}
 
-*NEUTRAL*
+*TIME*
 
-Pour déclarer les caractères neutres.
-
+Un objet de type chronomètre pour gérer le temps.
 {{{
-bird is Bird NEUTRAL;
+?????
+}}}
+
+*OBJECT*
+
+Objet prédéfini basic avec les attributs: position(x,y,z), orientation(x,y,z), size(x,y,z).
+{{{
+?????
 }}}
 

@@ -35,7 +35,9 @@ game [SymbolTable st] returns [Code c]
     	c.append("/* Array of commands */\n");
     	c.append("var cmdTab = new Array();\n\n");
     	
-	
+    	/* ************	Global refresh variable ************************ */
+    	
+		c.append("var refresh;\n\n");
 
 		/* ************* Paused variable ************************* */
 
@@ -53,12 +55,12 @@ game [SymbolTable st] returns [Code c]
     	c.append("\t");
     	c.append("refresh = ");
     	c.append(Code.genSetInterval("refreshGame","10"));
-    	c.append("}\n\n");
+    	c.append("} , false)\n\n");
     	
     	/* ************* Refresh loop ****************************** */
     	
     	c.append("/* Refresh loop */\n");
-    	c.append("\tfunction refreshGame(){\n");    	
+    	c.append("function refreshGame(){\n");    	
     	c.append("}\n\n");
     	
     	/* ************* Pause function *************************** */
@@ -66,15 +68,17 @@ game [SymbolTable st] returns [Code c]
     	c.append("function pause(){\n");
     	c.append("\tif(!paused){\n");
     	c.append("\t\t");
+    	c.append("refresh = ");
     	c.append(Code.genSetInterval("refreshGame","10"));
     	c.append("\t\tpaused=true;\n");
+    	c.append("\t\talert('PAUSE');\n");
     	c.append("\t}\n");
     	
     	
 
     	c.append("\telse{\n");
     	c.append("\t\t");
-    	c.append(Code.genClearInterval("refreshGame"));
+    	c.append(Code.genClearInterval("refresh"));
     	c.append("\t\tpaused=false;\n");
     	c.append("\t}\n");
     	
@@ -414,7 +418,7 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	|^(ENDS_KW GAME) 
 	|^(STARTS_KW IDENT)
 	|^(STARTS_KW GAME)
-	|^(PAUSE_KW IDENT	{c.append("pause()");}	)						//TO DO
+	|^(PAUSE_KW IDENT	{c.append("\t");	c.append("pause();\n");}	)						//TO DO
 	|^(MUTE_KW mode_mute[st] IDENT)
 	|^(PLAY_KW IDENT)
 	|^(STOP_KW IDENT)

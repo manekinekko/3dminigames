@@ -464,7 +464,7 @@ public class Code {
 
     	c.append("function " + def.getName() + "() {\n");
     	c.append(def.getCode());
-    	c.append("}\n");
+    	c.append("}\n\n");
 	
     	return c;
     	

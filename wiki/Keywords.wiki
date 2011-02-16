@@ -2,3 +2,12 @@
 =Glossaire des mots-clés=
 
 *Classer les mots-clés par catégorie*
+
+* Definition de jeu :::::::::::::::::::::::::::::::::::::::*
+
+*AT*
+
+Specifie valeur(s) d'un attibut.
+
+ex:
+bazooka has orientation *AT* 0 0 0; 

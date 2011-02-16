@@ -102,13 +102,14 @@
 	};
 	 	
 	/**
-	 * Get a stored type's info from the local storage.
+	 * Get a stored object's info from the local storage.
 	 * @param {String} t The type name
 	 * @return {Object} (see _get)
 	 * @see Object._get
 	 */
-	M3D.DB.getType = function(t){
-		return _get(t+DB_PATTERN_TYPE);
+	M3D.DB.getObject = function(t){
+		t = _regex(DB_PATTERN_OBJ).test(t) ? t : t+DB_PATTERN_OBJ;
+		return _get(t);
 	};
 	
 	/**
@@ -118,7 +119,8 @@
 	 * @see Object._get
 	 */
 	M3D.DB.getAttributes = function(t){
-		return _get(t+DB_PATTERN_ATTR);
+		t = _regex(DB_PATTERN_ATTR).test(t) ? t : t+DB_PATTERN_ATTR;
+		return _get(t);
 	};
 	
 	/**
@@ -143,23 +145,27 @@
 	
 	/**
 	 * Load and add stored 3D models into canvas.
-	 * @see Object.getType
+	 * @see Object.getObject
 	 * @see Object.M3D.GUI.importModel
 	 */
 	M3D.DB.load = function(){
 		var key = null;
 		var value = null;
 		for( var i=0; i<localStorage.length; i++ ){
+			
 			key = localStorage.key(i);
             
-			var Exp = new RegExp('/\\'+M3D.DB.PATTERN_OBJ+'$/');
-			if ( Exp.test(key) ){
+			var exp = _regex(DB_PATTERN_OBJ);
+			
+			if ( exp.test(key) ){
 				
-				value = M3D.DB.getType(key);
+				value = M3D.DB.getObject(key);
 				
 				M3D.GUI.importModel({
-					docUrl: value.url,
-					autoAddToScene: true
+					'uid': key.replace(DB_PATTERN_OBJ, ''),
+					'name': value.name,
+					'docUrl': value.url,
+					'autoAddToScene': true
 				});
 
 	            log("Importing model '"+key+"' from '"+value.url+"' at position '("+value.position.X+","+value.position.Y+","+value.position.Z+")'");
@@ -186,17 +192,22 @@
 	M3D.DB.updateSelectedEntry = function(object){
 	
 		var uid = object.uid;
-		var updateobj = JSON.parse(localStorage.getItem(uid+DB_PATTERN_OBJ));
-		updateobj.position.X = object.getLocX();
-		updateobj.position.Y = object.getLocY();
-		updateobj.position.Z = object.getLocZ();
-		updateobj.scale.X = object.getScaleX();
-		updateobj.scale.Y = object.getScaleY();
-		updateobj.scale.Z = object.getScaleZ();
-		updateobj.rotation.X = object.getRotX();
-		updateobj.rotation.Y = object.getRotY();
-		updateobj.rotation.Z = object.getRotZ();
-		localStorage.setItem(uid+DB_PATTERN_OBJ, JSON.stringify(updateobj));
+		if (updateobj){
+			var updateobj = M3D.DB.getObject(uid)
+			updateobj.position.X = object.getLocX();
+			updateobj.position.Y = object.getLocY();
+			updateobj.position.Z = object.getLocZ();
+			updateobj.scale.X = object.getScaleX();
+			updateobj.scale.Y = object.getScaleY();
+			updateobj.scale.Z = object.getScaleZ();
+			updateobj.rotation.X = object.getRotX();
+			updateobj.rotation.Y = object.getRotY();
+			updateobj.rotation.Z = object.getRotZ();
+			M3D.DB.setObject({
+				'uid': uid, 
+				'value': JSON.stringify(updateobj)
+			});
+		}
 	}
 	
 	/**
@@ -326,6 +337,16 @@
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Create a new RegExp object with the pattern v
+	 * @param {Object} v The pattern used to create the regexp
+	 * @return The RegExp object
+	 * @type {RegExp}
+	 */
+	_regex = function(v){
+		return new RegExp(v+'$');
 	}
 	
 })(window.M3D);

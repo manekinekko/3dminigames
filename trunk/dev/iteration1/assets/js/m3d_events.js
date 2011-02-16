@@ -37,7 +37,36 @@ $(function(){
 	 * Bind the live update of the 3D model position/rotation/scale's values.
 	 * @see M3D.GUI.updateValues
 	 */
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); });
+	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); })
+	/**
+	 * Bind the slider insert/remove
+	 */
+	var _lastSeletcedInput;
+	$('#info-bottom input[type="text"]:not([disabled])').bind('focus', function(){
+		
+		_lastSeletcedInput = $(this);
+		
+		$('#slider').show().css({
+			'top':$(this).offset().top-20,
+			'left':$(this).offset().left
+		});
+	}).bind('blur', function(){
+		$('#slider').hide();
+	});
+	/**
+	 * Bind the slider logic
+	 */
+	$("#slider").slider({
+		animate: true,
+		max:1000,
+		min:-1000,
+		value:0,
+		step:0.0001,
+		slide: function(event, ui) {
+			_lastSeletcedInput.val(ui.value);
+			M3D.GUI.updateValues(_lastSeletcedInput);
+		}
+	});
 
 	/**
 	 * Bind the toggle view of the bounding box, weither when clicking on the switchBbox check box

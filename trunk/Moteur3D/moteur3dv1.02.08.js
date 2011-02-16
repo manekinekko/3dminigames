@@ -340,12 +340,12 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorTranslate = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+	var vectorTranslate = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],0);
 	var absoluteTranslation = GLGE.mulMat4Vec4(matrixRef,vectorTranslate);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var currentRelativePosition = GLGE.Vec4(tabObject[id].getLocX(),tabObject[id].getLocY(),tabObject[id].getLocZ(),1);
 	var currentAbsolutePosition = GLGE.mulMat4Vec4(matrixObject,currentRelativePosition);
-	var newAbsolutePosition = GLGE.addMat4(currentAbsolutePosition,absoluteTranslation);
+	var newAbsolutePosition = GLGE.addVec4(currentAbsolutePosition,absoluteTranslation);
 	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
 	// COLLISION trajectoire
 	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
@@ -364,7 +364,7 @@ M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],0);
 	var newAbsolutePosition = GLGE.mulMat4Vec4(matrixRef,vectorPos);
 	
 	var matrixObject = tabObject[id].getModelMatrix();
@@ -386,12 +386,12 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],O);
 	var absoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var currentRelativeRotation = GLGE.Vec4(tabObject[id].getRotX(),tabObject[id].getRotY(),tabObject[id].getRotZ(),1);
 	var currentAbsoluteRotation = GLGE.mulMat4Vec4(matrixObject,currentRelativeRotation);
-	var newAbsoluteRotation = GLGE.addMat4(currentAbsoluteRotation,absoluteRotation);
+	var newAbsoluteRotation = GLGE.addVec4(currentAbsoluteRotation,absoluteRotation);
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
 	// COLLISION
 	tabObject[id].setRot(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
@@ -410,7 +410,7 @@ M3D.MOTEUR.setAngle = function(id,tabRot,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],0);
 	var newAbsoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);

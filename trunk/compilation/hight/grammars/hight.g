@@ -45,10 +45,10 @@ game :
 	(gameData FIN)?
 	(newType FIN)*
 	(init FIN)+
-	(definition (FIN)?)*
-	(commande (FIN)?)+
-	(reglesJeu (FIN)?)+
-	(iaBasique (FIN)?)*
+	(definition FIN)*
+	(commande FIN)+
+	(reglesJeu FIN)+
+	(iaBasique FIN)*
 	  -> ^(GAME_KW gameData? newType* init+ definition* commande+ reglesJeu+ iaBasique*)
 	;
 
@@ -61,11 +61,15 @@ gameData :
 attributGame :
 	GRAVITY_KW AT (FLOAT
 		  -> ^(GRAVITY_KW FLOAT)
-		| FLOAT FLOAT FLOAT
+	| FLOAT FLOAT FLOAT
 		  -> ^(GRAVITY_KW FLOAT FLOAT FLOAT) )
-	| SCORE AT FLOAT
-	  -> ^(SCORE_KW FLOAT)
+	| 'turnbased at ' BOOLEAN
+        | 'world at' mapType
+        | 'gridsize at' FLOAT
+        | 'name at' STRING
 	;
+
+mapType : 'generic'|'grid'|'ribbon';
 
 /* Inheritance, creation of type */
 newType :
@@ -85,17 +89,20 @@ init :
 	  -> ^(INIT_IS_KW IDENT declarationObjet)
 	| accesClasse HAS allocationObject (VIRG allocationObject)* // check the types and its attributes
 	  -> ^(INIT_HAS_KW accesClasse allocationObject+)
+        |'insert' IDENT 'in' IDENT (NUM operation)?  //Cast entier | si pas NUM operation -> fin de liste.
+        |'remove' (IDENT|NUM operation) 'from' IDENT
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet :
-	typeEntity entityMode? 
-	  -> ^(DEC typeEntity entityMode?)   // interaction is neutral by default
-	| LIST_KW (OF (operation)? (IDENT) (WITH (operation)? (IDENT))* )?  //operation if the object is duplicable
+	typeEntity dupli?
+	  -> ^(DEC typeEntity dupli?)   // interaction is neutral by default
+	| LIST_KW (OF (operation)? (IDENT) (',' (operation)? (IDENT))* )?  //operation if the object is duplicable
 	  ->^(LIST_KW (operation? IDENT)+)
 	| CAMERA (view PERSON -> ^(CAMERA_KW PERSON view) | FREE -> ^(CAMERA_KW FREE))?
 	| MEDIA (LOOP ->^(MEDIA_KW LOOP) | ONCE ->^(MEDIA_KW ONCE))? 						 // sound, music or video played in loop or once
-	| IN IDENT -> ^(IN_KW IDENT)									  // ident of a list to add an element
+	| IN IDENT -> ^(IN_KW IDENT)
+        | PLAYER solo?								  // ident of a list to add an element
   ;
 
 typeEntity :
@@ -108,11 +115,6 @@ entityMode:
 	| dupli
 	;
 	
-interaction :
-	ALLY
-	| ENEMY
-	| NEUTRAL
-	;
 
 dupli :
 	DUPLICABLE	
@@ -157,18 +159,28 @@ consequ :
   | affectation
   | activCommande
   | IDENT
-  | VICTORY_KW
-  | DEFEAT_KW
+  | VICTORY_KW IDENT (':' STRING)?
+  | DEFEAT_KW IDENT (':' STRING)? // ident est un Player ou une Team
   ;
 
 action :
 	accesClasse actionObjet
-	| (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)
+	| (IDENT | GAME) (ENDS_KW^ | STARTS_KW^ | PAUSE_KW^) (':' STRING)?  //IDENT est un compteur
 	| (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
 	| BLOCK_KW^ transformation OF! accesClasse coordinates
 	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) ((IN!|ON!) accesLocal | AT! coordinates)?
 	| WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
 	| SAVE_KW
+        | 'nextturn' IDENT                                           //IDENT = joueur qui devient actif
+        | JUMP operation                                           //ajout lexical a faire
+        | MOVE (LEFT | RIGHT | FORWARD | BACKWARD | UP |DOWN ) 'by' operation
+        | TURN (LEFT | RIGHT | UP |DOWN |CLOCKWISE |ANTICLOCKWISE) 'by' operation
+        | ACCELERATE
+        | BRAKE
+        | 'reload' IDENT 'with' // ... // action à rajouter (mise en suspend)
+        | IDENT 'grasps' IDENT
+        | IDENT 'expels' IDENT operation
+        | IDENT 'ingests' IDENT IDENT                        // IDENT1: perso qui ingest| INDENT2 : ce qui est ingéré|IDENT3: là ou l'objet sera ranger
 	;
 
 actionObjet :
@@ -192,41 +204,26 @@ coordinates :
 /* Initialization of commands */
 
 commande :
-	COMMAND_KW^ (IDENT IS!|PLAYER! FLOAT)? actionCommande (VIRG! actionCommande)*
+	COMMAND_KW^ IDENT FOR! player_list IS! actionCommande (VIRG! actionCommande)*
 	;
+
+player_list: IDENT (',' IDENT)*
 
 actionCommande :
-	MOUSE souris FOR actionCommandeType
-	  -> ^(MOUSE_KW souris actionCommandeType)
-	| KEY clavier FOR actionCommandeType // ident : that was defined with means
-	  -> ^(KEY_KW clavier actionCommandeType)
-	;
-
-actionCommandeType :
-	IDENT | actionCommandePressee | actionCommandeMaintenue
+	MOUSE souris ('pressed'|'held'|'released')? FOR IDENT
+	  -> ^(MOUSE_KW souris IDENT)
+	| KEY clavier ('pressed'|'held'|'released')? FOR IDENT // ident : that was defined with means
+	  -> ^(KEY_KW clavier IDENT)
 	;	
  
 souris :
-  WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
+  WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN  // modif analyseur lexical pour MIDDLE
   ;
  
 clavier :
   LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
   ;
  
-actionCommandePressee :
-  JUMP operation
-  | PAUSE_KW
-  | STOP_KW
-  ;
-  
-actionCommandeMaintenue :
-  MOVE (LEFT | RIGHT | FORWARD | BACKWARD)
-  | TURN (LEFT | RIGHT)
-  | ACCELERATE
-  | BRAKE
-  ;
-  
 activCommande :
   (ACTIVATE_KW^ | DISABLE_KW^) typeCommand
 	;
@@ -240,7 +237,7 @@ typeCommand :
     | KEYBOARD;
 
 reglesJeu :
-  RULE_KW^ (IDENT IS!)?  declencheur THEN! consequences
+  RULE_KW^ (IDENT IS!)?  declencheur THEN! IDENT
   ;
  
 declencheur :
@@ -250,8 +247,8 @@ declencheur :
     -> ^(BECOMES_VAR_KW variable varOuNB)
   | IDENT BECOMES playerOuInteraction
     -> ^(BECOMES_ID_KW IDENT playerOuInteraction)
-  | VICTORY_KW
-  | DEFEAT_KW
+  | VICTORY_KW 'of' ('Player'| IDENT) //ident est le nom d'1 Team ou d'1 Player, Player la classe (global)
+  | DEFEAT_KW 'of' ('Player'| IDENT)
   ;
 
 varOuNB :	variable | FLOAT;
@@ -259,11 +256,11 @@ varOuNB :	variable | FLOAT;
 playerOuInteraction
 	:	(PLAYER| interaction);
 
-declencheurTK 
-	:	(TOUCHES_KW^ | KILLS_KW^) ((OTHER)? accesGlobal | accesLocal);
+declencheurTK                                       // ajout dans le lexical dans OWNES,...
+	:	(TOUCHES_KW^ | KILLS_KW^ | OWNES | NOTOWNES) ((OTHER)? accesGlobal | accesLocal);
 	
 declencheurKT
-	:	(KILLED_KW^ | TOUCHED_KW^) (BY! ((OTHER)? accesGlobal | accesLocal))?;
+	:	(KILLED_KW^ | TOUCHED_KW^ | OWNED | NOTOWNED) (BY! ((OTHER)? accesGlobal | accesLocal))?;
 
 /* Conditions */  
 siAlors :
@@ -285,24 +282,27 @@ conditionEt :
 
 cond :
   etat
-  | COMP! operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   a cause des parentheses qu'on retrouve dans operation
-  | PG conditions PD 
+  | operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   a cause des parentheses qu'on retrouve dans operation
+  | PG conditions PD
+  | IDENT 'contains' IDENT //liste, objet contenu dans la liste
   ;
 
 etat :
   accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesGlobal | accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
   | (IDENT | GAME) IS! (NOT)? (FINISHED_KW^ |STARTED_KW^ | PAUSED_KW^ | MUTED_KW^ (ON | OFF) | PLAYED_KW^ | STOPPED_KW^ )  // game,counter,media
   //| 'true'^                                                   
-  | VICTORY_KW
-  | DEFEAT_KW
+  | VICTORY_KW 'of' IDENT
+  | DEFEAT_KW 'of' IDENT  // ident est un Player ou une Team
   ;
   
 affectation :
   ((ASSIGN_KW^ | ADD_KW^ | SUB_KW^) operation) FOR! variable 
   | INVERT_KW^ variable WITH! variable
   ;
-  
-iaBasique : IA_KW^ accesClasse IS! actionObjet (VIRG! actionObjet)*;
+
+/*IA*/
+  //Changer en AI
+iaBasique : IA_KW^ IDENT IS! reglesjeu (VIRG! reglesjeu)*; //verif session
 
 /* Arithmetic expression */
 
@@ -327,11 +327,12 @@ operationBracket :
 	PG! operation PD!
 	| variable
 	| FLOAT
+        | ('distance'| 'angle') 'between ' IDENT ' and ' IDENT //les IDENT sont des entités.
 	;
 
 variable :
   (X^ | Y^ | Z^) OF! typeCoordonnees OF! accesLocal
-  | IDENT OF accesLocal
+  | IDENT OF accesLocal                    //size, first, last of list (Ne pas Zapper)
     -> ^(VAR_I_KW IDENT accesLocal)
   | SCORE OF GAME
     -> GAME_SCORE_KW

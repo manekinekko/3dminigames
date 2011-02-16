@@ -590,7 +590,7 @@ MOTEUR3D.changeParentCamera = function(idCamera,idNewParent){
 	}
 },
 
-translateCamera = function(idCamera,tabVector,idRef){
+MOTEUR3D.translateCamera = function(idCamera,tabVector,idRef){
 	var Mcamera = tabCamera[idCamera].getModelMatrix();
 	if(idRef == null){
 		var Mref = tabCamera[idCamera].getModelMatrix();

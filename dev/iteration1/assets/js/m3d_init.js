@@ -56,3 +56,4 @@ var canvas = document.getElementById('canvas'),
 	scene,
 	hoverobj,
 	now;
+	mouseRecord = (new GLGE.MouseInput(canvas)).getMousePosition();							// ajout Tom 16/03 : rotateCam

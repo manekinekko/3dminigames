@@ -22,5 +22,9 @@ Pair p3;
 		assertEquals(p1.toString(),"(3, 5)");
 		assertEquals(p1.getFirst(),3);
 		assertEquals(p1.getSecond(),5);
+		p1.setFirst(7);
+		assertEquals(p1.getFirst(),7);
+		p1.setSecond(8);
+		assertEquals(p1.getSecond(),8);
 	}
 }

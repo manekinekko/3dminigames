@@ -22,7 +22,7 @@ public class AttributeValueTest extends TestCase {
 		av4 = new AttributeValue(new Duration(1, "ms"));
 		av5 = new AttributeValue(av3.getCode(), AttributeValue.Type.STRING);
 	}
-	
+	//comment tester AGGR ?
 	private Code value;
     private Type type;
     boolean b1 = true;

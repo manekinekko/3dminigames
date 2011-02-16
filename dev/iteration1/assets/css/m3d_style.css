@@ -108,7 +108,7 @@ width:200px;
 #viewmenu {
 top: -40px;
 width: 690px;
-height: 60px;
+height: 30px;
 padding: 5px;
 z-index: 20;
 background: transparent;
@@ -358,4 +358,24 @@ background:transparent url('img/cursor-move.png') no-repeat center center scroll
 }
 .cursor.model-rotate {
 background:transparent url('img/cursor-rotate.png') no-repeat center center scroll;
+}
+
+/* slider */
+#slider {
+position:absolute;
+display:none;
+z-index:1000;
+width:500px;
+}
+.ui-slider-horizontal {
+height:30px;
+background:#fff;
+border:1px solid #aaa;
+height:4px;
+}
+.ui-slider-handle {
+height:20px !important;
+width:10px !important;
+top:-8px !important;
+cursor:pointer !important;
 }

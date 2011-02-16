@@ -7,7 +7,7 @@
 	// Contants
 	// values in pixels
 	M3D.GUI.ANIMATE_BOTTOM_START_POS = 300;
-	M3D.GUI.ANIMATE_BOTTOM_END_POS = 480;
+	M3D.GUI.ANIMATE_BOTTOM_END_POS = 500;
 	M3D.GUI.ANIMATE_WINDOW_OPEN_POS = 150;
 	M3D.GUI.ANIMATE_WINDOW_CLOSE_POS = -300;
 	
@@ -143,7 +143,7 @@
 		var found = false;
 	
 		var uidSelect = $('#select-model').val();
-	
+						
 	    var objects = scene.getObjects();
 	
 		if ( uidSelect === "" ){	
@@ -153,9 +153,11 @@
 			for (var i = 0; !found && i < objects.length; i++) {
 				
 				var parent = objects[i].parent;
-				
-				if (parent.uid == uidSelect) {
+				if (parent.uid === uidSelect) {
+					
+					// update the global obj var
 					obj = parent;
+					
 					M3D.GUI.setMaterialEmit(0.1);
 					
 					//scene.camera.setLookat(obj.getPosition());
@@ -233,8 +235,8 @@
 			M3D.lastImportedModel = docCollada;
 			
 			if ( data.autoAddToScene ){
-				M3D.GUI.addObjectToScene();
-				
+				M3D.GUI.addObjectToScene({'uid':data.uid});
+				M3D.GUI.addOptionToSelectBox({'uid':data.uid, 'name':data.name});
 			}
 			else {
 				// ask for entity info
@@ -570,7 +572,7 @@
 		var uid = _nameElement.attr('uid');
 		var name  = _nameElement.val();
 			
-		$('#select-model').append('<option value="'+uid+'">'+name+'</option>');
+		M3D.GUI.addOptionToSelectBox({'uid':uid, 'name':name});
 
 		M3D.GUI.hidePopup();
 
@@ -614,6 +616,10 @@
 
 	}
 	
+	M3D.GUI.addOptionToSelectBox = function(o){
+		$('#select-model').append('<option value="'+o.uid+'">'+o.name+'</option>');
+	}
+	
 	
 	// -- add object to scene (TODO see inside)
 	M3D.GUI.addObjectToScene = function( values ) {
@@ -636,8 +642,9 @@
 			rotX: v.rotX || 0.05,
 			rotY: v.rotY || 0.05,
 			rotZ: v.rotZ || 0.05
-		}).setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
-			.getObjects()[0].parent.uid = $('#entity-info #name').attr('uid');
+		})
+			.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+			.getObjects()[0].parent.uid = v.uid || $('#entity-info #name').attr('uid');
 		
 		scene.addChild(M3D.lastImportedModel);
 		
@@ -671,7 +678,10 @@
 				case 'rotZ': if ( value > 0 ) _obj.setRotZ( value ); break;							
 				
 			}
+			
 			M3D.DB.updateSelectedEntry(_obj);
+			
+			$("#slider").slider('value', [value]);
 		}
 	
 	};
@@ -1217,6 +1227,8 @@
 		// hide object info
 		$('#info-bottom').animate({top:M3D.GUI.ANIMATE_BOTTOM_START_POS}, 150);
 		$('#info-right').animate({right: M3D.GUI.ANIMATE_RIGHT_START_POS}, 150);
+		
+		$('#slider').hide();
 		
 	}
 	

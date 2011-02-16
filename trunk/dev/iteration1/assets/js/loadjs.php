@@ -33,7 +33,7 @@ $files = array(
 				'm3d_events.js'
 		);
 
-if ( isset($_GET['db']) && $_GET['db'] ) {
+if ( isset($_GET['db'])) {
 	$files[] = 'm3d_db.js';
 }
 else {

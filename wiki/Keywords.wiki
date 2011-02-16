@@ -59,7 +59,132 @@ TYPE Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le travers
 
 *AND*
 
-'ET' logique.
+Union entre les caractéristiques des types. Ordre est important; dans le cas de duplication des attributs AND ajoute juste les attributs manquant.
 {{{
 type Lapin is Character AND Projectile;
 }}}
+
+*Initialisations* ::::::::::::::::::::::::::::::::::::::::::
+
+
+*IS*
+
+Déclaration de type d'un entité.
+{{{
+chasseur IS Character;
+}}}
+
+*PLAYER*
+
+Déclare que joueur contrôle cet entité.
+{{{
+chasseur is Character PLAYER;
+}}}
+
+*DUPLICABLE*
+
+Déclare qu'un entité est duplicable. Génération de plusieurs objets de même type est possible pendant le jeu.
+{{{
+missile is Projectile ally DUPLICABLE;
+}}}
+
+*LIST* ?????
+
+Déclarer une liste des opérations ou identificateurs. Liste d'opérations c'est possible pour les opérations duplicables.
+{{{
+
+}}}
+
+*OF* ?????
+
+Appartenance des identificateur/opération à une liste.
+{{{
+
+}}}
+
+*WITH* ?????
+
+{{{
+}}}
+
+*CAMERA*
+
+Définition de point de vue.
+{{{
+CAMERA first person;
+}}}
+
+*FIRST PERSON*
+
+Point de vue de premier personne.
+{{{
+camera FIRST person;
+}}}
+
+*THIRED PERSON*
+Point de vue troisième personne.
+{{{
+camera THIRD person;
+}}}
+
+*PERSON*
+
+=> FIRST PERSON , THIRD PERSON
+
+*FREE*
+
+Point de vue d'un camera libre.
+{{{
+camera FREE;
+}}}
+
+*MEDIA* ?????
+
+Musique ou vidéo interprété une fois ou en boucle.
+{{{
+MEDIA once;
+}}}
+
+*LOOP*
+
+Médias va interpréter en boucle.
+{{{
+media LOOP;
+}}}
+
+*ONCE*
+
+Médias va interpréter une seul fois.
+{{{
+media ONCE;
+}}}
+
+*IN* ?????
+
+Appartenance d'un identificateur à une liste.
+{{{
+lapin5 is IN LapinList;
+}}}
+
+*ALLY*
+
+Pour déclarer les caractères amis.
+{{{
+chasseurNoir is Chasseur ALLY; 
+}}}
+
+*ENEMY*
+
+Pour déclarer les caractères ennemis.
+{{{
+lapin2 is Lapin ENEMY; 
+}}}
+
+*NEUTRAL*
+
+Pour déclarer les caractères neutres.
+
+{{{
+bird is Bird NEUTRAL;
+}}}
+

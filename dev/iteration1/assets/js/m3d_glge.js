@@ -14,12 +14,8 @@ doc.onLoad = function() {
 	
 	// Initilization
 	M3D.GUI.init();
-
-	//local storage
-	if (M3D.DB.init()){ 
-		M3D.DB.init();
-		M3D.Editor.init();
-	}
+	M3D.DB.init();
+	M3D.Editor.init();
 	
 	// -- objet and camera rotation
 	controller.onchange = function(xRot, yRot) { 

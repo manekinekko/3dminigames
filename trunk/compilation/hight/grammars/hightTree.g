@@ -26,20 +26,78 @@ options {
  
 game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
-    ^(GAME_KW gd=gameData[st]? newType[st]* 
+    ^(GAME_KW 
+    
+    {
+    
+  	 	/* ************* Bool Array -> command ************************* */
+    
+    	c.append("/* Array of commands */\n");
+    	c.append("var cmdTab = new Array();\n\n");
+    	
+	
+
+		/* ************* Paused variable ************************* */
+
+		
+		c.append("/* The game is paused(or not) */\n");
+		c.append("var paused = false;\n\n");
+
+
+
+
+    	/* ************* Main function and refresh loop call ****************************** */
+    	
+    	c.append("/* Main function */\n");
+    	c.append("window.addEventListener('load', function () {\n");
+    	c.append("\t");
+    	c.append("refresh = ");
+    	c.append(Code.genSetInterval("refreshGame","10"));
+    	c.append("}\n\n");
+    	
+    	/* ************* Refresh loop ****************************** */
+    	
+    	c.append("/* Refresh loop */\n");
+    	c.append("\tfunction refreshGame(){\n");    	
+    	c.append("}\n\n");
+    	
+    	/* ************* Pause function *************************** */
+    	
+    	c.append("function pause(){\n");
+    	c.append("\tif(!paused){\n");
+    	c.append("\t\t");
+    	c.append(Code.genSetInterval("refreshGame","10"));
+    	c.append("\t\tpaused=true;\n");
+    	c.append("\t}\n");
+    	
+    	
+
+    	c.append("\telse{\n");
+    	c.append("\t\t");
+    	c.append(Code.genClearInterval("refreshGame"));
+    	c.append("\t\tpaused=false;\n");
+    	c.append("\t}\n");
+    	
+   		c.append("}\n\n");
+    	
+    }
+        
+    
+    gd=gameData[st]? newType[st]* 
 	
 	in=initialization[st]
 
     {
-	st.print();
-	System.out.println(in.getCode());
-        c.append(in);
+	//st.print();
+	//System.out.println(in.getCode());
+    c.append(in);
     }
      
 	(def=definition[st]
  
     {
-	System.out.println(def.getCode()+"\n");c.append(in);
+	//System.out.println(def.getCode()+"\n");
+	c.append(def);
     })*
 
      com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
@@ -356,18 +414,24 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	|^(ENDS_KW GAME) 
 	|^(STARTS_KW IDENT)
 	|^(STARTS_KW GAME)
-	|^(PAUSE_KW IDENT)
+	|^(PAUSE_KW IDENT	{c.append("pause()");}	)						//TO DO
 	|^(MUTE_KW mode_mute[st] IDENT)
 	|^(PLAY_KW IDENT)
 	|^(STOP_KW IDENT)
 	|^(BLOCK_KW transformation[st] accesClass[st] coordinates[st])
 	|^(EFFACE_KW typeAcces[st] typeDestination[st]?)
-	|^(GENERATE_KW ta=typeAcces[st]{
+	|^(GENERATE_KW ta=typeAcces[st] td=typeDestination[st]?)	{
 		for(Iterator<Symbol> it = ta.iterator() ; it.hasNext();){
 			Symbol e = it.next();
 			
 			//Erreur entité déja générée
 			if(!((Entity)e).getDuplicable() && (e.getGenerate()>=1)){System.out.println("L'entité " + e.getName() + " n'est pas duplicable!"); System.exit(-1);} 
+			
+			if(td!=null){
+				e.getAttribute("posX").setCode(td.getX());
+				e.getAttribute("posY").setCode(td.getY());
+				e.getAttribute("posZ").setCode(td.getZ());
+			}
 			
 			e.toGenerate();
 			c.append("\t");		c.append(Code.genEntity((Entity) e));	
@@ -376,7 +440,7 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 	
 	// TO DO -> MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
 	
-	} typeDestination[st]?)				//TO DO
+	} 			
 	|^(WAIT_KW operation[st] timeUnit[st] consequences[st])
 	|SAVE_KW
 	;
@@ -384,8 +448,8 @@ action [SymbolTable st] returns [Code c]@init{ c = new Code();}:
 typeAcces [SymbolTable st] returns [ArrayList<Symbol> l]:
 	ac=accesClass[st] {l=ac;}| operation[st] (IDENT | accesClass[st]);		//TO DO
 
-typeDestination [SymbolTable st] returns [Code c]: 
-	accesClass[st] | coordinates[st]{};
+typeDestination [SymbolTable st] returns [Coordonnees coord]: 
+	accesClass[st] | coo=coordinates[st]{coord=coo;};
 
 actionObjet [SymbolTable st] returns [Code c]:
   DIES_KW

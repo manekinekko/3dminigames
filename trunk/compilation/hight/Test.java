@@ -122,7 +122,10 @@ try{
     			SymbolTable ts = new SymbolTable();
     	                Model.init(ts);
 
-    			Code c = tparser.game(ts); // est cense rendre le code
+    			Code c = tparser.game(ts); 
+    			
+    			System.out.println(c.getCode());
+    			// est cense rendre le code
     			//		c3a.print();
     			//		CodeGenerator cg = new CodeGenerator(output);
 

@@ -524,5 +524,38 @@ public class Code {
             }
             return c;
         }
+        
+        
+        
+        //clearInterval(id_of_setinterval)
+        public static Code genClearInterval(String id){
+            Code c = new Code();
+            		
+            c.append("clearInterval(");
+            c.append(id);
+            c.append(");\n");
+            
+            return c;
+        }
+        
+        //setInterval(code,millisec
+        public static Code genSetInterval(String cod , String t){
+            Code c = new Code();
+            		
+            c.append("setInterval(");
+            c.append(cod);
+            c.append(",");
+            c.append(t);       
+            c.append(");\n");
+            
+            return c;
+        }
+        
+        
+        
+        
+        
+        
+        
         	
 }

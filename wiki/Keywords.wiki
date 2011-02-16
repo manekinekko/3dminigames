@@ -9,5 +9,12 @@
 
 Specifie valeur(s) d'un attibut.
 
-ex:
-bazooka has orientation *AT* 0 0 0; 
+ex: bazooka has orientation *AT* 0 0 0; 
+
+*GAME*
+
+Le mot-clé pour définition les attributs principaux de jeu. Chaque jeu peut avoir plusieurs attributs.
+
+ex: *GAME* has gravity at 10, score at 0; 
+
+

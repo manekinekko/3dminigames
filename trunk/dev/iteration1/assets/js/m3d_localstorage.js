@@ -75,7 +75,7 @@
 	 * @see Object._set
 	 */
 	M3D.DB.setObject = function(data){
-		data.name += DB_PATTERN_OBJ;
+		data.uid += DB_PATTERN_OBJ;
 		return _set(data);
 	};
 	
@@ -86,7 +86,7 @@
 	 * @see Object._set
 	 */
 	M3D.DB.setType = function(data){
-		data.name += DB_PATTERN_TYPE;
+		data.uid += DB_PATTERN_TYPE;
 		return _set(data);
 	};
 	
@@ -97,7 +97,7 @@
 	 * @see Object._set
 	 */
 	M3D.DB.setAttributes = function(data){
-		data.name += DB_PATTERN_ATTR;
+		data.uid += DB_PATTERN_ATTR;
 		return _set(data);
 	};
 	 	
@@ -152,7 +152,7 @@
 		for( var i=0; i<localStorage.length; i++ ){
 			key = localStorage.key(i);
             
-			var Exp = new RegExp('/\\'+DB_PATTERN_OBJ+'$/');
+			var Exp = new RegExp('/\\'+M3D.DB.PATTERN_OBJ+'$/');
 			if ( Exp.test(key) ){
 				
 				value = M3D.DB.getType(key);
@@ -162,7 +162,7 @@
 					autoAddToScene: true
 				});
 
-	            log("Importing model '"+key+"' from '"+value.url+"'");
+	            log("Importing model '"+key+"' from '"+value.url+"' at position '("+value.position.X+","+value.position.Y+","+value.position.Z+")'");
 			}
 
 		}
@@ -178,13 +178,26 @@
 	};
 	
 	/**
-	 * Update Datas as we move one object ... ???
-	 * @param {Object} objectName ???
+	 * Update Datas as we move one object
+	 * @param {Object} object The given key of the entry that needs to be updated
 	 * @deprecated This function is not yet implemented
 	 */
-	M3D.DB.updateEntries = function (objectName){
-			alert("C'est un test");
-	};
+	
+	M3D.DB.updateSelectedEntry = function(object){
+	
+		var uid = object.uid;
+		var updateobj = JSON.parse(localStorage.getItem(uid+DB_PATTERN_OBJ));
+		updateobj.position.X = object.getLocX();
+		updateobj.position.Y = object.getLocY();
+		updateobj.position.Z = object.getLocZ();
+		updateobj.scale.X = object.getScaleX();
+		updateobj.scale.Y = object.getScaleY();
+		updateobj.scale.Z = object.getScaleZ();
+		updateobj.rotation.X = object.getRotX();
+		updateobj.rotation.Y = object.getRotY();
+		updateobj.rotation.Z = object.getRotZ();
+		localStorage.setItem(uid+DB_PATTERN_OBJ, JSON.stringify(updateobj));
+	}
 	
 	/**
 	 * Update data ... ??? 
@@ -223,9 +236,10 @@
 	 * @return (see M3D.DB.contains)
 	 * @see Object.contains
 	 */
+	 
 	M3D.DB.containsObj = function(v){
-		log(v+DB_PATTERN_OBJ);
-		return M3D.DB.contains(v+DB_PATTERN_OBJ);
+		log(v+M3D.DB.PATTERN_OBJ);
+		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
 	};
 	
 	/**
@@ -242,8 +256,8 @@
 				alert("[DB] An object is required to store data!");
 				return false;				
 			}
-			if (!data.name) {
-				alert("[DB] A 'name of String' key is required to store data!");
+			if (!data.uid) {
+				alert("[DB] A 'value of ObjectUID' key is required to store data!");
 				return false;
 			}
 			if (!data.value) {
@@ -251,7 +265,7 @@
 				return false;
 			}
 			
-			localStorage.setItem(data.name, JSON.stringify(data.value));
+			localStorage.setItem(data.uid, JSON.stringify(data.value));
 			return true;
 			
 		} catch (e) {

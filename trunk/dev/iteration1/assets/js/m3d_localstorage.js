@@ -152,7 +152,7 @@
 		for( var i=0; i<localStorage.length; i++ ){
 			key = localStorage.key(i);
             
-			var Exp = new RegExp('/\\'+M3D.DB.PATTERN_OBJ+'$/');
+			var Exp = new RegExp('/\\'+DB_PATTERN_OBJ+'$/');
 			if ( Exp.test(key) ){
 				
 				value = M3D.DB.getType(key);
@@ -224,8 +224,8 @@
 	 * @see Object.contains
 	 */
 	M3D.DB.containsObj = function(v){
-		log(v+M3D.DB.PATTERN_OBJ);
-		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
+		log(v+DB_PATTERN_OBJ);
+		return M3D.DB.contains(v+DB_PATTERN_OBJ);
 	};
 	
 	/**

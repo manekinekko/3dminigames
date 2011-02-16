@@ -8,41 +8,58 @@
 *AT*
 
 Spécifie valeur(s) d'un attribut.
-
-ex: bazooka has orientation *at* 0 0 0; 
 {{{
+bazooka has orientation AT 0 0 0; 
 }}}
+
 *GAME*
 
 Le mot-clé pour définition les attributs principaux de jeu. Chaque jeu peut avoir plusieurs attributs.
-
-ex: *game* has gravity at 10, score at 0; 
 {{{
+GAME has gravity at 10, score at 0; 
 }}}
+
 *GRAVITY*
 
 Définie la gravité de environnement. ça peux être définie par un vecteur (trois chiffre) ou un chiffre (gravité vers bas).
-
-ex: game has *gravity* at 1 1 1; 
 {{{
+game has GRAVITY at 1 1 1;
 }}}
+
 *HAS*
 
 Définie attachement d'un attribut à un identificateur.
-
-ex: rabbit *has* Life at 10; rabbit *has* size at 1 1 1; 
-
 {{{
+rabbit *has* Life at 10; rabbit HAS size at 1 1 1; 
 }}}
+
 *SCORE*
 
 Les points obtenus par jouer initialisé ici par un chiffre.
-
-ex: game has *score* at 0;
 {{{
+game has SCORE at 0;
 }}}
 
 *Héritage* ::::::::::::::::::::::::::::::::::::::::::::::::
 
+*IS*
 
+Pour montrer qu'un type hérite de(s) autre(s) type(s). 
+{{{
+Lapin IS Character; 
+}}}
 
+*TYPE*
+
+Définie un nouveau type par combiner les autres types ou identificateurs déjà définie. Il faut que l'identificateur soit défini auparavant et soit héritable.
+
+{{{
+TYPE Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+}}}
+
+*AND*
+
+'ET' logique.
+{{{
+type Lapin is Character AND Projectile;
+}}}

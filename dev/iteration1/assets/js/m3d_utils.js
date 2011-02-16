@@ -2,6 +2,10 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_utils.js
  */
+ 
+ //
+ 
+ 
 (function(M3D){
 	
 	// Contants
@@ -908,24 +912,33 @@
 	}
 	
 	
-	M3D.GUI.cameraRotate = function(){
+	M3D.GUI.cameraRotate = function(){													// fonction modifiée par Tom le 16/02
 		var mousepos = mouse.getMousePosition();
 		mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
 		var width = document.getElementById('canvas').offsetWidth;
+		var height = document.getElementById('canvas').offsetHeight;
 		
 		// Position souris gauche ou droite ?
-		var gauche = mousepos.x <= width/2;
+		var gauche = mousepos.x <= mouseRecord.x;
+		var haut = mousepos.y >= mouseRecord.y;
 		
 		// rotation selon position souris
 		var cam = scene.camera;
 		var camPos = cam.getPosition();
-		var sens;
+		var sens = 0;
+		var monte = 0;
 		if (gauche){
 			sens = 1;
 		} 
 		else {
 			sens = -1;
-		}									
+		}	
+		if (haut){
+			monte = 1;
+		} 
+		else {
+			monte = -1;
+		}		
 		
 		if(!cam.lookAt){
 			cam.setLookat([0,0,0]);
@@ -957,6 +970,7 @@
 				cam.setLocY(camPos.y - sens);
 			}		
 		}
+		cam.setLocZ(camPos.z + monte);
 	}
 	
 	M3D.GUI.toggleBbox = function(){
@@ -1084,9 +1098,9 @@
 		
 		if(obj && obj!=hoverobj){
 			
-			obj = obj.parent; // groupe
+			var _obj = obj.parent; // groupe
 			
-			if(obj.getId()!="mainscene") {
+			if(_obj.getId()!="mainscene") {
 				
 				M3D.GUI.setMaterialEmit(0.1);
 					
@@ -1094,7 +1108,7 @@
 										
 			}
 			
-			hoverobj = obj;
+			hoverobj = _obj;
 			
 			M3D.GUI.toggleShowInfo();
 			

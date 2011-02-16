@@ -911,15 +911,15 @@
 	}
 	
 	
-	M3D.GUI.cameraRotate = function(){
+	M3D.GUI.cameraRotate = function(){													// fonction modifiée par Tom le 16/02
 		var mousepos = mouse.getMousePosition();
-		mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
+		//mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
 		var width = document.getElementById('canvas').offsetWidth;
 		var height = document.getElementById('canvas').offsetHeight;
 		
 		// Position souris gauche ou droite ?
-		var gauche = mousepos.x <= width/2;
-		var haut = mousepos.y >= mouseRecord.y;
+		var gauche = mousepos.x <= mouseRecord.x;
+		var haut = mousepos.y <= mouseRecord.y;
 		
 		// rotation selon position souris
 		var cam = scene.camera;
@@ -931,13 +931,13 @@
 		} 
 		else {
 			sens = -1;
-		}									
+		}	
 		if (haut){
 			monte = 1;
 		} 
 		else {
 			monte = -1;
-		}	
+		}		
 		
 		if(!cam.lookAt){
 			cam.setLookat([0,0,0]);
@@ -969,7 +969,7 @@
 				cam.setLocY(camPos.y - sens);
 			}		
 		}
-		cam.setLocZ(camPos.z + monte);
+		cam.setLocZ(camPos.z + monte); console.log(monte);
 	}
 	
 	M3D.GUI.toggleBbox = function(){
@@ -1093,10 +1093,9 @@
 	
 	
 	// -- picking objects
-	M3D.GUI.pickObject = function(e){
-		
-		
-		obj = scene.pick(e.clientX-this.parentNode.offsetLeft,e.clientY-this.parentNode.offsetTop).object;
+	M3D.GUI.pickObject = function(e, canvas){
+	
+		obj = scene.pick(e.clientX-canvas.parentNode.offsetLeft,e.clientY-canvas.parentNode.offsetTop).object;
 		
 		if(obj && obj!=hoverobj){
 			

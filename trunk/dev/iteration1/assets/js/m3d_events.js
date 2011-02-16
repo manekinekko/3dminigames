@@ -15,7 +15,10 @@ $(function(){
 	 * Bind the canvas mouse down event to the picking function, and the mouse up to the editor update function.
 	 * @see M3D.GUI.pickObject
 	 */
-	$('#canvas').bind('mousedown', M3D.GUI.pickObject).bind('mouseup', M3D.GUI.updateEditor);
+	$('#canvas').bind('mousedown', function(e){	M3D.GUI.pickObject(e, this);
+												mouseRecord = mouseGlobale.getMousePosition();
+												console.log(mouseRecord);
+	}).bind('mouseup', M3D.GUI.updateEditor);
 		
 	/**
 	 * Allow picking 3D models from the select box

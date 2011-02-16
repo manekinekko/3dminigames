@@ -2,10 +2,6 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_utils.js
  */
- 
- //
- 
- 
 (function(M3D){
 	
 	// Contants
@@ -238,6 +234,7 @@
 			
 			if ( data.autoAddToScene ){
 				M3D.GUI.addObjectToScene();
+				
 			}
 			else {
 				// ask for entity info
@@ -579,9 +576,9 @@
 
 		// [DB]
 		var element = {
-				'name' : name,
+				'uid' : uid,
 				'value' : {
-						'uid': uid,
+						'name': name,
 						'url': urlCollada,
 						'position' : {
 							'X': M3D.lastImportedModel.getLocX(),
@@ -650,29 +647,31 @@
 	};
 	
 	
+	
+	
 	// -- manual values updating
 	M3D.GUI.updateValues = function(element){
 		
 		var value = parseFloat(element.val());
-		
 		if( obj && value != 'NaN' )
 		{
+			var _obj = obj.parent;
 			switch( element.attr('name') )
 			{
-				case 'posX': obj.setLocX( value ); break;
-				case 'posY': obj.setLocY( value ); break;
-				case 'posZ': obj.setLocZ( value ); break;
+				case 'posX': _obj.setLocX( value ); break;
+				case 'posY': _obj.setLocY( value ); break;
+				case 'posZ': _obj.setLocZ( value ); break;
 				
-				case 'scaleX': if ( value > 0 ) obj.setScaleX( value ); break;
+				case 'scaleX': if ( value > 0 ) _obj.setScaleX( value ); break;
 				case 'scaleY': if ( value > 0 ) obj.setScaleY( value ); break;
 				case 'scaleZ': if ( value > 0 ) obj.setScaleZ( value ); break;
 				
-				case 'rotX': if ( value > 0 ) obj.setRotX( value ); break;
-				case 'rotY': if ( value > 0 ) obj.setRotY( value ); break;
-				case 'rotZ': if ( value > 0 ) obj.setRotZ( value ); break;							
+				case 'rotX': if ( value > 0 ) _obj.setRotX( value ); break;
+				case 'rotY': if ( value > 0 ) _obj.setRotY( value ); break;
+				case 'rotZ': if ( value > 0 ) _obj.setRotZ( value ); break;							
 				
 			}
-			
+			M3D.DB.updateSelectedEntry(_obj);
 		}
 	
 	};
@@ -912,14 +911,14 @@
 	}
 	
 	
-	M3D.GUI.cameraRotate = function(){													// fonction modifiée par Tom le 16/02
+	M3D.GUI.cameraRotate = function(){
 		var mousepos = mouse.getMousePosition();
 		mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
 		var width = document.getElementById('canvas').offsetWidth;
 		var height = document.getElementById('canvas').offsetHeight;
 		
 		// Position souris gauche ou droite ?
-		var gauche = mousepos.x <= mouseRecord.x;
+		var gauche = mousepos.x <= width/2;
 		var haut = mousepos.y >= mouseRecord.y;
 		
 		// rotation selon position souris
@@ -932,13 +931,13 @@
 		} 
 		else {
 			sens = -1;
-		}	
+		}									
 		if (haut){
 			monte = 1;
 		} 
 		else {
 			monte = -1;
-		}		
+		}	
 		
 		if(!cam.lookAt){
 			cam.setLookat([0,0,0]);
@@ -1001,6 +1000,9 @@
 		{	
 			var _float = function(v){ return parseFloat(v).toFixed(2); }
 			var _obj = obj.parent;
+			console.log(_obj.uid);
+			console.log(_obj.getRotX());
+			console.log(_obj.getRotY());
 			
 			if (_obj.getId() !== "") {
 				$('#id').val(_obj.getId());
@@ -1018,7 +1020,7 @@
 			if (_obj.boundingVolume) $('#bboxX').val( _float(_obj.boundingVolume.dims[0]) );
 			if (_obj.boundingVolume) $('#bboxY').val( _float(_obj.boundingVolume.dims[1]) );
 			if (_obj.boundingVolume) $('#bboxZ').val( _float(_obj.boundingVolume.dims[2]) );
-			
+			$('#canvas').bind('mouseup', M3D.DB.updateSelectedEntry(_obj));
 		}
 		else {
 			$("#id").val( null );
@@ -1108,7 +1110,7 @@
 										
 			}
 			
-			hoverobj = _obj;
+			hoverobj = obj;
 			
 			M3D.GUI.toggleShowInfo();
 			

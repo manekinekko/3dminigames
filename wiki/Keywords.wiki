@@ -7,14 +7,23 @@
 
 *AT*
 
-Specifie valeur(s) d'un attibut.
+Spécifie valeur(s) d'un attribut.
 
-ex: bazooka has orientation *AT* 0 0 0; 
-
+ex: bazooka has orientation *at* 0 0 0; 
+{{{
+}}}
 *GAME*
 
 Le mot-clé pour définition les attributs principaux de jeu. Chaque jeu peut avoir plusieurs attributs.
 
-ex: *GAME* has gravity at 10, score at 0; 
+ex: *game* has gravity at 10, score at 0; 
+{{{
+}}}
+*GRAVITY*
 
+Définie la gravité de environnement. ça peux être définie par un vecteur (trois chiffre) ou un chiffre (gravité vers bas).
+
+ex: game has *gravity* at 1 1 1; 
+{{{
+}}}
 

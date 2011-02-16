@@ -125,6 +125,15 @@ try{
     			Code c = tparser.game(ts); 
     			
     			System.out.println(c.getCode());
+    			
+    			File jsFile = new File("main.js");
+    			BufferedWriter out = new BufferedWriter(new FileWriter(jsFile));
+    			out.write(c.getCode());
+    			out.close();
+    			
+    			jsFile.createNewFile();
+    			
+    			
     			// est cense rendre le code
     			//		c3a.print();
     			//		CodeGenerator cg = new CodeGenerator(output);

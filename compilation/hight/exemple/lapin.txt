@@ -82,6 +82,8 @@ definition  tirer  means
 	generate missile
 
 
+definition pauseOnOff means
+	pause prout
 
 
 

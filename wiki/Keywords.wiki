@@ -26,4 +26,10 @@ Définie la gravité de environnement. ça peux être définie par un vecteur (t
 ex: game has *gravity* at 1 1 1; 
 {{{
 }}}
+*SCORE*
 
+Les points obtenus par jouer initialisé ici par un chiffre.
+
+ex: game has *score* at 0;
+{{{
+}}}

@@ -9,8 +9,6 @@
 
 	<meta name="description" content="CodePress - source code editor window" />
 
-
-
 	<script type="text/javascript">
 
 	var language = 'generic';
@@ -19,7 +17,7 @@
 
 	var ua = navigator.userAgent;
 
-	var ts = (new Date).getTime(); // timestamp to avoid cache
+	var ts = (new Date()).getTime(); // timestamp to avoid cache
 
 	var lh = location.href;
 
@@ -53,15 +51,16 @@
 
 </head>
 
+<body>
+	
+	<script type="text/javascript">
+	
+	if(engine == "msie" || engine == "gecko" || engine == "webkit") document.write('<pre> </pre>');
+	
+	</script>
+	
+</body>
 
-
-<script type="text/javascript">
-
-if(engine == "msie" || engine == "gecko" || engine == "webkit") document.write('<body><pre> </pre></body>');
-
-else if(engine == "opera") document.write('<body></body>');
-
-</script>
 
 
 

@@ -63,14 +63,14 @@ attributGame :
 		  -> ^(GRAVITY_KW FLOAT)
 	| FLOAT FLOAT FLOAT
 		  -> ^(GRAVITY_KW FLOAT FLOAT FLOAT) )
-	| 'turnbased at ' BOOLEAN
-        | 'world at' mapType
-        | 'gridsize at' FLOAT
-        | 'name at' STRING
+	| TURNBASED_KW AT! ('true'|'false')
+        | WORLD_KW AT! mapType
+        | GRIDSIZE_KW AT! FLOAT
+        | NAME_KW  AT! name
 	;
+mapType : GENERIC|GRID|RIBBON;
 
-mapType : 'generic'|'grid'|'ribbon';
-
+name 	:	 IDENT;
 /* Inheritance, creation of type */
 newType :
 	TYPE IDENT IS subType (AND subType)*
@@ -89,8 +89,8 @@ init :
 	  -> ^(INIT_IS_KW IDENT declarationObjet)
 	| accesClasse HAS allocationObject (VIRG allocationObject)* // check the types and its attributes
 	  -> ^(INIT_HAS_KW accesClasse allocationObject+)
-        |'insert' IDENT 'in' IDENT (NUM operation)?  //Cast entier | si pas NUM operation -> fin de liste.
-        |'remove' (IDENT|NUM operation) 'from' IDENT
+        |INSERT_KW IDENT IN IDENT (NUM operation)?  //Cast entier | si pas NUM operation -> fin de liste.
+        |REMOVE_KW (IDENT|NUM operation) FROM IDENT
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
@@ -102,7 +102,7 @@ declarationObjet :
 	| CAMERA (view PERSON -> ^(CAMERA_KW PERSON view) | FREE -> ^(CAMERA_KW FREE))?
 	| MEDIA (LOOP ->^(MEDIA_KW LOOP) | ONCE ->^(MEDIA_KW ONCE))? 						 // sound, music or video played in loop or once
 	| IN IDENT -> ^(IN_KW IDENT)
-        | PLAYER solo?								  // ident of a list to add an element
+        | PLAYER SOLO?								  // ident of a list to add an element
   ;
 
 typeEntity :
@@ -111,7 +111,6 @@ typeEntity :
 
 entityMode:
 	PLAYER
-	| interaction dupli? ->^(INTERACTION_KW interaction dupli?)
 	| dupli
 	;
 	
@@ -159,36 +158,44 @@ consequ :
   | affectation
   | activCommande
   | IDENT
-  | VICTORY_KW IDENT (':' STRING)?
-  | DEFEAT_KW IDENT (':' STRING)? // ident est un Player ou une Team
+  | VICTORY_KW IDENT (DBP IDENT)?
+  | DEFEAT_KW IDENT (DBP IDENT)? // ident est un Player ou une Team
   ;
 
 action :
 	accesClasse actionObjet
-	| (IDENT | GAME) (ENDS_KW^ | STARTS_KW^ | PAUSE_KW^) (':' STRING)?  //IDENT est un compteur
+	| (IDENT | GAME) (ENDS_KW^ | STARTS_KW^ | PAUSE_KW^) (':' IDENT)?  //IDENT est un compteur
 	| (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
 	| BLOCK_KW^ transformation OF! accesClasse coordinates
 	| (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) ((IN!|ON!) accesLocal | AT! coordinates)?
 	| WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
 	| SAVE_KW
-        | 'nextturn' IDENT                                           //IDENT = joueur qui devient actif
-        | JUMP operation                                           //ajout lexical a faire
-        | MOVE (LEFT | RIGHT | FORWARD | BACKWARD | UP |DOWN ) 'by' operation
-        | TURN (LEFT | RIGHT | UP |DOWN |CLOCKWISE |ANTICLOCKWISE) 'by' operation
-        | ACCELERATE
-        | BRAKE
-        | 'reload' IDENT 'with' // ... // action à rajouter (mise en suspend)
-        | IDENT 'grasps' IDENT
-        | IDENT 'expels' IDENT operation
-        | IDENT 'ingests' IDENT IDENT                        // IDENT1: perso qui ingest| INDENT2 : ce qui est ingéré|IDENT3: là ou l'objet sera ranger
+        | NEXTURN_KW^ IDENT                                           //IDENT = joueur qui devient actif                                          //ajout lexical a faire
+        | RELOAD_KW^ IDENT WITH // ... // action à rajouter (mise en suspend)
+        | IDENT GRASPS_KW^ IDENT
+        | IDENT EXPELS_KW^ IDENT BY! operation
+        | IDENT INGESTS_KW^ IDENT IN! IDENT                        // IDENT1: perso qui ingest| INDENT2 : ce qui est ingéré|IDENT3: là ou l'objet sera ranger
 	;
+	
 
 actionObjet :
   DIES_KW
   | actionCommandePressee
-  | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions)
+  | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions HAPPENS!)
   | EQUIP^ (accesLocal | NEXT | PREVIOUS)   
   ;
+  
+  actionCommandePressee :
+  JUMP^ operation
+  ;
+  
+actionCommandeMaintenue :
+  MOVE^ (LEFT | RIGHT | FORWARD | BACKWARD|WUP|WDOWN) BY! operation
+  | TURN^ (LEFT | RIGHT |WUP|WDOWN|CLOCKWISE |ANTICLOCKWISE)BY! operation
+  | ACCELERATE
+  | BRAKE
+  ;
+  
   
 transformation :
 	TRANSLATION
@@ -203,26 +210,33 @@ coordinates :
 
 /* Initialization of commands */
 
+   
+
+ 
 commande :
 	COMMAND_KW^ IDENT FOR! player_list IS! actionCommande (VIRG! actionCommande)*
 	;
 
-player_list: IDENT (',' IDENT)*
+player_list: IDENT (',' IDENT)*;
 
 actionCommande :
-	MOUSE souris ('pressed'|'held'|'released')? FOR IDENT
-	  -> ^(MOUSE_KW souris IDENT)
-	| KEY clavier ('pressed'|'held'|'released')? FOR IDENT // ident : that was defined with means
-	  -> ^(KEY_KW clavier IDENT)
+	MOUSE souris (commandMode)? FOR IDENT
+	  -> ^(MOUSE_KW souris (commandMode)? IDENT)
+	| KEY clavier (commandMode)? FOR IDENT // ident : that was defined with means
+	  -> ^(KEY_KW clavier  (commandMode)? IDENT)
 	;	
- 
-souris :
+
+commandMode
+	:PRESSED_KW |HELD_KW | RELEASED_KW;	
+
+ souris :
   WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN  // modif analyseur lexical pour MIDDLE
   ;
  
-clavier :
+ clavier :
   LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
   ;
+
  
 activCommande :
   (ACTIVATE_KW^ | DISABLE_KW^) typeCommand
@@ -245,22 +259,20 @@ declencheur :
   | (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)          //ident if it is a counter
   | variable BECOMES varOuNB
     -> ^(BECOMES_VAR_KW variable varOuNB)
-  | IDENT BECOMES playerOuInteraction
-    -> ^(BECOMES_ID_KW IDENT playerOuInteraction)
-  | VICTORY_KW 'of' ('Player'| IDENT) //ident est le nom d'1 Team ou d'1 Player, Player la classe (global)
-  | DEFEAT_KW 'of' ('Player'| IDENT)
+  | IDENT BECOMES PLAYER
+    -> ^(BECOMES_ID_KW IDENT PLAYER)
+  | VICTORY_KW^ OF! (PLAYER| IDENT) //ident est le nom d'1 Team ou d'1 Player, Player la classe (global)
+  | DEFEAT_KW^ OF! (PLAYER| IDENT)
   ;
 
 varOuNB :	variable | FLOAT;
 
-playerOuInteraction
-	:	(PLAYER| interaction);
 
 declencheurTK                                       // ajout dans le lexical dans OWNES,...
-	:	(TOUCHES_KW^ | KILLS_KW^ | OWNES | NOTOWNES) ((OTHER)? accesGlobal | accesLocal);
+	:	(TOUCHES_KW^ | KILLS_KW^ | OWNES_KW^ | NOTOWNES_KW^) ((OTHER)? accesGlobal | accesLocal);
 	
 declencheurKT
-	:	(KILLED_KW^ | TOUCHED_KW^ | OWNED | NOTOWNED) (BY! ((OTHER)? accesGlobal | accesLocal))?;
+	:	(KILLED_KW^ | TOUCHED_KW^ | OWNED_KW^ | NOTOWNED_KW^) (BY! ((OTHER)? accesGlobal | accesLocal))?;
 
 /* Conditions */  
 siAlors :
@@ -302,7 +314,7 @@ affectation :
 
 /*IA*/
   //Changer en AI
-iaBasique : IA_KW^ IDENT IS! reglesjeu (VIRG! reglesjeu)*; //verif session
+iaBasique : IA_KW^ IDENT IS! reglesJeu (VIRG! reglesJeu)*; //verif session
 
 /* Arithmetic expression */
 
@@ -350,14 +362,12 @@ accesClasse :
 accesGlobal :
   typeObjet
     -> ^(ACCESS_KW typeObjet)
-  | interaction
-    -> ^(ACCESS_KW interaction)
   | PG NOT notAccess PD
     -> ^(ACCESS_KW NOT notAccess)
   ;
 
 notAccess :
-typeObjet | interaction | PLAYER;
+typeObjet | PLAYER;
 
 accesLocal :
   IDENT
@@ -445,11 +455,23 @@ SUP :  '>';
 INFEG : '<=';
 SUPED : '>=';
 DIFF : '!=';
+FROM 	:'from';
+DBP     : ':';
 
 GAME		: 'Game';
 GRAVITY_KW	: 'gravity';
 SCORE		: 'score';
+TURNBASED_KW    : 'turnbased';
+WORLD_KW        : 'world';
+GRIDSIZE_KW     : 'gridsize';	
+GENERIC         : 'generic';
+GRID 	        : 'grid';	
+RIBBON          : 'ribbon';
+NAME_KW         : 'name';
 TYPE		: 'type';
+INSERT_KW :	 'insert';
+REMOVE_KW :	'remove';
+SOLO 	:	'solo';
 PLAYER		: 'player';
 LIST_KW		: 'list';
 IN		: 'in';
@@ -520,7 +542,13 @@ KEYBOARD : 'keyboard';
 ACTIVATE_KW : 'activate';
 DISABLE_KW:'disable';
 COMMANDS:'commands';
-
+CLOCKWISE     :	'clockwise';
+ANTICLOCKWISE :	'anticlockwise';
+NEXTURN_KW :	'nexturn';
+RELOAD_KW :	'reload';
+GRASPS_KW:'grasps';
+EXPELS_KW:	'expels';
+INGESTS_KW:	'ingests';
 DUPLICABLE	: 'duplicable';
 FIRST		: 'first';
 THIRD		: 'third';
@@ -533,6 +561,14 @@ SIZE		: 'size';
 PERSON		: 'person';
 FREE		: 'free';
 FRAME		: 'frame' | 'frames';
+PRESSED_KW : 'pressed';
+HELD_KW : 'held';
+RELEASED_KW : 'released';
+OWNES_KW :	'ownes';
+NOTOWNES_KW :	 'notOwnes';
+OWNED_KW:'owned';
+NOTOWNED_KW:'notOwned';
+HAPPENS :	 'happens';
 
 /* Control */
 WUP	: 'up';
@@ -545,7 +581,7 @@ ENTER	: 'enter';
 MOUSE	: 'mouse';
 KEY	: 'key';
 CLICK_LEFT	: 'lClick';
-CLICK_CENTER	: 'cClick';
+CLICK_MIDDLE	: 'mClick';
 CLICK_RIGHT	: 'rClick';
 SCROLL_UP	: 'scrollUp';
 SCROLL_DOWN	: 'scrollDown';

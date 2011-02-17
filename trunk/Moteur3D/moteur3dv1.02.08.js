@@ -338,17 +338,14 @@ M3D.MOTEUR.translate = function(id,tabVector,idRef){
 	if(idRef == null){
 		var matrixRef = GLGE.identMatrix();
 	}else{
-		var matrixRef = tabObject[idRef].getModelMatrix();
+		var matrixRef = tabObject[idRef].getRotMatrix();
 	}
-	var vectorTranslate = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],0);
-	var absoluteTranslation = GLGE.mulMat4Vec4(matrixRef,vectorTranslate);
-	var matrixObject = tabObject[id].getModelMatrix();
-	var currentRelativePosition = GLGE.Vec4(tabObject[id].getLocX(),tabObject[id].getLocY(),tabObject[id].getLocZ(),1);
-	var currentAbsolutePosition = GLGE.mulMat4Vec4(matrixObject,currentRelativePosition);
-	var newAbsolutePosition = GLGE.addVec4(currentAbsolutePosition,absoluteTranslation);
-	var newRelativePosition = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsolutePosition);
-	// COLLISION trajectoire
-	tabObject[id].setLoc(GLGE.get1basedVec4(newRelativePosition,1),GLGE.get1basedVec4(newRelativePosition,2),GLGE.get1basedVec4(newRelativePosition,3));
+	var vectorTranslate = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
+	var absoluteTranslation = GLGE.mulMat4Vec4(matrixRef,vectorTranslate);		
+	
+	tabObject[id].setLoc(absoluteTranslation[0]+parseFloat(tabObject[id].getLocX()),absoluteTranslation[1]+parseFloat(tabObject[id].getLocY()),absoluteTranslation[2]+parseFloat(tabObject[id].getLocZ()));
+	
+	
 	return tabObject[id];
 },
 
@@ -364,7 +361,7 @@ M3D.MOTEUR.setPosition = function(id,tabPos,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],0);
+	var vectorPos = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
 	var newAbsolutePosition = GLGE.mulMat4Vec4(matrixRef,vectorPos);
 	
 	var matrixObject = tabObject[id].getModelMatrix();
@@ -386,12 +383,12 @@ M3D.MOTEUR.rotate = function(id,tabRot,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],O);
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
 	var absoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var currentRelativeRotation = GLGE.Vec4(tabObject[id].getRotX(),tabObject[id].getRotY(),tabObject[id].getRotZ(),1);
 	var currentAbsoluteRotation = GLGE.mulMat4Vec4(matrixObject,currentRelativeRotation);
-	var newAbsoluteRotation = GLGE.addVec4(currentAbsoluteRotation,absoluteRotation);
+	var newAbsoluteRotation = GLGE.addMat4(currentAbsoluteRotation,absoluteRotation);
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
 	// COLLISION
 	tabObject[id].setRot(GLGE.get1basedVec4(newRelativeRotation,1),GLGE.get1basedVec4(newRelativeRotation,2),GLGE.get1basedVec4(newRelativeRotation,3));
@@ -410,7 +407,7 @@ M3D.MOTEUR.setAngle = function(id,tabRot,idRef){
 	}else{
 		var matrixRef = tabObject[idRef].getModelMatrix();
 	}
-	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],0);
+	var vectorRot = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
 	var newAbsoluteRotation = GLGE.mulMat4Vec4(matrixRef,vectorRot);
 	var matrixObject = tabObject[id].getModelMatrix();
 	var newRelativeRotation = GLGE.mulMat4Vec4(GLGE.inverseMat4(matrixObject),newAbsoluteRotation);
@@ -469,18 +466,30 @@ M3D.MOTEUR.listingTarget = function(idObject){
  * 	   ptZ: coordonnée Z du point à tester.
  */
 M3D.MOTEUR.collisionPointBoxSimple = function(idObject, ptX, ptY, ptZ){
-	var box = tabObject[idObject].getBoundingVolume().dims;
+	var box = tabObject[idObject].getBoundingVolume();	
 	var pos = tabObject[idObject].getPosition();
-	if(ptX >= pos.x 
-		&& ptX < pos.x + box[0]
-		&& ptY >= pos.y 
-		&& ptY < pos.y + box[1]
-		&& ptZ >= pos.z 
-		&& ptZ < pos.z + box[2]) return true;
+	if(ptX >= box.limits[0]
+		&& ptX < box.limits[1]
+		&& ptY >= box.limits[2] 
+		&& ptY < box.limits[3]
+		&& ptZ >= box.limits[4] 
+		&& ptZ < box.limits[5]) return true;
 	return false;
 },
-  
 
+M3D.MOTEUR.getOBB = function(idObj) {
+	tabObject[idObj].getBoundingVolume();
+	var matrix = tabObject[idObj].getModelMatrix();
+	var coord0=GLGE.mulMat4Vec4(matrix,[this.limits[0],this.limits[2],this.limits[4],1]);
+	var coord1=GLGE.mulMat4Vec4(matrix,[this.limits[1],this.limits[2],this.limits[4],1]);
+	var coord2=GLGE.mulMat4Vec4(matrix,[this.limits[0],this.limits[3],this.limits[4],1]);
+	var coord3=GLGE.mulMat4Vec4(matrix,[this.limits[1],this.limits[3],this.limits[4],1]);
+	var coord4=GLGE.mulMat4Vec4(matrix,[this.limits[0],this.limits[2],this.limits[5],1]);
+	var coord5=GLGE.mulMat4Vec4(matrix,[this.limits[1],this.limits[2],this.limits[5],1]);
+	var coord6=GLGE.mulMat4Vec4(matrix,[this.limits[0],this.limits[3],this.limits[5],1]);
+	var coord7=GLGE.mulMat4Vec4(matrix,[this.limits[1],this.limits[3],this.limits[5],1]);
+},
+	
 /* Méthode collisionBoxBox: Test si 2 objets sont en collision.
  * Param: idObjectOne: identifiant d'un des objets à tester.
  *        idObjectTwo: identifiant du 2nd objets.
@@ -491,27 +500,14 @@ M3D.MOTEUR.collisionBoxBox = function(idObjectOne, idObjectTwo){
 	else {
 		var boxOne = tabObject[idObjectOne].getBoundingVolume();
 		var posOne = tabObject[idObjectOne].getPosition();
-		var boxTwo = tabObject[idObjectTwo].getBoundingVolume();
+		var boxTwo = tabObject[idObjectTwo].getBoundingVolume();		
 		
-		var xminOne = posOne.x+boxOne.center[0]-boxOne.dims[0]/2;
-		var xmaxOne = posOne.x+boxOne.center[0]+boxOne.dims[0]/2;
-		var yminOne = posOne.y+boxOne.center[1]-boxOne.dims[1]/2;
-		var ymaxOne = posOne.y+boxOne.center[1]+boxOne.dims[1]/2;
-		var zminOne = posOne.z+boxOne.center[2]-boxOne.dims[2]/2;
-		var zmaxOne = posOne.z+boxOne.center[2]+boxOne.dims[2]/2;
-		var xminTwo = posTwo.x+boxTwo.center[0]-boxTwo.dims[0]/2;
-		var xmaxTwo = posTwo.x+boxTwo.center[0]+boxTwo.dims[0]/2;
-		var yminTwo = posTwo.y+boxTwo.center[1]-boxTwo.dims[1]/2;
-		var ymaxTwo = posTwo.y+boxTwo.center[1]+boxTwo.dims[1]/2;
-		var zminTwo = posTwo.z+boxTwo.center[2]-boxTwo.dims[2]/2;
-		var zmaxTwo = posTwo.z+boxTwo.center[2]+boxTwo.dims[2]/2;
-		
-		if(xminOne >= xmaxTwo      
-			|| xmaxOne <= xminTwo 
-			|| yminOne >= ymaxTwo 
-			|| ymaxOne <= yminTwo 	
-			|| zminOne >= zmaxTwo  
-			|| zmaxOne <= zminTwo ) return false;
+		if(boxOne.limits[0] >= boxTwo.limits[1]      
+			|| boxOne.limits[1] <= boxTwo.limits[0] 
+			|| boxOne.limits[2] >= boxTwo.limits[3]
+			|| boxOne.limits[3] <= boxTwo.limits[2] 	
+			|| boxOne.limits[4] >= boxTwo.limits[5]  
+			|| boxOne.limits[5] <= boxTwo.limits[4] ) return false;
 	} 
 	return true;
 },
@@ -576,7 +572,7 @@ M3D.MOTEUR.addCameraIn = function(idCamera, tabCoord, idGroup){
 },
 
 M3D.MOTEUR.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
-    tabCamera[idCamera] = new GLGE.Camera();
+    tabCamera[idCamera] = new GLGE.Collada();
     tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
     tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
     tabCamera[idCamera].setScale(tabCoord[6]);
@@ -595,7 +591,7 @@ M3D.MOTEUR.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
 },
 
 M3D.MOTEUR.addCameraGroupIn = function(idCamera, idGroup, tabCoord, idParent){
-    tabCamera[idCamera] = new GLGE.Camera();
+    tabCamera[idCamera] = new GLGE.Collada();
     tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
     tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
     tabCamera[idCamera].setScale(tabCoord[6]);
@@ -631,6 +627,7 @@ M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
     }else{
         var Mref = tabObject[idRef].getModelMatrix();
     }
+        
     var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
     var etape1 = GLGE.mulMat4Vec4(Mref,vector);
     var camera=tabCamera[idCamera];
@@ -641,49 +638,28 @@ M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
     tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 },
 
-
+/* 
 M3D.MOTEUR.setPositionCamera = function(idCamera,tabPos,idRef){
-    var Mcamera = tabCamera[idCamera].getModelMatrix();
     if(idRef == null){
-        var Mref = tabCamera[idCamera].getModelMatrix();
+        var M = GLGE.identMatrix();
     }else{
-        var Mref = tabObject[idRef].getModelMatrix();
-    }   
-    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
-    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape1);
+        var M = tabCamera[idRef].getModelMatrix();
+    }
+    var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
+    var D = GLGE.mulMat4Vec4(M,V);
     tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 }, 
-
+*/
 
 M3D.MOTEUR.rotateCamera = function(idCamera,tabRot,idRef){
-    var Mcamera = tabCamera[idCamera].getModelMatrix();
     if(idRef == null){
-        var Mref = tabCamera[idCamera].getModelMatrix();
+        var M = GLGE.identMatrix();
     }else{
-        var Mref = tabObject[idRef].getModelMatrix();
+        var M = tabCamera[idRef].getModelMatrix();
     }
-    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
-    var camera=tabCamera[idCamera];
-    var actualrotation = GLGE.Vec4(camera.getRotX(),camera.getRotY(),camera.getRotZ(),1);
-    var etape2 = GLGE.mulMat4Vec4(Mcamera,actualrotation);
-    var etape3 = GLGE.addVec4(etape1,etape2);
-    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape3);
+    var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
+    var D = GLGE.mulMat4Vec4(M,V);
     tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-},
-
-    M3D.MOTEUR.setAngleCamera = function(idCamera,tabRot,idRef){
-    var Mcamera = tabCamera[idCamera].getModelMatrix();
-    if(idRef == null){
-        var Mref = tabCamera[idCamera].getModelMatrix();
-    }else{
-        var Mref = tabObject[idRef].getModelMatrix();
-    }
-    var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-    var etape1 = GLGE.mulMat4Vec4(Mref,vector);
-    var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape1);
-    tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
-    },
+}
 
 })(M3D);

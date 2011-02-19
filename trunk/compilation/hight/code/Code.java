@@ -10,7 +10,6 @@ import symbols.Definition;
 import symbols.Entity;
 import symbols.Model;
 
-
 /**
  *
  * @author Quentin
@@ -43,7 +42,7 @@ public class Code {
 
     @Override
     public String toString() {
-	return c;
+        return c;
     }
 
     public static Code genEntity(String name) {
@@ -119,51 +118,50 @@ public class Code {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Assignation//////////////////////////////////////
+    public static Code genAffect(Code s1, Code s2) {
+        Code cod = new Code();
 
-	public static Code genAffect(Code s1, Code s2){
-		Code cod = new Code();
-		
-		cod.append(s1);
-		cod.append(" = ");
-		cod.append(s2);
-		cod.append(";\n");
-		return cod;
-	}
+        cod.append(s1);
+        cod.append(" = ");
+        cod.append(s2);
+        cod.append(";\n");
+        return cod;
+    }
 
-        public static Code genIncr(Code s1, Code s2){
-		Code cod = new Code();
+    public static Code genIncr(Code s1, Code s2) {
+        Code cod = new Code();
 
-		cod.append(s1);
-		cod.append(" += ");
-		cod.append(s2);
-                cod.append(";\n");
-		return cod;
-	}
+        cod.append(s1);
+        cod.append(" += ");
+        cod.append(s2);
+        cod.append(";\n");
+        return cod;
+    }
 
-        public static Code genSub(Code s1, Code s2){
-		Code cod = new Code();
+    public static Code genSub(Code s1, Code s2) {
+        Code cod = new Code();
 
-		cod.append(s1);
-		cod.append(" -= ");
-		cod.append(s2);
-                cod.append(";\n");
-		return cod;
-	}
+        cod.append(s1);
+        cod.append(" -= ");
+        cod.append(s2);
+        cod.append(";\n");
+        return cod;
+    }
 
-        public static Code genInvert(Code s1, Code s2){
-		Code cod = new Code("var tmp = ");
+    public static Code genInvert(Code s1, Code s2) {
+        Code cod = new Code("var tmp = ");
 
-		cod.append(s1);
-		cod.append(";\n");
-                cod.append(s1);
-                cod.append(" = ");
-		cod.append(s2);
-                cod.append(";\n");
-                cod.append(s2);
-                cod.append(" = tmp ;\n");
+        cod.append(s1);
+        cod.append(";\n");
+        cod.append(s1);
+        cod.append(" = ");
+        cod.append(s2);
+        cod.append(";\n");
+        cod.append(s2);
+        cod.append(" = tmp ;\n");
 
-		return cod;
-	}
+        return cod;
+    }
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Conditions///////////////////////////////////////
@@ -282,7 +280,7 @@ public class Code {
         c.append(c2);
         c.append(") + (");
         c.append(c2);
-	c.append(")");
+        c.append(")");
         return c;
     }
 
@@ -339,49 +337,48 @@ public class Code {
         c.append(")");
         return c;
     }
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Coordonnées//////////////////////////////////////
-    
     public static Code genPosX(String s) {
-        return new Code(s+".posX");
+        return new Code(s + ".posX");
     }
 
     public static Code genoRX(String s) {
-        return new Code(s+".orX");
+        return new Code(s + ".orX");
     }
 
     public static Code genTX(String s) {
-        return new Code(s+".tX");
+        return new Code(s + ".tX");
     }
 
     public static Code genPosY(String s) {
-        return new Code(s+".posY");
+        return new Code(s + ".posY");
     }
 
     public static Code genoRY(String s) {
-        return new Code(s+".orY");
+        return new Code(s + ".orY");
     }
 
     public static Code genTY(String s) {
-        return new Code(s+".tY");
+        return new Code(s + ".tY");
     }
 
     public static Code genPosZ(String s) {
-        return new Code(s+".posZ");
+        return new Code(s + ".posZ");
     }
 
     public static Code genoRZ(String s) {
-        return new Code(s+".orZ");
+        return new Code(s + ".orZ");
     }
 
     public static Code genTZ(String s) {
-        return new Code(s+".tZ");
+        return new Code(s + ".tZ");
     }
- ///////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////
 
-    public static Code genIF(Code co, Code r1,Code r2){
-        Code c = new Code ("if(");
+    public static Code genIF(Code co, Code r1, Code r2) {
+        Code c = new Code("if(");
         c.append(co);
         c.append("){ \n");
         c.append(r1);
@@ -394,7 +391,7 @@ public class Code {
         return c;
     }
 
-    public static Code genAccess(String nom,String at){
+    public static Code genAccess(String nom, String at) {
         Code c = new Code(nom);
         c.append(".");
         c.append(at);
@@ -408,154 +405,200 @@ public class Code {
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Models/Entitées//////////////////////////////////
     public static Code genModel(Model m) {
-	if(Model.generated(m)) //On vérifie que le model n'est pas déjà généré.
-	    return new Code();
+        if (Model.generated(m)) //On vérifie que le model n'est pas déjà généré.
+        {
+            return new Code();
+        }
 
-	Code cod = new Code();
-	cod.append("function "+m.getName()+"() {\n");
-	Iterator<String> it = m.listAttributes().iterator();
-	while(it.hasNext()) {
-	    String attribute = it.next();
-	    AttributeValue value = m.getAttribute(attribute);
-	    cod.append("\tthis."+attribute+" = ");
-	    if(value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME)
-		cod.append(value.getCode());
-	    else if(value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM)
-		cod.append("'"+value.getCode()+"'");
+        Code cod = new Code();
+        cod.append("function " + m.getName() + "() {\n");
+        Iterator<String> it = m.listAttributes().iterator();
+        while (it.hasNext()) {
+            String attribute = it.next();
+            AttributeValue value = m.getAttribute(attribute);
+            cod.append("\tthis." + attribute + " = ");
+            if (value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME) {
+                cod.append(value.getCode());
+            } else if (value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM) {
+                cod.append("'" + value.getCode() + "'");
+            }
 
-	    cod.append(";\n");
-	}
-	cod.append("}\n");
-	Model.addGenerated(m);
+            cod.append(";\n");
+        }
+        cod.append("}\n");
+        Model.addGenerated(m);
 
-	return cod;
+        return cod;
     }
 
     public static Code genFuncEntity(Entity ent) {
-	Code cod = new Code();
-	cod.append("function gen"+ent.getName()+"() {\n");
-	cod.append("\tvar entity = new "+ent.listModels().get(0).getName()+"();\n");
+        Code cod = new Code();
+        cod.append("function gen" + ent.getName() + "() {\n");
+        cod.append("\tvar entity = new " + ent.listModels().get(0).getName() + "();\n");
 
-	Iterator<String> it = ent.listModifyAttributes().iterator();
-	while(it.hasNext()) {
-	    String attribute = it.next();
-	    AttributeValue value = ent.getAttribute(attribute);
-	    if(value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME)
-		cod.append("\tentity."+attribute+" = "+value.getCode()+";\n");
-	    else if(value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM)
-		cod.append("\tentity."+attribute+" = '"+value.getCode()+"';\n");
-	}
+        Iterator<String> it = ent.listModifyAttributes().iterator();
+        while (it.hasNext()) {
+            String attribute = it.next();
+            AttributeValue value = ent.getAttribute(attribute);
+            if (value.getType() == AttributeValue.Type.NUMBER || value.getType() == AttributeValue.Type.BOOLEAN || value.getType() == AttributeValue.Type.TIME) {
+                cod.append("\tentity." + attribute + " = " + value.getCode() + ";\n");
+            } else if (value.getType() == AttributeValue.Type.STRING || value.getType() == AttributeValue.Type.ENUM) {
+                cod.append("\tentity." + attribute + " = '" + value.getCode() + "';\n");
+            }
+        }
 
-	cod.append("\treturn entity;\n}\n");
-	return cod;
+        cod.append("\treturn entity;\n}\n");
+        return cod;
     }
 
-   /* public static Code genEntity(Entity ent) {
-	Code cod = new Code();
-	cod.append("var "+ent.getName()+" = gen"+ent.getName()+"();\n");
+    /* public static Code genEntity(Entity ent) {
+    Code cod = new Code();
+    cod.append("var "+ent.getName()+" = gen"+ent.getName()+"();\n");
 
-	return cod;
+    return cod;
     }*/
+    public static Code genFuncDef(Definition def) {
 
+        Code c = new Code();
 
-        public static Code genFuncDef(Definition def){
-    	
-    	Code c = new Code();
+        c.append("function " + def.getName() + "() {\n");
+        c.append(def.getCode());
+        c.append("}\n\n");
 
-    	c.append("function " + def.getName() + "() {\n");
-    	c.append(def.getCode());
-    	c.append("}\n\n");
-	
-    	return c;
-    	
-        }
-       
-        public static Code genEntity(Entity ent) {
-    	Code c = new Code();
-    	c.append(ent.getName()+" = gen"+ent.getName()+"();\n");
+        return c;
 
-    	return c;
-        }      
-        
-        /* Appel de la fonction addObject du moteur3D 
-        	MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
-        */
-        
-        public static Code genAddObject(Entity ent){
-        	
-        	Code c = new Code("MOTEUR3D.addObject(");
-        	String name = ent.getName();
-        	
-        	c.append(name + ",");
-        	c.append(name + ".obj" + ",");
-         	c.append("new Array(");
-        	c.append(ent.getAttribute("posX").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("posY").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("posZ").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("orX").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("orY").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("orZ").getCode());
-        	c.append(",");
-        	c.append(ent.getAttribute("tX").getCode());
-        	c.append(")");
-        	c.append(")\n");
-        	
-        	return c;
+    }
+
+    public static Code genEntity(Entity ent) {
+        Code c = new Code();
+        c.append(ent.getName() + " = gen" + ent.getName() + "();\n");
+
+        return c;
+    }
+
+    /* Appel de la fonction addObject du moteur3D
+    MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
+     */
+    public static Code genAddObject(Entity ent) {
+
+        Code c = new Code("MOTEUR3D.addObject(");
+        String name = ent.getName();
+
+        c.append(name + ",");
+        c.append(name + ".obj" + ",");
+        c.append("new Array(");
+        c.append(ent.getAttribute("posX").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("posY").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("posZ").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("orX").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("orY").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("orZ").getCode());
+        c.append(",");
+        c.append(ent.getAttribute("tX").getCode());
+        c.append(")");
+        c.append(")\n");
+
+        return c;
+    }
+    /*
+     * Classe qui permet de générer le code pour un tableau en JS.
+     * name : nom du tableau
+     * x : taille du tabbleau si c'est tableau a deux dimensions (argument facultatif)
+     * Exemple : Tab[x][y] -> genTab("Tab",x);
+     *           Tab[v]-> genTab("Tab");
+     */
+
+    public static Code genTab(String name, Integer x) {
+        Code c = new Code();
+        c.append(name + "= new Array();");
+        if (x != null) {
+            c.append("for(var i = 0; i<" + String.valueOf(x) + ";i++) {\n");
+            c.append("\t" + name + "[i] = new Array();\n");
+            c.append("}");
         }
-        /*
-         * Classe qui permet de générer le code pour un tableau en JS.
-         * name : nom du tableau
-         * x : taille du tabbleau si c'est tableau a deux dimensions (argument facultatif)
-         * Exemple : Tab[x][y] -> genTab("Tab",x);
-         *           Tab[v]-> genTab("Tab");
-         */
-        public static Code genTab(String name,Integer x){
-            Code c = new Code();
-            c.append(name+"= new Array();");
-            if(x!=null){
-                c.append("for(var i = 0; i<"+String.valueOf(x)+";i++) {\n");
-                c.append("\t"+name+"[i] = new Array();\n");
-                c.append("}");
-            }
-            return c;
-        }
-        
-        
-        
-        //clearInterval(id_of_setinterval)
-        public static Code genClearInterval(String id){
-            Code c = new Code();
-            		
-            c.append("clearInterval(");
-            c.append(id);
-            c.append(");\n");
-            
-            return c;
-        }
-        
-        //setInterval(code,millisec
-        public static Code genSetInterval(String cod , String t){
-            Code c = new Code();
-            		
-            c.append("setInterval(");
-            c.append(cod);
-            c.append(",");
-            c.append(t);       
-            c.append(");\n");
-            
-            return c;
-        }
-        
-        
-        
-        
-        
-        
-        
-        	
+        return c;
+    }
+
+    //clearInterval(id_of_setinterval)
+    public static Code genClearInterval(String id) {
+        Code c = new Code();
+
+        c.append("clearInterval(");
+        c.append(id);
+        c.append(");\n");
+
+        return c;
+    }
+
+    //setInterval(code,millisec
+    public static Code genSetInterval(String cod, String t) {
+        Code c = new Code();
+
+        c.append("setInterval(");
+        c.append(cod);
+        c.append(",");
+        c.append(t);
+        c.append(");\n");
+
+        return c;
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    ///////////////////////Boucle de rafraichissement/////////////////////
+    //////////////////////////////////////////////////////////////////////
+    public static Code genRefreshLoop() {
+        Code c = new Code();
+        /* ************* Bool Array -> command ************************* */
+
+        c.append("/* Array of commands */\n");
+        c.append("var cmdTab = new Array();\n\n");
+
+        /* ************	Global refresh variable ************************ */
+
+        c.append("var refresh;\n\n");
+
+        /* ************* Paused variable ************************* */
+
+        c.append("/* The game is paused(or not) */\n");
+        c.append("var paused = false;\n\n");
+
+        /* ************* Main function and refresh loop call ****************************** */
+
+        c.append("/* Main function */\n");
+        c.append("window.addEventListener('load', function () {\n");
+        c.append("\t");
+        c.append("refresh = ");
+        c.append(Code.genSetInterval("refreshGame", "10"));
+        c.append("} , false)\n\n");
+
+        /* ************* Refresh loop ****************************** */
+
+        c.append("/* Refresh loop */\n");
+        c.append("function refreshGame(){\n");
+        c.append("}\n\n");
+
+        /* ************* Pause function *************************** */
+
+        c.append("function pause(){\n");
+        c.append("\tif(!paused){\n");
+        c.append("\t\t");
+        c.append("refresh = ");
+        c.append(Code.genSetInterval("refreshGame", "10"));
+        c.append("\t\tpaused=true;\n");
+        c.append("\t\talert('PAUSE');\n");
+        c.append("\t}\n");
+        c.append("\telse{\n");
+        c.append("\t\t");
+        c.append(Code.genClearInterval("refresh"));
+        c.append("\t\tpaused=false;\n");
+        c.append("\t}\n");
+        c.append("}\n\n");
+
+        return c;
+    }
 }

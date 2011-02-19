@@ -63,10 +63,10 @@ attributGame :
 		  -> ^(GRAVITY_KW FLOAT)
 	| FLOAT FLOAT FLOAT
 		  -> ^(GRAVITY_KW FLOAT FLOAT FLOAT) )
-	| TURNBASED_KW AT! ('true'|'false')
-        | WORLD_KW AT! mapType
-        | GRIDSIZE_KW AT! FLOAT
-        | NAME_KW  AT! name
+	| TURNBASED_KW^ AT! ('true'|'false')
+        | WORLD_KW^ AT! mapType
+        | GRIDSIZE_KW^ AT! FLOAT
+        | NAME_KW^  AT! name
 	;
 mapType : GENERIC|GRID|RIBBON;
 
@@ -89,8 +89,8 @@ init :
 	  -> ^(INIT_IS_KW IDENT declarationObjet)
 	| accesClasse HAS allocationObject (VIRG allocationObject)* // check the types and its attributes
 	  -> ^(INIT_HAS_KW accesClasse allocationObject+)
-        |INSERT_KW IDENT IN IDENT (NUM operation)?  //Cast entier | si pas NUM operation -> fin de liste.
-        |REMOVE_KW (IDENT|NUM operation) FROM IDENT
+        |^INSERT_KW IDENT IN! IDENT (NUM! operation)?  //Cast entier | si pas NUM operation -> fin de liste.
+        |^REMOVE_KW (IDENT|NUM! operation) FROM! IDENT
 	;
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
@@ -192,8 +192,8 @@ actionObjet :
 actionCommandeMaintenue :
   MOVE^ (LEFT | RIGHT | FORWARD | BACKWARD|WUP|WDOWN) BY! operation
   | TURN^ (LEFT | RIGHT |WUP|WDOWN|CLOCKWISE |ANTICLOCKWISE)BY! operation
-  | ACCELERATE
-  | BRAKE
+  | ACCELERATE^ BY! operation
+  | BRAKE^ BY! operation
   ;
   
   
@@ -259,8 +259,6 @@ declencheur :
   | (IDENT | GAME) (ENDS_KW^ |STARTS_KW^)          //ident if it is a counter
   | variable BECOMES varOuNB
     -> ^(BECOMES_VAR_KW variable varOuNB)
-  | IDENT BECOMES PLAYER
-    -> ^(BECOMES_ID_KW IDENT PLAYER)
   | VICTORY_KW^ OF! (PLAYER| IDENT) //ident est le nom d'1 Team ou d'1 Player, Player la classe (global)
   | DEFEAT_KW^ OF! (PLAYER| IDENT)
   ;
@@ -296,15 +294,15 @@ cond :
   etat
   | operation (EQUALS^ | INF^ | SUP^ | INFEG^ | SUPED^ | DIFF^) operation           // -> grammaire non LL(*)   a cause des parentheses qu'on retrouve dans operation
   | PG conditions PD
-  | IDENT 'contains' IDENT //liste, objet contenu dans la liste
+  | IDENT CONTAINS_KW^ IDENT //liste, objet contenu dans la liste
   ;
 
 etat :
   accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesGlobal | accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
   | (IDENT | GAME) IS! (NOT)? (FINISHED_KW^ |STARTED_KW^ | PAUSED_KW^ | MUTED_KW^ (ON | OFF) | PLAYED_KW^ | STOPPED_KW^ )  // game,counter,media
   //| 'true'^                                                   
-  | VICTORY_KW 'of' IDENT
-  | DEFEAT_KW 'of' IDENT  // ident est un Player ou une Team
+  | VICTORY_KW^ OF! IDENT
+  | DEFEAT_KW^ OF! IDENT  // ident est un Player ou une Team
   ;
   
 affectation :
@@ -339,7 +337,7 @@ operationBracket :
 	PG! operation PD!
 	| variable
 	| FLOAT
-        | ('distance'| 'angle') 'between ' IDENT ' and ' IDENT //les IDENT sont des entités.
+        | (DISTANCE_KW^| ANGLE_KW^) BETWEEN! IDENT AND! IDENT //les IDENT sont des entités.
 	;
 
 variable :
@@ -532,7 +530,7 @@ ADD_KW : 'add';
 SUB_KW : 'sub';
 INVERT_KW : 'invert';
 NUM 		: 'num';
-IA_KW 	:	 'ia';
+IA_KW 	:	 'ai';
 DURING : 'during';
 UNTIL : 'until';
 EQUIP : 'equip';
@@ -569,6 +567,9 @@ NOTOWNES_KW :	 'notOwnes';
 OWNED_KW:'owned';
 NOTOWNED_KW:'notOwned';
 HAPPENS :	 'happens';
+CONTAINS_KW 	:	 'contains';
+DISTANCE_KW :	'distance';
+ANGLE_KW : 'angle';
 
 /* Control */
 WUP	: 'up';

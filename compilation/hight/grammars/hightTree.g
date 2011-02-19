@@ -27,82 +27,23 @@ options {
 game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
     ^(GAME_KW 
-    
-    {
-    
-  	 	/* ************* Bool Array -> command ************************* */
-    
-    	c.append("/* Array of commands */\n");
-    	c.append("var cmdTab = new Array();\n\n");
-    	
-    	/* ************	Global refresh variable ************************ */
-    	
-		c.append("var refresh;\n\n");
-
-		/* ************* Paused variable ************************* */
-
-		
-		c.append("/* The game is paused(or not) */\n");
-		c.append("var paused = false;\n\n");
-
-
-
-
-    	/* ************* Main function and refresh loop call ****************************** */
-    	
-    	c.append("/* Main function */\n");
-    	c.append("window.addEventListener('load', function () {\n");
-    	c.append("\t");
-    	c.append("refresh = ");
-    	c.append(Code.genSetInterval("refreshGame","10"));
-    	c.append("} , false)\n\n");
-    	
-    	/* ************* Refresh loop ****************************** */
-    	
-    	c.append("/* Refresh loop */\n");
-    	c.append("function refreshGame(){\n");    	
-    	c.append("}\n\n");
-    	
-    	/* ************* Pause function *************************** */
-    	
-    	c.append("function pause(){\n");
-    	c.append("\tif(!paused){\n");
-    	c.append("\t\t");
-    	c.append("refresh = ");
-    	c.append(Code.genSetInterval("refreshGame","10"));
-    	c.append("\t\tpaused=true;\n");
-    	c.append("\t\talert('PAUSE');\n");
-    	c.append("\t}\n");
-    	
-    	
-
-    	c.append("\telse{\n");
-    	c.append("\t\t");
-    	c.append(Code.genClearInterval("refresh"));
-    	c.append("\t\tpaused=false;\n");
-    	c.append("\t}\n");
-    	
-   		c.append("}\n\n");
-    	
-    }
-        
-    
-    gd=gameData[st]? newType[st]* 
-	
-	in=initialization[st]
-
-    {
-	//st.print();
-	//System.out.println(in.getCode());
-    c.append(in);
-    }
+        {c.append(Code.genRefreshLoop());}
+    gd=gameData[st]?
+    newType[st]*
+    in=initialization[st]
+        {
+            //st.print();
+            //System.out.println(in.getCode());
+            c.append(in);
+            }
      
-	(def=definition[st]
+    (def=definition[st]
  
-    {
-	//System.out.println(def.getCode()+"\n");
-	c.append(def);
-    })*
+        {
+            //System.out.println(def.getCode()+"\n");
+            c.append(def);
+        }
+    )*
 
      com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
 

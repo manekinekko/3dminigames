@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plop>
+    <!--classes de description que l'utilisateur pourrait créer en haut-niveau (à voir), permettrait de valider ce xml en plus d'en automatiser la lecture -->
+    <descript><!--dans le descript seulement, l'attribut xml 'value' n'apparait pas après les attributs xml 'name' et 'type'-->
+        <model name="List">
+            <attribute name="subType" type="String"/>
+            <attribute name="value" type="list"/><!-- list : IDENT (',' IDENT); -->
+        </model>
+        <model name="Enum"> <!--l'utilisateur pourrait créer les enum qu'il veut-->
+            <attribute name="values" type="List" subType="String"/>
+            <attribute name="value" type="String"/>
+        </model>
+        <model name="Time">
+            <attribute name="value" type="num"/>
+            <attribute name="unit" type="Enum" values="ms, s, min"/>
+        </model>
+        <model name="Vector"><!--à voir si c'est mieux ou pas, en tout cas ça fait plus propre et on utilise "x of position of perso" dans la grammaire-->
+            <attribute name="x" type="num"/>
+            <attribute name="y" type="num"/>
+            <attribute name="z" type="num"/>
+        </model>
+        <model name="BVector"><!--vecteur booléen, sert pour les contraintes-->
+            <attribute name="x" type="boolean"/>
+            <attribute name="y" type="boolean"/>
+            <attribute name="z" type="boolean"/>
+        </model>
+    </descript>
+    <!--après le descript, l'attribut xml 'type' donne ce qui va suivre : 
+        - soit 'value=""' pour un type déjà géré (boolean, num, String) 
+        - soit les noeuds à l'intérieur des 'model' du descript (subType, value, values, unit, x, y, z) selon le type
+    -->
+
+    <!--classes inscrites dans l'environnement 3D -->
+    <model name="Empty">
+        <attribute name="position" type="Vector" x="0" y="0" z="0"/>
+        <attribute name="orientation" type="Vector" x="0" y="0" z="0"/>
+        <attribute name="size" type="Vector" x="1" y="1" z="1"/>
+        <!--
+        <attribute name="posX" type="num" value="0"/>
+        <attribute name="posY" type="num" value="0"/>
+        <attribute name="posZ" type="num" value="0"/>
+        <attribute name="orX" type="num" value="0"/>
+        <attribute name="orY" type="num" value="0"/>
+        <attribute name="orZ" type="num" value="0"/>
+        <attribute name="tX" type="num" value="0"/>
+        <attribute name="tY" type="num" value="0"/>
+        <attribute name="tZ" type="num" value="0"/>-->
+        <attribute name="belonging" type="Empty" value="null"/>
+        <attribute name="constraints" type="List" subType="Constraint" value="null"/>
+        <attribute name="speed" type="num" value="0"/><!--attribut calculé avec l'accélération, peut être modifié par l'utilisateur dans son code-->
+    </model>
+
+
+    <!--Classes héritant de Empty -->
+    <model name="Camera">
+        <inheritance value="Empty"/> <!--les tailles 'tX' et 'tY' sont les dimensions du canvas 2D et 'tZ' est la focale-->
+        <attribute name="name" type="String" value="'Camera1'"/>
+        <attribute name="view" type="Enum" values="free, firstPerson, secondPerson" value="free" />
+        <attribute name="target" type="Empty" value="null"/><!-- il faudrait préciser l'objet concerné par la cam si elle n'est pas free (trackTo pour le moteur 3D) -->
+        <attribute name="orthographic" type="boolean" value="false"/>
+    </model>
+    <model name="Zone">
+        <inheritance value="Empty"/> <!--Zone n'hérite plus d'Object-->
+        <attribute name="name" type="String" value="'Zone1'"/>
+        <attribute name="isGenerated" type="boolean" value="false"/>
+        <attribute name="redc" type="num" value="255"/><!--couleur de la Zone (rvb) et alpha pour la transparence-->
+        <attribute name="greenc" type="num" value="255"/>
+        <attribute name="bluec" type="num" value="255"/>
+        <attribute name="alpha" type="num" value="255"/>
+        <attribute name="type" type="Enum" values="cubic, spheric" value="cubic"/><!-- à voir si une zone peut-être définie de cette manière-->
+    </model>
+    <model name="Lamp"><!--à voir avec le groupe moteur 3D-->
+        <inheritance value="Empty"/>
+        <attribute name="type" type="Enum" values="lamp, spot, sun" value="sun"/>
+        <attribute name="effect" type="Enum" values="generic, constant, linear, stroboscopic" value="generic"/><!--effet d'extinction de la lumière-->
+        <attribute name="interval" type="Time" value="1" unit="s"/><!--pour constant, stroboscopic et linear-->
+        <attribute name="redc" type="num" value="255"/><!--couleur de la lampe-->
+        <attribute name="greenc" type="num" value="255"/>
+        <attribute name="bluec" type="num" value="255"/>
+    </model>
+    <model name="Obstacle"><!--contrairement à Empty et ses classes filles, Obstacle a un collada associé comme Object-->
+        <inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
+        <attribute name="name" type="String" value="'Obstacle1'"/>
+        <attribute name="isGenerated" type="boolean" value="false"/>
+    </model>
+    <model name="Object">
+        <inheritance value="Empty"/>
+        <attribute name="name" type="String" value="'Object1'"/>
+        <attribute name="mass" type="num" value="0"/>
+        <attribute name="inertia" type="num" value="0"/>
+        <attribute name="friction" type="num" value="100"/>
+        <attribute name="isFix" type="boolean" value="false"/>
+        <attribute name="isTraversable" type="boolean" value="false"/>
+        <attribute name="isGenerated" type="boolean" value="false"/><!-- je ne sais pas si c'est utile -->
+        <attribute name="message" type="String" value="'Message1 !'"/><!-- si jamais on implémente le 'speaks' -->
+    </model>
+
+
+    <!--Classes héritant de Object -->
+    <model name="Character">
+        <inheritance value="Object"/>
+        <attribute name="description" type="String" value="'Description1'"/>
+        <attribute name="life" type="num" value="100"/>
+        <attribute name="lifeMax" type="num" value="1"/>
+        <attribute name="lifeMin" type="num" value="1"/>
+        <attribute name="nbLives" type="num" value="1"/>
+        <attribute name="magic" type="num" value="0"/>
+        <attribute name="magicMax" type="num" value="1"/>
+        <attribute name="magicMin" type="num" value="0"/>
+        <attribute name="level" type="num" value="0"/>
+        <attribute name="attack" type="num" value="0"/>
+        <attribute name="defense" type="num" value="0"/>
+        <attribute name="maxJumpsInTheAir" type="num" value="0"/>
+        <attribute name="money" type="num" value="0"/>
+        <attribute name="class" type="String" value="'Class1'"/>
+        <attribute name="race" type="String" value="'Race1'"/>
+        <attribute name="acceleration" type="num" value="1"/>
+        <attribute name="inventories" type="List" subType="Inventory" value="null"/>
+        <attribute name="moveWithCamera" type="boolean" value="false"/><!-- si à true le perso avance comme tout jeu de plateforme / si false avance comme dans Resident Evil 1 -->
+        <attribute name="equipedObjects" type="List" subType="Object" value="null"/>
+        <attribute name="rightHandObject" type="Object" value="null"/>
+        <attribute name="leftHandObject" type="Object" value="null"/>
+    </model>
+    <model name="Projectile">
+        <inheritance value="Object"/><!--lors d'un expel, l'attribut speed est mis à la valeur de l'expel-->
+        <attribute name="damages" type="num" value="1"/>
+        <attribute name="damageZone" type="Zone" value="null"/><!--modifié en Zone et non pas Object-->
+    </model>
+    
+    <model name="Weapon">
+        <inheritance value="Object"/>
+        <attribute name="munitions" type="List" subType="Object" value="null"/><!--on peut mettre n'importe quel Object mais il vaut mieux mettre un Items (plusieurs si l'arme tire plusieurs types munition différentes)-->
+        <attribute name="shootPower" type="num" value="1"/>
+        <attribute name="shootInterval" type="time"  value="1" unit="s"/>
+        <attribute name="reloadTime" type="time" value="1" unit="s"/>
+    </model>
+    <model name="Ground">
+        <inheritance value="Object"/>
+        <attribute name="type" type="String" value=""/>
+    </model>
+    <model name="Vehicle">
+        <inheritance value="Object"/>
+        <attribute name="description" type="String" value="'Description1'"/>
+        <attribute name="minSpeed" type="num" value="0"/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
+        <attribute name="maxSpeed" type="num" value="100"/>
+        <attribute name="boost" type="num" value="0"/><!--la vitesse est tt le tps = à speed+boost-->
+        <attribute name="maxBoost" type="num" value="0"/>
+        <attribute name="boostDuration" type="num" value="0"/>
+        <attribute name="boostInterval" type="time" value="0" unit="s"/>
+    </model>
+    <model name="Items"><!--sert à avoir un certain nombre d'un seul même objet (pas forcément duplicable), sert pour l'inventaire, exemple : boite de munitions-->
+        <inheritance value="Object"/>
+        <attribute name="elements" type="Object" value="null"/><!-- UN seul Object -->
+        <attribute name="amount" type="num" value="0"/>
+        <attribute name="capacity" type="num" value="-1"/><!--nombre max, empêchera l'incrémentation de 'amount -->
+        <attribute name="maxWeight" type="num" value="-1"/><!--peut être géré avec (masse de l'objet x amount) , empêchera l'incrémentation de 'amount-->
+    </model>
+
+
+        <!--Classes n'héritant pas de Empty (et Object), qui n'interviennent pas dans l'environnement 3D-->
+        
+    <model name="Game">
+        <attribute name="name" type="String" value="'Game1'"/>
+        <attribute name="turnBased" type="boolean" value="false"/>
+        <attribute name="world" type="Enum" values="generic, grid, ribbon" value="generic"/>
+        <attribute name="gridsize" type="num" value="1"/>
+        <attribute name="gravity" type="Gravity" value="null"/>
+        <attribute name="ranking" type="List" subType="Side" value="null"/>
+    </model>
+    <model name="Gravity"><!-- choix d'une gravité selon un vecteur ou un Empty  -->
+        <attribute name="vector" type="Vector" x="0" y="0" z="9.81"/>
+        <attribute name="target" type="Empty" value="null"/><!-- à venir j'espère / pour une petite planète par exemple -->
+    </model>
+    <model name="Side"><!--sert pour l'attribut elements de Team et pour éviter de déclarer les mêmes attributs 2 fois dans Team et Player -->
+        <attribute name="name" type="String" value="'Side1'"/>
+        <attribute name="score" type="num" value="0"/>
+        <attribute name="victory" type="boolean" value="false"/>
+        <attribute name="defeat" type="boolean" value="false"/>
+    </model>
+    <model name="Team">
+        <inheritance value="Side"/>
+        <attribute name="capacity" type="num" value="-1"/>
+        <attribute name="elements" type="List" subType="Side" value="null"/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-même -->
+    </model>
+    <model name="Player">
+        <inheritance value="Side"/>
+        <attribute name="controller" type="Enum" values="human, IDENT" value="human"/><!-- human ou le nom d'une IA après les règles du jeu dans le code-->
+    </model>
+    <model name="Inventory">
+        <attribute name="name" type="String" value="'Inventory1'"/>
+        <attribute name="elements" type="List" subType="Object" value="null"/><!--peut contenir des Object dont les Items -->
+        <attribute name="capacity" type="num" value="-1"/><!--empêchera l'ajout d'un nouvel élément dans la liste 'elements'-->
+        <attribute name="maxWeight" type="num" value="-1"/><!--peut être géré avec la masse de chaque objet-->
+    </model>
+    <model name="Counter"><!--peut servir pour les vagues par exemple-->
+        <attribute name="name" type="String" value="'Counter1'"/>
+        <attribute name="unit" type="String" value=""/><!--l'unité servira à l'affichage, pas obligatoire-->
+        <attribute name="value" type="num" value="0"/>
+        <attribute name="step" type="num" value="1"/><!--l'incrément (pas ou step) peut-être négatif dans le cas d'un décompte-->
+        <attribute name="min" type="num" value="0"/>
+        <attribute name="max" type="num" value="-1"/>
+    </model>
+    <model name="Chrono"><!--aura les mêmes actions (play stop pause) que Media -->
+        <attribute name="name" type="" value="'Chrono1'"/>
+        <attribute name="value" type="time" value="0" unit="s"/>
+        <attribute name="start" type="time" value="0" unit="s"/>
+        <attribute name="end" type="time" value="-1" unit="s"/><!--relation avec le 'IDENT ends' dans la grammaire-->
+        <attribute name="active" type="boolean" value="false"/>
+    </model>
+    <model name="Media">
+        <attribute name="url" type="String" value=""/>
+        <attribute name="loop" type="boolean" value="false"/>
+        <attribute name="volume" type="num" value="100"/>
+        <attribute name="active" type="boolean" value="false"/><!--relation avec le 'IDENT ends' dans la grammaire-->
+    </model>
+    <model name="Background"><!-- l'image de fond si elle est gérée un jour -->
+        <attribute name="url" type="String" value=""/>
+        <attribute name="orientation" type="Vector" x="0" y="0" z="0"/>
+        <attribute name="size" type="Vector" x="0" y="0" z="0"/>
+    </model>
+    <model name="Constraint"><!-- les contraintes à voir avec le groupe moteur 3D -->
+        <attribute name="influence" type="num" value="1"/>
+    </model>
+    <model name="ChildOfConstraint"><!-- contrainte de parentage -->
+        <inheritance value="Constraint"/>
+        <attribute name="parent" type="Empty" value="null"/>
+        <attribute name="translation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="rotation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="scale" type="BVector" x="true" y="true" z="true"/>
+    </model>
+    <model name="CopyConstraint"><!-- contrainte de copie de transformation (choix de la transformation)-->
+        <inheritance value="Constraint"/>
+        <attribute name="target" type="Empty" value="null"/>
+        <attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation"/>
+        <attribute name="coordinates" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="offset" type="boolean" value="true"/>
+    </model>
+    <model name="translationConstraint"><!-- contrainte de limitation en translation-->
+        <inheritance value="Constraint"/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+    </model>
+    <model name="RotationConstraint"><!-- contrainte de limitation en rotation-->
+        <inheritance value="Constraint"/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="activation" type="BVector" x="true" y="true" z="true"/>
+    </model>
+    <model name="scaleConstraint"><!-- contrainte de limitation en scale-->
+        <inheritance value="Constraint"/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
+        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+    </model>
+    <model name="DistanceConstraint"><!-- contrainte de distance entre les centres de 2 objets -->
+        <inheritance value="Constraint"/>
+        <attribute name="target" type="Empty" value="null"/>
+        <attribute name="region" type="Enum" values="inside, outside, surface" value="outside"/>
+        <attribute name="distance" type="num" value="0"/>
+    </model>
+    <model name="trackToConstraint"><!-- contrainte de suivi (sert pour une caméra suivant un objet) -->
+        <inheritance value="Constraint"/>
+        <attribute name="target" type="Empty" value="null"/>
+        <attribute name="alignTo" type="Enum" values="x, y, z" value="x"/>
+        <attribute name="upTo" type="Enum" values="x, y, z" value="z"/>
+        <attribute name="align" type="boolean" value="false"/>
+    </model>
+
+</plop>

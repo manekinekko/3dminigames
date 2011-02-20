@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m3d>
+	
+	<version>0.9-alpha</version>
+	
+	<config>
+		<server>
+			<compiler id="compiler" url="bin/compiler.php"></compiler>
+			<uploader id="uploader" url="bin/upload.php"></uploader>	
+		</server>
+		
+		<client>
+			
+		</client>
+	</config>	
+	
+</m3d>

@@ -12,6 +12,13 @@ if (!window.M3D) {
 }
 
 /**
+ * set the config namespace.
+ * @see assets/js/m3d_config.js
+ */
+if (!window.M3D.Config){
+	window.M3D.Config = {};
+}
+/**
  * set the GUI functions namespace.
  * @see assets/js/m3d_utils.js
  */
@@ -52,9 +59,10 @@ if (!window.M3D.Upload){
  */
 var canvas = document.getElementById('canvas'),
 	doc = new GLGE.Document(),
+	config = new GLGE.Document(),
 	obj,
 	scene,
 	hoverobj,
-	now;
-	mouseGlobale = new GLGE.MouseInput(canvas);								// ajout Tom 16/03 : rotateCam
+	now,
+	mouseGlobale = new GLGE.MouseInput(canvas),								// ajout Tom 16/03 : rotateCam
 	mouseRecord = mouseGlobale.getMousePosition();							// ajout Tom 16/03 : rotateCam

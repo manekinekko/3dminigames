@@ -17,7 +17,6 @@ $(function(){
 	 */
 	$('#canvas').bind('mousedown', function(e){	M3D.GUI.pickObject(e, this);
 												mouseRecord = mouseGlobale.getMousePosition();
-												console.log(mouseRecord);
 	}).bind('mouseup', M3D.GUI.updateEditor);
 		
 	/**

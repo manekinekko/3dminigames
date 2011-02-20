@@ -1,16 +1,343 @@
 #labels Featured,Phase-Implementation
 =Glossaire des mots-clés=
+*(Ordre alphabétique (Parties) )*
+
+===Organisation du jeu===
+  # _Partie *Description du jeu*_
+  # _Partie *Déclaration de nouveaux types*_
+  # _Partie *Initialisations*_
+  # _Partie *Définitions*_
+  # _Partie *Commandes*_
+  # _Partie *Règles du jeu*_
+  # _Partie *Intelligence Artificielle*_
+
+----
+=A=
+----
+==and==
+_Partie *Déclaration de nouveaux types*_
+  * séparer les types lors de la déclaration d'un nouveau type :
+{{{
+type SuperPlombier is Plombier and Weapon and Vehicle; // on peut ajouter autant de type que nécessaire avec 'and' du moment que les types existent déjà et ne soient pas redondants
+}}}
+_Parties *Définitions* et *Règles du jeu*_
+  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir 'if') :
+{{{
+if (life of perso1 = 0 and life of perso2 >= 5) //les conditions doivent être toutes les deux vraies pour pouvoir accéder à la conséquence (dans le then)
+then /*conséquences*/
+endif;
+}}}
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'between' ) :
+{{{
+distance between perso1 and perso2 > 10
+angle between perso1 and perso2 > 10
+random between 1 and 20 
+// ces valeurs peuvent être assignées ou testées dans une condition
+}}}
+==all==
+  * représente tous les objets 3D générés hérités de Empty
+{{{
+assign 100 at life of all; // (voir 'assign') va assigner 100 à l'attribut 'life' de tous les objets 3D qui en possèdent un
+if life of all = 0 then /*conséquences*/ endif; // (voir 'if') va tester si tous les objets générés qui ont un attribut 'life' l'ont à 0
+rule all moves then /*conséquencess*/; //(voir 'rule') teste si l'un des objets générés bouge
+}}}
+==at==
+(voir 'has')
+
+_Partie *Description du jeu*_
+  * assigner une valeur (numérique ou non) à un attribut de la classe Game :
+{{{
+Game has name at "mon jeu";
+}}}
+_Partie *Initialisations*_
+  * assigner une valeur (numérique ou non) à un attribut d'une classe ou d'un objet :
+{{{
+Character has life at 100; // tous les objets de type Character commenceront avec l'attribut life à 100
+perso1 has life at 10; // la valeur fournie à l'attribut doit être de même type obligatoirement, ici, l'attribut 'life' est un nombre
+perso2 has belonging at perso2; // ici, l'attribut belonging est un Object (Character hérite de Object)
+}}}
+----
+=B=
+----
+==between==
+_Parties *Définitions* et *Règles du jeu*_
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and' ) :
+{{{
+distance between perso1 and perso2 > 10
+angle between perso1 and perso2 > 10
+random between 1 and 20 
+// ces valeurs peuvent être assignées ou testées dans une condition
+}}}
+----
+=C=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=D=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=E=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=F=
+----
+==from==
+_Parties *Initialisations*, *Règles du jeu* et *Définitions*_ (voir 'list' et 'remove')
+  * pour désigner le nom de la liste lorsqu'on lui retire un élément :
+{{{
+remove elt1 from liste1; // l'élément doit exister et être dans la liste désignée
+}}}
+----
+=G=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=H=
+----
+==has==
+(voir 'at')
+
+_Partie *Description du jeu*_
+  * spécifier les attributs de la classe Game (partie Description du jeu) :
+{{{
+Game has name at "mon jeu";
+}}}
+_Partie *Initialisations*_
+  * accéder à un attribut existant d'une classe ou d'un objet pour le définir :
+{{{
+Character has life at 100; // tous les objets de type Character commenceront avec l'attribut life à 100
+perso1 has life at 10; // l'objet perso1 (de type Character commenceront avec l'attribut life à 100
+perso1 has life at life of perso2; // l'attribut life de perso1 se basera sur l'attribut life de perso2
+}}}
+  * déclarer un nouvel attribut n'appartenant pas déjà à une classe :
+{{{
+Character has mon_attribut_1 at 100; // l'attribut nommé 'mon_attribut_1' n'existe pas dans la classe Character, tous les objets de type Character commenceront avec cet attribut initialisé à 20
+perso1 has mon_attribut_2 at 20; // perso1 est de type Character, l'attribut nommé 'mon_attribut_2' n'existant pas dans cette classe, perso1 commencera avec cet attribut initialisé à 50
+perso1 has mon_attribut_3 at "texte1"; // une chaîne de caractère peut être ajoutée (entre guillemets obligatoirement)
+}}}
+  * faire qu'un objet s'approprie un autre objet et lui donne des contraintes de parenté :
+{{{
+perso1 has arme1; // l'objet perso1 s'approprie l'objet arme1 (son attribut belonging devient 'true')
+}}}
+=I=
+==is==
+_Partie *Initialisations*_
+  * déclarer un nouveau type (une nouvelle classe) (voir 'type') :
+{{{
+type Plombier is Character; // le type doit déjà exister ou avoir été défini plus haut dans le code de la même manière
+type SuperPlombier is Plombier and Weapon; // on peut déclarer de nouveaux types qui sont composés de plusieurs déjà existant
+}}}
+_Partie *Déclaration de nouveaux types*_
+{{{
+mario is Plombier; // le type doit exister
+}}}
+_Partie *Commandes*_ (voir 'command' et 'for')
+  * déclarer une commmande : se place après la déclaration :
+{{{
+command objet1 for player1 is definition1;
+}}}
+_Partie *Définitions et Règles du jeu*_ 
+  * tester l'état d'un objet selon son type dans une condition (voir 'if') :
+{{{
+if audio1 is started then /*conséquences*/ endif; // (voir 'started') pour un objet de type Media
+if perso1 is dead then /*conséquences*/ endif; // (voir 'dead') pour un objet de type Character
+}}}
+_Partie *Règles du jeu*_ (voir 'rule' et 'then')
+  * préciser le nom d'une règle du jeu *(facultatif)* :
+{{{
+rule /*declencheur*/ then /*conséquences*/ ; // règle sans nom
+rule nom_de_regle is /*declencheur*/ then /*conséquences*/ ; // règle avec
+}}}
+_Partie *Intelligence Artificielle*_ (voir 'ai' et 'then')
+  * préciser le nom d'une règle du jeu *(facultatif)* :
+{{{
+ai nom_ia is /*conséquences*/ ; 
+}}}
+----
+=J=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=K=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=L=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=M=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=N=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=O=
+----
+==of==
+_Partie *Initialisations*_
+  * énumérer le contenu d'une liste à sa création (voir 'is' et 'list')
+{{{
+liste1 is list of perso1, perso2, perso3;
+}}}
+_Parties *Définitions* et *Règles du jeu*_
+  * accéder en cascade aux attributs d'un objet ou d'une classe :
+{{{
+life of perso1
+x of position of perso1 // x est un attribut de position et position est un attribut de perso1
+}}}
+  * indiquer quelle Team ou quel Player est en condition de victoire ou de défaite (voir 'victory' et 'defeat') :
+{{{
+victory of team1; 
+defeat of player1; 
+}}}
+  * créer une contrainte de limite *(à revoir où à enlever !!!)*
+{{{
+block translation of perso1 true true false;
+}}}
+----
+=P=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=Q=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=R=
+----
+==remove==
+_Parties *Initialisations*, *Règles du jeu* et *Définitions*_ (voir 'list' et 'from')
+  * pour désigner le nom de la liste lorsqu'on lui retire un élément :
+{{{
+remove num 1 from liste1; // l'élément doit exister et être dans la liste désignée
+remove first from liste1; // (voir 'first') supprime le premier élément si la liste n'est pas vide
+remove last from liste1; // (voir 'last') supprime le dernier élément si la liste n'est pas vide
+}}}
+----
+=S=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=T=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=U=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=V=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=W=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=X=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=Y=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+=Z=
+----
+_Partie **_
+  * :
+{{{
+
+}}}
+----
+
+
+
+=Partie faite par Afshin (à trier)=
+
+
+
 
 *Classer les mots-clés par catégorie*
 
 *Definition de jeu* :::::::::::::::::::::::::::::::::::::::
-
-*AT*
-
-Spécifie valeur(s) d'un attribut.
-{{{
-bazooka has orientation AT 0 0 0; 
-}}}
 
 *GAME*
 
@@ -26,13 +353,6 @@ Définie la gravité de environnement. ça peux être définie par un vecteur (t
 game has GRAVITY at 1 1 1;
 }}}
 
-*HAS*
-
-Définie attachement d'un attribut à un identificateur.
-{{{
-rabbit *has* Life at 10; rabbit HAS size at 1 1 1; 
-}}}
-
 *SCORE*
 
 Les points obtenus par jouer initialisé ici par un chiffre.
@@ -42,12 +362,6 @@ game has SCORE at 0;
 
 *Héritage* ::::::::::::::::::::::::::::::::::::::::::::::::
 
-*IS*
-
-Pour montrer qu'un type hérite de(s) autre(s) type(s). 
-{{{
-Lapin IS Character; 
-}}}
 
 *TYPE*
 
@@ -57,29 +371,8 @@ Définie un nouveau type par combiner les autres types ou identificateurs déjà
 TYPE Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
 }}}
 
-*AND*
-
-Union entre les caractéristiques des types. Ordre est important; dans le cas de duplication des attributs AND ajoute juste les attributs manquant.
-{{{
-type Lapin is Character AND Projectile;
-}}}
-
 *Initialisations* ::::::::::::::::::::::::::::::::::::::::::
 
-
-*IS*
-
-Déclaration de type d'un entité.
-{{{
-chasseur IS Character;
-}}}
-
-*PLAYER*
-
-Déclare que joueur contrôle cet entité.
-{{{
-chasseur is Character PLAYER;
-}}}
 
 *DUPLICABLE*
 
@@ -93,18 +386,6 @@ missile is Projectile ally DUPLICABLE;
 Déclarer une liste des opérations ou identificateurs. Liste d'opérations c'est possible pour les opérations duplicables.
 {{{
 
-}}}
-
-*OF* ?????
-
-Appartenance des identificateur/opération à une liste.
-{{{
-
-}}}
-
-*WITH* ?????
-
-{{{
 }}}
 
 *CAMERA*
@@ -121,7 +402,7 @@ Point de vue de premier personne.
 camera FIRST person;
 }}}
 
-*THIRED PERSON*
+*THIRD PERSON*
 Point de vue troisième personne.
 {{{
 camera THIRD person;
@@ -166,22 +447,6 @@ Appartenance d'un identificateur à une liste.
 lapin5 is IN LapinList;
 }}}
 
-*AT*
-
-Attribue une/plusieurs valeur(s) (chiffre/booléen/chaine) à un identificateur.
-{{{
-life at 5, name at "Gandalf Le Gris";
-size at 20 30 40;
-inventory at listeArmesJoueur;
-}}}
-
-*COUNTER*
-
-Un type de compteur.
-{{{
-cmp1 is COUNTER at 0; ?????
-}}}
-
 *TIME*
 
 Un objet de type chronomètre pour gérer le temps.
@@ -195,4 +460,3 @@ Objet prédéfini basic avec les attributs: position(x,y,z), orientation(x,y,z),
 {{{
 ?????
 }}}
-

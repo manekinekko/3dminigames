@@ -979,7 +979,7 @@
 				cam.setLocY(camPos.y - sens);
 			}		
 		}
-		cam.setLocZ(camPos.z + monte); console.log(monte);
+		cam.setLocZ(camPos.z + monte);
 	}
 	
 	M3D.GUI.toggleBbox = function(){
@@ -1010,10 +1010,7 @@
 		{	
 			var _float = function(v){ return parseFloat(v).toFixed(2); }
 			var _obj = obj.parent;
-			console.log(_obj.uid);
-			console.log(_obj.getRotX());
-			console.log(_obj.getRotY());
-			
+
 			if (_obj.getId() !== "") {
 				$('#id').val(_obj.getId());
 			}
@@ -1078,9 +1075,7 @@
 	
 	// -- reset the camera's position
 	M3D.GUI.resetCameraPosition = function(){
-		
 		var c = doc.getElement('maincamera1');
-		log(c);
 		scene.camera.setDRot(c.getDRotX(), c.getDRotY(), c.getDRotZ());
 		scene.camera.setDLoc(c.getDLocX(), c.getDLocY(), c.getDLocZ());
 		scene.camera.setAspect(c.getAspect());
@@ -1258,8 +1253,6 @@
 				&& o[i].getId() != 'yaxis' 
 				&& o[i].getId() != 'zaxis' ){
 				scene.removeChild(o[i]);
-				//o[i].removeInstance();
-				log(o[i]);
 			} 
 		}
 	}

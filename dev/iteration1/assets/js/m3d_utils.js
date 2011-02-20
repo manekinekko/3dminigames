@@ -1246,6 +1246,7 @@
 	M3D.GUI.clearCanvas = function(){
 		var o = scene.getObjects();
 		for (var i in o) {
+			log(o[i].id);
 			// don't remove the axises!
 			if ( o[i].getId() != 'grid' 
 				&& o[i].getId() != 'xyzaxis'

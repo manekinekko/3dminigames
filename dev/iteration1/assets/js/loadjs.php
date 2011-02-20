@@ -22,6 +22,7 @@ $files = array(
 				
 				/* Please in this order */
 				'm3d_init.js',
+				'm3d_config.js',
 				'm3d_glge.js',
 				'm3d_utils.js',
 				

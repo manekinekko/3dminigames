@@ -249,8 +249,7 @@
 	 */
 	 
 	M3D.DB.containsObj = function(v){
-		log(v+M3D.DB.PATTERN_OBJ);
-		return M3D.DB.contains(v+M3D.DB.PATTERN_OBJ);
+		return M3D.DB.contains(v+DB_PATTERN_OBJ);
 	};
 	
 	/**

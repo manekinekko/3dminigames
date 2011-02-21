@@ -8,15 +8,26 @@
 	var language = 'generic';
 	var engine = 'older';
 	var ua = navigator.userAgent;
-	var ts = (new Date).getTime(); // timestamp to avoid cache
+	var ts = (new Date()).getTime(); // timestamp to avoid cache
 	var lh = location.href;
 	
-	if(ua.match('MSIE')) engine = 'msie';
-	else if(ua.match('KHTML')) engine = 'khtml'; 
-	else if(ua.match('Opera')) engine = 'opera'; 
-	else if(ua.match('Gecko')) engine = 'gecko';
-
-	if(lh.match('language=')) language = lh.replace(/.*language=(.*?)(&.*)?$/,'$1');
+	if (ua.match('MSIE')) {
+		engine = 'msie';
+	}
+	else if (ua.match('Gecko')) {
+		// use this for Google Chrome
+		engine = 'gecko';
+	}
+	else if (ua.match('KHTML')){
+		engine = 'khtml';
+	} 
+	else if (ua.match('Opera')) {
+		engine = 'opera';
+	}
+					
+	if (lh.match('language=')) {
+		language = lh.replace(/.*language=(.*?)(&.*)?$/, '$1');
+	}
 
 	document.write('<link type="text/css" href="codepress.css?ts='+ts+'" rel="stylesheet" />');
 	document.write('<link type="text/css" href="languages/'+language+'.css?ts='+ts+'" rel="stylesheet" id="cp-lang-style" />');
@@ -26,10 +37,12 @@
 
 </head>
 
-<script type="text/javascript">
-if(engine == "msie" || engine == "gecko") document.write('<body><pre> </pre></body>');
-else if(engine == "opera") document.write('<body></body>');
-// else if(engine == "khtml") document.write('<body> </body>');
-</script>
+<body>
+	<script type="text/javascript">
+	if (engine == "msie" || engine == "gecko") {
+		document.write('<pre> </pre>');
+	}
+	</script>
+</body>
 
 </html>

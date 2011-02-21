@@ -4,6 +4,10 @@
  * @projectDescription This file handles the GLGE environment initialization. 
  */
 doc.onLoad = function() {
+	
+	$('#tools-panel, #viewmenu').show();
+	$('#loading-message').hide();
+	
 	mouse = new GLGE.MouseInput(canvas);
 	keys = new GLGE.KeyInput();
 	pickcolor = doc.getElement("green");
@@ -20,7 +24,7 @@ doc.onLoad = function() {
 	// -- objet and camera rotation
 	controller.onchange = function(xRot, yRot) { 
 		M3D.GUI.handleCamera(xRot, yRot);
-	}
+	};
 
 	///////////////////////////			
 	// -- the rendering loop
@@ -33,8 +37,10 @@ doc.onLoad = function() {
 	// -- render each millisecond
 	setInterval(_render, 1);
 	
-}
+};
 
 // -- load the xml containing the scene data
-doc.load("level.xml");
+setTimeout(function(){
+	doc.load("level.xml");	
+}, 2000);
 

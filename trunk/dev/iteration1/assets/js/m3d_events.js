@@ -36,7 +36,7 @@ $(function(){
 	 * Bind the live update of the 3D model position/rotation/scale's values.
 	 * @see M3D.GUI.updateValues
 	 */
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); })
+	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); });
 	/**
 	 * Bind the slider insert/remove
 	 */
@@ -121,7 +121,7 @@ $(function(){
 			M3D.GUI.updateEntityList();
 			M3D.GUI.addObjectToScene();
 			
-			var _name = $(this).closest('.window').find('#name').val();
+			_name = $(this).closest('.window').find('#name').val();
 			_name = M3D.Common.ucfirst(_name);
 			M3D.Editor.setContent('type '+_name+' is Object;\n'+
 									_name+' has position at 0.00 0.00 0.00;\n'+

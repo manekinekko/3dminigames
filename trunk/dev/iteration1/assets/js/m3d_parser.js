@@ -5,7 +5,7 @@
 (function(M3D){
  
  
-})(window["M3D"]);
+})(window.M3D);
  
  /*****
 PD	: ')';

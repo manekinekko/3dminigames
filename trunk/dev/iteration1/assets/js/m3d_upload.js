@@ -35,7 +35,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 				body += '--' + boundary + '--';      
 				xhr.setRequestHeader('content-type', 'multipart/form-data; boundary=' + boundary);
 				// Firefox 3.6 provides a feature sendAsBinary ()
-				if(xhr.sendAsBinary !== null) { 
+				if(xhr.sendAsBinary) { 
 					xhr.sendAsBinary(body); 
 				// Chrome 7 sends data but you must use the base64_decode on the PHP side
 				} else { 

@@ -192,8 +192,8 @@
 	M3D.DB.updateSelectedEntry = function(object){
 	
 		var uid = object.uid;
+		var updateobj = M3D.DB.getObject(uid);
 		if (updateobj){
-			var updateobj = M3D.DB.getObject(uid)
 			updateobj.position.X = object.getLocX();
 			updateobj.position.Y = object.getLocY();
 			updateobj.position.Z = object.getLocZ();
@@ -208,7 +208,7 @@
 				'value': JSON.stringify(updateobj)
 			});
 		}
-	}
+	};
 	
 	/**
 	 * Update data ... ??? 
@@ -337,7 +337,7 @@
 			}
 		}
 		return false;
-	}
+	};
 	
 	/**
 	 * Create a new RegExp object with the pattern v
@@ -347,6 +347,6 @@
 	 */
 	_regex = function(v){
 		return new RegExp(v+'$');
-	}
+	};
 	
 })(window.M3D);

@@ -49,9 +49,10 @@
         var i;
         var arr = ['string', 'number', 'boolean'];
         for (i in arr) {
-            if (typeof(t) === arr[i]) 
+            if (typeof(t) === arr[i]) {
                 return true;
-        };
+			}
+        }
         return false;
     };
 	
@@ -94,8 +95,9 @@
 	 */
 	M3D.Common.ucfirst = function(value){
 		
-		if ( typeof(value) !== "string" || value === "" ) return "";
-		
+		if (typeof(value) !== "string" || value === "") {
+			return "";
+		}
 		var _first = value.substring(0,1).toUpperCase();
 		return _first+value.substring(1);
 	};

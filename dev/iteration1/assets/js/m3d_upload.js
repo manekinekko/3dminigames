@@ -35,7 +35,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 				body += '--' + boundary + '--';      
 				xhr.setRequestHeader('content-type', 'multipart/form-data; boundary=' + boundary);
 				// Firefox 3.6 provides a feature sendAsBinary ()
-				if(xhr.sendAsBinary != null) { 
+				if(xhr.sendAsBinary !== null) { 
 					xhr.sendAsBinary(body); 
 				// Chrome 7 sends data but you must use the base64_decode on the PHP side
 				} else { 
@@ -55,7 +55,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 					document.getElementById(status).innerHTML = 'Loaded : 100%<br/>';
 				}
 				
-			}
+			};
 				
 			// Loading errors
 			this.loadError = function(event) {
@@ -71,7 +71,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 					default:
 						document.getElementById(status).innerHTML = 'File not transfered!';
 				}	
-			}
+			};
 		
 			// Reading Progress
 			this.loadProgress = function(event) {
@@ -79,7 +79,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 					var percentage = Math.round((event.loaded * 100) / event.total);
 					document.getElementById(status).innerHTML = 'Loaded : '+percentage+'%';
 				}				
-			}
+			};
 				
 			// Preview images
 			this.previewNow = function(event) {		
@@ -89,13 +89,13 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			    img.file = file;   
 			    img.src = bin;
 				document.getElementById(show).appendChild(img);
-			}
+			};
 
 		reader = new FileReader();
 		// Firefox 3.6, WebKit
 		if(reader.addEventListener) { 
 			reader.addEventListener('loadend', this.loadEnd, false);
-			if (status != null) 
+			if (status !== null) 
 			{
 				reader.addEventListener('error', this.loadError, false);
 				reader.addEventListener('progress', this.loadProgress, false);
@@ -104,7 +104,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 		// Chrome 7
 		} else { 
 			reader.onloadend = this.loadEnd;
-			if (status != null) 
+			if (status !== null) 
 			{
 				reader.onerror = this.loadError;
 				reader.onprogress = this.loadProgress;
@@ -177,9 +177,9 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			}
 			
 			document.getElementById('loading').style.display = "none";
-		}
+		};
 		
-	}
+	};
 
 	
 	// Function drop file
@@ -211,7 +211,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	 	}
 		
 		document.getElementById('loading').style.display = "block";
-	}
+	};
 	
 	// The inclusion of the event listeners (DragOver and drop)
 
@@ -225,7 +225,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	}, false);
 	this.uploadPlace.addEventListener("dragleave", function(event){
 		document.getElementById('status').innerHTML = "";
-	}, false)
+	}, false);
 	this.uploadPlace.addEventListener("drop", this.drop, false); 
 
-}
+};

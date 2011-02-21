@@ -8,7 +8,8 @@
 body {
 position: relative;
 min-width: 1200px;
-font-size: 0.9em;
+min-height:600px;
+font-size: 0.8em;
 background: #eee url('../dae/free/images/e8clangfloor.jpg') repeat center center scroll;
 background:#eee;
 margin: 0;
@@ -53,7 +54,6 @@ color:red;
 
 #m3d-ui{
 width: 1200px;
-height: 500px;
 left:-600px;
 margin-left:50%;
 position:relative;
@@ -67,7 +67,6 @@ opacity: 0.5;
 z-index: 10000;
 width:100%;
 height:100%;
-top:-10px;
 }
 
 #canvas-container {
@@ -75,13 +74,27 @@ width:800px;
 height:500px;
 }
 
+#tools-panel, #viewmenu {
+display:none;
+}
+
 #container {
 margin-top: 6px;
 background: #fff;
 z-index: 10;
--webkit-box-shadow: 0 0 10px #000;
--moz-box-shadow: 0 0 10px #000;
-box-shadow: 0 0 10px #000;
+}
+
+#loading-message {
+width:300px;
+left:500px;
+position:absolute;
+top:290px;
+font-size:0.9em;
+color:#aaa;
+background:#fff  url('img/ajax-loader2.gif') no-repeat center center scroll;
+padding-bottom:30px;
+text-align:center;
+
 }
 
 #info-bottom {
@@ -93,7 +106,7 @@ margin-top:-4px;
 
 #viewmenu {
 background: none repeat scroll 0 0 transparent;
-bottom: -10px;
+bottom: 140px;
 height: 30px;
 overflow: hidden;
 padding: 5px;
@@ -146,6 +159,7 @@ max-width: 390px;
 height: 498px;
 min-height: 498px;
 max-height: 498px;
+font-size:10px;
 }
 
 #editor textarea:disabled {
@@ -171,9 +185,6 @@ left:-200px;
 background: white;
 z-index: 10001;
 padding: 5px 10px;
--webkit-box-shadow: 0 0 10px #000;
--moz-box-shadow: 0 0 10px #000;
-box-shadow: 0 0 10px #000;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
 border-radius: 5px;
@@ -202,6 +213,8 @@ border-radius: 5px 5px 0 0;
 
 td:first-child {
 text-align:right;
+color:#000080;
+font-weight:bold;
 }
 
 .column {
@@ -338,6 +351,12 @@ background:transparent url('img/cursor-move.png') no-repeat center center scroll
 }
 .cursor.model-rotate {
 background:transparent url('img/cursor-rotate.png') no-repeat center center scroll;
+}
+
+.box-shadow {
+-webkit-box-shadow: 0 0 10px #000;
+-moz-box-shadow: 0 0 10px #000;
+box-shadow: 0 0 10px #000;	
 }
 
 /* slider */

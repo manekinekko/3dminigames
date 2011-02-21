@@ -6,7 +6,7 @@
 		<!-- start: css parsing -->
 		<link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet' type='text/css'>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all"></link>
+		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
 		<!-- end: css parsing -->
 		
 	</head>
@@ -17,19 +17,20 @@
 		<div id="m3d-ui">	
 			
 			<!-- start: canvas container -->
-			<div id="container">
+			<div id="container" class="box-shadow">
+				<div id="loading-message">Loading 3DWIGS UI. Please wait...</div>
 				<div id="loading"></div>
-				<h1><span>3D</span>WIGS</span><br/><span class="def">Your 3D Web Interactive Game Studio</span></h1>
+				<h1><span>3D</span>WIGS<br/><span class="def">Your 3D Web Interactive Game Studio</span></h1>
 				
 				<div class="float-right" id="canvas-container">
 					<canvas id="canvas" width="800" height="500"></canvas>
 					<div id="canvas-border" ></div>
 					<div id="tools-panel" >
-						<span class="cursor camera-rotate" title="Rotate Camera"></span >
-						<span class="cursor camera-move" title="Move Camera"></span>
-						<span class="cursor camera-zoom" title="Zoom Camera"></span>
-						<span class="cursor model-move" title="Move Mdel"></span>
-						<span class="cursor model-rotate" title="Rotate Model"></span>
+						<span class="cursor camera-rotate" title="Rotate Camera">&nbsp;</span >
+						<span class="cursor camera-move" title="Move Camera">&nbsp;</span>
+						<span class="cursor camera-zoom" title="Zoom Camera">&nbsp;</span>
+						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
+						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
 					</div>
 					
 					<!-- start: menu -->
@@ -71,13 +72,15 @@
 				<!-- start: bottom info panel -->
 				<div id="info-bottom" class="animate">
 					<div class="column">
-						<table>
+						<table summary="3D Model values">
 							<thead>
-								<th></th>
-								<th>X</th>
-								<th>Y</th>
-								<th>Z</th>
-								<th></th>
+								<tr>
+									<th></th>
+									<th>X</th>
+									<th>Y</th>
+									<th>Z</th>
+									<th></th>
+								</tr>
 							</thead>
 							<tbody>
 								<tr>
@@ -125,7 +128,7 @@
 				
 				<div id="status"></div>
 				
-				<div id="entity-info" class="window closed">
+				<div id="entity-info" class="window box-shadow closed">
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>
 					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" />
@@ -136,7 +139,7 @@
 					</div>
 				</div>
 			
-				<div id="help" class="window closed">
+				<div id="help" class="window box-shadow closed">
 					<h2>Help</h2>
 					<div>
 						&#187;Use mouse wheel to zoom in/out<br/>
@@ -152,7 +155,7 @@
 					</div>
 				</div>
 				
-				<div id="confirmation-clear" class="window closed">
+				<div id="confirmation-clear" class="window box-shadow closed">
 					<h2>Confirmation!</h2>
 					<div>Do you really want to clear the canvas?<br/>
 					<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
@@ -163,7 +166,7 @@
 					</div>
 				</div>
 				
-				<div id="confirmation-load" class="window closed">
+				<div id="confirmation-load" class="window box-shadow closed">
 					<h2>Welcome back!</h2>
 					<div>Do you want to load your previous content ?<br/>
 					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
@@ -174,13 +177,13 @@
 					</div>
 				</div>
 				
-				<div id="about" class="window closed">
+				<div id="about" class="window box-shadow closed">
 					<h2>About</h2>
 					<p>
 						<strong>3DWIGS</strong> - 3D Web Interactive Game Studio is a new way of creating 3D mini-games for the web.<br/>
 					</p>
 					<p>
-						<strong>Author: </strong>Professor R&eacute;mi Cozot.
+						<strong>Author: </strong>Doctor R&eacute;mi Cozot.
 						<strong>Developers: </strong>Berlon Antoine, Bouzillard Jer&ocirc;me, Chegham Wassim, Clergeau Thomas, Faghihi Afshin,
 						Guichaoua Mathieu, Israel Quentin, Kien Emeric, Le Corronc Thibault, Le Galludec Benjamin,
 						Le Normand Erik, Lubecki Aur&eacute;lien, Marginier David, Sanvoisin Aur&eacute;lien, Tolba Mohamed Amine,

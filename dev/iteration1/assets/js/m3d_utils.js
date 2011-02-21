@@ -23,22 +23,7 @@
 		/*M3D.GUI.initTypes();*/ //local storage
 		M3D.GUI.drawGrid();
 	};
-	
-	
-	// Initialize the attributes list
-	/*M3D.GUI.initTypes = function(){
-		
-		var types = M3D.DB.getAllTypes();
-		var newEntityHtml = '';
-		for( var i in types){
-			
-			newEntityHtml = "<option value='"+types[i].name+"'>"+types[i].name+"</option>";		
-			$('#entity').append( newEntityHtml );
-			
-		}
-		
-	};*/	//local storage
-	
+
 	M3D.GUI.drawGrid = function(){
 		
 		var x,y;
@@ -408,7 +393,7 @@
 	
 			return true;
 		}
-	}
+	};
 	
 	
 	M3D.GUI.deleteRule = function(el){
@@ -419,7 +404,7 @@
 		// [DB]
 		// delete this rule from DB
 		
-	}
+	};
 	
 	
 	
@@ -467,7 +452,7 @@
 			}
 		});	
 			
-	}
+	};
 	
 	M3D.GUI.saveNewAttribut = function(){
 		
@@ -511,7 +496,7 @@
 		// Save the new attribut into DB and add the DB id to the new attribut in the list
 		// so we can easily delete an attribut
 	
-	}
+	};
 	
 	
 	M3D.GUI.addNewAttribut = function(){
@@ -549,7 +534,7 @@
 			
 		}
 		
-	}
+	};
 	
 	
 	
@@ -561,7 +546,7 @@
 		// [DB]
 		// Delete this attribut from the DB using its DB id that has been inserted during its creation
 		
-	}
+	};
 	
 	M3D.GUI.updateEntityList = function(){
 		
@@ -596,7 +581,7 @@
 							'Z': M3D.lastImportedModel.getRotZ()
 						}
 					}
-				}
+				};
 		
 		// handle the bbox
 		var _bbox = {'X':'#','Y':'#','Z':'#'};
@@ -611,11 +596,11 @@
 		M3D.DB.setObject(element);
 		// [/DB]
 
-	}
+	};
 	
 	M3D.GUI.addOptionToSelectBox = function(o){
 		$('#select-model').append('<option value="'+o.uid+'">'+o.name+'</option>');
-	}
+	};
 	
 	
 	// -- add object to scene (TODO see inside)
@@ -666,13 +651,53 @@
 				case 'posY': _obj.setLocY( value ); break;
 				case 'posZ': _obj.setLocZ( value ); break;
 				
-				case 'scaleX': if ( value > 0 ) _obj.setScaleX( value ); break;
-				case 'scaleY': if ( value > 0 ) obj.setScaleY( value ); break;
-				case 'scaleZ': if ( value > 0 ) obj.setScaleZ( value ); break;
+				case 'scaleX': 
+					
+					if (value > 0) {
+						_obj.setScaleX(value);
+					} 
+
+				break; 
+
+				case 'scaleY': 
 				
-				case 'rotX': if ( value > 0 ) _obj.setRotX( value ); break;
-				case 'rotY': if ( value > 0 ) _obj.setRotY( value ); break;
-				case 'rotZ': if ( value > 0 ) _obj.setRotZ( value ); break;							
+					if (value > 0) {
+						obj.setScaleY(value);
+					} 
+				
+				break;
+				
+				case 'scaleZ': 
+				
+					if (value > 0) {
+						obj.setScaleZ(value);
+					} 
+				
+				break;
+				
+				case 'rotX': 
+				
+					if (value > 0) {
+						_obj.setRotX(value);
+					} 
+				
+				break;
+				
+				case 'rotY': 
+					
+					if (value > 0) {
+						_obj.setRotY(value);
+					} 
+			
+				break;
+				
+				case 'rotZ':
+					
+					if (value > 0) {
+						_obj.setRotZ(value);
+					} 
+				
+				break;							
 				
 			}
 			
@@ -751,15 +776,15 @@
 		yellow.setSpecular=0.00;
 		yellow.setEmit(1);
 		
-		var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
-		line.setMesh((new GLGE.Mesh).setPositions(positions));
+		var line=(new GLGE.Object()).setDrawType(GLGE.DRAW_LINES);
+		line.setMesh((new GLGE.Mesh()).setPositions(positions));
 		line.setMaterial(yellow);
 		line.setLoc(posX, posY, posZ);
 		line.setRot(rotX, rotY, rotZ);
 		line.pickable = false;
 		obj.parent.addObject(line);
 		
-	} 
+	};
 	
 	
 	// TODO: fix this
@@ -787,7 +812,7 @@
 		});
 		return isOK;
 		
-	}
+	};
 	
 	
 	M3D.GUI.clearInputs = function(){
@@ -795,7 +820,7 @@
 		$('.window').find('input[type="text"], select').each(function(){
 			$(this).val('');
 		});
-	}
+	};
 	
 	
 	
@@ -847,7 +872,7 @@
 			camera.setLocZ(camerapos.z+cam[6]*0.05*(now-lasttime));
 		}
 	
-	}
+	};
 	
 	
 	// -- handle camera displacement and rotation
@@ -915,10 +940,10 @@
 			}
 		}
 		
-	}
+	};
 	
-	
-	M3D.GUI.cameraRotate = function(){													// fonction modifiée par Tom le 16/02
+	// fonction modifiée par Tom le 16/02
+	M3D.GUI.cameraRotate = function(){
 		var mousepos = mouse.getMousePosition();
 		//mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
 		var width = document.getElementById('canvas').offsetWidth;
@@ -977,7 +1002,7 @@
 			}		
 		}
 		cam.setLocZ(camPos.z + monte);
-	}
+	};
 	
 	M3D.GUI.toggleBbox = function(){
 		
@@ -996,7 +1021,7 @@
 			
 		}
 		
-	}
+	};
 	
 	
 	
@@ -1005,25 +1030,49 @@
 			
 		if (n===undefined)
 		{	
-			var _float = function(v){ return parseFloat(v).toFixed(2); }
+			var _float = function(v){ return parseFloat(v).toFixed(2); };
 			var _obj = obj.parent;
 
 			if (_obj.getId() !== "") {
 				$('#id').val(_obj.getId());
 			}
 			
-			if (_obj.getLocX) $('#posX').val( _float(_obj.getLocX()) );
-			if (_obj.getLocY) $('#posY').val( _float(_obj.getLocY()) );
-			if (_obj.getLocZ) $('#posZ').val( _float(_obj.getLocZ()) );
-			if (_obj.getScaleX) $('#scaleX').val( _float(_obj.getScaleX()) );
-			if (_obj.getScaleY) $('#scaleY').val( _float(_obj.getScaleY()) );
-			if (_obj.getScaleZ) $('#scaleZ').val( _float(_obj.getScaleZ()) );
-			if (_obj.getRotX) $('#rotX').val( _float(_obj.getRotX()) );
-			if (_obj.getRotY) $('#rotY').val( _float(_obj.getRotY()) );
-			if (_obj.getRotZ) $('#rotZ').val( _float(_obj.getRotZ()) );
-			if (_obj.boundingVolume) $('#bboxX').val( _float(_obj.boundingVolume.dims[0]) );
-			if (_obj.boundingVolume) $('#bboxY').val( _float(_obj.boundingVolume.dims[1]) );
-			if (_obj.boundingVolume) $('#bboxZ').val( _float(_obj.boundingVolume.dims[2]) );
+			if (_obj.getLocX) {
+				$('#posX').val(_float(_obj.getLocX()));
+			}
+			if (_obj.getLocY) {
+				$('#posY').val(_float(_obj.getLocY()));
+			}
+			if (_obj.getLocZ) {
+				$('#posZ').val(_float(_obj.getLocZ()));
+			}
+			if (_obj.getScaleX) {
+				$('#scaleX').val(_float(_obj.getScaleX()));
+			}
+			if (_obj.getScaleY) {
+				$('#scaleY').val(_float(_obj.getScaleY()));
+			}
+			if (_obj.getScaleZ) {
+				$('#scaleZ').val(_float(_obj.getScaleZ()));
+			}
+			if (_obj.getRotX) {
+				$('#rotX').val(_float(_obj.getRotX()));
+			}
+			if (_obj.getRotY) {
+				$('#rotY').val(_float(_obj.getRotY()));
+			}
+			if (_obj.getRotZ) {
+				$('#rotZ').val(_float(_obj.getRotZ()));
+			}
+			if (_obj.boundingVolume) {
+				$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
+			}
+			if (_obj.boundingVolume) {
+				$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
+			}
+			if (_obj.boundingVolume) {
+				$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
+			}
 			$('#canvas').bind('mouseup', M3D.DB.updateSelectedEntry(_obj));
 		}
 		else {
@@ -1041,13 +1090,13 @@
 			$('#bboxY').val( null );
 			$('#bboxZ').val( null );
 		}
-	}
+	};
 	
 	// -- update the editor content
 	M3D.GUI.updateEditor = function(){
 		if (obj){
-			var _float = function(v){ return parseFloat(v).toFixed(2); }
-			var _getId = function(uid){return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());}
+			var _float = function(v){ return parseFloat(v).toFixed(2); };
+			var _getId = function(uid){return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());};
 			var _obj = obj.parent;
 			M3D.Editor.updateObjectAttributes({
 				id: _getId(_obj.uid),
@@ -1068,7 +1117,7 @@
 				}
 			});
 		}
-	}
+	};
 	
 	// -- reset the camera's position
 	M3D.GUI.resetCameraPosition = function(){
@@ -1076,7 +1125,7 @@
 		scene.camera.setDRot(c.getDRotX(), c.getDRotY(), c.getDRotZ());
 		scene.camera.setDLoc(c.getDLocX(), c.getDLocY(), c.getDLocZ());
 		scene.camera.setAspect(c.getAspect());
-	}
+	};
 	
 	
 	
@@ -1091,7 +1140,7 @@
 			}
 		}
 		
-	}
+	};
 	
 	
 	// -- picking objects
@@ -1118,78 +1167,8 @@
 			M3D.GUI.unpickObject();
 		}
 	
-	}
+	};
 
-	
-	// -- read and list a class attributes
-	M3D.GUI.updateObjectAttributesList = function(){
-		
-	    var attr = "",
-		    value,
-			id,
-			css_class = "string",
-			len;
-		
-		
-//		var name = "";
-//	   	var attributes = M3D.DB.getAttributes(name);
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-		
-		for (att in obj) {
-			
-	        value = obj[att];
-			
-	        if ( M3D.Common.isValidType( value )  ) {
-				
-	            id = "attribut-" + att;
-	            
-	            attr += "<label for='" + att + "'>" + att + "</label>";
-	            
-	            if (typeof(value) == "number" || typeof(value)  == "string") {
-	            
-					css_class = typeof(value) == "number" ? "number" : css_class;
-	                
-	                // type cast tweak for numbers
-	                value = "" + value;
-	
-	                len = value.length;
-	                if (len <= 50) {
-	                    attr += "<input class='"+css_class+"' type='text' id='" + id + "' name='" + id + "' value='" + value + "'/><br/>";
-	                }
-	                else {
-	                    attr += "<textarea cols='5' row='5' name='" + id + "' id='" + id + "' >" + value + "</textarea>";
-	                }
-	                
-	            }
-	            else if (typeof(value) == "boolean") {
-	                attr += "<select id='attribut-" + att + "' name='attribut-" + att + "' >";
-	                attr += "<option value='true' " + M3D.Common.printSelected(value, 'true') + " >True</option>";
-	                attr += "<option value='false' " + M3D.Common.printSelected(value, 'true') + " >False</option>";
-	                attr += "<select>";
-	            }
-	        }
-			
-	    }
-		
-		attr = "<div class='entity-attributes'>"+attr+"</div>";
-	    $('#attributes').html(attr);
-	    
-	}
-	
-	
 	
 	// -- unpick an object
 	M3D.GUI.unpickObject = function(){
@@ -1207,7 +1186,7 @@
 		
 		$('#slider').hide();
 		
-	}
+	};
 	
 	
 	
@@ -1222,13 +1201,13 @@
 			
 			M3D.GUI.updateInfo();
 		}
-	}
+	};
 	
 	
 	M3D.GUI.clearCanvas = function(){
 		var o = scene.getObjects();
 		for (var i in o) {
-			log(o[i].id);
+			log(o[i].getId(), o[i].uid);
 			// don't remove the axises!
 			if ( o[i].getId() != 'grid' 
 				&& o[i].getId() != 'xyzaxis'
@@ -1238,8 +1217,8 @@
 				scene.removeChild(o[i]);
 			} 
 		}
-	}
-	
+	};
+
 	
 	M3D.GUI.generateLevelFile = function(){
 		
@@ -1291,7 +1270,7 @@
 			}	
 		});
 		
-	}
+	};
 	
 	
 	// -- camera controler
@@ -1346,7 +1325,7 @@
 	            }
 	        }
 	    };
-	}
+	};
 	
 	
 	// -- toggle the upload info
@@ -1382,7 +1361,7 @@
 		}
 		M3D.flag = !M3D.flag;
 		
-	}
+	};
 	
 	
 	M3D.GUI.WebWorkers = function(workerUrl){
@@ -1407,22 +1386,22 @@
 		this.setCommand = function(cmd){
 			worker.cmd = cmd;
 			return worker;
-		}
+		};
 		
 		this.setExtra = function(extra){
 			worker.extra = extra;
 			return worker;
-		}
+		};
 		
 		this.run = function(){
 			
 			checkSupport();
 			init();
 			post();
-		}
+		};
 		
 		
-	}
+	};
 
 
 })(window.M3D);

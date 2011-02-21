@@ -44,7 +44,6 @@ CodePress = function(obj) {
 		// -- fix me: set the new path to codepress directory
 		var _path = window.location.href.replace('index.html', '');
 		CodePress.path = _path+'assets/js/lib/codepress/';
-		alert(CodePress.path);
 		// --
 		
 		if(obj) self.textarea.value = document.getElementById(obj) ? document.getElementById(obj).value : obj;

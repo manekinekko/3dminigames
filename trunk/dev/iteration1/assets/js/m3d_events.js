@@ -15,8 +15,9 @@ $(function(){
 	 * Bind the canvas mouse down event to the picking function, and the mouse up to the editor update function.
 	 * @see M3D.GUI.pickObject
 	 */
-	$('#canvas').bind('mousedown', function(e){	M3D.GUI.pickObject(e, this);
-												mouseRecord = mouseGlobale.getMousePosition();
+	$('#canvas').bind('mousedown', function(e){
+		M3D.GUI.pickObject(e, this);
+		mouseRecord = mouseGlobale.getMousePosition();
 	}).bind('mouseup', M3D.GUI.updateEditor);
 		
 	/**
@@ -41,14 +42,15 @@ $(function(){
 	 * Bind the slider insert/remove
 	 */
 	var _lastSeletcedInput;
-	$('#info-bottom input[type="text"]:not([disabled])').bind('focus', function(){
+	$('#info-bottom input[type="text"]:not([disabled]):not([value=""])').bind('focus', function(){
 		
 		_lastSeletcedInput = $(this);
-		
+		var _pos = _lastSeletcedInput.offset();
 		$('#slider').show().css({
-			'top':$(this).offset().top-20,
-			'left':$(this).offset().left
+			'top':_pos.top-20,
+			'left':_pos.left
 		});
+		
 	}).bind('blur', function(){
 		$('#slider').hide();
 	});

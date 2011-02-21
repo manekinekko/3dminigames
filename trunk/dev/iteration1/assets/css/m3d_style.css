@@ -17,25 +17,28 @@ padding: 0;
 cursor: default;
 }
 
-h1 {
-text-shadow: 0 0 2px #000;
+#title {
 z-index: 100;
 top: -16px;
 right: 8px;
 position: absolute;
 background: transparent;
-font-size: 2em;
-color: #fffa24;
-font-family: 'Coda', arial, serif;
 cursor:pointer;
 text-align:center;
 }
 
-h1 span {
+#title h1 {
+text-shadow: 0 0 2px #000;
+font-size: 2em;
+color: #fffa24;
+font-family: 'Coda', arial, serif;
+}
+
+#title span {
 color: #ff0000;
 }
 
-h1 .def {
+#title .def {
 color: black;
 font-size: 0.2em;
 top: -31px;
@@ -124,22 +127,25 @@ height: 16px;
 background: transparent;
 color: black;
 position: absolute;
-top: 10px;
-left: 1040px;
+bottom: 180px;
+right: 10px;
 z-index: 1000;
 }
 
 #loading {
 display: none;
-top: 10px;
-right: 580px;
+top: 7px;
+right: 155px;
 z-index: 100;
 position: absolute;
 width: 20px;
 height: 20px;
-background: black url('img/ajax-loader.gif') no-repeat center center;
+background: red url('img/ajax-loader.gif') no-repeat center center;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
+-moz-box-shadow:0 0 4px #aaa;
+-webkit-box-shadow:0 0 4px #aaa;
+box-shadow:0 0 4px #aaa;
 }
 
 #select-model, #resetcamera {

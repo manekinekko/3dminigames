@@ -10,6 +10,7 @@ position: relative;
 min-width: 1200px;
 font-size: 0.9em;
 background: #eee url('../dae/free/images/e8clangfloor.jpg') repeat center center scroll;
+background:#eee;
 margin: 0;
 padding: 0;
 cursor: default;
@@ -18,18 +19,28 @@ cursor: default;
 h1 {
 text-shadow: 0 0 2px #000;
 z-index: 100;
-top: -30px;
-left: 8px;
+top: -16px;
+right: 8px;
 position: absolute;
 background: transparent;
-font-size: 3em;
+font-size: 2em;
 color: #fffa24;
 font-family: 'Coda', arial, serif;
 cursor:pointer;
+text-align:center;
 }
 
 h1 span {
 color: #ff0000;
+}
+
+h1 .def {
+color: black;
+font-size: 0.2em;
+top: -31px;
+position: relative;
+font-family: "Arial";
+text-shadow: none;
 }
 
 input[disabled] {
@@ -40,80 +51,56 @@ em {
 color:red;
 }
 
-#gui, #container, #viewmenu, #info-bottom, #modal {
-width: 1270px;
-position: relative;
-}
-
-#gui, #container, #modal {
+#m3d-ui{
+width: 1200px;
 height: 500px;
+left:-600px;
+margin-left:50%;
+position:relative;
 }
 
 #modal {
 display: none;
 position: absolute;
-background: #000;
+background: #eee;
 opacity: 0.5;
 z-index: 10000;
+width:100%;
+height:100%;
+top:-10px;
+}
+
+#canvas-container {
+width:800px;
+height:500px;
 }
 
 #container {
 margin-top: 6px;
 background: #fff;
 z-index: 10;
-left: 5px;
 -webkit-box-shadow: 0 0 10px #000;
 -moz-box-shadow: 0 0 10px #000;
 box-shadow: 0 0 10px #000;
 }
 
-
-#info-bottom, #upload {
-position: absolute;
-padding: 10px;
+#info-bottom {
+border-top:1px solid #eee;	
+padding: 5px;
 background: #fff;
-width: 970px;
-left: 10px;
-top: 298px;
--moz-border-radius: 0 0 10px 10px;
--webkit-border-radius: 0 0 10px 10px;
-border-radius: 0 0 10px 10px;
-}
-
-#info-right {
-width: 200px;
-position: absolute;
-padding: 15px 10px;
-background: #fff;
-top: 6px;
-right: 500px;
--moz-border-radius: 0 10px 10px 0;
--webkit-border-radius: 0 10px 10px 0;
-border-radius: 0 10px 10px 0;
-}
-
-#attributes {
-overflow:auto;
-height: 377px;
-}
-
-#attributes label {
-width:150px;
-}
-
-#attributes input[type="text"], #attributes textarea {
-width:200px;
+margin-top:-4px;
 }
 
 #viewmenu {
-top: -40px;
-width: 690px;
+background: none repeat scroll 0 0 transparent;
+bottom: -10px;
 height: 30px;
-padding: 5px;
-z-index: 20;
-background: transparent;
 overflow: hidden;
-left: 3px;
+padding: 5px;
+position: absolute;
+right: 3px;
+width: 690px;
+z-index: 20;
 }
 
 #status {
@@ -152,20 +139,10 @@ border-top: 1px solid #aaa;
 padding: 4px;
 }
 
-#entity-attributes-list {
-max-height:80px;
-overflow: auto;
-}
-
-#rules-list {
-overflow:auto;
-max-height:100px;
-}
-
 #editor textarea {
-width: 560px;
-min-width: 560px;
-max-width: 560px;
+width: 390px;
+min-width: 390px;
+max-width: 390px;
 height: 498px;
 min-height: 498px;
 max-height: 498px;
@@ -181,7 +158,7 @@ width:20px;
 background: transparent url("img/m3d-ui-border.png") repeat-y right top;
 position:absolute;
 top:0;
-left:680px;
+left:399px;
 z-index:100;	
 }
 
@@ -192,7 +169,7 @@ top: -400px;
 width: 400px;
 left:-200px;
 background: white;
-z-index: 1000;
+z-index: 10001;
 padding: 5px 10px;
 -webkit-box-shadow: 0 0 10px #000;
 -moz-box-shadow: 0 0 10px #000;
@@ -223,9 +200,8 @@ padding: 10px;
 border-radius: 5px 5px 0 0;
 }
 
-#rules.window {
-width: 800px;
-left:-400px;
+td:first-child {
+text-align:right;
 }
 
 .column {
@@ -309,6 +285,7 @@ position:absolute;
 height:100px;
 width:50px;
 top:100px;
+right:1px;
 }
 
 .cursor {
@@ -329,11 +306,14 @@ border-radius: 5px;
 }
 
 .cursor:hover, .cursor:active {
-border-color:#aaa !important;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
 background-color:#fff !important;
+border-color:#aaa !important;
+-moz-box-shadow:0 0 5px #aaa;
+-webkit-box-shadow:0 0 5px #aaa;
+box-shadow:0 0 5px #aaa;
 }
 
 .cursor.active {

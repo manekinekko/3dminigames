@@ -6,8 +6,6 @@
 	
 	// Contants
 	// values in pixels
-	M3D.GUI.ANIMATE_BOTTOM_START_POS = 300;
-	M3D.GUI.ANIMATE_BOTTOM_END_POS = 500;
 	M3D.GUI.ANIMATE_WINDOW_OPEN_POS = 150;
 	M3D.GUI.ANIMATE_WINDOW_CLOSE_POS = -300;
 	
@@ -75,7 +73,7 @@
 			push(y,x);
 		}
 		
-		var black=doc.getElement( "black" );
+		var black=doc.getElement( "dark-gray" );
 		/**
 		create new object and mesh and set the positions we've previously calculated
 		**/
@@ -163,7 +161,6 @@
 					//scene.camera.setLookat(obj.getPosition());
 					
 					M3D.GUI.updateInfo();
-					M3D.GUI.toggleShowInfo();
 					
 					found = true;
 					
@@ -1116,28 +1113,13 @@
 			
 			hoverobj = obj;
 			
-			M3D.GUI.toggleShowInfo();
-			
 		}
 		else if(hoverobj && obj!=hoverobj) {
 			M3D.GUI.unpickObject();
 		}
 	
 	}
-	
-	
-	
-	
-	M3D.GUI.toggleShowInfo = function(){
-		
-		$('#info-bottom').show(10, function(){
-	        $(this).animate({
-	            top: M3D.GUI.ANIMATE_BOTTOM_END_POS
-	        }, 150);
-	    });
-	 
-	}
-	
+
 	
 	// -- read and list a class attributes
 	M3D.GUI.updateObjectAttributesList = function(){

@@ -24,13 +24,15 @@ $(function(){
 	});
 	
 	
-	$('#update-scenario').bind('click', function(){
+	$('#status').bind('click', function(){
 		var _this = $(this);
-		_this.text('Updating...');
+		
+		_this.text('Updating scenario.Please wait...');
+		
 		M3D.GUI.updateEditor(function(){
 			_this.removeClass('ui-state-error').addClass('ui-state-highlight').text('Your scenario was updated!');
 			setTimeout(function(){
-				_this.hide();
+				_this.hide().removeClass('pointer').text('');
 			}, 2000);
 			
 		});
@@ -62,14 +64,16 @@ $(function(){
 	 * Bind the slider insert/remove
 	 */
 	var _lastSeletcedInput;
-	$('#info-bottom input[type="text"]:not([disabled]):not([value=""])').bind('focus', function(){
+	$('#info-bottom input[type="text"]:not([disabled])').bind('focus', function(){
 		
 		_lastSeletcedInput = $(this);
-		var _pos = _lastSeletcedInput.offset();
-		$('#slider').show().css({
-			'top':_pos.top-20,
-			'left':_pos.left
-		});
+		if ($(this).val() !== ""){
+			var _pos = _lastSeletcedInput.offset();
+			$('#slider').show().css({
+				'top':_pos.top-20,
+				'left':_pos.left
+			});
+		}
 		
 	}).bind('blur', function(){
 		$('#slider').hide();
@@ -117,6 +121,14 @@ $(function(){
 			docUrl: $('#importUrl').val(),
 			autoAddToScene: false
 		});
+	});
+	
+	/**
+	 * Bind the game creation
+	 * @see M3D.GUI.createGame
+	 */
+	$('#create-game').bind('click', function(){
+		M3D.GUI.createGame();
 	});
 	
 	/**

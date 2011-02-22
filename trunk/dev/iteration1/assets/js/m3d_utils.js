@@ -73,6 +73,43 @@
 		
 	};
 	
+	// -- Create a new game based on its scenario
+	M3D.GUI.createGame = function(){
+		var _scenario = M3D.Editor.getContent();
+		
+		if ( _scenario === "" ){
+			$('#status').show().text('Your scenario is empty!');
+			setTimeout(function(){
+				$('#status').hide().text('');
+			}, 2000);
+		}
+		else {
+			var _gameName = "edwigs_game_"+(new Date()).getTime();
+			$.ajax({
+				url: M3D.Config.compiler,
+				dataType: 'json',
+				type:'POST',
+				data:{'n':_gameName,'s':_scenario},
+				beforeSend: function(){
+					$('#status').show().text('creating game ...');
+				},
+				success: function(d){
+					$('#status').show().text('Game created');
+				},
+				complete: function(e){
+					setTimeout(function(){
+						$('#status').hide().text('');
+					}, 2000);
+				},
+				error:function (xhr, ajaxOptions, thrownError){
+	                alert(xhr.status);
+	                alert(thrownError);
+	            } 
+			});
+		}
+		
+	};
+	
 	// -- Event handler for mouse wheel event.
 	M3D.GUI.wheel = function(event){
 	    var delta = 0;
@@ -1099,10 +1136,10 @@
 			var _obj = obj.parent;
 			var _name = M3D.Common.getObjectId(_obj.uid);
 			if ( M3D.Editor.findString(_name) ) {
-				$('#update-scenario').show();
+				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 			}
 			else {
-				$('#update-scenario').hide();
+				$('#status').remveClass('ui-state-error').text('').hide();
 			}
 		}
 	};

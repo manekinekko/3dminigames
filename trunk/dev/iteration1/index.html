@@ -38,6 +38,8 @@
 					
 					<!-- start: menu -->
 					<div id="viewmenu">
+						<input type="button" name="uplaod" id="upload" value="Upload a model" />
+						
 						<select style="width:100px;" id="importUrl" name="importUrl">
 							<optgroup id="myModels" label="My models">
 							</optgroup>
@@ -55,15 +57,12 @@
 						<input type="button" name="import" id="import" value="Add a model" />
 						
 						<input type="button" name="clear-canvas" id="clear-canvas" value="Clear Canvas" />
-						
-						<!--
-						<input type="button" name="generate-xml" id="generate-xml" value="Generate Game Scene" />
-						-->
-						
-						<!--<input type="button" name="resetcamera" id="resetcamera" value="Reset Camera" />-->
+
 						<select id="select-model">
 								<option value="">--select model--</option>
 						</select>
+
+						<input type="button" name="create-game" id="create-game" value="Create My Game" />
 					</div>
 					<!-- end: menu -->
 				</div>
@@ -132,9 +131,6 @@
 			<div id="windows-container">
 				
 				<div id="status"></div>
-				
-				<div id="update-scenario" class="ui-state-error">Please click here to update your scenario!</div>
-				
 				<div id="entity-info" class="window box-shadow closed">
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>

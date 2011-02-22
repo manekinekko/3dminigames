@@ -13,7 +13,7 @@
 		// TODO: get previous content
 		var _c = ''; 
 		if ( _c === '' ){
-			_setContent('/* Game created on '+(new Date()).toGMTString()+' */\n\n');
+			_setContent('\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
 		}
 	};
 	

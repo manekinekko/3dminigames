@@ -189,24 +189,26 @@
 	 * @deprecated This function is not yet implemented
 	 */
 	
-	M3D.DB.updateSelectedEntry = function(object){
+	M3D.DB.updateSelectedEntry = function(){
 	
-		var uid = object.uid;
-		var updateobj = M3D.DB.getObject(uid);
-		if (updateobj){
-			updateobj.position.X = object.getLocX();
-			updateobj.position.Y = object.getLocY();
-			updateobj.position.Z = object.getLocZ();
-			updateobj.scale.X = object.getScaleX();
-			updateobj.scale.Y = object.getScaleY();
-			updateobj.scale.Z = object.getScaleZ();
-			updateobj.rotation.X = object.getRotX();
-			updateobj.rotation.Y = object.getRotY();
-			updateobj.rotation.Z = object.getRotZ();
-			M3D.DB.setObject({
-				'uid': uid, 
-				'value': JSON.stringify(updateobj)
-			});
+		if ( obj ){
+			var uid = obj.uid;
+			var updateobj = M3D.DB.getObject(uid);
+			if (updateobj){
+				updateobj.position.X = obj.getLocX();
+				updateobj.position.Y = obj.getLocY();
+				updateobj.position.Z = obj.getLocZ();
+				updateobj.scale.X = obj.getScaleX();
+				updateobj.scale.Y = obj.getScaleY();
+				updateobj.scale.Z = obj.getScaleZ();
+				updateobj.rotation.X = obj.getRotX();
+				updateobj.rotation.Y = obj.getRotY();
+				updateobj.rotation.Z = obj.getRotZ();
+				M3D.DB.setObject({
+					'uid': uid, 
+					'value': _set(updateobj)
+				});
+			}
 		}
 	};
 	

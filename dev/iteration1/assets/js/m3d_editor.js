@@ -17,6 +17,18 @@
 		}
 	};
 	
+	
+	/**
+	 * Check if the editor contains a given string 
+	 * @param {Object} str The string to find
+	 * @return True if str was found, False otherwise
+	 * @type {Boolean}
+	 */
+	M3D.Editor.findString = function(str){
+		return new RegExp(str).test(edwigs.getCode());
+	};
+	
+	
 	/**
 	 * Get the current content of the editor.
 	 * @return The current content of the editor
@@ -41,7 +53,7 @@
 	 * Update a given 3D model's position/rotation/scale's values inside the editor. 
 	 * @param {Object} o An object containing the id string of the 3D model, its position, rotation and scale X/Y/Z values.
 	 */
-	M3D.Editor.updateObjectAttributes = function(o){
+	M3D.Editor.updateObjectAttributes = function(o, cb){
 		var NEWLINE = '\n';
 		var content = M3D.Editor.getContent().split(NEWLINE);
 		for(var i=0; i<content.length; i++){
@@ -62,7 +74,7 @@
 												'rotation at '+r.x+' '+r.y+' '+r.z);
 			}
 		}
-		_setContent( content.join(NEWLINE) );
+		_setContent( content.join(NEWLINE), cb );
 		
 	};
 	
@@ -72,8 +84,8 @@
 	 * @param {Object} value The new content of the editor
 	 * @private
 	 */
-	var _setContent = function(value){
-		edwigs.edit( value, 'edwigs' );
+	var _setContent = function(value, cb){
+		edwigs.edit( value, 'edwigs', cb );
 	};
 	
 })(window.M3D);

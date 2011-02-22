@@ -5,7 +5,7 @@
  */
 doc.onLoad = function() {
 	
-	$('#tools-panel, #viewmenu').show();
+	$('#tools-panel, #viewmenu, #info-bottom table').show();
 	$('#loading-message').hide();
 	
 	mouse = new GLGE.MouseInput(canvas);

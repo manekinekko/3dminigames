@@ -18,7 +18,24 @@ $(function(){
 	$('#canvas').bind('mousedown', function(e){
 		M3D.GUI.pickObject(e, this);
 		mouseRecord = mouseGlobale.getMousePosition();
-	}).bind('mouseup', M3D.GUI.updateEditor);
+	}).bind('mouseup', function(){
+		M3D.GUI.checkEditor();
+		M3D.DB.updateSelectedEntry();
+	});
+	
+	
+	$('#update-scenario').bind('click', function(){
+		var _this = $(this);
+		_this.text('Updating...');
+		M3D.GUI.updateEditor(function(){
+			_this.removeClass('ui-state-error').addClass('ui-state-highlight').text('Your scenario was updated!');
+			setTimeout(function(){
+				_this.hide();
+			}, 2000);
+			
+		});
+		
+	});
 		
 	/**
 	 * Allow picking 3D models from the select box
@@ -37,7 +54,10 @@ $(function(){
 	 * Bind the live update of the 3D model position/rotation/scale's values.
 	 * @see M3D.GUI.updateValues
 	 */
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ M3D.GUI.updateValues($(this)); });
+	$('input[type="text"]:not([disabled])').bind('keypress', function(){ 
+		M3D.GUI.checkEditor();
+		M3D.GUI.updateValues($(this)); 
+	});
 	/**
 	 * Bind the slider insert/remove
 	 */

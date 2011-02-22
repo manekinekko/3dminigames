@@ -19,11 +19,10 @@ cursor: default;
 
 #title {
 z-index: 100;
-top: -16px;
+top: -10px;
 right: 8px;
 position: absolute;
 background: transparent;
-cursor:pointer;
 text-align:center;
 }
 
@@ -32,6 +31,7 @@ text-shadow: 0 0 2px #000;
 font-size: 2em;
 color: #fffa24;
 font-family: 'Coda', arial, serif;
+cursor:pointer;
 }
 
 #title span {
@@ -45,6 +45,17 @@ top: -31px;
 position: relative;
 font-family: "Arial";
 text-shadow: none;
+}
+
+#update-scenario {
+display:none;
+width:373px;
+height:20px;
+position:absolute;
+left:25px;
+text-align:center;
+top:1px;
+cursor:pointer;
 }
 
 input[disabled] {
@@ -113,6 +124,10 @@ background: #fff;
 margin-top:-4px;
 }
 
+#info-bottom table {
+display:none;
+}
+
 #viewmenu {
 background: none repeat scroll 0 0 transparent;
 bottom: 140px;
@@ -173,6 +188,7 @@ height: 498px;
 min-height: 498px;
 max-height: 498px;
 font-size:10px;
+border:0 none;
 }
 
 #editor textarea:disabled {
@@ -229,6 +245,8 @@ text-align:right;
 color:#000080;
 font-weight:bold;
 }
+
+
 
 .column {
 float: left;

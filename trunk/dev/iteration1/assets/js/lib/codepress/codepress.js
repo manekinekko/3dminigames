@@ -36,10 +36,10 @@ CodePress = function(obj) {
 		self.style.position = 'static';
 		self.style.visibility = 'visible';
 		self.style.display = 'inline';
-	}
+	};
 	
 	// obj can by a textarea id or a string (code)
-	self.edit = function(obj,language) {
+	self.edit = function(obj,language, cb) {
 		
 		// -- fix me: set the new path to codepress directory
 		var _path = window.location.href.replace('index.html', '');
@@ -51,8 +51,13 @@ CodePress = function(obj) {
 		self.language = language ? language : self.getLanguage();
 		self.src = CodePress.path+'codepress.html?language='+self.language+'&ts='+(new Date).getTime();
 		if(self.attachEvent) self.attachEvent('onload',self.initialize);
-		else self.addEventListener('load',self.initialize,false);
-	}
+		else self.addEventListener('load',function(){
+			self.initialize();
+			if ( cb ){
+				cb();
+			};
+		},false);
+	};
 
 	self.getLanguage = function() {
 		for (language in CodePress.languages) 

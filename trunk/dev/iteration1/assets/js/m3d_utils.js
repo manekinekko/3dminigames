@@ -1073,7 +1073,7 @@
 			if (_obj.boundingVolume) {
 				$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
 			}
-			$('#canvas').bind('mouseup', M3D.DB.updateSelectedEntry(_obj));
+			
 		}
 		else {
 			$("#id").val( null );
@@ -1092,14 +1092,29 @@
 		}
 	};
 	
+	// -- weither we should update the editor's content
+	M3D.GUI.checkEditor = function(){
+		
+		if ( obj ){
+			var _obj = obj.parent;
+			var _name = M3D.Common.getObjectId(_obj.uid);
+			if ( M3D.Editor.findString(_name) ) {
+				$('#update-scenario').show();
+			}
+			else {
+				$('#update-scenario').hide();
+			}
+		}
+	};
+	
 	// -- update the editor content
-	M3D.GUI.updateEditor = function(){
+	M3D.GUI.updateEditor = function(cb){
 		if (obj){
 			var _float = function(v){ return parseFloat(v).toFixed(2); };
-			var _getId = function(uid){return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());};
+			
 			var _obj = obj.parent;
 			M3D.Editor.updateObjectAttributes({
-				id: _getId(_obj.uid),
+				id: M3D.Common.getObjectId(_obj.uid),
 				position:{
 							x:_float(_obj.getLocX()), 
 							y:_float(_obj.getLocY()), 
@@ -1115,7 +1130,7 @@
 						y:_float(_obj.getScaleY()), 
 						z:_float(_obj.getScaleZ())
 				}
-			});
+			}, cb);
 		}
 	};
 	
@@ -1160,7 +1175,7 @@
 										
 			}
 			
-			hoverobj = obj;
+			hoverobj = _obj;
 			
 		}
 		else if(hoverobj && obj!=hoverobj) {

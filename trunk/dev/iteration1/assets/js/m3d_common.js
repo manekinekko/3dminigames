@@ -86,7 +86,6 @@
 		return M3D.REGEX_NUMBER.test(val);
 	};
 	
-	// -- Upper case the first letter
 	/**
 	 * Upper case the first letter of a given string.
 	 * @param {String} value The value that must be a first letter upper cased
@@ -100,6 +99,16 @@
 		}
 		var _first = value.substring(0,1).toUpperCase();
 		return _first+value.substring(1);
+	};
+	
+	/**
+	 * Get the object's ID given its UID
+	 * @param {String} The Object's UID
+	 * @return The Object's ID uppercased
+	 * @type {String} 
+	 */
+	M3D.Common.getObjectId = function(uid){
+		return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());
 	};
 	
     

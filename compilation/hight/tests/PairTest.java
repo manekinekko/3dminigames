@@ -8,9 +8,9 @@ Pair p2;
 Pair p3;
 	protected void setUp() throws Exception {
 		super.setUp();
-		p1 = new Pair(3,5);
-		p2 = new Pair(3,5);
-		p3 = new Pair(3,4);
+		p1 = new Pair<Integer,Integer>(3,5);
+		p2 = new Pair<Integer,Integer>(3,5);
+		p3 = new Pair<Integer,Integer>(3,4);
 	}
 	public void testHashCode(){
 		assertNotNull(p1.hashCode());

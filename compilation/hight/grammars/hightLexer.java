@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g 2011-02-16 18:22:39
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-02-22 19:03:20
 
     package grammars;
 
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class hightLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__195=195;
-    public static final int T__196=196;
+    public static final int T__222=222;
+    public static final int T__223=223;
     public static final int GAME_KW=4;
     public static final int GAME_ATTRIBUT_KW=5;
     public static final int INIT_IS_KW=6;
@@ -43,166 +43,193 @@ public class hightLexer extends Lexer {
     public static final int GRAVITY_KW=32;
     public static final int AT=33;
     public static final int FLOAT=34;
-    public static final int SCORE=35;
-    public static final int TYPE=36;
-    public static final int IDENT=37;
-    public static final int IS=38;
-    public static final int AND=39;
-    public static final int LIST_KW=40;
-    public static final int OF=41;
-    public static final int WITH=42;
-    public static final int CAMERA=43;
-    public static final int PERSON=44;
-    public static final int FREE=45;
-    public static final int MEDIA=46;
-    public static final int LOOP=47;
-    public static final int ONCE=48;
-    public static final int IN=49;
-    public static final int PLAYER=50;
-    public static final int ALLY=51;
-    public static final int ENEMY=52;
-    public static final int NEUTRAL=53;
-    public static final int DUPLICABLE=54;
-    public static final int FIRST=55;
-    public static final int THIRD=56;
-    public static final int DEFINITION_KW=57;
-    public static final int MEANS=58;
-    public static final int VICTORY_KW=59;
-    public static final int DEFEAT_KW=60;
-    public static final int ENDS_KW=61;
-    public static final int STARTS_KW=62;
-    public static final int PAUSE_KW=63;
-    public static final int MUTE_KW=64;
-    public static final int ON=65;
-    public static final int OFF=66;
-    public static final int PLAY_KW=67;
-    public static final int STOP_KW=68;
-    public static final int BLOCK_KW=69;
-    public static final int EFFACE_KW=70;
-    public static final int GENERATE_KW=71;
-    public static final int WAIT_KW=72;
-    public static final int THEN=73;
-    public static final int ENDWAIT=74;
-    public static final int SAVE_KW=75;
-    public static final int DIES_KW=76;
-    public static final int DURING=77;
-    public static final int UNTIL=78;
-    public static final int EQUIP=79;
-    public static final int NEXT=80;
-    public static final int PREVIOUS=81;
-    public static final int TRANSLATION=82;
-    public static final int ROTATION=83;
-    public static final int SCALE=84;
-    public static final int COMMAND_KW=85;
-    public static final int MOUSE=86;
-    public static final int FOR=87;
-    public static final int KEY=88;
-    public static final int WUP=89;
-    public static final int WDOWN=90;
-    public static final int LEFT=91;
-    public static final int RIGHT=92;
-    public static final int CLICK_LEFT=93;
-    public static final int CLICK_CENTER=94;
-    public static final int CLICK_RIGHT=95;
-    public static final int SCROLL_UP=96;
-    public static final int SCROLL_DOWN=97;
-    public static final int LETTER=98;
-    public static final int SPACE=99;
-    public static final int ESCAPE=100;
-    public static final int ENTER=101;
-    public static final int JUMP=102;
-    public static final int MOVE=103;
-    public static final int FORWARD=104;
-    public static final int BACKWARD=105;
-    public static final int TURN=106;
+    public static final int TURNBASED_KW=35;
+    public static final int WORLD_KW=36;
+    public static final int GRIDSIZE_KW=37;
+    public static final int NAME_KW=38;
+    public static final int GENERIC=39;
+    public static final int GRID=40;
+    public static final int RIBBON=41;
+    public static final int IDENT=42;
+    public static final int TYPE=43;
+    public static final int IS=44;
+    public static final int AND=45;
+    public static final int INSERT_KW=46;
+    public static final int IN=47;
+    public static final int NUM=48;
+    public static final int REMOVE_KW=49;
+    public static final int FROM=50;
+    public static final int LIST_KW=51;
+    public static final int OF=52;
+    public static final int CAMERA=53;
+    public static final int PERSON=54;
+    public static final int FREE=55;
+    public static final int MEDIA=56;
+    public static final int LOOP=57;
+    public static final int ONCE=58;
+    public static final int PLAYER=59;
+    public static final int SOLO=60;
+    public static final int DUPLICABLE=61;
+    public static final int FIRST=62;
+    public static final int THIRD=63;
+    public static final int DEFINITION_KW=64;
+    public static final int MEANS=65;
+    public static final int VICTORY_KW=66;
+    public static final int DBP=67;
+    public static final int DEFEAT_KW=68;
+    public static final int ENDS_KW=69;
+    public static final int STARTS_KW=70;
+    public static final int PAUSE_KW=71;
+    public static final int MUTE_KW=72;
+    public static final int ON=73;
+    public static final int OFF=74;
+    public static final int PLAY_KW=75;
+    public static final int STOP_KW=76;
+    public static final int BLOCK_KW=77;
+    public static final int EFFACE_KW=78;
+    public static final int GENERATE_KW=79;
+    public static final int WAIT_KW=80;
+    public static final int THEN=81;
+    public static final int ENDWAIT=82;
+    public static final int SAVE_KW=83;
+    public static final int NEXTURN_KW=84;
+    public static final int GRASPS_KW=85;
+    public static final int EXPELS_KW=86;
+    public static final int BY=87;
+    public static final int INGESTS_KW=88;
+    public static final int DIES_KW=89;
+    public static final int DURING=90;
+    public static final int UNTIL=91;
+    public static final int HAPPENS=92;
+    public static final int EQUIP=93;
+    public static final int NEXT=94;
+    public static final int PREVIOUS=95;
+    public static final int JUMP=96;
+    public static final int MOVE=97;
+    public static final int LEFT=98;
+    public static final int RIGHT=99;
+    public static final int FORWARD=100;
+    public static final int BACKWARD=101;
+    public static final int WUP=102;
+    public static final int WDOWN=103;
+    public static final int TURN=104;
+    public static final int CLOCKWISE=105;
+    public static final int ANTICLOCKWISE=106;
     public static final int ACCELERATE=107;
     public static final int BRAKE=108;
-    public static final int ACTIVATE_KW=109;
-    public static final int DISABLE_KW=110;
-    public static final int COMMANDS=111;
-    public static final int KEYBOARD=112;
-    public static final int RULE_KW=113;
-    public static final int MOVES_KW=114;
-    public static final int BECOMES=115;
-    public static final int TOUCHES_KW=116;
-    public static final int KILLS_KW=117;
-    public static final int OTHER=118;
-    public static final int KILLED_KW=119;
-    public static final int TOUCHED_KW=120;
-    public static final int BY=121;
-    public static final int IF_KW=122;
-    public static final int ELSE=123;
-    public static final int ENDIF=124;
-    public static final int NOT=125;
-    public static final int OR=126;
-    public static final int COMP=127;
-    public static final int EQUALS=128;
-    public static final int INF=129;
-    public static final int SUP=130;
-    public static final int INFEG=131;
-    public static final int SUPED=132;
-    public static final int DIFF=133;
-    public static final int PG=134;
-    public static final int PD=135;
-    public static final int DEAD_KW=136;
-    public static final int ALIVE_KW=137;
-    public static final int EFFACED_KW=138;
-    public static final int GENERATED_KW=139;
-    public static final int TOUCHING_KW=140;
-    public static final int MOVING_KW=141;
-    public static final int WAITING_KW=142;
-    public static final int FINISHED_KW=143;
-    public static final int STARTED_KW=144;
-    public static final int PAUSED_KW=145;
-    public static final int MUTED_KW=146;
-    public static final int PLAYED_KW=147;
-    public static final int STOPPED_KW=148;
-    public static final int ASSIGN_KW=149;
-    public static final int ADD_KW=150;
-    public static final int SUB_KW=151;
-    public static final int INVERT_KW=152;
-    public static final int IA_KW=153;
-    public static final int RANDOM_KW=154;
-    public static final int BETWEEN=155;
-    public static final int PLUS=156;
-    public static final int MINUS=157;
-    public static final int MUL=158;
-    public static final int DIV=159;
-    public static final int MOD=160;
-    public static final int POW=161;
-    public static final int X=162;
-    public static final int Y=163;
-    public static final int Z=164;
-    public static final int VALUE=165;
-    public static final int ALL=166;
-    public static final int NUM=167;
-    public static final int POSITION=168;
-    public static final int ORIENTATION=169;
-    public static final int SIZE=170;
-    public static final int MIN=171;
-    public static final int SEC=172;
-    public static final int MS=173;
-    public static final int FRAME=174;
-    public static final int COUNTER=175;
-    public static final int TIME=176;
-    public static final int BOOST_INTERVAL=177;
-    public static final int SHOOT_INTERVAL=178;
-    public static final int RELOAD_TIME=179;
-    public static final int INVENTORY=180;
-    public static final int EQUIPED_OBJECT=181;
-    public static final int ENTRANCES=182;
-    public static final int EXITS=183;
-    public static final int DAMAGE_ZONE=184;
-    public static final int COLLECTORS=185;
-    public static final int TYPES_COLLECTORS=186;
-    public static final int GENERATORS=187;
-    public static final int TYPE_GENERATORS=188;
-    public static final int BREAKERS=189;
-    public static final int TYPES_BREAKERS=190;
-    public static final int TELEPORTABLES=191;
-    public static final int TYPES_TELEPORTABLES=192;
-    public static final int COMMENT=193;
-    public static final int WS=194;
+    public static final int TRANSLATION=109;
+    public static final int ROTATION=110;
+    public static final int SCALE=111;
+    public static final int COMMAND_KW=112;
+    public static final int FOR=113;
+    public static final int MOUSE=114;
+    public static final int KEY=115;
+    public static final int PRESSED_KW=116;
+    public static final int HELD_KW=117;
+    public static final int RELEASED_KW=118;
+    public static final int CLICK_LEFT=119;
+    public static final int CLICK_MIDDLE=120;
+    public static final int CLICK_RIGHT=121;
+    public static final int SCROLL_UP=122;
+    public static final int SCROLL_DOWN=123;
+    public static final int LETTER=124;
+    public static final int SPACE=125;
+    public static final int ESCAPE=126;
+    public static final int ENTER=127;
+    public static final int ACTIVATE_KW=128;
+    public static final int DISABLE_KW=129;
+    public static final int COMMANDS=130;
+    public static final int KEYBOARD=131;
+    public static final int RULE_KW=132;
+    public static final int MOVES_KW=133;
+    public static final int BECOMES=134;
+    public static final int TOUCHES_KW=135;
+    public static final int KILLS_KW=136;
+    public static final int OWNES_KW=137;
+    public static final int NOTOWNES_KW=138;
+    public static final int OTHER=139;
+    public static final int KILLED_KW=140;
+    public static final int TOUCHED_KW=141;
+    public static final int OWNED_KW=142;
+    public static final int NOTOWNED_KW=143;
+    public static final int IF_KW=144;
+    public static final int ELSE=145;
+    public static final int ENDIF=146;
+    public static final int NOT=147;
+    public static final int OR=148;
+    public static final int COMP=149;
+    public static final int EQUALS=150;
+    public static final int INF=151;
+    public static final int SUP=152;
+    public static final int INFEG=153;
+    public static final int SUPED=154;
+    public static final int DIFF=155;
+    public static final int PG=156;
+    public static final int PD=157;
+    public static final int CONTAINS_KW=158;
+    public static final int DEAD_KW=159;
+    public static final int ALIVE_KW=160;
+    public static final int EFFACED_KW=161;
+    public static final int GENERATED_KW=162;
+    public static final int TOUCHING_KW=163;
+    public static final int MOVING_KW=164;
+    public static final int WAITING_KW=165;
+    public static final int FINISHED_KW=166;
+    public static final int STARTED_KW=167;
+    public static final int PAUSED_KW=168;
+    public static final int MUTED_KW=169;
+    public static final int PLAYED_KW=170;
+    public static final int STOPPED_KW=171;
+    public static final int ASSIGN_KW=172;
+    public static final int ADD_KW=173;
+    public static final int SUB_KW=174;
+    public static final int INVERT_KW=175;
+    public static final int WITH=176;
+    public static final int IA_KW=177;
+    public static final int RANDOM_KW=178;
+    public static final int BETWEEN=179;
+    public static final int PLUS=180;
+    public static final int MINUS=181;
+    public static final int MUL=182;
+    public static final int DIV=183;
+    public static final int MOD=184;
+    public static final int POW=185;
+    public static final int DISTANCE_KW=186;
+    public static final int ANGLE_KW=187;
+    public static final int X=188;
+    public static final int Y=189;
+    public static final int Z=190;
+    public static final int SCORE=191;
+    public static final int VALUE=192;
+    public static final int ALL=193;
+    public static final int POSITION=194;
+    public static final int ORIENTATION=195;
+    public static final int SIZE=196;
+    public static final int MIN=197;
+    public static final int SEC=198;
+    public static final int MS=199;
+    public static final int FRAME=200;
+    public static final int COUNTER=201;
+    public static final int TIME=202;
+    public static final int BOOST_INTERVAL=203;
+    public static final int SHOOT_INTERVAL=204;
+    public static final int RELOAD_TIME=205;
+    public static final int INVENTORY=206;
+    public static final int EQUIPED_OBJECT=207;
+    public static final int ENTRANCES=208;
+    public static final int EXITS=209;
+    public static final int DAMAGE_ZONE=210;
+    public static final int COLLECTORS=211;
+    public static final int TYPES_COLLECTORS=212;
+    public static final int GENERATORS=213;
+    public static final int TYPE_GENERATORS=214;
+    public static final int BREAKERS=215;
+    public static final int TYPES_BREAKERS=216;
+    public static final int TELEPORTABLES=217;
+    public static final int TYPES_TELEPORTABLES=218;
+    public static final int COMMENT=219;
+    public static final int RELOAD_KW=220;
+    public static final int WS=221;
 
     // delegates
     // delegators
@@ -215,15 +242,15 @@ public class hightLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "/home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g"; }
 
     // $ANTLR start "GAME_KW"
     public final void mGAME_KW() throws RecognitionException {
         try {
             int _type = GAME_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:7:9: ( 'GAME_KW' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:7:11: 'GAME_KW'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:7:9: ( 'GAME_KW' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:7:11: 'GAME_KW'
             {
             match("GAME_KW"); 
 
@@ -243,8 +270,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GAME_ATTRIBUT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:8:18: ( 'GAME_ATTRIBUT_KW' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:8:20: 'GAME_ATTRIBUT_KW'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:8:18: ( 'GAME_ATTRIBUT_KW' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:8:20: 'GAME_ATTRIBUT_KW'
             {
             match("GAME_ATTRIBUT_KW"); 
 
@@ -264,8 +291,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INIT_IS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:9:12: ( 'INIT_IS_KW' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:9:14: 'INIT_IS_KW'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:9:12: ( 'INIT_IS_KW' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:9:14: 'INIT_IS_KW'
             {
             match("INIT_IS_KW"); 
 
@@ -285,8 +312,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:10:5: ( 'DEC' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:10:7: 'DEC'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:10:5: ( 'DEC' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:10:7: 'DEC'
             {
             match("DEC"); 
 
@@ -301,13 +328,13 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "DEC"
 
-    // $ANTLR start "T__195"
-    public final void mT__195() throws RecognitionException {
+    // $ANTLR start "T__222"
+    public final void mT__222() throws RecognitionException {
         try {
-            int _type = T__195;
+            int _type = T__222;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:11:8: ( 'true' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:11:10: 'true'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:8: ( 'true' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:10: 'true'
             {
             match("true"); 
 
@@ -320,15 +347,15 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__195"
+    // $ANTLR end "T__222"
 
-    // $ANTLR start "T__196"
-    public final void mT__196() throws RecognitionException {
+    // $ANTLR start "T__223"
+    public final void mT__223() throws RecognitionException {
         try {
-            int _type = T__196;
+            int _type = T__223;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:12:8: ( 'false' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:12:10: 'false'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:8: ( 'false' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:10: 'false'
             {
             match("false"); 
 
@@ -341,19 +368,19 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__196"
+    // $ANTLR end "T__223"
 
     // $ANTLR start "COMMENT"
     public final void mCOMMENT() throws RecognitionException {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:412:13: ( '//' (~ '\\n' )* )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:412:15: '//' (~ '\\n' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:13: ( '//' (~ '\\n' )* )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:15: '//' (~ '\\n' )*
             {
             match("//"); 
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:412:19: (~ '\\n' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:19: (~ '\\n' )*
             loop1:
             do {
                 int alt1=2;
@@ -366,7 +393,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:412:20: ~ '\\n'
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:20: ~ '\\n'
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -403,8 +430,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:414:4: ( ')' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:414:6: ')'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:430:4: ( ')' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:430:6: ')'
             {
             match(')'); 
 
@@ -423,8 +450,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:415:4: ( '(' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:415:6: '('
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:431:4: ( '(' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:431:6: '('
             {
             match('('); 
 
@@ -443,8 +470,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:416:5: ( ';' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:416:7: ';'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:432:5: ( ';' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:432:7: ';'
             {
             match(';'); 
 
@@ -463,8 +490,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:417:6: ( ',' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:417:8: ','
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:433:6: ( ',' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:433:8: ','
             {
             match(','); 
 
@@ -483,8 +510,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = HAS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:418:5: ( 'has' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:418:7: 'has'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:434:5: ( 'has' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:434:7: 'has'
             {
             match("has"); 
 
@@ -504,8 +531,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:419:4: ( 'at' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:419:6: 'at'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:435:4: ( 'at' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:435:6: 'at'
             {
             match("at"); 
 
@@ -525,8 +552,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:420:4: ( 'is' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:420:6: 'is'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:436:4: ( 'is' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:436:6: 'is'
             {
             match("is"); 
 
@@ -546,8 +573,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:5: ( 'and' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:7: 'and'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:437:5: ( 'and' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:437:7: 'and'
             {
             match("and"); 
 
@@ -567,8 +594,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:422:4: ( 'of' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:422:6: 'of'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:438:4: ( 'of' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:438:6: 'of'
             {
             match("of"); 
 
@@ -588,8 +615,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:423:6: ( 'with' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:423:8: 'with'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:439:6: ( 'with' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:439:8: 'with'
             {
             match("with"); 
 
@@ -609,8 +636,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BETWEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:424:9: ( 'between' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:424:11: 'between'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:440:9: ( 'between' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:440:11: 'between'
             {
             match("between"); 
 
@@ -630,8 +657,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:425:6: ( '+' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:425:8: '+'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:441:6: ( '+' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:441:8: '+'
             {
             match('+'); 
 
@@ -650,8 +677,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:426:7: ( '-' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:426:9: '-'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:442:7: ( '-' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:442:9: '-'
             {
             match('-'); 
 
@@ -670,8 +697,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:427:5: ( '*' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:427:7: '*'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:443:5: ( '*' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:443:7: '*'
             {
             match('*'); 
 
@@ -690,8 +717,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:428:5: ( '/' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:428:7: '/'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:444:5: ( '/' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:444:7: '/'
             {
             match('/'); 
 
@@ -710,8 +737,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = POW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:429:5: ( '^' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:429:7: '^'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:445:5: ( '^' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:445:7: '^'
             {
             match('^'); 
 
@@ -730,8 +757,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:430:5: ( '%' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:430:7: '%'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:446:5: ( '%' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:446:7: '%'
             {
             match('%'); 
 
@@ -750,8 +777,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = X;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:431:3: ( 'x' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:431:5: 'x'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:447:3: ( 'x' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:447:5: 'x'
             {
             match('x'); 
 
@@ -770,8 +797,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Y;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:432:3: ( 'y' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:432:5: 'y'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:448:3: ( 'y' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:448:5: 'y'
             {
             match('y'); 
 
@@ -790,8 +817,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Z;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:433:3: ( 'z' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:433:5: 'z'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:449:3: ( 'z' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:449:5: 'z'
             {
             match('z'); 
 
@@ -810,8 +837,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:434:5: ( 'all' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:434:7: 'all'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:450:5: ( 'all' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:450:7: 'all'
             {
             match("all"); 
 
@@ -831,8 +858,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:435:5: ( 'not' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:435:7: 'not'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:451:5: ( 'not' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:451:7: 'not'
             {
             match("not"); 
 
@@ -852,8 +879,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:436:5: ( 'min' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:436:7: 'min'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:452:5: ( 'min' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:452:7: 'min'
             {
             match("min"); 
 
@@ -873,8 +900,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:437:5: ( 'sec' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:437:7: 'sec'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:453:5: ( 'sec' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:453:7: 'sec'
             {
             match("sec"); 
 
@@ -894,8 +921,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:438:4: ( 'ms' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:438:6: 'ms'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:454:4: ( 'ms' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:454:6: 'ms'
             {
             match("ms"); 
 
@@ -915,8 +942,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:439:6: ( 'then' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:439:8: 'then'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:455:6: ( 'then' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:455:8: 'then'
             {
             match("then"); 
 
@@ -936,8 +963,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:440:5: ( 'for' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:440:7: 'for'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:456:5: ( 'for' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:456:7: 'for'
             {
             match("for"); 
 
@@ -957,8 +984,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:441:8: ( '=' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:441:10: '='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:457:8: ( '=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:457:10: '='
             {
             match('='); 
 
@@ -977,8 +1004,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:442:5: ( '<' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:442:8: '<'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:458:5: ( '<' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:458:8: '<'
             {
             match('<'); 
 
@@ -997,8 +1024,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:443:5: ( '>' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:443:8: '>'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:459:5: ( '>' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:459:8: '>'
             {
             match('>'); 
 
@@ -1017,8 +1044,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INFEG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:444:7: ( '<=' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:444:9: '<='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:460:7: ( '<=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:460:9: '<='
             {
             match("<="); 
 
@@ -1038,8 +1065,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUPED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:445:7: ( '>=' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:445:9: '>='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:7: ( '>=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:9: '>='
             {
             match(">="); 
 
@@ -1059,8 +1086,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:446:6: ( '!=' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:446:8: '!='
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:462:6: ( '!=' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:462:8: '!='
             {
             match("!="); 
 
@@ -1075,13 +1102,54 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "DIFF"
 
+    // $ANTLR start "FROM"
+    public final void mFROM() throws RecognitionException {
+        try {
+            int _type = FROM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:7: ( 'from' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:8: 'from'
+            {
+            match("from"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FROM"
+
+    // $ANTLR start "DBP"
+    public final void mDBP() throws RecognitionException {
+        try {
+            int _type = DBP;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:9: ( ':' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:11: ':'
+            {
+            match(':'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DBP"
+
     // $ANTLR start "GAME"
     public final void mGAME() throws RecognitionException {
         try {
             int _type = GAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:448:7: ( 'Game' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:448:9: 'Game'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:7: ( 'Game' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:9: 'Game'
             {
             match("Game"); 
 
@@ -1101,8 +1169,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRAVITY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:449:12: ( 'gravity' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:449:14: 'gravity'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:12: ( 'gravity' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:14: 'gravity'
             {
             match("gravity"); 
 
@@ -1122,8 +1190,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:450:8: ( 'score' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:450:10: 'score'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:8: ( 'score' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:10: 'score'
             {
             match("score"); 
 
@@ -1138,13 +1206,160 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "SCORE"
 
+    // $ANTLR start "TURNBASED_KW"
+    public final void mTURNBASED_KW() throws RecognitionException {
+        try {
+            int _type = TURNBASED_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:17: ( 'turnbased' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:19: 'turnbased'
+            {
+            match("turnbased"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TURNBASED_KW"
+
+    // $ANTLR start "WORLD_KW"
+    public final void mWORLD_KW() throws RecognitionException {
+        try {
+            int _type = WORLD_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:17: ( 'world' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:19: 'world'
+            {
+            match("world"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "WORLD_KW"
+
+    // $ANTLR start "GRIDSIZE_KW"
+    public final void mGRIDSIZE_KW() throws RecognitionException {
+        try {
+            int _type = GRIDSIZE_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:17: ( 'gridsize' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:19: 'gridsize'
+            {
+            match("gridsize"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "GRIDSIZE_KW"
+
+    // $ANTLR start "GENERIC"
+    public final void mGENERIC() throws RecognitionException {
+        try {
+            int _type = GENERIC;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:17: ( 'generic' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:19: 'generic'
+            {
+            match("generic"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "GENERIC"
+
+    // $ANTLR start "GRID"
+    public final void mGRID() throws RecognitionException {
+        try {
+            int _type = GRID;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:15: ( 'grid' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:17: 'grid'
+            {
+            match("grid"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "GRID"
+
+    // $ANTLR start "RIBBON"
+    public final void mRIBBON() throws RecognitionException {
+        try {
+            int _type = RIBBON;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:17: ( 'ribbon' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:19: 'ribbon'
+            {
+            match("ribbon"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RIBBON"
+
+    // $ANTLR start "NAME_KW"
+    public final void mNAME_KW() throws RecognitionException {
+        try {
+            int _type = NAME_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:17: ( 'name' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:19: 'name'
+            {
+            match("name"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NAME_KW"
+
     // $ANTLR start "TYPE"
     public final void mTYPE() throws RecognitionException {
         try {
             int _type = TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:451:7: ( 'type' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:451:9: 'type'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:7: ( 'type' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:9: 'type'
             {
             match("type"); 
 
@@ -1159,13 +1374,76 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "TYPE"
 
+    // $ANTLR start "INSERT_KW"
+    public final void mINSERT_KW() throws RecognitionException {
+        try {
+            int _type = INSERT_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:11: ( 'insert' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:14: 'insert'
+            {
+            match("insert"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INSERT_KW"
+
+    // $ANTLR start "REMOVE_KW"
+    public final void mREMOVE_KW() throws RecognitionException {
+        try {
+            int _type = REMOVE_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:11: ( 'remove' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:13: 'remove'
+            {
+            match("remove"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "REMOVE_KW"
+
+    // $ANTLR start "SOLO"
+    public final void mSOLO() throws RecognitionException {
+        try {
+            int _type = SOLO;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:7: ( 'solo' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:9: 'solo'
+            {
+            match("solo"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SOLO"
+
     // $ANTLR start "PLAYER"
     public final void mPLAYER() throws RecognitionException {
         try {
             int _type = PLAYER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:452:9: ( 'player' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:452:11: 'player'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:9: ( 'player' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:11: 'player'
             {
             match("player"); 
 
@@ -1185,8 +1463,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIST_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:453:10: ( 'list' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:453:12: 'list'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:10: ( 'list' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:12: 'list'
             {
             match("list"); 
 
@@ -1206,8 +1484,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:454:5: ( 'in' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:454:7: 'in'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:5: ( 'in' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:7: 'in'
             {
             match("in"); 
 
@@ -1227,8 +1505,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:455:7: ( 'loop' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:455:9: 'loop'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:7: ( 'loop' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:9: 'loop'
             {
             match("loop"); 
 
@@ -1248,8 +1526,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ONCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:456:7: ( 'once' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:456:9: 'once'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:7: ( 'once' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:9: 'once'
             {
             match("once"); 
 
@@ -1269,8 +1547,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RANDOM_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:457:11: ( 'random' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:457:13: 'random'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:11: ( 'random' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:13: 'random'
             {
             match("random"); 
 
@@ -1290,8 +1568,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFINITION_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:458:15: ( 'definition' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:458:17: 'definition'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:15: ( 'definition' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:17: 'definition'
             {
             match("definition"); 
 
@@ -1311,8 +1589,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEANS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:459:8: ( 'means' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:459:10: 'means'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:8: ( 'means' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:10: 'means'
             {
             match("means"); 
 
@@ -1332,8 +1610,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:460:10: ( 'pause' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:460:12: 'pause'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:10: ( 'pause' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:12: 'pause'
             {
             match("pause"); 
 
@@ -1353,8 +1631,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:461:10: ( 'mute' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:461:12: 'mute'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:10: ( 'mute' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:12: 'mute'
             {
             match("mute"); 
 
@@ -1374,8 +1652,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:462:5: ( 'on' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:462:7: 'on'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:5: ( 'on' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:7: 'on'
             {
             match("on"); 
 
@@ -1395,8 +1673,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:463:6: ( 'off' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:463:8: 'off'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:6: ( 'off' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:8: 'off'
             {
             match("off"); 
 
@@ -1416,8 +1694,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:464:10: ( 'play' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:464:12: 'play'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:10: ( 'play' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:12: 'play'
             {
             match("play"); 
 
@@ -1437,8 +1715,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOP_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:465:10: ( 'stop' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:465:12: 'stop'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:10: ( 'stop' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:12: 'stop'
             {
             match("stop"); 
 
@@ -1458,8 +1736,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:466:10: ( 'ends' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:466:12: 'ends'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:10: ( 'ends' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:12: 'ends'
             {
             match("ends"); 
 
@@ -1479,8 +1757,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:467:11: ( 'starts' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:467:13: 'starts'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:11: ( 'starts' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:13: 'starts'
             {
             match("starts"); 
 
@@ -1500,8 +1778,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BLOCK_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:468:10: ( 'block' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:468:12: 'block'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:10: ( 'block' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:12: 'block'
             {
             match("block"); 
 
@@ -1521,8 +1799,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TRANSLATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:469:13: ( 'translation' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:469:15: 'translation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:13: ( 'translation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:15: 'translation'
             {
             match("translation"); 
 
@@ -1542,8 +1820,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ROTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:470:10: ( 'rotation' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:470:12: 'rotation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:10: ( 'rotation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:12: 'rotation'
             {
             match("rotation"); 
 
@@ -1563,8 +1841,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCALE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:471:8: ( 'scale' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:471:10: 'scale'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:8: ( 'scale' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:10: 'scale'
             {
             match("scale"); 
 
@@ -1584,8 +1862,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:472:11: ( 'efface' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:472:13: 'efface'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:11: ( 'efface' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:13: 'efface'
             {
             match("efface"); 
 
@@ -1605,8 +1883,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:473:13: ( 'generate' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:473:15: 'generate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:13: ( 'generate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:15: 'generate'
             {
             match("generate"); 
 
@@ -1626,8 +1904,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAIT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:474:10: ( 'wait' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:474:12: 'wait'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:10: ( 'wait' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:12: 'wait'
             {
             match("wait"); 
 
@@ -1647,8 +1925,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDWAIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:475:10: ( 'endWait' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:475:12: 'endWait'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:10: ( 'endWait' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:12: 'endWait'
             {
             match("endWait"); 
 
@@ -1668,8 +1946,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SAVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:476:10: ( 'save' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:476:12: 'save'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:10: ( 'save' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:12: 'save'
             {
             match("save"); 
 
@@ -1689,8 +1967,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RULE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:477:10: ( 'rule' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:477:12: 'rule'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:10: ( 'rule' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:12: 'rule'
             {
             match("rule"); 
 
@@ -1710,8 +1988,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:478:10: ( 'moves' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:478:12: 'moves'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:10: ( 'moves' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:12: 'moves'
             {
             match("moves"); 
 
@@ -1731,8 +2009,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:479:9: ( 'dies' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:479:11: 'dies'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:9: ( 'dies' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:11: 'dies'
             {
             match("dies"); 
 
@@ -1752,8 +2030,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:480:12: ( 'touches' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:480:14: 'touches'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:12: ( 'touches' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:14: 'touches'
             {
             match("touches"); 
 
@@ -1773,8 +2051,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:481:10: ( 'kills' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:481:12: 'kills'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:10: ( 'kills' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:12: 'kills'
             {
             match("kills"); 
 
@@ -1794,8 +2072,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:482:11: ( 'killed' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:482:13: 'killed'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:11: ( 'killed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:13: 'killed'
             {
             match("killed"); 
 
@@ -1815,8 +2093,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:483:12: ( 'touched' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:483:14: 'touched'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:12: ( 'touched' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:14: 'touched'
             {
             match("touched"); 
 
@@ -1836,8 +2114,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:484:4: ( 'by' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:484:6: 'by'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:4: ( 'by' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:6: 'by'
             {
             match("by"); 
 
@@ -1857,8 +2135,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:485:7: ( 'other' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:485:9: 'other'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:7: ( 'other' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:9: 'other'
             {
             match("other"); 
 
@@ -1878,8 +2156,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BECOMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:486:9: ( 'becomes' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:486:11: 'becomes'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:9: ( 'becomes' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:11: 'becomes'
             {
             match("becomes"); 
 
@@ -1899,8 +2177,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VICTORY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:487:12: ( 'victory' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:487:14: 'victory'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:12: ( 'victory' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:14: 'victory'
             {
             match("victory"); 
 
@@ -1920,8 +2198,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFEAT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:488:11: ( 'defeat' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:488:13: 'defeat'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:11: ( 'defeat' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:13: 'defeat'
             {
             match("defeat"); 
 
@@ -1941,8 +2219,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IF_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:489:7: ( 'if' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:489:9: 'if'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:7: ( 'if' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:9: 'if'
             {
             match("if"); 
 
@@ -1962,8 +2240,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:490:6: ( 'else' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:490:8: 'else'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:6: ( 'else' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:8: 'else'
             {
             match("else"); 
 
@@ -1983,8 +2261,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:491:7: ( 'endIf' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:491:9: 'endIf'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:7: ( 'endIf' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:9: 'endIf'
             {
             match("endIf"); 
 
@@ -2004,8 +2282,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:492:4: ( 'or' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:492:6: 'or'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:4: ( 'or' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:6: 'or'
             {
             match("or"); 
 
@@ -2025,8 +2303,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:493:6: ( 'comp' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:493:8: 'comp'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:6: ( 'comp' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:8: 'comp'
             {
             match("comp"); 
 
@@ -2046,8 +2324,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:494:9: ( 'dead' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:494:11: 'dead'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:9: ( 'dead' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:11: 'dead'
             {
             match("dead"); 
 
@@ -2067,8 +2345,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALIVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:495:10: ( 'alive' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:495:12: 'alive'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:10: ( 'alive' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:12: 'alive'
             {
             match("alive"); 
 
@@ -2088,8 +2366,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:496:12: ( 'effaced' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:496:13: 'effaced'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:12: ( 'effaced' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:13: 'effaced'
             {
             match("effaced"); 
 
@@ -2109,8 +2387,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:497:14: ( 'generated' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:497:16: 'generated'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:14: ( 'generated' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:16: 'generated'
             {
             match("generated"); 
 
@@ -2130,8 +2408,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:498:13: ( 'touching' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:498:15: 'touching'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:13: ( 'touching' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:15: 'touching'
             {
             match("touching"); 
 
@@ -2151,8 +2429,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:499:11: ( 'moving' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:499:13: 'moving'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:11: ( 'moving' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:13: 'moving'
             {
             match("moving"); 
 
@@ -2172,8 +2450,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAITING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:500:12: ( 'waiting' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:500:14: 'waiting'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:12: ( 'waiting' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:14: 'waiting'
             {
             match("waiting"); 
 
@@ -2193,8 +2471,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FINISHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:501:13: ( 'finished' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:501:15: 'finished'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:13: ( 'finished' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:15: 'finished'
             {
             match("finished"); 
 
@@ -2214,8 +2492,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:502:12: ( 'started' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:502:14: 'started'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:12: ( 'started' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:14: 'started'
             {
             match("started"); 
 
@@ -2235,8 +2513,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:503:11: ( 'paused' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:503:13: 'paused'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:11: ( 'paused' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:13: 'paused'
             {
             match("paused"); 
 
@@ -2256,8 +2534,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:504:10: ( 'muted' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:504:12: 'muted'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:10: ( 'muted' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:12: 'muted'
             {
             match("muted"); 
 
@@ -2277,8 +2555,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAYED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:505:11: ( 'played' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:505:13: 'played'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:11: ( 'played' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:13: 'played'
             {
             match("played"); 
 
@@ -2298,8 +2576,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOPPED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:506:12: ( 'stopped' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:506:14: 'stopped'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:12: ( 'stopped' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:14: 'stopped'
             {
             match("stopped"); 
 
@@ -2319,8 +2597,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ASSIGN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:507:11: ( 'assign' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:507:13: 'assign'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:11: ( 'assign' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:13: 'assign'
             {
             match("assign"); 
 
@@ -2340,8 +2618,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ADD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:508:8: ( 'add' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:508:10: 'add'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:8: ( 'add' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:10: 'add'
             {
             match("add"); 
 
@@ -2361,8 +2639,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUB_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:509:8: ( 'sub' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:509:10: 'sub'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:8: ( 'sub' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:10: 'sub'
             {
             match("sub"); 
 
@@ -2382,8 +2660,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:510:11: ( 'invert' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:510:13: 'invert'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:11: ( 'invert' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:13: 'invert'
             {
             match("invert"); 
 
@@ -2403,8 +2681,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NUM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:511:7: ( 'num' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:511:9: 'num'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:7: ( 'num' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:9: 'num'
             {
             match("num"); 
 
@@ -2424,10 +2702,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = IA_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:512:8: ( 'ia' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:512:11: 'ia'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:8: ( 'ai' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:11: 'ai'
             {
-            match("ia"); 
+            match("ai"); 
 
 
             }
@@ -2445,8 +2723,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DURING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:513:8: ( 'during' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:513:10: 'during'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:8: ( 'during' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:10: 'during'
             {
             match("during"); 
 
@@ -2466,8 +2744,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = UNTIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:514:7: ( 'until' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:514:9: 'until'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:7: ( 'until' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:9: 'until'
             {
             match("until"); 
 
@@ -2487,8 +2765,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:515:7: ( 'equip' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:515:9: 'equip'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:7: ( 'equip' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:9: 'equip'
             {
             match("equip"); 
 
@@ -2508,8 +2786,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:516:6: ( 'next' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:516:8: 'next'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:6: ( 'next' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:8: 'next'
             {
             match("next"); 
 
@@ -2529,8 +2807,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PREVIOUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:517:10: ( 'previous' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:517:12: 'previous'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:10: ( 'previous' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:12: 'previous'
             {
             match("previous"); 
 
@@ -2550,8 +2828,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KEYBOARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:518:10: ( 'keyboard' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:518:12: 'keyboard'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:10: ( 'keyboard' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:12: 'keyboard'
             {
             match("keyboard"); 
 
@@ -2571,8 +2849,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACTIVATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:519:13: ( 'activate' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:519:15: 'activate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:13: ( 'activate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:15: 'activate'
             {
             match("activate"); 
 
@@ -2592,8 +2870,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DISABLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:520:11: ( 'disable' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:520:12: 'disable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:11: ( 'disable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:12: 'disable'
             {
             match("disable"); 
 
@@ -2613,8 +2891,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMANDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:521:9: ( 'commands' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:521:10: 'commands'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:9: ( 'commands' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:10: 'commands'
             {
             match("commands"); 
 
@@ -2629,13 +2907,160 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "COMMANDS"
 
+    // $ANTLR start "CLOCKWISE"
+    public final void mCLOCKWISE() throws RecognitionException {
+        try {
+            int _type = CLOCKWISE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:15: ( 'clockwise' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:17: 'clockwise'
+            {
+            match("clockwise"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CLOCKWISE"
+
+    // $ANTLR start "ANTICLOCKWISE"
+    public final void mANTICLOCKWISE() throws RecognitionException {
+        try {
+            int _type = ANTICLOCKWISE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:15: ( 'anticlockwise' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:17: 'anticlockwise'
+            {
+            match("anticlockwise"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ANTICLOCKWISE"
+
+    // $ANTLR start "NEXTURN_KW"
+    public final void mNEXTURN_KW() throws RecognitionException {
+        try {
+            int _type = NEXTURN_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:12: ( 'nexturn' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:14: 'nexturn'
+            {
+            match("nexturn"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NEXTURN_KW"
+
+    // $ANTLR start "RELOAD_KW"
+    public final void mRELOAD_KW() throws RecognitionException {
+        try {
+            int _type = RELOAD_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:11: ( 'reload' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:13: 'reload'
+            {
+            match("reload"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RELOAD_KW"
+
+    // $ANTLR start "GRASPS_KW"
+    public final void mGRASPS_KW() throws RecognitionException {
+        try {
+            int _type = GRASPS_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:10: ( 'grasps' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:11: 'grasps'
+            {
+            match("grasps"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "GRASPS_KW"
+
+    // $ANTLR start "EXPELS_KW"
+    public final void mEXPELS_KW() throws RecognitionException {
+        try {
+            int _type = EXPELS_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:10: ( 'expels' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:12: 'expels'
+            {
+            match("expels"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "EXPELS_KW"
+
+    // $ANTLR start "INGESTS_KW"
+    public final void mINGESTS_KW() throws RecognitionException {
+        try {
+            int _type = INGESTS_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:11: ( 'ingests' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:13: 'ingests'
+            {
+            match("ingests"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INGESTS_KW"
+
     // $ANTLR start "DUPLICABLE"
     public final void mDUPLICABLE() throws RecognitionException {
         try {
             int _type = DUPLICABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:523:12: ( 'duplicable' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:523:14: 'duplicable'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:12: ( 'duplicable' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:14: 'duplicable'
             {
             match("duplicable"); 
 
@@ -2655,8 +3080,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:524:8: ( 'first' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:524:10: 'first'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:8: ( 'first' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:10: 'first'
             {
             match("first"); 
 
@@ -2676,8 +3101,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:525:8: ( 'third' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:525:10: 'third'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:8: ( 'third' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:10: 'third'
             {
             match("third"); 
 
@@ -2692,76 +3117,13 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "THIRD"
 
-    // $ANTLR start "ALLY"
-    public final void mALLY() throws RecognitionException {
-        try {
-            int _type = ALLY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:526:7: ( 'ally' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:526:9: 'ally'
-            {
-            match("ally"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "ALLY"
-
-    // $ANTLR start "ENEMY"
-    public final void mENEMY() throws RecognitionException {
-        try {
-            int _type = ENEMY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:527:8: ( 'enemy' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:527:10: 'enemy'
-            {
-            match("enemy"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "ENEMY"
-
-    // $ANTLR start "NEUTRAL"
-    public final void mNEUTRAL() throws RecognitionException {
-        try {
-            int _type = NEUTRAL;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:528:10: ( 'neutral' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:528:12: 'neutral'
-            {
-            match("neutral"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "NEUTRAL"
-
     // $ANTLR start "POSITION"
     public final void mPOSITION() throws RecognitionException {
         try {
             int _type = POSITION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:529:10: ( 'position' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:529:12: 'position'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:10: ( 'position' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:12: 'position'
             {
             match("position"); 
 
@@ -2781,8 +3143,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ORIENTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:530:13: ( 'orientation' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:530:15: 'orientation'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:13: ( 'orientation' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:15: 'orientation'
             {
             match("orientation"); 
 
@@ -2802,8 +3164,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SIZE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:531:7: ( 'size' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:531:9: 'size'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:7: ( 'size' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:9: 'size'
             {
             match("size"); 
 
@@ -2823,8 +3185,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PERSON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:532:9: ( 'person' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:532:11: 'person'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:9: ( 'person' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:11: 'person'
             {
             match("person"); 
 
@@ -2844,8 +3206,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FREE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:533:7: ( 'free' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:533:9: 'free'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:7: ( 'free' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:9: 'free'
             {
             match("free"); 
 
@@ -2865,7 +3227,7 @@ public class hightLexer extends Lexer {
         try {
             int _type = FRAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:534:8: ( 'frame' | 'frames' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:8: ( 'frame' | 'frames' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2926,7 +3288,7 @@ public class hightLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:534:10: 'frame'
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:10: 'frame'
                     {
                     match("frame"); 
 
@@ -2934,7 +3296,7 @@ public class hightLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:534:20: 'frames'
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:20: 'frames'
                     {
                     match("frames"); 
 
@@ -2951,13 +3313,244 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "FRAME"
 
+    // $ANTLR start "PRESSED_KW"
+    public final void mPRESSED_KW() throws RecognitionException {
+        try {
+            int _type = PRESSED_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:12: ( 'pressed' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:14: 'pressed'
+            {
+            match("pressed"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "PRESSED_KW"
+
+    // $ANTLR start "HELD_KW"
+    public final void mHELD_KW() throws RecognitionException {
+        try {
+            int _type = HELD_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:9: ( 'held' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:11: 'held'
+            {
+            match("held"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "HELD_KW"
+
+    // $ANTLR start "RELEASED_KW"
+    public final void mRELEASED_KW() throws RecognitionException {
+        try {
+            int _type = RELEASED_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:13: ( 'released' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:15: 'released'
+            {
+            match("released"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RELEASED_KW"
+
+    // $ANTLR start "OWNES_KW"
+    public final void mOWNES_KW() throws RecognitionException {
+        try {
+            int _type = OWNES_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:10: ( 'ownes' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:12: 'ownes'
+            {
+            match("ownes"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "OWNES_KW"
+
+    // $ANTLR start "NOTOWNES_KW"
+    public final void mNOTOWNES_KW() throws RecognitionException {
+        try {
+            int _type = NOTOWNES_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:13: ( 'notOwnes' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:570:16: 'notOwnes'
+            {
+            match("notOwnes"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NOTOWNES_KW"
+
+    // $ANTLR start "OWNED_KW"
+    public final void mOWNED_KW() throws RecognitionException {
+        try {
+            int _type = OWNED_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:571:9: ( 'owned' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:571:10: 'owned'
+            {
+            match("owned"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "OWNED_KW"
+
+    // $ANTLR start "NOTOWNED_KW"
+    public final void mNOTOWNED_KW() throws RecognitionException {
+        try {
+            int _type = NOTOWNED_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:12: ( 'notOwned' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:13: 'notOwned'
+            {
+            match("notOwned"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NOTOWNED_KW"
+
+    // $ANTLR start "HAPPENS"
+    public final void mHAPPENS() throws RecognitionException {
+        try {
+            int _type = HAPPENS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:9: ( 'happens' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:12: 'happens'
+            {
+            match("happens"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "HAPPENS"
+
+    // $ANTLR start "CONTAINS_KW"
+    public final void mCONTAINS_KW() throws RecognitionException {
+        try {
+            int _type = CONTAINS_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:14: ( 'contains' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:17: 'contains'
+            {
+            match("contains"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "CONTAINS_KW"
+
+    // $ANTLR start "DISTANCE_KW"
+    public final void mDISTANCE_KW() throws RecognitionException {
+        try {
+            int _type = DISTANCE_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:13: ( 'distance' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:15: 'distance'
+            {
+            match("distance"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DISTANCE_KW"
+
+    // $ANTLR start "ANGLE_KW"
+    public final void mANGLE_KW() throws RecognitionException {
+        try {
+            int _type = ANGLE_KW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:10: ( 'angle' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:12: 'angle'
+            {
+            match("angle"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ANGLE_KW"
+
     // $ANTLR start "WUP"
     public final void mWUP() throws RecognitionException {
         try {
             int _type = WUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:537:5: ( 'up' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:537:7: 'up'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:5: ( 'up' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:7: 'up'
             {
             match("up"); 
 
@@ -2977,8 +3570,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WDOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:538:7: ( 'down' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:538:9: 'down'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:7: ( 'down' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:9: 'down'
             {
             match("down"); 
 
@@ -2998,8 +3591,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:539:6: ( 'left' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:539:8: 'left'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:6: ( 'left' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:8: 'left'
             {
             match("left"); 
 
@@ -3019,8 +3612,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:540:7: ( 'right' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:540:9: 'right'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:7: ( 'right' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:9: 'right'
             {
             match("right"); 
 
@@ -3040,8 +3633,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:541:7: ( 'space' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:541:9: 'space'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:7: ( 'space' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:9: 'space'
             {
             match("space"); 
 
@@ -3061,8 +3654,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ESCAPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:542:8: ( 'escape' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:542:10: 'escape'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:8: ( 'escape' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:10: 'escape'
             {
             match("escape"); 
 
@@ -3082,8 +3675,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:543:7: ( 'enter' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:543:9: 'enter'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:7: ( 'enter' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:9: 'enter'
             {
             match("enter"); 
 
@@ -3103,8 +3696,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOUSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:544:7: ( 'mouse' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:544:9: 'mouse'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:7: ( 'mouse' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:586:9: 'mouse'
             {
             match("mouse"); 
 
@@ -3124,8 +3717,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:545:5: ( 'key' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:545:7: 'key'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:5: ( 'key' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:7: 'key'
             {
             match("key"); 
 
@@ -3145,8 +3738,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:546:12: ( 'lClick' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:546:14: 'lClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:12: ( 'lClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:14: 'lClick'
             {
             match("lClick"); 
 
@@ -3161,15 +3754,15 @@ public class hightLexer extends Lexer {
     }
     // $ANTLR end "CLICK_LEFT"
 
-    // $ANTLR start "CLICK_CENTER"
-    public final void mCLICK_CENTER() throws RecognitionException {
+    // $ANTLR start "CLICK_MIDDLE"
+    public final void mCLICK_MIDDLE() throws RecognitionException {
         try {
-            int _type = CLICK_CENTER;
+            int _type = CLICK_MIDDLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:547:14: ( 'cClick' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:547:16: 'cClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:14: ( 'mClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:16: 'mClick'
             {
-            match("cClick"); 
+            match("mClick"); 
 
 
             }
@@ -3180,15 +3773,15 @@ public class hightLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "CLICK_CENTER"
+    // $ANTLR end "CLICK_MIDDLE"
 
     // $ANTLR start "CLICK_RIGHT"
     public final void mCLICK_RIGHT() throws RecognitionException {
         try {
             int _type = CLICK_RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:548:13: ( 'rClick' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:548:15: 'rClick'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:13: ( 'rClick' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:15: 'rClick'
             {
             match("rClick"); 
 
@@ -3208,8 +3801,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_UP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:549:11: ( 'scrollUp' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:549:13: 'scrollUp'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:11: ( 'scrollUp' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:13: 'scrollUp'
             {
             match("scrollUp"); 
 
@@ -3229,8 +3822,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_DOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:550:13: ( 'scrollDown' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:550:15: 'scrollDown'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:13: ( 'scrollDown' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:15: 'scrollDown'
             {
             match("scrollDown"); 
 
@@ -3250,8 +3843,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMAND_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:552:12: ( 'command' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:552:14: 'command'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:12: ( 'command' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:14: 'command'
             {
             match("command"); 
 
@@ -3271,8 +3864,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = JUMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:553:6: ( 'jump' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:553:8: 'jump'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:595:6: ( 'jump' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:595:8: 'jump'
             {
             match("jump"); 
 
@@ -3292,8 +3885,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:554:6: ( 'move' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:554:8: 'move'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:6: ( 'move' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:596:8: 'move'
             {
             match("move"); 
 
@@ -3313,8 +3906,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FORWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:555:9: ( 'forward' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:555:11: 'forward'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:9: ( 'forward' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:11: 'forward'
             {
             match("forward"); 
 
@@ -3334,8 +3927,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BACKWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:556:10: ( 'backward' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:556:12: 'backward'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:10: ( 'backward' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:12: 'backward'
             {
             match("backward"); 
 
@@ -3355,8 +3948,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:557:6: ( 'turn' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:557:8: 'turn'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:6: ( 'turn' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:8: 'turn'
             {
             match("turn"); 
 
@@ -3376,8 +3969,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACCELERATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:558:12: ( 'accelerate' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:558:14: 'accelerate'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:600:12: ( 'accelerate' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:600:14: 'accelerate'
             {
             match("accelerate"); 
 
@@ -3397,8 +3990,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BRAKE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:559:7: ( 'brake' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:559:9: 'brake'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:7: ( 'brake' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:9: 'brake'
             {
             match("brake"); 
 
@@ -3418,8 +4011,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:562:8: ( 'Camera' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:562:10: 'Camera'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:8: ( 'Camera' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:10: 'Camera'
             {
             match("Camera"); 
 
@@ -3439,8 +4032,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEDIA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:563:7: ( 'Media' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:563:9: 'Media'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:7: ( 'Media' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:9: 'Media'
             {
             match("Media"); 
 
@@ -3460,8 +4053,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COUNTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:564:9: ( 'Counter' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:564:11: 'Counter'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:9: ( 'Counter' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:606:11: 'Counter'
             {
             match("Counter"); 
 
@@ -3481,8 +4074,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:565:6: ( 'Time' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:565:8: 'Time'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:6: ( 'Time' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:8: 'Time'
             {
             match("Time"); 
 
@@ -3502,8 +4095,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:567:8: ( 'value' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:567:10: 'value'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:609:8: ( 'value' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:609:10: 'value'
             {
             match("value"); 
 
@@ -3523,8 +4116,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BOOST_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:569:16: ( 'boostInterval' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:569:18: 'boostInterval'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:16: ( 'boostInterval' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:18: 'boostInterval'
             {
             match("boostInterval"); 
 
@@ -3544,8 +4137,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SHOOT_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:570:16: ( 'shootInterval' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:570:18: 'shootInterval'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:16: ( 'shootInterval' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:18: 'shootInterval'
             {
             match("shootInterval"); 
 
@@ -3565,8 +4158,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RELOAD_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:571:13: ( 'reloadTime' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:571:15: 'reloadTime'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:13: ( 'reloadTime' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:15: 'reloadTime'
             {
             match("reloadTime"); 
 
@@ -3586,8 +4179,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVENTORY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:573:11: ( 'inventory' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:573:13: 'inventory'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:11: ( 'inventory' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:13: 'inventory'
             {
             match("inventory"); 
 
@@ -3607,8 +4200,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIPED_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:574:16: ( 'equipedObjects' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:574:18: 'equipedObjects'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:16: ( 'equipedObjects' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:18: 'equipedObjects'
             {
             match("equipedObjects"); 
 
@@ -3628,8 +4221,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTRANCES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:575:11: ( 'entrances' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:575:13: 'entrances'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:11: ( 'entrances' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:13: 'entrances'
             {
             match("entrances"); 
 
@@ -3649,8 +4242,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EXITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:576:8: ( 'exits' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:576:10: 'exits'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:8: ( 'exits' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:10: 'exits'
             {
             match("exits"); 
 
@@ -3670,8 +4263,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DAMAGE_ZONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:577:13: ( 'damageZone' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:577:15: 'damageZone'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:13: ( 'damageZone' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:619:15: 'damageZone'
             {
             match("damageZone"); 
 
@@ -3691,8 +4284,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:578:12: ( 'collectors' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:578:14: 'collectors'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:12: ( 'collectors' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:14: 'collectors'
             {
             match("collectors"); 
 
@@ -3712,8 +4305,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:579:17: ( 'typesCollectors' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:579:19: 'typesCollectors'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:17: ( 'typesCollectors' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:621:19: 'typesCollectors'
             {
             match("typesCollectors"); 
 
@@ -3733,8 +4326,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:580:12: ( 'generators' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:580:14: 'generators'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:12: ( 'generators' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:622:14: 'generators'
             {
             match("generators"); 
 
@@ -3754,8 +4347,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPE_GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:581:17: ( 'typeGenerators' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:581:19: 'typeGenerators'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:17: ( 'typeGenerators' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:19: 'typeGenerators'
             {
             match("typeGenerators"); 
 
@@ -3775,8 +4368,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:582:10: ( 'breakers' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:582:12: 'breakers'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:10: ( 'breakers' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:12: 'breakers'
             {
             match("breakers"); 
 
@@ -3796,8 +4389,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:583:16: ( 'typesBreakers' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:583:18: 'typesBreakers'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:16: ( 'typesBreakers' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:18: 'typesBreakers'
             {
             match("typesBreakers"); 
 
@@ -3817,8 +4410,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:584:15: ( 'teleportables' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:584:17: 'teleportables'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:15: ( 'teleportables' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:17: 'teleportables'
             {
             match("teleportables"); 
 
@@ -3838,8 +4431,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:586:2: ( 'typesTeleportables' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:586:5: 'typesTeleportables'
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:2: ( 'typesTeleportables' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:628:5: 'typesTeleportables'
             {
             match("typesTeleportables"); 
 
@@ -3859,8 +4452,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:589:8: ( 'a' .. 'z' | 'A' .. 'Z' )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:631:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -3887,10 +4480,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:9: ( '0' .. '9' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:9: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -3904,7 +4497,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:10: '0' .. '9'
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:10: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3920,7 +4513,7 @@ public class hightLexer extends Lexer {
                 cnt3++;
             } while (true);
 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:21: ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:21: ( '.' ( '0' .. '9' )+ )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -3929,10 +4522,10 @@ public class hightLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:22: '.' ( '0' .. '9' )+
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:22: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:26: ( '0' .. '9' )+
+                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:26: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -3946,7 +4539,7 @@ public class hightLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:27: '0' .. '9'
+                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:632:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -3984,11 +4577,11 @@ public class hightLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:591:7: ( LETTER ( LETTER | '0' .. '9' )* )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:591:9: LETTER ( LETTER | '0' .. '9' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:633:7: ( LETTER ( LETTER | '0' .. '9' )* )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:633:9: LETTER ( LETTER | '0' .. '9' )*
             {
             mLETTER(); 
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:591:15: ( LETTER | '0' .. '9' )*
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:633:15: ( LETTER | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -4001,7 +4594,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -4037,10 +4630,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:592:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:592:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:634:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:634:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             {
-            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:592:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:634:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             int cnt7=0;
             loop7:
             do {
@@ -4054,7 +4647,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
+            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
             	        input.consume();
@@ -4091,1216 +4684,1405 @@ public class hightLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__195 | T__196 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
-        int alt8=173;
+        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__222 | T__223 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
+        int alt8=200;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:10: GAME_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:10: GAME_KW
                 {
                 mGAME_KW(); 
 
                 }
                 break;
             case 2 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:18: GAME_ATTRIBUT_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:18: GAME_ATTRIBUT_KW
                 {
                 mGAME_ATTRIBUT_KW(); 
 
                 }
                 break;
             case 3 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:35: INIT_IS_KW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:35: INIT_IS_KW
                 {
                 mINIT_IS_KW(); 
 
                 }
                 break;
             case 4 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:46: DEC
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:46: DEC
                 {
                 mDEC(); 
 
                 }
                 break;
             case 5 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:50: T__195
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__222
                 {
-                mT__195(); 
+                mT__222(); 
 
                 }
                 break;
             case 6 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:57: T__196
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__223
                 {
-                mT__196(); 
+                mT__223(); 
 
                 }
                 break;
             case 7 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:64: COMMENT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:64: COMMENT
                 {
                 mCOMMENT(); 
 
                 }
                 break;
             case 8 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:72: PD
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:72: PD
                 {
                 mPD(); 
 
                 }
                 break;
             case 9 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:75: PG
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:75: PG
                 {
                 mPG(); 
 
                 }
                 break;
             case 10 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:78: FIN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:78: FIN
                 {
                 mFIN(); 
 
                 }
                 break;
             case 11 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:82: VIRG
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:82: VIRG
                 {
                 mVIRG(); 
 
                 }
                 break;
             case 12 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:87: HAS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:87: HAS
                 {
                 mHAS(); 
 
                 }
                 break;
             case 13 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:91: AT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:91: AT
                 {
                 mAT(); 
 
                 }
                 break;
             case 14 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:94: IS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:94: IS
                 {
                 mIS(); 
 
                 }
                 break;
             case 15 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:97: AND
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:97: AND
                 {
                 mAND(); 
 
                 }
                 break;
             case 16 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:101: OF
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:101: OF
                 {
                 mOF(); 
 
                 }
                 break;
             case 17 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:104: WITH
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:104: WITH
                 {
                 mWITH(); 
 
                 }
                 break;
             case 18 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:109: BETWEEN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:109: BETWEEN
                 {
                 mBETWEEN(); 
 
                 }
                 break;
             case 19 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:117: PLUS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:117: PLUS
                 {
                 mPLUS(); 
 
                 }
                 break;
             case 20 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:122: MINUS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:122: MINUS
                 {
                 mMINUS(); 
 
                 }
                 break;
             case 21 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:128: MUL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:128: MUL
                 {
                 mMUL(); 
 
                 }
                 break;
             case 22 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:132: DIV
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:132: DIV
                 {
                 mDIV(); 
 
                 }
                 break;
             case 23 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:136: POW
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:136: POW
                 {
                 mPOW(); 
 
                 }
                 break;
             case 24 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:140: MOD
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:140: MOD
                 {
                 mMOD(); 
 
                 }
                 break;
             case 25 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:144: X
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:144: X
                 {
                 mX(); 
 
                 }
                 break;
             case 26 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:146: Y
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:146: Y
                 {
                 mY(); 
 
                 }
                 break;
             case 27 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:148: Z
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:148: Z
                 {
                 mZ(); 
 
                 }
                 break;
             case 28 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:150: ALL
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:150: ALL
                 {
                 mALL(); 
 
                 }
                 break;
             case 29 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:154: NOT
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:154: NOT
                 {
                 mNOT(); 
 
                 }
                 break;
             case 30 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:158: MIN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:158: MIN
                 {
                 mMIN(); 
 
                 }
                 break;
             case 31 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:162: SEC
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:162: SEC
                 {
                 mSEC(); 
 
                 }
                 break;
             case 32 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:166: MS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:166: MS
                 {
                 mMS(); 
 
                 }
                 break;
             case 33 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:169: THEN
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:169: THEN
                 {
                 mTHEN(); 
 
                 }
                 break;
             case 34 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:174: FOR
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:174: FOR
                 {
                 mFOR(); 
 
                 }
                 break;
             case 35 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:178: EQUALS
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:178: EQUALS
                 {
                 mEQUALS(); 
 
                 }
                 break;
             case 36 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:185: INF
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:185: INF
                 {
                 mINF(); 
 
                 }
                 break;
             case 37 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:189: SUP
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:189: SUP
                 {
                 mSUP(); 
 
                 }
                 break;
             case 38 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:193: INFEG
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:193: INFEG
                 {
                 mINFEG(); 
 
                 }
                 break;
             case 39 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:199: SUPED
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:199: SUPED
                 {
                 mSUPED(); 
 
                 }
                 break;
             case 40 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:205: DIFF
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:205: DIFF
                 {
                 mDIFF(); 
 
                 }
                 break;
             case 41 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:210: GAME
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:210: FROM
+                {
+                mFROM(); 
+
+                }
+                break;
+            case 42 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:215: DBP
+                {
+                mDBP(); 
+
+                }
+                break;
+            case 43 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:219: GAME
                 {
                 mGAME(); 
 
                 }
                 break;
-            case 42 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:215: GRAVITY_KW
+            case 44 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:224: GRAVITY_KW
                 {
                 mGRAVITY_KW(); 
 
                 }
                 break;
-            case 43 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:226: SCORE
+            case 45 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:235: SCORE
                 {
                 mSCORE(); 
 
                 }
                 break;
-            case 44 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:232: TYPE
+            case 46 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:241: TURNBASED_KW
+                {
+                mTURNBASED_KW(); 
+
+                }
+                break;
+            case 47 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:254: WORLD_KW
+                {
+                mWORLD_KW(); 
+
+                }
+                break;
+            case 48 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:263: GRIDSIZE_KW
+                {
+                mGRIDSIZE_KW(); 
+
+                }
+                break;
+            case 49 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:275: GENERIC
+                {
+                mGENERIC(); 
+
+                }
+                break;
+            case 50 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:283: GRID
+                {
+                mGRID(); 
+
+                }
+                break;
+            case 51 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:288: RIBBON
+                {
+                mRIBBON(); 
+
+                }
+                break;
+            case 52 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:295: NAME_KW
+                {
+                mNAME_KW(); 
+
+                }
+                break;
+            case 53 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:303: TYPE
                 {
                 mTYPE(); 
 
                 }
                 break;
-            case 45 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:237: PLAYER
+            case 54 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:308: INSERT_KW
+                {
+                mINSERT_KW(); 
+
+                }
+                break;
+            case 55 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:318: REMOVE_KW
+                {
+                mREMOVE_KW(); 
+
+                }
+                break;
+            case 56 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:328: SOLO
+                {
+                mSOLO(); 
+
+                }
+                break;
+            case 57 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:333: PLAYER
                 {
                 mPLAYER(); 
 
                 }
                 break;
-            case 46 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:244: LIST_KW
+            case 58 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:340: LIST_KW
                 {
                 mLIST_KW(); 
 
                 }
                 break;
-            case 47 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:252: IN
+            case 59 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:348: IN
                 {
                 mIN(); 
 
                 }
                 break;
-            case 48 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:255: LOOP
+            case 60 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:351: LOOP
                 {
                 mLOOP(); 
 
                 }
                 break;
-            case 49 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:260: ONCE
+            case 61 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:356: ONCE
                 {
                 mONCE(); 
 
                 }
                 break;
-            case 50 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:265: RANDOM_KW
+            case 62 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:361: RANDOM_KW
                 {
                 mRANDOM_KW(); 
 
                 }
                 break;
-            case 51 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:275: DEFINITION_KW
+            case 63 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:371: DEFINITION_KW
                 {
                 mDEFINITION_KW(); 
 
                 }
                 break;
-            case 52 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:289: MEANS
+            case 64 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:385: MEANS
                 {
                 mMEANS(); 
 
                 }
                 break;
-            case 53 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:295: PAUSE_KW
+            case 65 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:391: PAUSE_KW
                 {
                 mPAUSE_KW(); 
 
                 }
                 break;
-            case 54 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:304: MUTE_KW
+            case 66 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:400: MUTE_KW
                 {
                 mMUTE_KW(); 
 
                 }
                 break;
-            case 55 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:312: ON
+            case 67 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:408: ON
                 {
                 mON(); 
 
                 }
                 break;
-            case 56 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:315: OFF
+            case 68 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:411: OFF
                 {
                 mOFF(); 
 
                 }
                 break;
-            case 57 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:319: PLAY_KW
+            case 69 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:415: PLAY_KW
                 {
                 mPLAY_KW(); 
 
                 }
                 break;
-            case 58 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:327: STOP_KW
+            case 70 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:423: STOP_KW
                 {
                 mSTOP_KW(); 
 
                 }
                 break;
-            case 59 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:335: ENDS_KW
+            case 71 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:431: ENDS_KW
                 {
                 mENDS_KW(); 
 
                 }
                 break;
-            case 60 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:343: STARTS_KW
+            case 72 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:439: STARTS_KW
                 {
                 mSTARTS_KW(); 
 
                 }
                 break;
-            case 61 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:353: BLOCK_KW
+            case 73 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:449: BLOCK_KW
                 {
                 mBLOCK_KW(); 
 
                 }
                 break;
-            case 62 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:362: TRANSLATION
+            case 74 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:458: TRANSLATION
                 {
                 mTRANSLATION(); 
 
                 }
                 break;
-            case 63 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:374: ROTATION
+            case 75 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:470: ROTATION
                 {
                 mROTATION(); 
 
                 }
                 break;
-            case 64 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:383: SCALE
+            case 76 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:479: SCALE
                 {
                 mSCALE(); 
 
                 }
                 break;
-            case 65 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:389: EFFACE_KW
+            case 77 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:485: EFFACE_KW
                 {
                 mEFFACE_KW(); 
 
                 }
                 break;
-            case 66 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:399: GENERATE_KW
+            case 78 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:495: GENERATE_KW
                 {
                 mGENERATE_KW(); 
 
                 }
                 break;
-            case 67 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:411: WAIT_KW
+            case 79 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:507: WAIT_KW
                 {
                 mWAIT_KW(); 
 
                 }
                 break;
-            case 68 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:419: ENDWAIT
+            case 80 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:515: ENDWAIT
                 {
                 mENDWAIT(); 
 
                 }
                 break;
-            case 69 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:427: SAVE_KW
+            case 81 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:523: SAVE_KW
                 {
                 mSAVE_KW(); 
 
                 }
                 break;
-            case 70 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:435: RULE_KW
+            case 82 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:531: RULE_KW
                 {
                 mRULE_KW(); 
 
                 }
                 break;
-            case 71 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:443: MOVES_KW
+            case 83 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:539: MOVES_KW
                 {
                 mMOVES_KW(); 
 
                 }
                 break;
-            case 72 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:452: DIES_KW
+            case 84 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:548: DIES_KW
                 {
                 mDIES_KW(); 
 
                 }
                 break;
-            case 73 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:460: TOUCHES_KW
+            case 85 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:556: TOUCHES_KW
                 {
                 mTOUCHES_KW(); 
 
                 }
                 break;
-            case 74 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:471: KILLS_KW
+            case 86 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:567: KILLS_KW
                 {
                 mKILLS_KW(); 
 
                 }
                 break;
-            case 75 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:480: KILLED_KW
+            case 87 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:576: KILLED_KW
                 {
                 mKILLED_KW(); 
 
                 }
                 break;
-            case 76 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:490: TOUCHED_KW
+            case 88 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:586: TOUCHED_KW
                 {
                 mTOUCHED_KW(); 
 
                 }
                 break;
-            case 77 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:501: BY
+            case 89 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:597: BY
                 {
                 mBY(); 
 
                 }
                 break;
-            case 78 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:504: OTHER
+            case 90 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:600: OTHER
                 {
                 mOTHER(); 
 
                 }
                 break;
-            case 79 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:510: BECOMES
+            case 91 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:606: BECOMES
                 {
                 mBECOMES(); 
 
                 }
                 break;
-            case 80 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:518: VICTORY_KW
+            case 92 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:614: VICTORY_KW
                 {
                 mVICTORY_KW(); 
 
                 }
                 break;
-            case 81 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:529: DEFEAT_KW
+            case 93 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:625: DEFEAT_KW
                 {
                 mDEFEAT_KW(); 
 
                 }
                 break;
-            case 82 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:539: IF_KW
+            case 94 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:635: IF_KW
                 {
                 mIF_KW(); 
 
                 }
                 break;
-            case 83 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:545: ELSE
+            case 95 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:641: ELSE
                 {
                 mELSE(); 
 
                 }
                 break;
-            case 84 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:550: ENDIF
+            case 96 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:646: ENDIF
                 {
                 mENDIF(); 
 
                 }
                 break;
-            case 85 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:556: OR
+            case 97 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:652: OR
                 {
                 mOR(); 
 
                 }
                 break;
-            case 86 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:559: COMP
+            case 98 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:655: COMP
                 {
                 mCOMP(); 
 
                 }
                 break;
-            case 87 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:564: DEAD_KW
+            case 99 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:660: DEAD_KW
                 {
                 mDEAD_KW(); 
 
                 }
                 break;
-            case 88 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:572: ALIVE_KW
+            case 100 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:668: ALIVE_KW
                 {
                 mALIVE_KW(); 
 
                 }
                 break;
-            case 89 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:581: EFFACED_KW
+            case 101 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:677: EFFACED_KW
                 {
                 mEFFACED_KW(); 
 
                 }
                 break;
-            case 90 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:592: GENERATED_KW
+            case 102 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:688: GENERATED_KW
                 {
                 mGENERATED_KW(); 
 
                 }
                 break;
-            case 91 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:605: TOUCHING_KW
+            case 103 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:701: TOUCHING_KW
                 {
                 mTOUCHING_KW(); 
 
                 }
                 break;
-            case 92 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:617: MOVING_KW
+            case 104 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:713: MOVING_KW
                 {
                 mMOVING_KW(); 
 
                 }
                 break;
-            case 93 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:627: WAITING_KW
+            case 105 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:723: WAITING_KW
                 {
                 mWAITING_KW(); 
 
                 }
                 break;
-            case 94 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:638: FINISHED_KW
+            case 106 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:734: FINISHED_KW
                 {
                 mFINISHED_KW(); 
 
                 }
                 break;
-            case 95 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:650: STARTED_KW
+            case 107 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:746: STARTED_KW
                 {
                 mSTARTED_KW(); 
 
                 }
                 break;
-            case 96 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:661: PAUSED_KW
+            case 108 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:757: PAUSED_KW
                 {
                 mPAUSED_KW(); 
 
                 }
                 break;
-            case 97 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:671: MUTED_KW
+            case 109 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:767: MUTED_KW
                 {
                 mMUTED_KW(); 
 
                 }
                 break;
-            case 98 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:680: PLAYED_KW
+            case 110 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:776: PLAYED_KW
                 {
                 mPLAYED_KW(); 
 
                 }
                 break;
-            case 99 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:690: STOPPED_KW
+            case 111 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:786: STOPPED_KW
                 {
                 mSTOPPED_KW(); 
 
                 }
                 break;
-            case 100 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:701: ASSIGN_KW
+            case 112 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:797: ASSIGN_KW
                 {
                 mASSIGN_KW(); 
 
                 }
                 break;
-            case 101 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:711: ADD_KW
+            case 113 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:807: ADD_KW
                 {
                 mADD_KW(); 
 
                 }
                 break;
-            case 102 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:718: SUB_KW
+            case 114 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:814: SUB_KW
                 {
                 mSUB_KW(); 
 
                 }
                 break;
-            case 103 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:725: INVERT_KW
+            case 115 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:821: INVERT_KW
                 {
                 mINVERT_KW(); 
 
                 }
                 break;
-            case 104 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:735: NUM
+            case 116 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:831: NUM
                 {
                 mNUM(); 
 
                 }
                 break;
-            case 105 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:739: IA_KW
+            case 117 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:835: IA_KW
                 {
                 mIA_KW(); 
 
                 }
                 break;
-            case 106 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:745: DURING
+            case 118 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:841: DURING
                 {
                 mDURING(); 
 
                 }
                 break;
-            case 107 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:752: UNTIL
+            case 119 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:848: UNTIL
                 {
                 mUNTIL(); 
 
                 }
                 break;
-            case 108 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:758: EQUIP
+            case 120 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:854: EQUIP
                 {
                 mEQUIP(); 
 
                 }
                 break;
-            case 109 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:764: NEXT
+            case 121 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:860: NEXT
                 {
                 mNEXT(); 
 
                 }
                 break;
-            case 110 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:769: PREVIOUS
+            case 122 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:865: PREVIOUS
                 {
                 mPREVIOUS(); 
 
                 }
                 break;
-            case 111 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:778: KEYBOARD
+            case 123 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:874: KEYBOARD
                 {
                 mKEYBOARD(); 
 
                 }
                 break;
-            case 112 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:787: ACTIVATE_KW
+            case 124 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:883: ACTIVATE_KW
                 {
                 mACTIVATE_KW(); 
 
                 }
                 break;
-            case 113 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:799: DISABLE_KW
+            case 125 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:895: DISABLE_KW
                 {
                 mDISABLE_KW(); 
 
                 }
                 break;
-            case 114 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:810: COMMANDS
+            case 126 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:906: COMMANDS
                 {
                 mCOMMANDS(); 
 
                 }
                 break;
-            case 115 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:819: DUPLICABLE
+            case 127 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:915: CLOCKWISE
+                {
+                mCLOCKWISE(); 
+
+                }
+                break;
+            case 128 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:925: ANTICLOCKWISE
+                {
+                mANTICLOCKWISE(); 
+
+                }
+                break;
+            case 129 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:939: NEXTURN_KW
+                {
+                mNEXTURN_KW(); 
+
+                }
+                break;
+            case 130 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:950: RELOAD_KW
+                {
+                mRELOAD_KW(); 
+
+                }
+                break;
+            case 131 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:960: GRASPS_KW
+                {
+                mGRASPS_KW(); 
+
+                }
+                break;
+            case 132 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:970: EXPELS_KW
+                {
+                mEXPELS_KW(); 
+
+                }
+                break;
+            case 133 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:980: INGESTS_KW
+                {
+                mINGESTS_KW(); 
+
+                }
+                break;
+            case 134 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:991: DUPLICABLE
                 {
                 mDUPLICABLE(); 
 
                 }
                 break;
-            case 116 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:830: FIRST
+            case 135 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1002: FIRST
                 {
                 mFIRST(); 
 
                 }
                 break;
-            case 117 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:836: THIRD
+            case 136 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1008: THIRD
                 {
                 mTHIRD(); 
 
                 }
                 break;
-            case 118 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:842: ALLY
-                {
-                mALLY(); 
-
-                }
-                break;
-            case 119 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:847: ENEMY
-                {
-                mENEMY(); 
-
-                }
-                break;
-            case 120 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:853: NEUTRAL
-                {
-                mNEUTRAL(); 
-
-                }
-                break;
-            case 121 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:861: POSITION
+            case 137 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1014: POSITION
                 {
                 mPOSITION(); 
 
                 }
                 break;
-            case 122 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:870: ORIENTATION
+            case 138 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1023: ORIENTATION
                 {
                 mORIENTATION(); 
 
                 }
                 break;
-            case 123 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:882: SIZE
+            case 139 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1035: SIZE
                 {
                 mSIZE(); 
 
                 }
                 break;
-            case 124 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:887: PERSON
+            case 140 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1040: PERSON
                 {
                 mPERSON(); 
 
                 }
                 break;
-            case 125 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:894: FREE
+            case 141 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1047: FREE
                 {
                 mFREE(); 
 
                 }
                 break;
-            case 126 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:899: FRAME
+            case 142 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1052: FRAME
                 {
                 mFRAME(); 
 
                 }
                 break;
-            case 127 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:905: WUP
+            case 143 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1058: PRESSED_KW
+                {
+                mPRESSED_KW(); 
+
+                }
+                break;
+            case 144 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1069: HELD_KW
+                {
+                mHELD_KW(); 
+
+                }
+                break;
+            case 145 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1077: RELEASED_KW
+                {
+                mRELEASED_KW(); 
+
+                }
+                break;
+            case 146 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1089: OWNES_KW
+                {
+                mOWNES_KW(); 
+
+                }
+                break;
+            case 147 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1098: NOTOWNES_KW
+                {
+                mNOTOWNES_KW(); 
+
+                }
+                break;
+            case 148 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1110: OWNED_KW
+                {
+                mOWNED_KW(); 
+
+                }
+                break;
+            case 149 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1119: NOTOWNED_KW
+                {
+                mNOTOWNED_KW(); 
+
+                }
+                break;
+            case 150 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1131: HAPPENS
+                {
+                mHAPPENS(); 
+
+                }
+                break;
+            case 151 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1139: CONTAINS_KW
+                {
+                mCONTAINS_KW(); 
+
+                }
+                break;
+            case 152 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1151: DISTANCE_KW
+                {
+                mDISTANCE_KW(); 
+
+                }
+                break;
+            case 153 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1163: ANGLE_KW
+                {
+                mANGLE_KW(); 
+
+                }
+                break;
+            case 154 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1172: WUP
                 {
                 mWUP(); 
 
                 }
                 break;
-            case 128 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:909: WDOWN
+            case 155 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1176: WDOWN
                 {
                 mWDOWN(); 
 
                 }
                 break;
-            case 129 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:915: LEFT
+            case 156 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1182: LEFT
                 {
                 mLEFT(); 
 
                 }
                 break;
-            case 130 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:920: RIGHT
+            case 157 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1187: RIGHT
                 {
                 mRIGHT(); 
 
                 }
                 break;
-            case 131 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:926: SPACE
+            case 158 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1193: SPACE
                 {
                 mSPACE(); 
 
                 }
                 break;
-            case 132 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:932: ESCAPE
+            case 159 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1199: ESCAPE
                 {
                 mESCAPE(); 
 
                 }
                 break;
-            case 133 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:939: ENTER
+            case 160 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1206: ENTER
                 {
                 mENTER(); 
 
                 }
                 break;
-            case 134 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:945: MOUSE
+            case 161 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1212: MOUSE
                 {
                 mMOUSE(); 
 
                 }
                 break;
-            case 135 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:951: KEY
+            case 162 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1218: KEY
                 {
                 mKEY(); 
 
                 }
                 break;
-            case 136 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:955: CLICK_LEFT
+            case 163 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1222: CLICK_LEFT
                 {
                 mCLICK_LEFT(); 
 
                 }
                 break;
-            case 137 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:966: CLICK_CENTER
+            case 164 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1233: CLICK_MIDDLE
                 {
-                mCLICK_CENTER(); 
+                mCLICK_MIDDLE(); 
 
                 }
                 break;
-            case 138 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:979: CLICK_RIGHT
+            case 165 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1246: CLICK_RIGHT
                 {
                 mCLICK_RIGHT(); 
 
                 }
                 break;
-            case 139 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:991: SCROLL_UP
+            case 166 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1258: SCROLL_UP
                 {
                 mSCROLL_UP(); 
 
                 }
                 break;
-            case 140 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1001: SCROLL_DOWN
+            case 167 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1268: SCROLL_DOWN
                 {
                 mSCROLL_DOWN(); 
 
                 }
                 break;
-            case 141 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1013: COMMAND_KW
+            case 168 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1280: COMMAND_KW
                 {
                 mCOMMAND_KW(); 
 
                 }
                 break;
-            case 142 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1024: JUMP
+            case 169 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1291: JUMP
                 {
                 mJUMP(); 
 
                 }
                 break;
-            case 143 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1029: MOVE
+            case 170 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1296: MOVE
                 {
                 mMOVE(); 
 
                 }
                 break;
-            case 144 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1034: FORWARD
+            case 171 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1301: FORWARD
                 {
                 mFORWARD(); 
 
                 }
                 break;
-            case 145 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1042: BACKWARD
+            case 172 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1309: BACKWARD
                 {
                 mBACKWARD(); 
 
                 }
                 break;
-            case 146 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1051: TURN
+            case 173 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1318: TURN
                 {
                 mTURN(); 
 
                 }
                 break;
-            case 147 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1056: ACCELERATE
+            case 174 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1323: ACCELERATE
                 {
                 mACCELERATE(); 
 
                 }
                 break;
-            case 148 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1067: BRAKE
+            case 175 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1334: BRAKE
                 {
                 mBRAKE(); 
 
                 }
                 break;
-            case 149 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1073: CAMERA
+            case 176 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1340: CAMERA
                 {
                 mCAMERA(); 
 
                 }
                 break;
-            case 150 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1080: MEDIA
+            case 177 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1347: MEDIA
                 {
                 mMEDIA(); 
 
                 }
                 break;
-            case 151 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1086: COUNTER
+            case 178 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1353: COUNTER
                 {
                 mCOUNTER(); 
 
                 }
                 break;
-            case 152 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1094: TIME
+            case 179 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1361: TIME
                 {
                 mTIME(); 
 
                 }
                 break;
-            case 153 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1099: VALUE
+            case 180 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1366: VALUE
                 {
                 mVALUE(); 
 
                 }
                 break;
-            case 154 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1105: BOOST_INTERVAL
+            case 181 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1372: BOOST_INTERVAL
                 {
                 mBOOST_INTERVAL(); 
 
                 }
                 break;
-            case 155 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1120: SHOOT_INTERVAL
+            case 182 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1387: SHOOT_INTERVAL
                 {
                 mSHOOT_INTERVAL(); 
 
                 }
                 break;
-            case 156 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1135: RELOAD_TIME
+            case 183 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1402: RELOAD_TIME
                 {
                 mRELOAD_TIME(); 
 
                 }
                 break;
-            case 157 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1147: INVENTORY
+            case 184 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1414: INVENTORY
                 {
                 mINVENTORY(); 
 
                 }
                 break;
-            case 158 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1157: EQUIPED_OBJECT
+            case 185 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1424: EQUIPED_OBJECT
                 {
                 mEQUIPED_OBJECT(); 
 
                 }
                 break;
-            case 159 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1172: ENTRANCES
+            case 186 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1439: ENTRANCES
                 {
                 mENTRANCES(); 
 
                 }
                 break;
-            case 160 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1182: EXITS
+            case 187 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1449: EXITS
                 {
                 mEXITS(); 
 
                 }
                 break;
-            case 161 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1188: DAMAGE_ZONE
+            case 188 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1455: DAMAGE_ZONE
                 {
                 mDAMAGE_ZONE(); 
 
                 }
                 break;
-            case 162 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1200: COLLECTORS
+            case 189 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1467: COLLECTORS
                 {
                 mCOLLECTORS(); 
 
                 }
                 break;
-            case 163 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1211: TYPES_COLLECTORS
+            case 190 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1478: TYPES_COLLECTORS
                 {
                 mTYPES_COLLECTORS(); 
 
                 }
                 break;
-            case 164 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1228: GENERATORS
+            case 191 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1495: GENERATORS
                 {
                 mGENERATORS(); 
 
                 }
                 break;
-            case 165 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1239: TYPE_GENERATORS
+            case 192 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1506: TYPE_GENERATORS
                 {
                 mTYPE_GENERATORS(); 
 
                 }
                 break;
-            case 166 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1255: BREAKERS
+            case 193 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1522: BREAKERS
                 {
                 mBREAKERS(); 
 
                 }
                 break;
-            case 167 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1264: TYPES_BREAKERS
+            case 194 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1531: TYPES_BREAKERS
                 {
                 mTYPES_BREAKERS(); 
 
                 }
                 break;
-            case 168 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1279: TELEPORTABLES
+            case 195 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1546: TELEPORTABLES
                 {
                 mTELEPORTABLES(); 
 
                 }
                 break;
-            case 169 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1293: TYPES_TELEPORTABLES
+            case 196 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1560: TYPES_TELEPORTABLES
                 {
                 mTYPES_TELEPORTABLES(); 
 
                 }
                 break;
-            case 170 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1313: LETTER
+            case 197 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1580: LETTER
                 {
                 mLETTER(); 
 
                 }
                 break;
-            case 171 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1320: FLOAT
+            case 198 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1587: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
-            case 172 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1326: IDENT
+            case 199 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1593: IDENT
                 {
                 mIDENT(); 
 
                 }
                 break;
-            case 173 :
-                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1332: WS
+            case 200 :
+                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1599: WS
                 {
                 mWS(); 
 
@@ -5314,377 +6096,409 @@ public class hightLexer extends Lexer {
 
     protected DFA8 dfa8 = new DFA8(this);
     static final String DFA8_eotS =
-        "\1\uffff\5\63\1\102\4\uffff\6\63\5\uffff\1\132\1\133\1\134\3\63"+
-        "\1\uffff\1\156\1\160\1\uffff\17\63\2\uffff\2\64\2\uffff\14\64\2"+
-        "\uffff\1\64\1\u00ad\5\64\1\u00b5\1\u00b7\1\u00b8\1\u00b9\1\u00bb"+
-        "\1\u00bd\1\64\1\u00c0\4\64\1\u00c6\3\64\3\uffff\4\64\1\u00d0\13"+
-        "\64\4\uffff\43\64\1\u0109\10\64\1\u0112\11\64\1\u011d\4\64\1\u0122"+
-        "\1\uffff\1\u0123\1\u0125\2\64\1\u0128\2\64\1\uffff\1\64\3\uffff"+
-        "\1\u012c\1\uffff\1\64\1\uffff\2\64\1\uffff\5\64\1\uffff\4\64\1\u0139"+
-        "\1\u013a\2\64\1\u013d\1\uffff\4\64\1\u0143\6\64\1\u014a\45\64\1"+
-        "\u0175\6\64\1\uffff\6\64\1\u0183\1\64\1\uffff\1\u0185\1\64\1\u0187"+
-        "\1\64\1\u018b\1\64\1\u018d\3\64\1\uffff\2\64\1\u0193\1\64\2\uffff"+
-        "\1\u0195\1\uffff\2\64\1\uffff\3\64\1\uffff\1\u019c\2\64\1\u019f"+
-        "\1\u01a1\7\64\2\uffff\1\u01a9\1\64\1\uffff\1\64\1\u01ad\1\u01af"+
-        "\2\64\1\uffff\3\64\1\u01b6\1\64\1\u01b8\1\uffff\1\u01b9\4\64\1\u01bf"+
-        "\4\64\1\u01c4\1\u01c5\1\u01c6\3\64\1\u01ca\5\64\1\u01d0\1\u01d1"+
-        "\3\64\1\u01d5\1\64\1\u01d7\6\64\1\u01de\5\64\1\uffff\2\64\1\u01e7"+
-        "\4\64\1\u01ec\3\64\1\u01f0\4\uffff\1\64\1\uffff\1\u01f4\2\64\1\uffff"+
-        "\1\64\1\uffff\1\64\1\u01fc\2\64\1\u01ff\1\uffff\1\u0201\1\uffff"+
-        "\1\u0202\5\64\1\uffff\1\u0208\1\64\1\uffff\1\64\1\uffff\2\64\1\u020d"+
-        "\1\64\1\u020f\2\64\1\uffff\1\64\1\u0213\1\u0214\1\uffff\1\u0215"+
-        "\1\uffff\1\64\1\u0217\1\u0218\1\u0219\2\64\1\uffff\1\64\2\uffff"+
-        "\1\u021e\4\64\1\uffff\1\u0225\3\64\3\uffff\3\64\1\uffff\1\u022c"+
-        "\4\64\2\uffff\3\64\1\uffff\1\64\1\uffff\1\64\1\u0236\1\u0237\1\u0238"+
-        "\2\64\1\uffff\1\u023c\1\64\1\u023e\1\u023f\3\64\1\u0243\1\uffff"+
-        "\3\64\1\u0247\1\uffff\2\64\1\u024a\3\uffff\1\64\1\uffff\7\64\1\uffff"+
-        "\2\64\1\uffff\1\u0201\2\uffff\1\u0256\2\64\1\u0259\1\64\1\uffff"+
-        "\4\64\1\uffff\1\64\1\uffff\3\64\3\uffff\1\u0263\3\uffff\2\64\1\u0267"+
-        "\1\64\1\uffff\3\64\1\u026c\1\u026d\1\u026e\1\uffff\2\64\1\u0271"+
-        "\1\u0272\1\u0273\1\64\1\uffff\1\u0275\2\64\1\u0278\1\64\1\u027a"+
-        "\3\64\3\uffff\1\64\1\u0280\1\64\1\uffff\1\u0282\2\uffff\1\u0283"+
-        "\2\64\1\uffff\2\64\1\u0288\1\uffff\1\u0289\1\64\1\uffff\5\64\1\u0290"+
-        "\1\u0291\2\64\1\u0294\1\64\1\uffff\2\64\1\uffff\2\64\1\u029a\1\u029b"+
-        "\1\u029c\3\64\1\u02a0\1\uffff\2\64\1\u02a3\1\uffff\1\u02a4\1\64"+
-        "\1\u02a6\1\64\3\uffff\2\64\3\uffff\1\64\1\uffff\2\64\1\uffff\1\u02ae"+
-        "\1\uffff\2\64\1\u02b1\1\64\1\u02b3\1\uffff\1\64\2\uffff\1\64\1\u02b6"+
-        "\1\u02b8\1\64\2\uffff\1\u02ba\5\64\2\uffff\1\u02c0\1\64\1\uffff"+
-        "\1\u02c2\1\u02c3\3\64\3\uffff\1\u02c7\1\u02c8\1\64\1\uffff\1\u02ca"+
-        "\1\64\2\uffff\1\64\1\uffff\1\u02ce\1\64\1\u02d0\1\u02d1\1\u02d2"+
-        "\2\64\1\uffff\2\64\1\uffff\1\64\1\uffff\1\64\1\u02d9\1\uffff\1\u02da"+
-        "\1\uffff\1\64\1\uffff\5\64\1\uffff\1\64\2\uffff\1\64\1\u02e3\1\64"+
-        "\2\uffff\1\64\1\uffff\2\64\1\u02e8\1\uffff\1\64\3\uffff\4\64\1\u02ee"+
-        "\1\64\2\uffff\7\64\1\u02f7\1\uffff\2\64\1\u02fa\1\64\1\uffff\1\u02fc"+
-        "\1\u02fd\1\u02fe\1\u02ff\1\u0300\1\uffff\1\64\1\u0302\1\u0303\5"+
-        "\64\1\uffff\1\u0309\1\64\1\uffff\1\64\5\uffff\1\64\2\uffff\5\64"+
-        "\1\uffff\4\64\1\u0316\2\64\1\u0319\1\u031a\1\u031b\2\64\1\uffff"+
-        "\1\64\1\u031f\3\uffff\1\u0320\1\u0321\1\64\3\uffff\2\64\1\u0325"+
-        "\1\uffff";
+        "\1\uffff\5\64\1\103\4\uffff\6\64\5\uffff\1\136\1\137\1\140\3\64"+
+        "\1\uffff\1\165\1\167\2\uffff\17\64\2\uffff\2\65\2\uffff\14\65\2"+
+        "\uffff\2\65\1\u00b7\4\65\1\u00bf\1\65\1\u00c2\1\u00c6\1\u00c7\1"+
+        "\u00c9\1\u00cb\1\65\1\u00ce\6\65\1\u00d6\3\65\3\uffff\5\65\1\u00e0"+
+        "\15\65\4\uffff\43\65\1\u011f\10\65\1\u0128\11\65\1\u0133\5\65\1"+
+        "\u0139\2\65\1\uffff\1\u013c\2\65\1\u013f\2\65\1\u0142\1\uffff\2"+
+        "\65\1\uffff\3\65\2\uffff\1\u0148\1\uffff\1\65\1\uffff\2\65\1\uffff"+
+        "\7\65\1\uffff\4\65\1\u0158\1\65\1\u015a\1\65\1\u015c\1\uffff\5\65"+
+        "\1\u0163\7\65\1\u016b\50\65\1\u019d\7\65\1\uffff\6\65\1\u01ac\1"+
+        "\65\1\uffff\1\u01ae\1\65\1\u01b0\1\65\1\u01b3\1\u01b6\4\65\1\uffff"+
+        "\1\u01bb\1\u01bc\3\65\1\uffff\1\65\1\u01c1\1\uffff\2\65\1\uffff"+
+        "\2\65\1\uffff\5\65\1\uffff\1\u01cc\3\65\1\u01d1\1\65\1\u01d4\10"+
+        "\65\1\uffff\1\u01dd\1\uffff\1\u01df\1\uffff\1\65\1\u01e2\1\u01e4"+
+        "\3\65\1\uffff\3\65\1\u01eb\1\u01ed\1\65\1\u01ef\1\uffff\1\u01f0"+
+        "\4\65\1\u01f6\10\65\1\u01ff\1\65\1\u0202\5\65\1\u0208\1\u0209\1"+
+        "\u020a\3\65\1\u020e\1\u020f\4\65\1\u0214\1\65\1\u0216\5\65\1\u021c"+
+        "\6\65\1\uffff\2\65\1\u0226\5\65\1\u022c\3\65\1\u0230\4\uffff\1\65"+
+        "\1\uffff\1\u0234\1\65\1\uffff\2\65\1\uffff\2\65\1\u023d\1\65\2\uffff"+
+        "\1\u0240\1\65\1\u0242\1\65\1\uffff\1\65\1\u0245\1\u0246\7\65\1\uffff"+
+        "\1\u024e\1\65\1\u0250\1\u0251\1\uffff\1\u0252\1\65\1\uffff\2\65"+
+        "\1\u0256\1\65\1\u0258\3\65\1\uffff\1\65\1\uffff\1\u025d\1\u025e"+
+        "\1\uffff\1\u025f\1\uffff\1\65\1\u0261\1\65\1\u0263\1\u0264\1\65"+
+        "\1\uffff\1\65\1\uffff\1\65\2\uffff\1\u0269\4\65\1\uffff\2\65\1\u0271"+
+        "\5\65\1\uffff\2\65\1\uffff\1\u027b\4\65\3\uffff\3\65\2\uffff\4\65"+
+        "\1\uffff\1\65\1\uffff\1\65\1\u0289\1\u028a\2\65\1\uffff\1\u028e"+
+        "\1\65\1\u0290\1\65\1\u0292\3\65\1\u0296\1\uffff\4\65\1\u029b\1\uffff"+
+        "\2\65\1\u029e\3\uffff\1\65\1\uffff\10\65\1\uffff\1\65\1\u0240\1"+
+        "\uffff\1\65\1\uffff\2\65\2\uffff\1\u02ad\2\65\1\u02b0\1\u02b1\2"+
+        "\65\1\uffff\1\65\3\uffff\3\65\1\uffff\1\65\1\uffff\4\65\3\uffff"+
+        "\1\u02bd\1\uffff\1\u02be\2\uffff\2\65\1\u02c2\1\65\1\uffff\2\65"+
+        "\1\u02c6\3\65\1\u02ca\1\uffff\1\u02cb\1\u02cd\1\65\1\u02cf\1\65"+
+        "\1\u02d1\1\u02d2\1\u02d3\1\u02d4\1\uffff\3\65\1\u02d8\1\u02d9\1"+
+        "\65\1\u02db\2\65\1\u02de\3\65\2\uffff\1\65\1\u02e4\1\65\1\uffff"+
+        "\1\u02e6\1\uffff\1\u02e7\1\uffff\1\u02e8\2\65\1\uffff\4\65\1\uffff"+
+        "\1\u02ef\1\65\1\uffff\6\65\1\u02f7\1\u02f8\2\65\1\u02fb\1\65\1\u02fd"+
+        "\1\65\1\uffff\2\65\2\uffff\1\65\1\u0302\1\65\1\u0304\1\u0305\1\u0306"+
+        "\4\65\1\u030c\2\uffff\2\65\1\u030f\1\uffff\1\u0310\1\65\1\u0312"+
+        "\1\uffff\1\65\1\u0314\1\65\2\uffff\1\65\1\uffff\1\65\1\uffff\1\65"+
+        "\4\uffff\1\65\1\u031b\1\65\2\uffff\1\65\1\uffff\1\u031e\1\65\1\uffff"+
+        "\2\65\1\u0322\1\65\1\u0324\1\uffff\1\65\3\uffff\1\65\1\u0327\1\u0329"+
+        "\3\65\1\uffff\1\u032d\6\65\2\uffff\1\u0334\1\65\1\uffff\1\u0336"+
+        "\1\uffff\1\65\1\u0338\2\65\1\uffff\1\65\3\uffff\1\u033c\1\u033d"+
+        "\1\65\1\u033f\1\u0340\1\uffff\1\u0341\1\65\2\uffff\1\65\1\uffff"+
+        "\1\u0344\1\uffff\1\u0346\2\65\1\u0349\1\u034a\1\u034b\1\uffff\1"+
+        "\u034c\1\65\1\uffff\1\u034e\2\65\1\uffff\1\65\1\uffff\1\65\1\u0353"+
+        "\1\uffff\1\u0354\1\uffff\1\u0355\2\65\1\uffff\1\65\1\u0359\4\65"+
+        "\1\uffff\1\65\1\uffff\1\65\1\uffff\1\65\1\u0361\1\65\2\uffff\1\65"+
+        "\3\uffff\2\65\1\uffff\1\u0366\1\uffff\2\65\4\uffff\1\65\1\uffff"+
+        "\2\65\1\u036c\1\65\3\uffff\1\65\1\u036f\1\65\1\uffff\6\65\1\u0377"+
+        "\1\uffff\2\65\1\u037a\1\65\1\uffff\1\u037c\1\u037d\1\u037e\1\u037f"+
+        "\1\u0380\1\uffff\1\65\1\u0382\1\uffff\1\u0383\6\65\1\uffff\1\u038a"+
+        "\1\65\1\uffff\1\65\5\uffff\1\65\2\uffff\6\65\1\uffff\4\65\1\u0398"+
+        "\2\65\1\u039b\1\u039c\1\u039d\1\u039e\2\65\1\uffff\1\65\1\u03a2"+
+        "\4\uffff\1\u03a3\1\u03a4\1\65\3\uffff\2\65\1\u03a8\1\uffff";
     static final String DFA8_eofS =
-        "\u0326\uffff";
+        "\u03a9\uffff";
     static final String DFA8_minS =
-        "\1\11\5\60\1\57\4\uffff\6\60\5\uffff\6\60\1\uffff\2\75\1\uffff\17"+
-        "\60\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\141\1\145\1\160\1"+
-        "\165\1\162\2\154\1\162\1\156\1\141\2\uffff\1\163\1\60\1\144\1\151"+
-        "\1\163\1\144\1\143\6\60\1\150\1\60\1\164\1\151\1\143\1\157\1\60"+
-        "\1\143\1\141\1\157\3\uffff\1\164\1\155\1\165\1\156\1\60\1\141\1"+
-        "\164\1\165\1\143\2\141\1\166\1\142\1\172\1\141\1\157\4\uffff\1\141"+
-        "\1\156\1\141\1\165\1\145\1\163\1\162\1\163\1\157\1\146\1\154\1\156"+
-        "\1\164\1\154\1\147\2\154\1\141\1\145\1\160\1\167\1\155\1\144\1\146"+
-        "\1\163\1\165\1\143\1\151\1\154\1\171\1\143\3\154\1\164\1\60\2\155"+
-        "\1\165\1\144\1\155\1\105\1\145\1\124\1\60\1\145\2\156\1\162\1\145"+
-        "\1\143\1\156\1\145\1\163\1\60\1\151\1\163\1\145\1\155\1\60\1\uffff"+
-        "\2\60\1\166\1\151\1\60\1\151\1\145\1\uffff\1\145\3\uffff\1\60\1"+
-        "\uffff\1\145\1\uffff\2\145\1\uffff\1\150\1\164\1\167\1\157\1\143"+
-        "\1\uffff\2\153\1\141\1\163\2\60\2\164\1\60\1\uffff\1\156\2\145\1"+
-        "\163\1\60\1\162\1\154\1\157\1\160\1\162\1\145\1\60\1\145\1\143\1"+
-        "\157\1\166\1\145\1\171\1\163\1\166\1\151\1\163\1\164\1\160\1\164"+
-        "\1\151\1\144\1\141\1\145\1\150\1\151\1\157\1\145\1\144\1\163\1\141"+
-        "\1\151\1\154\1\156\1\141\1\111\1\155\1\145\1\141\1\145\1\151\1\141"+
-        "\1\164\1\154\1\60\1\164\1\165\1\155\1\154\2\151\1\uffff\1\160\1"+
-        "\145\1\156\1\151\1\145\1\137\1\60\1\137\1\uffff\1\60\1\163\1\60"+
-        "\1\144\1\60\1\150\1\60\1\160\1\145\1\141\1\uffff\1\163\1\164\1\60"+
-        "\1\145\2\uffff\1\60\1\uffff\1\145\1\147\1\uffff\1\166\1\154\1\156"+
-        "\1\uffff\1\60\1\162\1\156\2\60\1\145\1\155\1\153\1\167\1\145\1\153"+
-        "\1\164\2\uffff\1\60\1\162\1\uffff\1\163\2\60\1\156\1\145\1\uffff"+
-        "\2\145\1\154\1\60\1\164\1\60\1\uffff\1\60\1\145\1\164\1\151\1\162"+
-        "\1\60\1\145\1\151\1\164\1\157\3\60\1\143\1\157\1\164\1\60\1\164"+
-        "\1\143\1\141\1\156\1\141\2\60\1\142\1\156\1\151\1\60\1\147\1\60"+
-        "\1\141\1\146\1\171\1\162\1\141\1\143\1\60\2\160\1\163\1\145\1\157"+
-        "\1\uffff\1\157\1\145\1\60\1\141\1\145\1\143\1\154\1\60\1\162\1\164"+
-        "\1\141\1\60\1\101\3\uffff\1\154\1\uffff\1\60\1\102\1\145\1\uffff"+
-        "\1\145\1\uffff\1\157\1\60\1\162\1\150\1\60\1\uffff\1\60\1\uffff"+
-        "\1\60\1\156\1\141\1\145\2\164\1\uffff\1\60\1\164\1\uffff\1\156\1"+
-        "\uffff\2\145\1\60\1\141\1\60\1\145\1\111\1\uffff\1\141\2\60\1\uffff"+
-        "\1\60\1\uffff\1\147\3\60\1\154\1\145\1\uffff\1\145\2\uffff\1\60"+
-        "\1\111\1\164\1\141\1\144\1\uffff\1\60\1\157\1\151\1\156\3\uffff"+
-        "\1\153\1\155\1\151\1\uffff\1\60\1\153\1\144\1\151\1\164\2\uffff"+
-        "\1\154\1\147\1\143\1\uffff\1\145\1\uffff\1\151\3\60\1\156\1\145"+
-        "\1\uffff\1\60\1\145\2\60\1\144\1\141\1\162\1\60\1\uffff\1\156\1"+
-        "\143\1\153\1\60\1\uffff\1\141\1\145\1\60\3\uffff\1\141\1\uffff\1"+
-        "\157\1\162\1\145\1\156\1\144\1\156\1\162\1\uffff\1\144\1\145\1\uffff"+
-        "\1\60\2\uffff\1\60\1\164\1\162\1\60\1\157\1\uffff\1\141\1\147\1"+
-        "\156\1\163\1\uffff\1\162\1\uffff\1\162\1\156\1\154\3\uffff\1\60"+
-        "\3\uffff\1\104\1\144\1\60\1\144\1\uffff\1\156\1\171\1\164\3\60\1"+
-        "\uffff\1\165\1\157\3\60\1\157\1\uffff\1\60\1\124\1\164\1\60\1\145"+
-        "\1\60\1\141\1\132\1\164\3\uffff\1\143\1\60\1\144\1\uffff\1\60\2"+
-        "\uffff\1\60\1\162\1\171\1\uffff\1\144\1\164\1\60\1\uffff\1\60\1"+
-        "\162\1\uffff\1\164\1\154\1\145\1\154\1\145\2\60\1\147\1\164\1\60"+
-        "\1\144\1\uffff\1\145\1\141\1\uffff\1\162\1\164\3\60\1\144\1\163"+
-        "\1\164\1\60\1\uffff\1\160\1\157\1\60\1\uffff\1\60\1\164\1\60\1\145"+
-        "\3\uffff\1\163\1\156\3\uffff\1\156\1\uffff\2\151\1\uffff\1\60\1"+
-        "\uffff\1\142\1\157\1\60\1\145\1\60\1\uffff\1\117\2\uffff\1\144\2"+
-        "\60\1\157\2\uffff\1\60\1\151\1\154\1\141\1\145\1\162\2\uffff\1\60"+
-        "\1\141\1\uffff\2\60\1\164\1\171\1\151\3\uffff\2\60\1\145\1\uffff"+
-        "\1\60\1\167\2\uffff\1\145\1\uffff\1\60\1\162\3\60\1\155\1\157\1"+
-        "\uffff\1\154\1\156\1\uffff\1\163\1\uffff\1\142\1\60\1\uffff\1\60"+
-        "\1\uffff\1\162\1\uffff\1\157\1\145\1\153\1\160\1\141\1\uffff\1\142"+
-        "\2\uffff\1\145\1\60\1\157\2\uffff\1\162\1\uffff\1\156\1\162\1\60"+
-        "\1\uffff\1\163\3\uffff\1\145\1\156\2\145\1\60\1\152\2\uffff\1\163"+
-        "\1\156\1\143\1\145\1\157\1\164\1\154\1\60\1\uffff\1\156\1\166\1"+
-        "\60\1\166\1\uffff\5\60\1\uffff\1\145\2\60\1\164\2\162\1\157\1\145"+
-        "\1\uffff\1\60\1\141\1\uffff\1\141\5\uffff\1\143\2\uffff\1\157\1"+
-        "\163\1\164\1\162\1\163\1\uffff\2\154\1\164\1\162\1\60\1\141\1\163"+
-        "\3\60\2\163\1\uffff\1\142\1\60\3\uffff\2\60\1\154\3\uffff\1\145"+
-        "\1\163\1\60\1\uffff";
+        "\1\11\5\60\1\57\4\uffff\6\60\5\uffff\6\60\1\uffff\2\75\2\uffff"+
+        "\17\60\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\141\1\145\1\162"+
+        "\1\160\1\165\2\154\1\162\1\141\1\156\2\uffff\1\160\1\154\1\60\1"+
+        "\144\1\151\1\163\1\144\1\60\1\143\5\60\1\150\1\60\1\156\1\164\1"+
+        "\162\1\151\1\143\1\157\1\60\1\143\1\141\1\157\3\uffff\1\164\2\155"+
+        "\1\170\1\156\1\60\1\141\1\164\1\165\1\154\1\143\1\141\1\154\1\141"+
+        "\1\166\1\142\1\172\1\141\1\157\4\uffff\1\141\1\156\1\142\1\154\1"+
+        "\156\1\164\2\154\1\141\1\165\1\145\1\163\1\162\1\163\1\157\1\146"+
+        "\1\154\1\141\1\145\1\160\1\167\1\155\1\144\1\146\1\163\1\165\1\151"+
+        "\1\143\1\154\1\171\1\143\2\154\1\157\1\164\1\60\2\155\1\165\1\144"+
+        "\1\155\1\105\1\145\1\124\1\60\1\145\2\156\1\162\1\156\1\145\1\143"+
+        "\1\145\1\163\1\60\1\155\1\145\1\155\1\151\1\163\1\60\1\160\1\144"+
+        "\1\uffff\1\60\1\151\1\154\1\60\1\166\1\151\1\60\1\uffff\1\151\1"+
+        "\145\1\uffff\3\145\2\uffff\1\60\1\uffff\1\145\1\uffff\2\145\1\uffff"+
+        "\1\145\1\150\1\154\1\164\1\167\1\157\1\143\1\uffff\2\153\1\141\1"+
+        "\163\1\60\1\145\1\60\1\164\1\60\1\uffff\1\156\2\145\1\163\1\151"+
+        "\1\60\1\162\1\154\2\157\1\160\1\162\1\145\1\60\1\145\1\143\1\157"+
+        "\1\163\1\144\1\145\1\142\1\150\1\157\1\145\1\144\1\141\1\145\1\151"+
+        "\1\171\2\163\1\151\1\163\1\164\1\160\1\164\1\151\1\145\1\144\1\163"+
+        "\1\141\1\151\1\154\1\156\1\141\1\111\1\145\1\141\1\145\1\151\1\145"+
+        "\1\164\1\141\1\154\1\60\1\164\1\165\1\155\1\164\1\154\1\143\1\151"+
+        "\1\uffff\1\160\1\145\1\156\1\151\1\145\1\137\1\60\1\137\1\uffff"+
+        "\1\60\1\163\1\60\1\144\2\60\1\150\1\160\1\145\1\141\1\uffff\2\60"+
+        "\1\145\1\163\1\164\1\uffff\1\145\1\60\1\uffff\1\143\1\145\1\uffff"+
+        "\1\145\1\147\1\uffff\1\166\1\154\1\162\1\156\1\163\1\uffff\1\60"+
+        "\1\162\1\156\1\144\1\60\1\144\1\60\1\145\1\155\1\153\1\167\1\145"+
+        "\1\153\1\164\1\167\1\uffff\1\60\1\uffff\1\60\1\uffff\1\163\2\60"+
+        "\1\156\1\145\1\143\1\uffff\2\145\1\154\2\60\1\164\1\60\1\uffff\1"+
+        "\60\1\145\1\164\1\151\1\160\1\60\1\162\1\157\1\164\1\166\2\141\1"+
+        "\157\1\164\1\60\1\143\1\60\1\145\1\151\1\163\1\164\1\157\3\60\1"+
+        "\143\1\156\1\141\2\60\1\142\1\141\1\156\1\151\1\60\1\147\1\60\1"+
+        "\141\1\146\1\162\1\141\1\143\1\60\1\160\1\154\1\163\1\160\1\145"+
+        "\1\157\1\uffff\1\157\1\145\1\60\2\141\1\145\1\153\1\154\1\60\1\162"+
+        "\1\164\1\141\1\60\1\101\3\uffff\1\154\1\uffff\1\60\1\141\1\uffff"+
+        "\1\102\1\145\1\uffff\1\145\1\157\1\60\1\162\2\uffff\1\60\1\150\1"+
+        "\60\1\156\1\uffff\1\154\2\60\1\156\1\141\1\145\4\164\1\uffff\1\60"+
+        "\1\164\2\60\1\uffff\1\60\1\156\1\uffff\2\145\1\60\1\141\1\60\1\145"+
+        "\1\111\1\156\1\uffff\1\162\1\uffff\2\60\1\uffff\1\60\1\uffff\1\147"+
+        "\1\60\1\153\2\60\1\154\1\uffff\1\145\1\uffff\1\145\2\uffff\1\60"+
+        "\1\111\1\164\1\163\1\151\1\uffff\1\141\1\156\1\60\1\145\1\144\1"+
+        "\163\1\155\1\151\1\uffff\1\153\1\144\1\uffff\1\60\1\157\1\145\1"+
+        "\151\1\156\3\uffff\1\153\1\151\1\164\2\uffff\1\154\1\156\1\147\1"+
+        "\143\1\uffff\1\145\1\uffff\1\151\2\60\1\156\1\145\1\uffff\1\60\1"+
+        "\163\1\60\1\145\1\60\1\144\1\141\1\162\1\60\1\uffff\1\156\1\151"+
+        "\1\143\1\167\1\60\1\uffff\1\141\1\145\1\60\3\uffff\1\141\1\uffff"+
+        "\1\163\1\157\1\162\1\145\1\156\1\144\1\156\1\162\1\uffff\1\144\1"+
+        "\60\1\uffff\1\145\1\uffff\1\163\1\157\2\uffff\1\60\1\164\1\162\2"+
+        "\60\1\157\1\163\1\uffff\1\141\3\uffff\1\147\1\156\1\163\1\uffff"+
+        "\1\162\1\uffff\1\162\1\156\1\145\1\156\3\uffff\1\60\1\uffff\1\60"+
+        "\2\uffff\1\104\1\144\1\60\1\144\1\uffff\1\156\1\171\1\60\1\172\1"+
+        "\143\1\164\1\60\1\uffff\2\60\1\145\1\60\1\157\4\60\1\uffff\1\165"+
+        "\1\144\1\157\2\60\1\164\1\60\1\145\1\143\1\60\1\141\1\132\1\164"+
+        "\2\uffff\1\143\1\60\1\144\1\uffff\1\60\1\uffff\1\60\1\uffff\1\60"+
+        "\1\162\1\171\1\uffff\1\144\1\156\1\164\1\151\1\uffff\1\60\1\162"+
+        "\1\uffff\1\164\1\145\1\154\1\145\1\154\1\145\2\60\1\147\1\164\1"+
+        "\60\1\144\1\60\1\143\1\uffff\1\145\1\141\2\uffff\1\162\1\60\1\164"+
+        "\3\60\1\144\1\163\1\164\1\144\1\60\2\uffff\1\160\1\157\1\60\1\uffff"+
+        "\1\60\1\164\1\60\1\uffff\1\145\1\60\1\145\2\uffff\1\151\1\uffff"+
+        "\1\144\1\uffff\1\156\4\uffff\1\163\1\60\1\156\2\uffff\1\151\1\uffff"+
+        "\1\60\1\145\1\uffff\1\142\1\157\1\60\1\145\1\60\1\uffff\1\117\3"+
+        "\uffff\1\144\2\60\1\163\1\157\1\163\1\uffff\1\60\1\151\1\144\1\154"+
+        "\1\141\1\145\1\162\2\uffff\1\60\1\141\1\uffff\1\60\1\uffff\1\153"+
+        "\1\60\1\164\1\171\1\uffff\1\151\3\uffff\2\60\1\145\2\60\1\uffff"+
+        "\1\60\1\167\2\uffff\1\145\1\uffff\1\60\1\uffff\1\60\1\162\1\155"+
+        "\3\60\1\uffff\1\60\1\157\1\uffff\1\60\1\154\1\156\1\uffff\1\163"+
+        "\1\uffff\1\142\1\60\1\uffff\1\60\1\uffff\1\60\1\162\1\145\1\uffff"+
+        "\1\157\1\60\1\145\1\153\1\160\1\141\1\uffff\1\142\1\uffff\1\167"+
+        "\1\uffff\1\145\1\60\1\157\2\uffff\1\162\3\uffff\1\156\1\162\1\uffff"+
+        "\1\60\1\uffff\1\163\1\145\4\uffff\1\156\1\uffff\2\145\1\60\1\152"+
+        "\3\uffff\1\163\1\60\1\156\1\uffff\1\143\1\145\1\157\1\164\1\154"+
+        "\1\151\1\60\1\uffff\1\156\1\166\1\60\1\166\1\uffff\5\60\1\uffff"+
+        "\1\145\1\60\1\uffff\1\60\1\164\2\162\1\157\1\145\1\163\1\uffff\1"+
+        "\60\1\141\1\uffff\1\141\5\uffff\1\143\2\uffff\1\157\1\163\1\164"+
+        "\1\162\1\163\1\145\1\uffff\2\154\1\164\1\162\1\60\1\141\1\163\4"+
+        "\60\2\163\1\uffff\1\142\1\60\4\uffff\2\60\1\154\3\uffff\1\145\1"+
+        "\163\1\60\1\uffff";
     static final String DFA8_maxS =
-        "\6\172\1\57\4\uffff\6\172\5\uffff\6\172\1\uffff\2\75\1\uffff\17"+
-        "\172\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\165\1\151\1\160\1"+
-        "\165\1\162\2\154\2\162\1\145\2\uffff\1\163\1\172\1\144\1\154\1\163"+
-        "\1\144\1\164\6\172\1\150\1\172\1\164\1\151\1\164\1\157\1\172\1\143"+
-        "\1\145\1\157\3\uffff\1\164\1\155\1\170\1\156\1\172\1\141\1\164\1"+
-        "\166\1\143\1\162\1\157\1\166\1\142\1\172\1\141\1\157\4\uffff\1\141"+
-        "\1\156\1\141\1\165\1\145\1\163\1\162\1\163\1\157\1\146\1\154\1\156"+
-        "\1\164\1\154\1\147\2\154\1\146\1\163\1\162\1\167\1\155\1\164\1\146"+
-        "\1\163\1\165\1\143\1\151\1\154\1\171\1\143\1\154\1\155\1\154\1\164"+
-        "\1\172\2\155\1\165\1\144\1\155\1\105\1\145\1\124\1\172\1\145\2\156"+
-        "\1\162\1\145\1\143\1\156\1\145\1\163\1\172\1\151\1\163\1\145\1\155"+
-        "\1\172\1\uffff\2\172\1\166\1\151\1\172\1\151\1\145\1\uffff\1\145"+
-        "\3\uffff\1\172\1\uffff\1\145\1\uffff\2\145\1\uffff\1\150\1\164\1"+
-        "\167\1\157\1\143\1\uffff\2\153\1\141\1\163\2\172\2\164\1\172\1\uffff"+
-        "\1\156\1\145\1\151\1\163\1\172\1\162\1\154\1\157\1\160\1\162\1\145"+
-        "\1\172\1\145\1\143\1\157\1\166\1\145\1\171\1\163\1\166\1\151\1\163"+
-        "\1\164\1\160\1\164\1\151\1\144\1\141\1\145\1\150\1\151\1\157\1\151"+
-        "\1\144\1\163\1\141\1\151\1\154\1\156\1\141\1\163\1\155\1\162\1\141"+
-        "\1\145\1\151\1\141\1\164\1\154\1\172\1\164\1\165\1\160\1\154\2\151"+
-        "\1\uffff\1\160\1\145\1\156\1\151\1\145\1\137\1\172\1\137\1\uffff"+
-        "\1\172\1\163\1\172\1\144\1\172\1\150\1\172\1\160\1\145\1\141\1\uffff"+
-        "\1\163\1\164\1\172\1\145\2\uffff\1\172\1\uffff\1\145\1\147\1\uffff"+
-        "\1\166\1\154\1\162\1\uffff\1\172\1\162\1\156\2\172\1\145\1\155\1"+
-        "\153\1\167\1\145\1\153\1\164\2\uffff\1\172\1\162\1\uffff\1\163\2"+
-        "\172\1\156\1\145\1\uffff\2\145\1\154\1\172\1\164\1\172\1\uffff\1"+
-        "\172\1\145\1\164\1\151\1\162\1\172\1\145\1\151\1\164\1\157\3\172"+
-        "\1\143\1\157\1\164\1\172\1\164\1\143\1\141\1\156\1\141\2\172\1\142"+
-        "\1\156\1\151\1\172\1\147\1\172\1\141\1\146\1\171\1\162\1\141\1\143"+
-        "\1\172\2\160\2\163\1\157\1\uffff\1\157\1\145\1\172\1\141\1\145\1"+
-        "\143\1\154\1\172\1\162\1\164\1\141\1\172\1\113\3\uffff\1\154\1\uffff"+
-        "\1\172\1\124\1\145\1\uffff\1\151\1\uffff\1\157\1\172\1\162\1\150"+
-        "\1\172\1\uffff\1\172\1\uffff\1\172\1\156\1\141\1\145\2\164\1\uffff"+
-        "\1\172\1\164\1\uffff\1\156\1\uffff\2\145\1\172\1\141\1\172\1\145"+
-        "\1\111\1\uffff\1\141\2\172\1\uffff\1\172\1\uffff\1\147\3\172\1\154"+
-        "\1\145\1\uffff\1\163\2\uffff\1\172\1\111\1\164\1\141\1\162\1\uffff"+
-        "\1\172\1\157\1\151\1\156\3\uffff\1\153\1\155\1\151\1\uffff\1\172"+
-        "\1\153\1\144\1\151\1\164\2\uffff\1\154\1\147\1\143\1\uffff\1\145"+
-        "\1\uffff\1\151\3\172\1\156\1\145\1\uffff\1\172\1\145\2\172\1\144"+
-        "\1\141\1\162\1\172\1\uffff\1\156\1\143\1\153\1\172\1\uffff\1\141"+
-        "\1\145\1\172\3\uffff\1\141\1\uffff\1\157\1\162\1\145\1\156\1\163"+
-        "\1\156\1\162\1\uffff\1\144\1\145\1\uffff\1\172\2\uffff\1\172\1\164"+
-        "\1\162\1\172\1\157\1\uffff\1\141\1\147\1\156\1\163\1\uffff\1\162"+
-        "\1\uffff\1\162\1\156\1\154\3\uffff\1\172\3\uffff\1\125\1\144\1\172"+
-        "\1\144\1\uffff\1\156\1\171\1\164\3\172\1\uffff\1\165\1\157\3\172"+
-        "\1\157\1\uffff\1\172\1\124\1\164\1\172\1\145\1\172\1\141\1\132\1"+
-        "\164\3\uffff\1\143\1\172\1\144\1\uffff\1\172\2\uffff\1\172\1\162"+
-        "\1\171\1\uffff\1\144\1\164\1\172\1\uffff\1\172\1\162\1\uffff\1\164"+
-        "\1\154\1\145\1\154\1\145\2\172\1\147\1\164\1\172\1\144\1\uffff\1"+
-        "\145\1\141\1\uffff\1\162\1\164\3\172\1\144\1\163\1\164\1\172\1\uffff"+
-        "\1\160\1\157\1\172\1\uffff\1\172\1\164\1\172\1\157\3\uffff\1\163"+
-        "\1\156\3\uffff\1\156\1\uffff\2\151\1\uffff\1\172\1\uffff\1\142\1"+
-        "\157\1\172\1\145\1\172\1\uffff\1\117\2\uffff\1\144\2\172\1\157\2"+
-        "\uffff\1\172\1\151\1\154\1\141\1\145\1\162\2\uffff\1\172\1\141\1"+
-        "\uffff\2\172\1\164\1\171\1\151\3\uffff\2\172\1\145\1\uffff\1\172"+
-        "\1\167\2\uffff\1\145\1\uffff\1\172\1\162\3\172\1\155\1\157\1\uffff"+
-        "\1\154\1\156\1\uffff\1\163\1\uffff\1\142\1\172\1\uffff\1\172\1\uffff"+
-        "\1\162\1\uffff\1\157\1\145\1\153\1\160\1\141\1\uffff\1\142\2\uffff"+
-        "\1\145\1\172\1\157\2\uffff\1\162\1\uffff\1\156\1\162\1\172\1\uffff"+
-        "\1\163\3\uffff\1\145\1\156\2\145\1\172\1\152\2\uffff\1\163\1\156"+
-        "\1\143\1\145\1\157\1\164\1\154\1\172\1\uffff\1\156\1\166\1\172\1"+
-        "\166\1\uffff\5\172\1\uffff\1\145\2\172\1\164\2\162\1\157\1\145\1"+
-        "\uffff\1\172\1\141\1\uffff\1\141\5\uffff\1\143\2\uffff\1\157\1\163"+
-        "\1\164\1\162\1\163\1\uffff\2\154\1\164\1\162\1\172\1\141\1\163\3"+
-        "\172\2\163\1\uffff\1\142\1\172\3\uffff\2\172\1\154\3\uffff\1\145"+
-        "\1\163\1\172\1\uffff";
+        "\6\172\1\57\4\uffff\6\172\5\uffff\6\172\1\uffff\2\75\2\uffff\17"+
+        "\172\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\165\1\151\1\162\1"+
+        "\160\1\165\2\154\1\162\1\157\1\162\2\uffff\1\163\1\154\1\172\1\164"+
+        "\1\154\1\163\1\144\1\172\1\164\5\172\1\150\1\172\1\156\1\164\1\162"+
+        "\1\151\1\164\1\157\1\172\1\143\1\145\1\157\3\uffff\1\164\2\155\1"+
+        "\170\1\156\1\172\1\141\1\164\1\166\1\154\1\143\1\162\1\154\1\157"+
+        "\1\166\1\142\1\172\1\141\1\157\4\uffff\1\151\1\156\1\147\1\155\1"+
+        "\156\1\164\2\154\1\141\1\165\1\145\1\163\1\162\1\163\1\157\1\146"+
+        "\1\154\1\146\1\163\1\162\1\167\1\155\1\164\1\146\1\163\1\165\1\160"+
+        "\1\143\1\154\1\171\1\143\1\154\1\156\1\157\1\164\1\172\2\155\1\165"+
+        "\1\144\1\155\1\105\1\145\1\124\1\172\1\145\2\156\1\162\1\156\1\145"+
+        "\1\143\1\145\1\163\1\172\1\155\1\145\1\155\1\151\1\163\1\172\1\160"+
+        "\1\144\1\uffff\1\172\1\151\1\154\1\172\1\166\1\151\1\172\1\uffff"+
+        "\1\151\1\145\1\uffff\3\145\2\uffff\1\172\1\uffff\1\145\1\uffff\2"+
+        "\145\1\uffff\1\145\1\150\1\154\1\164\1\167\1\157\1\143\1\uffff\2"+
+        "\153\1\141\1\163\1\172\1\145\1\172\1\164\1\172\1\uffff\1\156\1\145"+
+        "\1\151\1\163\1\151\1\172\1\162\1\154\2\157\1\160\1\162\1\145\1\172"+
+        "\1\145\1\143\1\157\1\166\1\144\1\145\1\142\1\150\2\157\1\144\1\141"+
+        "\1\145\1\151\1\171\1\163\1\166\1\151\1\163\1\164\1\160\1\164\2\151"+
+        "\1\144\1\163\1\164\1\151\1\154\1\156\1\141\1\163\1\162\1\141\1\145"+
+        "\1\151\1\145\1\164\1\141\1\154\1\172\1\164\1\165\1\160\1\164\1\154"+
+        "\1\143\1\151\1\uffff\1\160\1\145\1\156\1\151\1\145\1\137\1\172\1"+
+        "\137\1\uffff\1\172\1\163\1\172\1\144\2\172\1\150\1\160\1\145\1\141"+
+        "\1\uffff\2\172\1\145\1\163\1\164\1\uffff\1\145\1\172\1\uffff\1\143"+
+        "\1\145\1\uffff\1\145\1\147\1\uffff\1\166\1\154\2\162\1\163\1\uffff"+
+        "\1\172\1\162\1\156\1\163\1\172\1\144\1\172\1\145\1\155\1\153\1\167"+
+        "\1\145\1\153\1\164\1\167\1\uffff\1\172\1\uffff\1\172\1\uffff\1\163"+
+        "\2\172\1\156\1\145\1\143\1\uffff\2\145\1\154\2\172\1\164\1\172\1"+
+        "\uffff\1\172\1\145\1\164\1\151\1\160\1\172\1\162\1\157\1\164\1\166"+
+        "\2\141\1\157\1\164\1\172\1\143\1\172\1\145\1\151\1\163\1\164\1\157"+
+        "\3\172\1\143\1\156\1\141\2\172\1\142\1\141\1\156\1\151\1\172\1\147"+
+        "\1\172\1\141\1\146\1\162\1\141\1\143\1\172\1\160\1\154\1\163\1\160"+
+        "\1\163\1\157\1\uffff\1\157\1\145\1\172\2\141\1\145\1\153\1\154\1"+
+        "\172\1\162\1\164\1\141\1\172\1\113\3\uffff\1\154\1\uffff\1\172\1"+
+        "\141\1\uffff\1\124\1\145\1\uffff\1\151\1\157\1\172\1\162\2\uffff"+
+        "\1\172\1\150\1\172\1\156\1\uffff\1\154\2\172\1\156\1\141\1\145\4"+
+        "\164\1\uffff\1\172\1\164\2\172\1\uffff\1\172\1\156\1\uffff\2\145"+
+        "\1\172\1\141\1\172\1\145\1\111\1\156\1\uffff\1\162\1\uffff\2\172"+
+        "\1\uffff\1\172\1\uffff\1\147\1\172\1\153\2\172\1\154\1\uffff\1\145"+
+        "\1\uffff\1\163\2\uffff\1\172\1\111\1\164\1\163\1\151\1\uffff\1\151"+
+        "\1\156\1\172\1\145\1\144\1\163\1\155\1\151\1\uffff\1\153\1\162\1"+
+        "\uffff\1\172\1\157\1\145\1\151\1\156\3\uffff\1\153\1\151\1\164\2"+
+        "\uffff\1\154\1\156\1\147\1\143\1\uffff\1\145\1\uffff\1\151\2\172"+
+        "\1\156\1\145\1\uffff\1\172\1\163\1\172\1\145\1\172\1\144\1\141\1"+
+        "\162\1\172\1\uffff\1\156\1\151\1\143\1\167\1\172\1\uffff\1\141\1"+
+        "\145\1\172\3\uffff\1\141\1\uffff\1\163\1\157\1\162\1\145\1\156\1"+
+        "\163\1\156\1\162\1\uffff\1\144\1\172\1\uffff\1\145\1\uffff\1\163"+
+        "\1\157\2\uffff\1\172\1\164\1\162\2\172\1\157\1\163\1\uffff\1\141"+
+        "\3\uffff\1\147\1\156\1\163\1\uffff\1\162\1\uffff\1\162\1\156\1\145"+
+        "\1\156\3\uffff\1\172\1\uffff\1\172\2\uffff\1\125\1\144\1\172\1\144"+
+        "\1\uffff\1\156\1\171\2\172\1\143\1\164\1\172\1\uffff\2\172\1\145"+
+        "\1\172\1\157\4\172\1\uffff\1\165\1\144\1\157\2\172\1\164\1\172\1"+
+        "\145\1\143\1\172\1\141\1\132\1\164\2\uffff\1\143\1\172\1\144\1\uffff"+
+        "\1\172\1\uffff\1\172\1\uffff\1\172\1\162\1\171\1\uffff\1\144\1\156"+
+        "\1\164\1\151\1\uffff\1\172\1\162\1\uffff\1\164\1\145\1\154\1\145"+
+        "\1\154\1\145\2\172\1\147\1\164\1\172\1\144\1\172\1\143\1\uffff\1"+
+        "\145\1\141\2\uffff\1\162\1\172\1\164\3\172\1\144\1\163\1\164\1\163"+
+        "\1\172\2\uffff\1\160\1\157\1\172\1\uffff\1\172\1\164\1\172\1\uffff"+
+        "\1\145\1\172\1\157\2\uffff\1\151\1\uffff\1\144\1\uffff\1\156\4\uffff"+
+        "\1\163\1\172\1\156\2\uffff\1\151\1\uffff\1\172\1\145\1\uffff\1\142"+
+        "\1\157\1\172\1\145\1\172\1\uffff\1\117\3\uffff\1\144\2\172\1\163"+
+        "\1\157\1\163\1\uffff\1\172\1\151\1\144\1\154\1\141\1\145\1\162\2"+
+        "\uffff\1\172\1\141\1\uffff\1\172\1\uffff\1\153\1\172\1\164\1\171"+
+        "\1\uffff\1\151\3\uffff\2\172\1\145\2\172\1\uffff\1\172\1\167\2\uffff"+
+        "\1\145\1\uffff\1\172\1\uffff\1\172\1\162\1\155\3\172\1\uffff\1\172"+
+        "\1\157\1\uffff\1\172\1\154\1\156\1\uffff\1\163\1\uffff\1\142\1\172"+
+        "\1\uffff\1\172\1\uffff\1\172\1\162\1\145\1\uffff\1\157\1\172\1\145"+
+        "\1\153\1\160\1\141\1\uffff\1\142\1\uffff\1\167\1\uffff\1\145\1\172"+
+        "\1\157\2\uffff\1\162\3\uffff\1\156\1\162\1\uffff\1\172\1\uffff\1"+
+        "\163\1\145\4\uffff\1\156\1\uffff\2\145\1\172\1\152\3\uffff\1\163"+
+        "\1\172\1\156\1\uffff\1\143\1\145\1\157\1\164\1\154\1\151\1\172\1"+
+        "\uffff\1\156\1\166\1\172\1\166\1\uffff\5\172\1\uffff\1\145\1\172"+
+        "\1\uffff\1\172\1\164\2\162\1\157\1\145\1\163\1\uffff\1\172\1\141"+
+        "\1\uffff\1\141\5\uffff\1\143\2\uffff\1\157\1\163\1\164\1\162\1\163"+
+        "\1\145\1\uffff\2\154\1\164\1\162\1\172\1\141\1\163\4\172\2\163\1"+
+        "\uffff\1\142\1\172\4\uffff\2\172\1\154\3\uffff\1\145\1\163\1\172"+
+        "\1\uffff";
     static final String DFA8_acceptS =
         "\7\uffff\1\10\1\11\1\12\1\13\6\uffff\1\23\1\24\1\25\1\27\1\30\6"+
-        "\uffff\1\43\2\uffff\1\50\17\uffff\1\u00ab\1\u00ad\2\uffff\1\u00aa"+
-        "\1\u00ac\14\uffff\1\7\1\26\27\uffff\1\31\1\32\1\33\20\uffff\1\46"+
-        "\1\44\1\47\1\45\74\uffff\1\15\7\uffff\1\16\1\uffff\1\57\1\122\1"+
-        "\151\1\uffff\1\20\1\uffff\1\67\2\uffff\1\125\5\uffff\1\115\11\uffff"+
-        "\1\40\70\uffff\1\177\10\uffff\1\4\12\uffff\1\42\4\uffff\1\14\1\17"+
-        "\1\uffff\1\34\2\uffff\1\145\3\uffff\1\70\14\uffff\1\35\1\150\2\uffff"+
-        "\1\36\5\uffff\1\37\6\uffff\1\146\52\uffff\1\u0087\15\uffff\1\51"+
-        "\1\3\1\5\1\uffff\1\41\3\uffff\1\54\1\uffff\1\u0092\5\uffff\1\175"+
-        "\1\uffff\1\166\6\uffff\1\61\2\uffff\1\21\1\uffff\1\103\7\uffff\1"+
-        "\155\3\uffff\1\66\1\uffff\1\u008f\6\uffff\1\72\1\uffff\1\105\1\173"+
-        "\5\uffff\1\71\4\uffff\1\56\1\60\1\u0081\3\uffff\1\106\5\uffff\1"+
-        "\127\1\110\3\uffff\1\u0080\1\uffff\1\73\6\uffff\1\123\10\uffff\1"+
-        "\126\4\uffff\1\u008e\3\uffff\1\u0098\1\1\1\2\1\uffff\1\165\7\uffff"+
-        "\1\6\2\uffff\1\164\1\uffff\1\176\1\130\5\uffff\1\116\4\uffff\1\75"+
-        "\1\uffff\1\u0094\3\uffff\1\64\1\141\1\107\1\uffff\1\u0086\1\53\1"+
-        "\100\4\uffff\1\u0083\6\uffff\1\65\6\uffff\1\u0082\11\uffff\1\124"+
-        "\1\167\1\u0085\3\uffff\1\154\1\uffff\1\u00a0\1\112\3\uffff\1\u0099"+
-        "\3\uffff\1\153\2\uffff\1\u0096\13\uffff\1\144\2\uffff\1\147\11\uffff"+
-        "\1\134\3\uffff\1\74\4\uffff\1\55\1\142\1\140\2\uffff\1\174\1\u0088"+
-        "\1\62\1\uffff\1\u008a\2\uffff\1\121\1\uffff\1\152\5\uffff\1\101"+
-        "\1\uffff\1\u0084\1\113\4\uffff\1\u0089\1\u0095\6\uffff\1\111\1\114"+
-        "\2\uffff\1\u0090\5\uffff\1\135\1\22\1\117\3\uffff\1\170\2\uffff"+
-        "\1\143\1\137\1\uffff\1\52\7\uffff\1\161\2\uffff\1\104\1\uffff\1"+
-        "\131\2\uffff\1\120\1\uffff\1\u008d\1\uffff\1\u0097\5\uffff\1\133"+
-        "\1\uffff\1\136\1\160\3\uffff\1\u0091\1\u00a6\1\uffff\1\u008b\3\uffff"+
-        "\1\102\1\uffff\1\156\1\171\1\77\6\uffff\1\157\1\162\10\uffff\1\u009d"+
-        "\4\uffff\1\132\5\uffff\1\u009f\10\uffff\1\u0093\2\uffff\1\u008c"+
-        "\1\uffff\1\u00a4\1\u009c\1\63\1\163\1\u00a1\1\uffff\1\u00a2\1\76"+
-        "\5\uffff\1\172\14\uffff\1\u00a7\2\uffff\1\u00a8\1\u009a\1\u009b"+
-        "\3\uffff\1\u00a5\1\u009e\1\u00a3\3\uffff\1\u00a9";
+        "\uffff\1\43\2\uffff\1\50\1\52\17\uffff\1\u00c6\1\u00c8\2\uffff\1"+
+        "\u00c5\1\u00c7\14\uffff\1\7\1\26\32\uffff\1\31\1\32\1\33\23\uffff"+
+        "\1\46\1\44\1\47\1\45\77\uffff\1\15\7\uffff\1\165\2\uffff\1\16\3"+
+        "\uffff\1\73\1\136\1\uffff\1\20\1\uffff\1\103\2\uffff\1\141\7\uffff"+
+        "\1\131\11\uffff\1\40\76\uffff\1\u009a\10\uffff\1\4\12\uffff\1\42"+
+        "\5\uffff\1\14\2\uffff\1\17\2\uffff\1\34\2\uffff\1\161\5\uffff\1"+
+        "\104\17\uffff\1\35\1\uffff\1\164\1\uffff\1\36\6\uffff\1\37\7\uffff"+
+        "\1\162\61\uffff\1\u00a2\16\uffff\1\53\1\3\1\5\1\uffff\1\41\2\uffff"+
+        "\1\u00ad\2\uffff\1\65\4\uffff\1\51\1\u008d\4\uffff\1\u0090\12\uffff"+
+        "\1\75\4\uffff\1\21\2\uffff\1\117\10\uffff\1\64\1\uffff\1\171\2\uffff"+
+        "\1\102\1\uffff\1\u00aa\6\uffff\1\70\1\uffff\1\106\1\uffff\1\121"+
+        "\1\u008b\5\uffff\1\62\10\uffff\1\122\2\uffff\1\105\5\uffff\1\72"+
+        "\1\74\1\u009c\3\uffff\1\143\1\124\4\uffff\1\u009b\1\uffff\1\107"+
+        "\5\uffff\1\137\11\uffff\1\142\5\uffff\1\u00a9\3\uffff\1\u00b3\1"+
+        "\1\1\2\1\uffff\1\u0088\10\uffff\1\6\2\uffff\1\u008e\1\uffff\1\u0087"+
+        "\2\uffff\1\u0099\1\144\7\uffff\1\132\1\uffff\1\u0092\1\u0094\1\57"+
+        "\3\uffff\1\111\1\uffff\1\u00af\4\uffff\1\100\1\155\1\123\1\uffff"+
+        "\1\u00a1\1\uffff\1\55\1\114\4\uffff\1\u009e\7\uffff\1\u009d\11\uffff"+
+        "\1\101\15\uffff\1\140\1\u00a0\3\uffff\1\170\1\uffff\1\u00bb\1\uffff"+
+        "\1\126\3\uffff\1\u00b4\4\uffff\1\167\2\uffff\1\u00b1\16\uffff\1"+
+        "\160\2\uffff\1\66\1\163\13\uffff\1\150\1\u00a4\3\uffff\1\110\3\uffff"+
+        "\1\u0083\3\uffff\1\63\1\67\1\uffff\1\u0082\1\uffff\1\76\1\uffff"+
+        "\1\u00a5\1\71\1\156\1\154\3\uffff\1\u008c\1\u00a3\1\uffff\1\135"+
+        "\2\uffff\1\166\5\uffff\1\115\1\uffff\1\u0084\1\u009f\1\127\6\uffff"+
+        "\1\u00b0\7\uffff\1\125\1\130\2\uffff\1\u00ab\1\uffff\1\u0096\4\uffff"+
+        "\1\u0085\1\uffff\1\151\1\22\1\133\5\uffff\1\u0081\2\uffff\1\157"+
+        "\1\153\1\uffff\1\54\1\uffff\1\61\6\uffff\1\u008f\2\uffff\1\175\3"+
+        "\uffff\1\120\1\uffff\1\145\2\uffff\1\134\1\uffff\1\u00a8\3\uffff"+
+        "\1\u00b2\6\uffff\1\147\1\uffff\1\152\1\uffff\1\174\3\uffff\1\u00ac"+
+        "\1\u00c1\1\uffff\1\u0093\1\u0095\1\u00a6\2\uffff\1\60\1\uffff\1"+
+        "\116\2\uffff\1\u0091\1\113\1\172\1\u0089\1\uffff\1\u0098\4\uffff"+
+        "\1\173\1\176\1\u0097\3\uffff\1\56\7\uffff\1\u00b8\4\uffff\1\146"+
+        "\5\uffff\1\u00ba\2\uffff\1\177\7\uffff\1\u00ae\2\uffff\1\u00a7\1"+
+        "\uffff\1\u00bf\1\u00b7\1\77\1\u0086\1\u00bc\1\uffff\1\u00bd\1\112"+
+        "\6\uffff\1\u008a\15\uffff\1\u00c2\2\uffff\1\u00c3\1\u0080\1\u00b5"+
+        "\1\u00b6\3\uffff\1\u00c0\1\u00b9\1\u00be\3\uffff\1\u00c4";
     static final String DFA8_specialS =
-        "\u0326\uffff}>";
+        "\u03a9\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\2\60\1\uffff\2\60\22\uffff\1\60\1\37\3\uffff\1\25\2\uffff\1"+
-            "\10\1\7\1\23\1\21\1\12\1\22\1\uffff\1\6\12\57\1\uffff\1\11\1"+
-            "\35\1\34\1\36\2\uffff\2\56\1\53\1\3\2\56\1\1\1\56\1\2\3\56\1"+
-            "\54\6\56\1\55\6\56\3\uffff\1\24\2\uffff\1\14\1\20\1\50\1\44"+
-            "\1\45\1\5\1\40\1\13\1\15\1\52\1\46\1\42\1\32\1\31\1\16\1\41"+
-            "\1\56\1\43\1\33\1\4\1\51\1\47\1\17\1\26\1\27\1\30",
-            "\12\64\7\uffff\1\61\31\64\6\uffff\1\62\31\64",
-            "\12\64\7\uffff\15\64\1\65\14\64\6\uffff\32\64",
-            "\12\64\7\uffff\4\64\1\66\25\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\74\2\64\1\70\6\64\1\72"+
-            "\2\64\1\67\2\64\1\73\3\64\1\71\1\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\75\7\64\1\77\5\64\1\76\2\64"+
-            "\1\100\10\64",
-            "\1\101",
+            "\2\61\1\uffff\2\61\22\uffff\1\61\1\37\3\uffff\1\25\2\uffff"+
+            "\1\10\1\7\1\23\1\21\1\12\1\22\1\uffff\1\6\12\60\1\40\1\11\1"+
+            "\35\1\34\1\36\2\uffff\2\57\1\54\1\3\2\57\1\1\1\57\1\2\3\57\1"+
+            "\55\6\57\1\56\6\57\3\uffff\1\24\2\uffff\1\14\1\20\1\51\1\45"+
+            "\1\46\1\5\1\41\1\13\1\15\1\53\1\47\1\44\1\32\1\31\1\16\1\43"+
+            "\1\57\1\42\1\33\1\4\1\52\1\50\1\17\1\26\1\27\1\30",
+            "\12\65\7\uffff\1\62\31\65\6\uffff\1\63\31\65",
+            "\12\65\7\uffff\15\65\1\66\14\65\6\uffff\32\65",
+            "\12\65\7\uffff\4\65\1\67\25\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\75\2\65\1\71\6\65\1\74"+
+            "\2\65\1\70\2\65\1\72\3\65\1\73\1\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\76\7\65\1\101\5\65\1\77\2\65"+
+            "\1\100\10\65",
+            "\1\102",
             "",
             "",
             "",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\1\103\31\64",
-            "\12\64\7\uffff\32\64\6\uffff\2\64\1\111\1\110\7\64\1\106\1"+
-            "\64\1\105\4\64\1\107\1\104\6\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\115\4\64\1\114\7\64\1\113\4"+
-            "\64\1\112\7\64",
-            "\12\64\7\uffff\32\64\6\uffff\5\64\1\116\7\64\1\117\3\64\1\121"+
-            "\1\64\1\120\6\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\123\7\64\1\122\21\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\127\3\64\1\124\6\64\1\125\2"+
-            "\64\1\131\2\64\1\130\6\64\1\126\1\64",
+            "\12\65\7\uffff\32\65\6\uffff\1\104\3\65\1\105\25\65",
+            "\12\65\7\uffff\32\65\6\uffff\2\65\1\114\1\112\4\65\1\113\2"+
+            "\65\1\110\1\65\1\107\4\65\1\111\1\106\6\65",
+            "\12\65\7\uffff\32\65\6\uffff\5\65\1\117\7\65\1\116\4\65\1"+
+            "\115\7\65",
+            "\12\65\7\uffff\32\65\6\uffff\5\65\1\120\7\65\1\121\3\65\1"+
+            "\123\1\65\1\122\2\65\1\124\3\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\127\7\65\1\125\5\65\1\126\13"+
+            "\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\133\3\65\1\130\6\65\1\131\2"+
+            "\65\1\135\2\65\1\134\6\65\1\132\1\65",
             "",
             "",
             "",
             "",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\137\11\64\1\135\5\64\1"+
-            "\136\5\64",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\142\3\64\1\140\5\64\1\144"+
-            "\3\64\1\141\1\64\1\143\5\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\150\1\64\1\146\1\64\1\145\2"+
-            "\64\1\154\1\152\6\64\1\153\3\64\1\147\1\151\5\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\142\3\65\1\144\11\65\1\141"+
+            "\5\65\1\143\5\65",
+            "\12\65\7\uffff\2\65\1\152\27\65\6\uffff\4\65\1\147\3\65\1"+
+            "\145\5\65\1\151\3\65\1\146\1\65\1\150\5\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\157\1\65\1\154\1\65\1\153\2"+
+            "\65\1\163\1\161\5\65\1\155\1\162\3\65\1\156\1\160\5\65",
             "",
-            "\1\155",
-            "\1\157",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\162\14\64\1\161\10\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\164\3\64\1\167\6\64\1\163\2"+
-            "\64\1\166\2\64\1\165\10\64",
-            "\12\64\7\uffff\2\64\1\173\27\64\6\uffff\4\64\1\172\3\64\1\170"+
-            "\5\64\1\171\13\64",
-            "\12\64\7\uffff\2\64\1\u0080\27\64\6\uffff\1\174\3\64\1\u0081"+
-            "\3\64\1\177\5\64\1\175\5\64\1\176\5\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\u0086\3\64\1\u0082\3\64\1\u0083"+
-            "\5\64\1\u0085\5\64\1\u0084\5\64",
-            "\12\64\7\uffff\32\64\6\uffff\5\64\1\u0088\5\64\1\u0089\1\64"+
-            "\1\u0087\2\64\1\u008a\1\64\1\u008b\4\64\1\u008c\2\64",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\u008e\3\64\1\u008d\21\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\u0090\7\64\1\u008f\21\64",
-            "\12\64\7\uffff\2\64\1\u0092\27\64\6\uffff\16\64\1\u0091\13"+
-            "\64",
-            "\12\64\7\uffff\32\64\6\uffff\15\64\1\u0093\1\64\1\u0094\12"+
-            "\64",
-            "\12\64\7\uffff\32\64\6\uffff\24\64\1\u0095\5\64",
-            "\12\64\7\uffff\32\64\6\uffff\1\u0096\15\64\1\u0097\13\64",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\u0098\25\64",
-            "\12\64\7\uffff\32\64\6\uffff\10\64\1\u0099\21\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\164",
+            "\1\166",
             "",
             "",
-            "\1\u009a",
-            "\1\u009b",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\171\14\65\1\170\10\65",
+            "\12\65\7\uffff\2\65\1\177\27\65\6\uffff\1\174\3\65\1\173\3"+
+            "\65\1\172\5\65\1\175\5\65\1\176\5\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\u0081\3\65\1\u0084\6\65\1\u0080"+
+            "\2\65\1\u0083\2\65\1\u0082\10\65",
+            "\12\65\7\uffff\2\65\1\u0088\27\65\6\uffff\4\65\1\u0087\3\65"+
+            "\1\u0085\5\65\1\u0086\13\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\u008d\3\65\1\u0089\3\65\1\u008a"+
+            "\5\65\1\u008c\5\65\1\u008b\5\65",
+            "\12\65\7\uffff\32\65\6\uffff\5\65\1\u008f\5\65\1\u0090\1\65"+
+            "\1\u008e\2\65\1\u0091\1\65\1\u0093\4\65\1\u0092\2\65",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\u0095\3\65\1\u0094\21"+
+            "\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\u0097\7\65\1\u0096\21\65",
+            "\12\65\7\uffff\32\65\6\uffff\13\65\1\u0099\2\65\1\u0098\13"+
+            "\65",
+            "\12\65\7\uffff\32\65\6\uffff\15\65\1\u009a\1\65\1\u009b\12"+
+            "\65",
+            "\12\65\7\uffff\32\65\6\uffff\24\65\1\u009c\5\65",
+            "\12\65\7\uffff\32\65\6\uffff\1\u009d\15\65\1\u009e\13\65",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\u009f\25\65",
+            "\12\65\7\uffff\32\65\6\uffff\10\65\1\u00a0\21\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
             "",
-            "\1\u009c",
-            "\1\u009d",
-            "\1\u009f\23\uffff\1\u009e",
-            "\1\u00a0\3\uffff\1\u00a1",
+            "\1\u00a1",
             "\1\u00a2",
+            "",
+            "",
             "\1\u00a3",
             "\1\u00a4",
-            "\1\u00a5",
-            "\1\u00a6",
-            "\1\u00a7",
-            "\1\u00a8\3\uffff\1\u00a9",
-            "\1\u00ab\3\uffff\1\u00aa",
-            "",
-            "",
+            "\1\u00a6\23\uffff\1\u00a5",
+            "\1\u00a7\3\uffff\1\u00a8",
+            "\1\u00a9",
+            "\1\u00aa",
+            "\1\u00ab",
             "\1\u00ac",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u00ad",
             "\1\u00ae",
-            "\1\u00b0\2\uffff\1\u00af",
-            "\1\u00b1",
-            "\1\u00b2",
-            "\1\u00b4\20\uffff\1\u00b3",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\25\64\1\u00b6\4\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\5\64\1\u00ba\24\64",
-            "\12\64\7\uffff\32\64\6\uffff\2\64\1\u00bc\27\64",
+            "\1\u00b1\3\uffff\1\u00b0\11\uffff\1\u00af",
+            "\1\u00b2\3\uffff\1\u00b3",
+            "",
+            "",
+            "\1\u00b5\2\uffff\1\u00b4",
+            "\1\u00b6",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u00b8\2\uffff\1\u00ba\14\uffff\1\u00b9",
+            "\1\u00bc\2\uffff\1\u00bb",
+            "\1\u00bd",
             "\1\u00be",
-            "\12\64\7\uffff\32\64\6\uffff\10\64\1\u00bf\21\64",
-            "\1\u00c1",
-            "\1\u00c2",
-            "\1\u00c4\20\uffff\1\u00c3",
-            "\1\u00c5",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u00c7",
-            "\1\u00c8\3\uffff\1\u00c9",
-            "\1\u00ca",
-            "",
-            "",
-            "",
-            "\1\u00cb",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u00c1\20\uffff\1\u00c0",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\6\65\1\u00c5\13\65\1\u00c3\2"+
+            "\65\1\u00c4\4\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\5\65\1\u00c8\24\65",
+            "\12\65\7\uffff\32\65\6\uffff\2\65\1\u00ca\27\65",
             "\1\u00cc",
-            "\1\u00ce\2\uffff\1\u00cd",
+            "\12\65\7\uffff\32\65\6\uffff\10\65\1\u00cd\21\65",
             "\1\u00cf",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
-            "\1\u00d4\1\u00d3",
+            "\1\u00d4\20\uffff\1\u00d3",
             "\1\u00d5",
-            "\1\u00d7\15\uffff\1\u00d6\2\uffff\1\u00d8",
-            "\1\u00da\15\uffff\1\u00d9",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u00d7",
+            "\1\u00d8\3\uffff\1\u00d9",
+            "\1\u00da",
+            "",
+            "",
+            "",
             "\1\u00db",
             "\1\u00dc",
             "\1\u00dd",
             "\1\u00de",
             "\1\u00df",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00e0",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u00e1",
             "\1\u00e2",
-            "\1\u00e3",
-            "\1\u00e4",
+            "\1\u00e4\1\u00e3",
             "\1\u00e5",
             "\1\u00e6",
-            "\1\u00e7",
-            "\1\u00e8",
-            "\1\u00e9",
+            "\1\u00e8\15\uffff\1\u00e7\2\uffff\1\u00e9",
             "\1\u00ea",
-            "\1\u00eb",
-            "\1\u00ec",
+            "\1\u00ec\15\uffff\1\u00eb",
             "\1\u00ed",
             "\1\u00ee",
             "\1\u00ef",
             "\1\u00f0",
-            "\1\u00f2\4\uffff\1\u00f1",
-            "\1\u00f3\15\uffff\1\u00f4",
-            "\1\u00f6\1\uffff\1\u00f5",
-            "\1\u00f7",
-            "\1\u00f8",
-            "\1\u00f9\1\u00fa\16\uffff\1\u00fb",
+            "\1\u00f1",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00f2\7\uffff\1\u00f3",
+            "\1\u00f4",
+            "\1\u00f5\4\uffff\1\u00f6",
+            "\1\u00f8\1\u00f7",
+            "\1\u00f9",
+            "\1\u00fa",
+            "\1\u00fb",
             "\1\u00fc",
             "\1\u00fd",
             "\1\u00fe",
@@ -5694,83 +6508,77 @@ public class hightLexer extends Lexer {
             "\1\u0102",
             "\1\u0103",
             "\1\u0104",
-            "\1\u0106\1\u0105",
-            "\1\u0107",
-            "\1\u0108",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u010a",
-            "\1\u010b",
+            "\1\u0105",
+            "\1\u0107\4\uffff\1\u0106",
+            "\1\u0108\15\uffff\1\u0109",
+            "\1\u010b\1\uffff\1\u010a",
             "\1\u010c",
             "\1\u010d",
-            "\1\u010e",
-            "\1\u010f",
+            "\1\u010e\17\uffff\1\u010f",
             "\1\u0110",
             "\1\u0111",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0113",
-            "\1\u0114",
+            "\1\u0112",
+            "\1\u0114\6\uffff\1\u0113",
             "\1\u0115",
             "\1\u0116",
             "\1\u0117",
             "\1\u0118",
             "\1\u0119",
-            "\1\u011a",
-            "\1\u011b",
-            "\12\64\7\uffff\32\64\6\uffff\26\64\1\u011c\3\64",
+            "\1\u011c\1\u011a\1\u011b",
+            "\1\u011d",
             "\1\u011e",
-            "\1\u011f",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0120",
             "\1\u0121",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\30\64\1\u0124\1\64",
+            "\1\u0122",
+            "\1\u0123",
+            "\1\u0124",
+            "\1\u0125",
             "\1\u0126",
             "\1\u0127",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0129",
             "\1\u012a",
-            "",
             "\1\u012b",
-            "",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
+            "\1\u012c",
             "\1\u012d",
-            "",
             "\1\u012e",
             "\1\u012f",
-            "",
             "\1\u0130",
             "\1\u0131",
-            "\1\u0132",
-            "\1\u0133",
+            "\12\65\7\uffff\32\65\6\uffff\26\65\1\u0132\3\65",
             "\1\u0134",
-            "",
             "\1\u0135",
             "\1\u0136",
             "\1\u0137",
             "\1\u0138",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u013a",
             "\1\u013b",
-            "\1\u013c",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
             "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u013d",
             "\1\u013e",
-            "\1\u013f",
-            "\1\u0140\3\uffff\1\u0141",
-            "\1\u0142",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0140",
+            "\1\u0141",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0143",
             "\1\u0144",
+            "",
             "\1\u0145",
             "\1\u0146",
             "\1\u0147",
-            "\1\u0148",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
             "\1\u0149",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "",
+            "\1\u014a",
             "\1\u014b",
+            "",
             "\1\u014c",
             "\1\u014d",
             "\1\u014e",
@@ -5778,582 +6586,729 @@ public class hightLexer extends Lexer {
             "\1\u0150",
             "\1\u0151",
             "\1\u0152",
+            "",
             "\1\u0153",
             "\1\u0154",
             "\1\u0155",
             "\1\u0156",
-            "\1\u0157",
-            "\1\u0158",
+            "\12\65\7\uffff\16\65\1\u0157\13\65\6\uffff\32\65",
             "\1\u0159",
-            "\1\u015a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u015b",
-            "\1\u015c",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
             "\1\u015d",
             "\1\u015e",
-            "\1\u0160\3\uffff\1\u015f",
+            "\1\u015f\3\uffff\1\u0160",
             "\1\u0161",
             "\1\u0162",
-            "\1\u0163",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0164",
             "\1\u0165",
             "\1\u0166",
             "\1\u0167",
-            "\1\u016a\15\uffff\1\u0169\33\uffff\1\u0168",
-            "\1\u016b",
-            "\1\u016c\14\uffff\1\u016d",
+            "\1\u0168",
+            "\1\u0169",
+            "\1\u016a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u016c",
+            "\1\u016d",
             "\1\u016e",
-            "\1\u016f",
-            "\1\u0170",
+            "\1\u0170\2\uffff\1\u016f",
             "\1\u0171",
             "\1\u0172",
             "\1\u0173",
-            "\12\64\7\uffff\32\64\6\uffff\1\64\1\u0174\30\64",
-            "\1\u0176",
-            "\1\u0177",
-            "\1\u0179\2\uffff\1\u0178",
+            "\1\u0174",
+            "\1\u0175",
+            "\1\u0177\11\uffff\1\u0176",
+            "\1\u0178",
+            "\1\u0179",
             "\1\u017a",
             "\1\u017b",
             "\1\u017c",
-            "",
             "\1\u017d",
-            "\1\u017e",
-            "\1\u017f",
+            "\1\u017f\2\uffff\1\u017e",
             "\1\u0180",
             "\1\u0181",
             "\1\u0182",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0183",
             "\1\u0184",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0186",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0185",
+            "\1\u0187\3\uffff\1\u0186",
             "\1\u0188",
-            "\12\64\7\uffff\6\64\1\u018a\23\64\6\uffff\22\64\1\u0189\7\64",
+            "\1\u0189",
+            "\1\u018a\22\uffff\1\u018b",
             "\1\u018c",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u018d",
             "\1\u018e",
             "\1\u018f",
-            "\1\u0190",
-            "",
-            "\1\u0191",
-            "\1\u0192",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0194",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
+            "\1\u0192\15\uffff\1\u0191\33\uffff\1\u0190",
+            "\1\u0193\14\uffff\1\u0194",
+            "\1\u0195",
             "\1\u0196",
             "\1\u0197",
-            "",
             "\1\u0198",
             "\1\u0199",
-            "\1\u019b\3\uffff\1\u019a",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u019d",
+            "\1\u019a",
+            "\1\u019b",
+            "\12\65\7\uffff\32\65\6\uffff\1\65\1\u019c\30\65",
             "\1\u019e",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\10\64\1\u01a0\21\64",
+            "\1\u019f",
+            "\1\u01a1\2\uffff\1\u01a0",
             "\1\u01a2",
             "\1\u01a3",
             "\1\u01a4",
             "\1\u01a5",
+            "",
             "\1\u01a6",
             "\1\u01a7",
             "\1\u01a8",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01a9",
             "\1\u01aa",
-            "",
             "\1\u01ab",
-            "\12\64\7\uffff\32\64\6\uffff\3\64\1\u01ac\26\64",
-            "\12\64\7\uffff\32\64\6\uffff\22\64\1\u01ae\7\64",
-            "\1\u01b0",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u01ad",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u01af",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u01b1",
-            "",
-            "\1\u01b2",
-            "\1\u01b3",
-            "\1\u01b4",
-            "\12\64\7\uffff\32\64\6\uffff\17\64\1\u01b5\12\64",
+            "\12\65\7\uffff\32\65\6\uffff\1\65\1\u01b2\30\65",
+            "\12\65\7\uffff\6\65\1\u01b5\23\65\6\uffff\22\65\1\u01b4\7"+
+            "\65",
             "\1\u01b7",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01b8",
+            "\1\u01b9",
             "\1\u01ba",
-            "\1\u01bb",
-            "\1\u01bc",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u01bd",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\u01be\25\64",
+            "\1\u01be",
+            "\1\u01bf",
+            "",
             "\1\u01c0",
-            "\1\u01c1",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
             "\1\u01c2",
             "\1\u01c3",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "",
+            "\1\u01c4",
+            "\1\u01c5",
+            "",
+            "\1\u01c6",
             "\1\u01c7",
             "\1\u01c8",
-            "\1\u01c9",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01ca\3\uffff\1\u01c9",
             "\1\u01cb",
-            "\1\u01cc",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u01cd",
             "\1\u01ce",
-            "\1\u01cf",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01d0\16\uffff\1\u01cf",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u01d2",
-            "\1\u01d3",
-            "\1\u01d4",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\10\65\1\u01d3\21\65",
+            "\1\u01d5",
             "\1\u01d6",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01d7",
             "\1\u01d8",
             "\1\u01d9",
             "\1\u01da",
             "\1\u01db",
             "\1\u01dc",
-            "\1\u01dd",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u01df",
-            "\1\u01e0",
-            "\1\u01e1",
-            "\1\u01e3\15\uffff\1\u01e2",
-            "\1\u01e4",
             "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\24\65\1\u01de\5\65",
+            "",
+            "\1\u01e0",
+            "\12\65\7\uffff\32\65\6\uffff\3\65\1\u01e1\26\65",
+            "\12\65\7\uffff\32\65\6\uffff\22\65\1\u01e3\7\65",
             "\1\u01e5",
             "\1\u01e6",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01e7",
+            "",
             "\1\u01e8",
             "\1\u01e9",
             "\1\u01ea",
-            "\1\u01eb",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u01ed",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\17\65\1\u01ec\12\65",
             "\1\u01ee",
-            "\1\u01ef",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u01f2\11\uffff\1\u01f1",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
-            "",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u01f1",
+            "\1\u01f2",
             "\1\u01f3",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u01f6\1\u01f5\20\uffff\1\u01f7",
+            "\1\u01f4",
+            "\12\65\7\uffff\32\65\6\uffff\22\65\1\u01f5\7\65",
+            "\1\u01f7",
             "\1\u01f8",
-            "",
-            "\1\u01f9\3\uffff\1\u01fa",
-            "",
+            "\1\u01f9",
+            "\1\u01fa",
             "\1\u01fb",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u01fc",
             "\1\u01fd",
             "\1\u01fe",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\22\64\1\u0200\7\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0200",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\u0201\25\65",
             "\1\u0203",
             "\1\u0204",
             "\1\u0205",
             "\1\u0206",
             "\1\u0207",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0209",
-            "",
-            "\1\u020a",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u020b",
             "\1\u020c",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u020e",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u020d",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0210",
             "\1\u0211",
-            "",
             "\1\u0212",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\1\u0216",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0213",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0215",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0217",
+            "\1\u0218",
+            "\1\u0219",
             "\1\u021a",
             "\1\u021b",
-            "",
-            "\1\u021d\15\uffff\1\u021c",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u021d",
+            "\1\u021e",
             "\1\u021f",
             "\1\u0220",
-            "\1\u0221",
-            "\1\u0223\15\uffff\1\u0222",
+            "\1\u0222\15\uffff\1\u0221",
+            "\1\u0223",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\3\64\1\u0224\26\64",
-            "\1\u0226",
+            "\1\u0224",
+            "\1\u0225",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0227",
             "\1\u0228",
-            "",
-            "",
-            "",
             "\1\u0229",
             "\1\u022a",
             "\1\u022b",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u022d",
             "\1\u022e",
             "\1\u022f",
-            "\1\u0230",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0232\11\uffff\1\u0231",
             "",
             "",
-            "\1\u0231",
-            "\1\u0232",
+            "",
             "\1\u0233",
             "",
-            "\1\u0234",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0235",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0239",
-            "\1\u023a",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\4\64\1\u023b\25\64",
-            "\1\u023d",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0240",
+            "\1\u0237\1\u0236\20\uffff\1\u0238",
+            "\1\u0239",
+            "",
+            "\1\u023a\3\uffff\1\u023b",
+            "\1\u023c",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u023e",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\22\65\1\u023f\7\65",
             "\1\u0241",
-            "\1\u0242",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0243",
             "",
             "\1\u0244",
-            "\1\u0245",
-            "\1\u0246",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0247",
             "\1\u0248",
             "\1\u0249",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "",
-            "",
+            "\1\u024a",
             "\1\u024b",
-            "",
             "\1\u024c",
             "\1\u024d",
-            "\1\u024e",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u024f",
-            "\1\u0251\16\uffff\1\u0250",
-            "\1\u0252",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0253",
             "",
             "\1\u0254",
             "\1\u0255",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0257",
-            "\1\u0258",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0259",
             "\1\u025a",
-            "",
             "\1\u025b",
-            "\1\u025c",
-            "\1\u025d",
-            "\1\u025e",
             "",
-            "\1\u025f",
+            "\1\u025c",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
             "\1\u0260",
-            "\1\u0261",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0262",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0265",
             "",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "",
-            "",
-            "\1\u0265\20\uffff\1\u0264",
             "\1\u0266",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0268",
             "",
-            "\1\u0269",
+            "\1\u0268\15\uffff\1\u0267",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u026a",
             "\1\u026b",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u026c",
+            "\1\u026d",
             "",
-            "\1\u026f",
+            "\1\u026f\7\uffff\1\u026e",
             "\1\u0270",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0272",
+            "\1\u0273",
             "\1\u0274",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0275",
             "\1\u0276",
+            "",
             "\1\u0277",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0279",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u027b",
+            "\1\u0279\15\uffff\1\u0278",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\3\65\1\u027a\26\65",
             "\1\u027c",
             "\1\u027d",
-            "",
-            "",
-            "",
             "\1\u027e",
-            "\12\64\7\uffff\32\64\6\uffff\3\64\1\u027f\26\64",
+            "\1\u027f",
+            "",
+            "",
+            "",
+            "\1\u0280",
             "\1\u0281",
+            "\1\u0282",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
             "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0283",
             "\1\u0284",
             "\1\u0285",
-            "",
             "\1\u0286",
+            "",
             "\1\u0287",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u028a",
-            "",
+            "\1\u0288",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u028b",
             "\1\u028c",
-            "\1\u028d",
-            "\1\u028e",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\4\65\1\u028d\25\65",
             "\1\u028f",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0292",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0291",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0293",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u0294",
             "\1\u0295",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
-            "\1\u0296",
             "\1\u0297",
-            "",
             "\1\u0298",
             "\1\u0299",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u029d",
-            "\1\u029e",
-            "\1\u029f",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u029a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
+            "\1\u029c",
+            "\1\u029d",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "",
+            "",
+            "\1\u029f",
+            "",
+            "\1\u02a0",
             "\1\u02a1",
             "\1\u02a2",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02a5",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02a7\11\uffff\1\u02a8",
-            "",
-            "",
+            "\1\u02a3",
+            "\1\u02a4",
+            "\1\u02a6\16\uffff\1\u02a5",
+            "\1\u02a7",
+            "\1\u02a8",
             "",
             "\1\u02a9",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
             "\1\u02aa",
             "",
-            "",
-            "",
             "\1\u02ab",
-            "",
             "\1\u02ac",
-            "\1\u02ad",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
             "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02ae",
             "\1\u02af",
-            "\1\u02b0",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02b2",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u02b3",
             "",
             "\1\u02b4",
             "",
             "",
+            "",
             "\1\u02b5",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\22\64\1\u02b7\7\64",
+            "\1\u02b6",
+            "\1\u02b7",
+            "",
+            "\1\u02b8",
+            "",
             "\1\u02b9",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u02ba",
             "\1\u02bb",
             "\1\u02bc",
-            "\1\u02bd",
-            "\1\u02be",
-            "\1\u02bf",
             "",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "",
+            "\1\u02c0\20\uffff\1\u02bf",
             "\1\u02c1",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02c3",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
             "\1\u02c4",
             "\1\u02c5",
-            "\1\u02c6",
-            "",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02c7",
+            "\1\u02c8",
             "\1\u02c9",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02cb",
-            "",
-            "",
-            "\1\u02cc",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\3\64\1\u02cd\26\64",
-            "\1\u02cf",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02d3",
-            "\1\u02d4",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\23\65\1\u02cc\6\65\6\uffff\32\65",
+            "\1\u02ce",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02d0",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
             "\1\u02d5",
             "\1\u02d6",
-            "",
             "\1\u02d7",
-            "",
-            "\1\u02d8",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\1\u02db",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02da",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02dc",
             "\1\u02dd",
-            "\1\u02de",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02df",
             "\1\u02e0",
-            "",
             "\1\u02e1",
             "",
             "",
             "\1\u02e2",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02e4",
-            "",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\3\65\1\u02e3\26\65",
             "\1\u02e5",
             "",
-            "\1\u02e6",
-            "\1\u02e7",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02e9",
-            "",
-            "",
-            "",
             "\1\u02ea",
+            "",
             "\1\u02eb",
             "\1\u02ec",
             "\1\u02ed",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02ef",
+            "\1\u02ee",
             "",
-            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02f0",
+            "",
             "\1\u02f1",
             "\1\u02f2",
             "\1\u02f3",
             "\1\u02f4",
             "\1\u02f5",
             "\1\u02f6",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "",
-            "\1\u02f8",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u02f9",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u02fb",
+            "\1\u02fa",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02fc",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u02fe",
             "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\1\u02ff",
+            "\1\u0300",
+            "",
             "",
             "\1\u0301",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0304",
-            "\1\u0305",
-            "\1\u0306",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0303",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0307",
             "\1\u0308",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u030a",
-            "",
-            "\1\u030b",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u030c",
+            "\1\u0309",
+            "\1\u030b\16\uffff\1\u030a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
             "",
             "\1\u030d",
             "\1\u030e",
-            "\1\u030f",
-            "\1\u0310",
-            "\1\u0311",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "",
-            "\1\u0312",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0311",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
             "\1\u0313",
-            "\1\u0314",
-            "\1\u0315",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0315\11\uffff\1\u0316",
+            "",
+            "",
             "\1\u0317",
+            "",
             "\1\u0318",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "",
+            "\1\u0319",
+            "",
+            "",
+            "",
+            "",
+            "\1\u031a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u031c",
+            "",
+            "",
             "\1\u031d",
             "",
-            "\1\u031e",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u031f",
             "",
-            "",
-            "",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
-            "\1\u0322",
-            "",
-            "",
-            "",
+            "\1\u0320",
+            "\1\u0321",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             "\1\u0323",
-            "\1\u0324",
-            "\12\64\7\uffff\32\64\6\uffff\32\64",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0325",
+            "",
+            "",
+            "",
+            "\1\u0326",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\22\65\1\u0328\7\65",
+            "\1\u032a",
+            "\1\u032b",
+            "\1\u032c",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u032e",
+            "\1\u032f",
+            "\1\u0330",
+            "\1\u0331",
+            "\1\u0332",
+            "\1\u0333",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0335",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0337",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0339",
+            "\1\u033a",
+            "",
+            "\1\u033b",
+            "",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u033e",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0342",
+            "",
+            "",
+            "\1\u0343",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\3\65\1\u0345\26\65",
+            "\1\u0347",
+            "\1\u0348",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u034d",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u034f",
+            "\1\u0350",
+            "",
+            "\1\u0351",
+            "",
+            "\1\u0352",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0356",
+            "\1\u0357",
+            "",
+            "\1\u0358",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u035a",
+            "\1\u035b",
+            "\1\u035c",
+            "\1\u035d",
+            "",
+            "\1\u035e",
+            "",
+            "\1\u035f",
+            "",
+            "\1\u0360",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0362",
+            "",
+            "",
+            "\1\u0363",
+            "",
+            "",
+            "",
+            "\1\u0364",
+            "\1\u0365",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0367",
+            "\1\u0368",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0369",
+            "",
+            "\1\u036a",
+            "\1\u036b",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u036d",
+            "",
+            "",
+            "",
+            "\1\u036e",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0370",
+            "",
+            "\1\u0371",
+            "\1\u0372",
+            "\1\u0373",
+            "\1\u0374",
+            "\1\u0375",
+            "\1\u0376",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0378",
+            "\1\u0379",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u037b",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\1\u0381",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0384",
+            "\1\u0385",
+            "\1\u0386",
+            "\1\u0387",
+            "\1\u0388",
+            "\1\u0389",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u038b",
+            "",
+            "\1\u038c",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u038d",
+            "",
+            "",
+            "\1\u038e",
+            "\1\u038f",
+            "\1\u0390",
+            "\1\u0391",
+            "\1\u0392",
+            "\1\u0393",
+            "",
+            "\1\u0394",
+            "\1\u0395",
+            "\1\u0396",
+            "\1\u0397",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u0399",
+            "\1\u039a",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u039f",
+            "\1\u03a0",
+            "",
+            "\1\u03a1",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "",
+            "",
+            "",
+            "",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
+            "\1\u03a5",
+            "",
+            "",
+            "",
+            "\1\u03a6",
+            "\1\u03a7",
+            "\12\65\7\uffff\32\65\6\uffff\32\65",
             ""
     };
 
@@ -6387,7 +7342,7 @@ public class hightLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__195 | T__196 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | GAME | GRAVITY_KW | SCORE | TYPE | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | DUPLICABLE | FIRST | THIRD | ALLY | ENEMY | NEUTRAL | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_CENTER | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
+            return "1:1: Tokens : ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__222 | T__223 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | COUNTER | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS );";
         }
     }
  

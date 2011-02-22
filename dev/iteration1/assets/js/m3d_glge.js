@@ -4,9 +4,10 @@
  * @projectDescription This file handles the GLGE environment initialization. 
  */
 doc.onLoad = function() {
-	
-	$('#tools-panel, #viewmenu, #info-bottom table').show();
-	$('#loading-message').hide();
+
+	setTimeout(function(){
+		$('#loading-message').text('UI components loaded!');
+	}, 1000);
 	
 	mouse = new GLGE.MouseInput(canvas);
 	keys = new GLGE.KeyInput();
@@ -16,16 +17,6 @@ doc.onLoad = function() {
 	scene = doc.getElement("mainscene");
 	renderer.setScene(scene);
 	
-	// Initilization
-	M3D.GUI.init();
-	M3D.DB.init();
-	M3D.Editor.init();
-	
-	// -- objet and camera rotation
-	controller.onchange = function(xRot, yRot) { 
-		M3D.GUI.handleCamera(xRot, yRot);
-	};
-
 	///////////////////////////			
 	// -- the rendering loop
 	///////////////////////////
@@ -37,10 +28,31 @@ doc.onLoad = function() {
 	// -- render each millisecond
 	setInterval(_render, 1);
 	
+	// finish initialisation
+	setTimeout(function(){
+		$('#info-bottom').slideDown('slow', function(){
+			$('#tools-panel, #viewmenu').fadeIn('slow', function(){
+				$('#loading-message').hide();
+								
+				// Initilization
+				M3D.GUI.init();
+				M3D.DB.init();
+				M3D.Editor.init();
+				
+				// -- objet and camera rotation
+				controller.onchange = function(xRot, yRot) { 
+					M3D.GUI.handleCamera(xRot, yRot);
+				};
+
+			});
+		});
+	}, 2000);
+	
 };
 
-// -- load the xml containing the scene data
+// -- wait 2 sec and load the xml containing the scene data 
 setTimeout(function(){
+	$('#loading-message').text('Loading UI components...');
 	doc.load("level.xml");	
 }, 2000);
 

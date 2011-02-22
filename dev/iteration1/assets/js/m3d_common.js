@@ -111,5 +111,19 @@
 		return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());
 	};
 	
+	/**
+	 * Minimal implementation of the sprintf function of PHP
+	 * @param {Array} Unlimited String parameters where the 1st is the format.
+	 * The format string is composed of zero or more directives
+	 * @return The string produced according to the formatting string format
+	 */
+	M3D.Common.sprintf = function () {
+	    var _str = arguments[0];
+		for(var i=1; i<arguments.length; i++){
+			_str = _str.replace('%s', arguments[i])
+		}
+		return _str;
+	}
+	
     
 })(window.M3D);

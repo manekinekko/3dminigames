@@ -1,0 +1,204 @@
+//////////// PRESENTATION ////////////
+// Lapin est un jeu où le joueur contrôle un chasseur.
+// Celui-ci possède un fusil pour tirer sur des lapins.
+// Un lapin apparaît et le chasseur doit lui le tuer en lui tirant dessus en un temps imparti.
+// Ensuite un nouveau lapin apparaît, le joueur gagne au bout de 3 lapins tués.
+
+
+//       ______________
+//      |              |
+//      |   zone de    |      
+//      |   gen des    |
+//      |    lapins    |
+//      |______________|
+//
+//   _                     _
+//  |_|<-------(O)------->|_|
+//  aG                    aD
+
+
+
+//////////// INFOS GAME
+// rien
+
+//////////// TYPES HERITES
+type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+
+//si on implémente les contraintes, il n'y a plus besoin de ce 2 zones
+
+//////////// INIT
+
+
+
+
+player is Player solo;
+player has controller at human;
+lapinEnnemi is Player solo;
+lapinEnnemi has controller at ia1;
+
+
+
+lapin is Character;
+
+lapin has life at 1;
+lapin has compteurPas at 3;  //nouvel argument
+lapin has orientation at (random between 0 and 360) (random between 0 and 360) (random between 0 and 360);   //lorsque le lapin est généré
+
+cam1 is Camera free;
+
+chasseur is Character;
+chasseur has life at 5;
+
+
+jeep is Object;
+jeep has chasseur;
+
+arretGauche is Zobstacle;
+arretDroit is Zobstacle; 
+
+
+zoneGenLapin is Zone;  //la zone ou va générer les lapins
+
+
+
+missile is Projectile duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
+missile has damages at 100;
+missile has speed at 100; 
+missile has lifeTime at 4 s; 
+
+bazooka is Weapon;
+bazooka has shootInterval at 700 ms; 
+//on va dire pour ce premier jeu que le chasseur n'a pas de munitions
+
+chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
+bazooka has missile;
+bazookka has cam1;
+
+
+sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
+
+
+compteurVagues is Counter;
+compteurVagues has value at 0;
+
+/*  les contraintes de rotations seront utiles pour spécifier le rayon d'action du bazooka
+rc is RotationConstraint;
+rc has min at -40 -40 0;
+rc has max at 40 40 0;
+rc has activation at true false true;
+bazooka has constraints at rc; //liste de Constraint
+
+//une autre contrainte pour supprimer les zones d'obstacle :
+tc is TranslationConstraint;
+tc has min at (- (x of size of sol1 / 2) + 5)  0  0 ;
+tc has minActivation at true false false;
+tc has max at ((x of size of sol1 / 2) - 5)  0  0  ;
+tc has maxActivation at true false false;
+jeep has constraints at tc;
+*/
+
+//////////// DEF
+
+definition  tirer  means 
+	bazooka expels missile by 100, //valeur à voir avec le groupe moteur de jeu
+	wait 200 ms then 
+		generate missile 
+	endwait;
+
+
+definition  reinitialisation  means 
+	generate chasseur at 4 5 34,
+	generate sol1,
+	generate bazooka,
+	generate arretDroit,
+	generate arretGauche,
+	generate zoneGenLapin,
+	add 1 to compteurVagues,
+	wait 2 sec then
+		generate lapin in zoneGenLapin
+	endwait;
+
+
+definition bougerJeep1 means 
+	jeep move backward by 10;
+definition bougerJeep2 means 
+	jeep move forward by 10;
+
+definition bougerBazooka1 means
+	bazooka turn up by 10;
+definition bougerBazooka2 means
+	bazooka turn down by 10;
+definition bougerBazooka3 means
+	bazooka turn right by 10;
+definition bougerBazooka4 means
+	bazooka turn left by 10;
+
+//////////// COMMANDES
+command for player is 
+	key left for bougerJeep1,
+	key right for bougerJeep2,
+	mouse up for bougerBazooka1,
+	mouse down for bougerBazooka2,
+	mouse right for bougerBazooka3,
+	mouse left for bougerBazooka4,
+	key space for tirer;
+
+
+//////////// REGLES DU JEU
+rule Game starts then
+	reinitialisation;
+
+rule value of compteurVagues becomes > 3 then
+	victory of player;
+
+rule value of compteurPas becomes 0 then
+	victory of lapinEnnemi;
+
+rule victory of Player then
+	Game ends;
+
+
+rule lapin dies then
+	reinitialisation;
+
+rule lapin moves then   
+	sub 1 for compteurPas of Lapin;
+
+
+rule missile touches Lapin then
+	efface missile,
+	sub 1 for life of Lapin;
+
+
+
+
+//////////// IA BASIQUE
+/*
+
+ia iaLapinNiv1 is :
+
+rule bazooka turns right then
+	if angle between lapin and chasseur < ... and z of orientation of lapin > ...
+;
+rule distance between lapin and jeep becomes < z of size of lapin * 3 then
+	
+;
+
+
+
+definition defia1 means
+	lapin move forward by (random between 4 and 6),
+	turn right during (random between 300 and 500) ms;
+
+
+
+ia lapin2 is 
+	move forward during (random between 3 and 4.5) sec,
+	turn right during (random between 300 and 500) ms
+
+ia lapin3 is 
+	move forward during (random between 2 and 3) sec,
+	turn right during (random between 300 and 500) ms
+
+ 
+*/

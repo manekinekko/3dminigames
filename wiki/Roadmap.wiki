@@ -95,6 +95,9 @@
   * Modèles du jeu lapin + code
   * Modèles du Game&Watch
   * Modèles du billard
+  * Modèles du 1942
+  * Modèles du MarioSansAutoGen
+  * Modèles du Pacman
 ==En cours==
   * Code du 1942
   * Code du billard
@@ -116,14 +119,14 @@ légende : T(txt), D(dae), /2(fait à moitié)
 SEM 5-6 (aujourd'hui):                                  
   * Jeu du lapin < T + D >
   * Watch’N’Droid < T/2 + D >
-  * Mario (plateformes générées aléatoirement) < T/2 >
-  * Mario (niveau défini) 
+  * Mario (plateformes générées aléatoirement) < T/2 D/2 >
+  * Mario (niveau défini) < D >
 
 SEM 6-7:
   * Pacman < D >
   * Billard < T/2 + D >
-  * 1942
-  * fps deathmatch sans équipe
+  * 1942 < T/2 D >
+  * fps deathmatch sans équipe < D/2 >
   * fps deathmatch avec équipes (jusquà 3 équipes)
 
 SEM 7-8:

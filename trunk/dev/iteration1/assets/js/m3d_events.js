@@ -19,7 +19,7 @@ $(function(){
 		M3D.GUI.pickObject(e, this);
 	}).bind('mouseup', function(){
 		M3D.GUI.checkEditor();
-		M3D.DB.updateSelectedEntry();
+		M3D.DB.updateSelectedObject();
 	});
 	
 	

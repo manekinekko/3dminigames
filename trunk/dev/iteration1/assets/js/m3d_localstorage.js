@@ -189,21 +189,21 @@
 	 * @deprecated This function is not yet implemented
 	 */
 	
-	M3D.DB.updateSelectedEntry = function(){
+	M3D.DB.updateSelectedObject = function(){
 	
-		if ( obj ){
-			var uid = obj.uid;
+		if ( _obj ){
+			var uid = _obj.uid;
 			var updateobj = M3D.DB.getObject(uid);
 			if (updateobj){
-				updateobj.position.X = obj.getLocX();
-				updateobj.position.Y = obj.getLocY();
-				updateobj.position.Z = obj.getLocZ();
-				updateobj.scale.X = obj.getScaleX();
-				updateobj.scale.Y = obj.getScaleY();
-				updateobj.scale.Z = obj.getScaleZ();
-				updateobj.rotation.X = obj.getRotX();
-				updateobj.rotation.Y = obj.getRotY();
-				updateobj.rotation.Z = obj.getRotZ();
+				updateobj.position.X = _obj.getLocX();
+				updateobj.position.Y = _obj.getLocY();
+				updateobj.position.Z = _obj.getLocZ();
+				updateobj.scale.X = _obj.getScaleX();
+				updateobj.scale.Y = _obj.getScaleY();
+				updateobj.scale.Z = _obj.getScaleZ();
+				updateobj.rotation.X = _obj.getRotX();
+				updateobj.rotation.Y = _obj.getRotY();
+				updateobj.rotation.Z = _obj.getRotZ();
 				M3D.DB.setObject({
 					'uid': uid, 
 					'value': _set(updateobj)

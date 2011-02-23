@@ -164,6 +164,15 @@
 				M3D.GUI.importModel({
 					'uid': key.replace(DB_PATTERN_OBJ, ''),
 					'name': value.name,
+					'scaleX': value.scale.X,
+					'scaleY': value.scale.Y,
+					'scaleZ': value.scale.Z,
+					'locX': value.position.X,
+					'locY': value.position.Y,
+					'locZ': value.position.Z,
+					'rotX': value.rotation.X,
+					'rotY': value.rotation.Y,
+					'rotZ': value.rotation.Z,
 					'docUrl': value.url,
 					'autoAddToScene': true
 				});
@@ -191,9 +200,13 @@
 	
 	M3D.DB.updateSelectedObject = function(){
 	
-		if ( _obj ){
-			var uid = _obj.uid;
+		if ( obj ){
+			var uid = obj.uid;
+			var _obj = obj.parent;
+			log(uid);
+			log(_obj.uid);
 			var updateobj = M3D.DB.getObject(uid);
+			log(updateobj);
 			if (updateobj){
 				updateobj.position.X = _obj.getLocX();
 				updateobj.position.Y = _obj.getLocY();
@@ -206,11 +219,12 @@
 				updateobj.rotation.Z = _obj.getRotZ();
 				M3D.DB.setObject({
 					'uid': uid, 
-					'value': _set(updateobj)
+					'value': updateobj
 				});
 			}
 		}
 	};
+	
 	
 	/**
 	 * Update data ... ??? 

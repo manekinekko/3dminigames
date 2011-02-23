@@ -43,7 +43,6 @@
   * *Génération d'un fichier scenrario exploitable par le compilation*
 
 ==En cours==
-  * Gestion de la caméra (à la FPS) *(T)*
   * Gestion de la caméra (à la Sketchup) *(T)*
   * Synchronisation de l'IHM avec l'éditeur *(W)*
   * Synchronisation du contenu de l'éditeur avec l'IndexedDB *(A)*

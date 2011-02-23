@@ -745,8 +745,6 @@
 				
 			}
 			
-			M3D.DB.updateSelectedEntry(_obj);
-			
 			$("#slider").slider('value', [value]);
 		}
 	

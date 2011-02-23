@@ -57,7 +57,8 @@ $(function(){
 	 */
 	$('input[type="text"]:not([disabled])').bind('keypress', function(){ 
 		M3D.GUI.checkEditor();
-		M3D.GUI.updateValues($(this)); 
+		M3D.GUI.updateValues($(this));
+		M3D.DB.updateSelectedObject();
 	});
 	/**
 	 * Bind the slider insert/remove
@@ -92,6 +93,7 @@ $(function(){
 		},
 		stop: function(event, ui) {
 			M3D.GUI.checkEditor();
+			M3D.DB.updateSelectedObject();
 		}
 	});
 

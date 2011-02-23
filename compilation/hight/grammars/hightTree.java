@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-02-22 19:03:21
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-02-23 16:20:59
 
     package grammars;
     import code.*;
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 public class hightTree extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "GAME_KW", "GAME_ATTRIBUT_KW", "INIT_IS_KW", "INIT_HAS_KW", "DEC", "MEDIA_KW", "CAMERA_KW", "INTERACTION_KW", "GAME_SCORE_KW", "SCORE_KW", "VALUE_KW", "IN_KW", "ALLOCATION_KW", "COORDINATE_KW", "CONSEQUENCES_KW", "AGGREGATION_KW", "VAR_I_KW", "VAR_A_KW", "BECOMES_VAR_KW", "BECOMES_ID_KW", "CONDITION_KW", "ACCESS_KW", "KEY_KW", "MOUSE_KW", "FIN", "GAME", "HAS", "VIRG", "GRAVITY_KW", "AT", "FLOAT", "TURNBASED_KW", "WORLD_KW", "GRIDSIZE_KW", "NAME_KW", "GENERIC", "GRID", "RIBBON", "IDENT", "TYPE", "IS", "AND", "INSERT_KW", "IN", "NUM", "REMOVE_KW", "FROM", "LIST_KW", "OF", "CAMERA", "PERSON", "FREE", "MEDIA", "LOOP", "ONCE", "PLAYER", "SOLO", "DUPLICABLE", "FIRST", "THIRD", "DEFINITION_KW", "MEANS", "VICTORY_KW", "DBP", "DEFEAT_KW", "ENDS_KW", "STARTS_KW", "PAUSE_KW", "MUTE_KW", "ON", "OFF", "PLAY_KW", "STOP_KW", "BLOCK_KW", "EFFACE_KW", "GENERATE_KW", "WAIT_KW", "THEN", "ENDWAIT", "SAVE_KW", "NEXTURN_KW", "GRASPS_KW", "EXPELS_KW", "BY", "INGESTS_KW", "DIES_KW", "DURING", "UNTIL", "HAPPENS", "EQUIP", "NEXT", "PREVIOUS", "JUMP", "MOVE", "LEFT", "RIGHT", "FORWARD", "BACKWARD", "WUP", "WDOWN", "TURN", "CLOCKWISE", "ANTICLOCKWISE", "ACCELERATE", "BRAKE", "TRANSLATION", "ROTATION", "SCALE", "COMMAND_KW", "FOR", "MOUSE", "KEY", "PRESSED_KW", "HELD_KW", "RELEASED_KW", "CLICK_LEFT", "CLICK_MIDDLE", "CLICK_RIGHT", "SCROLL_UP", "SCROLL_DOWN", "LETTER", "SPACE", "ESCAPE", "ENTER", "ACTIVATE_KW", "DISABLE_KW", "COMMANDS", "KEYBOARD", "RULE_KW", "MOVES_KW", "BECOMES", "TOUCHES_KW", "KILLS_KW", "OWNES_KW", "NOTOWNES_KW", "OTHER", "KILLED_KW", "TOUCHED_KW", "OWNED_KW", "NOTOWNED_KW", "IF_KW", "ELSE", "ENDIF", "NOT", "OR", "COMP", "EQUALS", "INF", "SUP", "INFEG", "SUPED", "DIFF", "PG", "PD", "CONTAINS_KW", "DEAD_KW", "ALIVE_KW", "EFFACED_KW", "GENERATED_KW", "TOUCHING_KW", "MOVING_KW", "WAITING_KW", "FINISHED_KW", "STARTED_KW", "PAUSED_KW", "MUTED_KW", "PLAYED_KW", "STOPPED_KW", "ASSIGN_KW", "ADD_KW", "SUB_KW", "INVERT_KW", "WITH", "IA_KW", "RANDOM_KW", "BETWEEN", "PLUS", "MINUS", "MUL", "DIV", "MOD", "POW", "DISTANCE_KW", "ANGLE_KW", "X", "Y", "Z", "SCORE", "VALUE", "ALL", "POSITION", "ORIENTATION", "SIZE", "MIN", "SEC", "MS", "FRAME", "COUNTER", "TIME", "BOOST_INTERVAL", "SHOOT_INTERVAL", "RELOAD_TIME", "INVENTORY", "EQUIPED_OBJECT", "ENTRANCES", "EXITS", "DAMAGE_ZONE", "COLLECTORS", "TYPES_COLLECTORS", "GENERATORS", "TYPE_GENERATORS", "BREAKERS", "TYPES_BREAKERS", "TELEPORTABLES", "TYPES_TELEPORTABLES", "COMMENT", "RELOAD_KW", "WS", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "GAME_KW", "GAME_ATTRIBUT_KW", "INIT_IS_KW", "INIT_HAS_KW", "DEC", "MEDIA_KW", "CAMERA_KW", "INTERACTION_KW", "GAME_SCORE_KW", "SCORE_KW", "VALUE_KW", "IN_KW", "ALLOCATION_KW", "COORDINATE_KW", "CONSEQUENCES_KW", "AGGREGATION_KW", "VAR_I_KW", "VAR_A_KW", "BECOMES_VAR_KW", "BECOMES_ID_KW", "CONDITION_KW", "ACCESS_KW", "KEY_KW", "MOUSE_KW", "FIN", "GAME", "HAS", "VIRG", "GRAVITY_KW", "AT", "FLOAT", "TURNBASED_KW", "WORLD_KW", "GRIDSIZE_KW", "NAME_KW", "GENERIC", "GRID", "RIBBON", "IDENT", "TYPE", "IS", "AND", "INSERT_KW", "IN", "NUM", "REMOVE_KW", "FROM", "LIST_KW", "OF", "CAMERA", "PERSON", "FREE", "MEDIA", "LOOP", "ONCE", "PLAYER", "SOLO", "DUPLICABLE", "FIRST", "THIRD", "DEFINITION_KW", "MEANS", "VICTORY_KW", "DBP", "DEFEAT_KW", "ENDS_KW", "STARTS_KW", "PAUSE_KW", "MUTE_KW", "ON", "OFF", "PLAY_KW", "STOP_KW", "BLOCK_KW", "EFFACE_KW", "GENERATE_KW", "WAIT_KW", "THEN", "ENDWAIT", "SAVE_KW", "NEXTURN_KW", "GRASPS_KW", "EXPELS_KW", "BY", "INGESTS_KW", "DIES_KW", "DURING", "UNTIL", "HAPPENS", "EQUIP", "NEXT", "PREVIOUS", "JUMP", "MOVE", "LEFT", "RIGHT", "FORWARD", "BACKWARD", "WUP", "WDOWN", "TURN", "CLOCKWISE", "ANTICLOCKWISE", "ACCELERATE", "BRAKE", "TRANSLATION", "ROTATION", "SCALE", "COMMAND_KW", "FOR", "MOUSE", "KEY", "PRESSED_KW", "HELD_KW", "RELEASED_KW", "CLICK_LEFT", "CLICK_MIDDLE", "CLICK_RIGHT", "SCROLL_UP", "SCROLL_DOWN", "LETTER", "SPACE", "ESCAPE", "ENTER", "ACTIVATE_KW", "DISABLE_KW", "COMMANDS", "KEYBOARD", "RULE_KW", "MOVES_KW", "BECOMES", "TOUCHES_KW", "KILLS_KW", "OWNES_KW", "NOTOWNES_KW", "OTHER", "KILLED_KW", "TOUCHED_KW", "OWNED_KW", "NOTOWNED_KW", "IF_KW", "ELSE", "ENDIF", "NOT", "OR", "COMP", "EQUALS", "INF", "SUP", "INFEG", "SUPED", "DIFF", "PG", "PD", "CONTAINS_KW", "DEAD_KW", "ALIVE_KW", "EFFACED_KW", "GENERATED_KW", "TOUCHING_KW", "MOVING_KW", "WAITING_KW", "FINISHED_KW", "STARTED_KW", "PAUSED_KW", "MUTED_KW", "PLAYED_KW", "STOPPED_KW", "ASSIGN_KW", "ADD_KW", "SUB_KW", "INVERT_KW", "WITH", "IA_KW", "RANDOM_KW", "BETWEEN", "PLUS", "MINUS", "MUL", "DIV", "MOD", "POW", "DISTANCE_KW", "ANGLE_KW", "X", "Y", "Z", "SCORE", "VALUE", "ALL", "POSITION", "ORIENTATION", "SIZE", "MIN", "SEC", "MS", "FRAME", "BOOST_INTERVAL", "SHOOT_INTERVAL", "RELOAD_TIME", "INVENTORY", "EQUIPED_OBJECT", "ENTRANCES", "EXITS", "DAMAGE_ZONE", "COLLECTORS", "TYPES_COLLECTORS", "GENERATORS", "TYPE_GENERATORS", "BREAKERS", "TYPES_BREAKERS", "TELEPORTABLES", "TYPES_TELEPORTABLES", "COMMENT", "RELOAD_KW", "TIME", "WS", "'true'", "'false'", "COUNTER"
     };
     public static final int EOF=-1;
+    public static final int T__221=221;
     public static final int T__222=222;
-    public static final int T__223=223;
     public static final int GAME_KW=4;
     public static final int GAME_ATTRIBUT_KW=5;
     public static final int INIT_IS_KW=6;
@@ -218,27 +218,27 @@ public class hightTree extends TreeParser {
     public static final int SEC=198;
     public static final int MS=199;
     public static final int FRAME=200;
-    public static final int COUNTER=201;
-    public static final int TIME=202;
-    public static final int BOOST_INTERVAL=203;
-    public static final int SHOOT_INTERVAL=204;
-    public static final int RELOAD_TIME=205;
-    public static final int INVENTORY=206;
-    public static final int EQUIPED_OBJECT=207;
-    public static final int ENTRANCES=208;
-    public static final int EXITS=209;
-    public static final int DAMAGE_ZONE=210;
-    public static final int COLLECTORS=211;
-    public static final int TYPES_COLLECTORS=212;
-    public static final int GENERATORS=213;
-    public static final int TYPE_GENERATORS=214;
-    public static final int BREAKERS=215;
-    public static final int TYPES_BREAKERS=216;
-    public static final int TELEPORTABLES=217;
-    public static final int TYPES_TELEPORTABLES=218;
-    public static final int COMMENT=219;
-    public static final int RELOAD_KW=220;
-    public static final int WS=221;
+    public static final int BOOST_INTERVAL=201;
+    public static final int SHOOT_INTERVAL=202;
+    public static final int RELOAD_TIME=203;
+    public static final int INVENTORY=204;
+    public static final int EQUIPED_OBJECT=205;
+    public static final int ENTRANCES=206;
+    public static final int EXITS=207;
+    public static final int DAMAGE_ZONE=208;
+    public static final int COLLECTORS=209;
+    public static final int TYPES_COLLECTORS=210;
+    public static final int GENERATORS=211;
+    public static final int TYPE_GENERATORS=212;
+    public static final int BREAKERS=213;
+    public static final int TYPES_BREAKERS=214;
+    public static final int TELEPORTABLES=215;
+    public static final int TYPES_TELEPORTABLES=216;
+    public static final int COMMENT=217;
+    public static final int RELOAD_KW=218;
+    public static final int TIME=219;
+    public static final int WS=220;
+    public static final int COUNTER=223;
 
     // delegates
     // delegators
@@ -632,7 +632,7 @@ public class hightTree extends TreeParser {
                     match(input,TURNBASED_KW,FOLLOW_TURNBASED_KW_in_attributGame253); 
 
                     match(input, Token.DOWN, null); 
-                    if ( (input.LA(1)>=222 && input.LA(1)<=223) ) {
+                    if ( (input.LA(1)>=221 && input.LA(1)<=222) ) {
                         input.consume();
                         state.errorRecovery=false;
                     }
@@ -786,7 +786,7 @@ public class hightTree extends TreeParser {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==IDENT||LA9_0==CAMERA||LA9_0==MEDIA||(LA9_0>=COUNTER && LA9_0<=TIME)) ) {
+                if ( (LA9_0==IDENT||LA9_0==CAMERA||LA9_0==MEDIA||LA9_0==TIME||LA9_0==COUNTER) ) {
                     alt9=1;
                 }
 
@@ -857,7 +857,7 @@ public class hightTree extends TreeParser {
             if ( (LA10_0==IDENT) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==CAMERA||LA10_0==MEDIA||(LA10_0>=COUNTER && LA10_0<=TIME)) ) {
+            else if ( (LA10_0==CAMERA||LA10_0==MEDIA||LA10_0==TIME||LA10_0==COUNTER) ) {
                 alt10=2;
             }
             else {
@@ -1822,7 +1822,7 @@ public class hightTree extends TreeParser {
                     int alt22=2;
                     int LA22_0 = input.LA(1);
 
-                    if ( (LA22_0==AGGREGATION_KW||(LA22_0>=222 && LA22_0<=223)) ) {
+                    if ( (LA22_0==AGGREGATION_KW||(LA22_0>=221 && LA22_0<=222)) ) {
                         alt22=1;
                     }
                     switch (alt22) {
@@ -1993,12 +1993,12 @@ public class hightTree extends TreeParser {
                 }
                 }
                 break;
-            case 222:
+            case 221:
                 {
                 alt25=3;
                 }
                 break;
-            case 223:
+            case 222:
                 {
                 alt25=4;
                 }
@@ -2080,7 +2080,7 @@ public class hightTree extends TreeParser {
                 case 3 :
                     // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:331:7: 'true'
                     {
-                    match(input,222,FOLLOW_222_in_valAggregation1111); 
+                    match(input,221,FOLLOW_221_in_valAggregation1111); 
                     c = new AttributeValue(true,"true");
 
                     }
@@ -2088,7 +2088,7 @@ public class hightTree extends TreeParser {
                 case 4 :
                     // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:332:7: 'false'
                     {
-                    match(input,223,FOLLOW_223_in_valAggregation1121); 
+                    match(input,222,FOLLOW_222_in_valAggregation1121); 
                     c = new AttributeValue(false,"false");
 
                     }
@@ -6797,8 +6797,8 @@ public class hightTree extends TreeParser {
                         break;
                     case CAMERA:
                     case MEDIA:
-                    case COUNTER:
                     case TIME:
+                    case COUNTER:
                         {
                         alt94=2;
                         }
@@ -6954,7 +6954,7 @@ public class hightTree extends TreeParser {
             int alt95=2;
             int LA95_0 = input.LA(1);
 
-            if ( (LA95_0==CAMERA||LA95_0==MEDIA||(LA95_0>=COUNTER && LA95_0<=TIME)) ) {
+            if ( (LA95_0==CAMERA||LA95_0==MEDIA||LA95_0==TIME||LA95_0==COUNTER) ) {
                 alt95=1;
             }
             else if ( (LA95_0==PLAYER) ) {
@@ -7158,7 +7158,7 @@ public class hightTree extends TreeParser {
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:769:28: ( CAMERA | MEDIA | COUNTER | TIME )
             // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
-            if ( input.LA(1)==CAMERA||input.LA(1)==MEDIA||(input.LA(1)>=COUNTER && input.LA(1)<=TIME) ) {
+            if ( input.LA(1)==CAMERA||input.LA(1)==MEDIA||input.LA(1)==TIME||input.LA(1)==COUNTER ) {
                 input.consume();
                 state.errorRecovery=false;
             }
@@ -7574,8 +7574,8 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_set_in_mapType0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IDENT_in_name342 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TYPE_in_newType378 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_newType382 = new BitSet(new long[]{0x0120040000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000600L});
-    public static final BitSet FOLLOW_subType_in_newType384 = new BitSet(new long[]{0x0120040000000008L,0x0000000000000000L,0x0000000000000000L,0x0000000000000600L});
+    public static final BitSet FOLLOW_IDENT_in_newType382 = new BitSet(new long[]{0x0120040000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000088000000L});
+    public static final BitSet FOLLOW_subType_in_newType384 = new BitSet(new long[]{0x0120040000000008L,0x0000000000000000L,0x0000000000000000L,0x0000000088000000L});
     public static final BitSet FOLLOW_IDENT_in_subType414 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeObjet_in_subType430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_init_in_initialization453 = new BitSet(new long[]{0x00024800000000C2L});
@@ -7620,7 +7620,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_set_in_view0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_affectationObjet_in_affectationObjet_list917 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_ALLOCATION_KW_in_affectationObjet945 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_affectationObjet949 = new BitSet(new long[]{0x0000000000080008L,0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
+    public static final BitSet FOLLOW_IDENT_in_affectationObjet949 = new BitSet(new long[]{0x0000000000080008L,0x0000000000000000L,0x0000000000000000L,0x0000000060000000L});
     public static final BitSet FOLLOW_valAggregation_in_affectationObjet953 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ALLOCATION_KW_in_affectationObjet972 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_typeCoordonnees_in_affectationObjet976 = new BitSet(new long[]{0x0000000000020000L});
@@ -7637,8 +7637,8 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_timeUnit_in_valAggregation1075 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_AGGREGATION_KW_in_valAggregation1092 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_valAggregation1096 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_222_in_valAggregation1111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_223_in_valAggregation1121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_221_in_valAggregation1111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_222_in_valAggregation1121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DEFINITION_KW_in_definition1155 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_definition1159 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_consequences_in_definition1163 = new BitSet(new long[]{0x0000000000000008L});
@@ -7974,7 +7974,7 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4029 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_typeObjet_in_accesClass4033 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4047 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_NOT_in_accesClass4049 = new BitSet(new long[]{0x0920040000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000600L});
+    public static final BitSet FOLLOW_NOT_in_accesClass4049 = new BitSet(new long[]{0x0920040000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000088000000L});
     public static final BitSet FOLLOW_notAccess_in_accesClass4051 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4066 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_accesClass4070 = new BitSet(new long[]{0x0000000400105008L,0x0000000000000000L,0x73F4000000000000L});

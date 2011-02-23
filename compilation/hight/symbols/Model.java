@@ -53,7 +53,7 @@ public class Model implements Symbol {
         st.add(ground.getName(), ground);
     }
 
-    public void addAttribut(String attr) {
+    public void addAttribute(String attr) {
 	this.attributs.put(attr, null);
     }
 

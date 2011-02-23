@@ -81,7 +81,7 @@ newType :
   
 subType :
     IDENT
-    | typeObjet
+    //| typeObjet
     ;
 // ident | typeObjet : if it is an ident, check that it is defined before by the user and that is an inherited Object.
 
@@ -97,8 +97,8 @@ init :
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet :
-    typeEntity dupli?
-      -> ^(DEC typeEntity dupli?)   // interaction is neutral by default
+    IDENT dupli?
+      -> ^(DEC IDENT dupli?)   // interaction is neutral by default
     | LIST_KW (OF (operation)? (IDENT) (',' (operation)? (IDENT))* )?  //operation if the object is duplicable
       ->^(LIST_KW (operation? IDENT)+)
     | CAMERA (view PERSON -> ^(CAMERA_KW PERSON view) | FREE -> ^(CAMERA_KW FREE))?
@@ -128,7 +128,7 @@ view :
     ;
 
 allocationObject :
-    IDENT (AT valAggregation )?       //aggregation
+    (IDENT | 'value') (AT valAggregation )?       //aggregation
       -> ^( ALLOCATION_KW IDENT valAggregation?)
     | typeCoordonnees AT coordinates            //size at 20 30 40
       -> ^( ALLOCATION_KW typeCoordonnees coordinates)
@@ -161,8 +161,8 @@ consequ :
     | affectation
     | activCommande
     | IDENT
-    | VICTORY_KW^ IDENT (DBP IDENT)?
-    | DEFEAT_KW^ IDENT (DBP IDENT)? // ident est un Player ou une Team
+    | VICTORY_KW^ OF! IDENT (DBP IDENT)?
+    | DEFEAT_KW^ OF! IDENT (DBP IDENT)? // ident est un Player ou une Team
     ;
 
 action :
@@ -170,7 +170,7 @@ action :
     | (IDENT | GAME) (ENDS_KW^ | STARTS_KW^ | PAUSE_KW^) (':' IDENT)?  //IDENT est un compteur
     | (PAUSE_KW^ | MUTE_KW^ (ON | OFF) | PLAY_KW^ | STOP_KW^ ) IDENT
     | BLOCK_KW^ transformation OF! accesClasse coordinates
-    | (EFFACE_KW^ | GENERATE_KW^) (accesLocal | operation (IDENT | accesGlobal)) ((IN!|ON!) accesLocal | AT! coordinates)?
+    | (EFFACE_KW^ | GENERATE_KW^) (operation? accesLocal) ((IN!|ON!) accesLocal | AT! coordinates)? // /!\ a voir
     | WAIT_KW^ operation timeUnit THEN! consequences ENDWAIT!
     | SAVE_KW
     | NEXTURN_KW^ IDENT                                           //IDENT = joueur qui devient actif                                          //ajout lexical a faire
@@ -184,7 +184,7 @@ action :
 actionObjet :
     DIES_KW
     | actionCommandePressee
-    | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions HAPPENS!)
+    | actionCommandeMaintenue (DURING^ operation timeUnit | UNTIL^ conditions HAPPENS!)?
     | EQUIP^ (accesLocal | NEXT | PREVIOUS)
     ;
   
@@ -214,7 +214,7 @@ coordinates :
 /* Initialization of commands */
  
 commande :
-    COMMAND_KW^ IDENT FOR! player_list IS! actionCommande (VIRG! actionCommande)*
+    COMMAND_KW^ FOR! player_list IS! actionCommande (VIRG! actionCommande)*
     ;
 
 player_list: 
@@ -257,7 +257,7 @@ typeCommand :
     | KEYBOARD;
 
 reglesJeu :
-    RULE_KW^ (IDENT IS!)? declencheur THEN! definitionId
+    RULE_KW^ declencheur THEN! definitionId
     ;
  
 declencheur :
@@ -273,10 +273,10 @@ varOuNB :
     variable | FLOAT;
 
 declencheurTK :
-    (TOUCHES_KW^ | KILLS_KW^ | OWNES_KW^ | NOTOWNES_KW^) ((OTHER)? accesGlobal | accesLocal);// ajout dans le lexical dans OWNES,...
+    (TOUCHES_KW^ | KILLS_KW^ | OWNES_KW^ | NOTOWNES_KW^) ((OTHER)? accesLocal);// ajout dans le lexical dans OWNES,...
 	
 declencheurKT :
-    (KILLED_KW^ | TOUCHED_KW^ | OWNED_KW^ | NOTOWNED_KW^) (BY! ((OTHER)? accesGlobal | accesLocal))?;
+    (KILLED_KW^ | TOUCHED_KW^ | OWNED_KW^ | NOTOWNED_KW^) (BY! ((OTHER)? accesLocal))?;
 
 /* Conditions */  
 siAlors :
@@ -304,7 +304,7 @@ cond :
     ;
 
 etat :
-    accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesGlobal | accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
+    accesClasse IS! (NOT)? (DEAD_KW^ | ALIVE_KW^ | EFFACED_KW^ | GENERATED_KW^ | TOUCHING_KW^ ((OTHER)? accesLocal) | MOVING_KW^ | WAITING_KW^)  // for an object
     | (IDENT | GAME) IS! (NOT)? (FINISHED_KW^ |STARTED_KW^ | PAUSED_KW^ | MUTED_KW^ (ON | OFF) | PLAYED_KW^ | STOPPED_KW^ )  // game,counter,media
     //| 'true'^
     | VICTORY_KW^ OF! IDENT
@@ -361,18 +361,7 @@ accesClasse :
   ALL
     -> ^(ACCESS_KW ALL)
   | accesLocal
-  | accesGlobal
   ;
-
-accesGlobal :
-  typeObjet
-    -> ^(ACCESS_KW typeObjet)
-  | PG NOT notAccess PD
-    -> ^(ACCESS_KW NOT notAccess)
-  ;
-
-notAccess :
-typeObjet | PLAYER;
 
 accesLocal :
   IDENT
@@ -395,12 +384,6 @@ timeUnit :
 	;
 
 /*  */
-typeObjet :
-	CAMERA
-	| MEDIA
-	| COUNTER
-	| TIME
-  ;
 	
 attributTps :
 	BOOST_INTERVAL
@@ -477,7 +460,7 @@ TYPE		: 'type';
 INSERT_KW :	 'insert';
 REMOVE_KW :	'remove';
 SOLO 	:	'solo';
-PLAYER		: 'player';
+PLAYER		: 'Player';
 LIST_KW		: 'list';
 IN		: 'in';
 LOOP		: 'loop';
@@ -603,7 +586,6 @@ BRAKE : 'brake';
 
 CAMERA	: 'Camera';
 MEDIA	: 'Media';
-COUNTER	: 'Counter';
 TIME	: 'Time';
 
 VALUE		: 'value';

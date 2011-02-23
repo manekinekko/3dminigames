@@ -64,7 +64,7 @@ zoneGenLapin is Zone;  //la zone ou va générer les lapins
 missile is Projectile duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
 missile has damages at 100;
 missile has speed at 100; 
-missile has lifeTime at 4 s; 
+missile has lifeTime at 4 sec;
 
 bazooka is Weapon;
 bazooka has shootInterval at 700 ms; 
@@ -79,23 +79,23 @@ sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaqu
 
 
 compteurVagues is Counter;
-compteurVagues has value at 0;
+compteurVagues has currentValue at 0;
 
-/*  les contraintes de rotations seront utiles pour spécifier le rayon d'action du bazooka
-rc is RotationConstraint;
-rc has min at -40 -40 0;
-rc has max at 40 40 0;
-rc has activation at true false true;
-bazooka has constraints at rc; //liste de Constraint
+///*  les contraintes de rotations seront utiles pour spécifier le rayon d'action du bazooka
+//rc is RotationConstraint;
+//rc has min at -40 -40 0;
+//rc has max at 40 40 0;
+//rc has activation at true false true;
+//bazooka has constraints at rc; //liste de Constraint
 
 //une autre contrainte pour supprimer les zones d'obstacle :
-tc is TranslationConstraint;
-tc has min at (- (x of size of sol1 / 2) + 5)  0  0 ;
-tc has minActivation at true false false;
-tc has max at ((x of size of sol1 / 2) - 5)  0  0  ;
-tc has maxActivation at true false false;
-jeep has constraints at tc;
-*/
+//tc is TranslationConstraint;
+//tc has min at (- (x of size of sol1 / 2) + 5)  0  0 ;
+//tc has minActivation at true false false;
+//tc has max at ((x of size of sol1 / 2) - 5)  0  0  ;
+//tc has maxActivation at true false false;
+//jeep has constraints at tc;
+//*/
 
 //////////// DEF
 
@@ -103,7 +103,7 @@ definition  tirer  means
 	bazooka expels missile by 100, //valeur à voir avec le groupe moteur de jeu
 	wait 200 ms then 
 		generate missile 
-	endwait;
+	endWait;
 
 
 definition  reinitialisation  means 
@@ -113,10 +113,10 @@ definition  reinitialisation  means
 	generate arretDroit,
 	generate arretGauche,
 	generate zoneGenLapin,
-	add 1 to compteurVagues,
+	add 1 for currentValue of compteurVagues,
 	wait 2 sec then
 		generate lapin in zoneGenLapin
-	endwait;
+	endWait;
 
 
 definition bougerJeep1 means 
@@ -133,6 +133,20 @@ definition bougerBazooka3 means
 definition bougerBazooka4 means
 	bazooka turn left by 10;
 
+definition victoryPlayer means
+    victory of player;
+definition victoryLapinEnnemi means
+    victory of lapinEnnemi;
+definition gameEnds means
+    Game ends;
+
+definition subCompteurLapin means
+    sub 1 for compteurPas of Lapin;
+
+definition toucherLapin means
+    efface missile,
+    sub 1 for life of Lapin;
+
 //////////// COMMANDES
 command for player is 
 	key left for bougerJeep1,
@@ -148,26 +162,25 @@ command for player is
 rule Game starts then
 	reinitialisation;
 
-rule value of compteurVagues becomes > 3 then
-	victory of player;
+rule currentValue of compteurVagues becomes 3 then
+	victoryPlayer;
 
-rule value of compteurPas becomes 0 then
-	victory of lapinEnnemi;
+rule currentValue of compteurPas becomes 0 then
+	victoryLapinEnnemi;
 
 rule victory of Player then
-	Game ends;
+	gameEnds;
 
 
 rule lapin dies then
 	reinitialisation;
 
 rule lapin moves then   
-	sub 1 for compteurPas of Lapin;
+	subCompteurLapin;
 
 
 rule missile touches Lapin then
-	efface missile,
-	sub 1 for life of Lapin;
+	toucherLapin;
 
 
 
@@ -175,30 +188,30 @@ rule missile touches Lapin then
 //////////// IA BASIQUE
 /*
 
-ia iaLapinNiv1 is :
+//ia iaLapinNiv1 is :
 
-rule bazooka turns right then
-	if angle between lapin and chasseur < ... and z of orientation of lapin > ...
-;
-rule distance between lapin and jeep becomes < z of size of lapin * 3 then
+//rule bazooka turns right then
+//	if angle between lapin and chasseur < ... and z of orientation of lapin > ...
+//;
+//rule distance between lapin and jeep becomes < z of size of lapin * 3 then
 	
-;
+//;
 
 
 
-definition defia1 means
-	lapin move forward by (random between 4 and 6),
-	turn right during (random between 300 and 500) ms;
+//definition defia1 means
+//	lapin move forward by (random between 4 and 6),
+//	turn right during (random between 300 and 500) ms;
 
 
 
-ia lapin2 is 
-	move forward during (random between 3 and 4.5) sec,
-	turn right during (random between 300 and 500) ms
+//ia lapin2 is
+//	move forward during (random between 3 and 4.5) sec,
+//	turn right during (random between 300 and 500) ms
 
-ia lapin3 is 
-	move forward during (random between 2 and 3) sec,
-	turn right during (random between 300 and 500) ms
+//ia lapin3 is
+//	move forward during (random between 2 and 3) sec,
+//	turn right during (random between 300 and 500) ms
 
  
-*/
+//*/

@@ -34,12 +34,13 @@
 ==Validé==
   * Mise à jour de la position/rotation/scale des objets en IndexedDB
   * Mise à jour de la position/rotation/scale des objets en Local Storage
-  * Synchronisation de l'éditeur avec l'IHM
+  * *Synchronisation de l'éditeur avec l'IHM*
   * Ajout d'un sol dans le canvas
   * Mise en place d'une UI v2 plus ergonique
-  * Import de modèles collada en HTML5 ou en AJAX
+  * *Import de modèles collada en HTML5 ou en AJAX*
   * Mise en place de slider permettant une mise à jour simple des valeurs
   * Ajout d'un fichier XML de configuration
+  * *Génération d'un fichier scenrario exploitable par le compilation*
 
 ==En cours==
   * Gestion de la caméra (à la FPS) *(T)*

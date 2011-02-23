@@ -61,8 +61,11 @@ var canvas = document.getElementById('canvas'),
 	doc = new GLGE.Document(),
 	config = new GLGE.Document(),
 	obj,
+	urlCollada,
+	grid,
 	scene,
 	hoverobj,
 	now,
-	mouseGlobale = new GLGE.MouseInput(canvas),								// ajout Tom 16/03 : rotateCam
-	mouseRecord = mouseGlobale.getMousePosition();							// ajout Tom 16/03 : rotateCam
+	mouseGlobale,								// ajout Tom 16/03 : rotateCam
+	mouseRecordOld,
+	mouseRecord;// ajout Tom 16/03 : rotateCam

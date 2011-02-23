@@ -8,9 +8,8 @@
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
 		<!-- end: css parsing -->
-		
 	</head>
-	<body onload="new M3D.Upload.uploader('container', 'status', M3D.Config.uploader, null, doc);">
+	<body onload="M3D.AJAXUpload(); new M3D.Upload.uploader('container', 'status', M3D.Config.uploader, null, doc);">
 		
 		<div id="modal" ></div>
 				
@@ -34,13 +33,16 @@
 						<span class="cursor camera-zoom" title="Zoom Camera">&nbsp;</span>
 						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
 						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
+						<span class="cursor grid-toggle" title="Show/Hide Grid">&nbsp;</span>
 					</div>
 					
 					<!-- start: menu -->
 					<div id="viewmenu">
-						<input type="button" name="uplaod" id="upload" value="Upload a model" />
+						<div id="upload-model" class="button float-left"></div>
 						
-						<select style="width:100px;" id="importUrl" name="importUrl">
+						<div id="create-game" class="button float-right">Create My Game</div>
+
+						<select style="width:100px;" class="float-right" id="importUrl" name="importUrl">
 							<optgroup id="myModels" label="My models">
 							</optgroup>
 							<optgroup label="Free models">
@@ -54,15 +56,14 @@
 								<option value="assets/dae/presets/cylinder.dae">Cylinder</option>
 							</optgroup>
 						</select>
-						<input type="button" name="import" id="import" value="Add a model" />
+						<div id="import" class="button float-right" >Add a model</div>
 						
-						<input type="button" name="clear-canvas" id="clear-canvas" value="Clear Canvas" />
+						<div id="clear-canvas" class="button float-right" >Clear Canvas</div>
 
-						<select id="select-model">
+						<select id="select-model" class="float-right">
 								<option value="">--select model--</option>
 						</select>
 
-						<input type="button" name="create-game" id="create-game" value="Create My Game" />
 					</div>
 					<!-- end: menu -->
 				</div>
@@ -130,7 +131,7 @@
 			<!-- start: windows container -->
 			<div id="windows-container">
 				
-				<div id="status"></div>
+				<div id="status" class="ui-state-highlight"></div>
 				<div id="entity-info" class="window box-shadow closed">
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>
@@ -141,7 +142,7 @@
 						<input type="button" id="save-entity-info" value="Save" name="save" />
 					</div>
 				</div>
-			
+				
 				<div id="help" class="window box-shadow closed">
 					<h2>Help</h2>
 					<div>

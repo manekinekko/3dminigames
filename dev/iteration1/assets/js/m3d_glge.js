@@ -10,6 +10,8 @@ doc.onLoad = function() {
 	}, 1000);
 	
 	mouse = new GLGE.MouseInput(canvas);
+	mouseGlobale = new GLGE.MouseInput(canvas);
+	mouseRecord = mouseGlobale.getMousePosition();
 	keys = new GLGE.KeyInput();
 	pickcolor = doc.getElement("green");
 	controller = new M3D.GUI.CameraController(canvas);
@@ -21,7 +23,8 @@ doc.onLoad = function() {
 	// -- the rendering loop
 	///////////////////////////
 	function _render() {
-		// render the canvas
+		mouseRecordOld = mouseRecord;
+		mouseRecord = mouseGlobale.getMousePosition()
 		renderer.render();
 	}
 
@@ -32,7 +35,7 @@ doc.onLoad = function() {
 	setTimeout(function(){
 		$('#info-bottom').slideDown('slow', function(){
 			$('#tools-panel, #viewmenu').fadeIn('slow', function(){
-				$('#loading-message').hide();
+				$('#loading-message, #modal').hide();
 								
 				// Initilization
 				M3D.GUI.init();

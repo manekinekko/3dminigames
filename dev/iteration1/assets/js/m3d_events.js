@@ -5,7 +5,7 @@
  * @projectDescription This file contains all the binding events.
  */
 $(function(){
-
+	
 	/**
 	 * Prevent default event for all anchor tags whose href attribute begins with a '#'.
 	 */
@@ -17,7 +17,6 @@ $(function(){
 	 */
 	$('#canvas').bind('mousedown', function(e){
 		M3D.GUI.pickObject(e, this);
-		mouseRecord = mouseGlobale.getMousePosition();
 	}).bind('mouseup', function(){
 		M3D.GUI.checkEditor();
 		M3D.DB.updateSelectedEntry();
@@ -90,6 +89,9 @@ $(function(){
 		slide: function(event, ui) {
 			_lastSeletcedInput.val(ui.value);
 			M3D.GUI.updateValues(_lastSeletcedInput);
+		},
+		stop: function(event, ui) {
+			M3D.GUI.checkEditor();
 		}
 	});
 
@@ -174,6 +176,13 @@ $(function(){
 	$('#showhelp').bind('click', function(){
 		M3D.GUI.showPopup('help');
 	});
+
+	/**
+	 * Bind showing the upload form
+	 */
+	$('#upload').bind('click', function(){
+		M3D.GUI.showPopup('upload-form');
+	})
 
 	/**
 	 * EASTER EGG :)
@@ -262,11 +271,14 @@ $(function(){
 			}
 			else if ( $(this).hasClass('model-rotate') ) {
 				// rotate the model
-				
+				M3D.GUI.CAMERA_STATE = M3D.GUI.MODEL_ROTATE;
 			}
 			else if ( $(this).hasClass('model-move') ) {
 				// move the model
-				
+				M3D.GUI.CAMERA_STATE = M3D.GUI.MODEL_MOVE;
+			}
+			else if ( $(this).hasClass('grid-toggle') ) {
+				M3D.GUI.toggleGrid();
 			}
 			else {
 				M3D.GUI.CAMERA_STATE = null;

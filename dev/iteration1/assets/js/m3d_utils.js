@@ -13,6 +13,8 @@
 	M3D.GUI.CAMERA_MOVE = 1;
 	M3D.GUI.CAMERA_ROTATE = 2;
 	M3D.GUI.CAMERA_ZOOM = 3;
+	M3D.GUI.MODEL_ROTATE = 4;
+	M3D.GUI.MODEL_MOVE = 5;
 	M3D.GUI.CAMERA_STATE = null;
 	
 	// values in ms
@@ -67,11 +69,16 @@
 		var line=_o.setDrawType(GLGE.DRAW_LINES);
 		line.setMesh(_m.setPositions(positions));
 		line.setMaterial(black);
-		line.setZtransparent(true);
 		line.setId('grid');
 		sn.addObject(line);
-		
+		grid = line;
 	};
+	
+	M3D.GUI.toggleGrid = function(){
+		if ( grid ){
+			alert('Toggling the grid is not implemented yet!');
+		}
+	}
 	
 	// -- Create a new game based on its scenario
 	M3D.GUI.createGame = function(){
@@ -227,8 +234,8 @@
 			{
 	
 		        if(delta !== 0){
-					//scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
-					scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
+					scene.camera.setLocZ(parseFloat(scene.camera.getLocZ())-delta);
+					//scene.camera.setFovY(parseFloat(scene.camera.getFovY())-delta);
 		        }
 				
 			}
@@ -926,37 +933,38 @@
 		
 		if ( obj ){
 			
-			if ( keys.isKeyPressed(GLGE.KI_X) )
+			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_X) )
 			{
 				
 				obj.parent.setLocX( -newRotX * deltaLocObject ); 
 			
 			}
-			else if ( keys.isKeyPressed(GLGE.KI_Y) )
+			else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_Y) )
 			{
 				obj.parent.setLocY( newRotY * deltaLocObject );
 			
 			}
-			else if ( keys.isKeyPressed(GLGE.KI_Z) )
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_Z) )
 			{
 			
 				obj.parent.setLocZ( newRotY * deltaLocObject );
 			
 			}
-			else if ( keys.isKeyPressed(GLGE.KI_SHIFT)){
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE && keys.isKeyPressed(GLGE.KI_Y)){
 								
 				obj.parent.setRotY( newRotY * deltaRot );
 	
 			}
-			else if (keys.isKeyPressed(GLGE.KI_ALT)){
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE && keys.isKeyPressed(GLGE.KI_X)){
 				
 				obj.parent.setRotX( newRotY * deltaRot );
 			
 			}
-			else {
+			else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE ){
+				
 				obj.parent.setRotX( newRotX * deltaRot ); 
 				obj.parent.setRotY( newRotY * deltaRot ); 
-				
+
 			}
 			
 			M3D.GUI.updateInfo();
@@ -964,16 +972,36 @@
 		}
 		else {
 			
-			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE )
-			{
-				
+			if (M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE) {
+
+				mouseRecord = mouseGlobale.getMousePosition();
 				M3D.GUI.cameraRotate();
-		
-			}else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_MOVE ) {
+
+			}
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_MOVE) {
+
+				scene.camera.setLookat(null);
+				scene.camera.setLocX(newRotY * deltaLocCamera);
+				scene.camera.setLocY(-newRotX * deltaLocCamera);
+
+			}
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ZOOM) {
+
+				var _oldCam = mouseRecordOld;
+				var _cam = mouseRecord;
 				
-				scene.camera.setLookat( null );
-				scene.camera.setLocX( newRotY * deltaLocCamera ); 
-				scene.camera.setLocY( -newRotX * deltaLocCamera ); 
+//				log('old camera ', _oldCam, 'new camera ', _cam);
+				
+				var _delta = 0; 
+				if ( _cam.x < _oldCam.x && _cam.y < _oldCam.y ){
+					delat = -1;
+				}
+				else if ( _cam.x > _oldCam.x && _cam.y > _oldCam.y ) {
+					delta = 1;
+				}
+				
+				scene.camera.setFovY(parseFloat(scene.camera.getFovY())+_delta);
+
 			}
 		}
 		
@@ -981,7 +1009,7 @@
 	
 	// fonction modifiée par Tom le 16/02
 	M3D.GUI.cameraRotate = function(){
-		var mousepos = mouse.getMousePosition();
+		var mousepos = mouseGlobale.getMousePosition();
 		//mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
 		var width = document.getElementById('canvas').offsetWidth;
 		var height = document.getElementById('canvas').offsetHeight;
@@ -1038,6 +1066,7 @@
 				cam.setLocY(camPos.y - sens);
 			}		
 		}
+		mouseRecord = mouseGlobale.getMousePosition ();	// ajoutee par Tom
 		cam.setLocZ(camPos.z + monte);
 	};
 	
@@ -1200,7 +1229,7 @@
 	
 		obj = scene.pick(e.clientX-canvas.parentNode.offsetLeft,e.clientY-canvas.parentNode.offsetTop).object;
 		
-		if(obj && obj!=hoverobj){
+		if(obj && obj.parent != hoverobj){
 			
 			var _obj = obj.parent; // groupe
 			
@@ -1213,7 +1242,7 @@
 			}
 			
 			hoverobj = _obj;
-			
+				
 		}
 		else if(hoverobj && obj!=hoverobj) {
 			M3D.GUI.unpickObject();
@@ -1377,42 +1406,6 @@
 	            }
 	        }
 	    };
-	};
-	
-	
-	// -- toggle the upload info
-	M3D.flag = true;
-	M3D.GUI.toggleShowUpload = function(){
-		
-		if (M3D.flag) {
-		
-			if (hoverobj) {
-				M3D.GUI.unpickObject();
-			}
-			
-			
-			$('.animate').animate({
-				top: M3D.GUI.ANIMATE_BOTTOM_START_POS
-			}, 100, function(){
-			
-				$('#upload').show(10, function(){
-					$(this).animate({
-						top: M3D.GUI.ANIMATE_BOTTOM_END_POS
-					}, 150);
-				});
-				
-			});
-			
-		}
-		else {
-		
-			$('#upload').animate({
-				top: M3D.GUI.ANIMATE_BOTTOM_START_POS
-			}, 150);
-			
-		}
-		M3D.flag = !M3D.flag;
-		
 	};
 	
 	

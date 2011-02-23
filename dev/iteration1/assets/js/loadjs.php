@@ -2,6 +2,7 @@
 
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * This file combines all js files in one single js gzipped js file!
  */
 
 ob_start('ob_gzhandler');
@@ -10,6 +11,7 @@ header('Expires: '.gmdate("D, d M Y H:i:s", time() + 3600*24*30).' GMT'); // 1 m
 
 $files = array(
 				'lib/modernizr.min.js',
+				'lib/fileuploader.js',
 				'lib/json.min.js',
 				'lib/codepress/codepress.js',
 

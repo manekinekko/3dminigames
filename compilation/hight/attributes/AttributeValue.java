@@ -18,7 +18,7 @@ public class AttributeValue {
 	type = Type.NIL;
     }
 
-    public AttributeValue(Boolean b,String t) {
+    public AttributeValue(Boolean b) {
 	value = new Code(b.toString());
 	type = Type.BOOLEAN;
     }

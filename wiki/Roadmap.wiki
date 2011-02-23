@@ -45,14 +45,15 @@
 ==En cours==
   * Gestion de la caméra (à la Sketchup) *(T)*
   * Synchronisation de l'IHM avec l'éditeur *(W)*
-  * Synchronisation du contenu de l'éditeur avec l'IndexedDB *(A)*
-  * Synchronisation du contenu de l'éditeur avec le Local Storage *(D)*
+  * Synchronisation du contenu de l'éditeur avec l'IndexedDB *(D)*
+  * Synchronisation du contenu de l'éditeur avec le Local Storage *(A)*
 
 ==A venir==
 ===Par ordre de priorité===
-  # Positionnement des objets sur le canvas
-  # Possibilité d'importer des modèles *avec textures*
+  # Positionnement des objets sur un plan
+  # Positionnement des objets sur un terrain (collision) 
   # graphe de scène
+  # Possibilité d'importer des modèles *avec textures*
   # proposition de modèles sous forme de vignette (??)
 
 ----

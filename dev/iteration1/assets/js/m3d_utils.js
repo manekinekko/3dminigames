@@ -663,23 +663,26 @@
 		var bbox = M3D.lastImportedModel.getBoundingVolume().dims;
 		log(values);
 		// TO DO: may be these values should be computed rather than hard coded!
-		var v = values || {};
-		var tmp_scale_x = v.scaleX || 0.05;
-		var tmp_scale_y = v.scaleY || 0.05;
-		var tmp_scale_z = v.scaleZ || 0.05;
+		var v = values ? values : {};
+		var tmp_scale_x = v.scaleX ? v.scaleX : 0.05;
+		var tmp_scale_y = v.scaleY ? v.scaleY : 0.05;
+		var tmp_scale_z = v.scaleZ ? v.scaleZ : 0.05;
 		
 		// set object placeable properties 
-		// using the glge quicknotatio. See http://www.glge.org/api-docs/?url=/symbols/GLGE.QuickNotation.html
-		M3D.lastImportedModel._({
-			locX: v.locX || 0,
-			locY: v.locY || 0,
-			locZ: v.locZ || 0,
-			rotX: v.rotX || 0.05,
-			rotY: v.rotY || 0.05,
-			rotZ: v.rotZ || 0.05
-		})
-			.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+		// using the glge quicknotation. See http://www.glge.org/api-docs/?url=/symbols/GLGE.QuickNotation.html
+		var tmp_locX = v.locX ? v.locX : 0;
+		var tmp_locY = v.locY ? v.locY : 0;
+		var tmp_locZ = v.locZ ? v.locZ : 0;
+		var tmp_rotX = v.rotX ? v.rotX : 0.05;
+		var tmp_rotY = v.rotY ? v.rotY : 0.05;
+		var tmp_rotZ = v.rotZ ? v.rotZ : 0.05;
+		
+		M3D.lastImportedModel.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+			.setLoc(tmp_locX, tmp_locY, tmp_locZ)
+			.setRot(tmp_rotX, tmp_rotY, tmp_rotZ)
 			.getObjects()[0].parent.uid = v.uid || $('#entity-info #name').attr('uid');
+			
+		log(M3D.lastImportedModel);
 		
 		scene.addChild(M3D.lastImportedModel);
 		
@@ -715,7 +718,7 @@
 				case 'scaleY': 
 				
 					if (value > 0) {
-						obj.setScaleY(value);
+						_obj.setScaleY(value);
 					} 
 				
 				break;
@@ -723,7 +726,7 @@
 				case 'scaleZ': 
 				
 					if (value > 0) {
-						obj.setScaleZ(value);
+						_obj.setScaleZ(value);
 					} 
 				
 				break;
@@ -1119,13 +1122,13 @@
 			if (_obj.getLocZ) {
 				$('#posZ').val(_float(_obj.getLocZ()));
 			}
-			if (_obj.getScaleX) {
+			if (obj.getScaleX) {
 				$('#scaleX').val(_float(_obj.getScaleX()));
 			}
-			if (_obj.getScaleY) {
+			if (obj.getScaleY) {
 				$('#scaleY').val(_float(_obj.getScaleY()));
 			}
-			if (_obj.getScaleZ) {
+			if (obj.getScaleZ) {
 				$('#scaleZ').val(_float(_obj.getScaleZ()));
 			}
 			if (_obj.getRotX) {
@@ -1175,7 +1178,7 @@
 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 			}
 			else {
-				$('#status').remveClass('ui-state-error').text('').hide();
+				$('#status').removeClass('ui-state-error').text('').hide();
 			}
 		}
 	};

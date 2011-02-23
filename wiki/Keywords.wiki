@@ -71,14 +71,41 @@ random between 1 and 20
 ----
 =C=
 ----
-_Partie **_
-  * :
+==camera==
+_Partie *Initialisations*_
+  * Définie un point de vu. 
 {{{
-
+cam1 is camera first person;
 }}}
 ----
 =D=
 ----
+==defeat==
+_Partie *Définitions*_
+  * Déclare la échec d'un ou plusieurs joueur(s)/caractère(s).
+{{{
+definition manger means defeat pacman;
+}}}
+
+
+==definition==
+_Partie *Définitions*_
+  * Défini un nom pour ensemble d'un ou plusieurs action/affectation. 
+{{{
+definition  tirer  means 
+	bazooka expels missile by 100, 
+	wait 200 ms then 
+		generate missile 
+	endwait;
+}}}
+
+==duplicable==
+_Partie *Initialisations* et *Définitions*_
+  * Indique que l'objet/entité est duplicable; c'est possible avoir plusieurs exemplaires d'objet. 
+{{{
+lapin is duplicable;
+}}}
+
 _Partie **_
   * :
 {{{
@@ -95,12 +122,27 @@ _Partie **_
 ----
 =F=
 ----
+==first==
+_Parties *Initialisations*_
+  * Déclare que point de vu est le point de vu joueur principal. (voir *camera*)
+{{{
+cam1 is camera first person;
+}}}
+
+==free==
+_Parties *Initialisations*_
+  * Pour définir point de vu de camera. (voir *camera*)
+{{{
+camf is camera free;
+}}}
+
 ==from==
 _Parties *Initialisations*, *Règles du jeu* et *Définitions*_ (voir 'list' et 'remove')
   * pour désigner le nom de la liste lorsqu'on lui retire un élément :
 {{{
 remove elt1 from liste1; // l'élément doit exister et être dans la liste désignée
 }}}
+
 ----
 =G=
 ----
@@ -111,32 +153,32 @@ _Partie *Information about game*_
 game has gravity at 10, score at 0; 
 }}}
 
-==gravity_kw==
+==gravity==
 _Partie *Information about game*_
   * Définie la gravité de l'environnement. Gravité peut être définie par un vecteur (trois chiffre float) ou un chiffre (gravité vers bas).
 {{{
-game has gravity_kw at 1 1 1;
+game has gravity at 1 1 1;
 }}}
 
-==gridsize_kw==
+==gridsize==
 _Partie *Information about game*_
   * Défini la taille de chaque cas de gris.
 {{{
-gridsize_kw at 12.5;
+gridsize at 12.5;
 }}}
 
 ==generic==
 _Partie *Information about game*_
   * Type de carte (map) général sans spécification spécial.
 {{{
-world_kw at generic;
+world at generic;
 }}}
 
 ==grid==
 _Partie *Information about game*_
   * Type de carte (map) gris avec les cas de taille fix.
 {{{
-world_kw at grid;
+world at grid;
 }}}
 
 
@@ -168,7 +210,30 @@ perso1 has mon_attribut_3 at "texte1"; // une chaîne de caractère peut être a
 {{{
 perso1 has arme1; // l'objet perso1 s'approprie l'objet arme1 (son attribut belonging devient 'true')
 }}}
+
+---
 =I=
+---
+==ident==
+_Partie *Information about game* et *Inheritance, creation of type* et *Initializations*_
+  * Ident est un nom/mot propre pour indiquer/appeler/pointer un entité. Chaque ident est composé des lettres et des chiffres et il faut commencer par un lettre. 
+{{{
+name_kw at NightHunter3;
+arretGauche is Zobstacle;
+lapin1 is Lapin enemy;
+}}}
+
+==in==
+_Partie *Initialisations*_
+  * voir *insert*
+
+==insert==
+_Partie *Initialisations*_
+  * Ajouter un entité à un groupe/liste.
+{{{
+insert Lapan1 in Ennemies;
+}}}
+
 ==is==
 _Partie *Initialisations*_
   * déclarer un nouveau type (une nouvelle classe) (voir 'type') :
@@ -203,14 +268,6 @@ _Partie *Intelligence Artificielle*_ (voir 'ai' et 'then')
 ai nom_ia is /*conséquences*/ ; 
 }}}
 
-==ident==
-_Partie *Information about game* et *Inheritance, creation of type*_
-  * Ident est un nom/mot propre pour indiquer/appeler/pointer un entité. Chaque ident est composé des lettres et des chiffres et il faut commencer par un lettre. 
-{{{
-name_kw at NightHunter3;
-}}}
-
-
 ----
 =J=
 ----
@@ -230,14 +287,39 @@ _Partie **_
 ----
 =L=
 ----
-_Partie **_
-  * :
+==list==
+_Partie *Initialisations*_
+  * Définition d'un liste des entités/opérations
 {{{
-
+Ennemies is list of Lapin1, lapin2, bird2;
 }}}
+
+==loop==
+_Parties *Initialisations*_
+  * Défini qu'un média interprète en boucle. (voir *media*)
+{{{
+mus1 is media loop;
+}}}
+
+
 ----
 =M=
 ----
+==means==
+_Partie *Définitions*_
+  * Défini un nom pour ensemble d'un ou plusieurs action/affectation. (voir *definition*)
+{{{
+definition bougerJeep2 means jeep move forward by 10;
+}}} 
+
+
+==media==
+_Parties *Initialisations*_
+  * Son, musique ou vidéo qui s'interprète une fois ou en boucle.
+{{{
+demo1 is media once;
+}}}
+
 _Partie **_
   * :
 {{{
@@ -246,11 +328,11 @@ _Partie **_
 ----
 =N=
 ----
-==name_kw==
+==name==
 _Partie *Information about game*_
   * Déclarer le nome du jeu.
 {{{
-name_kw at NightHunter;
+name at NightHunter;
 }}}
 
 
@@ -278,14 +360,31 @@ defeat of player1;
 {{{
 block translation of perso1 true true false;
 }}}
+
+==once==
+_Parties *Initialisations*_
+  * Définie qu'un média s'interprète une seul fois. (voir *media*)
+{{{
+dem3 is media once.
+}}}
+
 ----
 =P=
 ----
-_Partie **_
-  * :
+==person==
+_Partie *Initialisations*_
+  * Pour définir point du vu de camera. (voir *camera*)
 {{{
-
+cam1 is camera third person.
 }}}
+
+==player==
+_Parties *Initialisations*_
+  * Défini le joueur principal.
+{{{
+player1 is player solo;
+}}}
+
 ----
 =Q=
 ----
@@ -310,25 +409,34 @@ remove last from liste1; // (voir 'last') supprime le dernier élément si la li
 _Partie *Information about game*_
   * Type de carte (map) ruban; dans ce type de carte les entités déplacent sûr un chemin relativement longe et étroit.
 {{{
-world_kw at riboon;
+world at riboon;
 }}}
 
 ----
 =S=
 ----
-_Partie **_
-  * :
+==solo==
+_Partie *Initialisations*_
+  * Déclare que joueur n'a pas coéquipière. (voir *player*)
 {{{
-
+player1 is player solo;
 }}}
+
 ----
 =T=
 ----
-==turnbased_kw==
+==third==
+_Parties *Initialisations*_
+  * Déclare que point de vu est le point de vu différant de joueur principal. (voir *camera*)
+{{{
+cam5 is camera third person;
+}}}
+
+==turnbased==
 _Partie *Information about game*_
   * Un booléen qui défini si les joueur jouent tour par tour.
 {{{
-turnbased_kw at false;
+turnbased at false;
 }}}
 
 ==type==
@@ -349,19 +457,30 @@ _Partie **_
 ----
 =V=
 ----
-_Partie **_
-  * :
+==victory==
+_Partie *Définitions*_
+  * Déclare la victoire d'un ou plusieurs joueur(s)/caractère(s).
 {{{
-
+definition manger means victory pacman;
 }}}
+
+
+==virg==
+_Partie **_
+  * Séparation différant champs/attributs des détentions/initialisations.  
+{{{
+game has gravity at 5, turnbased true; 
+}}}
+
+
 ----
 =W=
 ----
-==world_kw==
+==world==
 _Partie * Information about game *_
   * Défini le type de carte de jeu (map).
 {{{
-world_kw at grid;
+world at grid;
 }}}
 ----
 =X=

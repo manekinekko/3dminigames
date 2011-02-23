@@ -261,7 +261,16 @@
 			M3D.lastImportedModel = docCollada;
 			
 			if ( data.autoAddToScene ){
-				M3D.GUI.addObjectToScene({'uid':data.uid});
+				M3D.GUI.addObjectToScene({'uid': data.uid,
+										  'scaleX': data.scaleX,
+										  'scaleY': data.scaleY,
+										  'scaleZ': data.scaleZ,
+										  'locX': data.locX,
+										  'locY': data.locY,
+										  'locZ': data.locZ,
+										  'rotX': data.rotX,
+										  'rotY': data.rotY,
+										  'rotZ': data.rotZ});
 				M3D.GUI.addOptionToSelectBox({'uid':data.uid, 'name':data.name});
 			}
 			else {
@@ -652,7 +661,7 @@
 		
 		// tweak the new object scale
 		var bbox = M3D.lastImportedModel.getBoundingVolume().dims;
-		
+		log(values);
 		// TO DO: may be these values should be computed rather than hard coded!
 		var v = values || {};
 		var tmp_scale_x = v.scaleX || 0.05;

@@ -16,7 +16,7 @@ public class AttributeValueTest extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		av = new AttributeValue();
-		av1 = new AttributeValue(true, "bleu");
+		av1 = new AttributeValue(true);
 		av2 = new AttributeValue(666);
 		av3 = new AttributeValue("bleu");
 		av4 = new AttributeValue(new Duration(1, "ms"));

@@ -5,11 +5,9 @@
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
  
  
-<script type="text/javascript" src="../dev/iteration1/assets/js/lib/glge_v0.5.2/glge_math.js"></script> 
-<script type="text/javascript" src="../dev/iteration1/assets/js/lib/glge_v0.5.2/glge.js"></script> 
-<script type="text/javascript" src="../dev/iteration1/assets/js/lib/glge_v0.5.2/glge_input.js"></script> 
-<script type="text/javascript" src="../dev/iteration1/assets/js/lib/glge_v0.5.2/glge_collada.js"></script> 
-<script type="text/javascript" src="../../moteur3dv1.02.08.js"></script>
+
+<script type="text/javascript" src="../../glge-compiled-min.js"></script>
+<script type="text/javascript" src="../../../moteur3d/moteur3dv1.02.16.js"></script>
 <style>
 body{background-color: #000;color: #fff;font-family:arial}
 </style>
@@ -46,9 +44,10 @@ doc.onLoad=function(){
 	var moteur = new M3D.MOTEUR.initialisation(gameScene);
 	var tabObject = moteur[0];
 	var tabIdObject = moteur[1];
+	var tabCamera = moteur[2];
 	
 	console.log(gameScene);
-	
+	/*
 	// pour le débug des bounding box
 	var red=doc.getElement( "red" );
 	var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
@@ -56,109 +55,110 @@ doc.onLoad=function(){
 	
 	drawBB = function(obj){ 
         var pos = obj.getPosition();
-        var bbox = obj.getBoundingVolume();
+        var bbox = obj.getBoundingVolume().getCornerPoints();
         //bas gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[0][0]);
+        positions.push(bbox[0][1]);
+        positions.push(bbox[0][2]);
         //bas droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[1][0]);
+        positions.push(bbox[1][1]);
+        positions.push(bbox[1][2]);
         //bas gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+		positions.push(bbox[4][0]);
+        positions.push(bbox[4][1]);
+        positions.push(bbox[4][2]);
         //bas droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[5][0]);
+        positions.push(bbox[5][1]);
+        positions.push(bbox[5][2]);
         //haut gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[2][0]);
+        positions.push(bbox[2][1]);
+        positions.push(bbox[2][2]);
         //haut droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[3][0]);
+        positions.push(bbox[3][1]);
+        positions.push(bbox[3][2]);
         //haut gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[6][0]);
+        positions.push(bbox[6][1]);
+        positions.push(bbox[6][2]);
         //haut droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[7][0]);
+        positions.push(bbox[7][1]);
+        positions.push(bbox[7][2]);
         //bas droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+         positions.push(bbox[1][0]);
+        positions.push(bbox[1][1]);
+        positions.push(bbox[1][2]);
         //bas droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[5][0]);
+        positions.push(bbox[5][1]);
+        positions.push(bbox[5][2]);
         //bas gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[0][0]);
+        positions.push(bbox[0][1]);
+        positions.push(bbox[0][2]);
         //bas gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[4][0]);
+        positions.push(bbox[4][1]);
+        positions.push(bbox[4][2]);
         //haut gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[2][0]);
+        positions.push(bbox[2][1]);
+        positions.push(bbox[2][2]);
         //haut gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+		positions.push(bbox[6][0]);
+        positions.push(bbox[6][1]);
+        positions.push(bbox[6][2]);
         //haut droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[3][0]);
+        positions.push(bbox[3][1]);
+        positions.push(bbox[3][2]);
         //haut droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+		positions.push(bbox[7][0]);
+        positions.push(bbox[7][1]);
+        positions.push(bbox[7][2]);
         //bas gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[0][0]);
+        positions.push(bbox[0][1]);
+        positions.push(bbox[0][2]);
         //haut gauche devant
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[2][0]);
+        positions.push(bbox[2][1]);
+        positions.push(bbox[2][2]);
         //bas gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+		positions.push(bbox[4][0]);
+        positions.push(bbox[4][1]);
+        positions.push(bbox[4][2]);
         //haut gauche derriere
-        positions.push(pos.x+bbox.center[0]-bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[6][0]);
+        positions.push(bbox[6][1]);
+        positions.push(bbox[6][2]);
         //bas droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[5][0]);
+        positions.push(bbox[5][1]);
+        positions.push(bbox[5][2]);
         //haut droite derriere
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]+bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[7][0]);
+        positions.push(bbox[7][1]);
+        positions.push(bbox[7][2]);
         //bas droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]-bbox.dims[2]/2);
+        positions.push(bbox[1][0]);
+        positions.push(bbox[1][1]);
+        positions.push(bbox[1][2]);
         //haut droite devant
-        positions.push(pos.x+bbox.center[0]+bbox.dims[0]/2);
-        positions.push(pos.y+bbox.center[1]-bbox.dims[1]/2);
-        positions.push(pos.z+bbox.center[2]+bbox.dims[2]/2);
+        positions.push(bbox[3][0]);
+        positions.push(bbox[3][1]);
+        positions.push(bbox[3][2]);
         
         line.setMesh((new GLGE.Mesh).setPositions(positions));
         line.setMaterial(red);
         line.setZtransparent(true);
         gameScene.addObject(line);
 	}
+*/
 
 	// Partie sur les caméras
 	
@@ -167,6 +167,7 @@ doc.onLoad=function(){
 	var mouseovercanvas;
 	var hoverobj;
 	camLookAt = false;
+	camLookPlayer = false;
 
 	function mouselook(){
         if(mouseovercanvas){
@@ -199,17 +200,21 @@ doc.onLoad=function(){
 	}
 
 	// Gestion de la caméra au clavier
-	function checkkeys(){
+	function checkkeys(object){
         var camera=gameScene.camera;
         camerapos=camera.getPosition();
         camerarot=camera.getRotation();
         var cam = camera.getRotMatrix();
         cam = GLGE.inverseMat4(cam);    
 
-        if(keys.isKeyPressed(GLGE.KI_G)) camLookAt = true; 
+        if(keys.isKeyPressed(GLGE.KI_W)){ camLookAt = true; camLookPlayer = false; }
        
-        if(keys.isKeyPressed(GLGE.KI_F)) camLookAt = false; 
+        if(keys.isKeyPressed(GLGE.KI_X)){ camLookAt = false; camLookPlayer = false; }
                         
+		if(keys.isKeyPressed(GLGE.KI_C)){ camLookPlayer = true; camLookAt = false; }
+       
+        if(keys.isKeyPressed(GLGE.KI_V)){ camLookPlayer = false; camLookAt = false; }
+		
         if(camLookAt){
                 var objpos={x:0,y:0,z:0};               
                 var coord=[camerapos.x-objpos.x,camerapos.y-objpos.y,camerapos.z-objpos.z];
@@ -222,6 +227,19 @@ doc.onLoad=function(){
                                                 0, 0, 0, 1]));
         }
 
+		if(camLookPlayer){
+				var playerPos = object.getPosition();
+                var objpos={x:playerPos.x,y:playerPos.y,z:playerPos.z};               
+                var coord=[camerapos.x-objpos.x,camerapos.y-objpos.y,camerapos.z-objpos.z];
+                var zvec=GLGE.toUnitVec3(coord);
+                var xvec=GLGE.toUnitVec3(GLGE.crossVec3([cam[4],cam[5],cam[6]],zvec));
+                var yvec=GLGE.toUnitVec3(GLGE.crossVec3(zvec,xvec));            
+                camera.setRotMatrix(GLGE.Mat4([xvec[0], yvec[0], zvec[0], 0,
+                                                xvec[1], yvec[1], zvec[1], 0,
+                                                xvec[2], yvec[2], zvec[2], 0,
+                                                0, 0, 0, 1]));
+        }
+		
         if(keys.isKeyPressed(GLGE.KI_Z)) {camera.setLocX(camerapos.x-cam[8]*0.05*(now-lasttime));camera.setLocY(camerapos.y-cam[9]*0.05*(now-lasttime));camera.setLocZ(camerapos.z-cam[10]*0.05*(now-lasttime));}
 
         if(keys.isKeyPressed(GLGE.KI_S)) {camera.setLocX(camerapos.x+cam[8]*0.05*(now-lasttime));camera.setLocY(camerapos.y+cam[9]*0.05*(now-lasttime));camera.setLocZ(camerapos.z+cam[10]*0.05*(now-lasttime));}
@@ -237,19 +255,68 @@ doc.onLoad=function(){
 	}
 	
 	var depla = [0,0,0];
-
+	var depla2 = [0,0,0];
+	var idObj;
+	var tire = false;
+	var finTire = false;
 	function panelControle(){
-        if(keys.isKeyPressed(GLGE.KI_I)) depla[0] += 0.1;
-        if(keys.isKeyPressed(GLGE.KI_K)) depla[0] -= 0.1;
-        if(keys.isKeyPressed(GLGE.KI_H)) depla[1] += 0.1;
-        if(keys.isKeyPressed(GLGE.KI_L)) depla[1] -= 0.1;
-        if(keys.isKeyPressed(GLGE.KI_P)) depla[2] += 0.1;
-        if(keys.isKeyPressed(GLGE.KI_M)) depla[2] -= 0.1;
-        if(keys.isKeyPressed(GLGE.KI_SPACE)){}
-		tabObject["voiture"] = M3D.MOTEUR.setPosition("voiture", depla);
+        if(keys.isKeyPressed(GLGE.KI_I)) depla[0] += 0.01;
+		else if(depla[0]>=0) depla[0] -= 0.01;
+        
+		if(keys.isKeyPressed(GLGE.KI_K)) depla[0] += -0.01;
+		else if(depla[0]<=0) depla[0] += 0.01;
+        
+		if(keys.isKeyPressed(GLGE.KI_H)) depla[2] += 0.01;
+		else if(depla[2]>=0) depla[2] -= 0.01;
+			
+        if(keys.isKeyPressed(GLGE.KI_L)) depla[2] += -0.01;
+        else if(depla[2]<=0) depla[2] += 0.01;
+		
+		if(keys.isKeyPressed(GLGE.KI_P)) depla[1] = 0.1;
+        if(keys.isKeyPressed(GLGE.KI_M)) depla[1] = -0.1;
+        
+		if(keys.isKeyPressed(GLGE.KI_SPACE)){ tire = true; idObj = M3D.MOTEUR.getFatherBranch("missile");}
+		
+		if(tire){
+			var test = M3D.MOTEUR.launchProjectile("missile",idObj, depla2, "arme"); 
+			if(!test[0]){
+				tabObject = test[1];
+				tabObject = test[2];
+				tabIdObject = test[3]; 
+			} else { law(test[1], "missile"); }
+			depla2[2] +=0.01;
+		}
+		
+		var newPosVoiture = M3D.MOTEUR.translate("voiture", depla);
+		if(newPosVoiture != tabObject["voiture"]){
+			law(newPosVoiture, "voiture");
+		} else {tabObject["voiture"] = newPosVoiture;}
+		
 	}
-
-
+	
+	law = function(tab, id){
+		if(id = "voiture"){
+			if( M3D.MOTEUR.searchTarget(tab,"lapin1") ){
+				var colLapin = M3D.MOTEUR.removeObject("lapin1");
+				tabObject = colLapin[0];
+				tabIdObject = colLapin[1];
+			}
+		} else if(id == "missile") {
+			if( M3D.MOTEUR.searchTarget(tab,"lapin1") ){
+				var colLapin = M3D.MOTEUR.removeObject("lapin1");
+				tabObject = colLapin[0];
+				tabIdObject = colLapin[1];
+				var colMissile = M3D.MOTEUR.removeObject("missile");
+				tabObject = colMissile[0];
+				tabIdObject = colMissile[1];
+				var addMissile = M3D.MOTEUR.addObjectIn("missile","missile.dae",[0,0,0,0,0,0,0.5],"arme");
+				tabObject = addMissile[0];
+				tabIdObject = addMissile[1];
+				depla2 = [0,0,0]; tire = false;
+			}
+		}
+	}
+	
 	levelmap=new GLGE.HeightMap("images/map.png",120,120,-50,50,-50,50,0,50);
 
 	var lasttime=0;
@@ -262,8 +329,8 @@ doc.onLoad=function(){
         document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
 		// mouselook();
 
-        positions =[];
-        checkkeys();
+        positions =[];  positions2 =[];
+        checkkeys(tabObject["voiture"]);
         panelControle();
         gameRenderer.render();
         lasttime=now;

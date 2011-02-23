@@ -55,6 +55,7 @@
   # graphe de scène
   # Possibilité d'importer des modèles *avec textures*
   # proposition de modèles sous forme de vignette (??)
+  # positionnement de la camera par rapport à un objet
 
 ----
 =Moteur 3D=

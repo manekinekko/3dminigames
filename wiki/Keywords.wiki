@@ -104,11 +104,42 @@ remove elt1 from liste1; // l'élément doit exister et être dans la liste dés
 ----
 =G=
 ----
-_Partie **_
-  * :
+==game==
+_Partie *Information about game*_
+  * Le mot-clé pour définition les attributs principaux de jeu.
 {{{
-
+game has gravity at 10, score at 0; 
 }}}
+
+==gravity_kw==
+_Partie *Information about game*_
+  * Définie la gravité de l'environnement. Gravité peut être définie par un vecteur (trois chiffre float) ou un chiffre (gravité vers bas).
+{{{
+game has gravity_kw at 1 1 1;
+}}}
+
+==gridsize_kw==
+_Partie *Information about game*_
+  * Défini la taille de chaque cas de gris.
+{{{
+gridsize_kw at 12.5;
+}}}
+
+==generic==
+_Partie *Information about game*_
+  * Type de carte (map) général sans spécification spécial.
+{{{
+world_kw at generic;
+}}}
+
+==grid==
+_Partie *Information about game*_
+  * Type de carte (map) gris avec les cas de taille fix.
+{{{
+world_kw at grid;
+}}}
+
+
 ----
 =H=
 ----
@@ -171,6 +202,15 @@ _Partie *Intelligence Artificielle*_ (voir 'ai' et 'then')
 {{{
 ai nom_ia is /*conséquences*/ ; 
 }}}
+
+==ident==
+_Partie *Information about game* et *Inheritance, creation of type*_
+  * Ident est un nom/mot propre pour indiquer/appeler/pointer un entité. Chaque ident est composé des lettres et des chiffres et il faut commencer par un lettre. 
+{{{
+name_kw at NightHunter3;
+}}}
+
+
 ----
 =J=
 ----
@@ -206,11 +246,14 @@ _Partie **_
 ----
 =N=
 ----
-_Partie **_
-  * :
+==name_kw==
+_Partie *Information about game*_
+  * Déclarer le nome du jeu.
 {{{
-
+name_kw at NightHunter;
 }}}
+
+
 ----
 =O=
 ----
@@ -262,6 +305,14 @@ remove num 1 from liste1; // l'élément doit exister et être dans la liste dé
 remove first from liste1; // (voir 'first') supprime le premier élément si la liste n'est pas vide
 remove last from liste1; // (voir 'last') supprime le dernier élément si la liste n'est pas vide
 }}}
+
+==ribbon==
+_Partie *Information about game*_
+  * Type de carte (map) ruban; dans ce type de carte les entités déplacent sûr un chemin relativement longe et étroit.
+{{{
+world_kw at riboon;
+}}}
+
 ----
 =S=
 ----
@@ -273,11 +324,20 @@ _Partie **_
 ----
 =T=
 ----
-_Partie **_
-  * :
+==turnbased_kw==
+_Partie *Information about game*_
+  * Un booléen qui défini si les joueur jouent tour par tour.
 {{{
-
+turnbased_kw at false;
 }}}
+
+==type==
+_Partie *Inheritance, creation of type*_
+  * Type est un nom donné pour identifier un groupe des entités/personnage/objets qui sont certains caractéristiques en commun. Chaque type peux composé de plusieurs autres type. 
+{{{
+type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+}}}
+
 ----
 =U=
 ----
@@ -297,10 +357,11 @@ _Partie **_
 ----
 =W=
 ----
-_Partie **_
-  * :
+==world_kw==
+_Partie * Information about game *_
+  * Défini le type de carte de jeu (map).
 {{{
-
+world_kw at grid;
 }}}
 ----
 =X=
@@ -332,44 +393,6 @@ _Partie **_
 
 =Partie faite par Afshin (à trier)=
 
-
-
-
-*Classer les mots-clés par catégorie*
-
-*Definition de jeu* :::::::::::::::::::::::::::::::::::::::
-
-*GAME*
-
-Le mot-clé pour définition les attributs principaux de jeu. Chaque jeu peut avoir plusieurs attributs.
-{{{
-GAME has gravity at 10, score at 0; 
-}}}
-
-*GRAVITY*
-
-Définie la gravité de environnement. ça peux être définie par un vecteur (trois chiffre) ou un chiffre (gravité vers bas).
-{{{
-game has GRAVITY at 1 1 1;
-}}}
-
-*SCORE*
-
-Les points obtenus par jouer initialisé ici par un chiffre.
-{{{
-game has SCORE at 0;
-}}}
-
-*Héritage* ::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-*TYPE*
-
-Définie un nouveau type par combiner les autres types ou identificateurs déjà définie. Il faut que l'identificateur soit défini auparavant et soit héritable.
-
-{{{
-TYPE Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
-}}}
 
 *Initialisations* ::::::::::::::::::::::::::::::::::::::::::
 

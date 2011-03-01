@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="title">3DWIGS</title>
+    </head>
+	
+	<div>
+		<div style="width:900px;margin:auto;position:relative" id="container">
+			<canvas id="canvas" width="900" height="500"></canvas>
+			<div id="framerate" style="position:absolute; left: 750px; top: 20px; background-color: #000; opacity: 0.5;height: 30px; width: 130px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
+				<div id="debug" style="padding: 5px"></div>
+			</div>
+			<div style="padding: 5px;position:absolute; left: 20px; top: 370px; background-color: #000; opacity: 0.5;height: 100px; width: 400px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
+				<h2 style="margin:0;padding:0;padding-bottom: 5px;font-size: 20px">Demo du moteur3d de 3DWIGS</h2>
+				<p style="margin:0;padding:0;padding-bottom: 5px;">Le jeu du lapin </p>
+			</div>
+		</div>
+	</div>
+	
+    <body>
+		<style>
+			body{background-color: #000;color: #fff;font-family:arial}
+		</style>
+        <script type="text/javascript" src="js/moteur_allJS.php"></script>
+               
+		<script type="text/javascript">
+			M3D.MOTEUR.initialisation("level.xml", 'canvas');
+			
+			var depla = [0,0,0];
+			var deplaC = [0,0,0];
+			panelControlDown = function(event){
+				var intKeyCode = event.keyCode;
+				
+				// Voiture
+				if(intKeyCode == 73){ // lettre I
+					depla[0] += 0.01; M3D.MOTEUR.translate("voiture",depla);
+				} 
+				
+				if(intKeyCode == 75){ // lettre K
+					depla[0] += -0.01; M3D.MOTEUR.translate("voiture",depla);
+				} 
+        
+				if(intKeyCode == 74){ // lettre J
+					depla[2] += 0.01; M3D.MOTEUR.translate("voiture",depla);
+				} 
+			
+				if(intKeyCode == 76){ // lettre L
+					depla[2] += -0.01; M3D.MOTEUR.translate("voiture",depla);
+				} 
+		
+				if(intKeyCode == 80){ depla[1] = 0.1; M3D.MOTEUR.translate("voiture",depla);} // lettre P
+				if(intKeyCode == 77){ depla[1] = -0.1; M3D.MOTEUR.translate("voiture",depla);} // lettre M
+				
+				// Camera
+				if(intKeyCode == 90){ // lettre Z
+					deplaC[0] += 0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
+				} 
+				
+				if(intKeyCode == 83){ // lettre S
+					deplaC[0] += -0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
+				} 
+        
+				if(intKeyCode == 81){ // lettre Q
+					deplaC[2] += 0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
+				} 
+			
+				if(intKeyCode == 68){ // lettre D
+					deplaC[2] += -0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
+				} 
+			}
+			
+			panelControlUp = function(event){
+				var intKeyCode = event.keyCode;
+				if(intKeyCode == 73){ // lettre I
+					depla = [0,0,0];
+				} 
+				
+				if(intKeyCode == 75){ // lettre K
+					depla = [0,0,0];
+				} 
+        
+				if(intKeyCode == 74){ // lettre J
+					depla = [0,0,0];
+				}
+			
+				if(intKeyCode == 76){ // lettre L
+					depla = [0,0,0];
+				}
+				
+				if(intKeyCode == 90){ // lettre Z
+					deplaC = [0,0,0];
+				} 
+				
+				if(intKeyCode == 83){ // lettre S
+					deplaC = [0,0,0];
+				} 
+        
+				if(intKeyCode == 81){ // lettre Q
+					deplaC = [0,0,0];
+				} 
+			
+				if(intKeyCode == 68){ // lettre D
+					deplaC = [0,0,0];
+				} 
+			}
+			
+			window.addEventListener('load', function () {
+				window.document.onkeydown = panelControlDown;
+				window.document.onkeypress = panelControlUp;
+			}, false);
+		
+		</script>
+    </body>
+</html>

@@ -22,7 +22,7 @@
 
 
 /**
- * Méthode getIdOnject: permet de connaitre l'objet qui est associé à un identifiant.
+ * Méthode getIdObject: permet de connaitre l'objet qui est associé à un identifiant.
  * @param: object: object dont on cherche à connaitre le nom.
  * @return: l'identifiant de l'objet en question sinon -1.
  */

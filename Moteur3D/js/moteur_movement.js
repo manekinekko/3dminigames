@@ -11,8 +11,8 @@
 
 /**
  * Méthode translate: Vérifie la collision sur tout le vecteur de déplacement.
- * @param: id: identifiant de l'élement que l'on souhaite déplacer
- *         tabVector: vecteur de 3 coordornées x y z représentant le déplacement
+ * @param: id: identifiant de l'élément que l'on souhaite déplacer
+ *         tabVector: vecteur de 3 coordonnées x y z représentant le déplacement
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
@@ -39,7 +39,7 @@
 /**
  * Méthode setPosition: Déplace l'élément à la position donnée et vérifie la collision à l'arrivée seulement
  * @param: id: identifiant de l'élément que l'on souhaite déplacer
- *         tabPos : vecteur de 3 coordornées x y z représentant la nouvelle position
+ *         tabPos : vecteur de 3 coordonnées x y z représentant la nouvelle position
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
@@ -73,7 +73,7 @@
 /**
  * Méthode rotate: Effectue une rotation sur l'élément donné et vérifie la collision à l'arrivée seulement
  * @param: id: identifiant de l'élément que l'on souhaite déplacer
- *         tabRot : vecteur de 3 coordornées représentant la rotation a effectué
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
@@ -105,7 +105,7 @@
 /**
  * Méthode setAngle: Change la rotation d'un objet par rapport à un référentiel
  * @param: id: identifiant de l'élément que l'on souhaite déplacer
- *         tabRot : vecteur de 3 coordornées représentant la rotation a effectué
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
@@ -134,7 +134,7 @@
 /**
  * Méthode rescaleObject: Multiplie l'échelle d'un objet par le coefficient donné.
  * @param: id: identifiant de l'objet que l'on souhaite redimensionner
- *	 	   tabRot : coefficient par lequel multiplié la taille de l'objet
+ *	 	   coefScale : coefficient par lequel multiplié la taille de l'objet
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
 	M3D.MOTEUR.rescaleObject = function (id,coefScale){

@@ -21,6 +21,7 @@ $files = array(
 								'moteur_movement.js',
 								'moteur_camera.js',
 								'moteur_debugger.js',
+								'moteur_keyboard.js',
                 );
 
 foreach( $files as $f ){

@@ -10,23 +10,36 @@
 (function(M3D){
  
 /**
- * Méthode addObject: Ajoute un objet à la scène ou à un object[optionnel].
+ * Méthode addObject: Ajoute un objet à la scène ou à un objet[optionnel].
  * @param: idObject: identifiant de l'objet à ajouter.
  *   	   urlObject: adresse du fichier collada de l'objet à ajouter.
  *         tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
 	M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, idParent){
-		tabObject[idObject] = new GLGE.Collada();
-		tabObject[idObject].setDocument(urlObject);
-		tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabObject[idObject].setScale(tabCoord[6]);
-		tabIdObject[tabIdObject.length] = idObject;
-	
-		if(tabObject[idParent] == undefined) gameScene.addChild(tabObject[idObject]);
-		else{ 
-			tabObject[idParent].addChild(tabObject[idObject]);
+		if(tabObject[idObject] == undefined){
+			tabObject[idObject]= new GLGE.Collada();
+			tabObject[idObject].setDocument(urlObject);
+			tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+			tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+			tabObject[idObject].setScale(tabCoord[6]);
+			tabIdObject[tabIdObject.length] = idObject;
+		
+			if(tabObject[idParent] == undefined){
+				gameScene.addChild(tabObject[idObject]);
+				tab = M3D.MOTEUR.liveCollision(idObject);
+				if(tab.length != 0){ 
+					gameScene.removeChild(tabObject[idObject]);
+					delete tabObject[idObject];
+				}
+			} else { 
+				tabObject[idParent].addChild(tabObject[idObject]);
+				tab = M3D.MOTEUR.liveCollision(idObject);
+				if(tab.length != 0){ 
+					tabObject[idParent].removeChild(tabObject[idObject]);
+					delete tabObject[idObject];
+				}
+			}
 		}
 	},
 
@@ -36,24 +49,41 @@
  * @param: idObject: identifiant de l'objet à ajouter.
  *     	   urlObject: adresse du fichier collada de l'objet à ajouter.
  *         tabCoord: tableau de taille 7, avec les coord positions, rotations et taille de l'objet.
- *		   idGroup: identifiant du group auquel on rattache l'objet, s'il n'existe pas, il est créé.
+ *		   idGroup: identifiant du groupe auquel on rattache l'objet, s'il n'existe pas, il est créé.
  */
 	M3D.MOTEUR.addObjectIn = function(idObject,urlObject, tabCoord, idGroup){
-		tabObject[idObject] = new GLGE.Collada();
-		tabObject[idObject].setDocument(urlObject);
-		tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabObject[idObject].setScale(tabCoord[6]);
-		tabIdObject[tabIdObject.length] = idObject;
-	
-		if(tabGroup[idGroup] == undefined){
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabObject[idObject]);
-			gameScene.addChild(tabGroup[idGroup]);
-			tabIdObject[tabIdObject.length] = idGroup;
-		} else { tabObject[idGroup].addChild(tabObject[idObject]); }
+		if(tabObject[idObject] == undefined){
+			tabObject[idObject] = new GLGE.Collada();
+			tabObject[idObject].setDocument(urlObject);
+			tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+			tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+			tabObject[idObject].setScale(tabCoord[6]);
+			tabIdObject[tabIdObject.length] = idObject;
+		
+			if(tabObject[idGroup] == undefined){
+				tabObject[idGroup] = new GLGE.Group();
+				tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+				tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+				tabObject[idGroup].addChild(tabObject[idObject]);
+				gameScene.addChild(tabObject[idGroup]);
+				tabIdObject[tabIdObject.length] = idGroup;
+				
+				tab = M3D.MOTEUR.liveCollision(idObject);
+				if(tab.length != 0){ 
+					gameScene.removeChild(tabObject[idGroup]);
+					delete tabObject[idObject];
+					delete tabObject[idGroup];
+				}				
+			} else { 
+				tabObject[idGroup].addChild(tabObject[idObject]); 
+
+				tab = M3D.MOTEUR.liveCollision(idObject);
+				if(tab.length != 0){ 
+					gameScene.removeChild(tabObject[idObject]);
+					delete tabObject[idObject];
+				}
+			}
+		}
 	},
 
 
@@ -66,23 +96,42 @@
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
 	M3D.MOTEUR.addObjectGroup = function(idObject, idGroup, urlObject, tabCoord, idParent){
-		tabObject[idObject] = new GLGE.Collada();
-		tabObject[idObject].setDocument(urlObject);
-		tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabObject[idObject].setScale(tabCoord[6]);
-		tabIdObject[tabIdObject.length] = idObject;
-	
-		if(tabObject[idGroup] == undefined){
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabObject[idObject]);
-			tabIdObject[tabIdObject.length] = idGroup;
+		if(tabObject[idObject] == undefined){
+			tabObject[idObject] = new GLGE.Collada();
+			tabObject[idObject].setDocument(urlObject);
+			tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+			tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+			tabObject[idObject].setScale(tabCoord[6]);
+			tabIdObject[tabIdObject.length] = idObject;
 		
-			if(idParent == null) gameScene.addChild(tabObject[idGroup]);
-			else{ 
-				if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
+			if(tabObject[idGroup] == undefined){
+				tabObject[idGroup] = new GLGE.Group();
+				tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+				tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+				tabObject[idGroup].addChild(tabObject[idObject]);
+				tabIdObject[tabIdObject.length] = idGroup;
+			
+				if(idParent == null){ 
+					gameScene.addChild(tabObject[idGroup]);
+					
+					tab = M3D.MOTEUR.liveCollision(idObject);
+					if(tab.length != 0){ 
+						gameScene.removeChild(tabObject[idGroup]);
+						delete tabObject[idObject];
+						delete tabObject[idGroup];
+					}
+				} else { 
+					if(tabObject[idParent] != undefined){ 
+						tabObject[idParent].addChild(tabObject[idObject]);
+						
+						tab = M3D.MOTEUR.liveCollision(idObject);
+						if(tab.length != 0){ 
+							tabObject[idParent].removeChild(tabObject[idGroup]);
+							delete tabObject[idObject];
+							delete tabObject[idGroup];
+						}
+					}
+				}
 			}
 		}
 	},
@@ -97,48 +146,47 @@
  *		  [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon objet rattaché à la scène.
  */
 	M3D.MOTEUR.addObjectGroupIn = function(idObject, idGroup, urlObject, tabCoord, idParent){
-		tabObject[idObject] = new GLGE.Collada();
-		tabObject[idObject].setDocument(urlObject);
-		tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabObject[idObject].setScale(tabCoord[6]);
-		tabIdObject[tabIdObject.length] = idObject;
-	
-		if(tabObject[idGroup] == undefined){
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabObject[idObject]);
-			tabIdObject[tabIdObject.length] = idGroup;
+		if(tabObject[idObject] == undefined){
+			tabObject[idObject] = new GLGE.Collada();
+			tabObject[idObject].setDocument(urlObject);
+			tabObject[idObject].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+			tabObject[idObject].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+			tabObject[idObject].setScale(tabCoord[6]);
+			tabIdObject[tabIdObject.length] = idObject;
 		
-			if(idParent == null) gameScene.addChild(tabObject[idGroup]);
-			else{ 
-				if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabObject[idObject]);
+			if(tabObject[idGroup] == undefined){
+				tabObject[idGroup] = new GLGE.Group();
+				tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+				tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+				tabObject[idGroup].addChild(tabObject[idObject]);
+				tabIdObject[tabIdObject.length] = idGroup;
+			
+				if(idParent == null){ 
+					gameScene.addChild(tabObject[idGroup]);
+					
+					tab = M3D.MOTEUR.liveCollision(idObject);
+					if(tab.length != 0){ 
+						gameScene.removeChild(tabObject[idGroup]);
+						delete tabObject[idObject];
+						delete tabObject[idGroup];
+					}
+				} else { 
+					if(tabObject[idParent] != undefined){
+						tabObject[idParent].addChild(tabObject[idObject]);
+						
+						tab = M3D.MOTEUR.liveCollision(idObject);
+						if(tab.length != 0){ 
+							tabObject[idParent].removeChild(tabObject[idGroup]);
+							delete tabObject[idObject];
+							delete tabObject[idGroup];
+						}
+					}
+				}
 			}
 		}
 	},
-
-
-/**
- * Méthode removeObject: retire l'objet de la scène.
- * @param: idObject: identifiant de l'objet à supprimer de la scène.
- * WARNING: les fils de l'objet seront supprimés
- */
-	M3D.MOTEUR.removeObject = function(idObject){
-		if(tabObject[idObject] != undefined){ 
-			tabObject[idObject].parent.removeChild(tabObject[idObject]);
-			var tabE = new Array;
-			M3D.MOTEUR.removeSearch([tabObject[idObject]], tabE);
-			M3D.MOTEUR.removeSuppr(tabE);
-			delete tabObject[idObject];
-			var tabR = new Array;
-			for(var i=0; i<tabIdObject.length; i++){
-				if(tabIdObject[i] != undefined && tabIdObject[i] != idObject) tabR[tabR.length] = tabIdObject[i];
-			}
-		}
-	},
-
-
+	
+	
 /**
  * Méthode removeSearch: récupère tous les fils des éléments de la liste qui sont dans la scène.
  * @param: list: liste des éléments à retirer de la scène.
@@ -174,6 +222,27 @@
 		}
 	},
 
+
+/**
+ * Méthode removeObject: retire l'objet de la scène.
+ * WARNING: les fils de l'objet seront supprimés
+ * @param: idObject: identifiant de l'objet à supprimer de la scène.
+ */
+	M3D.MOTEUR.removeObject = function(idObject){
+		if(tabObject[idObject] != undefined){ 
+			tabObject[idObject].parent.removeChild(tabObject[idObject]);
+			var tabE = new Array;
+			M3D.MOTEUR.removeSearch([tabObject[idObject]], tabE);
+			M3D.MOTEUR.removeSuppr(tabE);
+			delete tabObject[idObject];
+			var tabR = new Array;
+			for(var i=0; i<tabIdObject.length; i++){
+				if(tabIdObject[i] != undefined && tabIdObject[i] != idObject) tabR[tabR.length] = tabIdObject[i];
+			}
+		}
+	},
+
+	
 /*
 // MARCHE PAS POUR L'INSTANT  =>  A VOIR PLUS TARD A LA LIMITE
 /* Méthode removeObjectOnly: retire l'objet de la scène et rattache ses fils à l'objet père.
@@ -194,9 +263,9 @@ M3D.MOTEUR.removeObjectOnly = function(idObject){
 
 /**
  * Méthode changeParentObject: Change l'attachement d'un objet et de ses fils dans le graphe de scène.
+ * WARNING: les fils de l'objet changeront aussi de parent
  * @param: idObject: identifiant de l'objet dont on veut changer le parent
  *		   [Optionnel]idNewParent: identifiant du nouveau parent auquel on veut rattacher l'objet si pas présent, l'objet sera rattaché à la scène.
- * WARNING: les fils de l'objet changeront aussi de parent
  */
 	M3D.MOTEUR.changeParentObject = function(idObject,idNewParent){
 		if(idNewParent!=null){

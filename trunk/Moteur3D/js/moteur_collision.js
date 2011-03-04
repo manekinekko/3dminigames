@@ -83,7 +83,7 @@
   
 
 /**
- * Méthode liveCollision: Test si un object est en collision avec un element de la scène.
+ * Méthode liveCollision: Test si un objet est en collision avec un élément de la scène.
  * @param: id: identifiant de l'élément à tester.
  * @return: un tableau avec les objets qui sont en collision avec l'objet cible.
  */
@@ -97,4 +97,5 @@
 		} return tabC;
 	};
 
+	
 })(window.M3D);

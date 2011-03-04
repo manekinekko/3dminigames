@@ -12,9 +12,20 @@
 	M3D.MOTEUR.getCamera = function(idCamera){
 		var camera = tabCamera[idCamera];
 		if(camera != null) return camera;
-		else{ alert("The camera named "+idCamera+" doesn't exist in the scene."); return -1;}
+		else{ return -1;}
 	},
 
+
+/**
+ * Méthode activeCamera: permet l'activation de la caméra placée en paramètre.
+ * (si la caméra n'existe pas, aucun changement s'effectue)
+ * @param: idCamera: identifiant de la caméra que l'on souhaite activer.
+ */
+	M3D.MOTEUR.activeCamera = function(idCamera){
+		if( tabCamera[idCamera] != undefined) gameScene.setCamera(tabCamera[idCamera]);
+	},
+	
+	
 	M3D.MOTEUR.addCamera = function(idCamera, tabCoord, idParent){
 		tabCamera[idCamera] = new GLGE.Camera();
 		tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
@@ -132,5 +143,5 @@
 		var D = GLGE.mulMat4Vec4(M,V);
 		tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
 	};
-	
+
 })(window.M3D);

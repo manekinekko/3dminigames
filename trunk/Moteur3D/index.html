@@ -24,91 +24,80 @@
         <script type="text/javascript" src="js/moteur_allJS.php"></script>
                
 		<script type="text/javascript">
+			
 			M3D.MOTEUR.initialisation("level.xml", 'canvas');
 			
 			var depla = [0,0,0];
-			var deplaC = [0,0,0];
-			panelControlDown = function(event){
-				var intKeyCode = event.keyCode;
-				
-				// Voiture
-				if(intKeyCode == 73){ // lettre I
-					depla[0] += 0.01; M3D.MOTEUR.translate("voiture",depla);
-				} 
-				
-				if(intKeyCode == 75){ // lettre K
-					depla[0] += -0.01; M3D.MOTEUR.translate("voiture",depla);
-				} 
-        
-				if(intKeyCode == 74){ // lettre J
-					depla[2] += 0.01; M3D.MOTEUR.translate("voiture",depla);
-				} 
+			var depla2 = [0,0,0];
+			var tire = false;
+			var come_back_to_life = false;
 			
-				if(intKeyCode == 76){ // lettre L
-					depla[2] += -0.01; M3D.MOTEUR.translate("voiture",depla);
-				} 
-		
-				if(intKeyCode == 80){ depla[1] = 0.1; M3D.MOTEUR.translate("voiture",depla);} // lettre P
-				if(intKeyCode == 77){ depla[1] = -0.1; M3D.MOTEUR.translate("voiture",depla);} // lettre M
+			panelControl = function(){
+				if(KEY_Z){depla[0] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");}
+				else if(depla[0]>=0) depla[0] -= 0.01;
 				
-				// Camera
-				if(intKeyCode == 90){ // lettre Z
-					deplaC[0] += 0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
-				} 
+				if(KEY_S){depla[0] += -0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
+				else if(depla[0]<=0) depla[0] += 0.01;
 				
-				if(intKeyCode == 83){ // lettre S
-					deplaC[0] += -0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
-				} 
-        
-				if(intKeyCode == 81){ // lettre Q
-					deplaC[2] += 0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
-				} 
-			
-				if(intKeyCode == 68){ // lettre D
-					deplaC[2] += -0.01; M3D.MOTEUR.translateCamera("maincamera",deplaC);
-				} 
+				if(KEY_Q){depla[2] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 		
+				else if(depla[2]>=0) depla[2] -= 0.01;
+				
+				if(KEY_D){depla[2] += -0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
+				else if(depla[2]<=0) depla[2] += 0.01;
+				
+				if(KEY_P){ depla[1] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");}
+				else if(depla[1]>=0) depla[1] -= 0.01;
+				
+				if(KEY_M){ depla[1] += -0.1; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
+				else if(depla[1]<=0) depla[1] += 0.01;
+				
+				if(KEY_SPACE) tire = true;
 			}
 			
-			panelControlUp = function(event){
-				var intKeyCode = event.keyCode;
-				if(intKeyCode == 73){ // lettre I
-					depla = [0,0,0];
-				} 
-				
-				if(intKeyCode == 75){ // lettre K
-					depla = [0,0,0];
-				} 
-        
-				if(intKeyCode == 74){ // lettre J
-					depla = [0,0,0];
-				}
 			
-				if(intKeyCode == 76){ // lettre L
-					depla = [0,0,0];
-				}
-				
-				if(intKeyCode == 90){ // lettre Z
-					deplaC = [0,0,0];
-				} 
-				
-				if(intKeyCode == 83){ // lettre S
-					deplaC = [0,0,0];
-				} 
-        
-				if(intKeyCode == 81){ // lettre Q
-					deplaC = [0,0,0];
-				} 
-			
-				if(intKeyCode == 68){ // lettre D
-					deplaC = [0,0,0];
-				} 
+			panelAction = function(){
+				if(tire){depla2[2] +=0.01; law(M3D.MOTEUR.translate("missile",depla2),"missile");}
+				if(come_back_to_life){M3D.MOTEUR.addObject("lapin", "dae/lapin.dae", [15,-0.5,0,0,0,0,1]); come_back_to_life = false;}
 			}
+			
+			
+			law = function(tab, id){
+				if(id = "voiture"){
+					if(tab.length != 0){
+						if(M3D.MOTEUR.searchTarget(tab,"lapin")){
+							tire = false; depla2 = [0,0,0];
+							M3D.MOTEUR.removeObject("lapin");
+							M3D.MOTEUR.removeObject("missile");
+							M3D.MOTEUR.addObjectIn("missile","dae/missile.dae",[0,0,0,0,0,0,0.5],"arme");
+							come_back_to_life = true;
+						}
+					}
+				} else if(id == "missile"){
+					if(tab.length != 0){
+						if(M3D.MOTEUR.searchTarget(tab,"lapin")){
+							tire = false; depla2 = [0,0,0];
+							M3D.MOTEUR.removeObject("lapin");
+							M3D.MOTEUR.removeObject("missile");
+							M3D.MOTEUR.addObjectIn("missile","missile.dae",[0,0,0,0,0,0,0.5],"arme");
+							come_back_to_life = true;
+						}
+					}
+				}
+			}
+			
+			render = function(){
+				panelControl();
+				panelAction();
+				M3D.MOTEUR.render();
+			}
+			
 			
 			window.addEventListener('load', function () {
-				window.document.onkeydown = panelControlDown;
-				window.document.onkeypress = panelControlUp;
+				window.document.onkeydown = M3D.MOTEUR.checkKeyDown;
+				window.document.onkeyup = M3D.MOTEUR.checkKeyUp;
 			}, false);
-		
+			
+			setInterval(render,1);
 		</script>
     </body>
 </html>

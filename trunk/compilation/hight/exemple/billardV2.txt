@@ -1,0 +1,518 @@
+ 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//    y_ 
+//      |x
+//   __________________________________
+//  /T1\____________/T2\____________/T3\
+//  |\                                /|
+//  | |                        O     | |
+//  | |                      O O     | | 
+//  | |      B             O N O     | |
+//  | |     /                O O     | |
+//  | |    /                   O     | |
+//  |/  __/_________    ____________  \|
+//  \T6/_/__________\T5/____________\T4/
+//      /
+//     /
+
+/////////////////////////////////////////////
+
+//            ---  
+//           / R \       |
+//          / J R \      | ordre des boules
+//         / R N J \     |
+// y      / J R J R \   \|/
+//  |_   / R J R J J \   V
+//    x   -----------
+//
+//  billard anglais tour par tour
+
+///////////////////////////////////////////////
+
+//               [début]
+//                  |
+//                  V
+//   +---------> [visée] <----+
+//   |              |         |
+//   |      mouseG  |         | mouseD
+//   |              V         |
+//   |        [ sélection ] --+ 
+//   |        [de la force]
+//   |              |     
+//   |      mouseG  |    
+//   |              V   
+//   |            [tir] (commandes désactivées)
+//   |              |
+//   |  vBoules==0  |
+//   +--------------+
+//     
+
+//////////////////////////////////////////////
+
+//      
+//
+//
+
+//////////// INFOS GAME
+Game has gravity at 100, turnbased at true;
+Game has NB_BOULES_CAMP at 7; //nouvel attribut : une variable qui sert de constante
+
+
+//////////// TYPES HERITES
+
+
+//////////// INIT
+
+Player has penalite at false; // nouvel attribut -> si la blanche va dans un trou : une pénalité, l'autre joueur joue 2 fois
+Player has couleurChoisie at false; // nouvel attribut
+
+couleurBouleJoueur is Enum;
+couleurBouleJoueur has values at "indetermine", "rouge", "jaune";
+couleurBouleJoueur has value at "indetermine";
+Player has couleurChoisie at couleurBouleJoueur; // nouvel attribut;
+
+joueur1 is Player solo;
+joueur2 is Player solo;
+
+joueur1 has controller at human;
+joueur2 has controller at human; // ou ia1;
+
+Ball has size at 1 1 1;
+couleurBoule is Enum;
+couleurBoule has values at "blanche", "rouge", "jaune", "noire";
+couleurBoule has value at "blanche";
+Ball has couleur at couleurBoule; //nouvel attribut
+
+
+ptDepartBlanche is Vector;
+ptDepartBlanche has x at XX;
+ptDepartBlanche has y at YY;
+ptDepartBlanche has z at ZZ; //mettre des valeurs à la place de XX, YY et ZZ
+
+blanche is Ball;
+blanche has position at ptDepartBlanche;
+blanche has orientation at 0 0 0;
+blanche has size at 1 1 1;
+blanche has cptBandes at 0; //nouvel attribut
+blanche has couleurToucheeAvantNoire at false; // nouvel attribut
+
+noire is Ball;
+noire has cptBandes at 0; //nouvel attribut
+
+rouge is Ball duplicable;
+rouge has couleur at "rouge";
+jaune is Ball duplicable;
+jaune has couleur at "jaune";
+
+boulesTriangle is list of 1 rouge with 1 jaune with 2 rouge with noire with 2 jaune with 1 rouge with 1 jaune with 2 rouge with 1 jaune with 1 rouge with 2 jaune;
+
+num 1 in boulesTriangle has position at ((position of triangle)  (position of triangle - 1.75 * size of Ball) (position of triangle));
+
+num 2 in boulesTriangle has position at ((position of triangle - 0.5 * size of Ball)  (position of triangle - 0.87 * size of Ball) (position of triangle));
+num 3 in boulesTriangle has position at ((position of triangle + 0.5 * size of Ball)  (position of triangle - 0.87 * size of Ball) (position of triangle));
+
+num 4 in boulesTriangle has position at ((position of triangle - 1 * size of Ball)  (position of triangle) (position of triangle));
+num 5 in boulesTriangle has position at ((position of triangle)  (position of triangle) (position of triangle));   // noire = pt de référence du triangle
+num 6 in boulesTriangle has position at ((position of triangle + 1 * size of Ball)  (position of triangle) (position of triangle));
+
+num 7 in boulesTriangle has position at ((position of triangle - 1.5 * size of Ball)  (position of triangle + 0.87 * size of Ball) (position of triangle));
+num 8 in boulesTriangle has position at ((position of triangle - 0.5 * size of Ball)  (position of triangle + 0.87 * size of Ball) (position of triangle));
+num 9 in boulesTriangle has position at ((position of triangle + 0.5 * size of Ball)  (position of triangle + 0.87 * size of Ball) (position of triangle));
+num 10 in boulesTriangle has position at ((position of triangle + 1.5 * size of Ball)  (position of triangle + 0.87 * size of Ball) (position of triangle));
+
+num 11 in boulesTriangle has position at ((position of triangle - 2 * size of Ball)  (position of triangle + 1.75 * size of Ball) (position of triangle));
+num 12 in boulesTriangle has position at ((position of triangle - 1 * size of Ball)  (position of triangle + 1.75 * size of Ball) (position of triangle));
+num 13 in boulesTriangle has position at ((position of triangle)  (position of triangle + 1.75 * size of Ball) (position of triangle));
+num 14 in boulesTriangle has position at ((position of triangle + 1 * size of Ball)  (position of triangle + 1.75 * size of Ball) (position of triangle));
+num 15 in boulesTriangle has position at ((position of triangle + 2 * size of Ball)  (position of triangle + 1.75 * size of Ball) (position of triangle));
+
+
+zoneTriangle is Zone;
+zoneTriangle has position at 0 0 0;
+zoneTriangle has boulesTriangle;     //on peut positionner le triangle où on veut, permet de ne pas avoir à repositionner chaque boule si elles sont mal placées
+					// la boule noire est le pt de référence du triangle
+
+
+listeBoules is list of boulesTriangle with blanche;
+
+
+table is Object;
+
+trous is list of 6 Zone;
+num 1 in trous has rotation at 0 0 45;
+num 3 in trous has rotation at rotation of num 1 in trous;
+num 4 in trous has rotation at rotation of num 1 in trous;
+num 6 in trous has rotation at rotation of num 1 in trous;
+
+
+
+queue is Object;
+queue has orientation at 0 30 180;
+
+cam1 is Camera third person;    // la première cam à avoir été déclarée a l'attribut "active" initialisé à true, les autres ensuite sont à false
+cam2 is Camera;   // cam vue de dessus
+
+
+
+c1 is CopyConstraint;   //pour que la caméra se positionne tout le temps sur la blanche
+c1 has target at blanche;
+c1 has transformation at "translation";
+c1 has coordinates at 1 1 0;
+c1 has offset at true;
+cam1 has constraints at c1;
+
+cam1 has queue;
+
+jaugeForce is Counter;
+jaugeForce has name at "force";
+jaugeForce has max at 20;
+
+zbande is Zone; //la bande de départ
+
+etapes is Enum;
+etapes has values at "choixDirection", "choixPuissance", "boulesMouvement";
+etapes has value at "choixDirection";
+
+/*
+//exemple d'utilisation du même Enum
+truc is Enum;
+truc has values at values of etapes;
+truc has value at 'choixDirection";
+*/
+
+
+//////////// DEF
+
+definition bouleRentreePremiereFois means
+	if couleur of Ball = "rouge" then
+		if active of joueur1 = true then
+			couleurChoisie of joueur1 = "rouge"
+		else
+			couleurChoisie of joueur2 = "jaune"
+		endif
+	else   //jaune
+		if active of joueur1 = true then
+			couleurChoisie of joueur1 = "jaune"
+		else
+			couleurChoisie of joueur2 = "rouge"
+		endif
+
+
+definition bouleRentree means
+
+	if couleur of Ball = "noire" then
+		if active of joueur1 = true then
+			victory of joueur2
+		else
+			victory of joueur1
+		endif
+	else
+		if couleur of Ball = "blanche" then
+			if active of joueur1 = true then
+				assign true to penalite of joueur1 
+			else
+				assign true to penalite of joueur2
+			endif
+		else
+			if couleurChoisie of joueur1 = "indetermine" then
+				bouleRentreePremiereFois
+			endif,
+
+			if active of joueur1 = true then
+				if couleur of Ball = couleurChoisie of joueur1 then
+					add 1 to score of joueur1
+				else
+					assign true to penalite of joueur1   // c'est la couleur de l'adversaire
+				endif
+			else
+				if couleur of Ball = couleurChoisie of joueur2 then
+					add 1 to score of joueur2
+				else
+					assign true to penalite of joueur2   // c'est la couleur de l'adversaire
+				endif
+			endif
+
+		endif
+	endif,
+	efface Ball;
+	;
+
+definition changerCamera means
+	if active of cam1 = true then
+//		active of cam1 = false,
+		active of cam2 = true,
+		efface queue
+	else 
+		active of cam1 = true,
+//		active of cam2 = false,
+		generate queue
+	endif;
+
+
+definition reinitNbBandes means
+	assign 0 for cptBandes of noire,
+	assign 0 for cptBandes of blanche;
+
+definition boulesArretees means  
+
+	if active of joueur1 = true then
+		if penalite of joueur2 = true then
+			assign false at penalite of joueur2 ,
+			if penalite of joueur1 = true then       //si le joueur1 vient juste d'avoir une pénalité
+				assign true at active of joueur2,  
+				assign false at active of joueur1
+			endif  // sinon le joueur1 rejoue
+		else
+			assign true at active of joueur2,  
+			assign false at active of joueur1
+		endif
+	else
+		if penalite of joueur1 = true then
+			assign false at penalite of joueur1 ,
+			if penalite of joueur2 = true then       //si le joueur1 vient juste d'avoir une pénalité
+				assign true at active of joueur1,  
+				assign false at active of joueur2
+			endif  // sinon le joueur2 rejoue
+		else
+			assign true at active of joueur1,  
+			assign false at active of joueur2
+		endif
+	endif,
+	assign "choixDirection" at value of etapes
+	;
+
+
+
+// définition pour les commandes :
+definition viserR means
+	if value of etapes = "choixDirection" then
+		cam1 turn right by 10
+	endif;
+definition viserL means
+	if value of etapes = "choixDirection" then
+		cam1 turn left by 10
+	endif;
+definition valider means
+	if value of etapes = "choixDirection" then
+		assign "choixPuissance" at value of etapes,
+		generate jaugeForce,
+
+						// COMPLETER
+
+	else 
+		if value of etapes = "choixPuissance"  then
+			assign "boulesMouvement" at value of etapes,
+			efface jaugeForce,
+
+						// COMPLETER
+
+		endif
+	endif;
+
+
+definition annulerDirection means
+	if value of etapes = "choixPuissance"  then
+
+								// COMPLETER
+
+		disable mouse rclick,
+		activate mouse rclick,
+		assign "choixDirection" to value of etapes,
+		efface jaugeForce
+	endif;
+
+definition changerIA means          //problème : pas d'affichage pour savoir ce qui s'est passé
+	if controller of joueur2 != "human"
+		if controller of joueur2 = "ia1" then
+			assign "ia2" to controller of joueur2 
+		else
+			assign "ia1" to controller of joueur2 
+		endif
+	endif;
+
+definition switchIAHumanJoueur2 means  //problème : pas d'affichage pour savoir ce qui s'est passé
+	if controller of joueur = "human"
+		controller of joueur2 becomes ia1
+	else
+		controller of joueur2 becomes human
+	endif;
+
+
+definition uneBouleStoppee means
+	if speed of all = 0 then
+		boulesArretees,
+		if blanche is effaced then
+			generate blanche at (x of ptDepartBlanche) (y of ptDepartBlanche) (z of ptDepartBlanche)
+		endif,
+		assign false to couleurToucheeAvantNoire of blanche
+	endif;
+
+
+definition blancheToucheAutreBall means
+	if couleur of Ball = "noire" and couleurToucheeAvantNoire of blanche = false then
+		assign 0 to speed of all,   //parce qu'on ne sait jamais si la noire ou la blanche ont commencé à donner une force à d'autres après
+		if active of joueur1 = true then
+			assign true to penalite of joueur1 
+		else
+			assign true to penalite of joueur2
+		endif
+	else
+		assign true to couleurToucheeAvantNoire of blanche
+	endif;
+
+
+
+
+definition initialisation means
+	assign "blanche" to couleur of blanche,
+	assign "rouge" to couleur of rouge,
+	assign "jaune" to couleur of jaune,
+	assign "noire" to couleur of noire,
+	
+	generate table,
+	generate queue,
+	generate blanche,
+	generate zbande,
+	//	insert c2 in constraints of blanche
+		activate keyboard
+
+
+
+//////////// COMMANDES
+command for joueur1, joueur2 is   //joueur2 seulement si c'est un Player 'human'
+	mouse right for viserR,
+	mouse left for viserL,
+	mouse rclick for valider,
+	mouse lclick for annulerDirection,
+	key escape for pause;
+
+command for joueur1 is      //changement seulement pendant le tour du joueur principal
+	key space for changerIA,
+	key enter for switchIAHumanJoueur2;
+
+
+//////////// REGLES DU JEU
+
+
+rule Game starts then
+	initialisation;
+
+
+
+
+
+rule in choixPremier is
+	blanche moves then
+		efface queue,
+		changerCamera,
+		wait until blanche stops,
+		assign distance between blanche and zbande for longueurBande of choixPremier,
+		reinitNbBandes,
+		changerCamera,
+		generate blanche,
+		generate queue,
+		add 1 to turn of choixPremier
+
+
+rule in choixPremier is
+	turn of choixPremier becomes 2 then
+		nextphase jeu;
+
+// les 3 règles ne valent que si la jauge et générée, comme pour toutes les règles
+// les objets ayant un attribut isGenerated doit être à true pour entrer dans la règle, sinon cela n'a pas de sens
+rule value of jaugeForce becomes >= max of jaugeForce then 
+	assign -1 to step of jaugeForce;
+
+rule value of jaugeForce becomes <= min of jaugeForce then
+	assign 1 to step of jaugeForce;
+
+rule value of jaugeForce then
+	wait 100 ms then
+		add step of jaugeForce to value of jaugeForce  //ou alors on peut rajouter le mot increment pour un compteur (increment jaugeForce)
+	endwait;
+
+
+//////////////////////////////////////
+
+
+rule Ball touches Trou then
+	bouleRentree;
+
+
+rule Ball stops then
+	uneBouleStoppee;
+
+
+rule blanche touches Ball then
+	blancheToucheAutreBall;
+
+
+rule in choix premier is blanche touches trous then
+	if noire is generated       //comment dire qu'il faut que toutes les boules de la couleur du joueur en cours soient rentrées plus la noire
+
+
+	then
+
+		if comp cptBandes of blanche >= 3 
+		then victory "Bien joué"
+		else victory
+		
+
+	else
+	endIf
+
+
+
+
+	
+
+rule blanche moves then
+	efface queue,
+	changerCamera,
+	wait until listeBoules stops,
+//	wait until Ball is moving,   // considèrera-t-on que l'appel d'une classe (comme Ball) lors d'une condition, représentera tous les objets générés de cette classe en jeu, ou un seul objet
+	reinitNbBandes,
+	changerCamera,
+	generate queue
+
+
+
+/*
+
+
+rule in jeu is
+
+	generate table,
+	generate trous,
+	generate boulesTriangle
+  
+
+
+
+rule score of Game becomes > 1000 then
+	...;
+
+
+//tout le temps
+
+rule true then   
+	if score of joueur1 > 1000 then
+		...
+	endif;
+
+
+// passer de <=1000 à >1000 une seule fois
+
+joueur1 has scorePrecedent at score of joueur1;
+
+rule true then 
+	assign score of joueur1 to scorePrecedent of joueur1;
+	if (score of joueur1 > scorePrecedent of joueur1) and (score of joueur1 > 1000) then
+		assign scorePrecedent of joueur1 to score of joueur1;
+		...
+	endif;
+
+*/
+

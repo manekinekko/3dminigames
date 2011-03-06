@@ -1,0 +1,164 @@
+
+type CharacterPlayer is Character and Plane and Weapon;
+type CharacterEnemy is Character and Plane and Weapon;
+
+
+// Initialisation
+cam is Camera free; 
+
+// Initialisation
+
+ennemis is Team;
+
+joueurPrincipal is Player Solo;
+joueurIa1 is Player ia_avion_1;
+joueurIA2 is Player ia_avion_2;
+joueurIA3 is Player ia_avion_boss;
+
+
+ennemis has elements at joueur_IA2, joueur_IA2, joueur_IA3;
+
+
+// Personnage joueur
+batman is CharacterPlayer;
+batman has life at 100;
+batman has nbLives at 5;
+batman has shootInterval at 200 ms;
+
+missileBatman is Projectile duplicable;
+missileBatman has damages at 1;
+batman has munitions at missileBatman; //met le belonging de batman à "missile"
+batman has nb_ennemis_tues at 0;//nouvel attribut
+
+// ennemis
+avion1 is CharacterEnemy duplicable;
+avion1 has attack at 3,
+avion1 has life at 3;
+
+avion2 is CharacterEnemy duplicable;
+avion2 has attack at 3,
+avion2 has life at 5;
+
+boss is CharacterEnemy;
+boss has life at 100;
+
+missileEnemy is Projectile duplicable;
+avion1 has missileEnemy;
+avion2 has missileEnemy;
+
+missileBoss is Projectile duplicable;
+
+limites_jeu is TranslationConstraint;
+limites_jeu has min at -50 -50 -20;
+limites_jeu has minActivation at true true true;
+limites_jeu has max at 50 50 20;
+limites_jeu has maxActivation at true true true;
+
+batman has constraints at limites_jeu;
+avion1 has constraints at limites_jeu;
+avion2 has constraints at limites_jeu;
+boss has constraints at limites_jeu;
+
+
+zoneGen is Zone;                          // au dessus de la zone de depart, pos absolue
+zoneGen has position at 0 200 0;       	// au loin devant
+zoneDestroy is Zone;
+zoneDestroy has position at 0 200 0;       		// au loin derrière
+
+
+batman has cam;
+
+//////////	Def
+
+
+definition defL1 means 
+	batman turn anticlockwise by 10;
+definition defR1 means 
+	batman turn clockwise by 10;
+definition defU1 means
+	batman turn up by 10;
+definition defD1 means
+	batman turn down by 10;
+definition defL2 means 
+	batman turn left by 4;
+definition defR2 means 
+	batman turn right by 4;
+definition defU2 means
+	batman turn up by 4;
+definition defD2 means
+	batman turn down by 4;
+	
+definition tirer  means 
+	batman expels missile by 20;
+definition accelerer means 
+	add 30 to acceleration of batman;
+definition decelerer means 
+	sub 30 to acceleration of batman;
+
+//////////// COMMANDES
+command for joueurPrincipal is 
+	key left for defL1,
+	key right for defR1,
+	key up for defU1,
+	key down for defD1,
+	mouse left for defL2,
+	mouse right for defR2,
+	mouse up for defU2,
+	mouse down for defD2,
+	//mouse lClick for booster,
+	mouse rClick for tirer,
+	mouse scrollUp for accelerer,
+	mouse scrollDown for decelerer;
+	
+	
+//////////  règles du jeu
+
+rule Game starts then
+	generate batman then
+
+
+rule nb_ennemis_tues of batman becomes 100 then 
+	generate boss;
+
+
+rule missileBatman touches CharacterEnemy then 
+	sub (attack of batman) to life of CharacterEnemy;
+
+rule missileEnemy touches batman then 
+	sub (damages of missileEnemy) for life of batman;
+
+rule batman touches CharacterEnemy then
+	sub (attack of CharacterEnemy) to batman,
+	sub (attack of batman) to CharacterEnemy,
+	assign true to isTraversable of batman,
+	wait 3 s then 
+		assign false to isTraversable of batman
+	endwait
+	
+rule batman dies then
+	sub 1 to nbLives of batman,
+	generate batman at 0 0 0;
+
+rule nbLives of batman becomes 0 then
+	defeat of joueurPrincipal : "ahah noob !",
+	Game ends;
+
+rule CharacterEnemy dies then
+	assign (life of boss) to score of joueurPrincipal,
+	add 1 to nb_ennemis_tues of batman;
+
+rule boss dies then 
+	defeat of ennemis : "gg",
+	game ends;
+
+
+	/*
+//////////	IA 
+ai ia_avion_1 is
+;
+ai ia_avion_2 is
+;
+ai ia_avion_boss is
+;
+*/
+	

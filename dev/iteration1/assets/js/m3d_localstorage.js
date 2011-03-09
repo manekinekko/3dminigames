@@ -220,14 +220,14 @@
 	 */
 	
 	M3D.DB.updateSelectedObject = function(){
-	
+		
 		if ( obj ){
 			
+			var uid = obj.uid;
 			var _obj = obj.parent;
 			var uid = _obj.uid;
 			
 			var updateobj = M3D.DB.getObject(uid);
-			log(updateobj);
 			if (updateobj){
 				updateobj.position.X = _obj.getLocX();
 				updateobj.position.Y = _obj.getLocY();

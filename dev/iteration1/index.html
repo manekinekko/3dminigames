@@ -34,6 +34,7 @@
 						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
 						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
 						<span class="cursor grid-toggle" title="Show/Hide Grid">&nbsp;</span>
+						<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>
 					</div>
 					
 					<!-- start: menu -->
@@ -90,30 +91,30 @@
 							<tbody>
 								<tr>
 									<td>Position</td>
-									<td><input type="text" name="posX" id="posX" value="" placeholder="#" /></td>
-									<td><input type="text" name="posY" id="posY" value="" placeholder="#" /></td>
-									<td><input type="text" name="posZ" id="posZ" value="" placeholder="#" /></td>
+									<td><input type="number" name="posX" id="posX" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
+									<td><input type="number" name="posY" id="posY" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
+									<td><input type="number" name="posZ" id="posZ" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Rotation</td>
-									<td><input type="text" name="rotX" id="rotX" value="" placeholder="#" /></td>
-									<td><input type="text" name="rotY" id="rotY" value="" placeholder="#" /></td>
-									<td><input type="text" name="rotZ" id="rotZ" value="" placeholder="#" /></td>
+									<td><input type="number" name="rotX" id="rotX" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
+									<td><input type="number" name="rotY" id="rotY" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
+									<td><input type="number" name="rotZ" id="rotZ" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Scale</td>
-									<td><input type="text" name="scaleX" id="scaleX" value="" placeholder="#" /></td>
-									<td><input type="text" name="scaleY" id="scaleY" value="" placeholder="#" /></td>
-									<td><input type="text" name="scaleZ" id="scaleZ" value="" placeholder="#" /></td>
-									<td></td>
+									<td><input type="number" name="scaleX" id="scaleX" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
+									<td><input type="number" name="scaleY" id="scaleY" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
+									<td><input type="number" name="scaleZ" id="scaleZ" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
+									<td><input type="checkbox" name="scaleLock" id="scaleLock" checked="true"/>Lock Scale</td>
 								</tr>
 								<tr>
 									<td>Bounding Box</td>
-									<td><input type="text" name="bboxX" id="bboxX" value="" placeholder="#" /></td>
-									<td><input type="text" name="bboxY" id="bboxY" value="" placeholder="#" /></td>
-									<td><input type="text" name="bboxZ" id="bboxZ" value="" placeholder="#" /></td>
+									<td><input type="number" name="bboxX" id="bboxX" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
+									<td><input type="number" name="bboxY" id="bboxY" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
+									<td><input type="number" name="bboxZ" id="bboxZ" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
 									<td><input type="checkbox" name="switchBbox" id="switchBbox" />Show/Hide</td>
 								</tr>
 							</tbody>

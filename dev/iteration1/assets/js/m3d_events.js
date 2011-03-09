@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @namespace M3D.Events
  * @file assets/js/m3d_events.js
@@ -16,10 +16,14 @@ $(function(){
 	 * @see M3D.GUI.pickObject
 	 */
 	$('#canvas').bind('mousedown', function(e){
+
 		M3D.GUI.pickObject(e, this);
+
 	}).bind('mouseup', function(){
+		
 		M3D.GUI.checkEditor();
 		M3D.DB.updateSelectedObject();
+	
 	});
 	
 	
@@ -57,23 +61,33 @@ $(function(){
 	
 	/**
 	 * Bind the live update of the 3D model position/rotation/scale's values.
-	 * @see M3D.GUI.updateValues
+	 * @see M3D.GUI.updateInputValuesFromObject
 	 */
-	$('input[type="text"]:not([disabled])').bind('keypress', function(){ 
+	$('input[type="number"]:not([disabled])').bind('keypress', function(){ 
+		M3D.GUI.updateObjectValues(this);
 		M3D.GUI.checkEditor();
-		M3D.GUI.updateValues($(this));
 		M3D.DB.updateSelectedObject();
 	});
 	/**
 	 * Bind the slider insert/remove
+	 * @deprecated Forget about this feature for now. We'll release
+	 * it for the next update!
 	 */
+	//*
 	var _lastSeletcedInput;
-	$('#info-bottom input[type="text"]:not([disabled])').bind('focus', function(){
+	$('#info-bottom input[type="number"]:not([disabled])').bind('focus', function(){
 		
-		_lastSeletcedInput = $(this);
+		// remember this input
+		_lastSeletcedInput = this;
+		
 		if ($(this).val() !== ""){
-			var _pos = _lastSeletcedInput.offset();
-			$('#slider').show().css({
+			var _pos = $(_lastSeletcedInput).offset();
+			$("#slider").slider("option", {
+				'value': parseFloat($(_lastSeletcedInput).attr('value'), 4),
+				'max': parseFloat($(_lastSeletcedInput).attr('max'), 4),
+				'min': parseFloat($(_lastSeletcedInput).attr('min'), 4),
+				'step': parseFloat($(_lastSeletcedInput).attr('step'), 4)
+			}).show().css({
 				'top':_pos.top-20,
 				'left':_pos.left
 			});
@@ -82,24 +96,19 @@ $(function(){
 	}).bind('blur', function(){
 		$('#slider').hide();
 	});
-	/**
-	 * Bind the slider logic
-	 */
+	// Bind the slider logic
 	$("#slider").slider({
 		animate: true,
-		max:1000,
-		min:-1000,
-		value:0,
-		step:0.0001,
 		slide: function(event, ui) {
-			_lastSeletcedInput.val(ui.value);
-			M3D.GUI.updateValues(_lastSeletcedInput);
+			M3D.GUI.updateInputValuesFromSlider(_lastSeletcedInput, ui.value);
+			M3D.GUI.updateObjectValues(_lastSeletcedInput);
 		},
 		stop: function(event, ui) {
 			M3D.GUI.checkEditor();
 			M3D.DB.updateSelectedObject();
 		}
 	});
+	//*/
 
 	/**
 	 * Bind the toggle view of the bounding box, weither when clicking on the switchBbox check box
@@ -211,6 +220,7 @@ $(function(){
 	});
 	$('#confirm-clear-canvas').bind('click', function(){
 		M3D.GUI.clearCanvas();
+		M3D.GUI.clearSelectBox();
 		M3D.DB.clear();
 		M3D.GUI.hidePopup('confirmation-clear');
 	});
@@ -263,28 +273,35 @@ $(function(){
 			$('.cursor.active').removeClass('active');
 			$(this).addClass('active');
 			
+			var _t = $(this);
+			var _c = function(s){ return _t.hasClass(s); }
+			
 			if ( $(this).hasClass('camera-move') ){
 			// move the camera
 			M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_MOVE;
 			}	
-			else if ( $(this).hasClass('camera-zoom') ) {
+			else if ( _c('camera-zoom') ) {
 				// do a zoom
 				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ZOOM;			
 			}	
-			else if ( $(this).hasClass('camera-rotate') ) {
+			else if ( _c('camera-rotate') ) {
 				// rotate the camera
 				M3D.GUI.CAMERA_STATE = M3D.GUI.CAMERA_ROTATE;			
 			}
-			else if ( $(this).hasClass('model-rotate') ) {
+			else if ( _c('model-rotate') ) {
 				// rotate the model
 				M3D.GUI.CAMERA_STATE = M3D.GUI.MODEL_ROTATE;
 			}
-			else if ( $(this).hasClass('model-move') ) {
+			else if ( _c('model-move') ) {
 				// move the model
 				M3D.GUI.CAMERA_STATE = M3D.GUI.MODEL_MOVE;
 			}
-			else if ( $(this).hasClass('grid-toggle') ) {
+			else if ( _c('grid-toggle') ) {
 				M3D.GUI.toggleGrid();
+			}
+			else if ( _c('camera-position') ) {
+				var _cam = scene.camera;
+				alert('Pos('+_cam.getLocX()+' '+_cam.getLocY()+' '+_cam.getLocZ()+')');
 			}
 			else {
 				M3D.GUI.CAMERA_STATE = null;

@@ -76,6 +76,15 @@ _Partie *Definitions*_
 
 }}}
 
+==by==
+_Partie *Règles du jeu*_
+  * Utilisée pour définir le changement d'une valeur liée à la déplacement des entités. 
+{{{
+command mario for joueur_principal is 
+	space for mario jump by 10, 
+	key Z for mario move forward by 10,    
+	key S for mario move backward by 10
+}}}
 
 ----
 =C=
@@ -108,6 +117,21 @@ definition  tirer  means
 	endwait;
 }}}
 
+==dies==
+_Prtie *Règles du jeu*_
+  * Déclare la mort d'en personnage/entité.
+{{{
+rule mario touches zoneDeVide
+	then mario dies;
+}}}
+
+  * Déclencher les évènements dans cas la mort.
+{{{
+rule batman dies then
+	sub 1 to nbLives of batman,
+	generate batman at 0 0 0;
+}}}
+
 ==duplicable==
 _Partie *Initialisations* et *Définitions*_
   * Indique que l'objet/entité est duplicable; c'est possible avoir plusieurs exemplaires d'objet. 
@@ -115,11 +139,19 @@ _Partie *Initialisations* et *Définitions*_
 lapin is duplicable;
 }}}
 
-_Partie **_
-  * :
+==during==
+_Partie *Règles du jeu*_
+  * Continuer une action pendant un certain temps.
 {{{
+rule true then
+	goomba move left by 5 during 2 sec,
+	goomba move right by 5 during 2 sec
 
+ia lapin1 is 
+	move forward during (random between 4 and 6) sec,
+	turn right during (random between 300 and 500) ms
 }}}
+
 ----
 =E=
 ----
@@ -140,6 +172,18 @@ _Partie *Définitions*_
 rule victory then
 	Game ends
 }}}
+
+==endwait==
+(vpir *wait*)
+
+==expels==
+_Partie *Règles du jeu*_
+  * Un entité/personnage lâche un autre entité/objet.
+{{{
+definition tirer  means 
+	batman expels missile by 20;
+}}}
+
 ----
 =F=
 ----
@@ -189,6 +233,13 @@ rule Game starts then
 	generate zoneGenWindows,
 	reinit
 	;
+}}}
+
+==grasps==
+_Partie *Règles du jeu*_
+  * Un entité/personnage prend un autre entité/objet à fin de l'utiliser ou garder.
+{{{
+
 }}}
 
 ==gravity==
@@ -263,7 +314,15 @@ lapin1 is Lapin enemy;
 
 ==in==
 _Partie *Initialisations*_
-  * voir *insert*
+  * (voir *insert*)
+
+==ingests==
+_Partie *Règles du jeu*_
+  * Un personnage/entité range un autre entité dans un emplacement.
+{{{
+definition placebook means 
+           prince ingests book in library
+}}}
 
 ==insert==
 _Partie *Initialisations*_
@@ -309,11 +368,15 @@ ai nom_ia is /*conséquences*/ ;
 ----
 =J=
 ----
-_Partie **_
-  * :
+==jump==
+_Partie *Règles du jeu*_
+  * Déclare les conditions de saute des personnages/entités.
 {{{
-
+rule true then
+	superGoomba move left by 10 during 2 sec,
+	superGoomba jump by 5
 }}}
+
 ----
 =K=
 ----
@@ -373,6 +436,13 @@ _Partie *Information about game*_
   * Déclarer le nome du jeu.
 {{{
 name at NightHunter;
+}}}
+
+==nexturn==
+_Partie *Règles du jeu*_
+  * Définir la prochain joueur qui doit jouer.
+{{{
+
 }}}
 
 
@@ -488,6 +558,13 @@ world at riboon;
 ----
 =S=
 ----
+==save==
+_Partie *Règles du jeu*_
+  * Enregistrer le jeu.
+{{{
+
+}}}
+
 ==solo==
 _Partie *Initialisations*_
   * Déclare que joueur n'a pas coéquipière. (voir *player*)
@@ -541,10 +618,17 @@ type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le travers
 ----
 =U=
 ----
-_Partie **_
-  * :
+==until==
+_Partie *Règles du jeu*_
+  * Continuer un évènement jusqu'à satisfaire la/les condition(s).
 {{{
-
+rule blanche moves then
+	efface queue,
+	changerCamera,
+	wait until listeBoules stops,
+	reinitNbBandes,
+	changerCamera,
+	generate queue
 }}}
 ----
 =V=
@@ -612,98 +696,3 @@ _Partie **_
 
 }}}
 ----
-
-
-
-=Partie faite par Afshin (à trier)=
-
-
-*Initialisations* ::::::::::::::::::::::::::::::::::::::::::
-
-
-*DUPLICABLE*
-
-Déclare qu'un entité est duplicable. Génération de plusieurs objets de même type est possible pendant le jeu.
-{{{
-missile is Projectile ally DUPLICABLE;
-}}}
-
-*LIST* ?????
-
-Déclarer une liste des opérations ou identificateurs. Liste d'opérations c'est possible pour les opérations duplicables.
-{{{
-
-}}}
-
-*CAMERA*
-
-Définition de point de vue.
-{{{
-CAMERA first person;
-}}}
-
-*FIRST PERSON*
-
-Point de vue de premier personne.
-{{{
-camera FIRST person;
-}}}
-
-*THIRD PERSON*
-Point de vue troisième personne.
-{{{
-camera THIRD person;
-}}}
-
-*PERSON*
-
-=> FIRST PERSON , THIRD PERSON
-
-*FREE*
-
-Point de vue d'un camera libre.
-{{{
-camera FREE;
-}}}
-
-*MEDIA* ?????
-
-Musique ou vidéo interprété une fois ou en boucle.
-{{{
-MEDIA once;
-}}}
-
-*LOOP*
-
-Médias va interpréter en boucle.
-{{{
-media LOOP;
-}}}
-
-*ONCE*
-
-Médias va interpréter une seul fois.
-{{{
-media ONCE;
-}}}
-
-*IN* ?????
-
-Appartenance d'un identificateur à une liste.
-{{{
-lapin5 is IN LapinList;
-}}}
-
-*TIME*
-
-Un objet de type chronomètre pour gérer le temps.
-{{{
-?????
-}}}
-
-*OBJECT*
-
-Objet prédéfini basic avec les attributs: position(x,y,z), orientation(x,y,z), size(x,y,z).
-{{{
-?????
-}}}

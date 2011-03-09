@@ -35,11 +35,29 @@ tokens {
 
 @header {
     package grammars;
+    import java.util.LinkedList;
 }
 
 @lexer::header {
     package grammars;
 }
+
+@members {
+    private List<String> errors = new LinkedList<String>();
+    public void displayRecognitionError(String[] tokenNames,
+                                        RecognitionException e) {
+        String hdr = getErrorHeader(e);
+        String msg = getErrorMessage(e, tokenNames);
+        errors.add(hdr + " " + msg);
+    }
+    public List<String> getErrors() {
+        return errors;
+    }
+     public void emitErrorMessage(String msg) {
+        System.err.println("plop");
+    }
+}
+
 
 game :
     (gameData FIN)?
@@ -110,13 +128,6 @@ declarationObjet :
 typeEntity :
     IDENT
     ;
-
-// A vérifier et supprimer
-entityMode:
-    PLAYER
-    | dupli
-    ;
-	
 
 dupli :
     DUPLICABLE
@@ -198,8 +209,7 @@ actionCommandeMaintenue :
   | ACCELERATE^ BY! operation
   | BRAKE^ BY! operation
   ;
-  
-  
+
 transformation :
     TRANSLATION
     | ROTATION
@@ -433,7 +443,7 @@ Z	: 'z';
 ALL	: 'all';
 NOT	: 'not';
 MIN	: 'min';
-SEC	: 'sec';
+SEC	: 's';
 MS	: 'ms';
 THEN	: 'then';
 FOR	: 'for';

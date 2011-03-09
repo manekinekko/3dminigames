@@ -1,7 +1,10 @@
 package code;
 
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.List;
+import symbols.Entity;
 import symbols.Symbol;
 
 public class SymbolTable {
@@ -18,6 +21,19 @@ public class SymbolTable {
 
     public Symbol get(String name) {
 	return table.get(name);
+    }
+
+    public List<Entity> getAllEntities() {
+	List<Entity> array = new ArrayList<Entity>();
+	Enumeration<String> keys = table.keys();
+	while(keys.hasMoreElements()) {
+	    String key = keys.nextElement();
+	    Symbol s = table.get(key);
+	    if(s.getType() == Symbol.Type.ENTITY)
+		array.add((Entity)s);
+	}
+	
+	return array;
     }
 
     public void print() {

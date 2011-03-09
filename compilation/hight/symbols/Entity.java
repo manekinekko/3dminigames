@@ -90,4 +90,8 @@ public class Entity implements Symbol {
     public int getGenerate() {
         return generate;
     }
+
+    public Type getType() {
+	return Type.ENTITY;
+    }
 }

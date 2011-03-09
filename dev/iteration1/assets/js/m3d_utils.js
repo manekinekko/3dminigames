@@ -984,7 +984,7 @@
 			
 			if (M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE) {
 
-				mouseRecord = mouseGlobale.getMousePosition();
+				//mouseRecord = mouseGlobale.getMousePosition();
 				M3D.GUI.cameraRotate();
 
 			}
@@ -1021,12 +1021,12 @@
 	M3D.GUI.cameraRotate = function(){
 		var mousepos = mouseGlobale.getMousePosition();
 		//mousepos.x = mousepos.x-document.getElementById("container").offsetLeft;
-		var width = document.getElementById('canvas').offsetWidth;
-		var height = document.getElementById('canvas').offsetHeight;
+		//var width = document.getElementById('canvas').offsetWidth;
+		//var height = document.getElementById('canvas').offsetHeight;
 		
 		// Position souris gauche ou droite ?
 		var gauche = mousepos.x <= mouseRecord.x;
-		var haut = mousepos.y <= mouseRecord.y;
+		//var haut = mousepos.y <= mouseRecord.y;
 		
 		// rotation selon position souris
 		var cam = scene.camera;
@@ -1039,17 +1039,32 @@
 		else {
 			sens = -1;
 		}	
-		if (haut){
+		/*if (haut){
 			monte = 1;
 		} 
 		else {
 			monte = -1;
-		}		
+		}	*/	
 		
 		if(!cam.lookAt){
 			cam.setLookat([0,0,0]);
 		}
-	
+		
+		var abs = camPos.x - cam.lookAt[0];
+		var ord = camPos.y - cam.lookAt[1];
+		var carreA = Math.pow(2,abs);
+		var carreO = Math.pow(2,ord);
+		var hypo = Math.sqrt(carreA+carreO);
+		var angle = Math.atan(abs/ord);
+		
+		var newAngle = (angle+(0.1*sens))%(2*Math.PI); console.log(angle+" ... "+newAngle);
+		var newAbs = Math.sin(newAngle)*hypo;
+		var newOrd = Math.cos(newAngle)*hypo;
+		
+		cam.setLocX(cam.lookAt[0] + newAbs);	
+		cam.setLocY(cam.lookAt[1] + newOrd);
+		
+		/*
 		if(camPos.x <= cam.lookAt[0]){
 	
 			// si camera sud-ouest de l'obj
@@ -1075,10 +1090,13 @@
 				cam.setLocX(camPos.x - sens);	
 				cam.setLocY(camPos.y - sens);
 			}		
-		}
+		}*/
 		mouseRecord = mouseGlobale.getMousePosition ();	// ajoutee par Tom
-		cam.setLocZ(camPos.z + monte);
+		//cam.setLocZ(camPos.z + monte);
 	};
+	
+	
+	
 	
 	M3D.GUI.toggleBbox = function(){
 		

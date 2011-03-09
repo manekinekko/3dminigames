@@ -19,14 +19,14 @@ options {
     private int INT_DUPLICABLE=10;
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
 
-    public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+    /*public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
         String hdr = getErrorHeader(e);
         String msg = getErrorMessage(e, tokenNames);
 
 	System.out.println(e.node);
-        System.out.println(((CommonErrorNode)e.node).start.getLine());
-        System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
-    }
+        //System.out.println(((CommonErrorNode)e.node).start.getLine());
+        //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
+    }*/
 
     /*public void emitErrorMessage(String msg) {
         System.err.println("plop");
@@ -463,7 +463,7 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 /* Initialization of commands */
 
 commande [SymbolTable st] returns [Code c]:
-    ^(COMMAND_KW i=IDENT player_list[st] actionCommande_list[st])
+    ^(COMMAND_KW player_list[st] actionCommande_list[st])
     ;
 
 player_list [SymbolTable st] returns [Code c]:
@@ -475,8 +475,8 @@ actionCommande_list[SymbolTable st] returns [Code c]:
 	;
 	
 actionCommande [SymbolTable st] returns [Code c]:
-    ^(MOUSE_KW souris[st] commandMode definitionId)
-    |^(KEY_KW clavier[st] commandMode definitionId) // ident : that was defined with means
+    ^(MOUSE_KW souris[st] commandMode? definitionId)
+    |^(KEY_KW clavier[st] commandMode? definitionId) // ident : that was defined with means
     ;
 
 commandMode :
@@ -696,13 +696,15 @@ variable [SymbolTable st] returns [Code c]:
     }
     |^(VAR_I_KW i=IDENT e=accesClass[st])
     {
-	Symbol si = e.get(0);String ident= i.getText(); AttributeValue a = si.getAttribute(ident);
+	Symbol si = e.get(0);
+	String ident= i.getText();
+	AttributeValue a = si.getAttribute(ident);
 	if(a==null){
-	    System.out.println(si.getName()+"n'a pas l'attribut"+ident);
+	    System.out.println(si.getName()+" n'a pas l'attribut "+ident);
 	    System.exit(-1);
 	}
 	else if(a.getType()!= AttributeValue.Type.NUMBER){
-	    System.out.println(ident+"n'est pas un nombre.");
+	    System.out.println(ident+" n'est pas un nombre.");
 	    System.exit(-1);
 	}else{
 	    c=Code.genAccess(si.getName(),ident);
@@ -713,7 +715,7 @@ variable [SymbolTable st] returns [Code c]:
     {
 	Symbol si = ac.get(0); AttributeValue a = si.getAttribute(at);
 	if(a==null){
-	    System.out.println(si.getName()+"n'a pas l'attribut"+at);
+	    System.out.println(si.getName()+" n'a pas l'attribut "+at);
 	    System.exit(-1);
 	}
 	else{

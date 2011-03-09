@@ -22,8 +22,8 @@
 // rien
 
 //////////// TYPES HERITES
-type Zobstacle has Zone and Obstacle;  // transparent + on ne peut pas le traverser
-
+type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+type Lapin is Character;
 //si on implémente les contraintes, il n'y a plus besoin de ce 2 zones
 
 //////////// INIT
@@ -37,8 +37,8 @@ lapinEnnemi is Player solo;
 lapinEnnemi has controller at ia1;
 
 
-
-lapin is Character;
+Lapin has compteurPas at 0;
+lapin is Lapin;
 
 lapin has life at 1;
 lapin has compteurPas at 3;  //nouvel argument
@@ -165,7 +165,7 @@ rule Game starts then
 rule currentValue of compteurVagues becomes 3 then
 	victoryPlayer;
 
-rule currentValue of compteurPas becomes 0 then
+rule compteurPas of Lapin becomes 0 then
 	victoryLapinEnnemi;
 
 rule victory of Player then

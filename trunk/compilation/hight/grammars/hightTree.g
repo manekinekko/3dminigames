@@ -151,7 +151,6 @@ initialization [SymbolTable st] returns [Code c]:
 	}
 
 	c = new Code("/*Models*/\n");
-	c.append(modelCode);
 	c.append("\n/*Entities*/\n");
 	c.append(entitiesFunCode);
 	c.append(entitiesCode);
@@ -357,7 +356,7 @@ consequ [SymbolTable st] returns [Code c]
     {c.append(act);}
     | a=affectation[st] {c=a;}
     | activCommande[st] {}
-    | IDENT
+    | id=IDENT{	c.append(id.getText());c.append("\n");}
     | ^(VICTORY_KW IDENT IDENT?)
     | ^(DEFEAT_KW IDENT IDENT?)
     ;
@@ -373,8 +372,13 @@ action [SymbolTable st] returns [Code c]
     |^(PAUSE_KW GAME IDENT?)
     {
         c.append("\t");
-        c.append("pause();\n");
-    }//TO DO
+        
+       /* c.append("pause();\n");
+        * equivaut à
+        */ 
+        c.append(Code.genFuncCall("pause",new ArrayList()); 
+        
+    }
     |^(MUTE_KW mode_mute[st] IDENT)
     |^(PLAY_KW IDENT)
     |^(STOP_KW IDENT)
@@ -399,9 +403,11 @@ action [SymbolTable st] returns [Code c]
 	    c.append("\t");		c.append(Code.genEntity((Entity) e));
 	    c.append("\t");		c.append(Code.genAddObject((Entity) e));
 	}
-	    // TO DO -> MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
     }
-    |^(WAIT_KW operation[st] timeUnit[st] consequences[st])
+    |^(WAIT_KW op=operation[st] t=timeUnit[st] cons=consequences[st])
+    {
+    	c.append(Code.genSetTimeout(cons,op,t));
+    }	//TO DO
     |SAVE_KW
     |^(NEXTURN_KW IDENT)
     //| ^(RELOAD_KW IDENT)
@@ -743,10 +749,9 @@ typeCoordonnees [SymbolTable st] returns [Code c]:
 	;
 
 timeUnit [SymbolTable st] returns [String c]:
-	MIN
-	| SEC
-	| MS
-        {c = "ms";}
+	MIN	{c = "mn";}
+	| SEC{c = "s";}
+	| MS{c = "ms";}    
 	| FRAME
 	;
 

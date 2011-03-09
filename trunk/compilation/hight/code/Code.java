@@ -6,6 +6,8 @@ package code;
 
 import attributes.*;
 import java.util.Iterator;
+import java.util.List;
+
 import symbols.Definition;
 import symbols.Entity;
 import symbols.Model;
@@ -476,6 +478,28 @@ public class Code {
         return c;
     }
 
+    
+    //Appel de fonction JavaScript exemple :  "f(p1, p2 , p3);"
+    public static Code genFuncCall(String name , List<String> params){
+    	Code c = new Code();
+    	
+    	c.append(name);
+    	c.append("(");
+    	
+    	for (int i = 0 ; i<params.size() ; i++){
+    		c.append(params.get(i));
+    		
+    		if(i != params.size() - 1){
+    			c.append(",");
+    		}
+    	}
+    	
+    	c.append(");\n");
+    	
+    	return c;
+    }
+    
+    
     /* Appel de la fonction addObject du moteur3D
     MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
      */
@@ -600,5 +624,41 @@ public class Code {
         c.append("}\n\n");
 
         return c;
+    }
+    
+    
+    
+    
+    //setTimeout(code,millisec)
+    public static Code genSetTimeout(Code cod , Code time , String timeUnit){
+    	Code c = new Code();
+    	
+    	int coeff;
+    	
+    	if (timeUnit.equals("ms")){
+    		coeff = 1;
+    	}
+    	
+    	else if(timeUnit.equals("sec")){
+    		coeff = 1000;
+    	}
+    	
+    	else if(timeUnit.equals("mn")){
+    		coeff = 60000;
+    	}
+    	
+    	else{
+    		coeff = 1;
+    	}
+		
+    	c.append("setTimeout(");
+		c.append(cod);
+		c.append(",");
+		c.append(time);
+		c.append("*");
+		c.append(String.valueOf(coeff));
+		c.append(");\n");
+		
+		return c;
     }
 }

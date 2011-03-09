@@ -22,7 +22,7 @@
 // rien
 
 //////////// TYPES HERITES
-type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
+type Zobstacle has Zone and Obstacle;  // transparent + on ne peut pas le traverser
 
 //si on implémente les contraintes, il n'y a plus besoin de ce 2 zones
 
@@ -44,7 +44,7 @@ lapin has life at 1;
 lapin has compteurPas at 3;  //nouvel argument
 lapin has orientation at (random between 0 and 360) (random between 0 and 360) (random between 0 and 360);   //lorsque le lapin est généré
 
-cam1 is Camera free;
+//cam1 is Camera free;
 
 chasseur is Character;
 chasseur has life at 5;
@@ -64,7 +64,7 @@ zoneGenLapin is Zone;  //la zone ou va générer les lapins
 missile is Projectile duplicable;  //pour Projectile, prévoir un attribut lifeTime ou lifeDistance pour effacer l'objet 3D
 missile has damages at 100;
 missile has speed at 100; 
-missile has lifeTime at 4 sec;
+missile has lifeTime at 4 s;
 
 bazooka is Weapon;
 bazooka has shootInterval at 700 ms; 
@@ -72,7 +72,7 @@ bazooka has shootInterval at 700 ms;
 
 chasseur has bazooka ;       //aggrégation -> bazooka parenté à chasseur -> bazooka position relative, chasseur posititon absolue
 bazooka has missile;
-bazookka has cam1;
+bazooka has cam1;
 
 
 sol1 is Ground;        //pos à 0 0 0 -> prévoir des initialisations pour chaque attribut
@@ -99,7 +99,7 @@ compteurVagues has currentValue at 0;
 
 //////////// DEF
 
-definition  tirer  means 
+definition  tirer  means
 	bazooka expels missile by 100, //valeur à voir avec le groupe moteur de jeu
 	wait 200 ms then 
 		generate missile 
@@ -114,7 +114,7 @@ definition  reinitialisation  means
 	generate arretGauche,
 	generate zoneGenLapin,
 	add 1 for currentValue of compteurVagues,
-	wait 2 sec then
+	wait 2 s then
 		generate lapin in zoneGenLapin
 	endWait;
 
@@ -206,11 +206,11 @@ rule missile touches Lapin then
 
 
 //ia lapin2 is
-//	move forward during (random between 3 and 4.5) sec,
+//	move forward during (random between 3 and 4.5) s,
 //	turn right during (random between 300 and 500) ms
 
 //ia lapin3 is
-//	move forward during (random between 2 and 3) sec,
+//	move forward during (random between 2 and 3) s,
 //	turn right during (random between 300 and 500) ms
 
  

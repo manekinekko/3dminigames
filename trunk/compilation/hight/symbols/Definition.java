@@ -59,4 +59,8 @@ public class Definition implements Symbol {
     public List<String> listAttributes() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    public Type getType() {
+	return Type.DEFINITION;
+    }
 }

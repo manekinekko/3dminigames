@@ -1,277 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <m3d>
-	<model>
-		<name>Empty</name>
-        <attribute name="posX" type="number" value="0"/>
-        <attribute name="posY" type="number" value="0"/>
-        <attribute name="posZ" type="number" value="0"/>
-        <attribute name="orX" type="number" value="0"/>
-        <attribute name="orY" type="number" value="0"/>
-        <attribute name="orZ" type="number" value="0"/>
-        <attribute name="sizeX" type="number" value="0"/>
-        <attribute name="sizeY" type="number" value="0"/>
-        <attribute name="sizeZ" type="number" value="0"/>
-        <attribute name="belonging" type="Empty" value="null"/>
+    <model>
+	<name>Empty</name>
+	<attribute name="posX" type="number" value="0"/>
+	<attribute name="posY" type="number" value="0"/>
+	<attribute name="posZ" type="number" value="0"/>
+	<attribute name="orX" type="number" value="0"/>
+	<attribute name="orY" type="number" value="0"/>
+	<attribute name="orZ" type="number" value="0"/>
+	<attribute name="sizeX" type="number" value="0"/>
+	<attribute name="sizeY" type="number" value="0"/>
+	<attribute name="sizeZ" type="number" value="0"/>
+	<attribute name="belonging" type="Empty" value="null"/>
         <!--<attribute name="constraints" type="List" subType="Constraint" value="null"/>-->
-        <attribute name="speed" type="number" value="0"/><!--attribut calculé avec l'accélération, peut être modifié par l'utilisateur dans son code-->
+	<attribute name="speed" type="number" value="0"/><!--attribut calculé avec l'accélération, peut être modifié par l'utilisateur dans son code-->
     </model>
 	
 	
 	
-	<model>
-		<name>Camera</name>
-        <inheritance value="Empty"/> <!--les tailles 'tX' et 'tY' sont les dimensions du canvas 2D et 'tZ' est la focale-->
-        <attribute name="name" type="String" value="'Camera1'"/>
-        <attribute name="view" type="Enum" values="free, firstPerson, secondPerson" value="free" />
-        <attribute name="target" type="Empty" value="null"/><!-- il faudrait préciser l'objet concerné par la cam si elle n'est pas free (trackTo pour le moteur 3D) -->
-        <attribute name="orthographic" type="boolean" value="false"/>
+    <model>
+	<name>Camera</name>
+	<inheritance value="Empty"/> <!--les tailles 'tX' et 'tY' sont les dimensions du canvas 2D et 'tZ' est la focale-->
+	<attribute name="name" type="String" value="'Camera1'"/>
+	<attribute name="view" type="Enum" values="free, firstPerson, secondPerson" value="free" />
+	<attribute name="target" type="Empty" value="null"/><!-- il faudrait préciser l'objet concerné par la cam si elle n'est pas free (trackTo pour le moteur 3D) -->
+	<attribute name="orthographic" type="boolean" value="false"/>
     </model>
     <model>
-		<name>Zone</name>
-        <inheritance value="Empty"/> <!--Zone n'hérite plus d'Object-->
-        <attribute name="name" type="String" value="'Zone1'"/>
-        <attribute name="isGenerated" type="boolean" value="false"/>
-        <attribute name="redc" type="number" value="255"/><!--couleur de la Zone (rvb) et alpha pour la transparence-->
-        <attribute name="greenc" type="number" value="255"/>
-        <attribute name="bluec" type="number" value="255"/>
-        <attribute name="alpha" type="number" value="255"/>
-        <attribute name="type" type="Enum" values="cubic, spheric" value="cubic"/><!-- à voir si une zone peut-être définie de cette manière-->
+	<name>Zone</name>
+	<inheritance value="Empty"/> <!--Zone n'hérite plus d'Object-->
+	<attribute name="name" type="String" value="'Zone1'"/>
+	<attribute name="isGenerated" type="boolean" value="false"/>
+	<attribute name="redc" type="number" value="255"/><!--couleur de la Zone (rvb) et alpha pour la transparence-->
+	<attribute name="greenc" type="number" value="255"/>
+	<attribute name="bluec" type="number" value="255"/>
+	<attribute name="alpha" type="number" value="255"/>
+	<attribute name="type" type="Enum" values="cubic, spheric" value="cubic"/><!-- à voir si une zone peut-être définie de cette manière-->
     </model>
     <model><!--à voir avec le groupe moteur 3D-->
-		<name>Lamp</name>
-        <inheritance value="Empty"/>
-        <attribute name="type" type="Enum" values="lamp, spot, sun" value="sun"/>
-        <attribute name="effect" type="Enum" values="generic, constant, linear, stroboscopic" value="generic"/><!--effet d'extinction de la lumière-->
-        <attribute name="interval" type="Time" value="1" unit="s"/><!--pour constant, stroboscopic et linear-->
-        <attribute name="redc" type="number" value="255"/><!--couleur de la lampe-->
-        <attribute name="greenc" type="number" value="255"/>
-        <attribute name="bluec" type="number" value="255"/>
+	<name>Lamp</name>
+	<inheritance value="Empty"/>
+	<attribute name="type" type="Enum" values="lamp, spot, sun" value="sun"/>
+	<attribute name="effect" type="Enum" values="generic, constant, linear, stroboscopic" value="generic"/><!--effet d'extinction de la lumière-->
+	<attribute name="interval" type="Time" value="1" unit="s"/><!--pour constant, stroboscopic et linear-->
+	<attribute name="redc" type="number" value="255"/><!--couleur de la lampe-->
+	<attribute name="greenc" type="number" value="255"/>
+	<attribute name="bluec" type="number" value="255"/>
     </model>
 	
-	<model>
-		<name>Ground</name>
-        <inheritance value="Empty"/>
-        <attribute name="type" type="String" value=""/>
-		<attribute name="friction" type="number" value="100"/>
+    <model>
+	<name>Ground</name>
+	<inheritance value="Empty"/>
+	<attribute name="type" type="String" value=""/>
+	<attribute name="friction" type="number" value="100"/>
     </model>
 	
     <model><!--contrairement à Empty et ses classes filles, Obstacle a un collada associé comme Object-->
-		<name>Obstacle</name>
-        <inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
-        <attribute name="name" type="String" value="'Obstacle1'"/>
-        <attribute name="isGenerated" type="boolean" value="false"/>
-		<attribute name="url" type="String" value=""/>
+	<name>Obstacle</name>
+	<inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
+	<attribute name="name" type="String" value="'Obstacle1'"/>
+	<attribute name="isGenerated" type="boolean" value="false"/>
+	<attribute name="url" type="String" value=""/>
     </model>
 	
-	<model>
-		<name>Object</name>
-		<inheritance value="Empty"/>
-		<attribute name="name" type="String" value="'Object1'"/>
-        <attribute name="mass" type="number" value="0"/>
-        <attribute name="inertia" type="number" value="0"/>
-        <attribute name="friction" type="number" value="100"/>
-        <attribute name="isFix" type="boolean" value="false"/>
-        <attribute name="isTraversable" type="boolean" value="false"/>
-        <attribute name="isGenerated" type="boolean" value="false"/><!-- je ne sais pas si c'est utile -->
-        <attribute name="message" type="String" value="'Message1 !'"/><!-- si jamais on implémente le 'speaks' -->
-		<attribute name="url" type="String" value="" />
-	</model>
-	<model>
-		<name>Character</name>
-		<inheritance value="Object"/>
-		<attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="life" type="number" value="100"/>
-        <attribute name="lifeMax" type="number" value="1"/>
-        <attribute name="lifeMin" type="number" value="1"/>
-        <attribute name="nbLives" type="number" value="1"/>
-        <attribute name="magic" type="number" value="0"/>
-        <attribute name="magicMax" type="number" value="1"/>
-        <attribute name="magicMin" type="number" value="0"/>
-        <attribute name="level" type="number" value="0"/>
-        <attribute name="attack" type="number" value="0"/>
-        <attribute name="defense" type="number" value="0"/>
-        <attribute name="maxJumpsInTheAir" type="number" value="0"/>
-        <attribute name="money" type="number" value="0"/>
-        <attribute name="class" type="String" value="'Class1'"/>
-        <attribute name="race" type="String" value="'Race1'"/>
-        <attribute name="acceleration" type="number" value="1"/>
-        <attribute name="inventories" type="List" subType="Inventory" value="null"/>
-        <attribute name="moveWithCamera" type="boolean" value="false"/><!-- si à true le perso avance comme tout jeu de plateforme / si false avance comme dans Resident Evil 1 -->
-        <attribute name="equipedObjects" type="List" subType="Object" value="null"/>
-        <attribute name="rightHandObject" type="Object" value="null"/>
-        <attribute name="leftHandObject" type="Object" value="null"/>
-	</model>
-	<model>
-		<name>Projectile</name>
-		<inheritance value="object"/>
-		<attribute name="speed" type="number" value="1"/>
-		<attribute name="damages" type="number" value="1"/>
-		<attribute name="damageZone" type="Object" value="null"/>
-	</model>
-	<model>
-		<name>Zone</name>
-		<inheritance value="object"/>
-		<attribute name="name" type="string" value=""/>
-	</model>
+    <model>
+	<name>Object</name>
+	<inheritance value="Empty"/>
+	<attribute name="name" type="String" value="'Object1'"/>
+	<attribute name="mass" type="number" value="0"/>
+	<attribute name="inertia" type="number" value="0"/>
+	<attribute name="friction" type="number" value="100"/>
+	<attribute name="isFix" type="boolean" value="false"/>
+	<attribute name="isTraversable" type="boolean" value="false"/>
+	<attribute name="isGenerated" type="boolean" value="false"/><!-- je ne sais pas si c'est utile -->
+	<attribute name="message" type="String" value="'Message1 !'"/><!-- si jamais on implémente le 'speaks' -->
+	<attribute name="url" type="String" value="" />
+    </model>
+    <model>
+	<name>Character</name>
+	<inheritance value="Object"/>
+	<attribute name="description" type="String" value="'Description1'"/>
+	<attribute name="life" type="number" value="100"/>
+	<attribute name="lifeMax" type="number" value="1"/>
+	<attribute name="lifeMin" type="number" value="1"/>
+	<attribute name="nbLives" type="number" value="1"/>
+	<attribute name="magic" type="number" value="0"/>
+	<attribute name="magicMax" type="number" value="1"/>
+	<attribute name="magicMin" type="number" value="0"/>
+	<attribute name="level" type="number" value="0"/>
+	<attribute name="attack" type="number" value="0"/>
+	<attribute name="defense" type="number" value="0"/>
+	<attribute name="maxJumpsInTheAir" type="number" value="0"/>
+	<attribute name="money" type="number" value="0"/>
+	<attribute name="class" type="String" value="'Class1'"/>
+	<attribute name="race" type="String" value="'Race1'"/>
+	<attribute name="acceleration" type="number" value="1"/>
+	<attribute name="inventories" type="List" subType="Inventory" value="null"/>
+	<attribute name="moveWithCamera" type="boolean" value="false"/><!-- si à true le perso avance comme tout jeu de plateforme / si false avance comme dans Resident Evil 1 -->
+	<attribute name="equipedObjects" type="List" subType="Object" value="null"/>
+	<attribute name="rightHandObject" type="Object" value="null"/>
+	<attribute name="leftHandObject" type="Object" value="null"/>
+    </model>
+    <model>
+	<name>Projectile</name>
+	<inheritance value="Object"/>
+	<attribute name="speed" type="number" value="1"/>
+	<attribute name="damages" type="number" value="1"/>
+	<attribute name="damageZone" type="Object" value="null"/>
+    </model>
+    <model>
+	<name>Zone</name>
+	<inheritance value="Object"/>
+	<attribute name="name" type="string" value=""/>
+    </model>
 	
-	<model>
-		<name>Weapon</name>
-		<inheritance value="object"/>
-		<attribute name="munitions" type="List" subType="Object" value="null"/><!--on peut mettre n'importe quel Object mais il vaut mieux mettre un Items (plusieurs si l'arme tire plusieurs types munition différentes)-->
-		<attribute name="name" type="string" value=""/>
-		<attribute name="nbMunitions" type="number" value="-1"/>
-		<attribute name="nbMunitionsMax" type="number" value="-1"/>
-		<attribute name="shootPower" type="number" value="1"/>
-		<attribute name="shootInterval" type="time"  value="1" unit="s"/>
-		<attribute name="reloadTime" type="time" value="1" unit="s"/>
-	</model>
-	    <model>
-		<name>Vehicle</name>
-        <inheritance value="Object"/>
-        <attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="minSpeed" type="number" value="0"/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
-        <attribute name="maxSpeed" type="number" value="100"/>
-        <attribute name="boost" type="number" value="0"/><!--la vitesse est tt le tps = à speed+boost-->
-        <attribute name="maxBoost" type="number" value="0"/>
-        <attribute name="boostDuration" type="number" value="0"/>
-        <attribute name="boostInterval" type="time" value="0" unit="s"/>
+    <model>
+	<name>Weapon</name>
+	<inheritance value="Object"/>
+	<attribute name="munitions" type="List" subType="Object" value="null"/><!--on peut mettre n'importe quel Object mais il vaut mieux mettre un Items (plusieurs si l'arme tire plusieurs types munition différentes)-->
+	<attribute name="name" type="string" value=""/>
+	<attribute name="nbMunitions" type="number" value="-1"/>
+	<attribute name="nbMunitionsMax" type="number" value="-1"/>
+	<attribute name="shootPower" type="number" value="1"/>
+	<attribute name="shootInterval" type="time"  value="1" unit="s"/>
+	<attribute name="reloadTime" type="time" value="1" unit="s"/>
+    </model>
+    <model>
+	<name>Vehicle</name>
+	<inheritance value="Object"/>
+	<attribute name="description" type="String" value="'Description1'"/>
+	<attribute name="minSpeed" type="number" value="0"/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
+	<attribute name="maxSpeed" type="number" value="100"/>
+	<attribute name="boost" type="number" value="0"/><!--la vitesse est tt le tps = à speed+boost-->
+	<attribute name="maxBoost" type="number" value="0"/>
+	<attribute name="boostDuration" type="number" value="0"/>
+	<attribute name="boostInterval" type="time" value="0" unit="s"/>
     </model>
     <model><!--sert à avoir un certain nombre d'un seul même objet (pas forcément duplicable), sert pour l'inventaire, exemple : boite de munitions-->
-        <name>Items</name>
-		<inheritance value="Object"/>
-        <attribute name="elements" type="Object" value="null"/><!-- UN seul Object -->
-        <attribute name="amount" type="number" value="0"/>
-        <attribute name="capacity" type="number" value="-1"/><!--nombre max, empêchera l'incrémentation de 'amount -->
-        <attribute name="maxWeight" type="number" value="-1"/><!--peut être géré avec (masse de l'objet x amount) , empêchera l'incrémentation de 'amount-->
+	<name>Items</name>
+	<inheritance value="Object"/>
+	<attribute name="elements" type="Object" value="null"/><!-- UN seul Object -->
+	<attribute name="amount" type="number" value="0"/>
+	<attribute name="capacity" type="number" value="-1"/><!--nombre max, empêchera l'incrémentation de 'amount -->
+	<attribute name="maxWeight" type="number" value="-1"/><!--peut être géré avec (masse de l'objet x amount) , empêchera l'incrémentation de 'amount-->
     </model>
 
 <!--Objet sans héritages-->
-	<model>
-		<name>Inventory</name>
-        <attribute name="name" type="String" value="'Inventory1'"/>
-        <attribute name="elements" type="List" subType="Object" value="null"/><!--peut contenir des Object dont les Items -->
-        <attribute name="capacity" type="number" value="-1"/><!--empêchera l'ajout d'un nouvel élément dans la liste 'elements'-->
-        <attribute name="maxWeight" type="number" value="-1"/><!--peut être géré avec la masse de chaque objet-->
+    <model>
+	<name>Inventory</name>
+	<attribute name="name" type="String" value="'Inventory1'"/>
+	<attribute name="elements" type="List" subType="Object" value="null"/><!--peut contenir des Object dont les Items -->
+	<attribute name="capacity" type="number" value="-1"/><!--empêchera l'ajout d'un nouvel élément dans la liste 'elements'-->
+	<attribute name="maxWeight" type="number" value="-1"/><!--peut être géré avec la masse de chaque objet-->
     </model>
     <model><!--peut servir pour les vagues par exemple-->
-		<name>Counter</name>
-        <attribute name="name" type="String" value="'Counter1'"/>
-        <attribute name="unit" type="String" value=""/><!--l'unité servira à l'affichage, pas obligatoire-->
-        <attribute name="curentValue" type="number" value="0"/>
-        <attribute name="step" type="number" value="1"/><!--l'incrément (pas ou step) peut-être négatif dans le cas d'un décompte-->
-        <attribute name="min" type="number" value="0"/>
-        <attribute name="max" type="number" value="-1"/>
+	<name>Counter</name>
+	<attribute name="name" type="String" value="'Counter1'"/>
+	<attribute name="unit" type="String" value=""/><!--l'unité servira à l'affichage, pas obligatoire-->
+	<attribute name="curentValue" type="number" value="0"/>
+	<attribute name="step" type="number" value="1"/><!--l'incrément (pas ou step) peut-être négatif dans le cas d'un décompte-->
+	<attribute name="min" type="number" value="0"/>
+	<attribute name="max" type="number" value="-1"/>
     </model>
     <model><!--aura les mêmes actions (play stop pause) que Media -->
-		<name>Chrono</name>
-        <attribute name="name" type="String" value="'Chrono1'"/>
-        <attribute name="value" type="time" value="0" unit="s"/>
-        <attribute name="start" type="time" value="0" unit="s"/>
-        <attribute name="end" type="time" value="-1" unit="s"/><!--relation avec le 'IDENT ends' dans la grammaire-->
-        <attribute name="active" type="boolean" value="false"/>
+	<name>Chrono</name>
+	<attribute name="name" type="String" value="'Chrono1'"/>
+	<attribute name="value" type="time" value="0" unit="s"/>
+	<attribute name="start" type="time" value="0" unit="s"/>
+	<attribute name="end" type="time" value="-1" unit="s"/><!--relation avec le 'IDENT ends' dans la grammaire-->
+	<attribute name="active" type="boolean" value="false"/>
     </model>
     <model>
-		<name>Media</name>
-        <attribute name="url" type="String" value=""/>
-        <attribute name="loop" type="boolean" value="false"/>
-        <attribute name="volume" type="number" value="100"/>
-        <attribute name="active" type="boolean" value="false"/><!--relation avec le 'IDENT ends' dans la grammaire-->
+	<name>Media</name>
+	<attribute name="url" type="String" value=""/>
+	<attribute name="loop" type="boolean" value="false"/>
+	<attribute name="volume" type="number" value="100"/>
+	<attribute name="active" type="boolean" value="false"/><!--relation avec le 'IDENT ends' dans la grammaire-->
     </model>
     <model><!-- l'image de fond si elle est gérée un jour -->
-		<name>Background</name>
-        <attribute name="url" type="String" value=""/>
-        <attribute name="orX" type="number" value="0"/>
-        <attribute name="orY" type="number" value="0"/>
-        <attribute name="orZ" type="number" value="0"/>
-        <attribute name="sizeX" type="number" value="0"/>
-        <attribute name="sizeY" type="number" value="0"/>
-        <attribute name="sizeZ" type="number" value="0"/>
+	<name>Background</name>
+	<attribute name="url" type="String" value=""/>
+	<attribute name="orX" type="number" value="0"/>
+	<attribute name="orY" type="number" value="0"/>
+	<attribute name="orZ" type="number" value="0"/>
+	<attribute name="sizeX" type="number" value="0"/>
+	<attribute name="sizeY" type="number" value="0"/>
+	<attribute name="sizeZ" type="number" value="0"/>
     </model>
 	
-	<model><!--sert pour l'attribut elements de Team et pour éviter de déclarer les mêmes attributs 2 fois dans Team et Player -->
-        <name>Side</name>
-		<attribute name="name" type="String" value="'Side1'"/>
-        <attribute name="score" type="num" value="0"/>
-        <attribute name="victory" type="boolean" value="false"/>
-        <attribute name="defeat" type="boolean" value="false"/>
+    <model><!--sert pour l'attribut elements de Team et pour éviter de déclarer les mêmes attributs 2 fois dans Team et Player -->
+	<name>Side</name>
+	<attribute name="name" type="String" value="'Side1'"/>
+	<attribute name="score" type="num" value="0"/>
+	<attribute name="victory" type="boolean" value="false"/>
+	<attribute name="defeat" type="boolean" value="false"/>
     </model>
     <model>
-		<name>Team</name>
-        <inheritance value="Side"/>
-        <attribute name="capacity" type="num" value="-1"/>
-        <attribute name="elements" type="List" subType="Side" value="null"/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-même -->
+	<name>Team</name>
+	<inheritance value="Side"/>
+	<attribute name="capacity" type="num" value="-1"/>
+	<attribute name="elements" type="List" subType="Side" value="null"/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-même -->
     </model>
     <model>
-		<name>Player</name>
-        <inheritance value="Side"/>
-        <attribute name="controller" type="Enum" values="human, IDENT" value="human"/><!-- human ou le nom d'une IA après les règles du jeu dans le code-->
+	<name>Player</name>
+	<inheritance value="Side"/>
+	<attribute name="controller" type="Enum" values="human, IDENT" value="human"/><!-- human ou le nom d'une IA après les règles du jeu dans le code-->
     </model>
 	
 	
 <!--Contraintes-->	
-	<const><!-- les contraintes à voir avec le groupe moteur 3D -->
-		<name>Constraint</name>
-        <attribute name="influence" type="number" value="1"/>
+    <const><!-- les contraintes à voir avec le groupe moteur 3D -->
+	<name>Constraint</name>
+	<attribute name="influence" type="number" value="1"/>
     </const>
     <const><!-- contrainte de parentage -->
-		<name>ChildOfConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="parent" type="Empty" value="null"/>
-        <attribute name="translation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="rotation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="scale" type="BVector" x="true" y="true" z="true"/>
+	<name>ChildOfConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="parent" type="Empty" value="null"/>
+	<attribute name="translation" type="BVector" x="true" y="true" z="true"/>
+	<attribute name="rotation" type="BVector" x="true" y="true" z="true"/>
+	<attribute name="scale" type="BVector" x="true" y="true" z="true"/>
     </const>
     <const><!-- contrainte de copie de transformation (choix de la transformation)-->
-		<name>CopyConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation"/>
-        <attribute name="coordinates" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="offset" type="boolean" value="true"/>
+	<name>CopyConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="target" type="Empty" value="null"/>
+	<attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation"/>
+	<attribute name="coordinates" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="offset" type="boolean" value="true"/>
     </const>
     <const><!-- contrainte de limitation en translation-->
-		<name>TranslationConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+	<name>TranslationConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="min" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
+	<attribute name="max" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
     </const>
     <const><!-- contrainte de limitation en rotation-->
-		<name>RotationConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="activation" type="BVector" x="true" y="true" z="true"/>
+	<name>RotationConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="min" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="max" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="activation" type="BVector" x="true" y="true" z="true"/>
     </const>
     <const><!-- contrainte de limitation en scale-->
-		<name>ScaleConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+	<name>ScaleConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="min" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
+	<attribute name="max" type="Vector" x="1" y="1" z="1"/>
+	<attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
     </const>
     <const><!-- contrainte de distance entre les centres de 2 objets -->
-        <name>DistanceConstraint</name>
-		<inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="region" type="Enum" values="inside, outside, surface" value="outside"/>
-        <attribute name="distance" type="number" value="0"/>
+	<name>DistanceConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="target" type="Empty" value="null"/>
+	<attribute name="region" type="Enum" values="inside, outside, surface" value="outside"/>
+	<attribute name="distance" type="number" value="0"/>
     </const>
     <const><!-- contrainte de suivi (sert pour une caméra suivant un objet) -->
-		<name>TrackToConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="alignTo" type="Enum" values="x, y, z" value="x"/>
-        <attribute name="upTo" type="Enum" values="x, y, z" value="z"/>
-        <attribute name="align" type="boolean" value="false"/>
+	<name>TrackToConstraint</name>
+	<inheritance value="Constraint"/>
+	<attribute name="target" type="Empty" value="null"/>
+	<attribute name="alignTo" type="Enum" values="x, y, z" value="x"/>
+	<attribute name="upTo" type="Enum" values="x, y, z" value="z"/>
+	<attribute name="align" type="boolean" value="false"/>
     </const>
 	
-	    <model>
-		<name>List</name>
-            <attribute name="subType" type="String"/>
-            <attribute name="elements" type="list"/><!-- list : IDENT (',' IDENT); -->
+    <model>
+	<name>List</name>
+	<attribute name="subType" type="String"/>
+	<attribute name="elements" type="list"/><!-- list : IDENT (',' IDENT); -->
     </model>
 	
 	

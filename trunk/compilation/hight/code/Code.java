@@ -499,7 +499,7 @@ public class Code {
         c.append(",");
         c.append(ent.getAttribute("orZ").getCode());
         c.append(",");
-        c.append(ent.getAttribute("tX").getCode());
+        c.append(ent.getAttribute("sizeX").getCode()); //TODO à vérifier si c'est bien sizeX.
         c.append(")");
         c.append(")\n");
 

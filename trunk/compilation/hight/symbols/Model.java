@@ -14,7 +14,6 @@ import java.util.Iterator;
 public class Model implements Symbol {
 
     public static final String xml = ".\\xml\\attributesv2.xml";
-
     public static Model object, character, projectile, zone, obstacle, weapon, ground;
     private static List<Model> generated;
     private String name;
@@ -22,160 +21,129 @@ public class Model implements Symbol {
     private int generate = 0;
 
     public Model(String name) {
-        this.name = name;
-        attributs = new HashMap<String, AttributeValue>();
+	this.name = name;
+	attributs = new HashMap<String, AttributeValue>();
     }
 
     public Model(String name, Model... subtypes) {
-        this.name = name;
-        attributs = new HashMap<String, AttributeValue>();
-        for (int i = 0; i < subtypes.length; i++) {
-            attributs.putAll(subtypes[i].getAllAttributes());
-        }
+	this.name = name;
+	attributs = new HashMap<String, AttributeValue>();
+	for (int i = 0; i < subtypes.length; i++) {
+	    attributs.putAll(subtypes[i].getAllAttributes());
+	}
     }
 
     @SuppressWarnings("unchecked")
     public static void init(SymbolTable st) {
-        generated = new ArrayList<Model>();
+	generated = new ArrayList<Model>();
 
+	org.jdom.Document document = null;
+	Element racine = null;
 
+	SAXBuilder sxb = new SAXBuilder();
+	try {
+	    //On crée un nouveau document JDOM avec en argument le fichier XML
+	    //Le parsing est terminé ;)
+	    document = sxb.build(new File(xml));
+	    racine = document.getRootElement();
+	} catch (Exception e) {
+	    System.out.println("Raté");
+	}
+	List listmodel = racine.getChildren("model");
 
+	//On crée un Iterator sur notre liste
+	Iterator i = listmodel.iterator();
+	while (i.hasNext()) {
+	    Element courant = (Element) i.next();
+	    Model m;
+	    Element e = courant.getChild("inheritance");
+	    if (e == null) {
+		m = new Model(courant.getChild("name").getText());
+	    } else {
+		Symbol he = st.get(courant.getChild("inheritance").getAttributeValue("value"));
+		m = new Model(courant.getChild("name").getText(), (Model) he);
+	    }
+	    st.add(m.getName(), m);
 
-        org.jdom.Document document = null;
-        Element racine=null;
-
-        // TODO code application logic
-        SAXBuilder sxb = new SAXBuilder();
-        try {
-            //On crée un nouveau document JDOM avec en argument le fichier XML
-            //Le parsing est terminé ;)
-            document = sxb.build(new File(xml));
-            racine = document.getRootElement();
-        } catch (Exception e) {
-            System.out.println("Raté");
-        }
-            List listmodel = racine.getChildren("model");
-
-            //On crée un Iterator sur notre liste
-            Iterator i = listmodel.iterator();
-            while (i.hasNext()) {
-                Element courant = (Element) i.next();
-                Model m;
-                Element e = courant.getChild("inherance");
-                if(e==null){
-                    m = new Model(courant.getChild("name").getText());
-                }else{
-                    Symbol he = st.get(courant.getChild("inherance").getAttributeValue("name"));
-                    m= new Model(courant.getChild("name").getText(),(Model)he);
-                }
-                st.add(m.getName(), m);
-
-                List listAttribute = courant.getChildren("attribute");
-                Iterator i2 = listAttribute.iterator();
-                while (i2.hasNext()) {
-                    Element attr = (Element) i2.next();
-                    if(attr.getAttribute("type").equals("String")){
-                        m.addAttribute(attr.getAttributeValue("name"),new AttributeValue(attr.getAttributeValue("value")));
-                    }else if(attr.getAttribute("type").equals("number")){
-                        m.addAttribute(attr.getAttributeValue("name"),new AttributeValue(Float.valueOf(attr.getAttributeValue("value"))));
-                    }else if(attr.getAttribute("type").equals("boolean")){
-                        m.addAttribute(attr.getAttributeValue("name"),new AttributeValue(Boolean.valueOf(attr.getAttributeValue("value"))));
-                    }else if(attr.getAttribute("type").equals("List")){
-
-                    }else if(attr.getAttribute("type").equals("Enum")){
-
-                    }else if(attr.getAttribute("type").equals("Empty")){
-
-                    }else if(attr.getAttribute("type").equals("Object")){
-
-                    }else if(attr.getAttribute("type").equals("time")){
-                        m.addAttribute(attr.getAttributeValue("name"),new AttributeValue(new Duration (Float.valueOf(attr.getAttributeValue("value")),attr.getAttributeValue("unit"))));
-                    }
-                }
-                st.add(m.getName(), m);
-            }
+	    List listAttribute = courant.getChildren("attribute");
+	    Iterator i2 = listAttribute.iterator();
+	    while (i2.hasNext()) {
+		Element attr = (Element) i2.next();
+		if (attr.getAttributeValue("type").equals("String")) {
+		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(attr.getAttributeValue("value")));
+		} else if (attr.getAttributeValue("type").equals("number")) {
+		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Float.valueOf(attr.getAttributeValue("value"))));
+		} else if (attr.getAttributeValue("type").equals("boolean")) {
+		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Boolean.valueOf(attr.getAttributeValue("value"))));
+		} else if (attr.getAttributeValue("type").equals("List")) {
+		} else if (attr.getAttributeValue("type").equals("Enum")) {
+		} else if (attr.getAttributeValue("type").equals("Empty")) {
+		} else if (attr.getAttributeValue("type").equals("Object")) {
+		} else if (attr.getAttributeValue("type").equals("time")) {
+		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(new Duration(Float.valueOf(attr.getAttributeValue("value")), attr.getAttributeValue("unit"))));
+		}
+	    }
+	    st.add(m.getName(), m);
+	}
     }
     //On initialise un nouvel élément racine avec l'élément racine du document.
 
     public void addAttribute(String attr) {
-        this.attributs.put(attr, null);
-
-
+	this.attributs.put(attr, null);
     }
 
     public void addAttribute(String attr, AttributeValue value) {
-        this.attributs.put(attr, value);
-
-
+	this.attributs.put(attr, value);
     }
 
     public void addAttributes(Pair<String, AttributeValue>... attr) {
-        for (int i = 0; i
-                < attr.length; i++) {
-            attributs.put(attr[i].getFirst(), attr[i].getSecond());
-
-
-        }
+	for (int i = 0; i < attr.length; i++) {
+	    attributs.put(attr[i].getFirst(), attr[i].getSecond());
+	}
     }
 
     public Map<String, AttributeValue> getAllAttributes() {
-        return new HashMap<String, AttributeValue>(attributs);
-
-
+	return new HashMap<String, AttributeValue>(attributs);
     }
 
     public boolean contains(String attr) {
-        return attributs.containsKey(attr);
-
-
+	return attributs.containsKey(attr);
     }
 
     public AttributeValue getAttribute(String n) {
-        return this.attributs.get(n);
-
-
+	return this.attributs.get(n);
     }
 
     public List<String> listAttributes() {
-        List<String> res = new ArrayList<String>();
+	List<String> res = new ArrayList<String>();
 
-        String[] tab = (String[]) this.attributs.keySet().toArray(new String[0]);
-        res.addAll(Arrays.asList(tab));
+	String[] tab = (String[]) this.attributs.keySet().toArray(new String[0]);
+	res.addAll(Arrays.asList(tab));
 
-
-
-        return res;
-
-
+	return res;
     }
 
     public String getName() {
-        return name;
-
-
+	return name;
     }
 
     public void toGenerate() {
-        generate++;
-        ;
-
-
+	generate++;
     }
 
     public int getGenerate() {
-        return generate;
-
-
+	return generate;
     }
 
     public static void addGenerated(Model m) {
-        generated.add(m);
-
-
+	generated.add(m);
     }
 
     public static boolean generated(Model m) {
-        return generated.contains(m);
+	return generated.contains(m);
+    }
 
+    public Type getType() {
+	return Type.MODEL;
     }
 }

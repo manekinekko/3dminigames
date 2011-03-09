@@ -16,8 +16,21 @@ options {
 }
 
 @members {
-    private int INT_PLAYER=1, INT_ALLY=2, INT_ENEMY=3, INT_NEUTRAL=4, INT_DUPLICABLE=10;
+    private int INT_DUPLICABLE=10;
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
+
+    public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+        String hdr = getErrorHeader(e);
+        String msg = getErrorMessage(e, tokenNames);
+
+	System.out.println(e.node);
+        System.out.println(((CommonErrorNode)e.node).start.getLine());
+        System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
+    }
+
+    /*public void emitErrorMessage(String msg) {
+        System.err.println("plop");
+    }*/
 }
 
 /*------------------------------------------------------------------
@@ -108,7 +121,6 @@ subType [SymbolTable st, List<Model> sub] :
 	    sub.add((Model)verif);
 	}
     }
-    | t=typeObjet{sub.add(t);}
     ;
 
 initialization [SymbolTable st] returns [Code c]:
@@ -117,34 +129,25 @@ initialization [SymbolTable st] returns [Code c]:
 	Code modelCode = new Code();
 	Code entitiesCode = new Code();
 	Code entitiesFunCode = new Code();
-	List<Entity> lPlayer = new ArrayList<Entity>();
-	lPlayer.add(Genre.player);
-	List<List<Entity>> list = new ArrayList<List<Entity>>();
-	list.add(lPlayer);
-	list.add(Genre.allies);
-	list.add(Genre.enemies);
-	list.add(Genre.neutral);
+	List<Entity> allEntities = st.getAllEntities();
 
-	Iterator<List<Entity>> genre = list.iterator();
-	while(genre.hasNext()) {
-	    Iterator<Entity> it = genre.next().iterator();
-	    while(it.hasNext()) {
-		Entity ent = it.next();
-		Model model = null;
-		if(ent.listModels().size() > 1) {
+	Iterator<Entity> it = allEntities.iterator();
+	while(it.hasNext()) {
+	    Entity ent = it.next();
+	    Model model = null;
+	    if(ent.listModels().size() > 1) {
 
-		} else {
-		    model = ent.listModels().get(0);
-		}
-		modelCode.append(Code.genModel(model));
-		modelCode.append("\n");
-
-		entitiesFunCode.append(Code.genFuncEntity(ent));
-		entitiesFunCode.append("\n");
-
-		//entitiesCode.append(Code.genEntity(ent));
-		entitiesCode.append("\n");
+	    } else {
+	        model = ent.listModels().get(0);
 	    }
+	    modelCode.append(Code.genModel(model));
+	    modelCode.append("\n");
+
+	    entitiesFunCode.append(Code.genFuncEntity(ent));
+	    entitiesFunCode.append("\n");
+
+	    //entitiesCode.append(Code.genEntity(ent));
+	    entitiesCode.append("\n");
 	}
 
 	c = new Code("/*Models*/\n");
@@ -166,23 +169,12 @@ init [SymbolTable st] returns [Code c]:
 	    System.exit(-1);
 	} else {
 	    int mode = d.getSecond();
-	    int duplicable = (mode/INT_DUPLICABLE);
-	    mode = mode - (duplicable*INT_DUPLICABLE);
 	    
 	    Entity t = new Entity(id,d.getFirst());
 	    d.getFirst().toGenerate();
 
-	    if(duplicable==1)
+	    if(mode == INT_DUPLICABLE)
 		t.setDuplicable();
-
-	    if(mode == INT_PLAYER)
-		Genre.player = t;
-	    else if(mode == INT_ENEMY)
-		Genre.enemies.add(t);
-	    else if(mode == INT_ALLY)
-	        Genre.allies.add(t);
-	    else
-	        Genre.neutral.add(t);
 
 	    st.add(id,t);
 	}
@@ -215,13 +207,13 @@ init [SymbolTable st] returns [Code c]:
 
 // A revoir : CAMERA : si rien n'est ajoute on fait quoi ?, MEDIA pareil
 declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
-    @init{em=null;}:
-    ^(DEC te=typeEntity[st] (em=dupli)?)
+    @init{d=null;s=null;}:
+    ^(DEC t=typeEntity[st] (d=dupli)?)
     {
-	if(em == null)
-	    em=4;
+	if(d == null)
+	    d=0;
 
-	p = new Pair<Model, Integer>(te,em);
+	p = new Pair<Model, Integer>(t,d);
     }
     | ^(LIST_KW list_declaration[st])
     | ^(CAMERA_KW PERSON view[st])
@@ -229,7 +221,10 @@ declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
     | ^(MEDIA_KW LOOP)
     | ^(MEDIA_KW ONCE) 						 // sound, music or video played in loop or once
     | ^(IN_KW IDENT)									  // ident of a list to add an element
-    | PLAYER (SOLO)?
+    | PLAYER (s=SOLO)?
+    {
+	p = new Pair<Model, Integer>((Model) st.get("Player"),0);
+    }
     ;
 
 list_declaration [SymbolTable st] returns [Code c]:  
@@ -251,14 +246,6 @@ typeEntity [SymbolTable st] returns [Model t]:
 	    t = (Model)verif;
 	}
     }
-    ;
-
-// A vérifier et supprimer
-entityMode returns [Integer i]
-    @init{d=null;}:
-    PLAYER
-    {i=INT_PLAYER;}
-    | d=dupli {i=d;}
     ;
 
 dupli returns [Integer i]:
@@ -328,8 +315,8 @@ valAggregation [SymbolTable st] returns [AttributeValue c]:
 	    c = new AttributeValue(value);
 	}
     }
-    | 'true' {c = new AttributeValue(true,"true");}
-    | 'false' {c = new AttributeValue(false,"false");}
+    | 'true' {c = new AttributeValue(true);}
+    | 'false' {c = new AttributeValue(false);}
     ;
 
 
@@ -435,6 +422,7 @@ typeDestination [SymbolTable st] returns [Coordonnees coord]:
 actionObjet [SymbolTable st] returns [Code c]:
     DIES_KW
     | actionCommandePressee[st]
+    | actionCommandeMaintenue[st]
     |^(DURING actionCommandeMaintenue[st] operation[st] timeUnit[st])
     |^(UNTIL actionCommandeMaintenue[st] conditions[st])
     |^(EQUIP accesClass[st])
@@ -728,30 +716,27 @@ variable [SymbolTable st] returns [Code c]:
     }
     ;
 
-accesClass [SymbolTable st] returns [ArrayList<Symbol> sb] @init{sb = new ArrayList<Symbol>();}:	//TO DO
+accesClass [SymbolTable st] returns [ArrayList<Symbol> sb]
+    @init{sb = new ArrayList<Symbol>();} :	//TO DO
     ^(ACCESS_KW ALL)
     {
-	sb.add(Genre.player);sb.addAll(Genre.allies);sb.addAll(Genre.enemies);sb.addAll(Genre.neutral);
+	sb.addAll(st.getAllEntities());
     }
-  | ^(ACCESS_KW mo=typeObjet)
-    {sb.add(mo);}
-  | ^(ACCESS_KW NOT notAccess[st])
-    {}
-  | ^(ACCESS_KW i=IDENT co=operation[st]?) //acces a un tableau.
-    {String ident = i.getText(); Symbol s = st.get(ident);
-    if(s==null){
-        System.out.println("L'identifiant "+ident+" n'est pas défini.");
-        System.exit(-1);
-    }else{
-        sb.add(s);
+    | ^(ACCESS_KW i=IDENT co=operation[st]?) //acces a un tableau.
+    {
+	String ident = i.getText(); Symbol s = st.get(ident);
+	if(s==null){
+	    System.out.println("L'identifiant "+ident+" n'est pas défini.");
+	    System.exit(-1);
+	}else{
+	    sb.add(s);
+	}
     }
+    | ^(ACCESS_KW PLAYER)
+    {
+	sb.add(Genre.player);
     }
-  | ^(ACCESS_KW PLAYER)
-    {sb.add(Genre.player);}
-  ;
-
-notAccess [SymbolTable st] returns [Code c] :
-typeObjet | PLAYER;
+    ;
   
 typeCoordonnees [SymbolTable st] returns [Code c]:
 	POSITION {c = new Code("position");}| ORIENTATION {c = new Code("angle");}| SIZE {c = new Code("taille");}
@@ -764,14 +749,6 @@ timeUnit [SymbolTable st] returns [String c]:
         {c = "ms";}
 	| FRAME
 	;
-
-/*  */
-typeObjet returns [Model t]:
-	CAMERA
-	| MEDIA
-	| COUNTER
-	| TIME
-  ;
 
 attributTps [SymbolTable st] returns [String c]:
 	BOOST_INTERVAL{c ="boostInterval";}

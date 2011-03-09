@@ -174,10 +174,7 @@ $(function(){
 			
 			_name = $(this).closest('.window').find('#name').val();
 			_name = M3D.Common.ucfirst(_name);
-			M3D.Editor.setContent('type '+_name+' is Object;\n'+
-									_name+' has position at 0.00 0.00 0.00;\n'+
-									_name+' has rotation at 0.00 0.00 0.00;\n'+
-									_name+' has scale at 0.00 0.00 0.00;\n');
+			M3D.Editor.setDefaultContent([_name]); // an array of names
 		}
 		else {
 			_nameElement.addClass('required');
@@ -197,7 +194,7 @@ $(function(){
 	 */
 	$('#upload').bind('click', function(){
 		M3D.GUI.showPopup('upload-form');
-	})
+	});
 
 	/**
 	 * EASTER EGG :)
@@ -259,6 +256,27 @@ $(function(){
 		}
 	});
 	
+	/*
+	 *
+	 */
+	$(document).bind('keypress', function(){
+		
+		var _w = $('.window.opened');
+		
+		if( _w.length === 1 ){
+			
+			if ( keys.isKeyPressed(GLGE.KI_Y) ){
+				_w.find('input[type="button"][value="YES"]').trigger('click');
+			}
+			else if ( keys.isKeyPressed(GLGE.KI_N) ){
+				_w.find('input[type="button"][value="NO"]').trigger('click');				
+			}
+			
+		}
+		
+		
+	});
+	
 	/**
 	 * Bind the camera operations: move, ratation and zoom.
 	 */
@@ -274,7 +292,7 @@ $(function(){
 			$(this).addClass('active');
 			
 			var _t = $(this);
-			var _c = function(s){ return _t.hasClass(s); }
+			var _c = function(s){ return _t.hasClass(s); };
 			
 			if ( $(this).hasClass('camera-move') ){
 			// move the camera

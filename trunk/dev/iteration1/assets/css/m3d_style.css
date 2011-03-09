@@ -70,6 +70,7 @@ color:red;
 width: 1200px;
 left:-600px;
 margin-left:50%;
+margin-top:20px;
 position:relative;
 }
 
@@ -143,8 +144,8 @@ text-align: center;
 width: 250px;
 height: 16px;
 position: absolute;
-bottom: 180px;
-right: 10px;
+top: 5px;
+left:600px;
 z-index: 1000;
 padding:2px;
 -webkit-border-radius: 10px;

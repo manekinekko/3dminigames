@@ -11,9 +11,11 @@
 	 */
 	M3D.Editor.init = function(){
 		// TODO: get previous content
-		var _c = ''; 
-		if ( _c === '' ){
-			_setContent('\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+		if(!_hasContent()){
+			var _c = ''; 
+			if ( _c === '' ){
+				_setContent('\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+			}
 		}
 	};
 	

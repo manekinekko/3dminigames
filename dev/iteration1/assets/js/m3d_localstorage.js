@@ -22,12 +22,18 @@
 	DB_PATTERN_ATTR = '_attr';
 	
 	/**
+	 * _editor : for editor content
+	 */
+	DB_PATTERN_EDITOR = '_editor';
+	
+	/**
 	 * Entries name
 	 */
 	M3D.DB.REGEX_CONTENT_PATTERN = new RegExp('('+
 											DB_PATTERN_ATTR+
 										'|'+DB_PATTERN_TYPE+
 										'|'+DB_PATTERN_OBJ+
+										'|'+DB_PATTERN_EDITOR+
 										')$');
 	
 	/**
@@ -100,6 +106,12 @@
 		data.uid += DB_PATTERN_ATTR;
 		return _set(data);
 	};
+	
+	M3D.DB.setEditor = function(data){
+		data.name += DB_PATTERN_EDITOR;
+		localStorage.setItem(data.name, data.content);
+		return true;
+	}
 	 	
 	/**
 	 * Get a stored object's info from the local storage.
@@ -122,6 +134,10 @@
 		t = _regex(DB_PATTERN_ATTR).test(t) ? t : t+DB_PATTERN_ATTR;
 		return _get(t);
 	};
+	
+	M3D.DB.getEditor = function(t){
+		return localStorage.getItem(t) ;
+	}
 	
 	/**
 	 * Get all stored types info from the local storage.
@@ -154,8 +170,13 @@
 		for( var i=0; i<localStorage.length; i++ ){
 			
 			key = localStorage.key(i);
-            
+            log(key);
 			var exp = _regex(DB_PATTERN_OBJ);
+			
+			if (key == "m3d_editor") {
+				editor = M3D.DB.getEditor(key);
+				M3D.Editor.setContent(editor);
+			}
 			
 			if ( exp.test(key) ){
 				
@@ -224,7 +245,13 @@
 			}
 		}
 	};
+		
 	
+	M3D.DB.saveEditor = function(data){
+		
+		M3D.DB.setEditor(data);
+	
+	}
 	
 	/**
 	 * Update data ... ??? 

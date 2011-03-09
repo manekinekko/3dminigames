@@ -33,8 +33,12 @@ $(function(){
 			setTimeout(function(){
 				_this.hide().removeClass('pointer').text('');
 			}, 2000);
+			M3D.DB.saveEditor({'name': 'm3d',
+			   'content': M3D.Editor.getContent()
+			});
 			
 		});
+
 		
 	});
 		

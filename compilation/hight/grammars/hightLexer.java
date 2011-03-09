@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g 2011-03-05 01:33:16
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g 2011-03-09 14:49:58
 
     package grammars;
 
@@ -241,15 +241,15 @@ public class hightLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g"; }
+    public String getGrammarFileName() { return "/home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g"; }
 
     // $ANTLR start "GAME_KW"
     public final void mGAME_KW() throws RecognitionException {
         try {
             int _type = GAME_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:7:9: ( 'GAME_KW' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:7:11: 'GAME_KW'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:7:9: ( 'GAME_KW' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:7:11: 'GAME_KW'
             {
             match("GAME_KW"); 
 
@@ -269,8 +269,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GAME_ATTRIBUT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:8:18: ( 'GAME_ATTRIBUT_KW' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:8:20: 'GAME_ATTRIBUT_KW'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:8:18: ( 'GAME_ATTRIBUT_KW' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:8:20: 'GAME_ATTRIBUT_KW'
             {
             match("GAME_ATTRIBUT_KW"); 
 
@@ -290,8 +290,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INIT_IS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:9:12: ( 'INIT_IS_KW' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:9:14: 'INIT_IS_KW'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:9:12: ( 'INIT_IS_KW' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:9:14: 'INIT_IS_KW'
             {
             match("INIT_IS_KW"); 
 
@@ -311,8 +311,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:10:5: ( 'DEC' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:10:7: 'DEC'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:10:5: ( 'DEC' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:10:7: 'DEC'
             {
             match("DEC"); 
 
@@ -332,8 +332,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = T__221;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:8: ( 'true' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:11:10: 'true'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:11:8: ( 'true' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:11:10: 'true'
             {
             match("true"); 
 
@@ -353,8 +353,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = T__222;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:8: ( 'false' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:12:10: 'false'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:12:8: ( 'false' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:12:10: 'false'
             {
             match("false"); 
 
@@ -374,12 +374,12 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:421:13: ( '//' (~ '\\n' )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:421:15: '//' (~ '\\n' )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:13: ( '//' (~ '\\n' )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:15: '//' (~ '\\n' )*
             {
             match("//"); 
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:421:19: (~ '\\n' )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:19: (~ '\\n' )*
             loop1:
             do {
                 int alt1=2;
@@ -392,7 +392,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:421:20: ~ '\\n'
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:421:20: ~ '\\n'
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -429,8 +429,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:423:4: ( ')' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:423:6: ')'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:423:4: ( ')' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:423:6: ')'
             {
             match(')'); 
 
@@ -449,8 +449,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:424:4: ( '(' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:424:6: '('
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:424:4: ( '(' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:424:6: '('
             {
             match('('); 
 
@@ -469,8 +469,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:425:5: ( ';' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:425:7: ';'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:425:5: ( ';' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:425:7: ';'
             {
             match(';'); 
 
@@ -489,8 +489,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:426:6: ( ',' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:426:8: ','
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:426:6: ( ',' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:426:8: ','
             {
             match(','); 
 
@@ -509,8 +509,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = HAS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:427:5: ( 'has' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:427:7: 'has'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:427:5: ( 'has' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:427:7: 'has'
             {
             match("has"); 
 
@@ -530,8 +530,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:4: ( 'at' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:428:6: 'at'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:428:4: ( 'at' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:428:6: 'at'
             {
             match("at"); 
 
@@ -551,8 +551,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:429:4: ( 'is' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:429:6: 'is'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:429:4: ( 'is' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:429:6: 'is'
             {
             match("is"); 
 
@@ -572,8 +572,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:430:5: ( 'and' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:430:7: 'and'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:430:5: ( 'and' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:430:7: 'and'
             {
             match("and"); 
 
@@ -593,8 +593,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:431:4: ( 'of' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:431:6: 'of'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:431:4: ( 'of' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:431:6: 'of'
             {
             match("of"); 
 
@@ -614,8 +614,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:432:6: ( 'with' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:432:8: 'with'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:432:6: ( 'with' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:432:8: 'with'
             {
             match("with"); 
 
@@ -635,8 +635,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BETWEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:433:9: ( 'between' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:433:11: 'between'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:433:9: ( 'between' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:433:11: 'between'
             {
             match("between"); 
 
@@ -656,8 +656,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:434:6: ( '+' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:434:8: '+'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:434:6: ( '+' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:434:8: '+'
             {
             match('+'); 
 
@@ -676,8 +676,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:435:7: ( '-' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:435:9: '-'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:435:7: ( '-' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:435:9: '-'
             {
             match('-'); 
 
@@ -696,8 +696,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:436:5: ( '*' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:436:7: '*'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:436:5: ( '*' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:436:7: '*'
             {
             match('*'); 
 
@@ -716,8 +716,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:437:5: ( '/' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:437:7: '/'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:437:5: ( '/' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:437:7: '/'
             {
             match('/'); 
 
@@ -736,8 +736,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = POW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:438:5: ( '^' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:438:7: '^'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:438:5: ( '^' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:438:7: '^'
             {
             match('^'); 
 
@@ -756,8 +756,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:439:5: ( '%' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:439:7: '%'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:439:5: ( '%' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:439:7: '%'
             {
             match('%'); 
 
@@ -776,8 +776,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = X;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:440:3: ( 'x' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:440:5: 'x'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:440:3: ( 'x' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:440:5: 'x'
             {
             match('x'); 
 
@@ -796,8 +796,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Y;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:441:3: ( 'y' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:441:5: 'y'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:441:3: ( 'y' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:441:5: 'y'
             {
             match('y'); 
 
@@ -816,8 +816,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = Z;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:442:3: ( 'z' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:442:5: 'z'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:442:3: ( 'z' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:442:5: 'z'
             {
             match('z'); 
 
@@ -836,8 +836,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:443:5: ( 'all' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:443:7: 'all'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:443:5: ( 'all' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:443:7: 'all'
             {
             match("all"); 
 
@@ -857,8 +857,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:444:5: ( 'not' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:444:7: 'not'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:444:5: ( 'not' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:444:7: 'not'
             {
             match("not"); 
 
@@ -878,8 +878,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:445:5: ( 'min' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:445:7: 'min'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:445:5: ( 'min' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:445:7: 'min'
             {
             match("min"); 
 
@@ -899,8 +899,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:446:5: ( 's' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:446:7: 's'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:446:5: ( 's' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:446:7: 's'
             {
             match('s'); 
 
@@ -919,8 +919,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:447:4: ( 'ms' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:447:6: 'ms'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:447:4: ( 'ms' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:447:6: 'ms'
             {
             match("ms"); 
 
@@ -940,8 +940,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:448:6: ( 'then' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:448:8: 'then'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:448:6: ( 'then' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:448:8: 'then'
             {
             match("then"); 
 
@@ -961,8 +961,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:449:5: ( 'for' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:449:7: 'for'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:449:5: ( 'for' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:449:7: 'for'
             {
             match("for"); 
 
@@ -982,8 +982,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:450:8: ( '=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:450:10: '='
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:450:8: ( '=' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:450:10: '='
             {
             match('='); 
 
@@ -1002,8 +1002,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:451:5: ( '<' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:451:8: '<'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:451:5: ( '<' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:451:8: '<'
             {
             match('<'); 
 
@@ -1022,8 +1022,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:452:5: ( '>' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:452:8: '>'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:452:5: ( '>' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:452:8: '>'
             {
             match('>'); 
 
@@ -1042,8 +1042,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INFEG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:453:7: ( '<=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:453:9: '<='
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:453:7: ( '<=' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:453:9: '<='
             {
             match("<="); 
 
@@ -1063,8 +1063,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUPED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:454:7: ( '>=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:454:9: '>='
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:454:7: ( '>=' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:454:9: '>='
             {
             match(">="); 
 
@@ -1084,8 +1084,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:455:6: ( '!=' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:455:8: '!='
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:455:6: ( '!=' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:455:8: '!='
             {
             match("!="); 
 
@@ -1105,8 +1105,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FROM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:456:7: ( 'from' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:456:8: 'from'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:456:7: ( 'from' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:456:8: 'from'
             {
             match("from"); 
 
@@ -1126,8 +1126,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DBP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:457:9: ( ':' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:457:11: ':'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:457:9: ( ':' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:457:11: ':'
             {
             match(':'); 
 
@@ -1146,8 +1146,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:459:7: ( 'Game' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:459:9: 'Game'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:459:7: ( 'Game' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:459:9: 'Game'
             {
             match("Game"); 
 
@@ -1167,8 +1167,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRAVITY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:460:12: ( 'gravity' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:460:14: 'gravity'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:460:12: ( 'gravity' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:460:14: 'gravity'
             {
             match("gravity"); 
 
@@ -1188,8 +1188,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:8: ( 'score' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:461:10: 'score'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:461:8: ( 'score' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:461:10: 'score'
             {
             match("score"); 
 
@@ -1209,8 +1209,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TURNBASED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:462:17: ( 'turnbased' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:462:19: 'turnbased'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:462:17: ( 'turnbased' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:462:19: 'turnbased'
             {
             match("turnbased"); 
 
@@ -1230,8 +1230,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WORLD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:17: ( 'world' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:463:19: 'world'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:463:17: ( 'world' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:463:19: 'world'
             {
             match("world"); 
 
@@ -1251,8 +1251,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRIDSIZE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:17: ( 'gridsize' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:464:19: 'gridsize'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:464:17: ( 'gridsize' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:464:19: 'gridsize'
             {
             match("gridsize"); 
 
@@ -1272,8 +1272,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:465:17: ( 'generic' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:465:19: 'generic'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:465:17: ( 'generic' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:465:19: 'generic'
             {
             match("generic"); 
 
@@ -1293,8 +1293,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:15: ( 'grid' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:466:17: 'grid'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:466:15: ( 'grid' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:466:17: 'grid'
             {
             match("grid"); 
 
@@ -1314,8 +1314,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RIBBON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:17: ( 'ribbon' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:467:19: 'ribbon'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:467:17: ( 'ribbon' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:467:19: 'ribbon'
             {
             match("ribbon"); 
 
@@ -1335,8 +1335,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NAME_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:17: ( 'name' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:468:19: 'name'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:468:17: ( 'name' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:468:19: 'name'
             {
             match("name"); 
 
@@ -1356,8 +1356,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:7: ( 'type' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:469:9: 'type'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:469:7: ( 'type' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:469:9: 'type'
             {
             match("type"); 
 
@@ -1377,8 +1377,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INSERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:11: ( 'insert' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:470:14: 'insert'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:470:11: ( 'insert' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:470:14: 'insert'
             {
             match("insert"); 
 
@@ -1398,8 +1398,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = REMOVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:11: ( 'remove' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:471:13: 'remove'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:471:11: ( 'remove' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:471:13: 'remove'
             {
             match("remove"); 
 
@@ -1419,8 +1419,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SOLO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:7: ( 'solo' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:472:9: 'solo'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:472:7: ( 'solo' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:472:9: 'solo'
             {
             match("solo"); 
 
@@ -1440,8 +1440,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAYER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:9: ( 'Player' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:473:11: 'Player'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:473:9: ( 'Player' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:473:11: 'Player'
             {
             match("Player"); 
 
@@ -1461,8 +1461,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LIST_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:10: ( 'list' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:474:12: 'list'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:474:10: ( 'list' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:474:12: 'list'
             {
             match("list"); 
 
@@ -1482,8 +1482,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:5: ( 'in' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:475:7: 'in'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:475:5: ( 'in' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:475:7: 'in'
             {
             match("in"); 
 
@@ -1503,8 +1503,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:7: ( 'loop' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:476:9: 'loop'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:476:7: ( 'loop' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:476:9: 'loop'
             {
             match("loop"); 
 
@@ -1524,8 +1524,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ONCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:7: ( 'once' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:477:9: 'once'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:477:7: ( 'once' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:477:9: 'once'
             {
             match("once"); 
 
@@ -1545,8 +1545,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RANDOM_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:11: ( 'random' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:478:13: 'random'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:478:11: ( 'random' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:478:13: 'random'
             {
             match("random"); 
 
@@ -1566,8 +1566,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFINITION_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:15: ( 'definition' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:479:17: 'definition'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:479:15: ( 'definition' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:479:17: 'definition'
             {
             match("definition"); 
 
@@ -1587,8 +1587,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEANS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:8: ( 'means' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:480:10: 'means'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:480:8: ( 'means' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:480:10: 'means'
             {
             match("means"); 
 
@@ -1608,8 +1608,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:10: ( 'pause' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:481:12: 'pause'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:481:10: ( 'pause' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:481:12: 'pause'
             {
             match("pause"); 
 
@@ -1629,8 +1629,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:10: ( 'mute' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:482:12: 'mute'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:482:10: ( 'mute' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:482:12: 'mute'
             {
             match("mute"); 
 
@@ -1650,8 +1650,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:5: ( 'on' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:483:7: 'on'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:483:5: ( 'on' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:483:7: 'on'
             {
             match("on"); 
 
@@ -1671,8 +1671,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:6: ( 'off' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:484:8: 'off'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:484:6: ( 'off' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:484:8: 'off'
             {
             match("off"); 
 
@@ -1692,8 +1692,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:10: ( 'play' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:485:12: 'play'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:485:10: ( 'play' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:485:12: 'play'
             {
             match("play"); 
 
@@ -1713,8 +1713,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOP_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:10: ( 'stop' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:486:12: 'stop'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:486:10: ( 'stop' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:486:12: 'stop'
             {
             match("stop"); 
 
@@ -1734,8 +1734,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:10: ( 'ends' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:487:12: 'ends'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:487:10: ( 'ends' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:487:12: 'ends'
             {
             match("ends"); 
 
@@ -1755,8 +1755,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:11: ( 'starts' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:488:13: 'starts'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:488:11: ( 'starts' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:488:13: 'starts'
             {
             match("starts"); 
 
@@ -1776,8 +1776,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BLOCK_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:10: ( 'block' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:489:12: 'block'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:489:10: ( 'block' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:489:12: 'block'
             {
             match("block"); 
 
@@ -1797,8 +1797,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TRANSLATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:13: ( 'translation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:490:15: 'translation'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:490:13: ( 'translation' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:490:15: 'translation'
             {
             match("translation"); 
 
@@ -1818,8 +1818,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ROTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:10: ( 'rotation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:491:12: 'rotation'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:491:10: ( 'rotation' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:491:12: 'rotation'
             {
             match("rotation"); 
 
@@ -1839,8 +1839,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCALE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:8: ( 'scale' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:492:10: 'scale'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:492:8: ( 'scale' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:492:10: 'scale'
             {
             match("scale"); 
 
@@ -1860,8 +1860,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:11: ( 'efface' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:493:13: 'efface'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:493:11: ( 'efface' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:493:13: 'efface'
             {
             match("efface"); 
 
@@ -1881,8 +1881,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:13: ( 'generate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:494:15: 'generate'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:494:13: ( 'generate' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:494:15: 'generate'
             {
             match("generate"); 
 
@@ -1902,8 +1902,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAIT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:10: ( 'wait' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:495:12: 'wait'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:495:10: ( 'wait' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:495:12: 'wait'
             {
             match("wait"); 
 
@@ -1923,8 +1923,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDWAIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:10: ( 'endWait' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:496:12: 'endWait'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:496:10: ( 'endWait' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:496:12: 'endWait'
             {
             match("endWait"); 
 
@@ -1944,8 +1944,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SAVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:10: ( 'save' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:497:12: 'save'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:497:10: ( 'save' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:497:12: 'save'
             {
             match("save"); 
 
@@ -1965,8 +1965,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RULE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:10: ( 'rule' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:498:12: 'rule'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:498:10: ( 'rule' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:498:12: 'rule'
             {
             match("rule"); 
 
@@ -1986,8 +1986,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:10: ( 'moves' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:499:12: 'moves'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:499:10: ( 'moves' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:499:12: 'moves'
             {
             match("moves"); 
 
@@ -2007,8 +2007,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DIES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:9: ( 'dies' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:500:11: 'dies'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:500:9: ( 'dies' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:500:11: 'dies'
             {
             match("dies"); 
 
@@ -2028,8 +2028,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:12: ( 'touches' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:501:14: 'touches'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:501:12: ( 'touches' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:501:14: 'touches'
             {
             match("touches"); 
 
@@ -2049,8 +2049,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:10: ( 'kills' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:502:12: 'kills'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:502:10: ( 'kills' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:502:12: 'kills'
             {
             match("kills"); 
 
@@ -2070,8 +2070,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KILLED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:11: ( 'killed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:503:13: 'killed'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:503:11: ( 'killed' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:503:13: 'killed'
             {
             match("killed"); 
 
@@ -2091,8 +2091,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:12: ( 'touched' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:504:14: 'touched'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:504:12: ( 'touched' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:504:14: 'touched'
             {
             match("touched"); 
 
@@ -2112,8 +2112,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:4: ( 'by' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:505:6: 'by'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:505:4: ( 'by' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:505:6: 'by'
             {
             match("by"); 
 
@@ -2133,8 +2133,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:7: ( 'other' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:506:9: 'other'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:506:7: ( 'other' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:506:9: 'other'
             {
             match("other"); 
 
@@ -2154,8 +2154,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BECOMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:9: ( 'becomes' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:507:11: 'becomes'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:507:9: ( 'becomes' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:507:11: 'becomes'
             {
             match("becomes"); 
 
@@ -2175,8 +2175,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VICTORY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:12: ( 'victory' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:508:14: 'victory'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:508:12: ( 'victory' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:508:14: 'victory'
             {
             match("victory"); 
 
@@ -2196,8 +2196,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEFEAT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:11: ( 'defeat' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:509:13: 'defeat'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:509:11: ( 'defeat' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:509:13: 'defeat'
             {
             match("defeat"); 
 
@@ -2217,8 +2217,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IF_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:7: ( 'if' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:510:9: 'if'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:510:7: ( 'if' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:510:9: 'if'
             {
             match("if"); 
 
@@ -2238,8 +2238,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:6: ( 'else' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:511:8: 'else'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:511:6: ( 'else' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:511:8: 'else'
             {
             match("else"); 
 
@@ -2259,8 +2259,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:7: ( 'endIf' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:512:9: 'endIf'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:512:7: ( 'endIf' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:512:9: 'endIf'
             {
             match("endIf"); 
 
@@ -2280,8 +2280,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:4: ( 'or' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:513:6: 'or'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:513:4: ( 'or' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:513:6: 'or'
             {
             match("or"); 
 
@@ -2301,8 +2301,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:6: ( 'comp' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:514:8: 'comp'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:514:6: ( 'comp' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:514:8: 'comp'
             {
             match("comp"); 
 
@@ -2322,8 +2322,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DEAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:9: ( 'dead' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:515:11: 'dead'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:515:9: ( 'dead' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:515:11: 'dead'
             {
             match("dead"); 
 
@@ -2343,8 +2343,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ALIVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:10: ( 'alive' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:516:12: 'alive'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:516:10: ( 'alive' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:516:12: 'alive'
             {
             match("alive"); 
 
@@ -2364,8 +2364,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EFFACED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:12: ( 'effaced' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:517:13: 'effaced'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:517:12: ( 'effaced' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:517:13: 'effaced'
             {
             match("effaced"); 
 
@@ -2385,8 +2385,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:14: ( 'generated' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:518:16: 'generated'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:518:14: ( 'generated' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:518:16: 'generated'
             {
             match("generated"); 
 
@@ -2406,8 +2406,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TOUCHING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:13: ( 'touching' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:519:15: 'touching'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:519:13: ( 'touching' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:519:15: 'touching'
             {
             match("touching"); 
 
@@ -2427,8 +2427,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:11: ( 'moving' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:520:13: 'moving'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:520:11: ( 'moving' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:520:13: 'moving'
             {
             match("moving"); 
 
@@ -2448,8 +2448,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WAITING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:12: ( 'waiting' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:521:14: 'waiting'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:521:12: ( 'waiting' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:521:14: 'waiting'
             {
             match("waiting"); 
 
@@ -2469,8 +2469,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FINISHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:13: ( 'finished' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:522:15: 'finished'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:522:13: ( 'finished' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:522:15: 'finished'
             {
             match("finished"); 
 
@@ -2490,8 +2490,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STARTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:12: ( 'started' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:523:14: 'started'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:523:12: ( 'started' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:523:14: 'started'
             {
             match("started"); 
 
@@ -2511,8 +2511,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PAUSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:11: ( 'paused' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:524:13: 'paused'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:524:11: ( 'paused' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:524:13: 'paused'
             {
             match("paused"); 
 
@@ -2532,8 +2532,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MUTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:10: ( 'muted' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:525:12: 'muted'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:525:10: ( 'muted' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:525:12: 'muted'
             {
             match("muted"); 
 
@@ -2553,8 +2553,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PLAYED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:11: ( 'played' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:526:13: 'played'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:526:11: ( 'played' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:526:13: 'played'
             {
             match("played"); 
 
@@ -2574,8 +2574,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = STOPPED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:12: ( 'stopped' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:527:14: 'stopped'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:527:12: ( 'stopped' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:527:14: 'stopped'
             {
             match("stopped"); 
 
@@ -2595,8 +2595,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ASSIGN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:11: ( 'assign' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:528:13: 'assign'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:528:11: ( 'assign' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:528:13: 'assign'
             {
             match("assign"); 
 
@@ -2616,8 +2616,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ADD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:8: ( 'add' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:529:10: 'add'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:529:8: ( 'add' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:529:10: 'add'
             {
             match("add"); 
 
@@ -2637,8 +2637,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SUB_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:8: ( 'sub' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:530:10: 'sub'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:530:8: ( 'sub' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:530:10: 'sub'
             {
             match("sub"); 
 
@@ -2658,8 +2658,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:11: ( 'invert' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:531:13: 'invert'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:531:11: ( 'invert' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:531:13: 'invert'
             {
             match("invert"); 
 
@@ -2679,8 +2679,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NUM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:7: ( 'num' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:532:9: 'num'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:532:7: ( 'num' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:532:9: 'num'
             {
             match("num"); 
 
@@ -2700,8 +2700,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = IA_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:8: ( 'ai' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:533:11: 'ai'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:533:8: ( 'ai' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:533:11: 'ai'
             {
             match("ai"); 
 
@@ -2721,8 +2721,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DURING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:8: ( 'during' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:534:10: 'during'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:534:8: ( 'during' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:534:10: 'during'
             {
             match("during"); 
 
@@ -2742,8 +2742,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = UNTIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:7: ( 'until' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:535:9: 'until'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:535:7: ( 'until' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:535:9: 'until'
             {
             match("until"); 
 
@@ -2763,8 +2763,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:7: ( 'equip' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:536:9: 'equip'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:536:7: ( 'equip' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:536:9: 'equip'
             {
             match("equip"); 
 
@@ -2784,8 +2784,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:6: ( 'next' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:537:8: 'next'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:537:6: ( 'next' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:537:8: 'next'
             {
             match("next"); 
 
@@ -2805,8 +2805,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PREVIOUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:10: ( 'previous' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:538:12: 'previous'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:538:10: ( 'previous' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:538:12: 'previous'
             {
             match("previous"); 
 
@@ -2826,8 +2826,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KEYBOARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:10: ( 'keyboard' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:539:12: 'keyboard'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:539:10: ( 'keyboard' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:539:12: 'keyboard'
             {
             match("keyboard"); 
 
@@ -2847,8 +2847,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACTIVATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:13: ( 'activate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:540:15: 'activate'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:540:13: ( 'activate' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:540:15: 'activate'
             {
             match("activate"); 
 
@@ -2868,8 +2868,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DISABLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:11: ( 'disable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:541:12: 'disable'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:541:11: ( 'disable' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:541:12: 'disable'
             {
             match("disable"); 
 
@@ -2889,8 +2889,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMANDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:9: ( 'commands' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:542:10: 'commands'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:542:9: ( 'commands' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:542:10: 'commands'
             {
             match("commands"); 
 
@@ -2910,8 +2910,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLOCKWISE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:15: ( 'clockwise' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:543:17: 'clockwise'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:543:15: ( 'clockwise' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:543:17: 'clockwise'
             {
             match("clockwise"); 
 
@@ -2931,8 +2931,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ANTICLOCKWISE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:15: ( 'anticlockwise' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:544:17: 'anticlockwise'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:544:15: ( 'anticlockwise' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:544:17: 'anticlockwise'
             {
             match("anticlockwise"); 
 
@@ -2952,8 +2952,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NEXTURN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:12: ( 'nexturn' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:545:14: 'nexturn'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:545:12: ( 'nexturn' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:545:14: 'nexturn'
             {
             match("nexturn"); 
 
@@ -2973,8 +2973,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RELOAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:11: ( 'reload' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:546:13: 'reload'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:546:11: ( 'reload' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:546:13: 'reload'
             {
             match("reload"); 
 
@@ -2994,8 +2994,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GRASPS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:10: ( 'grasps' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:547:11: 'grasps'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:547:10: ( 'grasps' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:547:11: 'grasps'
             {
             match("grasps"); 
 
@@ -3015,8 +3015,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EXPELS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:10: ( 'expels' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:548:12: 'expels'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:548:10: ( 'expels' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:548:12: 'expels'
             {
             match("expels"); 
 
@@ -3036,8 +3036,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INGESTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:11: ( 'ingests' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:549:13: 'ingests'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:549:11: ( 'ingests' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:549:13: 'ingests'
             {
             match("ingests"); 
 
@@ -3057,8 +3057,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DUPLICABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:12: ( 'duplicable' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:550:14: 'duplicable'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:550:12: ( 'duplicable' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:550:14: 'duplicable'
             {
             match("duplicable"); 
 
@@ -3078,8 +3078,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:8: ( 'first' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:551:10: 'first'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:551:8: ( 'first' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:551:10: 'first'
             {
             match("first"); 
 
@@ -3099,8 +3099,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:8: ( 'third' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:552:10: 'third'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:552:8: ( 'third' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:552:10: 'third'
             {
             match("third"); 
 
@@ -3120,8 +3120,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = POSITION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:10: ( 'position' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:553:12: 'position'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:553:10: ( 'position' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:553:12: 'position'
             {
             match("position"); 
 
@@ -3141,8 +3141,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ORIENTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:13: ( 'orientation' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:554:15: 'orientation'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:554:13: ( 'orientation' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:554:15: 'orientation'
             {
             match("orientation"); 
 
@@ -3162,8 +3162,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SIZE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:7: ( 'size' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:555:9: 'size'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:555:7: ( 'size' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:555:9: 'size'
             {
             match("size"); 
 
@@ -3183,8 +3183,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PERSON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:9: ( 'person' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:556:11: 'person'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:556:9: ( 'person' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:556:11: 'person'
             {
             match("person"); 
 
@@ -3204,8 +3204,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FREE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:7: ( 'free' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:557:9: 'free'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:557:7: ( 'free' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:557:9: 'free'
             {
             match("free"); 
 
@@ -3225,7 +3225,7 @@ public class hightLexer extends Lexer {
         try {
             int _type = FRAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:8: ( 'frame' | 'frames' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:558:8: ( 'frame' | 'frames' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3286,7 +3286,7 @@ public class hightLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:10: 'frame'
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:558:10: 'frame'
                     {
                     match("frame"); 
 
@@ -3294,7 +3294,7 @@ public class hightLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:558:20: 'frames'
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:558:20: 'frames'
                     {
                     match("frames"); 
 
@@ -3316,8 +3316,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = PRESSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:12: ( 'pressed' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:559:14: 'pressed'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:559:12: ( 'pressed' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:559:14: 'pressed'
             {
             match("pressed"); 
 
@@ -3337,8 +3337,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = HELD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:9: ( 'held' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:560:11: 'held'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:560:9: ( 'held' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:560:11: 'held'
             {
             match("held"); 
 
@@ -3358,8 +3358,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RELEASED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:13: ( 'released' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:561:15: 'released'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:561:13: ( 'released' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:561:15: 'released'
             {
             match("released"); 
 
@@ -3379,8 +3379,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OWNES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:10: ( 'ownes' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:562:12: 'ownes'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:562:10: ( 'ownes' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:562:12: 'ownes'
             {
             match("ownes"); 
 
@@ -3400,8 +3400,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NOTOWNES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:13: ( 'notOwnes' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:563:16: 'notOwnes'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:563:13: ( 'notOwnes' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:563:16: 'notOwnes'
             {
             match("notOwnes"); 
 
@@ -3421,8 +3421,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = OWNED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:9: ( 'owned' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:564:10: 'owned'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:564:9: ( 'owned' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:564:10: 'owned'
             {
             match("owned"); 
 
@@ -3442,8 +3442,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = NOTOWNED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:12: ( 'notOwned' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:565:13: 'notOwned'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:565:12: ( 'notOwned' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:565:13: 'notOwned'
             {
             match("notOwned"); 
 
@@ -3463,8 +3463,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = HAPPENS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:9: ( 'happens' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:566:12: 'happens'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:566:9: ( 'happens' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:566:12: 'happens'
             {
             match("happens"); 
 
@@ -3484,8 +3484,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CONTAINS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:14: ( 'contains' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:567:17: 'contains'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:567:14: ( 'contains' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:567:17: 'contains'
             {
             match("contains"); 
 
@@ -3505,8 +3505,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DISTANCE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:13: ( 'distance' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:568:15: 'distance'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:568:13: ( 'distance' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:568:15: 'distance'
             {
             match("distance"); 
 
@@ -3526,8 +3526,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ANGLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:10: ( 'angle' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:569:12: 'angle'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:569:10: ( 'angle' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:569:12: 'angle'
             {
             match("angle"); 
 
@@ -3547,8 +3547,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:5: ( 'up' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:572:7: 'up'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:572:5: ( 'up' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:572:7: 'up'
             {
             match("up"); 
 
@@ -3568,8 +3568,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = WDOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:7: ( 'down' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:573:9: 'down'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:573:7: ( 'down' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:573:9: 'down'
             {
             match("down"); 
 
@@ -3589,8 +3589,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:6: ( 'left' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:574:8: 'left'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:574:6: ( 'left' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:574:8: 'left'
             {
             match("left"); 
 
@@ -3610,8 +3610,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:7: ( 'right' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:575:9: 'right'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:575:7: ( 'right' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:575:9: 'right'
             {
             match("right"); 
 
@@ -3631,8 +3631,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:7: ( 'space' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:576:9: 'space'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:576:7: ( 'space' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:576:9: 'space'
             {
             match("space"); 
 
@@ -3652,8 +3652,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ESCAPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:8: ( 'escape' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:577:10: 'escape'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:577:8: ( 'escape' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:577:10: 'escape'
             {
             match("escape"); 
 
@@ -3673,8 +3673,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:7: ( 'enter' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:578:9: 'enter'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:578:7: ( 'enter' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:578:9: 'enter'
             {
             match("enter"); 
 
@@ -3694,8 +3694,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOUSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:7: ( 'mouse' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:579:9: 'mouse'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:579:7: ( 'mouse' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:579:9: 'mouse'
             {
             match("mouse"); 
 
@@ -3715,8 +3715,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:5: ( 'key' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:580:7: 'key'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:580:5: ( 'key' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:580:7: 'key'
             {
             match("key"); 
 
@@ -3736,8 +3736,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:12: ( 'lClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:581:14: 'lClick'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:581:12: ( 'lClick' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:581:14: 'lClick'
             {
             match("lClick"); 
 
@@ -3757,8 +3757,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_MIDDLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:14: ( 'mClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:582:16: 'mClick'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:582:14: ( 'mClick' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:582:16: 'mClick'
             {
             match("mClick"); 
 
@@ -3778,8 +3778,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CLICK_RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:13: ( 'rClick' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:583:15: 'rClick'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:583:13: ( 'rClick' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:583:15: 'rClick'
             {
             match("rClick"); 
 
@@ -3799,8 +3799,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_UP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:11: ( 'scrollUp' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:584:13: 'scrollUp'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:584:11: ( 'scrollUp' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:584:13: 'scrollUp'
             {
             match("scrollUp"); 
 
@@ -3820,8 +3820,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SCROLL_DOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:13: ( 'scrollDown' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:585:15: 'scrollDown'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:585:13: ( 'scrollDown' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:585:15: 'scrollDown'
             {
             match("scrollDown"); 
 
@@ -3841,8 +3841,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COMMAND_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:12: ( 'command' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:587:14: 'command'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:587:12: ( 'command' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:587:14: 'command'
             {
             match("command"); 
 
@@ -3862,8 +3862,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = JUMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:6: ( 'jump' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:588:8: 'jump'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:588:6: ( 'jump' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:588:8: 'jump'
             {
             match("jump"); 
 
@@ -3883,8 +3883,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MOVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:6: ( 'move' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:589:8: 'move'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:589:6: ( 'move' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:589:8: 'move'
             {
             match("move"); 
 
@@ -3904,8 +3904,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = FORWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:9: ( 'forward' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:590:11: 'forward'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:9: ( 'forward' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:590:11: 'forward'
             {
             match("forward"); 
 
@@ -3925,8 +3925,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BACKWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:10: ( 'backward' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:591:12: 'backward'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:591:10: ( 'backward' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:591:12: 'backward'
             {
             match("backward"); 
 
@@ -3946,8 +3946,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:6: ( 'turn' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:592:8: 'turn'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:592:6: ( 'turn' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:592:8: 'turn'
             {
             match("turn"); 
 
@@ -3967,8 +3967,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ACCELERATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:12: ( 'accelerate' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:593:14: 'accelerate'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:593:12: ( 'accelerate' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:593:14: 'accelerate'
             {
             match("accelerate"); 
 
@@ -3988,8 +3988,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BRAKE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:7: ( 'brake' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:594:9: 'brake'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:594:7: ( 'brake' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:594:9: 'brake'
             {
             match("brake"); 
 
@@ -4009,8 +4009,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:8: ( 'Camera' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:597:10: 'Camera'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:597:8: ( 'Camera' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:597:10: 'Camera'
             {
             match("Camera"); 
 
@@ -4030,8 +4030,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = MEDIA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:7: ( 'Media' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:598:9: 'Media'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:598:7: ( 'Media' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:598:9: 'Media'
             {
             match("Media"); 
 
@@ -4051,8 +4051,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:6: ( 'Time' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:599:8: 'Time'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:599:6: ( 'Time' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:599:8: 'Time'
             {
             match("Time"); 
 
@@ -4072,8 +4072,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:8: ( 'value' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:601:10: 'value'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:601:8: ( 'value' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:601:10: 'value'
             {
             match("value"); 
 
@@ -4093,8 +4093,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BOOST_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:16: ( 'boostInterval' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:603:18: 'boostInterval'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:603:16: ( 'boostInterval' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:603:18: 'boostInterval'
             {
             match("boostInterval"); 
 
@@ -4114,8 +4114,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = SHOOT_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:16: ( 'shootInterval' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:604:18: 'shootInterval'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:604:16: ( 'shootInterval' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:604:18: 'shootInterval'
             {
             match("shootInterval"); 
 
@@ -4135,8 +4135,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = RELOAD_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:13: ( 'reloadTime' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:605:15: 'reloadTime'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:605:13: ( 'reloadTime' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:605:15: 'reloadTime'
             {
             match("reloadTime"); 
 
@@ -4156,8 +4156,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = INVENTORY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:11: ( 'inventory' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:607:13: 'inventory'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:607:11: ( 'inventory' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:607:13: 'inventory'
             {
             match("inventory"); 
 
@@ -4177,8 +4177,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EQUIPED_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:608:16: ( 'equipedObjects' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:608:18: 'equipedObjects'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:608:16: ( 'equipedObjects' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:608:18: 'equipedObjects'
             {
             match("equipedObjects"); 
 
@@ -4198,8 +4198,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = ENTRANCES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:609:11: ( 'entrances' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:609:13: 'entrances'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:609:11: ( 'entrances' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:609:13: 'entrances'
             {
             match("entrances"); 
 
@@ -4219,8 +4219,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = EXITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:610:8: ( 'exits' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:610:10: 'exits'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:610:8: ( 'exits' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:610:10: 'exits'
             {
             match("exits"); 
 
@@ -4240,8 +4240,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = DAMAGE_ZONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:13: ( 'damageZone' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:611:15: 'damageZone'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:611:13: ( 'damageZone' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:611:15: 'damageZone'
             {
             match("damageZone"); 
 
@@ -4261,8 +4261,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:12: ( 'collectors' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:612:14: 'collectors'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:612:12: ( 'collectors' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:612:14: 'collectors'
             {
             match("collectors"); 
 
@@ -4282,8 +4282,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:17: ( 'typesCollectors' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:613:19: 'typesCollectors'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:613:17: ( 'typesCollectors' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:613:19: 'typesCollectors'
             {
             match("typesCollectors"); 
 
@@ -4303,8 +4303,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:12: ( 'generators' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:614:14: 'generators'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:614:12: ( 'generators' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:614:14: 'generators'
             {
             match("generators"); 
 
@@ -4324,8 +4324,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPE_GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:17: ( 'typeGenerators' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:615:19: 'typeGenerators'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:615:17: ( 'typeGenerators' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:615:19: 'typeGenerators'
             {
             match("typeGenerators"); 
 
@@ -4345,8 +4345,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:10: ( 'breakers' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:616:12: 'breakers'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:616:10: ( 'breakers' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:616:12: 'breakers'
             {
             match("breakers"); 
 
@@ -4366,8 +4366,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:16: ( 'typesBreakers' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:617:18: 'typesBreakers'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:617:16: ( 'typesBreakers' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:617:18: 'typesBreakers'
             {
             match("typesBreakers"); 
 
@@ -4387,8 +4387,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:15: ( 'teleportables' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:618:17: 'teleportables'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:618:15: ( 'teleportables' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:618:17: 'teleportables'
             {
             match("teleportables"); 
 
@@ -4408,8 +4408,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = TYPES_TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:2: ( 'typesTeleportables' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:620:5: 'typesTeleportables'
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:620:2: ( 'typesTeleportables' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:620:5: 'typesTeleportables'
             {
             match("typesTeleportables"); 
 
@@ -4429,8 +4429,8 @@ public class hightLexer extends Lexer {
         try {
             int _type = LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:623:8: ( 'a' .. 'z' | 'A' .. 'Z' )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:623:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -4457,10 +4457,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:9: ( '0' .. '9' )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:9: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -4474,7 +4474,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:10: '0' .. '9'
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:10: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -4490,7 +4490,7 @@ public class hightLexer extends Lexer {
                 cnt3++;
             } while (true);
 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:21: ( '.' ( '0' .. '9' )+ )?
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:21: ( '.' ( '0' .. '9' )+ )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -4499,10 +4499,10 @@ public class hightLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:22: '.' ( '0' .. '9' )+
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:22: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:26: ( '0' .. '9' )+
+                    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:26: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -4516,7 +4516,7 @@ public class hightLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:624:27: '0' .. '9'
+                    	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:624:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -4554,11 +4554,11 @@ public class hightLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:7: ( LETTER ( LETTER | '0' .. '9' )* )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:9: LETTER ( LETTER | '0' .. '9' )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:625:7: ( LETTER ( LETTER | '0' .. '9' )* )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:625:9: LETTER ( LETTER | '0' .. '9' )*
             {
             mLETTER(); 
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:625:15: ( LETTER | '0' .. '9' )*
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:625:15: ( LETTER | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -4571,7 +4571,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -4607,10 +4607,10 @@ public class hightLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:626:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             {
-            // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             int cnt7=0;
             loop7:
             do {
@@ -4624,7 +4624,7 @@ public class hightLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:
+            	    // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
             	        input.consume();
@@ -4661,1398 +4661,1398 @@ public class hightLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__221 | T__222 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
+        // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__221 | T__222 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
         int alt8=199;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:10: GAME_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:10: GAME_KW
                 {
                 mGAME_KW(); 
 
                 }
                 break;
             case 2 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:18: GAME_ATTRIBUT_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:18: GAME_ATTRIBUT_KW
                 {
                 mGAME_ATTRIBUT_KW(); 
 
                 }
                 break;
             case 3 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:35: INIT_IS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:35: INIT_IS_KW
                 {
                 mINIT_IS_KW(); 
 
                 }
                 break;
             case 4 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:46: DEC
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:46: DEC
                 {
                 mDEC(); 
 
                 }
                 break;
             case 5 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:50: T__221
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:50: T__221
                 {
                 mT__221(); 
 
                 }
                 break;
             case 6 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:57: T__222
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:57: T__222
                 {
                 mT__222(); 
 
                 }
                 break;
             case 7 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:64: COMMENT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:64: COMMENT
                 {
                 mCOMMENT(); 
 
                 }
                 break;
             case 8 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:72: PD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:72: PD
                 {
                 mPD(); 
 
                 }
                 break;
             case 9 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:75: PG
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:75: PG
                 {
                 mPG(); 
 
                 }
                 break;
             case 10 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:78: FIN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:78: FIN
                 {
                 mFIN(); 
 
                 }
                 break;
             case 11 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:82: VIRG
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:82: VIRG
                 {
                 mVIRG(); 
 
                 }
                 break;
             case 12 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:87: HAS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:87: HAS
                 {
                 mHAS(); 
 
                 }
                 break;
             case 13 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:91: AT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:91: AT
                 {
                 mAT(); 
 
                 }
                 break;
             case 14 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:94: IS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:94: IS
                 {
                 mIS(); 
 
                 }
                 break;
             case 15 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:97: AND
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:97: AND
                 {
                 mAND(); 
 
                 }
                 break;
             case 16 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:101: OF
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:101: OF
                 {
                 mOF(); 
 
                 }
                 break;
             case 17 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:104: WITH
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:104: WITH
                 {
                 mWITH(); 
 
                 }
                 break;
             case 18 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:109: BETWEEN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:109: BETWEEN
                 {
                 mBETWEEN(); 
 
                 }
                 break;
             case 19 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:117: PLUS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:117: PLUS
                 {
                 mPLUS(); 
 
                 }
                 break;
             case 20 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:122: MINUS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:122: MINUS
                 {
                 mMINUS(); 
 
                 }
                 break;
             case 21 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:128: MUL
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:128: MUL
                 {
                 mMUL(); 
 
                 }
                 break;
             case 22 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:132: DIV
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:132: DIV
                 {
                 mDIV(); 
 
                 }
                 break;
             case 23 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:136: POW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:136: POW
                 {
                 mPOW(); 
 
                 }
                 break;
             case 24 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:140: MOD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:140: MOD
                 {
                 mMOD(); 
 
                 }
                 break;
             case 25 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:144: X
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:144: X
                 {
                 mX(); 
 
                 }
                 break;
             case 26 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:146: Y
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:146: Y
                 {
                 mY(); 
 
                 }
                 break;
             case 27 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:148: Z
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:148: Z
                 {
                 mZ(); 
 
                 }
                 break;
             case 28 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:150: ALL
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:150: ALL
                 {
                 mALL(); 
 
                 }
                 break;
             case 29 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:154: NOT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:154: NOT
                 {
                 mNOT(); 
 
                 }
                 break;
             case 30 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:158: MIN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:158: MIN
                 {
                 mMIN(); 
 
                 }
                 break;
             case 31 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:162: SEC
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:162: SEC
                 {
                 mSEC(); 
 
                 }
                 break;
             case 32 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:166: MS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:166: MS
                 {
                 mMS(); 
 
                 }
                 break;
             case 33 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:169: THEN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:169: THEN
                 {
                 mTHEN(); 
 
                 }
                 break;
             case 34 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:174: FOR
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:174: FOR
                 {
                 mFOR(); 
 
                 }
                 break;
             case 35 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:178: EQUALS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:178: EQUALS
                 {
                 mEQUALS(); 
 
                 }
                 break;
             case 36 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:185: INF
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:185: INF
                 {
                 mINF(); 
 
                 }
                 break;
             case 37 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:189: SUP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:189: SUP
                 {
                 mSUP(); 
 
                 }
                 break;
             case 38 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:193: INFEG
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:193: INFEG
                 {
                 mINFEG(); 
 
                 }
                 break;
             case 39 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:199: SUPED
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:199: SUPED
                 {
                 mSUPED(); 
 
                 }
                 break;
             case 40 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:205: DIFF
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:205: DIFF
                 {
                 mDIFF(); 
 
                 }
                 break;
             case 41 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:210: FROM
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:210: FROM
                 {
                 mFROM(); 
 
                 }
                 break;
             case 42 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:215: DBP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:215: DBP
                 {
                 mDBP(); 
 
                 }
                 break;
             case 43 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:219: GAME
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:219: GAME
                 {
                 mGAME(); 
 
                 }
                 break;
             case 44 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:224: GRAVITY_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:224: GRAVITY_KW
                 {
                 mGRAVITY_KW(); 
 
                 }
                 break;
             case 45 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:235: SCORE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:235: SCORE
                 {
                 mSCORE(); 
 
                 }
                 break;
             case 46 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:241: TURNBASED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:241: TURNBASED_KW
                 {
                 mTURNBASED_KW(); 
 
                 }
                 break;
             case 47 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:254: WORLD_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:254: WORLD_KW
                 {
                 mWORLD_KW(); 
 
                 }
                 break;
             case 48 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:263: GRIDSIZE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:263: GRIDSIZE_KW
                 {
                 mGRIDSIZE_KW(); 
 
                 }
                 break;
             case 49 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:275: GENERIC
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:275: GENERIC
                 {
                 mGENERIC(); 
 
                 }
                 break;
             case 50 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:283: GRID
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:283: GRID
                 {
                 mGRID(); 
 
                 }
                 break;
             case 51 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:288: RIBBON
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:288: RIBBON
                 {
                 mRIBBON(); 
 
                 }
                 break;
             case 52 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:295: NAME_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:295: NAME_KW
                 {
                 mNAME_KW(); 
 
                 }
                 break;
             case 53 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:303: TYPE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:303: TYPE
                 {
                 mTYPE(); 
 
                 }
                 break;
             case 54 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:308: INSERT_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:308: INSERT_KW
                 {
                 mINSERT_KW(); 
 
                 }
                 break;
             case 55 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:318: REMOVE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:318: REMOVE_KW
                 {
                 mREMOVE_KW(); 
 
                 }
                 break;
             case 56 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:328: SOLO
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:328: SOLO
                 {
                 mSOLO(); 
 
                 }
                 break;
             case 57 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:333: PLAYER
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:333: PLAYER
                 {
                 mPLAYER(); 
 
                 }
                 break;
             case 58 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:340: LIST_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:340: LIST_KW
                 {
                 mLIST_KW(); 
 
                 }
                 break;
             case 59 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:348: IN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:348: IN
                 {
                 mIN(); 
 
                 }
                 break;
             case 60 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:351: LOOP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:351: LOOP
                 {
                 mLOOP(); 
 
                 }
                 break;
             case 61 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:356: ONCE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:356: ONCE
                 {
                 mONCE(); 
 
                 }
                 break;
             case 62 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:361: RANDOM_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:361: RANDOM_KW
                 {
                 mRANDOM_KW(); 
 
                 }
                 break;
             case 63 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:371: DEFINITION_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:371: DEFINITION_KW
                 {
                 mDEFINITION_KW(); 
 
                 }
                 break;
             case 64 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:385: MEANS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:385: MEANS
                 {
                 mMEANS(); 
 
                 }
                 break;
             case 65 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:391: PAUSE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:391: PAUSE_KW
                 {
                 mPAUSE_KW(); 
 
                 }
                 break;
             case 66 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:400: MUTE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:400: MUTE_KW
                 {
                 mMUTE_KW(); 
 
                 }
                 break;
             case 67 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:408: ON
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:408: ON
                 {
                 mON(); 
 
                 }
                 break;
             case 68 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:411: OFF
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:411: OFF
                 {
                 mOFF(); 
 
                 }
                 break;
             case 69 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:415: PLAY_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:415: PLAY_KW
                 {
                 mPLAY_KW(); 
 
                 }
                 break;
             case 70 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:423: STOP_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:423: STOP_KW
                 {
                 mSTOP_KW(); 
 
                 }
                 break;
             case 71 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:431: ENDS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:431: ENDS_KW
                 {
                 mENDS_KW(); 
 
                 }
                 break;
             case 72 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:439: STARTS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:439: STARTS_KW
                 {
                 mSTARTS_KW(); 
 
                 }
                 break;
             case 73 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:449: BLOCK_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:449: BLOCK_KW
                 {
                 mBLOCK_KW(); 
 
                 }
                 break;
             case 74 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:458: TRANSLATION
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:458: TRANSLATION
                 {
                 mTRANSLATION(); 
 
                 }
                 break;
             case 75 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:470: ROTATION
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:470: ROTATION
                 {
                 mROTATION(); 
 
                 }
                 break;
             case 76 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:479: SCALE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:479: SCALE
                 {
                 mSCALE(); 
 
                 }
                 break;
             case 77 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:485: EFFACE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:485: EFFACE_KW
                 {
                 mEFFACE_KW(); 
 
                 }
                 break;
             case 78 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:495: GENERATE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:495: GENERATE_KW
                 {
                 mGENERATE_KW(); 
 
                 }
                 break;
             case 79 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:507: WAIT_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:507: WAIT_KW
                 {
                 mWAIT_KW(); 
 
                 }
                 break;
             case 80 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:515: ENDWAIT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:515: ENDWAIT
                 {
                 mENDWAIT(); 
 
                 }
                 break;
             case 81 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:523: SAVE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:523: SAVE_KW
                 {
                 mSAVE_KW(); 
 
                 }
                 break;
             case 82 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:531: RULE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:531: RULE_KW
                 {
                 mRULE_KW(); 
 
                 }
                 break;
             case 83 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:539: MOVES_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:539: MOVES_KW
                 {
                 mMOVES_KW(); 
 
                 }
                 break;
             case 84 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:548: DIES_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:548: DIES_KW
                 {
                 mDIES_KW(); 
 
                 }
                 break;
             case 85 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:556: TOUCHES_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:556: TOUCHES_KW
                 {
                 mTOUCHES_KW(); 
 
                 }
                 break;
             case 86 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:567: KILLS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:567: KILLS_KW
                 {
                 mKILLS_KW(); 
 
                 }
                 break;
             case 87 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:576: KILLED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:576: KILLED_KW
                 {
                 mKILLED_KW(); 
 
                 }
                 break;
             case 88 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:586: TOUCHED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:586: TOUCHED_KW
                 {
                 mTOUCHED_KW(); 
 
                 }
                 break;
             case 89 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:597: BY
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:597: BY
                 {
                 mBY(); 
 
                 }
                 break;
             case 90 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:600: OTHER
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:600: OTHER
                 {
                 mOTHER(); 
 
                 }
                 break;
             case 91 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:606: BECOMES
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:606: BECOMES
                 {
                 mBECOMES(); 
 
                 }
                 break;
             case 92 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:614: VICTORY_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:614: VICTORY_KW
                 {
                 mVICTORY_KW(); 
 
                 }
                 break;
             case 93 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:625: DEFEAT_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:625: DEFEAT_KW
                 {
                 mDEFEAT_KW(); 
 
                 }
                 break;
             case 94 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:635: IF_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:635: IF_KW
                 {
                 mIF_KW(); 
 
                 }
                 break;
             case 95 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:641: ELSE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:641: ELSE
                 {
                 mELSE(); 
 
                 }
                 break;
             case 96 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:646: ENDIF
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:646: ENDIF
                 {
                 mENDIF(); 
 
                 }
                 break;
             case 97 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:652: OR
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:652: OR
                 {
                 mOR(); 
 
                 }
                 break;
             case 98 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:655: COMP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:655: COMP
                 {
                 mCOMP(); 
 
                 }
                 break;
             case 99 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:660: DEAD_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:660: DEAD_KW
                 {
                 mDEAD_KW(); 
 
                 }
                 break;
             case 100 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:668: ALIVE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:668: ALIVE_KW
                 {
                 mALIVE_KW(); 
 
                 }
                 break;
             case 101 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:677: EFFACED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:677: EFFACED_KW
                 {
                 mEFFACED_KW(); 
 
                 }
                 break;
             case 102 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:688: GENERATED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:688: GENERATED_KW
                 {
                 mGENERATED_KW(); 
 
                 }
                 break;
             case 103 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:701: TOUCHING_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:701: TOUCHING_KW
                 {
                 mTOUCHING_KW(); 
 
                 }
                 break;
             case 104 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:713: MOVING_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:713: MOVING_KW
                 {
                 mMOVING_KW(); 
 
                 }
                 break;
             case 105 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:723: WAITING_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:723: WAITING_KW
                 {
                 mWAITING_KW(); 
 
                 }
                 break;
             case 106 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:734: FINISHED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:734: FINISHED_KW
                 {
                 mFINISHED_KW(); 
 
                 }
                 break;
             case 107 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:746: STARTED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:746: STARTED_KW
                 {
                 mSTARTED_KW(); 
 
                 }
                 break;
             case 108 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:757: PAUSED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:757: PAUSED_KW
                 {
                 mPAUSED_KW(); 
 
                 }
                 break;
             case 109 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:767: MUTED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:767: MUTED_KW
                 {
                 mMUTED_KW(); 
 
                 }
                 break;
             case 110 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:776: PLAYED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:776: PLAYED_KW
                 {
                 mPLAYED_KW(); 
 
                 }
                 break;
             case 111 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:786: STOPPED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:786: STOPPED_KW
                 {
                 mSTOPPED_KW(); 
 
                 }
                 break;
             case 112 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:797: ASSIGN_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:797: ASSIGN_KW
                 {
                 mASSIGN_KW(); 
 
                 }
                 break;
             case 113 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:807: ADD_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:807: ADD_KW
                 {
                 mADD_KW(); 
 
                 }
                 break;
             case 114 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:814: SUB_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:814: SUB_KW
                 {
                 mSUB_KW(); 
 
                 }
                 break;
             case 115 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:821: INVERT_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:821: INVERT_KW
                 {
                 mINVERT_KW(); 
 
                 }
                 break;
             case 116 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:831: NUM
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:831: NUM
                 {
                 mNUM(); 
 
                 }
                 break;
             case 117 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:835: IA_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:835: IA_KW
                 {
                 mIA_KW(); 
 
                 }
                 break;
             case 118 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:841: DURING
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:841: DURING
                 {
                 mDURING(); 
 
                 }
                 break;
             case 119 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:848: UNTIL
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:848: UNTIL
                 {
                 mUNTIL(); 
 
                 }
                 break;
             case 120 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:854: EQUIP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:854: EQUIP
                 {
                 mEQUIP(); 
 
                 }
                 break;
             case 121 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:860: NEXT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:860: NEXT
                 {
                 mNEXT(); 
 
                 }
                 break;
             case 122 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:865: PREVIOUS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:865: PREVIOUS
                 {
                 mPREVIOUS(); 
 
                 }
                 break;
             case 123 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:874: KEYBOARD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:874: KEYBOARD
                 {
                 mKEYBOARD(); 
 
                 }
                 break;
             case 124 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:883: ACTIVATE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:883: ACTIVATE_KW
                 {
                 mACTIVATE_KW(); 
 
                 }
                 break;
             case 125 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:895: DISABLE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:895: DISABLE_KW
                 {
                 mDISABLE_KW(); 
 
                 }
                 break;
             case 126 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:906: COMMANDS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:906: COMMANDS
                 {
                 mCOMMANDS(); 
 
                 }
                 break;
             case 127 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:915: CLOCKWISE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:915: CLOCKWISE
                 {
                 mCLOCKWISE(); 
 
                 }
                 break;
             case 128 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:925: ANTICLOCKWISE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:925: ANTICLOCKWISE
                 {
                 mANTICLOCKWISE(); 
 
                 }
                 break;
             case 129 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:939: NEXTURN_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:939: NEXTURN_KW
                 {
                 mNEXTURN_KW(); 
 
                 }
                 break;
             case 130 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:950: RELOAD_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:950: RELOAD_KW
                 {
                 mRELOAD_KW(); 
 
                 }
                 break;
             case 131 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:960: GRASPS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:960: GRASPS_KW
                 {
                 mGRASPS_KW(); 
 
                 }
                 break;
             case 132 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:970: EXPELS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:970: EXPELS_KW
                 {
                 mEXPELS_KW(); 
 
                 }
                 break;
             case 133 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:980: INGESTS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:980: INGESTS_KW
                 {
                 mINGESTS_KW(); 
 
                 }
                 break;
             case 134 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:991: DUPLICABLE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:991: DUPLICABLE
                 {
                 mDUPLICABLE(); 
 
                 }
                 break;
             case 135 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1002: FIRST
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1002: FIRST
                 {
                 mFIRST(); 
 
                 }
                 break;
             case 136 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1008: THIRD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1008: THIRD
                 {
                 mTHIRD(); 
 
                 }
                 break;
             case 137 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1014: POSITION
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1014: POSITION
                 {
                 mPOSITION(); 
 
                 }
                 break;
             case 138 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1023: ORIENTATION
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1023: ORIENTATION
                 {
                 mORIENTATION(); 
 
                 }
                 break;
             case 139 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1035: SIZE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1035: SIZE
                 {
                 mSIZE(); 
 
                 }
                 break;
             case 140 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1040: PERSON
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1040: PERSON
                 {
                 mPERSON(); 
 
                 }
                 break;
             case 141 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1047: FREE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1047: FREE
                 {
                 mFREE(); 
 
                 }
                 break;
             case 142 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1052: FRAME
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1052: FRAME
                 {
                 mFRAME(); 
 
                 }
                 break;
             case 143 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1058: PRESSED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1058: PRESSED_KW
                 {
                 mPRESSED_KW(); 
 
                 }
                 break;
             case 144 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1069: HELD_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1069: HELD_KW
                 {
                 mHELD_KW(); 
 
                 }
                 break;
             case 145 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1077: RELEASED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1077: RELEASED_KW
                 {
                 mRELEASED_KW(); 
 
                 }
                 break;
             case 146 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1089: OWNES_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1089: OWNES_KW
                 {
                 mOWNES_KW(); 
 
                 }
                 break;
             case 147 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1098: NOTOWNES_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1098: NOTOWNES_KW
                 {
                 mNOTOWNES_KW(); 
 
                 }
                 break;
             case 148 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1110: OWNED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1110: OWNED_KW
                 {
                 mOWNED_KW(); 
 
                 }
                 break;
             case 149 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1119: NOTOWNED_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1119: NOTOWNED_KW
                 {
                 mNOTOWNED_KW(); 
 
                 }
                 break;
             case 150 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1131: HAPPENS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1131: HAPPENS
                 {
                 mHAPPENS(); 
 
                 }
                 break;
             case 151 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1139: CONTAINS_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1139: CONTAINS_KW
                 {
                 mCONTAINS_KW(); 
 
                 }
                 break;
             case 152 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1151: DISTANCE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1151: DISTANCE_KW
                 {
                 mDISTANCE_KW(); 
 
                 }
                 break;
             case 153 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1163: ANGLE_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1163: ANGLE_KW
                 {
                 mANGLE_KW(); 
 
                 }
                 break;
             case 154 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1172: WUP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1172: WUP
                 {
                 mWUP(); 
 
                 }
                 break;
             case 155 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1176: WDOWN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1176: WDOWN
                 {
                 mWDOWN(); 
 
                 }
                 break;
             case 156 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1182: LEFT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1182: LEFT
                 {
                 mLEFT(); 
 
                 }
                 break;
             case 157 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1187: RIGHT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1187: RIGHT
                 {
                 mRIGHT(); 
 
                 }
                 break;
             case 158 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1193: SPACE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1193: SPACE
                 {
                 mSPACE(); 
 
                 }
                 break;
             case 159 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1199: ESCAPE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1199: ESCAPE
                 {
                 mESCAPE(); 
 
                 }
                 break;
             case 160 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1206: ENTER
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1206: ENTER
                 {
                 mENTER(); 
 
                 }
                 break;
             case 161 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1212: MOUSE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1212: MOUSE
                 {
                 mMOUSE(); 
 
                 }
                 break;
             case 162 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1218: KEY
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1218: KEY
                 {
                 mKEY(); 
 
                 }
                 break;
             case 163 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1222: CLICK_LEFT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1222: CLICK_LEFT
                 {
                 mCLICK_LEFT(); 
 
                 }
                 break;
             case 164 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1233: CLICK_MIDDLE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1233: CLICK_MIDDLE
                 {
                 mCLICK_MIDDLE(); 
 
                 }
                 break;
             case 165 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1246: CLICK_RIGHT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1246: CLICK_RIGHT
                 {
                 mCLICK_RIGHT(); 
 
                 }
                 break;
             case 166 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1258: SCROLL_UP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1258: SCROLL_UP
                 {
                 mSCROLL_UP(); 
 
                 }
                 break;
             case 167 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1268: SCROLL_DOWN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1268: SCROLL_DOWN
                 {
                 mSCROLL_DOWN(); 
 
                 }
                 break;
             case 168 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1280: COMMAND_KW
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1280: COMMAND_KW
                 {
                 mCOMMAND_KW(); 
 
                 }
                 break;
             case 169 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1291: JUMP
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1291: JUMP
                 {
                 mJUMP(); 
 
                 }
                 break;
             case 170 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1296: MOVE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1296: MOVE
                 {
                 mMOVE(); 
 
                 }
                 break;
             case 171 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1301: FORWARD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1301: FORWARD
                 {
                 mFORWARD(); 
 
                 }
                 break;
             case 172 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1309: BACKWARD
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1309: BACKWARD
                 {
                 mBACKWARD(); 
 
                 }
                 break;
             case 173 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1318: TURN
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1318: TURN
                 {
                 mTURN(); 
 
                 }
                 break;
             case 174 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1323: ACCELERATE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1323: ACCELERATE
                 {
                 mACCELERATE(); 
 
                 }
                 break;
             case 175 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1334: BRAKE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1334: BRAKE
                 {
                 mBRAKE(); 
 
                 }
                 break;
             case 176 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1340: CAMERA
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1340: CAMERA
                 {
                 mCAMERA(); 
 
                 }
                 break;
             case 177 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1347: MEDIA
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1347: MEDIA
                 {
                 mMEDIA(); 
 
                 }
                 break;
             case 178 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1353: TIME
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1353: TIME
                 {
                 mTIME(); 
 
                 }
                 break;
             case 179 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1358: VALUE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1358: VALUE
                 {
                 mVALUE(); 
 
                 }
                 break;
             case 180 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1364: BOOST_INTERVAL
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1364: BOOST_INTERVAL
                 {
                 mBOOST_INTERVAL(); 
 
                 }
                 break;
             case 181 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1379: SHOOT_INTERVAL
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1379: SHOOT_INTERVAL
                 {
                 mSHOOT_INTERVAL(); 
 
                 }
                 break;
             case 182 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1394: RELOAD_TIME
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1394: RELOAD_TIME
                 {
                 mRELOAD_TIME(); 
 
                 }
                 break;
             case 183 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1406: INVENTORY
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1406: INVENTORY
                 {
                 mINVENTORY(); 
 
                 }
                 break;
             case 184 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1416: EQUIPED_OBJECT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1416: EQUIPED_OBJECT
                 {
                 mEQUIPED_OBJECT(); 
 
                 }
                 break;
             case 185 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1431: ENTRANCES
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1431: ENTRANCES
                 {
                 mENTRANCES(); 
 
                 }
                 break;
             case 186 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1441: EXITS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1441: EXITS
                 {
                 mEXITS(); 
 
                 }
                 break;
             case 187 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1447: DAMAGE_ZONE
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1447: DAMAGE_ZONE
                 {
                 mDAMAGE_ZONE(); 
 
                 }
                 break;
             case 188 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1459: COLLECTORS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1459: COLLECTORS
                 {
                 mCOLLECTORS(); 
 
                 }
                 break;
             case 189 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1470: TYPES_COLLECTORS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1470: TYPES_COLLECTORS
                 {
                 mTYPES_COLLECTORS(); 
 
                 }
                 break;
             case 190 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1487: GENERATORS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1487: GENERATORS
                 {
                 mGENERATORS(); 
 
                 }
                 break;
             case 191 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1498: TYPE_GENERATORS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1498: TYPE_GENERATORS
                 {
                 mTYPE_GENERATORS(); 
 
                 }
                 break;
             case 192 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1514: BREAKERS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1514: BREAKERS
                 {
                 mBREAKERS(); 
 
                 }
                 break;
             case 193 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1523: TYPES_BREAKERS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1523: TYPES_BREAKERS
                 {
                 mTYPES_BREAKERS(); 
 
                 }
                 break;
             case 194 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1538: TELEPORTABLES
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1538: TELEPORTABLES
                 {
                 mTELEPORTABLES(); 
 
                 }
                 break;
             case 195 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1552: TYPES_TELEPORTABLES
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1552: TYPES_TELEPORTABLES
                 {
                 mTYPES_TELEPORTABLES(); 
 
                 }
                 break;
             case 196 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1572: LETTER
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1572: LETTER
                 {
                 mLETTER(); 
 
                 }
                 break;
             case 197 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1579: FLOAT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1579: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
             case 198 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1585: IDENT
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1585: IDENT
                 {
                 mIDENT(); 
 
                 }
                 break;
             case 199 :
-                // C:\\Users\\Quentin\\Documents\\M1\\Projet\\svn\\compilation\\hight\\grammars\\hight.g:1:1591: WS
+                // /home/touzbi/Documents/SVN_Proj_Update/compilation/hight/grammars/hight.g:1:1591: WS
                 {
                 mWS(); 
 
@@ -6123,12 +6123,12 @@ public class hightLexer extends Lexer {
     static final String DFA8_eofS =
         "\u03a5\uffff";
     static final String DFA8_minS =
-        "\1\11\5\60\1\57\4\uffff\6\60\5\uffff\6\60\1\uffff\2\75\2\uffff"+
-        "\20\60\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\141\1\145\1\162"+
-        "\1\160\1\165\2\154\1\162\1\141\1\156\2\uffff\1\160\1\154\1\60\1"+
-        "\144\1\151\1\163\1\144\1\60\1\143\5\60\1\150\1\60\1\156\1\164\1"+
-        "\162\1\151\1\143\1\157\1\60\1\143\1\141\1\157\3\uffff\1\164\2\155"+
-        "\1\170\1\156\1\60\1\141\1\164\1\165\1\154\1\141\1\154\1\141\1\166"+
+        "\1\11\5\60\1\57\4\uffff\6\60\5\uffff\6\60\1\uffff\2\75\2\uffff\20"+
+        "\60\2\uffff\1\115\1\155\2\uffff\1\111\1\103\1\141\1\145\1\162\1"+
+        "\160\1\165\2\154\1\162\1\141\1\156\2\uffff\1\160\1\154\1\60\1\144"+
+        "\1\151\1\163\1\144\1\60\1\143\5\60\1\150\1\60\1\156\1\164\1\162"+
+        "\1\151\1\143\1\157\1\60\1\143\1\141\1\157\3\uffff\1\164\2\155\1"+
+        "\170\1\156\1\60\1\141\1\164\1\165\1\154\1\141\1\154\1\141\1\166"+
         "\1\142\1\172\1\141\1\157\5\uffff\1\141\1\156\1\142\1\154\1\156\1"+
         "\164\2\154\1\141\1\163\1\157\1\146\1\154\1\141\1\145\1\160\1\167"+
         "\1\155\1\165\1\141\1\145\1\163\1\162\1\144\1\146\1\163\1\165\1\151"+
@@ -6316,19 +6316,19 @@ public class hightLexer extends Lexer {
     static final String DFA8_specialS =
         "\u03a5\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\2\62\1\uffff\2\62\22\uffff\1\62\1\37\3\uffff\1\25\2\uffff"+
-            "\1\10\1\7\1\23\1\21\1\12\1\22\1\uffff\1\6\12\61\1\40\1\11\1"+
-            "\35\1\34\1\36\2\uffff\2\60\1\55\1\3\2\60\1\1\1\60\1\2\3\60\1"+
-            "\56\2\60\1\43\3\60\1\57\6\60\3\uffff\1\24\2\uffff\1\14\1\20"+
-            "\1\52\1\45\1\47\1\5\1\41\1\13\1\15\1\54\1\50\1\44\1\32\1\31"+
-            "\1\16\1\46\1\60\1\42\1\33\1\4\1\53\1\51\1\17\1\26\1\27\1\30",
+            "\2\62\1\uffff\2\62\22\uffff\1\62\1\37\3\uffff\1\25\2\uffff\1"+
+            "\10\1\7\1\23\1\21\1\12\1\22\1\uffff\1\6\12\61\1\40\1\11\1\35"+
+            "\1\34\1\36\2\uffff\2\60\1\55\1\3\2\60\1\1\1\60\1\2\3\60\1\56"+
+            "\2\60\1\43\3\60\1\57\6\60\3\uffff\1\24\2\uffff\1\14\1\20\1\52"+
+            "\1\45\1\47\1\5\1\41\1\13\1\15\1\54\1\50\1\44\1\32\1\31\1\16"+
+            "\1\46\1\60\1\42\1\33\1\4\1\53\1\51\1\17\1\26\1\27\1\30",
             "\12\66\7\uffff\1\63\31\66\6\uffff\1\64\31\66",
             "\12\66\7\uffff\15\66\1\67\14\66\6\uffff\32\66",
             "\12\66\7\uffff\4\66\1\70\25\66\6\uffff\32\66",
             "\12\66\7\uffff\32\66\6\uffff\4\66\1\76\2\66\1\72\6\66\1\75"+
             "\2\66\1\71\2\66\1\73\3\66\1\74\1\66",
-            "\12\66\7\uffff\32\66\6\uffff\1\77\7\66\1\102\5\66\1\100\2"+
-            "\66\1\101\10\66",
+            "\12\66\7\uffff\32\66\6\uffff\1\77\7\66\1\102\5\66\1\100\2\66"+
+            "\1\101\10\66",
             "\1\103",
             "",
             "",
@@ -6337,10 +6337,10 @@ public class hightLexer extends Lexer {
             "\12\66\7\uffff\32\66\6\uffff\1\105\3\66\1\106\25\66",
             "\12\66\7\uffff\32\66\6\uffff\2\66\1\115\1\113\4\66\1\114\2"+
             "\66\1\111\1\66\1\110\4\66\1\112\1\107\6\66",
-            "\12\66\7\uffff\32\66\6\uffff\5\66\1\120\7\66\1\117\4\66\1"+
-            "\116\7\66",
-            "\12\66\7\uffff\32\66\6\uffff\5\66\1\121\7\66\1\122\3\66\1"+
-            "\124\1\66\1\123\2\66\1\125\3\66",
+            "\12\66\7\uffff\32\66\6\uffff\5\66\1\120\7\66\1\117\4\66\1\116"+
+            "\7\66",
+            "\12\66\7\uffff\32\66\6\uffff\5\66\1\121\7\66\1\122\3\66\1\124"+
+            "\1\66\1\123\2\66\1\125\3\66",
             "\12\66\7\uffff\32\66\6\uffff\1\130\7\66\1\126\5\66\1\127\13"+
             "\66",
             "\12\66\7\uffff\32\66\6\uffff\1\134\3\66\1\131\6\66\1\132\2"+
@@ -6353,10 +6353,10 @@ public class hightLexer extends Lexer {
             "\12\66\7\uffff\32\66\6\uffff\32\66",
             "\12\66\7\uffff\32\66\6\uffff\32\66",
             "\12\66\7\uffff\32\66\6\uffff\32\66",
-            "\12\66\7\uffff\32\66\6\uffff\1\143\3\66\1\145\11\66\1\142"+
-            "\5\66\1\144\5\66",
-            "\12\66\7\uffff\2\66\1\153\27\66\6\uffff\4\66\1\150\3\66\1"+
-            "\146\5\66\1\152\3\66\1\147\1\66\1\151\5\66",
+            "\12\66\7\uffff\32\66\6\uffff\1\143\3\66\1\145\11\66\1\142\5"+
+            "\66\1\144\5\66",
+            "\12\66\7\uffff\2\66\1\153\27\66\6\uffff\4\66\1\150\3\66\1\146"+
+            "\5\66\1\152\3\66\1\147\1\66\1\151\5\66",
             "\12\66\7\uffff\32\66\6\uffff\1\157\1\66\1\154\4\66\1\163\1"+
             "\161\5\66\1\155\1\162\3\66\1\156\1\160\5\66",
             "",
@@ -6376,8 +6376,7 @@ public class hightLexer extends Lexer {
             "\2\66\1\u008e\2\66\1\u008d\10\66",
             "\12\66\7\uffff\32\66\6\uffff\5\66\1\u0091\5\66\1\u0092\1\66"+
             "\1\u0090\2\66\1\u0093\1\66\1\u0095\4\66\1\u0094\2\66",
-            "\12\66\7\uffff\32\66\6\uffff\4\66\1\u0097\3\66\1\u0096\21"+
-            "\66",
+            "\12\66\7\uffff\32\66\6\uffff\4\66\1\u0097\3\66\1\u0096\21\66",
             "\12\66\7\uffff\32\66\6\uffff\1\u0099\7\66\1\u0098\21\66",
             "\12\66\7\uffff\32\66\6\uffff\13\66\1\u009b\2\66\1\u009a\13"+
             "\66",
@@ -6418,8 +6417,8 @@ public class hightLexer extends Lexer {
             "\12\66\7\uffff\32\66\6\uffff\32\66",
             "\1\u00c2\20\uffff\1\u00c1",
             "\12\66\7\uffff\32\66\6\uffff\32\66",
-            "\12\66\7\uffff\32\66\6\uffff\6\66\1\u00c6\13\66\1\u00c4\2"+
-            "\66\1\u00c5\4\66",
+            "\12\66\7\uffff\32\66\6\uffff\6\66\1\u00c6\13\66\1\u00c4\2\66"+
+            "\1\u00c5\4\66",
             "\12\66\7\uffff\32\66\6\uffff\32\66",
             "\12\66\7\uffff\32\66\6\uffff\5\66\1\u00c9\24\66",
             "\12\66\7\uffff\32\66\6\uffff\2\66\1\u00cb\27\66",
@@ -6642,8 +6641,7 @@ public class hightLexer extends Lexer {
             "\12\66\7\uffff\32\66\6\uffff\32\66",
             "\1\u01b0",
             "\12\66\7\uffff\32\66\6\uffff\1\66\1\u01b1\30\66",
-            "\12\66\7\uffff\6\66\1\u01b4\23\66\6\uffff\22\66\1\u01b3\7"+
-            "\66",
+            "\12\66\7\uffff\6\66\1\u01b4\23\66\6\uffff\22\66\1\u01b3\7\66",
             "\1\u01b6",
             "\1\u01b7",
             "\1\u01b8",

@@ -376,7 +376,7 @@ action [SymbolTable st] returns [Code c]
        /* c.append("pause();\n");
         * equivaut à
         */ 
-        c.append(Code.genFuncCall("pause",new ArrayList()); 
+        c.append(Code.genFuncCall("pause",new ArrayList())); 
         
     }
     |^(MUTE_KW mode_mute[st] IDENT)

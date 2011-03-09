@@ -145,12 +145,55 @@
 	
 		tabObject[id].setScale(scale.x*coefScale, scale.y*coefScale, scale.z*coefScale);
 		return [];
-	};
+	},
 
-
+	
+	
+/*
+	LES FONCTIONS QUI SUIVENT NE SONT PAS ENCORE COMPLETEMENT OPERATIONNELLES.
+ */
+ 
 /**
- * BEUGGER
- *//*
+ * Méthode trajectory: Déplace l'élément avec une vitesse V dans une direction donnée. La trajectoire est influencée par la gravité.
+ * @param: id: identifiant de l'élément que l'on souhaite déplacer
+ *		   speed: vitesse de déplacement de l'objet.
+ *         direction : tableau de 3 coordonnées x y z représentant la direction ou doit aller l'objet.
+ *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu
+ * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
+ */
+	M3D.MOTEUR.trajectory = function(id,speed,directory,idRef){
+        if(idRef == null){
+                var matrixRef = GLGE.identMatrix();
+        }else{
+                var matrixRef = tabObject[idRef].getModelMatrix();
+        }
+		
+		posX = directory[0]*speed;
+		posY = directory[1]*speed + gravity;
+		posZ = directory[2]*speed;
+				
+        var vectorPos = GLGE.Vec4(posX,posY,posZ,1);
+        var newAbsolutePosition = GLGE.mulMat4Vec4(matrixRef,vectorPos);
+                
+        var matrixObject = tabObject[id].getModelMatrix();
+        var absolutePosition = GLGE.mulMat4Vec4(matrixObject,GLGE.Vec4(tabObject[id].getLocX(),tabObject[id].getLocY(),tabObject[id].getLocZ(),0));
+                
+        var translation = GLGE.subVec4(newAbsolutePosition,absolutePosition);
+        
+        tab = M3D.MOTEUR.liveCollision(id);
+        if(tab.length != 0) return tab;
+
+        //alert('model'+tabObject[id].getModelMatrix()+'translation'+tabObject[id].getTranslateMatrix()+'rotation'+tabObject[id].getRotMatrix())
+                
+        tabObject[id].setLoc(translation[0]+parseFloat(tabObject[id].getLocX()),
+                                translation[1]+parseFloat(tabObject[id].getLocY()),
+                                translation[2]+parseFloat(tabObject[id].getLocZ()));
+                
+        return [];
+	},
+	
+/** Méthode launchProjectile
+ */
 	M3D.MOTEUR.launchProjectile = function(id, idObj, tabVector, idRef){
 		if(idRef == null){
 			var matrixRef = GLGE.identMatrix();
@@ -184,7 +227,7 @@
 								absoluteTranslation[2]+parseFloat(tabObject[id].getLocZ()));
 	
 		return [false, tabObject[id], tabObject, tabIdObject];
-	};*/
+	};
 	
 
 })(window.M3D);

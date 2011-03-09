@@ -26,13 +26,14 @@
 		<script type="text/javascript">
 			
 			M3D.MOTEUR.initialisation("level.xml", 'canvas');
+			M3D.MOTEUR.initPhysicalForce(0.01);
 			
 			var depla = [0,0,0];
 			var depla2 = [0,0,0];
 			var tire = false;
 			var come_back_to_life = false;
 			
-			panelControl = function(){
+			panelControl = function(){			
 				if(KEY_Z){depla[0] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");}
 				else if(depla[0]>=0) depla[0] -= 0.01;
 				
@@ -56,7 +57,11 @@
 			
 			
 			panelAction = function(){
-				if(tire){depla2[2] +=0.01; law(M3D.MOTEUR.translate("missile",depla2),"missile");}
+				if(tire){
+					depla2[2] +=0.01; 
+					law(M3D.MOTEUR.translate("missile",depla2),"missile");
+					//M3D.MOTEUR.trajectory("missile",0.01,[0,1,0]);
+					}
 				if(come_back_to_life){M3D.MOTEUR.addObject("lapin", "dae/lapin.dae", [15,-0.5,0,0,0,0,1]); come_back_to_life = false;}
 			}
 			

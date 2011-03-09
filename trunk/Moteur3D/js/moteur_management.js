@@ -186,7 +186,47 @@
 		}
 	},
 	
+
+/**
+ * Méthode randomAddObject: Ajoute un élément aléatoirement sur la map, s'il est pressé, rien ne se passe.
+ * @param: idObject: identifiant de l'objet que l'on veut ajouter.
+ *		   urlObject: adresse du fichier collada à ajouter.
+ */
+	M3D.MOTEUR.randomAddObject = function(idObject, urlObject){
+		var ok = false;
+		if(tabObject[idObject] == undefined){
+			tabObject[idObject] = new GLGLE.Collada();
+			tabObject[idObject].setDocument(urlObject);
+			gameScene.addChild(tabObject[idObject]);
+			tabIdObject[tabIdObject.length] = idObject;
+			
+			var coordMap = M3D.MOTEUR.getEnvironnement();
+			var coordAl = [Math.random()*10, Math.random()*10, Math.random()*10];
+			var coord = [coordMap[0]/coordAl[0],coordMap[1]/coordAl[1],coordMap[2]/coordAl[2]];
+			
+			while(!ok){
+				if(M3D.MOTEUR.testPlacement(tabObject[idObject])){
+					tab = M3D.MOTEUR.liveCollision(idObject);
+					if(tab.length != 0){
+						coordAl = [Math.random()*10, Math.random()*10, Math.random()*10];
+						coord = [coordMap[0]/coordAl[0],coordMap[1]/coordAl[1],coordMap[2]/coordAl[2]];
+					} else {ok = true;}
+				} else {
+					coordAl = [Math.random()*10, Math.random()*10, Math.random()*10];
+					coord = [coordMap[0]/coordAl[0],coordMap[1]/coordAl[1],coordMap[2]/coordAl[2]];
+				}
+			}
+		}
+	},
 	
+
+/**
+ * Méthode testPlacement: Test si l'objet en paramètre se situe correctement sur la map.
+ * @return true si l'objet est placé correctement sinon false.
+ */
+	M3D.MOTEUR.testPlacement = function(idObject){},
+ 
+ 
 /**
  * Méthode removeSearch: récupère tous les fils des éléments de la liste qui sont dans la scène.
  * @param: list: liste des éléments à retirer de la scène.

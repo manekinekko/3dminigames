@@ -35,7 +35,14 @@
 		} return null; 
 	},
  
-
+ 
+/**
+ * Méthode getEnvironnement: permet de retourner les dimensions de la map.
+ * @return: les dimensions de la map.
+ */
+	M3D.MOTEUR.getEnvironnement = function(){},
+	
+ 
 /**
  * Méthode getFatherBranch: permet de connaitre le père de la branche qui est un fils de la gameScene.
  * @param: id: identifiant de l'objet dont on veut connaitre le père de la branche.

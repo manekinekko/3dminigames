@@ -229,7 +229,9 @@ border-radius: 5px;
 font-weight:bolder;
 }
 
-.window input[type="text"], .window label, 
+.window input[type="text"],
+.window input[type="number"],
+.window label, 
 .window select, .window textarea {
 width: 120px;
 }
@@ -305,12 +307,16 @@ position:relative;
 top:3px;
 }
 
-input[type="text"], textarea, select {
+input[type="text"],
+input[type="number"],
+textarea, select {
 border: 1px solid #eee;
 }
 
-input[type="text"], textarea {
-width: 50px;
+input[type="text"],
+input[type="number"],
+textarea {
+width: 60px;
 }
 
 .button, 

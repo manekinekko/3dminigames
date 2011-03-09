@@ -68,6 +68,15 @@ angle between perso1 and perso2 > 10
 random between 1 and 20 
 // ces valeurs peuvent être assignées ou testées dans une condition
 }}}
+
+==block==
+_Partie *Definitions*_
+  * Prévenir de transformation/rotation/changement de taille d'un objet.
+{{{
+
+}}}
+
+
 ----
 =C=
 ----
@@ -114,14 +123,29 @@ _Partie **_
 ----
 =E=
 ----
-_Partie **_
-  * :
+==efface==
+_Partie *Definitions*_
+  * Enlever un objet de son emplacement.
 {{{
+rule in choixPremier is
+	blanche moves then
+		efface queue
+}}}
 
+
+==ends==
+_Partie *Définitions*_
+  * Terminer le jeu ou un compteur.
+{{{
+rule victory then
+	Game ends
 }}}
 ----
 =F=
 ----
+==false==
+  * Valeur booléen représentant "faux".
+
 ==first==
 _Parties *Initialisations*_
   * Déclare que point de vu est le point de vu joueur principal. (voir *camera*)
@@ -151,6 +175,20 @@ _Partie *Information about game*_
   * Le mot-clé pour définition les attributs principaux de jeu.
 {{{
 game has gravity at 10, score at 0; 
+}}}
+
+==generate==
+_Partie *Définitions*_
+  * Apparetre un objet dans le monde (sûr écran).
+{{{
+rule Game starts then
+	generate sol,
+	generate teleport1,
+	generate teleport2,
+	generate zoneDepart,
+	generate zoneGenWindows,
+	reinit
+	;
 }}}
 
 ==gravity==
@@ -320,12 +358,14 @@ _Parties *Initialisations*_
 demo1 is media once;
 }}}
 
-_Partie **_
-  * :
+==mute==
+_Partie *Definition*_
+  * Arreter tous les sons de jeu.
 {{{
-
+definition pauseOnOff means
+	pause prout
 }}}
-----
+
 =N=
 ----
 ==name==
@@ -361,6 +401,20 @@ defeat of player1;
 block translation of perso1 true true false;
 }}}
 
+==off==
+_Partie *Definition*_
+  * Étendre un media.
+{{{
+
+}}}
+
+==on==
+_Partie *Definition*_
+  * (Re)démarrer un media.
+{{{
+
+}}}
+
 ==once==
 _Parties *Initialisations*_
   * Définie qu'un média s'interprète une seul fois. (voir *media*)
@@ -371,11 +425,30 @@ dem3 is media once.
 ----
 =P=
 ----
+==pause==
+_Partie *Definition*_
+  * Arreter le jeu ou un compteur temporairement.
+{{{
+definition pauseOnOff means
+	pause prout
+}}}
+  * Arreter un son.
+{{{
+
+}}}
+
 ==person==
 _Partie *Initialisations*_
   * Pour définir point du vu de camera. (voir *camera*)
 {{{
 cam1 is camera third person.
+}}}
+
+==play==
+_Partie *Definitions*_
+  * Commencer interprétation d'un média.
+{{{
+
 }}}
 
 ==player==
@@ -422,6 +495,22 @@ _Partie *Initialisations*_
 player1 is player solo;
 }}}
 
+==starts==
+_Partie *Definition*_
+  * Démarer le jeu ou un compeur.
+{{{
+rule defeat then
+	play musiqueGameOver,
+	wait 5 sec then Game starts
+}}}
+
+==stop==
+_Partie *Definitions*_
+  * Arrêter interprétation d'un média.
+{{{
+
+}}}
+
 ----
 =T=
 ----
@@ -445,6 +534,9 @@ _Partie *Inheritance, creation of type*_
 {{{
 type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
 }}}
+
+==true==
+  * Valeur booléen représentant "vrai".
 
 ----
 =U=
@@ -476,6 +568,19 @@ game has gravity at 5, turnbased true;
 ----
 =W=
 ----
+==wait==
+_Partie *Définitions*_
+  * Arreter une action pour un durée défini.
+{{{
+rule batman touches CharacterEnemy then
+	sub (attack of CharacterEnemy) to batman,
+	sub (attack of batman) to CharacterEnemy,
+	assign true to isTraversable of batman,
+	wait 3 s then 
+		assign false to isTraversable of batman
+	endwait
+}}}
+
 ==world==
 _Partie * Information about game *_
   * Défini le type de carte de jeu (map).

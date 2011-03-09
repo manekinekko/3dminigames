@@ -146,4 +146,8 @@ public class Model implements Symbol {
     public Type getType() {
 	return Type.MODEL;
     }
+
+    public void print(){
+        System.out.println(attributs.toString());
+    }
 }

@@ -462,7 +462,7 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 
 /* Initialization of commands */
 
-commande [SymbolTable st] returns [Code c]:
+commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
     ^(COMMAND_KW player_list[st] actionCommande_list[st])
     ;
 
@@ -491,8 +491,8 @@ souris [SymbolTable st] returns [Code c]:
     WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
     ;
  
-clavier [SymbolTable st] returns [Code c]:
-    LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER          //CHAR : Z,Q,S,D,...
+clavier [SymbolTable st] returns [String l]:
+    i=LETTER {l = i.getText();l=l.toLowerCase();}| WUP{l="38";} | WDOWN{l="40";} | LEFT{l="37";} | RIGHT{l="39";} | SPACE{l="32";} | ESCAPE{l="27";} | ENTER{l="13";}          //CHAR : Z,Q,S,D,...
     ;
   
 activCommande [SymbolTable st] returns [Code c]:

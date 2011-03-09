@@ -10,12 +10,12 @@
 	 * Initializes the editor. This function is called once the document is loaded.
 	 */
 	M3D.Editor.init = function(){
-		// TODO: get previous content
-		if(!_hasContent()){
-			var _c = ''; 
-			if ( _c === '' ){
-				_setContent('\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
-			}
+		var c = M3D.DB.getEditor();
+		if ( c ===  null || c === ""){
+			_setContent('/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+		}
+		else {
+			_setContent(c);
 		}
 	};
 	
@@ -38,6 +38,28 @@
 	 */
 	M3D.Editor.getContent = function(){
 		return edwigs.getCode();
+	};
+	
+	/**
+	 * Set the default content of the editor
+	 * @param {string} names The name of the objects to be added
+	 */
+	M3D.Editor.setDefaultContent = function(names){
+		var _name, _str = "";
+		for(var i=0; i<names.length; i++){
+			
+			_name = names[i];
+			_str += 'type '+_name+' is Object;\n'+
+								_name+' has position at 0.00 0.00 0.00;\n'+
+								_name+' has rotation at 0.00 0.00 0.00;\n'+
+								_name+' has scale at 0.00 0.00 0.00;\n';
+			
+		}
+		
+		if ( M3D.Editor.getContent() !== null ) {
+			_str = M3D.Editor.getContent() + _str;		
+		}
+		_setContent(_str);
 	};
 	
 	/**
@@ -80,14 +102,26 @@
 		
 	};
 	
-	// set the editor's content
 	/**
 	 * Set the editor's content
 	 * @param {Object} value The new content of the editor
 	 * @private
 	 */
 	var _setContent = function(value, cb){
-		edwigs.edit( value, 'edwigs', cb );
+		
+		// create a new callback function
+		var _cb = function(){
+			
+			M3D.DB.setEditor({
+				'uid': 'edwigs', 
+				'value': value	
+			});
+			
+			if ( cb ){
+				cb();
+			}
+		}
+		edwigs.edit( value, 'edwigs', _cb );
 	};
 	
 })(window.M3D);

@@ -107,10 +107,15 @@
 		return _set(data);
 	};
 	
+	/**
+	 * Store a given editor's content into the local storage.
+	 * @param {Object} data The object containing the editor's content
+	 * @return {Boolean} (see _set)
+	 * @see Object._set
+	 */
 	M3D.DB.setEditor = function(data){
-		data.name += DB_PATTERN_EDITOR;
-		localStorage.setItem(data.name, data.content);
-		return true;
+		data.uid += DB_PATTERN_EDITOR;
+		return _set(data);
 	}
 	 	
 	/**
@@ -136,7 +141,8 @@
 	};
 	
 	M3D.DB.getEditor = function(t){
-		return localStorage.getItem(t) ;
+		t = _regex(DB_PATTERN_EDITOR).test(t) ? t : t+DB_PATTERN_EDITOR;
+		return _get(t);
 	}
 	
 	/**
@@ -170,15 +176,15 @@
 		for( var i=0; i<localStorage.length; i++ ){
 			
 			key = localStorage.key(i);
-            log(key);
-			var exp = _regex(DB_PATTERN_OBJ);
+
+			var o = _regex(DB_PATTERN_OBJ);
+			var e = _regex(DB_PATTERN_EDITOR);
 			
-			if (key == "m3d_editor") {
+			if ( e.test(key) ) {
 				editor = M3D.DB.getEditor(key);
 				M3D.Editor.setContent(editor);
 			}
-			
-			if ( exp.test(key) ){
+			else if ( o.test(key) ){
 				
 				value = M3D.DB.getObject(key);
 				
@@ -198,7 +204,6 @@
 					'autoAddToScene': true
 				});
 
-	            log("Importing model '"+key+"' from '"+value.url+"' at position '("+value.position.X+","+value.position.Y+","+value.position.Z+")'");
 			}
 
 		}
@@ -218,7 +223,6 @@
 	 * @param {Object} object The given key of the entry that needs to be updated
 	 * @deprecated This function is not yet implemented
 	 */
-	
 	M3D.DB.updateSelectedObject = function(){
 		
 		if ( obj ){
@@ -310,11 +314,11 @@
 				return false;				
 			}
 			if (!data.uid) {
-				alert("[DB] A 'value of ObjectUID' key is required to store data!");
+				alert("[DB] A 'uid' key is required to store data!");
 				return false;
 			}
 			if (!data.value) {
-				alert("[DB] A 'value of Object' key is required to store data!");
+				alert("[DB] A 'value' key is required to store data!");
 				return false;
 			}
 			
@@ -323,7 +327,7 @@
 			
 		} catch (e) {
 			log(e);
-			if (QUOTA_EXCEEDED_ERR && e == QUOTA_EXCEEDED_ERR) {
+			if (QUOTA_EXCEEDED_ERR && e === QUOTA_EXCEEDED_ERR) {
 				alert('The allocated quota has exceeded! Please allow 3DWIGS to use more space!'); 
 			}
 		}
@@ -340,7 +344,6 @@
 		return JSON.parse(localStorage.getItem( objectId ));
 	};
 	
-	// Get all data
 	/**
 	 * Get all the values of a given type
 	 * @param {String} str The type that must be used to get its content
@@ -355,7 +358,7 @@
 		for(var i in localStorage){
 			if ( Exp.test(i) ){
 				t.push({
-					'name':i.replace('_'+str, ''), // get rid off of "_str"
+					'uid':i.replace('_'+str, ''), // get rid off of "_str"
 					'value':localStorage.getItem(i)
 				});
 			}

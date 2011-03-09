@@ -34,9 +34,11 @@ doc.onLoad = function() {
 	// finish initialisation
 	setTimeout(function(){
 		$('#info-bottom').slideDown('slow', function(){
-			$('#tools-panel, #viewmenu').fadeIn('slow', function(){
-				$('#loading-message, #modal').hide();
-								
+			$('#tools-panel').fadeIn('slow', function(){
+				$('#loading-message, #modal').hide();	
+			});
+			$('#viewmenu').fadeIn('slow', function(){
+				
 				// Initilization
 				M3D.GUI.init();
 				M3D.DB.init();

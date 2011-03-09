@@ -456,7 +456,7 @@ DIFF : '!=';
 FROM 	:'from';
 DBP     : ':';
 
-GAME		: 'Game';
+GAME		: 'game';
 GRAVITY_KW	: 'gravity';
 SCORE		: 'score';
 TURNBASED_KW    : 'turnbased';

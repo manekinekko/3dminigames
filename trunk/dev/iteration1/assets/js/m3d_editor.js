@@ -10,13 +10,23 @@
 	 * Initializes the editor. This function is called once the document is loaded.
 	 */
 	M3D.Editor.init = function(){
-		var c = M3D.DB.getEditor();
-		if ( c ===  null || c === ""){
-			_setContent('/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+		if(typeof(navigator)=="undefined"){
+			var c = M3D.DB.getEditor();
+			if ( c ===  null || c === ""){
+				_setContent('/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+			}
+			else {
+				_setContent(c);
+			}
 		}
-		else {
-			_setContent(c);
-		}
+	};
+	
+	/**
+	 * Init for indexedDB the editor's content
+	 * @private
+	 */
+	M3D.Editor.initDB = function(value){
+		edwigs.edit( value, 'edwigs');
 	};
 	
 	

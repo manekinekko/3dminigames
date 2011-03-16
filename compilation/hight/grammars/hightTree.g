@@ -461,13 +461,25 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
     ;
 
 /* Initialization of commands */
+//gérer le disable commande
 
 commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
-    ^(COMMAND_KW player_list[st] actionCommande_list[st])
+    ^(COMMAND_KW listplay=player_list[st] listcommand=actionCommande_list[st])
     ;
 
-player_list [SymbolTable st] returns [Code c]:
-    IDENT+
+player_list [SymbolTable st] returns [ArrayList<Symbol> list] @init{list = new ArrayList<Symbol>();}:
+    (i=IDENT{String e = i.getText();Symbol m = st.get(e);
+            if(m==null){
+                System.out.println("tamere");
+                System.exit(0);
+            }else{
+                if( m.getType()== Symbol.Type.ENTITY){
+                    list.add(m);
+                }else{
+                    System.out.println("tamerev2");
+                    System.exit(0);
+                }
+            }} )+
     ;
 
 actionCommande_list[SymbolTable st] returns [Code c]:
@@ -475,16 +487,26 @@ actionCommande_list[SymbolTable st] returns [Code c]:
 	;
 	
 actionCommande [SymbolTable st] returns [Code c]:
-    ^(MOUSE_KW souris[st] commandMode? definitionId)
-    |^(KEY_KW clavier[st] commandMode? definitionId) // ident : that was defined with means
+    ^(MOUSE_KW souris[st] commandMode? definitionId[st])
+    |^(KEY_KW clavier[st] commandMode? definitionId[st]) // ident : that was defined with means
     ;
 
 commandMode :
     PRESSED_KW |HELD_KW | RELEASED_KW
     ;
 
-definitionId :
-    IDENT
+definitionId [SymbolTable st] returns [Definition d]:
+    i=IDENT{String nom = i.getText(); Symbol s = st.get(nom);
+        if(s == null){
+            System.out.println("tamere");
+            System.exit(0);
+        }else{
+        if( s.getType()== Symbol.Type.DEFINITION){
+                    d=(Definition)s;
+        }else{
+             System.out.println("tamerev2");
+             System.exit(0);
+    }}}
     ;	
  
 souris [SymbolTable st] returns [Code c]:
@@ -507,7 +529,7 @@ typeCommand [SymbolTable st] returns [Code c]:
     | KEYBOARD;
  	
 reglesJeu [SymbolTable st] returns [Code c]:
-    ^(RULE_KW IDENT? declencheur[st] definitionId)
+    ^(RULE_KW IDENT? declencheur[st] definitionId[st])
     ;
  
 declencheur [SymbolTable st] returns [Code c]:

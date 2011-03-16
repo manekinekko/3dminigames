@@ -13,8 +13,7 @@ import java.util.Iterator;
 
 public class Model implements Symbol {
 
-    public static final String xml = ".\\xml\\attributesv2.xml";
-    //public static Model object, character, projectile, zone, obstacle, weapon, ground;
+    public static String xml = ".\\xml\\attributesv2.xml";
     private static List<Model> generated;
     private String name;
     private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.

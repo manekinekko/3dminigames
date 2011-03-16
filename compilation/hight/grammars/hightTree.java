@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-03-16 14:28:53
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-03-16 18:05:01
 
     package grammars;
     import code.*;
@@ -3428,25 +3428,30 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "commande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:465:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW player_list[st] actionCommande_list[st] ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW listplay= player_list[st] listcommand= actionCommande_list[st] ) ;
     public final Code commande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
+        ArrayList<Symbol> listplay = null;
+
+        Code listcommand = null;
+
+
         int nbCommande = 0;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:465:70: ( ^( COMMAND_KW player_list[st] actionCommande_list[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:5: ^( COMMAND_KW player_list[st] actionCommande_list[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:70: ( ^( COMMAND_KW listplay= player_list[st] listcommand= actionCommande_list[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:467:5: ^( COMMAND_KW listplay= player_list[st] listcommand= actionCommande_list[st] )
             {
-            match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande2074); 
+            match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande2075); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_player_list_in_commande2076);
-            player_list(st);
+            pushFollow(FOLLOW_player_list_in_commande2079);
+            listplay=player_list(st);
 
             state._fsp--;
 
-            pushFollow(FOLLOW_actionCommande_list_in_commande2079);
-            actionCommande_list(st);
+            pushFollow(FOLLOW_actionCommande_list_in_commande2084);
+            listcommand=actionCommande_list(st);
 
             state._fsp--;
 
@@ -3468,15 +3473,18 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "player_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:469:1: player_list[SymbolTable st] returns [Code c] : ( IDENT )+ ;
-    public final Code player_list(SymbolTable st) throws RecognitionException {
-        Code c = null;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:1: player_list[SymbolTable st] returns [ArrayList<Symbol> list] : (i= IDENT )+ ;
+    public final ArrayList<Symbol> player_list(SymbolTable st) throws RecognitionException {
+        ArrayList<Symbol> list = null;
 
+        CommonTree i=null;
+
+        list = new ArrayList<Symbol>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:469:46: ( ( IDENT )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:5: ( IDENT )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:101: ( (i= IDENT )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:471:5: (i= IDENT )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:5: ( IDENT )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:471:5: (i= IDENT )+
             int cnt42=0;
             loop42:
             do {
@@ -3490,9 +3498,21 @@ public class hightTree extends TreeParser {
 
                 switch (alt42) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:470:5: IDENT
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:471:6: i= IDENT
             	    {
-            	    match(input,IDENT,FOLLOW_IDENT_in_player_list2103); 
+            	    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_player_list2115); 
+            	    String e = i.getText();Symbol m = st.get(e);
+            	                if(m==null){
+            	                    System.out.println("tamere");
+            	                    System.exit(0);
+            	                }else{
+            	                    if( m.getType()== Symbol.Type.ENTITY){
+            	                        list.add(m);
+            	                    }else{
+            	                        System.out.println("tamerev2");
+            	                        System.exit(0);
+            	                    }
+            	                }
 
             	    }
             	    break;
@@ -3516,21 +3536,21 @@ public class hightTree extends TreeParser {
         }
         finally {
         }
-        return c;
+        return list;
     }
     // $ANTLR end "player_list"
 
 
     // $ANTLR start "actionCommande_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:473:1: actionCommande_list[SymbolTable st] returns [Code c] : ( actionCommande[st] )+ ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:1: actionCommande_list[SymbolTable st] returns [Code c] : ( actionCommande[st] )+ ;
     public final Code actionCommande_list(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:473:53: ( ( actionCommande[st] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:474:2: ( actionCommande[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:485:53: ( ( actionCommande[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:2: ( actionCommande[st] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:474:2: ( actionCommande[st] )+
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:2: ( actionCommande[st] )+
             int cnt43=0;
             loop43:
             do {
@@ -3544,9 +3564,9 @@ public class hightTree extends TreeParser {
 
                 switch (alt43) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:474:2: actionCommande[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:2: actionCommande[st]
             	    {
-            	    pushFollow(FOLLOW_actionCommande_in_actionCommande_list2122);
+            	    pushFollow(FOLLOW_actionCommande_in_actionCommande_list2137);
             	    actionCommande(st);
 
             	    state._fsp--;
@@ -3580,12 +3600,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "actionCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:477:1: actionCommande[SymbolTable st] returns [Code c] : ( ^( MOUSE_KW souris[st] ( commandMode )? definitionId ) | ^( KEY_KW clavier[st] ( commandMode )? definitionId ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:489:1: actionCommande[SymbolTable st] returns [Code c] : ( ^( MOUSE_KW souris[st] ( commandMode )? definitionId[st] ) | ^( KEY_KW clavier[st] ( commandMode )? definitionId[st] ) );
     public final Code actionCommande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:477:49: ( ^( MOUSE_KW souris[st] ( commandMode )? definitionId ) | ^( KEY_KW clavier[st] ( commandMode )? definitionId ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:489:49: ( ^( MOUSE_KW souris[st] ( commandMode )? definitionId[st] ) | ^( KEY_KW clavier[st] ( commandMode )? definitionId[st] ) )
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -3603,17 +3623,17 @@ public class hightTree extends TreeParser {
             }
             switch (alt46) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:478:5: ^( MOUSE_KW souris[st] ( commandMode )? definitionId )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:5: ^( MOUSE_KW souris[st] ( commandMode )? definitionId[st] )
                     {
-                    match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_actionCommande2145); 
+                    match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_actionCommande2160); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_souris_in_actionCommande2147);
+                    pushFollow(FOLLOW_souris_in_actionCommande2162);
                     souris(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:478:27: ( commandMode )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:27: ( commandMode )?
                     int alt44=2;
                     int LA44_0 = input.LA(1);
 
@@ -3622,9 +3642,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt44) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:478:27: commandMode
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:27: commandMode
                             {
-                            pushFollow(FOLLOW_commandMode_in_actionCommande2150);
+                            pushFollow(FOLLOW_commandMode_in_actionCommande2165);
                             commandMode();
 
                             state._fsp--;
@@ -3635,8 +3655,8 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    pushFollow(FOLLOW_definitionId_in_actionCommande2153);
-                    definitionId();
+                    pushFollow(FOLLOW_definitionId_in_actionCommande2168);
+                    definitionId(st);
 
                     state._fsp--;
 
@@ -3646,17 +3666,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:6: ^( KEY_KW clavier[st] ( commandMode )? definitionId )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:6: ^( KEY_KW clavier[st] ( commandMode )? definitionId[st] )
                     {
-                    match(input,KEY_KW,FOLLOW_KEY_KW_in_actionCommande2162); 
+                    match(input,KEY_KW,FOLLOW_KEY_KW_in_actionCommande2178); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_clavier_in_actionCommande2164);
+                    pushFollow(FOLLOW_clavier_in_actionCommande2180);
                     clavier(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:27: ( commandMode )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:27: ( commandMode )?
                     int alt45=2;
                     int LA45_0 = input.LA(1);
 
@@ -3665,9 +3685,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt45) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:479:27: commandMode
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:491:27: commandMode
                             {
-                            pushFollow(FOLLOW_commandMode_in_actionCommande2167);
+                            pushFollow(FOLLOW_commandMode_in_actionCommande2183);
                             commandMode();
 
                             state._fsp--;
@@ -3678,8 +3698,8 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    pushFollow(FOLLOW_definitionId_in_actionCommande2170);
-                    definitionId();
+                    pushFollow(FOLLOW_definitionId_in_actionCommande2186);
+                    definitionId(st);
 
                     state._fsp--;
 
@@ -3703,10 +3723,10 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "commandMode"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:1: commandMode : ( PRESSED_KW | HELD_KW | RELEASED_KW );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:494:1: commandMode : ( PRESSED_KW | HELD_KW | RELEASED_KW );
     public final void commandMode() throws RecognitionException {
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:482:13: ( PRESSED_KW | HELD_KW | RELEASED_KW )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:494:13: ( PRESSED_KW | HELD_KW | RELEASED_KW )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=PRESSED_KW && input.LA(1)<=RELEASED_KW) ) {
@@ -3734,13 +3754,28 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "definitionId"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:1: definitionId : IDENT ;
-    public final void definitionId() throws RecognitionException {
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:498:1: definitionId[SymbolTable st] returns [Definition d] : i= IDENT ;
+    public final Definition definitionId(SymbolTable st) throws RecognitionException {
+        Definition d = null;
+
+        CommonTree i=null;
+
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:486:14: ( IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:487:5: IDENT
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:498:53: (i= IDENT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:499:5: i= IDENT
             {
-            match(input,IDENT,FOLLOW_IDENT_in_definitionId2213); 
+            i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_definitionId2237); 
+            String nom = i.getText(); Symbol s = st.get(nom);
+                    if(s == null){
+                        System.out.println("tamere");
+                        System.exit(0);
+                    }else{
+                    if( s.getType()== Symbol.Type.DEFINITION){
+                                d=(Definition)s;
+                    }else{
+                         System.out.println("tamerev2");
+                         System.exit(0);
+                }}
 
             }
 
@@ -3751,18 +3786,18 @@ public class hightTree extends TreeParser {
         }
         finally {
         }
-        return ;
+        return d;
     }
     // $ANTLR end "definitionId"
 
 
     // $ANTLR start "souris"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:1: souris[SymbolTable st] returns [Code c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:512:1: souris[SymbolTable st] returns [Code c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
     public final Code souris(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:490:41: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:512:41: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=LEFT && input.LA(1)<=RIGHT)||(input.LA(1)>=WUP && input.LA(1)<=WDOWN)||(input.LA(1)>=CLICK_LEFT && input.LA(1)<=SCROLL_DOWN) ) {
@@ -3790,14 +3825,14 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "clavier"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:494:1: clavier[SymbolTable st] returns [String l] : (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:516:1: clavier[SymbolTable st] returns [String l] : (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
     public final String clavier(SymbolTable st) throws RecognitionException {
         String l = null;
 
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:494:44: (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:516:44: (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
             int alt47=8;
             switch ( input.LA(1) ) {
             case LETTER:
@@ -3849,65 +3884,65 @@ public class hightTree extends TreeParser {
 
             switch (alt47) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:5: i= LETTER
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:5: i= LETTER
                     {
-                    i=(CommonTree)match(input,LETTER,FOLLOW_LETTER_in_clavier2294); 
+                    i=(CommonTree)match(input,LETTER,FOLLOW_LETTER_in_clavier2319); 
                     l = i.getText();l=l.toLowerCase();
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:52: WUP
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:52: WUP
                     {
-                    match(input,WUP,FOLLOW_WUP_in_clavier2299); 
+                    match(input,WUP,FOLLOW_WUP_in_clavier2324); 
                     l="38";
 
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:67: WDOWN
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:67: WDOWN
                     {
-                    match(input,WDOWN,FOLLOW_WDOWN_in_clavier2304); 
+                    match(input,WDOWN,FOLLOW_WDOWN_in_clavier2329); 
                     l="40";
 
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:84: LEFT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:84: LEFT
                     {
-                    match(input,LEFT,FOLLOW_LEFT_in_clavier2309); 
+                    match(input,LEFT,FOLLOW_LEFT_in_clavier2334); 
                     l="37";
 
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:100: RIGHT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:100: RIGHT
                     {
-                    match(input,RIGHT,FOLLOW_RIGHT_in_clavier2314); 
+                    match(input,RIGHT,FOLLOW_RIGHT_in_clavier2339); 
                     l="39";
 
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:117: SPACE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:117: SPACE
                     {
-                    match(input,SPACE,FOLLOW_SPACE_in_clavier2319); 
+                    match(input,SPACE,FOLLOW_SPACE_in_clavier2344); 
                     l="32";
 
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:134: ESCAPE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:134: ESCAPE
                     {
-                    match(input,ESCAPE,FOLLOW_ESCAPE_in_clavier2324); 
+                    match(input,ESCAPE,FOLLOW_ESCAPE_in_clavier2349); 
                     l="27";
 
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:495:152: ENTER
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:152: ENTER
                     {
-                    match(input,ENTER,FOLLOW_ENTER_in_clavier2329); 
+                    match(input,ENTER,FOLLOW_ENTER_in_clavier2354); 
                     l="13";
 
                     }
@@ -3927,12 +3962,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "activCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:498:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:520:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
     public final Code activCommande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:498:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:520:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -3950,12 +3985,12 @@ public class hightTree extends TreeParser {
             }
             switch (alt48) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:499:5: ^( ACTIVATE_KW typeCommand[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:521:5: ^( ACTIVATE_KW typeCommand[st] )
                     {
-                    match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande2365); 
+                    match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande2390); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_typeCommand_in_activCommande2367);
+                    pushFollow(FOLLOW_typeCommand_in_activCommande2392);
                     typeCommand(st);
 
                     state._fsp--;
@@ -3966,12 +4001,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:500:6: ^( DISABLE_KW typeCommand[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:522:6: ^( DISABLE_KW typeCommand[st] )
                     {
-                    match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande2377); 
+                    match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande2402); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_typeCommand_in_activCommande2379);
+                    pushFollow(FOLLOW_typeCommand_in_activCommande2404);
                     typeCommand(st);
 
                     state._fsp--;
@@ -3996,12 +4031,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeCommand"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:503:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:525:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
     public final Code typeCommand(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:503:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:525:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
             int alt51=4;
             switch ( input.LA(1) ) {
             case COMMANDS:
@@ -4033,20 +4068,20 @@ public class hightTree extends TreeParser {
 
             switch (alt51) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:504:5: COMMANDS
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:526:5: COMMANDS
                     {
-                    match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand2403); 
+                    match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand2428); 
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:505:7: ^( MOUSE_KW ( souris[st] )* )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:527:7: ^( MOUSE_KW ( souris[st] )* )
                     {
-                    match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_typeCommand2412); 
+                    match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_typeCommand2437); 
 
                     if ( input.LA(1)==Token.DOWN ) {
                         match(input, Token.DOWN, null); 
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:505:18: ( souris[st] )*
+                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:527:18: ( souris[st] )*
                         loop49:
                         do {
                             int alt49=2;
@@ -4059,9 +4094,9 @@ public class hightTree extends TreeParser {
 
                             switch (alt49) {
                         	case 1 :
-                        	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:505:18: souris[st]
+                        	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:527:18: souris[st]
                         	    {
-                        	    pushFollow(FOLLOW_souris_in_typeCommand2414);
+                        	    pushFollow(FOLLOW_souris_in_typeCommand2439);
                         	    souris(st);
 
                         	    state._fsp--;
@@ -4082,12 +4117,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:506:7: ^( KEY_KW ( clavier[st] )+ )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:528:7: ^( KEY_KW ( clavier[st] )+ )
                     {
-                    match(input,KEY_KW,FOLLOW_KEY_KW_in_typeCommand2426); 
+                    match(input,KEY_KW,FOLLOW_KEY_KW_in_typeCommand2451); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:506:16: ( clavier[st] )+
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:528:16: ( clavier[st] )+
                     int cnt50=0;
                     loop50:
                     do {
@@ -4101,9 +4136,9 @@ public class hightTree extends TreeParser {
 
                         switch (alt50) {
                     	case 1 :
-                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:506:16: clavier[st]
+                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:528:16: clavier[st]
                     	    {
-                    	    pushFollow(FOLLOW_clavier_in_typeCommand2428);
+                    	    pushFollow(FOLLOW_clavier_in_typeCommand2453);
                     	    clavier(st);
 
                     	    state._fsp--;
@@ -4127,9 +4162,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:507:7: KEYBOARD
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:529:7: KEYBOARD
                     {
-                    match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand2439); 
+                    match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand2464); 
 
                     }
                     break;
@@ -4148,18 +4183,18 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "reglesJeu"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:509:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] definitionId ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:531:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) ;
     public final Code reglesJeu(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:509:44: ( ^( RULE_KW ( IDENT )? declencheur[st] definitionId ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:510:5: ^( RULE_KW ( IDENT )? declencheur[st] definitionId )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:531:44: ( ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:5: ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] )
             {
-            match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu2459); 
+            match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu2484); 
 
             match(input, Token.DOWN, null); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:510:15: ( IDENT )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:15: ( IDENT )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -4168,22 +4203,22 @@ public class hightTree extends TreeParser {
             }
             switch (alt52) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:510:15: IDENT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:15: IDENT
                     {
-                    match(input,IDENT,FOLLOW_IDENT_in_reglesJeu2461); 
+                    match(input,IDENT,FOLLOW_IDENT_in_reglesJeu2486); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_declencheur_in_reglesJeu2464);
+            pushFollow(FOLLOW_declencheur_in_reglesJeu2489);
             declencheur(st);
 
             state._fsp--;
 
-            pushFollow(FOLLOW_definitionId_in_reglesJeu2467);
-            definitionId();
+            pushFollow(FOLLOW_definitionId_in_reglesJeu2492);
+            definitionId(st);
 
             state._fsp--;
 
@@ -4205,12 +4240,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheur"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:513:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:535:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) );
     public final Code declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:513:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:535:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) )
             int alt54=6;
             switch ( input.LA(1) ) {
             case ACCESS_KW:
@@ -4252,14 +4287,14 @@ public class hightTree extends TreeParser {
 
             switch (alt54) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:5: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:5: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     {
-                    pushFollow(FOLLOW_accesClass_in_declencheur2491);
+                    pushFollow(FOLLOW_accesClass_in_declencheur2517);
                     accesClass(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:20: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:20: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     int alt53=4;
                     switch ( input.LA(1) ) {
                     case MOVES_KW:
@@ -4297,23 +4332,23 @@ public class hightTree extends TreeParser {
 
                     switch (alt53) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:21: MOVES_KW
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:21: MOVES_KW
                             {
-                            match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur2495); 
+                            match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur2521); 
 
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:32: DIES_KW
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:32: DIES_KW
                             {
-                            match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur2499); 
+                            match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur2525); 
 
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:42: declencheurTK[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:42: declencheurTK[st]
                             {
-                            pushFollow(FOLLOW_declencheurTK_in_declencheur2503);
+                            pushFollow(FOLLOW_declencheurTK_in_declencheur2529);
                             declencheurTK(st);
 
                             state._fsp--;
@@ -4322,9 +4357,9 @@ public class hightTree extends TreeParser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:514:62: declencheurKT[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:536:62: declencheurKT[st]
                             {
-                            pushFollow(FOLLOW_declencheurKT_in_declencheur2508);
+                            pushFollow(FOLLOW_declencheurKT_in_declencheur2534);
                             declencheurKT(st);
 
                             state._fsp--;
@@ -4339,12 +4374,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:515:6: ^( ENDS_KW type_declencheur[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:537:6: ^( ENDS_KW type_declencheur[st] )
                     {
-                    match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur2518); 
+                    match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur2544); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_declencheur2520);
+                    pushFollow(FOLLOW_type_declencheur_in_declencheur2546);
                     type_declencheur(st);
 
                     state._fsp--;
@@ -4355,12 +4390,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:516:6: ^( STARTS_KW type_declencheur[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:538:6: ^( STARTS_KW type_declencheur[st] )
                     {
-                    match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur2530); 
+                    match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur2556); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_declencheur2532);
+                    pushFollow(FOLLOW_type_declencheur_in_declencheur2558);
                     type_declencheur(st);
 
                     state._fsp--;
@@ -4371,17 +4406,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:517:6: ^( BECOMES_VAR_KW variable[st] varOuNB[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:539:6: ^( BECOMES_VAR_KW variable[st] varOuNB[st] )
                     {
-                    match(input,BECOMES_VAR_KW,FOLLOW_BECOMES_VAR_KW_in_declencheur2552); 
+                    match(input,BECOMES_VAR_KW,FOLLOW_BECOMES_VAR_KW_in_declencheur2578); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_variable_in_declencheur2554);
+                    pushFollow(FOLLOW_variable_in_declencheur2580);
                     variable(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_varOuNB_in_declencheur2557);
+                    pushFollow(FOLLOW_varOuNB_in_declencheur2583);
                     varOuNB(st);
 
                     state._fsp--;
@@ -4392,9 +4427,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:518:6: ^( VICTORY_KW ( PLAYER | IDENT ) )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:540:6: ^( VICTORY_KW ( PLAYER | IDENT ) )
                     {
-                    match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur2567); 
+                    match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur2593); 
 
                     match(input, Token.DOWN, null); 
                     if ( input.LA(1)==IDENT||input.LA(1)==PLAYER ) {
@@ -4412,9 +4447,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:519:6: ^( DEFEAT_KW ( PLAYER | IDENT ) )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:541:6: ^( DEFEAT_KW ( PLAYER | IDENT ) )
                     {
-                    match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur2584); 
+                    match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur2610); 
 
                     match(input, Token.DOWN, null); 
                     if ( input.LA(1)==IDENT||input.LA(1)==PLAYER ) {
@@ -4446,12 +4481,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "type_declencheur"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:522:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:544:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
     public final Code type_declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:522:51: ( IDENT | GAME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:544:51: ( IDENT | GAME )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( input.LA(1)==GAME||input.LA(1)==IDENT ) {
@@ -4479,12 +4514,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "varOuNB"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:525:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st] | FLOAT );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st] | FLOAT );
     public final Code varOuNB(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:525:42: ( variable[st] | FLOAT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:547:42: ( variable[st] | FLOAT )
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4502,9 +4537,9 @@ public class hightTree extends TreeParser {
             }
             switch (alt55) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:526:5: variable[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:5: variable[st]
                     {
-                    pushFollow(FOLLOW_variable_in_varOuNB2637);
+                    pushFollow(FOLLOW_variable_in_varOuNB2663);
                     variable(st);
 
                     state._fsp--;
@@ -4513,9 +4548,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:526:20: FLOAT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:548:20: FLOAT
                     {
-                    match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2642); 
+                    match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2668); 
 
                     }
                     break;
@@ -4534,12 +4569,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheurTK"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:528:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurTK(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:528:49: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:49: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) )
             int alt60=4;
             switch ( input.LA(1) ) {
             case TOUCHES_KW:
@@ -4571,12 +4606,12 @@ public class hightTree extends TreeParser {
 
             switch (alt60) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:529:5: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:5: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2661); 
+                    match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2687); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:529:18: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:18: ( OTHER )?
                     int alt56=2;
                     int LA56_0 = input.LA(1);
 
@@ -4585,16 +4620,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt56) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:529:19: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:19: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2664); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2690); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurTK2668);
+                    pushFollow(FOLLOW_accesClass_in_declencheurTK2694);
                     accesClass(st);
 
                     state._fsp--;
@@ -4605,12 +4640,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:530:7: ^( KILLS_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:7: ^( KILLS_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2679); 
+                    match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2705); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:530:18: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:18: ( OTHER )?
                     int alt57=2;
                     int LA57_0 = input.LA(1);
 
@@ -4619,16 +4654,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt57) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:530:19: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:19: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2682); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2708); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurTK2686);
+                    pushFollow(FOLLOW_accesClass_in_declencheurTK2712);
                     accesClass(st);
 
                     state._fsp--;
@@ -4639,12 +4674,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:531:7: ^( OWNES_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:7: ^( OWNES_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,OWNES_KW,FOLLOW_OWNES_KW_in_declencheurTK2697); 
+                    match(input,OWNES_KW,FOLLOW_OWNES_KW_in_declencheurTK2723); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:531:18: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:18: ( OTHER )?
                     int alt58=2;
                     int LA58_0 = input.LA(1);
 
@@ -4653,16 +4688,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt58) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:531:19: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:553:19: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2700); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2726); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurTK2704);
+                    pushFollow(FOLLOW_accesClass_in_declencheurTK2730);
                     accesClass(st);
 
                     state._fsp--;
@@ -4673,12 +4708,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:7: ^( NOTOWNES_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:7: ^( NOTOWNES_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,NOTOWNES_KW,FOLLOW_NOTOWNES_KW_in_declencheurTK2715); 
+                    match(input,NOTOWNES_KW,FOLLOW_NOTOWNES_KW_in_declencheurTK2741); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:21: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:21: ( OTHER )?
                     int alt59=2;
                     int LA59_0 = input.LA(1);
 
@@ -4687,16 +4722,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt59) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:532:22: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:554:22: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2718); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2744); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurTK2722);
+                    pushFollow(FOLLOW_accesClass_in_declencheurTK2748);
                     accesClass(st);
 
                     state._fsp--;
@@ -4721,12 +4756,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "declencheurKT"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:537:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:559:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurKT(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:537:49: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:559:49: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) )
             int alt65=4;
             switch ( input.LA(1) ) {
             case KILLED_KW:
@@ -4758,12 +4793,12 @@ public class hightTree extends TreeParser {
 
             switch (alt65) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:538:5: ^( KILLED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:560:5: ^( KILLED_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2752); 
+                    match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2778); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:538:17: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:560:17: ( OTHER )?
                     int alt61=2;
                     int LA61_0 = input.LA(1);
 
@@ -4772,16 +4807,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt61) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:538:18: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:560:18: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2755); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2781); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurKT2759);
+                    pushFollow(FOLLOW_accesClass_in_declencheurKT2785);
                     accesClass(st);
 
                     state._fsp--;
@@ -4792,12 +4827,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:539:7: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:561:7: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2770); 
+                    match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2796); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:539:20: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:561:20: ( OTHER )?
                     int alt62=2;
                     int LA62_0 = input.LA(1);
 
@@ -4806,16 +4841,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt62) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:539:21: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:561:21: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2773); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2799); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurKT2777);
+                    pushFollow(FOLLOW_accesClass_in_declencheurKT2803);
                     accesClass(st);
 
                     state._fsp--;
@@ -4826,12 +4861,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:540:7: ^( OWNED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:562:7: ^( OWNED_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,OWNED_KW,FOLLOW_OWNED_KW_in_declencheurKT2788); 
+                    match(input,OWNED_KW,FOLLOW_OWNED_KW_in_declencheurKT2814); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:540:18: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:562:18: ( OTHER )?
                     int alt63=2;
                     int LA63_0 = input.LA(1);
 
@@ -4840,16 +4875,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt63) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:540:19: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:562:19: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2791); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2817); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurKT2795);
+                    pushFollow(FOLLOW_accesClass_in_declencheurKT2821);
                     accesClass(st);
 
                     state._fsp--;
@@ -4860,12 +4895,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:541:7: ^( NOTOWNED_KW ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:563:7: ^( NOTOWNED_KW ( OTHER )? accesClass[st] )
                     {
-                    match(input,NOTOWNED_KW,FOLLOW_NOTOWNED_KW_in_declencheurKT2806); 
+                    match(input,NOTOWNED_KW,FOLLOW_NOTOWNED_KW_in_declencheurKT2832); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:541:21: ( OTHER )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:563:21: ( OTHER )?
                     int alt64=2;
                     int LA64_0 = input.LA(1);
 
@@ -4874,16 +4909,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt64) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:541:22: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:563:22: OTHER
                             {
-                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2809); 
+                            match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2835); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_accesClass_in_declencheurKT2813);
+                    pushFollow(FOLLOW_accesClass_in_declencheurKT2839);
                     accesClass(st);
 
                     state._fsp--;
@@ -4908,7 +4943,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "siAlors"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:545:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:567:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) ;
     public final Code siAlors(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -4920,23 +4955,23 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:545:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:5: ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:567:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:568:5: ^( IF_KW cond= conditions[st] r1= consequences[st] (r2= consequences[st] )? )
             {
-            match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2843); 
+            match(input,IF_KW,FOLLOW_IF_KW_in_siAlors2869); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_conditions_in_siAlors2847);
+            pushFollow(FOLLOW_conditions_in_siAlors2873);
             cond=conditions(st);
 
             state._fsp--;
 
-            pushFollow(FOLLOW_consequences_in_siAlors2852);
+            pushFollow(FOLLOW_consequences_in_siAlors2878);
             r1=consequences(st);
 
             state._fsp--;
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:55: (r2= consequences[st] )?
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:568:55: (r2= consequences[st] )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -4945,9 +4980,9 @@ public class hightTree extends TreeParser {
             }
             switch (alt66) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:546:55: r2= consequences[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:568:55: r2= consequences[st]
                     {
-                    pushFollow(FOLLOW_consequences_in_siAlors2857);
+                    pushFollow(FOLLOW_consequences_in_siAlors2883);
                     r2=consequences(st);
 
                     state._fsp--;
@@ -4977,7 +5012,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "conditions"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:550:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:572:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
     public final Code conditions(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -4991,7 +5026,7 @@ public class hightTree extends TreeParser {
 
         not=null;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:551:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:573:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
             int alt68=10;
             switch ( input.LA(1) ) {
             case CONDITION_KW:
@@ -5067,12 +5102,12 @@ public class hightTree extends TreeParser {
 
             switch (alt68) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:5: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:574:5: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
                     {
-                    match(input,CONDITION_KW,FOLLOW_CONDITION_KW_in_conditions2897); 
+                    match(input,CONDITION_KW,FOLLOW_CONDITION_KW_in_conditions2923); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:20: (not= NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:574:20: (not= NOT )?
                     int alt67=2;
                     int LA67_0 = input.LA(1);
 
@@ -5081,16 +5116,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt67) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:552:21: not= NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:574:21: not= NOT
                             {
-                            not=(CommonTree)match(input,NOT,FOLLOW_NOT_in_conditions2902); 
+                            not=(CommonTree)match(input,NOT,FOLLOW_NOT_in_conditions2928); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_conditions_in_conditions2908);
+                    pushFollow(FOLLOW_conditions_in_conditions2934);
                     cond=conditions(st);
 
                     state._fsp--;
@@ -5108,17 +5143,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:560:6: ^( OR cond1= conditions[st] cond2= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:582:6: ^( OR cond1= conditions[st] cond2= conditions[st] )
                     {
-                    match(input,OR,FOLLOW_OR_in_conditions2924); 
+                    match(input,OR,FOLLOW_OR_in_conditions2950); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_conditions_in_conditions2928);
+                    pushFollow(FOLLOW_conditions_in_conditions2954);
                     cond1=conditions(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_conditions_in_conditions2933);
+                    pushFollow(FOLLOW_conditions_in_conditions2959);
                     cond2=conditions(st);
 
                     state._fsp--;
@@ -5132,17 +5167,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:564:6: ^( AND cond1= conditions[st] cond2= conditions[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:586:6: ^( AND cond1= conditions[st] cond2= conditions[st] )
                     {
-                    match(input,AND,FOLLOW_AND_in_conditions2949); 
+                    match(input,AND,FOLLOW_AND_in_conditions2975); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_conditions_in_conditions2953);
+                    pushFollow(FOLLOW_conditions_in_conditions2979);
                     cond1=conditions(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_conditions_in_conditions2958);
+                    pushFollow(FOLLOW_conditions_in_conditions2984);
                     cond2=conditions(st);
 
                     state._fsp--;
@@ -5156,17 +5191,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:568:6: ^( EQUALS cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:590:6: ^( EQUALS cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,EQUALS,FOLLOW_EQUALS_in_conditions2974); 
+                    match(input,EQUALS,FOLLOW_EQUALS_in_conditions3000); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions2978);
+                    pushFollow(FOLLOW_operation_in_conditions3004);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions2983);
+                    pushFollow(FOLLOW_operation_in_conditions3009);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5180,17 +5215,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:572:6: ^( INF cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:594:6: ^( INF cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,INF,FOLLOW_INF_in_conditions2999); 
+                    match(input,INF,FOLLOW_INF_in_conditions3025); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions3003);
+                    pushFollow(FOLLOW_operation_in_conditions3029);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions3008);
+                    pushFollow(FOLLOW_operation_in_conditions3034);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5204,17 +5239,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:576:6: ^( SUP cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:6: ^( SUP cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,SUP,FOLLOW_SUP_in_conditions3024); 
+                    match(input,SUP,FOLLOW_SUP_in_conditions3050); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions3028);
+                    pushFollow(FOLLOW_operation_in_conditions3054);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions3033);
+                    pushFollow(FOLLOW_operation_in_conditions3059);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5228,17 +5263,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:580:6: ^( INFEG cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:6: ^( INFEG cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,INFEG,FOLLOW_INFEG_in_conditions3049); 
+                    match(input,INFEG,FOLLOW_INFEG_in_conditions3075); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions3053);
+                    pushFollow(FOLLOW_operation_in_conditions3079);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions3058);
+                    pushFollow(FOLLOW_operation_in_conditions3084);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5252,17 +5287,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:584:6: ^( SUPED cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:606:6: ^( SUPED cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,SUPED,FOLLOW_SUPED_in_conditions3074); 
+                    match(input,SUPED,FOLLOW_SUPED_in_conditions3100); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions3078);
+                    pushFollow(FOLLOW_operation_in_conditions3104);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions3083);
+                    pushFollow(FOLLOW_operation_in_conditions3109);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5276,17 +5311,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:588:6: ^( DIFF cond1= operation[st] cond2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:610:6: ^( DIFF cond1= operation[st] cond2= operation[st] )
                     {
-                    match(input,DIFF,FOLLOW_DIFF_in_conditions3099); 
+                    match(input,DIFF,FOLLOW_DIFF_in_conditions3125); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_conditions3103);
+                    pushFollow(FOLLOW_operation_in_conditions3129);
                     cond1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_conditions3108);
+                    pushFollow(FOLLOW_operation_in_conditions3134);
                     cond2=operation(st);
 
                     state._fsp--;
@@ -5300,9 +5335,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:592:7: etat[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:614:7: etat[st]
                     {
-                    pushFollow(FOLLOW_etat_in_conditions3124);
+                    pushFollow(FOLLOW_etat_in_conditions3150);
                     etat(st);
 
                     state._fsp--;
@@ -5325,12 +5360,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "etat"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:595:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) );
     public final Code etat(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:595:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) )
             int alt89=15;
             switch ( input.LA(1) ) {
             case DEAD_KW:
@@ -5417,17 +5452,17 @@ public class hightTree extends TreeParser {
 
             switch (alt89) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:5: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:5: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat3146); 
+                    match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat3172); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_accesClass_in_etat3148);
+                    pushFollow(FOLLOW_accesClass_in_etat3174);
                     accesClass(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:30: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:30: ( NOT )?
                     int alt69=2;
                     int LA69_0 = input.LA(1);
 
@@ -5436,64 +5471,7 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt69) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:31: NOT
-                            {
-                            match(input,NOT,FOLLOW_NOT_in_etat3152); 
-
-                            }
-                            break;
-
-                    }
-
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:37: ( OTHER )?
-                    int alt70=2;
-                    int LA70_0 = input.LA(1);
-
-                    if ( (LA70_0==OTHER) ) {
-                        alt70=1;
-                    }
-                    switch (alt70) {
-                        case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:596:38: OTHER
-                            {
-                            match(input,OTHER,FOLLOW_OTHER_in_etat3157); 
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_accesClass_in_etat3161);
-                    accesClass(st);
-
-                    state._fsp--;
-
-
-                    match(input, Token.UP, null); 
-
-                    }
-                    break;
-                case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:597:7: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
-                    {
-                    match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat3172); 
-
-                    match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_accesClass_in_etat3174);
-                    accesClass(st);
-
-                    state._fsp--;
-
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:597:33: ( NOT )?
-                    int alt71=2;
-                    int LA71_0 = input.LA(1);
-
-                    if ( (LA71_0==NOT) ) {
-                        alt71=1;
-                    }
-                    switch (alt71) {
-                        case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:597:34: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:31: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3178); 
 
@@ -5502,16 +5480,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:597:40: ( OTHER )?
-                    int alt72=2;
-                    int LA72_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:37: ( OTHER )?
+                    int alt70=2;
+                    int LA70_0 = input.LA(1);
 
-                    if ( (LA72_0==OTHER) ) {
-                        alt72=1;
+                    if ( (LA70_0==OTHER) ) {
+                        alt70=1;
                     }
-                    switch (alt72) {
+                    switch (alt70) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:597:41: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:38: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3183); 
 
@@ -5530,10 +5508,10 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:7: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                case 2 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:619:7: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat3198); 
+                    match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat3198); 
 
                     match(input, Token.DOWN, null); 
                     pushFollow(FOLLOW_accesClass_in_etat3200);
@@ -5541,16 +5519,16 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:35: ( NOT )?
-                    int alt73=2;
-                    int LA73_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:619:33: ( NOT )?
+                    int alt71=2;
+                    int LA71_0 = input.LA(1);
 
-                    if ( (LA73_0==NOT) ) {
-                        alt73=1;
+                    if ( (LA71_0==NOT) ) {
+                        alt71=1;
                     }
-                    switch (alt73) {
+                    switch (alt71) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:36: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:619:34: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3204); 
 
@@ -5559,16 +5537,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:42: ( OTHER )?
-                    int alt74=2;
-                    int LA74_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:619:40: ( OTHER )?
+                    int alt72=2;
+                    int LA72_0 = input.LA(1);
 
-                    if ( (LA74_0==OTHER) ) {
-                        alt74=1;
+                    if ( (LA72_0==OTHER) ) {
+                        alt72=1;
                     }
-                    switch (alt74) {
+                    switch (alt72) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:598:43: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:619:41: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3209); 
 
@@ -5587,10 +5565,10 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:599:7: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                case 3 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:620:7: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat3224); 
+                    match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat3224); 
 
                     match(input, Token.DOWN, null); 
                     pushFollow(FOLLOW_accesClass_in_etat3226);
@@ -5598,16 +5576,16 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:599:37: ( NOT )?
-                    int alt75=2;
-                    int LA75_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:620:35: ( NOT )?
+                    int alt73=2;
+                    int LA73_0 = input.LA(1);
 
-                    if ( (LA75_0==NOT) ) {
-                        alt75=1;
+                    if ( (LA73_0==NOT) ) {
+                        alt73=1;
                     }
-                    switch (alt75) {
+                    switch (alt73) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:599:38: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:620:36: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3230); 
 
@@ -5616,16 +5594,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:599:44: ( OTHER )?
-                    int alt76=2;
-                    int LA76_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:620:42: ( OTHER )?
+                    int alt74=2;
+                    int LA74_0 = input.LA(1);
 
-                    if ( (LA76_0==OTHER) ) {
-                        alt76=1;
+                    if ( (LA74_0==OTHER) ) {
+                        alt74=1;
                     }
-                    switch (alt76) {
+                    switch (alt74) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:599:45: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:620:43: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3235); 
 
@@ -5644,10 +5622,10 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:7: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                case 4 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:621:7: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat3250); 
+                    match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat3250); 
 
                     match(input, Token.DOWN, null); 
                     pushFollow(FOLLOW_accesClass_in_etat3252);
@@ -5655,16 +5633,16 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:36: ( NOT )?
-                    int alt77=2;
-                    int LA77_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:621:37: ( NOT )?
+                    int alt75=2;
+                    int LA75_0 = input.LA(1);
 
-                    if ( (LA77_0==NOT) ) {
-                        alt77=1;
+                    if ( (LA75_0==NOT) ) {
+                        alt75=1;
                     }
-                    switch (alt77) {
+                    switch (alt75) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:37: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:621:38: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3256); 
 
@@ -5673,16 +5651,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:43: ( OTHER )?
-                    int alt78=2;
-                    int LA78_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:621:44: ( OTHER )?
+                    int alt76=2;
+                    int LA76_0 = input.LA(1);
 
-                    if ( (LA78_0==OTHER) ) {
-                        alt78=1;
+                    if ( (LA76_0==OTHER) ) {
+                        alt76=1;
                     }
-                    switch (alt78) {
+                    switch (alt76) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:600:44: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:621:45: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3261); 
 
@@ -5701,10 +5679,10 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:601:7: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                case 5 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:7: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat3276); 
+                    match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat3276); 
 
                     match(input, Token.DOWN, null); 
                     pushFollow(FOLLOW_accesClass_in_etat3278);
@@ -5712,16 +5690,16 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:601:34: ( NOT )?
-                    int alt79=2;
-                    int LA79_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:36: ( NOT )?
+                    int alt77=2;
+                    int LA77_0 = input.LA(1);
 
-                    if ( (LA79_0==NOT) ) {
-                        alt79=1;
+                    if ( (LA77_0==NOT) ) {
+                        alt77=1;
                     }
-                    switch (alt79) {
+                    switch (alt77) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:601:35: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:37: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3282); 
 
@@ -5730,16 +5708,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:601:41: ( OTHER )?
-                    int alt80=2;
-                    int LA80_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:43: ( OTHER )?
+                    int alt78=2;
+                    int LA78_0 = input.LA(1);
 
-                    if ( (LA80_0==OTHER) ) {
-                        alt80=1;
+                    if ( (LA78_0==OTHER) ) {
+                        alt78=1;
                     }
-                    switch (alt80) {
+                    switch (alt78) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:601:42: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:44: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3287); 
 
@@ -5758,10 +5736,10 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:7: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                case 6 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:623:7: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat3302); 
+                    match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat3302); 
 
                     match(input, Token.DOWN, null); 
                     pushFollow(FOLLOW_accesClass_in_etat3304);
@@ -5769,16 +5747,16 @@ public class hightTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:35: ( NOT )?
-                    int alt81=2;
-                    int LA81_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:623:34: ( NOT )?
+                    int alt79=2;
+                    int LA79_0 = input.LA(1);
 
-                    if ( (LA81_0==NOT) ) {
-                        alt81=1;
+                    if ( (LA79_0==NOT) ) {
+                        alt79=1;
                     }
-                    switch (alt81) {
+                    switch (alt79) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:36: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:623:35: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3308); 
 
@@ -5787,16 +5765,16 @@ public class hightTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:42: ( OTHER )?
-                    int alt82=2;
-                    int LA82_0 = input.LA(1);
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:623:41: ( OTHER )?
+                    int alt80=2;
+                    int LA80_0 = input.LA(1);
 
-                    if ( (LA82_0==OTHER) ) {
-                        alt82=1;
+                    if ( (LA80_0==OTHER) ) {
+                        alt80=1;
                     }
-                    switch (alt82) {
+                    switch (alt80) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:602:43: OTHER
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:623:42: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3313); 
 
@@ -5815,18 +5793,75 @@ public class hightTree extends TreeParser {
 
                     }
                     break;
-                case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:603:7: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
+                case 7 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:624:7: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
-                    match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat3328); 
+                    match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat3328); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3330);
+                    pushFollow(FOLLOW_accesClass_in_etat3330);
+                    accesClass(st);
+
+                    state._fsp--;
+
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:624:35: ( NOT )?
+                    int alt81=2;
+                    int LA81_0 = input.LA(1);
+
+                    if ( (LA81_0==NOT) ) {
+                        alt81=1;
+                    }
+                    switch (alt81) {
+                        case 1 :
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:624:36: NOT
+                            {
+                            match(input,NOT,FOLLOW_NOT_in_etat3334); 
+
+                            }
+                            break;
+
+                    }
+
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:624:42: ( OTHER )?
+                    int alt82=2;
+                    int LA82_0 = input.LA(1);
+
+                    if ( (LA82_0==OTHER) ) {
+                        alt82=1;
+                    }
+                    switch (alt82) {
+                        case 1 :
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:624:43: OTHER
+                            {
+                            match(input,OTHER,FOLLOW_OTHER_in_etat3339); 
+
+                            }
+                            break;
+
+                    }
+
+                    pushFollow(FOLLOW_accesClass_in_etat3343);
+                    accesClass(st);
+
+                    state._fsp--;
+
+
+                    match(input, Token.UP, null); 
+
+                    }
+                    break;
+                case 8 :
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:625:7: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
+                    {
+                    match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat3354); 
+
+                    match(input, Token.DOWN, null); 
+                    pushFollow(FOLLOW_type_declencheur_in_etat3356);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:603:42: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:625:42: ( NOT )?
                     int alt83=2;
                     int LA83_0 = input.LA(1);
 
@@ -5835,9 +5870,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt83) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:603:43: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:625:43: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3334); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3360); 
 
                             }
                             break;
@@ -5850,17 +5885,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:604:7: ^( STARTED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:626:7: ^( STARTED_KW type_declencheur[st] ( NOT )? )
                     {
-                    match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat3346); 
+                    match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat3372); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3348);
+                    pushFollow(FOLLOW_type_declencheur_in_etat3374);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:604:40: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:626:40: ( NOT )?
                     int alt84=2;
                     int LA84_0 = input.LA(1);
 
@@ -5869,9 +5904,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt84) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:604:41: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:626:41: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3351); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3377); 
 
                             }
                             break;
@@ -5884,17 +5919,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:605:7: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:627:7: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
                     {
-                    match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat3363); 
+                    match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat3389); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3365);
+                    pushFollow(FOLLOW_type_declencheur_in_etat3391);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:605:39: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:627:39: ( NOT )?
                     int alt85=2;
                     int LA85_0 = input.LA(1);
 
@@ -5903,9 +5938,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt85) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:605:40: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:627:40: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3368); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3394); 
 
                             }
                             break;
@@ -5918,17 +5953,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:606:7: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:628:7: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
                     {
-                    match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat3380); 
+                    match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat3406); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3382);
+                    pushFollow(FOLLOW_type_declencheur_in_etat3408);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:606:39: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:628:39: ( NOT )?
                     int alt86=2;
                     int LA86_0 = input.LA(1);
 
@@ -5937,16 +5972,16 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt86) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:606:40: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:628:40: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3386); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3412); 
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_mode_mute_in_etat3390);
+                    pushFollow(FOLLOW_mode_mute_in_etat3416);
                     mode_mute(st);
 
                     state._fsp--;
@@ -5957,17 +5992,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:607:7: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:629:7: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
                     {
-                    match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat3401); 
+                    match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat3427); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3403);
+                    pushFollow(FOLLOW_type_declencheur_in_etat3429);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:607:40: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:629:40: ( NOT )?
                     int alt87=2;
                     int LA87_0 = input.LA(1);
 
@@ -5976,9 +6011,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt87) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:607:41: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:629:41: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3407); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3433); 
 
                             }
                             break;
@@ -5991,17 +6026,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:608:7: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:630:7: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
                     {
-                    match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat3419); 
+                    match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat3445); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_type_declencheur_in_etat3421);
+                    pushFollow(FOLLOW_type_declencheur_in_etat3447);
                     type_declencheur(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:608:41: ( NOT )?
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:630:41: ( NOT )?
                     int alt88=2;
                     int LA88_0 = input.LA(1);
 
@@ -6010,9 +6045,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt88) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:608:42: NOT
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:630:42: NOT
                             {
-                            match(input,NOT,FOLLOW_NOT_in_etat3425); 
+                            match(input,NOT,FOLLOW_NOT_in_etat3451); 
 
                             }
                             break;
@@ -6025,24 +6060,24 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:610:7: ^( VICTORY_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:632:7: ^( VICTORY_KW IDENT )
                     {
-                    match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat3442); 
+                    match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat3468); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,IDENT,FOLLOW_IDENT_in_etat3444); 
+                    match(input,IDENT,FOLLOW_IDENT_in_etat3470); 
 
                     match(input, Token.UP, null); 
 
                     }
                     break;
                 case 15 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:611:7: ^( DEFEAT_KW IDENT )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:633:7: ^( DEFEAT_KW IDENT )
                     {
-                    match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat3454); 
+                    match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat3480); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,IDENT,FOLLOW_IDENT_in_etat3456); 
+                    match(input,IDENT,FOLLOW_IDENT_in_etat3482); 
 
                     match(input, Token.UP, null); 
 
@@ -6063,12 +6098,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "mode_mute"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:614:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:636:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
     public final Code mode_mute(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:614:44: ( ON | OFF )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:636:44: ( ON | OFF )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=ON && input.LA(1)<=OFF) ) {
@@ -6096,7 +6131,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "affectation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:1: affectation[SymbolTable st] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:639:1: affectation[SymbolTable st] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) );
     public final Code affectation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -6114,7 +6149,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:617:46: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:639:46: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st] ) | ^( ADD_KW o= operation[st] v= variable[st] ) | ^( SUB_KW op= operation[st] var= variable[st] ) | ^( INVERT_KW variable[st] variable[st] ) )
             int alt90=4;
             switch ( input.LA(1) ) {
             case ASSIGN_KW:
@@ -6146,17 +6181,17 @@ public class hightTree extends TreeParser {
 
             switch (alt90) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:618:5: ^( ASSIGN_KW i1= operation[st] i2= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:640:5: ^( ASSIGN_KW i1= operation[st] i2= variable[st] )
                     {
-                    match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation3503); 
+                    match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation3529); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_affectation3507);
+                    pushFollow(FOLLOW_operation_in_affectation3533);
                     i1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_variable_in_affectation3512);
+                    pushFollow(FOLLOW_variable_in_affectation3538);
                     i2=variable(st);
 
                     state._fsp--;
@@ -6170,17 +6205,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:622:6: ^( ADD_KW o= operation[st] v= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:644:6: ^( ADD_KW o= operation[st] v= variable[st] )
                     {
-                    match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation3528); 
+                    match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation3554); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_affectation3532);
+                    pushFollow(FOLLOW_operation_in_affectation3558);
                     o=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_variable_in_affectation3537);
+                    pushFollow(FOLLOW_variable_in_affectation3563);
                     v=variable(st);
 
                     state._fsp--;
@@ -6194,17 +6229,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:626:6: ^( SUB_KW op= operation[st] var= variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:648:6: ^( SUB_KW op= operation[st] var= variable[st] )
                     {
-                    match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation3553); 
+                    match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation3579); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_affectation3557);
+                    pushFollow(FOLLOW_operation_in_affectation3583);
                     op=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_variable_in_affectation3562);
+                    pushFollow(FOLLOW_variable_in_affectation3588);
                     var=variable(st);
 
                     state._fsp--;
@@ -6218,17 +6253,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:630:6: ^( INVERT_KW variable[st] variable[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:652:6: ^( INVERT_KW variable[st] variable[st] )
                     {
-                    match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation3578); 
+                    match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation3604); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_variable_in_affectation3580);
+                    pushFollow(FOLLOW_variable_in_affectation3606);
                     variable(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_variable_in_affectation3583);
+                    pushFollow(FOLLOW_variable_in_affectation3609);
                     variable(st);
 
                     state._fsp--;
@@ -6256,19 +6291,19 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "iaBasique"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:636:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW IDENT ( reglesJeu[st] )+ ) ;
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:658:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW IDENT ( reglesJeu[st] )+ ) ;
     public final Code iaBasique(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:636:44: ( ^( IA_KW IDENT ( reglesJeu[st] )+ ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:637:5: ^( IA_KW IDENT ( reglesJeu[st] )+ )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:658:44: ( ^( IA_KW IDENT ( reglesJeu[st] )+ ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:659:5: ^( IA_KW IDENT ( reglesJeu[st] )+ )
             {
-            match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique3617); 
+            match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique3643); 
 
             match(input, Token.DOWN, null); 
-            match(input,IDENT,FOLLOW_IDENT_in_iaBasique3619); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:637:19: ( reglesJeu[st] )+
+            match(input,IDENT,FOLLOW_IDENT_in_iaBasique3645); 
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:659:19: ( reglesJeu[st] )+
             int cnt91=0;
             loop91:
             do {
@@ -6282,9 +6317,9 @@ public class hightTree extends TreeParser {
 
                 switch (alt91) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:637:19: reglesJeu[st]
+            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:659:19: reglesJeu[st]
             	    {
-            	    pushFollow(FOLLOW_reglesJeu_in_iaBasique3621);
+            	    pushFollow(FOLLOW_reglesJeu_in_iaBasique3647);
             	    reglesJeu(st);
 
             	    state._fsp--;
@@ -6320,7 +6355,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "operation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:641:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:663:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT );
     public final Code operation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -6333,7 +6368,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:641:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:663:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st] | f= FLOAT )
             int alt92=9;
             switch ( input.LA(1) ) {
             case RANDOM_KW:
@@ -6395,17 +6430,17 @@ public class hightTree extends TreeParser {
 
             switch (alt92) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:642:5: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:664:5: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
                     {
-                    match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation3645); 
+                    match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation3671); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3650);
+                    pushFollow(FOLLOW_operation_in_operation3676);
                     c1=operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3656);
+                    pushFollow(FOLLOW_operation_in_operation3682);
                     c2=operation(st);
 
                     state._fsp--;
@@ -6417,17 +6452,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:644:6: ^( PLUS operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:666:6: ^( PLUS operation[st] operation[st] )
                     {
-                    match(input,PLUS,FOLLOW_PLUS_in_operation3672); 
+                    match(input,PLUS,FOLLOW_PLUS_in_operation3698); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3674);
+                    pushFollow(FOLLOW_operation_in_operation3700);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3677);
+                    pushFollow(FOLLOW_operation_in_operation3703);
                     operation(st);
 
                     state._fsp--;
@@ -6439,17 +6474,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:646:6: ^( MINUS operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:668:6: ^( MINUS operation[st] operation[st] )
                     {
-                    match(input,MINUS,FOLLOW_MINUS_in_operation3693); 
+                    match(input,MINUS,FOLLOW_MINUS_in_operation3719); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3695);
+                    pushFollow(FOLLOW_operation_in_operation3721);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3698);
+                    pushFollow(FOLLOW_operation_in_operation3724);
                     operation(st);
 
                     state._fsp--;
@@ -6461,17 +6496,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:648:6: ^( MUL operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:670:6: ^( MUL operation[st] operation[st] )
                     {
-                    match(input,MUL,FOLLOW_MUL_in_operation3714); 
+                    match(input,MUL,FOLLOW_MUL_in_operation3740); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3716);
+                    pushFollow(FOLLOW_operation_in_operation3742);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3719);
+                    pushFollow(FOLLOW_operation_in_operation3745);
                     operation(st);
 
                     state._fsp--;
@@ -6483,17 +6518,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:650:6: ^( DIV operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:672:6: ^( DIV operation[st] operation[st] )
                     {
-                    match(input,DIV,FOLLOW_DIV_in_operation3735); 
+                    match(input,DIV,FOLLOW_DIV_in_operation3761); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3737);
+                    pushFollow(FOLLOW_operation_in_operation3763);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3740);
+                    pushFollow(FOLLOW_operation_in_operation3766);
                     operation(st);
 
                     state._fsp--;
@@ -6505,17 +6540,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:652:6: ^( MOD operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:674:6: ^( MOD operation[st] operation[st] )
                     {
-                    match(input,MOD,FOLLOW_MOD_in_operation3756); 
+                    match(input,MOD,FOLLOW_MOD_in_operation3782); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3758);
+                    pushFollow(FOLLOW_operation_in_operation3784);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3761);
+                    pushFollow(FOLLOW_operation_in_operation3787);
                     operation(st);
 
                     state._fsp--;
@@ -6527,17 +6562,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:654:6: ^( POW operation[st] operation[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:676:6: ^( POW operation[st] operation[st] )
                     {
-                    match(input,POW,FOLLOW_POW_in_operation3777); 
+                    match(input,POW,FOLLOW_POW_in_operation3803); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_operation_in_operation3779);
+                    pushFollow(FOLLOW_operation_in_operation3805);
                     operation(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_operation_in_operation3782);
+                    pushFollow(FOLLOW_operation_in_operation3808);
                     operation(st);
 
                     state._fsp--;
@@ -6549,9 +6584,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:656:6: v= variable[st]
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:678:6: v= variable[st]
                     {
-                    pushFollow(FOLLOW_variable_in_operation3801);
+                    pushFollow(FOLLOW_variable_in_operation3827);
                     v=variable(st);
 
                     state._fsp--;
@@ -6561,9 +6596,9 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:658:6: f= FLOAT
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:680:6: f= FLOAT
                     {
-                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_operation3819); 
+                    f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_operation3845); 
                     c = new Code(f.getText());
 
                     }
@@ -6583,7 +6618,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "variable"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:663:1: variable[SymbolTable st] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:685:1: variable[SymbolTable st] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
     public final Code variable(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -6600,7 +6635,7 @@ public class hightTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:663:43: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:685:43: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
             int alt93=6;
             switch ( input.LA(1) ) {
             case X:
@@ -6642,17 +6677,17 @@ public class hightTree extends TreeParser {
 
             switch (alt93) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:664:5: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:686:5: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
-                    match(input,X,FOLLOW_X_in_variable3850); 
+                    match(input,X,FOLLOW_X_in_variable3876); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_typeCoordonnees_in_variable3854);
+                    pushFollow(FOLLOW_typeCoordonnees_in_variable3880);
                     tc=typeCoordonnees(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_accesClass_in_variable3859);
+                    pushFollow(FOLLOW_accesClass_in_variable3885);
                     sb=accesClass(st);
 
                     state._fsp--;
@@ -6673,17 +6708,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:675:6: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:697:6: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
-                    match(input,Y,FOLLOW_Y_in_variable3875); 
+                    match(input,Y,FOLLOW_Y_in_variable3901); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_typeCoordonnees_in_variable3880);
+                    pushFollow(FOLLOW_typeCoordonnees_in_variable3906);
                     tc=typeCoordonnees(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_accesClass_in_variable3885);
+                    pushFollow(FOLLOW_accesClass_in_variable3911);
                     sb=accesClass(st);
 
                     state._fsp--;
@@ -6704,17 +6739,17 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:686:6: ^( Z typeCoordonnees[st] sb= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:708:6: ^( Z typeCoordonnees[st] sb= accesClass[st] )
                     {
-                    match(input,Z,FOLLOW_Z_in_variable3901); 
+                    match(input,Z,FOLLOW_Z_in_variable3927); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_typeCoordonnees_in_variable3903);
+                    pushFollow(FOLLOW_typeCoordonnees_in_variable3929);
                     typeCoordonnees(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_accesClass_in_variable3908);
+                    pushFollow(FOLLOW_accesClass_in_variable3934);
                     sb=accesClass(st);
 
                     state._fsp--;
@@ -6735,13 +6770,13 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:697:6: ^( VAR_I_KW i= IDENT e= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:719:6: ^( VAR_I_KW i= IDENT e= accesClass[st] )
                     {
-                    match(input,VAR_I_KW,FOLLOW_VAR_I_KW_in_variable3924); 
+                    match(input,VAR_I_KW,FOLLOW_VAR_I_KW_in_variable3950); 
 
                     match(input, Token.DOWN, null); 
-                    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_variable3928); 
-                    pushFollow(FOLLOW_accesClass_in_variable3932);
+                    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_variable3954); 
+                    pushFollow(FOLLOW_accesClass_in_variable3958);
                     e=accesClass(st);
 
                     state._fsp--;
@@ -6767,24 +6802,24 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:713:6: GAME_SCORE_KW
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:735:6: GAME_SCORE_KW
                     {
-                    match(input,GAME_SCORE_KW,FOLLOW_GAME_SCORE_KW_in_variable3947); 
+                    match(input,GAME_SCORE_KW,FOLLOW_GAME_SCORE_KW_in_variable3973); 
 
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:714:6: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:736:6: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
                     {
-                    match(input,VALUE_KW,FOLLOW_VALUE_KW_in_variable3955); 
+                    match(input,VALUE_KW,FOLLOW_VALUE_KW_in_variable3981); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_attributTps_in_variable3959);
+                    pushFollow(FOLLOW_attributTps_in_variable3985);
                     at=attributTps(st);
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_accesClass_in_variable3964);
+                    pushFollow(FOLLOW_accesClass_in_variable3990);
                     ac=accesClass(st);
 
                     state._fsp--;
@@ -6819,7 +6854,7 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "accesClass"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:727:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:749:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
     public final ArrayList<Symbol> accesClass(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> sb = null;
 
@@ -6829,7 +6864,7 @@ public class hightTree extends TreeParser {
 
         sb = new ArrayList<Symbol>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:728:42: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:750:42: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
             int alt95=3;
             int LA95_0 = input.LA(1);
 
@@ -6876,12 +6911,12 @@ public class hightTree extends TreeParser {
             }
             switch (alt95) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:729:5: ^( ACCESS_KW ALL )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:751:5: ^( ACCESS_KW ALL )
                     {
-                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4005); 
+                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4031); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,ALL,FOLLOW_ALL_in_accesClass4007); 
+                    match(input,ALL,FOLLOW_ALL_in_accesClass4033); 
 
                     match(input, Token.UP, null); 
 
@@ -6891,13 +6926,13 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:733:7: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:755:7: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
                     {
-                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4023); 
+                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4049); 
 
                     match(input, Token.DOWN, null); 
-                    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_accesClass4027); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:733:29: (co= operation[st] )?
+                    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_accesClass4053); 
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:755:29: (co= operation[st] )?
                     int alt94=2;
                     int LA94_0 = input.LA(1);
 
@@ -6906,9 +6941,9 @@ public class hightTree extends TreeParser {
                     }
                     switch (alt94) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:733:29: co= operation[st]
+                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:755:29: co= operation[st]
                             {
-                            pushFollow(FOLLOW_operation_in_accesClass4031);
+                            pushFollow(FOLLOW_operation_in_accesClass4057);
                             co=operation(st);
 
                             state._fsp--;
@@ -6934,12 +6969,12 @@ public class hightTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:743:7: ^( ACCESS_KW PLAYER )
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:765:7: ^( ACCESS_KW PLAYER )
                     {
-                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4050); 
+                    match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4076); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,PLAYER,FOLLOW_PLAYER_in_accesClass4052); 
+                    match(input,PLAYER,FOLLOW_PLAYER_in_accesClass4078); 
 
                     match(input, Token.UP, null); 
 
@@ -6963,12 +6998,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "typeCoordonnees"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:749:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:771:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
     public final Code typeCoordonnees(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:749:50: ( POSITION | ORIENTATION | SIZE )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:771:50: ( POSITION | ORIENTATION | SIZE )
             int alt96=3;
             switch ( input.LA(1) ) {
             case POSITION:
@@ -6995,25 +7030,25 @@ public class hightTree extends TreeParser {
 
             switch (alt96) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:750:2: POSITION
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:772:2: POSITION
                     {
-                    match(input,POSITION,FOLLOW_POSITION_in_typeCoordonnees4080); 
+                    match(input,POSITION,FOLLOW_POSITION_in_typeCoordonnees4106); 
                     c = new Code("position");
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:750:40: ORIENTATION
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:772:40: ORIENTATION
                     {
-                    match(input,ORIENTATION,FOLLOW_ORIENTATION_in_typeCoordonnees4085); 
+                    match(input,ORIENTATION,FOLLOW_ORIENTATION_in_typeCoordonnees4111); 
                     c = new Code("angle");
 
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:750:78: SIZE
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:772:78: SIZE
                     {
-                    match(input,SIZE,FOLLOW_SIZE_in_typeCoordonnees4090); 
+                    match(input,SIZE,FOLLOW_SIZE_in_typeCoordonnees4116); 
                     c = new Code("taille");
 
                     }
@@ -7033,12 +7068,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "timeUnit"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:753:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:775:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
     public final String timeUnit(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:753:45: ( MIN | SEC | MS | FRAME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:775:45: ( MIN | SEC | MS | FRAME )
             int alt97=4;
             switch ( input.LA(1) ) {
             case MIN:
@@ -7070,33 +7105,33 @@ public class hightTree extends TreeParser {
 
             switch (alt97) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:754:2: MIN
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:776:2: MIN
                     {
-                    match(input,MIN,FOLLOW_MIN_in_timeUnit4108); 
+                    match(input,MIN,FOLLOW_MIN_in_timeUnit4134); 
                     c = "MIN";
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:755:4: SEC
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:777:4: SEC
                     {
-                    match(input,SEC,FOLLOW_SEC_in_timeUnit4115); 
+                    match(input,SEC,FOLLOW_SEC_in_timeUnit4141); 
                     c = "SEC";
 
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:756:4: MS
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:778:4: MS
                     {
-                    match(input,MS,FOLLOW_MS_in_timeUnit4121); 
+                    match(input,MS,FOLLOW_MS_in_timeUnit4147); 
                     c = "MS";
 
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:757:4: FRAME
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:779:4: FRAME
                     {
-                    match(input,FRAME,FOLLOW_FRAME_in_timeUnit4127); 
+                    match(input,FRAME,FOLLOW_FRAME_in_timeUnit4153); 
 
                     }
                     break;
@@ -7115,12 +7150,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributTps"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:760:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:782:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
     public final String attributTps(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:760:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:782:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
             int alt98=3;
             switch ( input.LA(1) ) {
             case BOOST_INTERVAL:
@@ -7147,25 +7182,25 @@ public class hightTree extends TreeParser {
 
             switch (alt98) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:761:2: BOOST_INTERVAL
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:783:2: BOOST_INTERVAL
                     {
-                    match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps4143); 
+                    match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps4169); 
                     c ="boostInterval";
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:762:4: SHOOT_INTERVAL
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:784:4: SHOOT_INTERVAL
                     {
-                    match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps4149); 
+                    match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps4175); 
                     c = "shootInterval";
 
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:763:4: RELOAD_TIME
+                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:785:4: RELOAD_TIME
                     {
-                    match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps4164); 
+                    match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps4190); 
                     c = "reloadTime";
 
                     }
@@ -7185,12 +7220,12 @@ public class hightTree extends TreeParser {
 
 
     // $ANTLR start "attributListeOuObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:766:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
+    // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:788:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
     public final Code attributListeOuObjet(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:766:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
+            // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:788:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:
             {
             if ( (input.LA(1)>=INVENTORY && input.LA(1)<=TYPES_TELEPORTABLES) ) {
@@ -7681,249 +7716,249 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_operation_in_coordinates2026 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
     public static final BitSet FOLLOW_operation_in_coordinates2031 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
     public static final BitSet FOLLOW_operation_in_coordinates2036 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_COMMAND_KW_in_commande2074 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_player_list_in_commande2076 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_actionCommande_list_in_commande2079 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_IDENT_in_player_list2103 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_actionCommande_in_actionCommande_list2122 = new BitSet(new long[]{0x000000000C000002L});
-    public static final BitSet FOLLOW_MOUSE_KW_in_actionCommande2145 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_souris_in_actionCommande2147 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
-    public static final BitSet FOLLOW_commandMode_in_actionCommande2150 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
-    public static final BitSet FOLLOW_definitionId_in_actionCommande2153 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_KEY_KW_in_actionCommande2162 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_clavier_in_actionCommande2164 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
-    public static final BitSet FOLLOW_commandMode_in_actionCommande2167 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
-    public static final BitSet FOLLOW_definitionId_in_actionCommande2170 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_COMMAND_KW_in_commande2075 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_player_list_in_commande2079 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_actionCommande_list_in_commande2084 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_IDENT_in_player_list2115 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_actionCommande_in_actionCommande_list2137 = new BitSet(new long[]{0x000000000C000002L});
+    public static final BitSet FOLLOW_MOUSE_KW_in_actionCommande2160 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_souris_in_actionCommande2162 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
+    public static final BitSet FOLLOW_commandMode_in_actionCommande2165 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
+    public static final BitSet FOLLOW_definitionId_in_actionCommande2168 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_KEY_KW_in_actionCommande2178 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_clavier_in_actionCommande2180 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
+    public static final BitSet FOLLOW_commandMode_in_actionCommande2183 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
+    public static final BitSet FOLLOW_definitionId_in_actionCommande2186 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_set_in_commandMode0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_definitionId2213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_definitionId2237 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_souris0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LETTER_in_clavier2294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WUP_in_clavier2299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WDOWN_in_clavier2304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFT_in_clavier2309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RIGHT_in_clavier2314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SPACE_in_clavier2319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ESCAPE_in_clavier2324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENTER_in_clavier2329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande2365 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCommand_in_activCommande2367 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande2377 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCommand_in_activCommande2379 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_COMMANDS_in_typeCommand2403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOUSE_KW_in_typeCommand2412 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_souris_in_typeCommand2414 = new BitSet(new long[]{0x0000000000000008L,0x0F8000CC00000000L});
-    public static final BitSet FOLLOW_KEY_KW_in_typeCommand2426 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_clavier_in_typeCommand2428 = new BitSet(new long[]{0x0000000000000008L,0xF00000CC00000000L});
-    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand2439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu2459 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_reglesJeu2461 = new BitSet(new long[]{0x0000000002400000L,0x0000000000000074L});
-    public static final BitSet FOLLOW_declencheur_in_reglesJeu2464 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
-    public static final BitSet FOLLOW_definitionId_in_reglesJeu2467 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_accesClass_in_declencheur2491 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L,0x000000000000F7A0L});
-    public static final BitSet FOLLOW_MOVES_KW_in_declencheur2495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIES_KW_in_declencheur2499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurTK_in_declencheur2503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_declencheurKT_in_declencheur2508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENDS_KW_in_declencheur2518 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_declencheur2520 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_STARTS_KW_in_declencheur2530 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_declencheur2532 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_BECOMES_VAR_KW_in_declencheur2552 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_variable_in_declencheur2554 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_varOuNB_in_declencheur2557 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur2567 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_set_in_declencheur2569 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur2584 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_set_in_declencheur2586 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_LETTER_in_clavier2319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WUP_in_clavier2324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WDOWN_in_clavier2329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFT_in_clavier2334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RIGHT_in_clavier2339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SPACE_in_clavier2344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ESCAPE_in_clavier2349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENTER_in_clavier2354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ACTIVATE_KW_in_activCommande2390 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_typeCommand_in_activCommande2392 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DISABLE_KW_in_activCommande2402 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_typeCommand_in_activCommande2404 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_COMMANDS_in_typeCommand2428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOUSE_KW_in_typeCommand2437 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_souris_in_typeCommand2439 = new BitSet(new long[]{0x0000000000000008L,0x0F8000CC00000000L});
+    public static final BitSet FOLLOW_KEY_KW_in_typeCommand2451 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_clavier_in_typeCommand2453 = new BitSet(new long[]{0x0000000000000008L,0xF00000CC00000000L});
+    public static final BitSet FOLLOW_KEYBOARD_in_typeCommand2464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_in_reglesJeu2484 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_reglesJeu2486 = new BitSet(new long[]{0x0000000002400000L,0x0000000000000074L});
+    public static final BitSet FOLLOW_declencheur_in_reglesJeu2489 = new BitSet(new long[]{0x0000040000000000L,0x0070000000000000L});
+    public static final BitSet FOLLOW_definitionId_in_reglesJeu2492 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_accesClass_in_declencheur2517 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L,0x000000000000F7A0L});
+    public static final BitSet FOLLOW_MOVES_KW_in_declencheur2521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIES_KW_in_declencheur2525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurTK_in_declencheur2529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_declencheurKT_in_declencheur2534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENDS_KW_in_declencheur2544 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_declencheur2546 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_STARTS_KW_in_declencheur2556 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_declencheur2558 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_BECOMES_VAR_KW_in_declencheur2578 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_variable_in_declencheur2580 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_varOuNB_in_declencheur2583 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_declencheur2593 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_set_in_declencheur2595 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_declencheur2610 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_set_in_declencheur2612 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_set_in_type_declencheur0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variable_in_varOuNB2637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_varOuNB2642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2661 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2664 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurTK2668 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2679 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2682 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurTK2686 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OWNES_KW_in_declencheurTK2697 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2700 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurTK2704 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOTOWNES_KW_in_declencheurTK2715 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurTK2718 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurTK2722 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2752 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2755 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurKT2759 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2770 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2773 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurKT2777 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OWNED_KW_in_declencheurKT2788 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2791 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurKT2795 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOTOWNED_KW_in_declencheurKT2806 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OTHER_in_declencheurKT2809 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_declencheurKT2813 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_IF_KW_in_siAlors2843 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_conditions_in_siAlors2847 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2852 = new BitSet(new long[]{0x0000000000040008L});
-    public static final BitSet FOLLOW_consequences_in_siAlors2857 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_CONDITION_KW_in_conditions2897 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_NOT_in_conditions2902 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
-    public static final BitSet FOLLOW_conditions_in_conditions2908 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_conditions2924 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_conditions_in_conditions2928 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
-    public static final BitSet FOLLOW_conditions_in_conditions2933 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_conditions2949 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_conditions_in_conditions2953 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
-    public static final BitSet FOLLOW_conditions_in_conditions2958 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_EQUALS_in_conditions2974 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions2978 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions2983 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INF_in_conditions2999 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions3003 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions3008 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SUP_in_conditions3024 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions3028 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions3033 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INFEG_in_conditions3049 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions3053 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions3058 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SUPED_in_conditions3074 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions3078 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions3083 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DIFF_in_conditions3099 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_conditions3103 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_conditions3108 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_etat_in_conditions3124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEAD_KW_in_etat3146 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_accesClass_in_etat3148 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
-    public static final BitSet FOLLOW_NOT_in_etat3152 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_OTHER_in_etat3157 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_etat3161 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ALIVE_KW_in_etat3172 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_variable_in_varOuNB2663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_varOuNB2668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOUCHES_KW_in_declencheurTK2687 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2690 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurTK2694 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_KILLS_KW_in_declencheurTK2705 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2708 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurTK2712 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OWNES_KW_in_declencheurTK2723 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2726 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurTK2730 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOTOWNES_KW_in_declencheurTK2741 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurTK2744 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurTK2748 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_KILLED_KW_in_declencheurKT2778 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2781 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurKT2785 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_TOUCHED_KW_in_declencheurKT2796 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2799 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurKT2803 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OWNED_KW_in_declencheurKT2814 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2817 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurKT2821 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOTOWNED_KW_in_declencheurKT2832 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OTHER_in_declencheurKT2835 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_declencheurKT2839 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_IF_KW_in_siAlors2869 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_conditions_in_siAlors2873 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2878 = new BitSet(new long[]{0x0000000000040008L});
+    public static final BitSet FOLLOW_consequences_in_siAlors2883 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_CONDITION_KW_in_conditions2923 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_NOT_in_conditions2928 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
+    public static final BitSet FOLLOW_conditions_in_conditions2934 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_conditions2950 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_conditions_in_conditions2954 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
+    public static final BitSet FOLLOW_conditions_in_conditions2959 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_conditions2975 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_conditions_in_conditions2979 = new BitSet(new long[]{0x0000200001000000L,0x0000000000000014L,0x00000FFF8FD00000L});
+    public static final BitSet FOLLOW_conditions_in_conditions2984 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EQUALS_in_conditions3000 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3004 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3009 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INF_in_conditions3025 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3029 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3034 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SUP_in_conditions3050 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3054 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3059 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INFEG_in_conditions3075 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3079 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3084 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SUPED_in_conditions3100 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3104 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3109 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DIFF_in_conditions3125 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_conditions3129 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_conditions3134 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_etat_in_conditions3150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEAD_KW_in_etat3172 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3174 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3178 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3183 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3187 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_EFFACED_KW_in_etat3198 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ALIVE_KW_in_etat3198 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3200 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3204 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3209 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3213 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_GENERATED_KW_in_etat3224 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_EFFACED_KW_in_etat3224 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3226 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3230 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3235 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3239 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_TOUCHING_KW_in_etat3250 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_GENERATED_KW_in_etat3250 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3252 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3256 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3261 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3265 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MOVING_KW_in_etat3276 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TOUCHING_KW_in_etat3276 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3278 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3282 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3287 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3291 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_WAITING_KW_in_etat3302 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_MOVING_KW_in_etat3302 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_accesClass_in_etat3304 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
     public static final BitSet FOLLOW_NOT_in_etat3308 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_OTHER_in_etat3313 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_etat3317 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_FINISHED_KW_in_etat3328 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3330 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3334 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_STARTED_KW_in_etat3346 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3348 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3351 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAUSED_KW_in_etat3363 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3365 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3368 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MUTED_KW_in_etat3380 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3382 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000600L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3386 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000600L,0x0000000000080000L});
-    public static final BitSet FOLLOW_mode_mute_in_etat3390 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PLAYED_KW_in_etat3401 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3403 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3407 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_STOPPED_KW_in_etat3419 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_type_declencheur_in_etat3421 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_NOT_in_etat3425 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_VICTORY_KW_in_etat3442 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_etat3444 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DEFEAT_KW_in_etat3454 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_etat3456 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_WAITING_KW_in_etat3328 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_accesClass_in_etat3330 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000080800L});
+    public static final BitSet FOLLOW_NOT_in_etat3334 = new BitSet(new long[]{0x0000000002000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_OTHER_in_etat3339 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_etat3343 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_FINISHED_KW_in_etat3354 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3356 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3360 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_STARTED_KW_in_etat3372 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3374 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3377 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAUSED_KW_in_etat3389 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3391 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3394 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MUTED_KW_in_etat3406 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3408 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000600L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3412 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000600L,0x0000000000080000L});
+    public static final BitSet FOLLOW_mode_mute_in_etat3416 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PLAYED_KW_in_etat3427 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3429 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3433 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_STOPPED_KW_in_etat3445 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_type_declencheur_in_etat3447 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_NOT_in_etat3451 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_VICTORY_KW_in_etat3468 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_etat3470 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DEFEAT_KW_in_etat3480 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_etat3482 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_set_in_mode_mute0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation3503 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation3507 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_variable_in_affectation3512 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ADD_KW_in_affectation3528 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation3532 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_variable_in_affectation3537 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SUB_KW_in_affectation3553 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_affectation3557 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_variable_in_affectation3562 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INVERT_KW_in_affectation3578 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_variable_in_affectation3580 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_variable_in_affectation3583 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_IA_KW_in_iaBasique3617 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_iaBasique3619 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_reglesJeu_in_iaBasique3621 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RANDOM_KW_in_operation3645 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3650 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3656 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PLUS_in_operation3672 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3674 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3677 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MINUS_in_operation3693 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3695 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3698 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MUL_in_operation3714 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3716 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3719 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DIV_in_operation3735 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3737 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3740 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MOD_in_operation3756 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3758 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3761 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_POW_in_operation3777 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_operation_in_operation3779 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_operation3782 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_variable_in_operation3801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_in_operation3819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_X_in_variable3850 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable3854 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_variable3859 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_Y_in_variable3875 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ASSIGN_KW_in_affectation3529 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_affectation3533 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_variable_in_affectation3538 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ADD_KW_in_affectation3554 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_affectation3558 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_variable_in_affectation3563 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SUB_KW_in_affectation3579 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_affectation3583 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_variable_in_affectation3588 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INVERT_KW_in_affectation3604 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_variable_in_affectation3606 = new BitSet(new long[]{0x0000000000105000L,0x0000000000000000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_variable_in_affectation3609 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_IA_KW_in_iaBasique3643 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_iaBasique3645 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_reglesJeu_in_iaBasique3647 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RANDOM_KW_in_operation3671 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3676 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3682 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PLUS_in_operation3698 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3700 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3703 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MINUS_in_operation3719 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3721 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3724 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MUL_in_operation3740 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3742 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3745 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DIV_in_operation3761 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3763 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3766 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MOD_in_operation3782 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3784 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3787 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_POW_in_operation3803 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_operation_in_operation3805 = new BitSet(new long[]{0x0000000400105000L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_operation3808 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_variable_in_operation3827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_in_operation3845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_X_in_variable3876 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_typeCoordonnees_in_variable3880 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_accesClass_in_variable3885 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_Z_in_variable3901 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_typeCoordonnees_in_variable3903 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_variable3908 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_VAR_I_KW_in_variable3924 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_variable3928 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_variable3932 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_GAME_SCORE_KW_in_variable3947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALUE_KW_in_variable3955 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_attributTps_in_variable3959 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_accesClass_in_variable3964 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4005 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ALL_in_accesClass4007 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4023 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_accesClass4027 = new BitSet(new long[]{0x0000000400105008L,0x0000000000000000L,0x73F4000000000000L});
-    public static final BitSet FOLLOW_operation_in_accesClass4031 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4050 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PLAYER_in_accesClass4052 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_POSITION_in_typeCoordonnees4080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORIENTATION_in_typeCoordonnees4085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIZE_in_typeCoordonnees4090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MIN_in_timeUnit4108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEC_in_timeUnit4115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MS_in_timeUnit4121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRAME_in_timeUnit4127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOST_INTERVAL_in_attributTps4143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SHOOT_INTERVAL_in_attributTps4149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RELOAD_TIME_in_attributTps4164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Y_in_variable3901 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable3906 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_variable3911 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_Z_in_variable3927 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_typeCoordonnees_in_variable3929 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_variable3934 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_VAR_I_KW_in_variable3950 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_variable3954 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_variable3958 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_GAME_SCORE_KW_in_variable3973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALUE_KW_in_variable3981 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_attributTps_in_variable3985 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_accesClass_in_variable3990 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4031 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ALL_in_accesClass4033 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4049 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_accesClass4053 = new BitSet(new long[]{0x0000000400105008L,0x0000000000000000L,0x73F4000000000000L});
+    public static final BitSet FOLLOW_operation_in_accesClass4057 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ACCESS_KW_in_accesClass4076 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PLAYER_in_accesClass4078 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_POSITION_in_typeCoordonnees4106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORIENTATION_in_typeCoordonnees4111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIZE_in_typeCoordonnees4116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MIN_in_timeUnit4134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEC_in_timeUnit4141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MS_in_timeUnit4147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRAME_in_timeUnit4153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOST_INTERVAL_in_attributTps4169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SHOOT_INTERVAL_in_attributTps4175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RELOAD_TIME_in_attributTps4190 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_attributListeOuObjet0 = new BitSet(new long[]{0x0000000000000002L});
 
 }

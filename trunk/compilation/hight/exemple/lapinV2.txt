@@ -148,7 +148,7 @@ definition toucherLapin means
     sub 1 for life of Lapin;
 
 //////////// COMMANDES
-command for player is 
+command for player is
 	key left for bougerJeep1,
 	key right for bougerJeep2,
 	mouse up for bougerBazooka1,

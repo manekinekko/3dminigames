@@ -14,7 +14,7 @@ import java.util.Iterator;
 public class Model implements Symbol {
 
     public static final String xml = ".\\xml\\attributesv2.xml";
-    public static Model object, character, projectile, zone, obstacle, weapon, ground;
+    //public static Model object, character, projectile, zone, obstacle, weapon, ground;
     private static List<Model> generated;
     private String name;
     private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
@@ -42,28 +42,31 @@ public class Model implements Symbol {
 
 	SAXBuilder sxb = new SAXBuilder();
 	try {
-	    //On crée un nouveau document JDOM avec en argument le fichier XML
-	    //Le parsing est terminé ;)
+	    //On cree un nouveau document JDOM avec en argument le fichier XML
+	    //Le parsing est termine ;)
 	    document = sxb.build(new File(xml));
 	    racine = document.getRootElement();
 	} catch (Exception e) {
-	    System.out.println("Raté");
+	    System.out.println("Rate");
 	}
+	
 	List listmodel = racine.getChildren("model");
-
-	//On crée un Iterator sur notre liste
+	
+	//On cree un Iterator sur notre liste
 	Iterator i = listmodel.iterator();
 	while (i.hasNext()) {
 	    Element courant = (Element) i.next();
 	    Model m;
 	    Element e = courant.getChild("inheritance");
 	    if (e == null) {
-		m = new Model(courant.getChild("name").getText());
+	    	m = new Model(courant.getChild("name").getText());
 	    } else {
-		Symbol he = st.get(courant.getChild("inheritance").getAttributeValue("value"));
-		m = new Model(courant.getChild("name").getText(), (Model) he);
+	    	Symbol he = st.get(courant.getChild("inheritance").getAttributeValue("value"));
+	    	m = new Model(courant.getChild("name").getText(), (Model) he);
 	    }
+	    
 	    st.add(m.getName(), m);
+	   
 
 	    List listAttribute = courant.getChildren("attribute");
 	    Iterator i2 = listAttribute.iterator();
@@ -86,7 +89,7 @@ public class Model implements Symbol {
 	    st.add(m.getName(), m);
 	}
     }
-    //On initialise un nouvel élément racine avec l'élément racine du document.
+    //On initialise un nouvel element racine avec l'element racine du document.
 
     public void addAttribute(String attr) {
 	this.attributs.put(attr, null);

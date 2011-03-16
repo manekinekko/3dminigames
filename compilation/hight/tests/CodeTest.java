@@ -92,6 +92,7 @@ public class CodeTest extends TestCase {
 		c41 = Code.genEOL();
 		}
 	public void testAppend(){
+		System.out.println(c2);
 		assertNotNull(c1.getCode());
 		assertEquals(c1.getCode(),"");
 		assertNotNull(c2.getCode());

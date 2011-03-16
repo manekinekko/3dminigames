@@ -17,7 +17,7 @@ public class Duration {
     }
 
     public Duration(Number n, String u) {
-	value = new Code(n+"");
+	value = new Code(n.toString()+"");
 	unit = u.toUpperCase();
     }
 

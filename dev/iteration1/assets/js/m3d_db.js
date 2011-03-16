@@ -11,14 +11,12 @@ if (!window["M3D"].DB){
 		window["M3D"].DB={};
 }
 var db;
-var navigator;
 	
 if ('webkitIndexedDB' in window) {
 	window.indexedDB = window.webkitIndexedDB;
 	window.IDBTransaction = window.webkitIDBTransaction;
 	/*window.IDBCursor = window.webkitIDBCursor;
 	window.IDBKeyRange = window.webkitIDBKeyRange;*/
-	navigator="chrome";
 } else {
 	window.indexedDB = window.mozIndexedDB;
 	/*window.IDBTransaction = window.mozIDBTransaction;
@@ -38,16 +36,10 @@ if ('webkitIndexedDB' in window) {
  */
 M3D.DB.init = function(){
 	if (window.indexedDB) {	// Open our IndexedDB if the browser supports it.
-		var idbRequest = window.indexedDB.open("m3d95","3DWIGS project");
-		log(idbRequest);
+		var idbRequest = window.indexedDB.open("m3d","3DWIGS project");
 		idbRequest.onsuccess = function(event) {
-			if(navigator=="chrome"){
-				db = event.result;
-				var e= event;
-			}else{
-				db = idbRequest.result;
-				var e= idbRequest;
-			}
+			db = idbRequest.result;
+			var e= idbRequest;
 			if(e.result.version != "1"){
 				idbCreate_entity();
 				idbCreate_grammar();
@@ -77,25 +69,15 @@ M3D.DB.load = function(){
 	}
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("grammar");
 	var request_grammar = objectStore.get("gram");
-	log(request_grammar);
 	request_grammar.onsuccess=function(e){
-		if(navigator=="chrome"){
-				M3D.Editor.setContent(e.result.grammar);
-		}else{
-				M3D.Editor.setContent(request_grammar.result.grammar);
-		}
+		M3D.Editor.setContent(request_grammar.result.grammar);
 	};
 	request_grammar.onerror = function(e){log("Error: IndexedDB grammar load");};	
 	
 	var request = db.transaction([], IDBTransaction.READ_ONLY).objectStore("entity").openCursor(); // Get all results.
 	var tmpArr = [];
-	log(request);
 	request.onsuccess = function(e) {
-		if(navigator=="chrome"){
-			var cursor = e.result;
-		}else{
-			var cursor = request.result;
-		}
+		var cursor = request.result;
 		if (!cursor) {
 			var len = tmpArr.length;
 			for(var i=0; i<len; i++){
@@ -121,16 +103,11 @@ M3D.DB.load = function(){
  */  
 function idbCreate_entity() {	// name, url, position of entity 
 	var request = db.setVersion('1');
-	log(request);
 	request.onerror = function(e){log("Error: IndexedDB create entity");};
 	request.onsuccess = function(e) {
 		if (!db.objectStoreNames.contains('entity')) {
-			try {
-				if(navigator=="chrome"){
-					db.createObjectStore('entity', 'id', true);
-				}else{
-					db.createObjectStore('entity', {keyPath: 'id'});
-				}
+			try {				
+				db.createObjectStore('entity', {keyPath: 'id'});
 				log("Object store entity created");
 			} catch (err) {	
 				log("Error: IndexedDB create entity");
@@ -147,16 +124,11 @@ function idbCreate_entity() {	// name, url, position of entity
  */ 
 function idbCreate_grammar() {	// grammar 
 	var request = db.setVersion('1');
-	log(request);
 	request.onerror = function(e){log("Error: IndexedDB create grammar");};
 	request.onsuccess = function(e) {
 		if (!db.objectStoreNames.contains('grammar')) {
 			try {
-				if(navigator=="chrome"){
-					db.createObjectStore('grammar', 'id', true);
-				}else{
-					db.createObjectStore('grammar', {keyPath: 'id'});
-				}
+				db.createObjectStore('grammar', {keyPath: 'id'});
 				log("Object store grammar created");
 				var ini='\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n';
 				M3D.DB.setGrammar(ini);
@@ -178,16 +150,11 @@ function idbCreate_grammar() {	// grammar
  */ 
 function idbCreate_attributes(){
 	var request = db.setVersion('1');
-	log(request);
 	request.onerror = function(e){log("Error: IndexedDB create attributes");};
 	request.onsuccess = function(e) {
 		if (!db.objectStoreNames.contains('attributes')) {
 			try {
-				if(navigator=="chrome"){
-					db.createObjectStore('attributes', 'id', true);
-				}else{
-					db.createObjectStore('attributes', {keyPath: 'id'});
-				}
+				db.createObjectStore('attributes', {keyPath: 'id'});
 				var key = '__default_attributes__';
 				$.ajax({
 					url:'bin/xml_to_json.php',
@@ -221,19 +188,11 @@ function idbCreate_attributes(){
  */
 M3D.DB.setObject = function(element) {
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("entity");
-	if(navigator=="chrome"){
-		var request = objectStore.put({name: element.value.name, url: element.value.url, id: element.uid,
-			position: {	X: element.value.position.X, Y: element.value.position.Y, Z: element.value.position.Z },
-			scale: { X: element.value.scale.X, Y: element.value.scale.Y, Z: element.value.scale.Z }, 
-			rotation: {	X: element.value.rotation.X, Y: element.value.rotation.Y, Z: element.value.rotation.Z
-						}}, element.uid);
-	}else{
-		var request = objectStore.add({name: element.value.name, url: element.value.url, 
-			position: {	X: element.value.position.X, Y: element.value.position.Y, Z: element.value.position.Z },
-			scale: { X: element.value.scale.X, Y: element.value.scale.Y, Z: element.value.scale.Z }, 
-			rotation: {	X: element.value.rotation.X, Y: element.value.rotation.Y, Z: element.value.rotation.Z
-						}, id: element.uid});
-	}
+	var request = objectStore.add({name: element.value.name, url: element.value.url, 
+		position: {	X: element.value.position.X, Y: element.value.position.Y, Z: element.value.position.Z },
+		scale: { X: element.value.scale.X, Y: element.value.scale.Y, Z: element.value.scale.Z }, 
+		rotation: {	X: element.value.rotation.X, Y: element.value.rotation.Y, Z: element.value.rotation.Z
+					}, id: element.uid});
 	request.onerror = function(e){log("Error: IndexedDB setObject");};
 	request.onsuccess = function(event) {log("Add entity k");};
 }
@@ -244,11 +203,7 @@ M3D.DB.setObject = function(element) {
  */
 M3D.DB.setGrammar = function(grammar) {
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("grammar");
-	if(navigator=="chrome"){
-		var request = objectStore.put({grammar: grammar}, "gram");
-	}else{
-		var request = objectStore.add({grammar: grammar, id:"gram"});
-	}
+	var request = objectStore.add({grammar: grammar, id:"gram"});
 	request.onerror = function(e){log("Error: IndexedDB setGrammar");};
 	request.onsuccess = function(event) {log("Add grammar k");};
 }
@@ -259,11 +214,7 @@ M3D.DB.setGrammar = function(grammar) {
  */
 M3D.DB.setAttributes = function(attributes) {
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("attributes");
-	if(navigator=="chrome"){
-		var request = objectStore.put({value: attributes}, "attributes_default");
-	}else{
-		var request = objectStore.add({value: attributes, id:"attributes_default"});
-	}
+	var request = objectStore.add({value: attributes, id:"attributes_default"});
 	request.onerror = function(e){log("Error: IndexedDB setAttributes");};
 	request.onsuccess = function(event) {log("Add attributes_default k");};
 }
@@ -314,28 +265,15 @@ M3D.DB.updateSelectedObject = function() {
 		var _obj = obj.parent;
 		var uid = _obj.uid;
 		var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("entity");
-		var request_entity = objectStore.get(obj.uid);
-		log(request_entity);
+		var request_entity = objectStore.get(uid);
 		request_entity.onsuccess=function(e){
-			var element;
-			if(navigator=="chrome"){
-				element=e.result;
-				var request = objectStore.put({name: element.name, url: element.url, id: element.id,
-												position: {	X: _obj.getLocX(), Y: _obj.getLocY(), Z: _obj.getLocZ() },
-												scale: { X: _obj.getScaleX(), Y: _obj.getScaleY(), Z: _obj.getScaleZ() }, 
-												rotation: {	X: _obj.getRotX(), Y: _obj.getRotY(), Z: _obj.getRotZ()
-												}}, element.id);
-			}else{
-				element=request_entity.result;
-				objectStore.delete(element.uid);
-				var request = objectStore.add({name: element.name, url: element.url, 
-												position: {	X: _obj.getLocX(), Y: _obj.getLocY(), Z: _obj.getLocZ() },
-												scale: { X: _obj.getScaleX(), Y: _obj.getScaleY(), Z: _obj.getScaleZ() }, 
-												rotation: {	X: _obj.getRotX(), Y: _obj.getRotY(), Z: _obj.getRotZ()
-												}, id: element.id});
-			}
-			
-			log(element.position.X);
+			var element=request_entity.result;
+			objectStore.delete(uid);
+			var request = objectStore.add({name: element.name, url: element.url, 
+											position: {	X: _obj.getLocX(), Y: _obj.getLocY(), Z: _obj.getLocZ() },
+											scale: { X: _obj.getScaleX(), Y: _obj.getScaleY(), Z: _obj.getScaleZ() }, 
+											rotation: {	X: _obj.getRotX(), Y: _obj.getRotY(), Z: _obj.getRotZ()
+											}, id: element.id});
 			request.onerror = function(e){log("Error: IndexedDB update_entity");};
 			request.onsuccess = function(event) {log("Update entity k");};			
 		};
@@ -354,12 +292,8 @@ M3D.DB.saveEditor = function(data){
 M3D.DB.setEditor = function(data) {
 	var grammar = data.value;	
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("grammar");
-	if(navigator=="chrome"){
-		var request = objectStore.put({grammar: grammar+""}, "gram");
-	}else{
-		objectStore.delete("gram");
-		var request = objectStore.add({grammar: grammar+"", id: "gram"});
-	}
+	objectStore.delete("gram");
+	var request = objectStore.add({grammar: grammar+"", id: "gram"});
 	request.onerror = function(e){log("Error: IndexedDB update_grammar");};
 	request.onsuccess = function(event) {log("Update grammar k");};	
 }

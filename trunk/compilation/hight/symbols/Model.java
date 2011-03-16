@@ -77,6 +77,8 @@ public class Model implements Symbol {
 		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Float.valueOf(attr.getAttributeValue("value"))));
 		} else if (attr.getAttributeValue("type").equals("boolean")) {
 		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Boolean.valueOf(attr.getAttributeValue("value"))));
+		} else if (attr.getAttributeValue("type").equals("array")) {
+		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(AttributeValue.Type.ARRAY));
 		} else if (attr.getAttributeValue("type").equals("List")) {
 		} else if (attr.getAttributeValue("type").equals("Enum")) {
 		} else if (attr.getAttributeValue("type").equals("Empty")) {

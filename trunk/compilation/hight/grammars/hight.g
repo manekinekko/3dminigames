@@ -205,7 +205,7 @@ actionCommandePressee :
   
 actionCommandeMaintenue :
   MOVE^ (LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN) BY! operation
-  | TURN^ (LEFT | RIGHT |WUP|WDOWN|CLOCKWISE |ANTICLOCKWISE)BY! operation
+  | TURN^ (LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE) BY! operation
   | ACCELERATE^ BY! operation
   | BRAKE^ BY! operation
   ;
@@ -239,7 +239,7 @@ actionCommande :
     ;
 
 commandMode :
-    PRESSED_KW |HELD_KW | RELEASED_KW
+    PRESSED_KW | HELD_KW | RELEASED_KW
     ;
 
 definitionId :
@@ -622,7 +622,7 @@ TYPES_TELEPORTABLES
 
 LETTER	: 'a'..'z'|'A'..'Z';
 FLOAT	: ('0'..'9')+ ('.' ('0'..'9')+)?;
-IDENT	: LETTER( LETTER|'0'..'9' )*;
+IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@'| 'ȸ')*;
 WS  :   ( ' '  
            | '\t'  
            | '\r'  

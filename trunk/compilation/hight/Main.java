@@ -14,29 +14,30 @@ import org.antlr.runtime.tree.*;
  */
 public class Main {
 
-    private static String jsFile, m3dFile, errorFile, errorFormat;
+    private static String jsFile, m3dFile;
+    //private static String errorFile, errorFormat;
     private static boolean minimize;
     private static PrintStream output, error;
 
     public static void main(String[] args) {
 
-	errorFile = null;
-	errorFormat = null;
+	//errorFile = null; errorFormat = null;
 	minimize = false;
+	jsFile = null;
 
 	error = System.out;
 	for (int i = 0; i < args.length; i++) {
-	    if (args[i].equals("-errorFormat")) {
+	    if (args[i].equals("-out")) {
+		jsFile = args[i + 1];
+		i++;
+	    /*} else if(args[i].equals("-errorFormat")) {
 		errorFormat = args[i + 1];
 		i++;
 	    } else if (args[i].equals("-errorFile")) {
 		errorFile = args[i + 1];
-		i++;
+		i++;*/
 	    } else if (args[i].equals("-minimize")) {
 		minimize = true;
-	    } else if (args[i].equals("-out")) {
-		jsFile = args[i + 1];
-		i++;
 	    } else {
 		m3dFile = args[i];
 	    }
@@ -68,7 +69,21 @@ public class Main {
 
 	    c = tparser.game(ts);
 
-	    System.out.println(c.getCode());
+	    FileWriter m3dJS = null;
+
+	    if(jsFile != null) {
+		try {
+		    m3dJS = new FileWriter(jsFile);
+		    m3dJS.write(c.getCode());
+		} catch(IOException ex) {
+		    error.println("Le fichier "+jsFile+" existe déjà.");
+		} finally {
+		    if(m3dJS != null)
+			m3dJS.close();
+		}
+	    } else {
+		System.out.println(c.getCode());
+	    }
 
 	} catch (FileNotFoundException e) {
 	} catch (IOException e) {

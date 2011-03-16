@@ -8,7 +8,7 @@ import code.Code;
  */
 public class AttributeValue {
 
-    public static enum Type {NIL, BOOLEAN, ENUM, NUMBER, STRING, TIME, AGGR};
+    public static enum Type {NIL, BOOLEAN, ENUM, NUMBER, STRING, TIME, AGGR, ARRAY};
 
     private Code value;
     private Type type;
@@ -41,6 +41,11 @@ public class AttributeValue {
     public AttributeValue(Code c, Type t) {
 	value = c;
 	type = t;
+    }
+
+    public AttributeValue(Type t) {
+	type = t;
+	value = new Code();
     }
 
     public Code getCode() {

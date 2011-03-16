@@ -5,14 +5,14 @@ http://3dminigames.googlecode.com/files/UserGeneratedDirectory.png
 
 ==Explication des répertoires==
 
-  * *DemoUser* correspond au nom du répertoire de l'utilisateur. Ce répertoire contient tout les jeux crées par cet utilisateur.
-  * *DemoGame* correspond au répertoire du jeu. Ce répertoire contient tout les fichiers nécessaire à l'exécution du jeu.
-  * *assets* correspond au répertoire qui contient tout les fichiers Javascript et feuilles de style ainsi que tout les fichiers utiles au fonctionnement du jeu.
-  * *css* contient les feuilles de styles.
-  * *js* contient les scripts JavaScript.
-  * *images* contient les images utilisé dans l'application.
-  * *font* contient les polices utilisées par l'application.
-  * *sound* contient les fichiers média utilisés par le jeu. 
+  * *DemoUser/* correspond au nom du répertoire de l'utilisateur. Ce répertoire contient tout les jeux crées par cet utilisateur.
+  * *DemoUser/DemoGame/* correspond au répertoire du jeu. Ce répertoire contient tout les fichiers nécessaire à l'exécution du jeu.
+  * *DemoUser/DemoGame/assets/* correspond au répertoire qui contient tout les fichiers Javascript et feuilles de style ainsi que tout les fichiers utiles au fonctionnement du jeu.
+  * *DemoUser/DemoGame/assets/css/* contient les feuilles de styles.
+  * *DemoUser/DemoGame/assets/js/* contient les scripts JavaScript.
+  * *DemoUser/DemoGame/assets/images/* contient les images utilisé dans l'application.
+  * *DemoUser/DemoGame/assets/font/* contient les polices utilisées par l'application.
+  * *DemoUser/DemoGame/assets/sound/* contient les fichiers média utilisés par le jeu. 
 
 ==Fichiers IMPORTANTS==
 Les fichiers critiques sont les suivants:

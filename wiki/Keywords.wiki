@@ -14,6 +14,23 @@
 ----
 =A=
 ----
+==accelerate==
+_Partie *règles du jeu*_
+  * Déclarer l'accélération des entités.
+{{{
+definition acc1 means 
+	sonic accelerate by 20;
+}}}
+
+==activate==
+_Partie *règles du jeu*_
+  * Activer un commande/action/util.
+{{{
+definition cinematique1 means
+		disable commands,   
+		activate P,         
+}}}
+
 ==and==
 _Partie *Déclaration de nouveaux types*_
   * séparer les types lors de la déclaration d'un nouveau type :
@@ -34,6 +51,7 @@ angle between perso1 and perso2 > 10
 random between 1 and 20 
 // ces valeurs peuvent être assignées ou testées dans une condition
 }}}
+
 ==all==
   * représente tous les objets 3D générés hérités de Empty
 {{{
@@ -41,6 +59,16 @@ assign 100 at life of all; // (voir 'assign') va assigner 100 à l'attribut 'lif
 if life of all = 0 then /*conséquences*/ endif; // (voir 'if') va tester si tous les objets générés qui ont un attribut 'life' l'ont à 0
 rule all moves then /*conséquencess*/; //(voir 'rule') teste si l'un des objets générés bouge
 }}}
+
+
+==anticlockwise==
+_Partie *règles du jeu*_
+  * Déclare le sens de tournage dans le sens contre des aiguilles d'une montre.
+{{{
+definition defL1 means 
+	batman turn anticlockwise by 10;
+}}}
+
 ==at==
 (voir 'has')
 
@@ -56,9 +84,18 @@ Character has life at 100; // tous les objets de type Character commenceront ave
 perso1 has life at 10; // la valeur fournie à l'attribut doit être de même type obligatoirement, ici, l'attribut 'life' est un nombre
 perso2 has belonging at perso2; // ici, l'attribut belonging est un Object (Character hérite de Object)
 }}}
+
 ----
 =B=
 ----
+==backward==
+_Parties *Règles du jeu*_
+  * Sens recule pour déplacement ou orientation.
+{{{
+definition bougerJeep1 means 
+	jeep move backward by 10;
+}}}
+
 ==between==
 _Parties *Définitions* et *Règles du jeu*_
   * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and' ) :
@@ -74,6 +111,14 @@ _Partie *Definitions*_
   * Prévenir de transformation/rotation/changement de taille d'un objet.
 {{{
 
+}}}
+
+==break==
+_Partie *règles du jeu*_
+  * Déclarer le freinage.
+{{{
+definition brk means 
+	vaisseau brake by 5;
 }}}
 
 ==by==
@@ -95,6 +140,28 @@ _Partie *Initialisations*_
 {{{
 cam1 is camera first person;
 }}}
+
+==clockwise==
+_Partie *règles du jeu*_
+  * Déclare le sens de tournage dans le sens aiguilles d'une montre.
+{{{
+definition defR1 means 
+	batman turn clockwise by 10;
+}}}
+
+==command==
+_Partie *règles du jeu*_
+  * Déclarer la liste des contrôles/commandes autorisées pour joueur(s).
+{{{
+command for joueur1, joueur2 is   //joueur2 seulement si c'est un Player 'human'
+	mouse right for viserR,
+	mouse left for viserL,
+	mouse rClick for valider,
+	mouse lClick for annulerDirection,
+	key escape for pause;
+}}}
+
+
 ----
 =D=
 ----
@@ -117,6 +184,7 @@ definition  tirer  means
 	endwait;
 }}}
 
+
 ==dies==
 _Prtie *Règles du jeu*_
   * Déclare la mort d'en personnage/entité.
@@ -131,6 +199,16 @@ rule batman dies then
 	sub 1 to nbLives of batman,
 	generate batman at 0 0 0;
 }}}
+
+==disable==
+_Partie *règles du jeu*_
+  * Désactiver un commande/action/util.
+{{{
+definition cinematique1 means
+		disable commands,   
+		activate P,         
+}}}
+
 
 ==duplicable==
 _Partie *Initialisations* et *Définitions*_
@@ -195,6 +273,37 @@ _Parties *Initialisations*_
   * Déclare que point de vu est le point de vu joueur principal. (voir *camera*)
 {{{
 cam1 is camera first person;
+}}}
+
+==for==
+_Parties *Règles du jeu*_
+  * Utiliser pour définir la liste des joueur(voir *command*);
+  * Relier clique de souris ou un touche de clavier et action définit (voir *command*).
+{{{
+command for player is 
+	key left for bougerJeep1,
+	key right for bougerJeep2,
+	mouse up for bougerBazooka1,
+	mouse down for bougerBazooka2,
+	mouse right for bougerBazooka3,
+	mouse left for bougerBazooka4,
+	key space for tirer;
+}}}
+  * Affectation une opération mathématique pour un variable.
+{{{
+definition toucherLapin means
+    efface missile,
+    sub 1 for life of Lapin;
+}}}
+
+==forward==
+_Parties *Règles du jeu*_
+  * Sens avance pour déplacement ou orientation.
+{{{
+definition cinematique1 means
+		desactivate commands, 
+		activate P, 
+		mario move forward by 5 during 2 sec,
 }}}
 
 ==free==
@@ -300,6 +409,15 @@ perso1 has mon_attribut_3 at "texte1"; // une chaîne de caractère peut être a
 perso1 has arme1; // l'objet perso1 s'approprie l'objet arme1 (son attribut belonging devient 'true')
 }}}
 
+==hold==
+_Parties *Règles du jeu*_
+  * Préciser la condition d'un touche de clavier ou souris comme prise.
+{{{
+command for player is 
+	key wup prise for jmp1,
+}}}
+
+
 ---
 =I=
 ---
@@ -370,7 +488,7 @@ ai nom_ia is /*conséquences*/ ;
 ----
 ==jump==
 _Partie *Règles du jeu*_
-  * Déclare les conditions de saute des personnages/entités.
+  * Déclare le saute du personnage/entité.
 {{{
 rule true then
 	superGoomba move left by 10 during 2 sec,
@@ -388,6 +506,27 @@ _Partie **_
 ----
 =L=
 ----
+==lClick==
+_Partie *règles du jeu*_
+  * Le touche gauche de souris.
+{{{
+definition annulerDirection means
+	if value of etapes = "choixPuissance"  then
+		disable mouse rClick,
+		activate mouse rClick,
+		assign "choixDirection" to value of etapes,
+		efface jaugeForce
+	endif;
+}}}
+
+==left==
+_Parties *Règles du jeu*_
+  * Direction gauche pour déplacement, rotation ou orientation.
+{{{
+definition defL2 means 
+	batman turn left by 4;
+}}}
+
 ==list==
 _Partie *Initialisations*_
   * Définition d'un liste des entités/opérations
@@ -406,6 +545,10 @@ mus1 is media loop;
 ----
 =M=
 ----
+==mClick==
+_Partie *règles du jeu*_
+  * Le touche milieu de souris.
+
 ==means==
 _Partie *Définitions*_
   * Défini un nom pour ensemble d'un ou plusieurs action/affectation. (voir *definition*)
@@ -419,6 +562,15 @@ _Parties *Initialisations*_
   * Son, musique ou vidéo qui s'interprète une fois ou en boucle.
 {{{
 demo1 is media once;
+}}}
+
+
+==move==
+_Parties *Règles du jeu*_
+  * Déclarer un déplacement.
+{{{
+definition defU1 means 
+	jeep move backward by 10;
 }}}
 
 ==mute==
@@ -528,6 +680,15 @@ _Parties *Initialisations*_
 player1 is player solo;
 }}}
 
+==pressed==
+_Parties *Règles du jeu*_
+  * Préciser la condition d'un touche de clavier ou souris comme pressé.
+{{{
+command for player is 
+	key wup pressed for jmp1,
+}}}
+
+
 ----
 =Q=
 ----
@@ -539,6 +700,21 @@ _Partie **_
 ----
 =R=
 ----
+==rClick==
+_Partie *règles du jeu*_
+  * Le touche droite de souris.
+
+
+==released==
+_Parties *Règles du jeu*_
+  * Préciser la condition d'un touche de clavier ou souris comme lâché.
+{{{
+command for joueur_principal is 
+	key P for pause,
+	key space for switchCam,
+	key space released for switchCam;
+}}}
+
 ==remove==
 _Parties *Initialisations*, *Règles du jeu* et *Définitions*_ (voir 'list' et 'from')
   * pour désigner le nom de la liste lorsqu'on lui retire un élément :
@@ -555,6 +731,15 @@ _Partie *Information about game*_
 world at riboon;
 }}}
 
+==right==
+_Parties *Règles du jeu*_
+  * Direction droit pour les commandes de déplacement, rotation ou orientation.
+{{{
+command mario for joueur_principal is 
+	space for mario jump by 10, 
+	key D for mario move right by 10,
+}}}
+
 ----
 =S=
 ----
@@ -563,6 +748,26 @@ _Partie *Règles du jeu*_
   * Enregistrer le jeu.
 {{{
 
+}}}
+
+==scrollUp==
+_Partie *Règles du jeu*_
+  * Lier tournage vers haut de roulette de souris avec une action.
+{{{
+command for joueurPrincipal is 
+	mouse rClick for tirer,
+	mouse scrollUp for accelerer,
+	mouse scrollDown for decelerer;
+}}}
+
+==scrollDown==
+_Partie *Règles du jeu*_
+  * Lier tournage vers bas roulette de souris avec une action.
+{{{
+command for joueurPrincipal is 
+	mouse rClick for tirer,
+	mouse scrollUp for accelerer,
+	mouse scrollDown for decelerer;
 }}}
 
 ==solo==
@@ -615,6 +820,16 @@ type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le travers
 ==true==
   * Valeur booléen représentant "vrai".
 
+==turn==
+_Parties *Règles du jeu*_
+  * Tourner/orienter le personnage/entité/camera .
+{{{
+definition viserR means
+	if value of etapes = "choixDirection" then
+		cam1 turn right by 10
+	endif;
+}}}
+
 ----
 =U=
 ----
@@ -665,12 +880,27 @@ rule batman touches CharacterEnemy then
 	endwait
 }}}
 
+==wdown==
+_Parties *Règles du jeu*_
+  * Sens bas pour les commandes de déplacement, orientation ou tournage de roulette de souris.
+{{{
+
+}}}
+
 ==world==
 _Partie * Information about game *_
   * Défini le type de carte de jeu (map).
 {{{
 world at grid;
 }}}
+
+==wup==
+_Parties *Règles du jeu*_
+  * Sens haut pour les commandes de déplacement, orientation ou tournage de roulette de souris.
+{{{
+
+}}}
+
 ----
 =X=
 ----

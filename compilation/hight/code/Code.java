@@ -277,11 +277,11 @@ public class Code {
 ///////////////////////////////Opérations///////////////////////////////////////
     public static Code genRD(Code c1, Code c2) { //Math.round() arrondi ?
         Code c = new Code("Math.random()*(");
-        c.append(c1);
+        c.append(c2);
         c.append("-");
-        c.append(c2);
+        c.append(c1);
         c.append(") + (");
-        c.append(c2);
+        c.append(c1);
         c.append(")");
         return c;
     }

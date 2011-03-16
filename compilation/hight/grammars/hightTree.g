@@ -751,9 +751,9 @@ typeCoordonnees [SymbolTable st] returns [Code c]:
 	;
 
 timeUnit [SymbolTable st] returns [String c]:
-	MIN	{c = "mn";}
-	| SEC{c = "s";}
-	| MS{c = "ms";}    
+	MIN	{c = "MIN";}
+	| SEC{c = "SEC";}
+	| MS{c = "MS";}
 	| FRAME
 	;
 

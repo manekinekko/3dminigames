@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-03-09 17:01:04
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g 2011-03-16 14:28:53
 
     package grammars;
     import code.*;
@@ -3432,7 +3432,7 @@ public class hightTree extends TreeParser {
     public final Code commande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
-        int nbCommande = 3;
+        int nbCommande = 0;
         try {
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:465:70: ( ^( COMMAND_KW player_list[st] actionCommande_list[st] ) )
             // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:466:5: ^( COMMAND_KW player_list[st] actionCommande_list[st] )
@@ -7073,7 +7073,7 @@ public class hightTree extends TreeParser {
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:754:2: MIN
                     {
                     match(input,MIN,FOLLOW_MIN_in_timeUnit4108); 
-                    c = "mn";
+                    c = "MIN";
 
                     }
                     break;
@@ -7081,7 +7081,7 @@ public class hightTree extends TreeParser {
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:755:4: SEC
                     {
                     match(input,SEC,FOLLOW_SEC_in_timeUnit4115); 
-                    c = "s";
+                    c = "SEC";
 
                     }
                     break;
@@ -7089,14 +7089,14 @@ public class hightTree extends TreeParser {
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:756:4: MS
                     {
                     match(input,MS,FOLLOW_MS_in_timeUnit4121); 
-                    c = "ms";
+                    c = "MS";
 
                     }
                     break;
                 case 4 :
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:757:4: FRAME
                     {
-                    match(input,FRAME,FOLLOW_FRAME_in_timeUnit4131); 
+                    match(input,FRAME,FOLLOW_FRAME_in_timeUnit4127); 
 
                     }
                     break;
@@ -7149,7 +7149,7 @@ public class hightTree extends TreeParser {
                 case 1 :
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:761:2: BOOST_INTERVAL
                     {
-                    match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps4147); 
+                    match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps4143); 
                     c ="boostInterval";
 
                     }
@@ -7157,7 +7157,7 @@ public class hightTree extends TreeParser {
                 case 2 :
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:762:4: SHOOT_INTERVAL
                     {
-                    match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps4153); 
+                    match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps4149); 
                     c = "shootInterval";
 
                     }
@@ -7165,7 +7165,7 @@ public class hightTree extends TreeParser {
                 case 3 :
                     // H:\\M1\\PROJET\\svn\\compilation\\hight\\grammars\\hightTree.g:763:4: RELOAD_TIME
                     {
-                    match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps4168); 
+                    match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps4164); 
                     c = "reloadTime";
 
                     }
@@ -7920,10 +7920,10 @@ public class hightTree extends TreeParser {
     public static final BitSet FOLLOW_MIN_in_timeUnit4108 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SEC_in_timeUnit4115 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_MS_in_timeUnit4121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRAME_in_timeUnit4131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOST_INTERVAL_in_attributTps4147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SHOOT_INTERVAL_in_attributTps4153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RELOAD_TIME_in_attributTps4168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRAME_in_timeUnit4127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOST_INTERVAL_in_attributTps4143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SHOOT_INTERVAL_in_attributTps4149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RELOAD_TIME_in_attributTps4164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_attributListeOuObjet0 = new BitSet(new long[]{0x0000000000000002L});
 
 }

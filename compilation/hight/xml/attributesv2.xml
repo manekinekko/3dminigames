@@ -291,9 +291,9 @@
     </const>
 	
     <model>
-        <name>List</name>
-        <attribute name="subType" type="String"/>
-        <attribute name="elements" type="list"/><!-- list : IDENT (',' IDENT); -->
+	<name>List</name>
+	<attribute name="subType" type="String"/>
+	<attribute name="elements" type="array"/><!-- list : IDENT (',' IDENT); -->
     </model>
 	
 </m3d> 

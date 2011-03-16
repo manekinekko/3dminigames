@@ -23,8 +23,8 @@ options {
         String hdr = getErrorHeader(e);
         String msg = getErrorMessage(e, tokenNames);
 
-	System.out.println(e.node);
-        //System.out.println(((CommonErrorNode)e.node).start.getLine());
+	//System.out.println(e.node);
+        System.out.println(((CommonErrorNode)e.node).start.getLine());
         //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
     }*/
 
@@ -151,6 +151,7 @@ initialization [SymbolTable st] returns [Code c]:
 	}
 
 	c = new Code("/*Models*/\n");
+	c.append(modelCode);
 	c.append("\n/*Entities*/\n");
 	c.append(entitiesFunCode);
 	c.append(entitiesCode);
@@ -215,6 +216,10 @@ declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
 	p = new Pair<Model, Integer>(t,d);
     }
     | ^(LIST_KW list_declaration[st])
+    {
+
+	//p = new Pair<Model, Integer>
+    }
     | ^(CAMERA_KW PERSON view[st])
     | ^(CAMERA_KW FREE)
     | ^(MEDIA_KW LOOP)
@@ -222,6 +227,9 @@ declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
     | ^(IN_KW IDENT)									  // ident of a list to add an element
     | PLAYER (s=SOLO)?
     {
+	if(s != null) {
+	    
+	}
 	p = new Pair<Model, Integer>((Model) st.get("Player"),0);
     }
     ;

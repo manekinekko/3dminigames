@@ -622,7 +622,7 @@ TYPES_TELEPORTABLES
 
 LETTER	: 'a'..'z'|'A'..'Z';
 FLOAT	: ('0'..'9')+ ('.' ('0'..'9')+)?;
-IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@'| 'ȸ')*;
+IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@')*;
 WS  :   ( ' '  
            | '\t'  
            | '\r'  
@@ -630,4 +630,3 @@ WS  :   ( ' '
            | '\u000C'
            )+ {$channel=HIDDEN;}  
         ;
-

@@ -13,7 +13,13 @@ import java.util.Iterator;
 
 public class Model implements Symbol {
 
-    public static String xml = ".\\xml\\attributesv2.xml";
+	/*
+	 * Chemin du fichier xml différent suivant les OS
+	 */
+	
+    //public static String xml = ".\\xml\\attributesv2.xml"; //Windows(caca)
+    public static String xml = "./xml/attributesv2.xml"; //Linux
+    
     private static List<Model> generated;
     private String name;
     private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.

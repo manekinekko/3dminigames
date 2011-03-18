@@ -15,7 +15,7 @@ options {
     import java.util.Hashtable;
 }
 
-@members {
+@members { 
     private int INT_DUPLICABLE=10;
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
 
@@ -692,7 +692,7 @@ operation [SymbolTable st] returns [Code c]:
 
 variable [SymbolTable st] returns [Code c]:
     ^(X tc=typeCoordonnees[st] sb=accesClass[st])
-    {
+    {//TODO
 	Symbol sy = sb.get(0);
 	if(tc.equals("position")){
 	    c = Code.genPosX(sy.getName());
@@ -703,7 +703,7 @@ variable [SymbolTable st] returns [Code c]:
         }
     }
     |^(Y tc =typeCoordonnees[st] sb=accesClass[st])
-    {
+    {//TODO
 	Symbol sy = sb.get(0);
 	if(tc.equals("position")){
 	    c = Code.genPosY(sy.getName());
@@ -714,7 +714,7 @@ variable [SymbolTable st] returns [Code c]:
         }
     }
     |^(Z typeCoordonnees[st] sb=accesClass[st])
-    {
+    {//TODO
 	Symbol sy = sb.get(0);
 	if(tc.equals("position")){
 	    c = Code.genPosZ(sy.getName());
@@ -725,7 +725,7 @@ variable [SymbolTable st] returns [Code c]:
         }
     }
     |^(VAR_I_KW i=IDENT e=accesClass[st])
-    {
+    {//TODO //PRIO 
 	Symbol si = e.get(0);
 	String ident= i.getText();
 	AttributeValue a = si.getAttribute(ident);
@@ -737,12 +737,22 @@ variable [SymbolTable st] returns [Code c]:
 	    System.out.println(ident+" n'est pas un nombre.");
 	    System.exit(-1);
 	}else{
+	    
+	    if(si.getType() == Symbol.Type.MODEL){
+	    }
+	    else if(si.getType() == Symbol.Type.ENTITY){
+      }
+      else{
+        //ERREUR
+      }
+	
+	
 	    c=Code.genAccess(si.getName(),ident);
 	}
     }
     |GAME_SCORE_KW
     |^(VALUE_KW at=attributTps[st] ac=accesClass[st])
-    {
+    {//TODO
 	Symbol si = ac.get(0); AttributeValue a = si.getAttribute(at);
 	if(a==null){
 	    System.out.println(si.getName()+" n'a pas l'attribut "+at);

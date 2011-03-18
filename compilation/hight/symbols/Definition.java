@@ -6,6 +6,9 @@ package symbols;
 
 import attributes.AttributeValue;
 import code.Code;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,12 +21,39 @@ public class Definition implements Symbol {
     private Code c;
     private boolean duplicable = true;
     private int generate = 0;
+    private List<Model> sign; 		//Signature de la fonction
+    private List<String> params;	//Paramètres effectifs
+
+    public Definition(String s, Code c, Model ... m) {
+        name = s;
+        this.c = c;
+        this.sign = Arrays.asList(m);
+        this.params = new ArrayList<String>();
+    }
 
     public Definition(String s, Code c) {
         name = s;
         this.c = c;
+        this.sign = new ArrayList<Model>();
+        this.params = new ArrayList<String>();
     }
-
+    
+    public void addModel(Model m){
+    	this.sign.add(m);
+    }
+    
+    public void addParam(String pm){
+    	this.params.add(pm);
+    }
+    
+    public List<Model> getSignature(){
+    	return this.sign;
+    }
+    
+    public List<String> getParams(){
+    	return this.params;
+    }
+    
     public Code getCode() {
         return c;
     }

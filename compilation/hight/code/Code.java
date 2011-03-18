@@ -463,7 +463,18 @@ public class Code {
 
         Code c = new Code();
 
-        c.append("function " + def.getName() + "() {\n");
+        c.append("function " + def.getName() + "(");
+        		
+    	
+    	for (int i = 0 ; i<def.getParams().size() ; i++){
+    		c.append(def.getParams().get(i));
+    		
+    		if(i < def.getParams().size() - 1){
+    			c.append(",");
+    		}
+    	}
+        
+        c.append(") {\n");
         c.append(def.getCode());
         c.append("}\n\n");
 

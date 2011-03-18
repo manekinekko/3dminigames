@@ -1,6 +1,7 @@
 package tests;
 
 import code.Code;
+import symbols.Model;
 import junit.framework.TestCase;
 
 public class CodeTest extends TestCase {
@@ -45,6 +46,8 @@ public class CodeTest extends TestCase {
 	Code c39;
 	Code c40;
 	Code c41;
+	Model m1;
+	Code c42;
 	protected void setUp() throws Exception {
 		super.setUp();
 		c1 = new Code();
@@ -90,6 +93,9 @@ public class CodeTest extends TestCase {
 		c39 = Code.genIF(c2,c2,c2);
 		c40 = Code.genAccess("vert","hulk");
 		c41 = Code.genEOL();
+		//m1 = new Model("ab");
+		//test sur Model cause erreurs ou NullPointerException
+		//c42 = Code.genModel(new Model("abc"));
 		}
 	public void testAppend(){
 		System.out.println(c2);
@@ -173,5 +179,6 @@ public class CodeTest extends TestCase {
 		assertEquals(c40.getCode(),"vert.hulk");
 		assertNotNull(c41.getCode());
 		assertEquals(c41.getCode(),";");
+		//System.out.println(c42);
 	}
 }

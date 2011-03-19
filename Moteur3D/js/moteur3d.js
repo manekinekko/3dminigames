@@ -14,6 +14,7 @@ if(!window["M3D"].MOTEUR){
 }
 
 // Variables partagées
+
 var doc = new GLGE.Document();
 var tabObject = new Array;
 var tabIdObject = new Array;
@@ -30,7 +31,7 @@ start=parseInt(new Date().getTime());
 var now;
 
 (function(M3D){
-	// Variables du moteur
+
 	var gameRenderer;
 		
 /** 
@@ -39,11 +40,81 @@ var now;
  *         idCanvas: identifiant de la fenêtre canvas ou sera affiché la gameScene.
  */
 	M3D.MOTEUR.initialisation = function(xmlDoc, canvas){
-        doc.onLoad = function(){			
+        doc.onLoad = function(){
             gameRenderer = new GLGE.Renderer(document.getElementById(canvas));
             gameScene = doc.getElement("mainscene");
             gameRenderer.setScene(gameScene);
-        
+		
+            // Initialisation des tableaux
+			gameScene.id = "mainscene";
+			tabObject["mainscene"] = gameScene;
+			cam = gameScene.getCamera();
+			tabCamera[cam.id] = cam;
+        } 
+		doc.load(xmlDoc);
+	},
+
+
+/**
+ * Fonction initTabObject: permet l'initialisation du tableau d'objet et d'identification des objets.
+ * @param: liste des objets à parcourir.
+ */
+	M3D.MOTEUR.initTabObject = function(list){
+        if(list.length!=0){
+            var x = list.pop();
+            var tabL = x.getLights();
+            var tabO = x.getChildren();
+            var present = false;
+            var j;
+            for(var i = 0 ; i<tabO.length ; i++){
+                for(j=0; j<tabL.length; j++){ if(tabO[i]==tabL[j]) present = true; }
+				if(tabO[i].id == "theMap") present = true;
+                if(!present){
+                    if(tabO[i].id != undefined){
+                        tabObject[tabO[i].id] = tabO[i];
+                        tabIdObject[tabIdObject.length] = tabO[i].id;
+                        list.push(tabO[i]);
+                    }
+                } present = false;
+            } 
+            M3D.MOTEUR.initTabObject(list);
+        } 
+	},
+	
+	M3D.MOTEUR.test = function(){
+		var x = [[1,2],[5,6]];
+		var y = [[3,4]];
+		var x = x.concat(y);
+		alert(x);
+	},
+ 
+/**
+ * Méthode render: Permet l'affichage de la scène.
+ */
+	M3D.MOTEUR.render = function(){
+		if(gameRenderer){
+			now=parseInt(new Date().getTime());
+			frameratebuffer=Math.round(((frameratebuffer*9)+1000/(now-lasttime))/10);
+			document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
+			gameRenderer.render();
+			lasttime=now;
+		}
+	};
+	
+})(M3D);
+
+
+/*
+ * Fonction initPhysicalForce: permet l'initialisation des variables physiques du moteur.
+ * @param: g: valeur de la gravité.
+ 
+	M3D.MOTEUR.initPhysicalForce = function(g){
+		this.gravity = g;
+	},*/
+	
+	
+	
+	      
 			// Pour la mise en place de la heightmap
 		/*	var map = doc.getElement("theMap");
 						
@@ -86,63 +157,3 @@ var now;
 			map.getMaterial(map_mat);
 			map.getMesh(map_mesh);	
 		*/
-		
-			// Initialisation du tableau des objects/IdObject
-            M3D.MOTEUR.initTabObject([gameScene]);
-        
-            // Initialisation du tableau des caméras
-			cam = gameScene.getCamera();
-			tabCamera[cam.id] = cam;
-			
-        } 
-		doc.load(xmlDoc);
-	},
-
-
-/**
- * Fonction initTabObject: permet l'initialisation du tableau d'objet et d'identification des objets.
- * @param: liste des objets à parcourir.
- */
-	M3D.MOTEUR.initTabObject = function(list){
-        if(list.length!=0){
-            var x = list.pop();
-            var tabL = x.getLights();
-            var tabO = x.getChildren();
-            var present = false;
-            var j;
-            for(var i = 0 ; i<tabO.length ; i++){
-                for(j=0; j<tabL.length; j++){ if(tabO[i]==tabL[j]) present = true; }
-				if(tabO[i].id == "theMap") present = true;
-                if(!present){
-                    if(tabO[i].id != undefined){
-                        tabObject[tabO[i].id] = tabO[i];
-                        tabIdObject[tabIdObject.length] = tabO[i].id;
-                        list.push(tabO[i]);
-                    }
-                } present = false;
-            } 
-            M3D.MOTEUR.initTabObject(list);
-        } 
-	},
-
-
-/**
- * Fonction initPhysicalForce: permet l'initialisation des variables physiques du moteur.
- * @param: g: valeur de la gravité.
- */
-	M3D.MOTEUR.initPhysicalForce = function(g){
-		this.gravity = g;
-	},
- 
-/**
- * Méthode render: Permet l'affichage de la scène.
- */
-	M3D.MOTEUR.render = function(){		
-		now=parseInt(new Date().getTime());
-		frameratebuffer=Math.round(((frameratebuffer*9)+1000/(now-lasttime))/10);
-		document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
-		gameRenderer.render();
-		lasttime=now;
-	};
-	
-})(M3D);

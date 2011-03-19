@@ -9,139 +9,97 @@
  
 (function(M3D){
 
-	M3D.MOTEUR.getCamera = function(idCamera){
-		var camera = tabCamera[idCamera];
-		if(camera != null) return camera;
-		else{ return -1;}
-	},
-
-
 /**
  * Méthode activeCamera: permet l'activation de la caméra placée en paramètre.
  * (si la caméra n'existe pas, aucun changement s'effectue)
  * @param: idCamera: identifiant de la caméra que l'on souhaite activer.
  */
 	M3D.MOTEUR.activeCamera = function(idCamera){
-		if( tabCamera[idCamera] != undefined) gameScene.setCamera(tabCamera[idCamera]);
+		var newCam = M3D.MOTEUR.getCamera(idCamera);
+		if(newCam != -1)
+			gameScene.setCamera(newCam);
 	},
 	
-	
+
 	M3D.MOTEUR.addCamera = function(idCamera, tabCoord, idParent){
-		tabCamera[idCamera] = new GLGE.Camera();
-		tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabCamera[idCamera].setScale(tabCoord[6]);
+		var cam = new GLGE.Camera();
+		cam.setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
+		cam.setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
+		cam.setScale(tabCoord[6]);
 
-		if(tabObject[idParent] == undefined) gameScene.addChild(tabCamera[idCamera]);
-		else{
-			tabObject[idParent].addChild(tabOject[idObject]);
+		if(idParent == null){
+			var parent = gameScene
+		}else{
+			var parent = M3D.MOTEUR.getObject(idParent);
 		}
-	},
-
-	M3D.MOTEUR.addCameraIn = function(idCamera, tabCoord, idGroup){
-		tabCamera[idCamera] = new GLGE.Camera();
-		tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabCamera[idCamera].setScale(tabCoord[6]);
-        
-		if(tabObject[idGroup] == undefined){ // Vérifier la gestion du addChild dans un Group...
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabCamera[idCamera]);
-			gameScene.addChild(tabObject[idGroup]);
-		} else{ tabObject[idGroup].addChild(tabCamera[idCamera]); }
-	},
-
-	M3D.MOTEUR.addCameraGroup = function(idCamera, idGroup, tabCoord, idParent){
-		tabCamera[idCamera] = new GLGE.Collada();
-		tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabCamera[idCamera].setScale(tabCoord[6]);
-        
-		if(tabObject[idGroup] == undefined){
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabCamera[idCamera]);
-			
-			if(idParent == null) gameScene.addChild(tabObject[idGroup]);
-			else{ 
-				 if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabCamera[idCamera]);
-			}
-		}
-	},
-
-	M3D.MOTEUR.addCameraGroupIn = function(idCamera, idGroup, tabCoord, idParent){
-		tabCamera[idCamera] = new GLGE.Collada();
-		tabCamera[idCamera].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-		tabCamera[idCamera].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-		tabCamera[idCamera].setScale(tabCoord[6]);
-			
-		if(tabObject[idGroup] == undefined){
-			tabObject[idGroup] = new GLGE.Group();
-			tabObject[idGroup].setLoc(tabCoord[0], tabCoord[1], tabCoord[2]);
-			tabObject[idGroup].setRot(tabCoord[3], tabCoord[4], tabCoord[5]);
-			tabObject[idGroup].addChild(tabCamera[idCamera]);
-			
-			if(idParent == null) gameScene.addChild(tabObject[idGroup]);
-			else{ 
-				if(tabObject[idParent] != undefined) tabObject[idParent].addChild(tabCamera[idCamera]);
-			}
-		}
+		parent.addChild(cam);
+		tabCamera[idCamera] = cam;
 	},
 
 	M3D.MOTEUR.removeCamera = function(idCamera){
-		if(tabCamera[idCamera] != undefined) tabCamera[idCamera].parent.removeChild(tabCamera[idCamera]);
+		var cam = M3D.MOTEUR.getCamera(idCamera);
+		delete tabCamera[idCamera];
+		cam.parent.removeChild(cam);
 	},
-
-	M3D.MOTEUR.changeParentCamera = function(idCamera,idNewParent){
-		if(tabCamera[idCamera] != undefined && tabObject[idNewParent] != undefined){
-			tabCamera[idCamera].parent = tabObject[idNewParent]; 
-			tabObject[idNewParent].addChild(tabCamera[idCamera]);
-		}
-	},
-
+	
 	M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
-		var Mcamera = tabCamera[idCamera].getModelMatrix();
+		var refTranslation = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],0);
 		if(idRef == null){
-			var Mref = tabCamera[idCamera].getModelMatrix();
+			var modelRef = GLGE.identMatrix();
 		}else{
-			var Mref = tabObject[idRef].getModelMatrix();
+			var objectRef = M3D.MOTEUR.getObjectOrCamera(idRef);
+			var modelRef = objectRef.getModelMatrix();
 		}
-			
-		var vector = GLGE.Vec4(tabVector[0],tabVector[1],tabVector[2],1);
-		var etape1 = GLGE.mulMat4Vec4(Mref,vector);
-		var camera=tabCamera[idCamera];
-		var actualposition = GLGE.Vec4(camera.getLocX(),camera.getLocY(),camera.getLocZ(),1);
-		var etape2 = GLGE.mulMat4Vec4(Mcamera,actualposition);
-		var etape3 = GLGE.addVec4(etape1,etape2);
-		var D = GLGE.mulMat4Vec4(GLGE.inverseMat4(Mcamera),etape3);
-		tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+		var object = M3D.MOTEUR.getCamera(idCamera);
+		if(object.parent != undefined){
+			var modelParent = object.parent.getModelMatrix();
+			var relRotRefSurParent = GLGE.mulMat4(GLGE.inverseMat4(modelParent),modelRef);
+		}else{
+			var relRotRefSurParent = modelRef;
+		}
+		var relTranslation = GLGE.mulMat4Vec4(relRotRefSurParent,refTranslation);
+		var currentRelPosition = M3D.MOTEUR.getRelativePos(object);
+		var newRelPosition = M3D.MOTEUR.addNumVec3(currentRelPosition,relTranslation);	
+              
+        object.setLoc(newRelPosition[0],newRelPosition[1],newRelPosition[2]);
 	},
 
-	/* 
+	
 	M3D.MOTEUR.setPositionCamera = function(idCamera,tabPos,idRef){
+		var relRefPosition = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
 		if(idRef == null){
-			var M = GLGE.identMatrix();
+			var modelRef = GLGE.identMatrix();
 		}else{
-			var M = tabCamera[idRef].getModelMatrix();
+			var objectRef = M3D.MOTEUR.getObjectOrCamera(idRef);
+			var modelRef = objectRef.getModelMatrix();
 		}
-		var V = GLGE.Vec4(tabPos[0],tabPos[1],tabPos[2],1);
-		var D = GLGE.mulMat4Vec4(M,V);
-		tabCamera[idCamera].setLoc(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+		var absolutePosition = M3D.MOTEUR.vec4ToVec3(GLGE.mulMat4Vec4(modelRef,relRefPosition));
+		var object = M3D.MOTEUR.getCamera(idCamera);
+		if(object.parent == undefined){
+			var parentPosition = GLGE.Vec3(0,0,0);
+			var absRotParent = GLGE.identMatrix();
+		}else{
+			var parentPosition = M3D.MOTEUR.getAbsolutePos(object.parent);
+			var absRotParent = object.parent.getModelMatrix();
+		}
+		var newRelativeNorotPosition = M3D.MOTEUR.subNumVec3(absolutePosition,parentPosition);
+		var newRelPosition = M3D.MOTEUR.vec4ToVec3(GLGE.mulMat4Vec4(GLGE.inverseMat4(absRotParent),M3D.MOTEUR.vec3ToVec4(newRelativeNorotPosition,0)));
+		
+        object.setLoc(newRelPosition[0],newRelPosition[1],newRelPosition[2]);
 	}, 
-	*/
+	
 
-	M3D.MOTEUR.rotateCamera = function(idCamera,tabRot,idRef){
-		if(idRef == null){
-			var M = GLGE.identMatrix();
-		}else{
-			var M = tabCamera[idRef].getModelMatrix();
-		}
-		var V = GLGE.Vec4(tabRot[0],tabRot[1],tabRot[2],1);
-		var D = GLGE.mulMat4Vec4(M,V);
-		tabCamera[idCamera].setRot(GLGE.get1basedVec4(D,1),GLGE.get1basedVec4(D,2),GLGE.get1basedVec4(D,3));
+	M3D.MOTEUR.rotateCamera = function(idCamera,tabRot){
+		var object = M3D.MOTEUR.getCamera(idCamera);
+		var currentRelRot = M3D.MOTEUR.getRelativeRot(object);
+		var vecRot = new GLGE.Vec3(tabRot[0],tabRot[1],tabRot[2]);
+		var newRelRot = M3D.MOTEUR.addNumVec3(currentRelRot,vecRot);      
+        object.setRot(newRelRot[0],newRelRot[1],newRelRot[2]);
+	}
+	
+	M3D.MOTEUR.setAngleCamera = function(idCamera,tabRot){
+		var object = M3D.MOTEUR.getCamera(idCamera);
+        object.setRot(tabRot[0],tabRot[1],tabRot[2]);
 	};
 
 })(window.M3D);

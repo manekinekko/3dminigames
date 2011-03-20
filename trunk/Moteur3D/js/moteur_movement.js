@@ -37,7 +37,7 @@
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
 			if(tab.length > 0){
-				object.setLoc(currentRelPosition[0],currentRelPosition[1],currentRelPosition[2]);
+				alert(tab);
 			}
 		}
 		

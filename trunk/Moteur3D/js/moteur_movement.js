@@ -28,12 +28,11 @@
 		var object = M3D.MOTEUR.getObject(id);
 		var modelParent = object.parent.getModelMatrix();
 		var relRotRefSurParent = GLGE.mulMat4(GLGE.inverseMat4(modelParent),modelRef);
-		var relTranslation = GLGE.mulMat4Vec4(relRotRefSurParent,refTranslation);
-		var currentRelPosition = M3D.MOTEUR.getRelativePos(object);
-		var newRelPosition = M3D.MOTEUR.addNumVec3(currentRelPosition,relTranslation);	
-
-        object.setLoc(newRelPosition[0],newRelPosition[1],newRelPosition[2]);
-
+		var relTranslation = GLGE.mulMat4Vec4(relRotRefSurParent,refTranslation);	
+		var modelMatrix = object.getModelMatrix();
+		var newModelMatrix = GLGE.mulMat4(GLGE.translateMatrix(relTranslation),modelMatrix);
+		object.setStaticMatrix(newModelMatrix);
+		
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
@@ -63,15 +62,14 @@
 		}
 		var absolutePosition = M3D.MOTEUR.vec4ToVec3(GLGE.mulMat4Vec4(modelRef,relRefPosition));
 		var object = M3D.MOTEUR.getObject(id);
-		var parentPosition = M3D.MOTEUR.getAbsolutePos(object.parent);
-		var newRelativeNorotPosition = M3D.MOTEUR.subNumVec3(absolutePosition,parentPosition);
-		var absRotParent = object.parent.getModelMatrix();
-		var newRelPosition = M3D.MOTEUR.vec4ToVec3(GLGE.mulMat4Vec4(GLGE.inverseMat4(absRotParent),M3D.MOTEUR.vec3ToVec4(newRelativeNorotPosition,0)));
+		var currentPosition = M3D.MOTEUR.getRelativePos(object);
+		var parentModelMatrix = object.parent.getModelMatrix();
+		var relPosition = M3D.MOTEUR.vec4ToVec3(GLGE.mulMat4Vec4(GLGE.inverseMat4(parentModelMatrix),absolutePosition));
+		var transPosition = M3D.MOTEUR.subNumVec3(relPosition,currentPosition);
 		
-		//tab = M3D.MOTEUR.liveCollision(id);
-        //if(tab.length != 0) return tab;
+		var modelMatrix = GLGE.mulMat4(GLGE.translateMatrix(transPosition),GLGE.getModelMatrix());
               
-        object.setLoc(newRelPosition[0],newRelPosition[1],newRelPosition[2]);
+        object.setStaticMatrix(modelMatrix);
         
         return [];
 	},
@@ -83,17 +81,25 @@
  *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
-	M3D.MOTEUR.rotate = function(id,tabRot){
+	M3D.MOTEUR.rotate = function(id,tabRot,idRef){
+		var matRot = new GLGE.rotateMatrix(tabRot);
+		if(idRef == null){	
+			var modelRef = GLGE.identMatrix();
+			var absRot = matRot;
+		}else{
+			var objectRef = M3D.MOTEUR.getObjectOrCamera(idRef);
+			var modelRef = objectRef.getModelMatrix();
+			var absRot = GLGE.mulMat4(modelRef,GLGE.mulMat4(matRot,GLGE.inverseMat4(modelRef)));
+		}
 		var object = M3D.MOTEUR.getObject(id);
-		var currentRelRot = M3D.MOTEUR.getRelativeRot(object);
-		var vecRot = new GLGE.Vec3(tabRot[0],tabRot[1],tabRot[2]);
-		var newRelRot = M3D.MOTEUR.addNumVec3(currentRelRot,vecRot);
-		
-        //tab = M3D.MOTEUR.liveCollision(id);
-        //if(tab.length != 0) return tab;
-              
-        object.setRot(newRelRot[0],newRelRot[1],newRelRot[2]);
-        
+		var parentModelMatrix = object.parent.getModelMatrix();
+		var relRot = GLGE.mulMat4(GLGE.inverseMat4(parentModelMatrix),absRot);
+		GLGE.setMat4(relRot,0,3,0);
+		GLGE.setMat4(relRot,1,3,0);
+		GLGE.setMat4(relRot,2,3,0);	
+		var currentModelMatrix = object.getModelMatrix();
+        var modelMatrix = GLGE.mulMat4(currentModelMatrix,relRot);
+        object.setStaticMatrix(modelMatrix);
         return [];
 	},
 
@@ -104,14 +110,26 @@
  *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
  * @return: Un tableau contenant les identifiants des objets en collision avec l'objet id sinon un tableau vide.
  */
-	M3D.MOTEUR.setAngle = function(id,tabRot){
+	M3D.MOTEUR.setAngle = function(id,tabRot,idRef){
+		var matRot = new GLGE.rotateMatrix(tabRot);
+		if(idRef == null){	
+			var modelRef = GLGE.identMatrix();
+			var absRot = matRot;
+		}else{
+			var objectRef = M3D.MOTEUR.getObjectOrCamera(idRef);
+			var modelRef = objectRef.getModelMatrix();
+			var absRot = GLGE.mulMat4(modelRef,GLGE.mulMat4(matRot,GLGE.inverseMat4(modelRef)));
+		}
 		var object = M3D.MOTEUR.getObject(id);
-		
-        //tab = M3D.MOTEUR.liveCollision(id);
-        //if(tab.length != 0) return tab;
-              
-        object.setRot(tabRot[0],tabRot[1],tabRot[2]);
-        
+		var parentModelMatrix = object.parent.getModelMatrix();
+		var relRot = GLGE.mulMat4(GLGE.inverseMat4(parentModelMatrix),absRot);
+		GLGE.setMat4(relRot,0,3,0);
+		GLGE.setMat4(relRot,1,3,0);
+		GLGE.setMat4(relRot,2,3,0);	
+		var translateMatrix = GLGE.translateMatrix(M3D.MOTEUR.getRelativePos(object));
+		var scaleMatrix = GLGE.scaleMatrix(M3D.MOTEUR.getRelativeScale(object));
+        var modelMatrix = GLGE.mulMat4(translateMatrix,GLGE.mulMat4(relRot,scaleMatrix));
+        object.setStaticMatrix(modelMatrix);
         return [];
 	},
 
@@ -123,14 +141,9 @@
  */
 	M3D.MOTEUR.mulScale = function (id,coefScale){
 		var object = M3D.MOTEUR.getObject(id);
-		var currentScale = M3D.MOTEUR.getRelativeScale(object);
-		var vecScale = GLGE.Vec3(coefScale[0],coefScale[1],coefScale[2]);
-		var newScale = M3D.MOTEUR.mulNumVec3(currentScale,vecScale);
-	
-		//tab = M3D.MOTEUR.liveCollision(id);
-		//if(tab.length != 0) return tab;
-	
-		object.setScale(newScale[0],newScale[1],newScale[2]);
+		var currentModelMatrix = object.getModelMatrix();
+		var modelMatrix = GLGE.mulMat4(currentModelMatrix,GLGE.scaleMatrix(coefScale));	
+		object.setStaticMatrix(modelMatrix);
 		return [];
 	},
 	
@@ -142,11 +155,11 @@
  */
 	M3D.MOTEUR.setScale = function (id,coefScale){
 		var object = M3D.MOTEUR.getObject(id);
-		
-		//tab = M3D.MOTEUR.liveCollision(id);
-		//if(tab.length != 0) return tab;
-	
-		object.setScale(coefScale[0],coefScale[1],coefScale[2]);
+		var currentScale = GLGE.scaleMatrix(M3D.MOTEUR.getRelativeScale(object));
+		var currentModelMatrix = object.getModelMatrix();
+		var newScale = GLGE.scaleMatrix(coefScale);
+		var modelMatrix = GLGE.mulMat4(currentModelMatrix,GLGE.mulMat4(GLGE.inverseMat4(currentScale),newScale));
+		object.setStaticMatrix(modelMatrix);
 		return [];
 	};
 

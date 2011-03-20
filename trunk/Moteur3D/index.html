@@ -20,89 +20,69 @@
     <body>
 		<style>
 			body{background-color: #000;color: #fff;font-family:arial}
-		</style>
-        <script type="text/javascript" src="js/moteur_allJS.php"></script>
-               
+		</style>		
+		<script type="text/javascript" src="lib/glge_v0.8/glge-compiled-min.js"></script>
+        <script type="text/javascript" src="js/moteur3d.js"></script>
+		<script type="text/javascript" src="js/moteur_tools.js"></script>
+		<script type="text/javascript" src="js/moteur_management.js"></script>
+		<script type="text/javascript" src="js/moteur_collision.js"></script>
+		<script type="text/javascript" src="js/moteur_movement.js"></script>
+        <script type="text/javascript" src="js/moteur_camera.js"></script>       
+		<script type="text/javascript" src="js/moteur_debugger.js"></script>
+		<script type="text/javascript" src="js/moteur_keyboard.js"></script>
+			   
 		<script type="text/javascript">
 			
-			M3D.MOTEUR.initialisation("level.xml", 'canvas');
-			M3D.MOTEUR.initPhysicalForce(0.01);
-			
-			var depla = [0,0,0];
-			var depla2 = [0,0,0];
-			var tire = false;
-			var come_back_to_life = false;
+			initScene = function(){
+				//M3D.MOTEUR.addObject("lapin","dae/lapin.dae",[0,5,0,0,0,0,1,1,1]);
+				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,10,10,10]);
+				M3D.MOTEUR.addGroup("voiture1",[0,1,0,0,0,0,1,1,1]);
+				M3D.MOTEUR.addGroup("voiture2",[10,1,3,0,0,0,1,1,1]);
+				M3D.MOTEUR.addObject("jeep1","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],"voiture1");
+				M3D.MOTEUR.addObject("chasseur1","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],"voiture1");
+				M3D.MOTEUR.addObject("jeep2","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],"voiture2");
+				M3D.MOTEUR.addObject("chasseur2","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],"voiture2");
+			}
+	
+			M3D.MOTEUR.initialisation('level.xml','canvas');
+			setTimeout("initScene()",20);			
 			
 			panelControl = function(){			
-				if(KEY_Z){depla[0] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");}
-				else if(depla[0]>=0) depla[0] -= 0.01;
+				if(KEY_Z) M3D.MOTEUR.translate("voiture1",[0.1,0,0],false,"voiture1");
+				if(KEY_S) M3D.MOTEUR.translate("voiture1",[-0.1,0,0],false,"voiture1");
+				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05,0]);
+				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05,0]);
 				
-				if(KEY_S){depla[0] += -0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
-				else if(depla[0]<=0) depla[0] += 0.01;
+				if(KEY_T) M3D.MOTEUR.translate("voiture2",[0.1,0,0],false,"voiture2");
+				if(KEY_G) M3D.MOTEUR.translate("voiture2",[-0.1,0,0],false,"voiture2");
+				if(KEY_F) M3D.MOTEUR.rotate("voiture2",[0,0.01,0],"voiture2");
+				if(KEY_H) M3D.MOTEUR.rotate("voiture2",[0,-0.01,0],"voiture2");
+
+				if(KEY_O) M3D.MOTEUR.translateCamera("maincamera",[0.1,0,0],"maincamera");
+				if(KEY_L) M3D.MOTEUR.translateCamera("maincamera",[-0.1,0,0],"maincamera");
+				if(KEY_U) M3D.MOTEUR.translateCamera("maincamera",[0,0,0.01],"maincamera");
+				if(KEY_J) M3D.MOTEUR.translateCamera("maincamera",[0,0,-0.01 ],"maincamera");
+				if(KEY_K) M3D.MOTEUR.rotateCamera("maincamera",[0,0.05,0]);
+				if(KEY_M) M3D.MOTEUR.rotateCamera("maincamera",[0,-0.05,0]);
 				
-				if(KEY_Q){depla[2] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 		
-				else if(depla[2]>=0) depla[2] -= 0.01;
-				
-				if(KEY_D){depla[2] += -0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
-				else if(depla[2]<=0) depla[2] += 0.01;
-				
-				if(KEY_P){ depla[1] += 0.01; law(M3D.MOTEUR.translate("voiture",depla), "voiture");}
-				else if(depla[1]>=0) depla[1] -= 0.01;
-				
-				if(KEY_M){ depla[1] += -0.1; law(M3D.MOTEUR.translate("voiture",depla), "voiture");} 
-				else if(depla[1]<=0) depla[1] += 0.01;
-				
-				if(KEY_SPACE) tire = true;
+				if(KEY_SPACE) M3D.MOTEUR.setAngle("voiture2",[1,0,0],"voiture1");
+				if(KEY_X) {M3D.MOTEUR.setScale("voiture2",[2,3,4]);M3D.MOTEUR.test();}
+				if(KEY_ENTER) M3D.MOTEUR.test();
 			}
-			
-			
-			panelAction = function(){
-				if(tire){
-					depla2[2] +=0.01; 
-					law(M3D.MOTEUR.translate("missile",depla2),"missile");
-					//M3D.MOTEUR.trajectory("missile",0.01,[0,1,0]);
-					}
-				if(come_back_to_life){M3D.MOTEUR.addObject("lapin", "dae/lapin.dae", [15,-0.5,0,0,0,0,1]); come_back_to_life = false;}
-			}
-			
-			
-			law = function(tab, id){
-				if(id = "voiture"){
-					if(tab.length != 0){
-						if(M3D.MOTEUR.searchTarget(tab,"lapin")){
-							tire = false; depla2 = [0,0,0];
-							M3D.MOTEUR.removeObject("lapin");
-							M3D.MOTEUR.removeObject("missile");
-							M3D.MOTEUR.addObjectIn("missile","dae/missile.dae",[0,0,0,0,0,0,0.5],"arme");
-							come_back_to_life = true;
-						}
-					}
-				} else if(id == "missile"){
-					if(tab.length != 0){
-						if(M3D.MOTEUR.searchTarget(tab,"lapin")){
-							tire = false; depla2 = [0,0,0];
-							M3D.MOTEUR.removeObject("lapin");
-							M3D.MOTEUR.removeObject("missile");
-							M3D.MOTEUR.addObjectIn("missile","missile.dae",[0,0,0,0,0,0,0.5],"arme");
-							come_back_to_life = true;
-						}
-					}
-				}
-			}
-			
-			render = function(){
+
+			rendu = function(){
 				panelControl();
-				panelAction();
 				M3D.MOTEUR.render();
 			}
 			
+			setInterval(rendu,1);
+
 			
 			window.addEventListener('load', function () {
 				window.document.onkeydown = M3D.MOTEUR.checkKeyDown;
 				window.document.onkeyup = M3D.MOTEUR.checkKeyUp;
 			}, false);
-			
-			setInterval(render,1);
+
 		</script>
     </body>
 </html>

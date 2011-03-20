@@ -82,9 +82,7 @@ var now;
 	},
 	
 	M3D.MOTEUR.test = function(){
-		var x = [[1,2],[5,6]];
-		var y = [[3,4]];
-		var x = x.concat(y);
+		var x = M3D.MOTEUR.getAbsoluteScale(tabObject["voiture2"]);
 		alert(x);
 	},
  

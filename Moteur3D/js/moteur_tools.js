@@ -208,8 +208,14 @@
 	
 	M3D.MOTEUR.idColladaToIdGroup = function(str){
 		return str.substring(1,str.length);
-	};
+	},
  
+	M3D.MOTEUR.getIndexArray = function(array,element){
+		for(var i = 0 ; i<array.length ; i++){
+			if(array[i] == element) return i
+		}
+		return -1;
+	};
  
 })(window.M3D);
 

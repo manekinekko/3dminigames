@@ -32,15 +32,18 @@
 		return listPre;
 	},
 	
-	M3D.MOTEUR.collisionBranch = function(object){
+	M3D.MOTEUR.collisionBranch = function(objectBranch,object){
 		var listPre = [];
+		var childrenBranch = M3D.MOTEUR.getAllChildren(objectBranch.id);
 		var children = M3D.MOTEUR.getAllChildren(object.id);
-		for(var j = 0 ; j < children[1].length ; j++){
-			for(var k = j+1 ; k < children[1].length ; k++){
-				var obj1 = M3D.MOTEUR.getObject(children[1][j]);
-				var obj2 = M3D.MOTEUR.getObject(children[1][k]);
-				if(M3D.MOTEUR.collisionBoxBox(obj1.getBoundingVolume(false),obj2.getBoundingVolume(false)))
-					listPre.push([M3D.MOTEUR.idColladaToIdGroup(obj1.id),M3D.MOTEUR.idColladaToIdGroup(obj2.id)]);
+		for(var j = 0 ; j < childrenBranch[1].length ; j++){
+			for(var k = 0 ; k < children[1].length ; k++){
+				if(M3D.MOTEUR.getIndexArray(children[1],childrenBranch[1][j]) == -1){
+					var obj1 = M3D.MOTEUR.getObject(childrenBranch[1][j]);
+					var obj2 = M3D.MOTEUR.getObject(children[1][k]);
+					if(M3D.MOTEUR.collisionBoxBox(obj1.getBoundingVolume(false),obj2.getBoundingVolume(false)))
+						listPre.push([M3D.MOTEUR.idColladaToIdGroup(obj1.id),M3D.MOTEUR.idColladaToIdGroup(obj2.id)]);
+				}
 			}
 		}
 		return listPre;
@@ -55,7 +58,7 @@
 		for(var i = 0 ; i<sceneObjectSon.length ; i++){
 			var objectI = M3D.MOTEUR.getObject(sceneObjectSon[i]);
 			if(objectI == fatherBranch){
-				var collisionList = M3D.MOTEUR.collisionBranch(object);
+				var collisionList = M3D.MOTEUR.collisionBranch(objectI,object);
 				list = list.concat(collisionList);
 			}else{
 				if(M3D.MOTEUR.collisionBoxBox(boxObject,objectI.getBoundingVolume(false))){

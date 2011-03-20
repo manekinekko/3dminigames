@@ -16,13 +16,12 @@ if(!window["M3D"].MOTEUR){
 // Variables partagées
 
 var doc = new GLGE.Document();
-var tabObject = new Array;
-var tabIdObject = new Array;
-var tabCamera = new Array;
+var tabObject = new Array; // tableau contenant tous les objets, indexés par leurs identifiants
+var tabIdObject = new Array; // tableau contenant l'identifiant des objets 3D (uniquement les colladas)
+var tabCamera = new Array; // tableau contenant les caméras, indexés pas leurs identifiants
 var keys=new GLGE.KeyInput();
 var mouse=new GLGE.MouseInput(document.getElementById('canvas'));
 var gameScene = new GLGE.Scene();
-var gravity = 0.0;
 
 // Pour le frame rate
 var lasttime=0;
@@ -35,9 +34,9 @@ var now;
 	var gameRenderer;
 		
 /** 
- * Méthode initialisation: permet l'initialisation du moteur.
+ * Méthode initialisation: initialise le moteur.
  * @param: xmlDoc: adresse du fichier xml contenant l'état initial de la scène.
- *         idCanvas: identifiant de la fenêtre canvas ou sera affiché la gameScene.
+ *         idCanvas: identifiant de la fenêtre canvas où est affiché la scene.
  */
 	M3D.MOTEUR.initialisation = function(xmlDoc, canvas){
         doc.onLoad = function(){
@@ -47,47 +46,24 @@ var now;
 		
             // Initialisation des tableaux
 			gameScene.id = "mainscene";
-			tabObject["mainscene"] = gameScene;
-			cam = gameScene.getCamera();
-			tabCamera[cam.id] = cam;
         } 
 		doc.load(xmlDoc);
 	},
-
-
-/**
- * Fonction initTabObject: permet l'initialisation du tableau d'objet et d'identification des objets.
- * @param: liste des objets à parcourir.
- */
-	M3D.MOTEUR.initTabObject = function(list){
-        if(list.length!=0){
-            var x = list.pop();
-            var tabL = x.getLights();
-            var tabO = x.getChildren();
-            var present = false;
-            var j;
-            for(var i = 0 ; i<tabO.length ; i++){
-                for(j=0; j<tabL.length; j++){ if(tabO[i]==tabL[j]) present = true; }
-				if(tabO[i].id == "theMap") present = true;
-                if(!present){
-                    if(tabO[i].id != undefined){
-                        tabObject[tabO[i].id] = tabO[i];
-                        tabIdObject[tabIdObject.length] = tabO[i].id;
-                        list.push(tabO[i]);
-                    }
-                } present = false;
-            } 
-            M3D.MOTEUR.initTabObject(list);
-        } 
-	},
 	
+	// uniquement pour les tests
 	M3D.MOTEUR.test = function(){
-		var x = M3D.MOTEUR.getAbsoluteScale(tabObject["voiture2"]);
-		alert(x);
+		var cam = gameScene.getCamera();
+		var x = cam.getNear();
+		var y = cam.getFar();
+		var z = cam.getFovY();
+		var a = cam.getType();
+		var b = cam.getLocalMatrix();
+		var c = cam.parent;
+		alert(x+'  '+y+'  '+z+'  '+a+'  '+b+'  '+cam.matrix);
 	},
  
 /**
- * Méthode render: Permet l'affichage de la scène.
+ * Méthode render: Permet l'affichage de la scène et met à jour le frame rate.
  */
 	M3D.MOTEUR.render = function(){
 		if(gameRenderer){
@@ -100,58 +76,3 @@ var now;
 	};
 	
 })(M3D);
-
-
-/*
- * Fonction initPhysicalForce: permet l'initialisation des variables physiques du moteur.
- * @param: g: valeur de la gravité.
- 
-	M3D.MOTEUR.initPhysicalForce = function(g){
-		this.gravity = g;
-	},*/
-	
-	
-	
-	      
-			// Pour la mise en place de la heightmap
-		/*	var map = doc.getElement("theMap");
-						
-			var map_heightmap = new GLGE.HeightMap("images/test_heightmap.jpg", 256, 256, 0, 10, 0, 10, 0, 10);
-		 */	
-		/*	var positionOnMap = new Array;
-			var tabUV = new Array;
-			var tabPosMap = new Array;
-			var cpt = 0;
-			for(var i=0; i<10; i++){
-				for(var j=0; j<10; j++){
-					positionOnMap.push(i);
-					positionOnMap.push(j);
-					positionOnMap.push(map_heightmap.getHeightAt(i,j));
-					tabUV.push(1);
-					tabPosMap.push(cpt);
-					cpt++;
-				}
-			}
-		*/		
-		/*
-			var map_mesh = new GLGE.Mesh();
-			map_mesh.setPositions(-4.999998,5.000002,0.000000,5.000000,5.000000,0.000000,5.000002,4.999998,3.000000,-4.999998,5.000002,0.000000,5.000002,4.999998,3.000000,-5.000000,5.000000,3.000000,-5.000000,-4.999999,0.000000,-4.999998,5.000002,0.000000,-5.000000,5.000000,3.000000,-5.000000,-4.999999,0.000000,-5.000000,5.000000,3.000000,-5.000002,-4.999998,3.000000,5.000000,-5.000000,0.000000,-5.000000,-4.999999,0.000000,4.999997,-5.000003,3.000000,-5.000000,-4.999999,0.000000,-5.000002,-4.999998,3.000000,4.999997,-5.000003,3.000000,5.000000,5.000000,0.000000,5.000000,-5.000000,0.000000,5.000002,4.999998,3.000000,5.000000,-5.000000,0.000000,4.999997,-5.000003,3.000000,5.000002,4.999998,3.000000,5.000002,4.999998,3.000000,4.999997,-5.000003,3.000000,-5.000000,5.000000,3.000000,4.999997,-5.000003,3.000000,-5.000002,-4.999998,3.000000,-5.000000,5.000000,3.000000,5.000000,5.000000,0.000000,-4.999998,5.000002,0.000000,-5.000000,-4.999999,0.000000,5.000000,5.000000,0.000000,-5.000000,-4.999999,0.000000,5.000000,-5.000000,0.000000);
-			//map_mesh.setFaces(tabPosMap);
-			map_mesh.setUV(0.000000,0.000000,1.000000,0.000000,1.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,1.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000,1.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000,1.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000,1.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,1.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,1.000000);
-			
-			var texture = new GLGE.Texture();
-			texture.setSrc("images/test_texture.jpg");
-			
-			var mapLayer = new GLGE.MaterialLayer();
-			mapLayer.setTexture(texture);
-			mapLayer.setMapinput("UV1");
-			mapLayer.setMapto("M_COLOR");
-			
-			var map_mat = new GLGE.Material();
-			map_mat.setSpecular(0.5);
-			map_mat.addTexture("../images/test_texture.jpg");
-			map_mat.addMaterialLayer(mapLayer);
-			
-			map.getMaterial(map_mat);
-			map.getMesh(map_mesh);	
-		*/

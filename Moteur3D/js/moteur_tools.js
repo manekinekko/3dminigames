@@ -145,13 +145,30 @@
 	},
 	
 	//////// FONCTIONS POUR LA POSITION D'UN OBJET PLACEABLE
+	
+	
+	M3D.MOTEUR.getScaleFromMatrix = function(matrix){
+		GLGE.setMat4(matrix,0,3,0);
+		GLGE.setMat4(matrix,1,3,0);
+		GLGE.setMat4(matrix,2,3,0);
+		var matrixMT = GLGE.mulMat4(matrix,GLGE.transposeMat4(matrix));
+		var scale = new Array();
+		for(var i = 0 ; i < 3 ; i++){
+			scale.push(Math.sqrt(matrixMT[i+4*i]));
+		}
+		return scale;
+	},
+	
 /**
  * Méthode getRelativePos: retourne un GLGE.Vec3 comportant la position relativement au père de l'objet donné
  * @param: object: objet dont il faut calculer la position relative
  * @return position relative par rapport à son père
  */
 	M3D.MOTEUR.getRelativePos = function(object){
-		return (GLGE.Vec3(object.getLocX(),object.getLocY(),object.getLocZ()));	
+		var modMat = object.getLocalMatrix();
+		var norVec = GLGE.Vec4(0,0,0,1);
+		var pos = GLGE.mulMat4Vec4(modMat,norVec);
+		return (M3D.MOTEUR.vec4ToVec3(pos));	
 	},
 		
 /**
@@ -166,22 +183,15 @@
 		return (M3D.MOTEUR.vec4ToVec3(pos));	
 	},
 	
-/**
- * Méthode getRelativeRot: retourne un GLGE.Vec3 comportant la rotation relativement au père de l'objet donné
- * @param: object: objet dont il faut calculer la rotation relative
- * @return rotation relative par rapport à son père
- */
-	M3D.MOTEUR.getRelativeRot = function(object){
-		return (GLGE.Vec3(object.getRotX(),object.getRotY(),object.getRotZ()));	
-	},
-		
+
 /**
  * Méthode getRelativeScale: retourne un GLGE.Vec3 comportant l'échelle relativement au père de l'objet donné
  * @param: object: objet dont il faut calculer l'échelle relative
  * @return échelle relative par rapport à son père
  */	
 	M3D.MOTEUR.getRelativeScale = function(object){
-		return (GLGE.Vec3(object.getScaleX(),object.getScaleY(),object.getScaleZ()));	
+		var modMat = GLGE.Mat4(object.getLocalMatrix());
+		return M3D.MOTEUR.getScaleFromMatrix(modMat);
 	},
 
 /**
@@ -190,17 +200,8 @@
  * @return échelle absolue
  */
 	M3D.MOTEUR.getAbsoluteScale = function(object){
-		var tmpObject = object;
-		var tmpScl = [1,1,1];
-		var i = 0;
-		while(tmpObject.id != "mainscene"){
-			var scaleMat = tmpObject.getScaleMatrix();
-			for(i=0;i<3;i++){
-				tmpScl[i] *= GLGE.getMat4(scaleMat,i,i);
-			}
-			tmpObject = tmpObject.parent;
-		}
-		return GLGE.Vec3(tmpScl[0],tmpScl[1],tmpScl[2]);
+		var modMat = GLGE.Mat4(object.getModelMatrix());
+		return M3D.MOTEUR.getScaleFromMatrix(modMat);
 	},
 	
 	////////////// AUTRES

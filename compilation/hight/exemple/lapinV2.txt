@@ -141,7 +141,9 @@ definition gameEnds means
     Game ends;
 
 definition subCompteurLapin means
-    sub 1 for compteurPas of Lapin;
+    sub 1 for compteurPas of Lapin,
+    sub 1 for compteurPas of Lapin,
+    sub 1 for mass of Object;
 
 definition toucherLapin means
     efface missile,

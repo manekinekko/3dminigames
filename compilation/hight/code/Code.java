@@ -466,10 +466,10 @@ public class Code {
         c.append("function " + def.getName() + "(");
         		
     	
-    	for (int i = 0 ; i<def.getParams().size() ; i++){
-    		c.append(def.getParams().get(i));
-    		
-    		if(i < def.getParams().size() - 1){
+    	for (int i = 0 ; i<def.getSignature().size() ; i++){
+    		c.append("arg" + i);
+    		 
+    		if(i < def.getSignature().size() - 1){
     			c.append(",");
     		}
     	}
@@ -671,5 +671,11 @@ public class Code {
 		c.append(");\n");
 		
 		return c;
+    }
+    
+    public static Code genArg(int n){
+    	Code c = new Code();	
+    	c.append("arg"+n);
+    	return c;
     }
 }

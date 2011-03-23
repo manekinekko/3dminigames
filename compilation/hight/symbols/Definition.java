@@ -21,37 +21,63 @@ public class Definition implements Symbol {
     private Code c;
     private boolean duplicable = true;
     private int generate = 0;
-    private /* public pour les JUnit tests*/ List<Model> sign; 		//Signature de la fonction
-    private /* public pour les JUnit tests*/ List<String> params;	//Paramètres effectifs
+    private List<Model> sign; 		//Signature de la fonction
 
+
+   
+    
+
+
+    
+    
+    
+    
+    public Definition(){
+    	name = new String();
+    	c = new Code();
+    	sign = new ArrayList<Model>();
+    }
+    
+    
+    public Definition(String s){
+    	name = s;
+    	c = new Code();
+    	sign = new ArrayList<Model>();
+    }
+    
+    
+    
     public Definition(String s, Code c, Model ... m) {
         name = s;
         this.c = c;
         this.sign = Arrays.asList(m);
-        this.params = new ArrayList<String>();
+       
     }
 
     public Definition(String s, Code c) {
         name = s;
         this.c = c;
         this.sign = new ArrayList<Model>();
-        this.params = new ArrayList<String>();
+        
     }
     
     public void addModel(Model m){
     	this.sign.add(m);
     }
-    
-    public void addParam(String pm){
-    	this.params.add(pm);
-    }
+
     
     public List<Model> getSignature(){
-    	return this.sign;
+    	return new ArrayList<Model>(this.sign);
     }
     
-    public List<String> getParams(){
-    	return this.params;
+    public void append(Code c){
+    	this.c.append(c);
+    }
+    
+
+    
+    public void setName(String n) {
+    	this.name = n;
     }
     
     public Code getCode() {

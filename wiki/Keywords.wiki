@@ -96,6 +96,17 @@ definition bougerJeep1 means
 	jeep move backward by 10;
 }}}
 
+==becomes==
+_Parties *Règles du jeu*_
+  * Un déclencheur qui déclenche quand un variable devient égal ou inégal (par rapport de définition) d'un valeur ou variable.
+{{{
+rule value of jaugeForce becomes <= min of jaugeForce then
+	assign 1 to step of jaugeForce;
+
+rule score of joueur_principal becomes scoreAAtteindre of tux then  
+	defeat of ordinateur;
+}}}
+
 ==between==
 _Parties *Définitions* et *Règles du jeu*_
   * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and' ) :
@@ -242,6 +253,27 @@ rule in choixPremier is
 		efface queue
 }}}
 
+==else==
+  * La partie sinon de condition.
+{{{
+if zoneGenNouvellePlateforme touches other plateforme
+then generate 1 plateforme in zoneGenNouvellePlateforme
+else generate (random between 2 and 3) plateforme in zoneGenNouvellePlateforme   //random pour une zone
+endif;
+}}}
+
+==endif==
+  * La balise qui férme une condition.
+{{{
+	if nbLives of tux = 0 then
+		defeat of joueur_principal
+	else 
+		tux dies,
+		efface 4 windows,
+		stop chronoGen,
+		reinit
+	endif
+}}}
 
 ==ends==
 _Partie *Définitions*_
@@ -249,6 +281,15 @@ _Partie *Définitions*_
 {{{
 rule victory then
 	Game ends
+}}}
+  * Déclencheur dans cas de finir d'un compteur.
+{{{
+rule chronoGen ends then
+	if value of nbWindows <= max of nbWindows then
+		generate 1 windows on zoneGenWindows,
+		add 1 to value of nbWindows
+	endif,
+	start chronoGen;
 }}}
 
 ==endwait==
@@ -430,6 +471,15 @@ arretGauche is Zobstacle;
 lapin1 is Lapin enemy;
 }}}
 
+==if==
+  * Mot-clé pour déclaration une condition. 
+{{{
+definition viserR means
+	if value of etapes = "choixDirection" then
+		cam1 turn right by 10
+	endif;
+}}}
+
 ==in==
 _Partie *Initialisations*_
   * (voir *insert*)
@@ -498,11 +548,15 @@ rule true then
 ----
 =K=
 ----
-_Partie **_
-  * :
+==kills==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai dans cas de mourir un entité.
 {{{
-
+rule alien2 kills Robot then  
+	add 1 to score of player2,
+	add 1 to score of rouge;
 }}}
+
 ----
 =L=
 ----
@@ -573,6 +627,19 @@ definition defU1 means
 	jeep move backward by 10;
 }}}
 
+==moves==
+_Parties *Règles du jeu*_
+  * Un déclancheur dans cas de bouger un entité.
+{{{
+rule blanche moves then
+	efface queue,
+	changerCamera,
+	wait until listeBoules stops, 
+	reinitNbBandes,
+	changerCamera,
+	generate queue
+}}}
+
 ==mute==
 _Partie *Definition*_
   * Arreter tous les sons de jeu.
@@ -597,6 +664,12 @@ _Partie *Règles du jeu*_
 
 }}}
 
+==notowns==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai dans cas de ne pas avoir un objet.
+{{{
+
+}}}
 
 ----
 =O=
@@ -642,6 +715,14 @@ _Parties *Initialisations*_
   * Définie qu'un média s'interprète une seul fois. (voir *media*)
 {{{
 dem3 is media once.
+}}}
+
+==owns==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai dans cas d'avoir un objet.
+{{{
+rule alien2 owns boot then  
+	add 5 to speed of alien2
 }}}
 
 ----
@@ -740,6 +821,20 @@ command mario for joueur_principal is
 	key D for mario move right by 10,
 }}}
 
+==rule==
+_Parties *Règles du jeu*_
+  * Définir les règles du jeu. Chaque règle a besoin un(e) déclencheur/condition.
+{{{
+rule Game starts then
+	generate sol,
+	generate teleport1,
+	generate teleport2,
+	generate zoneDepart,
+	generate zoneGenWindows,
+	reinit
+	;
+}}}
+
 ----
 =S=
 ----
@@ -785,6 +880,14 @@ rule defeat then
 	play musiqueGameOver,
 	wait 5 sec then Game starts
 }}}
+  * Déclencheur qui marque débout de jeu ou démarrage d'un compteur.
+{{{
+rule Game starts then
+		generate plateformeDepart,
+		generate 1 plateforme in zoneGenNouvellePlateforme,
+		generate mario,
+		cinematique1;
+}}}
 
 ==stop==
 _Partie *Definitions*_
@@ -796,11 +899,44 @@ _Partie *Definitions*_
 ----
 =T=
 ----
+==then==
+_Parties *Règles du jeu*_
+  * Séparer la partie déclencheur/condition des règles des partie "alors".
+{{{
+rule batman touches CharacterEnemy then
+	sub (attack of CharacterEnemy) to batman,
+	sub (attack of batman) to CharacterEnemy,
+	assign true to isTraversable of batman,
+	wait 3 s then 
+		assign false to isTraversable of batman
+	endwait
+}}}
+{{{
+mario touches superGoomba then 
+	sub attack of superGoomba to life of mario,
+	assign true to isTraversable of mario,
+	wait 4 s then
+		assign false to isTraversable of mario
+	endwait
+}}}
+
 ==third==
 _Parties *Initialisations*_
   * Déclare que point de vu est le point de vu différant de joueur principal. (voir *camera*)
 {{{
 cam5 is camera third person;
+}}}
+
+==touches==
+_Parties *Règles du jeu*_
+  * Un déclencheur qui manifeste dans cas de taucher un entité ou un zone.
+{{{
+mario touches goomba then 
+	sub attack of goomba to life of mario,
+	assign true to isTraversable of mario,
+	wait 4 s then
+		assign false to isTraversable of mario
+	endwait
 }}}
 
 ==turnbased==

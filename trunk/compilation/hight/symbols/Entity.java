@@ -10,8 +10,8 @@ import java.util.*;
 public class Entity implements Symbol {
 
     private String name;
-    private List<Model> models;
-    private Map<String, AttributeValue> attributes;
+    /*private*/ public List<Model> models;
+    /*private*/ public Map<String, AttributeValue> attributes;
     private boolean duplicable = false;
     private int generate = 0;
 

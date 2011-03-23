@@ -3,7 +3,7 @@ package symbols;
 import attributes.AttributeValue;
 
 public interface Symbol {
-    public static enum Type{DEFINITION, ENTITY, MODEL};
+    public static enum Type{DEFINITION, ENTITY, MODEL, CONTROL};
     public String getName();
     public AttributeValue getAttribute(String n);
     public void addAttribute(String attr, AttributeValue value);

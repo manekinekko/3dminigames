@@ -1,6 +1,6 @@
-package tests;
-import attributes.Duration;
-import code.Code;
+package com.istic.mini3d.tests;
+import com.istic.mini3d.attributes.Duration;
+import com.istic.mini3d.code.Code;
 import junit.framework.TestCase;
 
 public class DurationTest extends TestCase {

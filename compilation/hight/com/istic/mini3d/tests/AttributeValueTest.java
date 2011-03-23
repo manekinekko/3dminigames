@@ -1,9 +1,9 @@
-package tests;
+package com.istic.mini3d.tests;
 
-import attributes.AttributeValue;
-import attributes.AttributeValue.Type;
-import code.Code;
-import attributes.Duration;
+import com.istic.mini3d.attributes.AttributeValue;
+import com.istic.mini3d.attributes.AttributeValue.Type;
+import com.istic.mini3d.code.Code;
+import com.istic.mini3d.attributes.Duration;
 import junit.framework.TestCase;
 
 public class AttributeValueTest extends TestCase {

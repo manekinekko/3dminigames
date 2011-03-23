@@ -1,7 +1,7 @@
-package tests;
+package com.istic.mini3d.tests;
 
-import lib.Coordonnees;
-import code.Code;
+import com.istic.mini3d.lib.Coordonnees;
+import com.istic.mini3d.code.Code;
 import junit.framework.TestCase;
 
 public class CoordonneesTest extends TestCase {

@@ -1,8 +1,8 @@
-package tests;
-import attributes.AttributeValue;
-import code.SymbolTable;
-import code.Code;
-import symbols.Symbol;
+package com.istic.mini3d.tests;
+import com.istic.mini3d.attributes.AttributeValue;
+import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.code.Code;
+import com.istic.mini3d.symbols.Symbol;
 import junit.framework.TestCase;
 
 public class SymbolTableTest extends TestCase {

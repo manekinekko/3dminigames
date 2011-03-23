@@ -21,8 +21,8 @@ public class Definition implements Symbol {
     private Code c;
     private boolean duplicable = true;
     private int generate = 0;
-    private List<Model> sign; 		//Signature de la fonction
-    private List<String> params;	//Paramètres effectifs
+    private /* public pour les JUnit tests*/ List<Model> sign; 		//Signature de la fonction
+    private /* public pour les JUnit tests*/ List<String> params;	//Paramètres effectifs
 
     public Definition(String s, Code c, Model ... m) {
         name = s;

@@ -483,47 +483,71 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
 player_list [SymbolTable st] returns [ArrayList<Symbol> list] @init{list = new ArrayList<Symbol>();}:
     (i=IDENT{String e = i.getText();Symbol m = st.get(e);
             if(m==null){
-                System.out.println("tamere");
+                System.out.println("Entité "+ e + "inexistante");
                 System.exit(0);
             }else{
                 if( m.getType()== Symbol.Type.ENTITY){
                     list.add(m);
                 }else{
-                    System.out.println("tamerev2");
+                    System.out.println(e + " n'est pas une entitée");
                     System.exit(0);
                 }
             }} )+
     ;
 
-actionCommande_list[SymbolTable st] returns [Code c]:
-	actionCommande[st]+
+actionCommande_list[SymbolTable st] returns [ArrayList <Control> c_list] @init{c_list = new ArrayList<Control>();}:
+	(c=actionCommande[st]{c_list.add(c);})+
 	;
 	
-actionCommande [SymbolTable st] returns [Code c]:
-    ^(MOUSE_KW souris[st] commandMode? definitionId[st])
-    |^(KEY_KW clavier[st] commandMode? definitionId[st]) // ident : that was defined with means
+actionCommande [SymbolTable st] returns [Control c]:
+    ^(MOUSE_KW v=souris[st] n=commandMode? d=definitionId[st])
+    {if(n == null){
+        c = new Control(v,Control.Source.SOURIS,d);
+    }else{
+        c = new Control(v,n,Control.Source.SOURIS,d);
+    }
+    Symbol s = st.get(c.getName());
+    if(s != null){
+        System.out.println("Commande déjà définie");
+        System.exit(0);
+        }
+    st.add(c.getName(),c);
+    }
+    |^(KEY_KW v=clavier[st] n=commandMode? d=definitionId[st]) // ident : that was defined with means
+        {if(n == null){
+        c = new Control(v,Control.Source.CLAVIER,d);
+    }else{
+        c = new Control(v,n,Control.Source.CLAVIER,d);
+    }
+    Symbol s = st.get(c.getName());
+    if(s != null){
+        System.out.println("Commande déjà définie");
+        System.exit(0);
+        }
+    st.add(c.getName(),c);
+    }
     ;
 
-commandMode :
-    PRESSED_KW |HELD_KW | RELEASED_KW
+commandMode returns [Control.Mode m]:
+    PRESSED_KW {m = Control.Mode.PRESSED;} |HELD_KW {m = Control.Mode.HELD;}| RELEASED_KW {m = Control.Mode.RELEASED;}
     ;
 
 definitionId [SymbolTable st] returns [Definition d]:
     i=IDENT{String nom = i.getText(); Symbol s = st.get(nom);
         if(s == null){
-            System.out.println("tamere");
+            System.out.println("Definition"+nom+"n'existe pas");
             System.exit(0);
         }else{
         if( s.getType()== Symbol.Type.DEFINITION){
                     d=(Definition)s;
         }else{
-             System.out.println("tamerev2");
+             System.out.println(nom+"n'est pas une définition");
              System.exit(0);
     }}}
     ;	
  
-souris [SymbolTable st] returns [Code c]:
-    WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN
+souris [SymbolTable st] returns [String c]:
+    WUP{c = "UP";} | WDOWN{c = "DOWN";} | LEFT{c = "LEFT";} | RIGHT{c = "RIGHT";} | CLICK_LEFT{c = "CLK_LEFT";} | CLICK_MIDDLE{c = "CLK_MIDDLE";} | CLICK_RIGHT{c = "CLK_RIGHT";} | SCROLL_UP{c = "SCR_UP";} | SCROLL_DOWN{c = "SCR_UP";}
     ;
  
 clavier [SymbolTable st] returns [String l]:

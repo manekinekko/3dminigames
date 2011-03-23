@@ -83,6 +83,7 @@ public class Main {
 		}
 	    } else {
 		System.out.println(c.getCode());
+                ts.print();
 	    }
 
 	} catch (FileNotFoundException e) {

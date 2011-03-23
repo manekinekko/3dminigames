@@ -1,9 +1,9 @@
-package tests;
+package com.istic.mini3d.tests;
 import java.util.List;
-import symbols.Model;
+import com.istic.mini3d.symbols.Model;
 import junit.framework.TestCase;
-import code.SymbolTable;
-import attributes.*;
+import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.attributes.*;
 import java.util.ArrayList;
 
 

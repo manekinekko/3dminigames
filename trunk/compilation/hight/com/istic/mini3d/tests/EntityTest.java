@@ -1,8 +1,8 @@
-package tests;
-import symbols.Entity;
-import symbols.Model;
+package com.istic.mini3d.tests;
+import com.istic.mini3d.symbols.Entity;
+import com.istic.mini3d.symbols.Model;
 import junit.framework.TestCase;
-import attributes.AttributeValue;
+import com.istic.mini3d.attributes.AttributeValue;
 import java.util.*;
 
 public class EntityTest extends TestCase {

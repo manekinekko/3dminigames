@@ -1,5 +1,5 @@
-package tests;
-import lib.Pair;
+package com.istic.mini3d.tests;
+import com.istic.mini3d.lib.Pair;
 import junit.framework.TestCase;
 
 public class PairTest extends TestCase {

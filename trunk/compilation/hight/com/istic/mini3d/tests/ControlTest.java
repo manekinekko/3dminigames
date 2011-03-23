@@ -1,11 +1,11 @@
-package tests;
+package com.istic.mini3d.tests;
 
-import code.Code;
-import symbols.Control;
-import symbols.Definition;
-import symbols.Model;
-import symbols.Control.Mode;
-import symbols.Control.Source;
+import com.istic.mini3d.code.Code;
+import com.istic.mini3d.symbols.Control;
+import com.istic.mini3d.symbols.Definition;
+import com.istic.mini3d.symbols.Model;
+import com.istic.mini3d.symbols.Control.Mode;
+import com.istic.mini3d.symbols.Control.Source;
 
 import junit.framework.TestCase;
 

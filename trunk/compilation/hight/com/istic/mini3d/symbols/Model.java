@@ -9,7 +9,7 @@ import org.jdom.input.*;
 
 public class Model implements Symbol {
 
-    public static String xml = "./xml/attributesv2.xml"; //Linux (Fonctionne aussi sous windows)
+    public static String xml = "./com/istic/mini3d/xml/attributesv2.xml"; //Linux (Fonctionne aussi sous windows)
     private /*public pour JUnit tests*/ static List<Model> generated;
     private String name;
     private /*public pour JUnit tests*/ Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.

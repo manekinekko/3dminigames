@@ -1,10 +1,10 @@
-package tests;
+package com.istic.mini3d.tests;
 import java.util.ArrayList;
 import java.util.List;
 
-import symbols.Definition;
-import symbols.Model;
-import code.Code;
+import com.istic.mini3d.symbols.Definition;
+import com.istic.mini3d.symbols.Model;
+import com.istic.mini3d.code.Code;
 import junit.framework.TestCase;
 
 public class DefinitionTest extends TestCase {

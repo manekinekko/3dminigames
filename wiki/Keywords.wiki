@@ -1,4 +1,6 @@
 #labels Featured,Phase-Implementation
+329 IA
+
 =Glossaire des mots-clés=
 *(Ordre alphabétique (Parties) )*
 
@@ -30,6 +32,22 @@ definition cinematique1 means
 		disable commands,   
 		activate P,         
 }}}
+
+==add==
+_Partie *règles du jeu*_
+  * Additionner.
+{{{
+definition accelerer means 
+	add 30 to acceleration of batman;
+}}}
+
+==alive==
+_Prtie *Règles du jeu*_
+  * état de *vivant* pour un caractère/entité.
+{{{
+
+}}}
+
 
 ==and==
 _Partie *Déclaration de nouveaux types*_
@@ -67,6 +85,20 @@ _Partie *règles du jeu*_
 {{{
 definition defL1 means 
 	batman turn anticlockwise by 10;
+}}}
+
+==assign==
+_Partie *règles du jeu*_
+  * Affectation une valeur à un variable ou état.
+{{{
+definition switchCam means
+	if active of cam1 = true then
+		assign true to active of cam2 ,
+		assign false to active of cam1
+	else
+		assign true to active of cam1 ,
+		assign false to active of cam2
+	endif;
 }}}
 
 ==at==
@@ -172,17 +204,33 @@ command for joueur1, joueur2 is   //joueur2 seulement si c'est un Player 'human'
 	key escape for pause;
 }}}
 
+==contains==
+  * Vérifier dans une condition si un objet appartient d'une liste.
+{{{
+
+}}}
 
 ----
 =D=
 ----
+==dead==
+_Prtie *Règles du jeu*_
+  * état de *mort* pour un caractère/entité.
+{{{
+
+}}}
+
 ==defeat==
 _Partie *Définitions*_
   * Déclare la échec d'un ou plusieurs joueur(s)/caractère(s).
 {{{
 definition manger means defeat pacman;
 }}}
-
+{{{
+rule nbLives of batman becomes 0 then
+	defeat of joueurPrincipal : "ahah noob !",
+	Game ends;
+}}}
 
 ==definition==
 _Partie *Définitions*_
@@ -253,6 +301,14 @@ rule in choixPremier is
 		efface queue
 }}}
 
+==effaced==
+_Prtie *Règles du jeu*_
+  * état de *effacé* pour un caractère/entité.
+{{{
+
+}}}
+
+
 ==else==
   * La partie sinon de condition.
 {{{
@@ -308,6 +364,14 @@ definition tirer  means
 ----
 ==false==
   * Valeur booléen représentant "faux".
+
+==finished==
+_Partie *Règles du jeu*_
+  * état de *fini* pour un jeu, compteur ou media.
+{{{
+
+}}}
+
 
 ==first==
 _Parties *Initialisations*_
@@ -391,6 +455,15 @@ _Partie *Règles du jeu*_
 {{{
 
 }}}
+
+==generated==
+_Partie *Règles du jeu*_
+  * état de *généré* pour un caractère/entité.
+{{{
+
+}}}
+
+
 
 ==gravity==
 _Partie *Information about game*_
@@ -497,6 +570,14 @@ _Partie *Initialisations*_
   * Ajouter un entité à un groupe/liste.
 {{{
 insert Lapan1 in Ennemies;
+}}}
+
+==invert==
+_Partie *règles du jeu*_
+  * Invertir deux valeurs.
+{{{
+definition accelerer means 
+	invert speed of mario with speed of luigi;
 }}}
 
 ==is==
@@ -640,6 +721,14 @@ rule blanche moves then
 	generate queue
 }}}
 
+==moving==
+_Partie *Règles du jeu*_
+  * état de *en déplacement* pour un caractère/entité.
+{{{
+
+}}}
+
+
 ==mute==
 _Partie *Definition*_
   * Arreter tous les sons de jeu.
@@ -647,6 +736,14 @@ _Partie *Definition*_
 definition pauseOnOff means
 	pause prout
 }}}
+
+==muted==
+_Partie *Règles du jeu*_
+  * état de *muet* pour un jeu, compteur ou media.
+{{{
+
+}}}
+
 
 =N=
 ----
@@ -740,6 +837,15 @@ definition pauseOnOff means
 
 }}}
 
+==paused==
+_Partie *Règles du jeu*_
+  * état de *arrêté provisoirement* pour un jeu, compteur ou média.
+{{{
+
+}}}
+
+
+
 ==person==
 _Partie *Initialisations*_
   * Pour définir point du vu de camera. (voir *camera*)
@@ -753,6 +859,14 @@ _Partie *Definitions*_
 {{{
 
 }}}
+
+==played==
+_Partie *Règles du jeu*_
+  * état de *en cours d'interprétation* pour un média.
+{{{
+
+}}}
+
 
 ==player==
 _Parties *Initialisations*_
@@ -872,6 +986,14 @@ _Partie *Initialisations*_
 player1 is player solo;
 }}}
 
+==started==
+_Partie *Règles du jeu*_
+  * état de *démarré* pour un jeu, compteur ou média.
+{{{
+
+}}}
+
+
 ==starts==
 _Partie *Definition*_
   * Démarer le jeu ou un compeur.
@@ -894,6 +1016,22 @@ _Partie *Definitions*_
   * Arrêter interprétation d'un média.
 {{{
 
+}}}
+
+==stopped==
+_Partie *Règles du jeu*_
+  * état de *arrêté* pour un jeu, compteur ou média.
+{{{
+
+}}}
+
+==sub==
+_Partie *règles du jeu*_
+  * Soustraction.
+{{{
+rule batman dies then
+	sub 1 to nbLives of batman,
+	generate batman at 0 0 0;
 }}}
 
 ----
@@ -938,6 +1076,14 @@ mario touches goomba then
 		assign false to isTraversable of mario
 	endwait
 }}}
+
+==touching==
+_Partie *Règles du jeu*_
+  * état de *touché* pour un caractère/entité.
+{{{
+
+}}}
+
 
 ==turnbased==
 _Partie *Information about game*_
@@ -991,6 +1137,15 @@ _Partie *Définitions*_
 definition manger means victory pacman;
 }}}
 
+{{{
+	if couleur of Ball = "noire" then
+		if active of joueur1 = true then
+			victory of joueur2
+		else
+			victory of joueur1
+		endif
+	else
+}}}
 
 ==virg==
 _Partie **_
@@ -1015,6 +1170,14 @@ rule batman touches CharacterEnemy then
 		assign false to isTraversable of batman
 	endwait
 }}}
+
+==waiting==
+_Partie *Règles du jeu*_
+  * état de *en attente* pour un caractère/entité.
+{{{
+
+}}}
+
 
 ==wdown==
 _Parties *Règles du jeu*_

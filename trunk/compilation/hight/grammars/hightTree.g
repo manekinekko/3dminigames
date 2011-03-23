@@ -1,4 +1,4 @@
-tree grammar hightTree;
+tree grammar hightTree; 
 
 options {
     tokenVocab=hight;
@@ -333,41 +333,43 @@ valAggregation [SymbolTable st] returns [AttributeValue c]:
 
 
 /* Definition */	
-definition [SymbolTable st] returns [Code c] @init{ c = new Code();}: 
-    ^(DEFINITION_KW i=IDENT cons=consequences[st])
+definition [SymbolTable st] returns [Code c] @init{ Definition d = new Definition(); c = new Code();}: 
+    ^(DEFINITION_KW i=IDENT cons=consequences[st,d])
     {
 	String ident = i.getText();
 	if(st.get(ident)!=null) {
 	    System.out.println("l'ident "+ ident + " est deja defini");
 	    System.exit(-1);
 	} else {
-	    Definition def = new Definition(ident,cons);
-	    c.append(Code.genFuncDef(def));
-	    st.add(ident,def);
+	    
+	    d.setName(ident);
+	    d.append(cons);
+	    c.append(Code.genFuncDef(d));
+	    st.add(ident,d);
 	}
     }
     ;
 
-consequences [SymbolTable st] returns [Code c]
+consequences [SymbolTable st , Definition d] returns [Code c]
     @init{ c = new Code();} :
-    ^(CONSEQUENCES_KW conslist=consequ_list[st])
+    ^(CONSEQUENCES_KW conslist=consequ_list[st,d])
     {
 	c.append(conslist);
     }
     ;
 
-consequ_list [SymbolTable st] returns [Code c]
+consequ_list [SymbolTable st , Definition d] returns [Code c]
     @init{ c = new Code();} :
-    (cons=consequ[st] { c.append(cons); })+
+    (cons=consequ[st,d] { c.append(cons); })+
     ;
 		
-consequ [SymbolTable st] returns [Code c]
+consequ [SymbolTable st,Definition d] returns [Code c]
     @init{ c = new Code();} :
     i=siAlors[st]
     {c=i;}
     | act=action[st]
     {c.append(act);}
-    | a=affectation[st] {c=a;}
+    | a=affectation[st,d] {c=a;}
     | activCommande[st] {}
     | id=IDENT{	c.append(id.getText());c.append("\n");}
     | ^(VICTORY_KW IDENT IDENT?)
@@ -417,7 +419,7 @@ action [SymbolTable st] returns [Code c]
 	    c.append("\t");		c.append(Code.genAddObject((Entity) e));
 	}
     }
-    |^(WAIT_KW op=operation[st] t=timeUnit[st] cons=consequences[st])
+    |^(WAIT_KW op=operation[st] t=timeUnit[st] cons=consequences[st,new Definition()])
     {
     	c.append(Code.genSetTimeout(cons,op,t));
     }	//TO DO
@@ -573,7 +575,7 @@ declencheur [SymbolTable st] returns [Code c]:
     accesClass[st] (MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st])
     |^(ENDS_KW type_declencheur[st])
     |^(STARTS_KW type_declencheur[st])          //ident if it is a counter
-    |^(BECOMES_VAR_KW variable[st] varOuNB[st])
+    |^(BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st])
     |^(VICTORY_KW (PLAYER| IDENT)) //ident est le nom d'1 Team ou d'1 Player, Player la classe (global)
     |^(DEFEAT_KW (PLAYER| IDENT))
     ;
@@ -582,7 +584,7 @@ type_declencheur [SymbolTable st] returns [Code c]:
     IDENT|GAME;
 	
 varOuNB [SymbolTable st] returns [Code c]:
-    variable[st] | FLOAT;
+    variable[st,new Definition()] | FLOAT;
 
 declencheurTK [SymbolTable st] returns [Code c] :
     ^(TOUCHES_KW (OTHER)? accesClass[st])
@@ -602,7 +604,7 @@ declencheurKT [SymbolTable st] returns [Code c] :
 	
 /* Conditions */  
 siAlors [SymbolTable st] returns [Code c]:
-    ^(IF_KW cond=conditions[st] r1=consequences[st] r2=consequences[st]?)
+    ^(IF_KW cond=conditions[st] r1=consequences[st,new Definition()] r2=consequences[st,new Definition()]?)
     {c = Code.genIF(cond,r1,r2);}
     ;
 //////////////////////////////////////////////////////////////////////////petit pb ici je pense
@@ -673,20 +675,20 @@ etat [SymbolTable st] returns [Code c]:
 mode_mute [SymbolTable st] returns [Code c]: 
     ON|OFF;
 	
-affectation [SymbolTable st] returns [Code c]:
-    ^(ASSIGN_KW i1=operation[st] i2=variable[st])
+affectation [SymbolTable st , Definition d] returns [Code c]:
+    ^(ASSIGN_KW i1=operation[st] i2=variable[st,d])
     {
 	c = Code.genAffect(i2,i1);
     }
-    |^(ADD_KW o=operation[st] v=variable[st])
+    |^(ADD_KW o=operation[st] v=variable[st,d])
     {
         c = Code.genIncr(v,o);
     }
-    |^(SUB_KW op=operation[st] var=variable[st])
+    |^(SUB_KW op=operation[st] var=variable[st,d]) //TODO
     {
         c = Code.genSub(var,op);
     }
-    |^(INVERT_KW variable[st] variable[st])
+    |^(INVERT_KW variable[st,d] variable[st,d])
     {
         c = Code.genInvert(var,op);
     }
@@ -712,14 +714,14 @@ operation [SymbolTable st] returns [Code c]:
     {c=Code.genMOD(c1,c2);}
     |^(POW operation[st] operation[st])
     {c=Code.genPOW(c1,c2);}
-    |v = variable[st]
+    |v = variable[st,new Definition()]
     {c = v;}
     |f = FLOAT
     {c = new Code(f.getText());}
     ;
  
 
-variable [SymbolTable st] returns [Code c]:
+variable [SymbolTable st , Definition d] returns [Code c]:
     ^(X tc=typeCoordonnees[st] sb=accesClass[st])
     {//TODO
 	Symbol sy = sb.get(0);
@@ -758,6 +760,7 @@ variable [SymbolTable st] returns [Code c]:
 	Symbol si = e.get(0);
 	String ident= i.getText();
 	AttributeValue a = si.getAttribute(ident);
+	String access = new String();
 	if(a==null){
 	    System.out.println(si.getName()+" n'a pas l'attribut "+ident);
 	    System.exit(-1);
@@ -768,15 +771,33 @@ variable [SymbolTable st] returns [Code c]:
 	}else{
 	    
 	    if(si.getType() == Symbol.Type.MODEL){
+	         
+	         //On verifie si le modèle a déja été appelé
+	             boolean present = false;
+               for (int j = 0 ; j< d.getSignature().size() ; j++ ){
+                      if (d.getSignature().get(j).getName() == si.getName()){
+                        present = true;                      
+                      } 
+               
+               }
+	             if(!present){
+	               d.addModel((Model) si);
+	             }
+	             
+	             access = "arg"+(d.getSignature().size()-1);
+	         
+	         
+	         
 	    }
 	    else if(si.getType() == Symbol.Type.ENTITY){
+          access = si.getName();
       }
       else{
         //ERREUR
       }
 	
 	
-	    c=Code.genAccess(si.getName(),ident);
+	    c=Code.genAccess(access,ident);
 	}
     }
     |GAME_SCORE_KW

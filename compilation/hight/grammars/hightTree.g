@@ -27,10 +27,6 @@ options {
         System.out.println(((CommonErrorNode)e.node).start.getLine());
         //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
     }*/
-
-    /*public void emitErrorMessage(String msg) {
-        System.err.println("plop");
-    }*/
 }
 
 /*------------------------------------------------------------------
@@ -234,8 +230,17 @@ declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
     }
     ;
 
-list_declaration [SymbolTable st] returns [Code c]:  
-    (operation[st]? IDENT)+
+list_declaration [SymbolTable st] returns [Code c]
+    @init{o = null;}:
+    ((o=operation[st])? i=IDENT
+    {
+	String id = i.getText();
+	Symbol verif = st.get(id);
+	if(verif == null) {
+	    System.out.println("Model \""+id+"\" non défini.");
+	    System.exit(-1);
+	}
+    })+
     ;
 	
 typeEntity [SymbolTable st] returns [Model t]:
@@ -782,7 +787,7 @@ accesClass [SymbolTable st] returns [ArrayList<Symbol> sb]
     }
     | ^(ACCESS_KW PLAYER)
     {
-	sb.add(Genre.player);
+	//sb.add(Genre.player);
     }
     ;
   

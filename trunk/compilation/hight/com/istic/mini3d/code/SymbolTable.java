@@ -1,11 +1,11 @@
-package code;
+package com.istic.mini3d.code;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
-import symbols.Entity;
-import symbols.Symbol;
+import com.istic.mini3d.symbols.Entity;
+import com.istic.mini3d.symbols.Symbol;
 
 public class SymbolTable {
 

@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package symbols;
+package com.istic.mini3d.symbols;
 
-import attributes.AttributeValue;
+import com.istic.mini3d.attributes.AttributeValue;
 
 /**
  *

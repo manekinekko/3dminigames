@@ -1,6 +1,6 @@
-package symbols;
+package com.istic.mini3d.symbols;
 
-import attributes.AttributeValue;
+import com.istic.mini3d.attributes.AttributeValue;
 
 public interface Symbol {
     public static enum Type{DEFINITION, ENTITY, MODEL, CONTROL};

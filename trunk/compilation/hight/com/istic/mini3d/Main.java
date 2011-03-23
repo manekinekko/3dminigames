@@ -1,8 +1,9 @@
+package com.istic.mini3d;
 
-import code.Code;
-import code.SymbolTable;
-import grammars.*;
-import symbols.Model;
+import com.istic.mini3d.code.Code;
+import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.grammars.*;
+import com.istic.mini3d.symbols.Model;
 import java.io.*;
 
 import org.antlr.runtime.*;
@@ -52,16 +53,16 @@ public class Main {
 	    m3dReader = new FileReader(m3d);
 
 	    ANTLRFileStream input = new ANTLRFileStream(args[0]);
-	    hightLexer lexer = new hightLexer(input);
+	    highLexer lexer = new highLexer(input);
 	    CommonTokenStream tokens = new CommonTokenStream(lexer);
-	    hightParser parser = new hightParser(tokens);
-	    hightParser.game_return r = parser.game();
+	    highParser parser = new highParser(tokens);
+	    highParser.game_return r = parser.game();
 
 	    //resulting tree
 	    CommonTree t = (CommonTree) r.getTree();
 
 	    CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
-	    hightTree tparser = new hightTree(nodes);
+	    highTree tparser = new highTree(nodes);
 	    
 
 	    SymbolTable ts = new SymbolTable();

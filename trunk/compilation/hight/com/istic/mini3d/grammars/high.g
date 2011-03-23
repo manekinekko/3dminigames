@@ -1,4 +1,4 @@
-grammar hight;
+grammar high;
 
 options {
     output=AST;
@@ -34,12 +34,12 @@ tokens {
 }
 
 @header {
-    package grammars;
+    package com.istic.mini3d.grammars;
     import java.util.LinkedList;
 }
 
 @lexer::header {
-    package grammars;
+    package com.istic.mini3d.grammars;
 }
 
 @members {

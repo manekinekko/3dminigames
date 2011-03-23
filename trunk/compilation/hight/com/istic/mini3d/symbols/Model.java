@@ -1,7 +1,7 @@
-package symbols;
+package com.istic.mini3d.symbols;
 
-import code.SymbolTable;
-import attributes.*;
+import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.attributes.*;
 import java.util.*;
 import java.io.*;
 import org.jdom.*;

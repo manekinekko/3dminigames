@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package lib;
+package com.istic.mini3d.lib;
 
-import code.Code;
+import com.istic.mini3d.code.Code;
 
 /**
  *

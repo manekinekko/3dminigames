@@ -1,6 +1,6 @@
-package attributes;
+package com.istic.mini3d.attributes;
 
-import code.Code;
+import com.istic.mini3d.code.Code;
 
 /**
  *

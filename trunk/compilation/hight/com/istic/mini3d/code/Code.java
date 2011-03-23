@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package code;
+package com.istic.mini3d.code;
 
-import attributes.*;
+import com.istic.mini3d.attributes.*;
 import java.util.Iterator;
 import java.util.List;
 
-import symbols.Definition;
-import symbols.Entity;
-import symbols.Model;
+import com.istic.mini3d.symbols.Definition;
+import com.istic.mini3d.symbols.Entity;
+import com.istic.mini3d.symbols.Model;
 
 /**
  *

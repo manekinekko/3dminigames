@@ -6,7 +6,6 @@ import org.antlr.runtime.tree.*;
 
 import grammars.*;
 import code.*;
-import symbols.Genre;
 import symbols.Model;
 
 

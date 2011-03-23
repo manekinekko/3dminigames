@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package symbols;
+package com.istic.mini3d.symbols;
 
-import attributes.AttributeValue;
-import code.Code;
+import com.istic.mini3d.attributes.AttributeValue;
+import com.istic.mini3d.code.Code;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,6 +1,7 @@
+package com.istic.mini3d;
 
-import code.SymbolTable;
-import symbols.Model;
+import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.symbols.Model;
 
 /*
  * To change this template, choose Tools | Templates

@@ -1,16 +1,16 @@
-tree grammar hightTree; 
+tree grammar highTree; 
 
 options {
-    tokenVocab=hight;
+    tokenVocab=high;
     ASTLabelType=CommonTree;
 } 
 
 @header {
-    package grammars;
-    import code.*;
-    import symbols.*;
-    import lib.*;
-    import attributes.*;
+    package com.istic.mini3d.grammars;
+    import com.istic.mini3d.code.*;
+    import com.istic.mini3d.symbols.*;
+    import com.istic.mini3d.lib.*;
+    import com.istic.mini3d.attributes.*;
     import java.util.Iterator;
     import java.util.Hashtable;
 }

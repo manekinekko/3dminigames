@@ -1,6 +1,6 @@
-package symbols;
+package com.istic.mini3d.symbols;
 
-import attributes.AttributeValue;
+import com.istic.mini3d.attributes.AttributeValue;
 import java.util.*;
 
 /**

@@ -1,53 +1,17 @@
 package tests;
 
+import attributes.AttributeValue;
 import code.Code;
+import code.SymbolTable;
 import symbols.Model;
 import junit.framework.TestCase;
 
+
 public class CodeTest extends TestCase {
-	Code c1;
-	Code c2;
-	Code c3;
-	Code c4;
-	Code c5;
-	Code c6;
-	Code c7;
-	Code c8;
-	Code c9;
-	Code c10;
-	Code c11;
-	Code c12;
-	Code c13;
-	Code c14;
-	Code c15;
-	Code c16;
-	Code c17;
-	Code c18;
-	Code c19;
-	Code c20;
-	Code c21;
-	Code c22;
-	Code c23;
-	Code c24;
-	Code c25;
-	Code c26;
-	Code c27;
-	Code c28;
-	Code c29;
-	Code c30;
-	Code c31;
-	Code c32;
-	Code c33;
-	Code c34;
-	Code c35;
-	Code c36;
-	Code c37;
-	Code c38;
-	Code c39;
-	Code c40;
-	Code c41;
+	Code c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39,c40,c41;
 	Model m1;
-	Code c42;
+	Code c42, c43;
+	SymbolTable tabSymb;
 	protected void setUp() throws Exception {
 		super.setUp();
 		c1 = new Code();
@@ -93,12 +57,12 @@ public class CodeTest extends TestCase {
 		c39 = Code.genIF(c2,c2,c2);
 		c40 = Code.genAccess("vert","hulk");
 		c41 = Code.genEOL();
-		//m1 = new Model("ab");
-		//test sur Model cause erreurs ou NullPointerException
-		//c42 = Code.genModel(new Model("abc"));
+		c42 = new Code();
+		m1 = new Model("ab");
+		tabSymb = new SymbolTable();
+		Model.init(tabSymb);
 		}
 	public void testAppend(){
-		System.out.println(c2);
 		assertNotNull(c1.getCode());
 		assertEquals(c1.getCode(),"");
 		assertNotNull(c2.getCode());
@@ -179,6 +143,20 @@ public class CodeTest extends TestCase {
 		assertEquals(c40.getCode(),"vert.hulk");
 		assertNotNull(c41.getCode());
 		assertEquals(c41.getCode(),";");
-		//System.out.println(c42);
+	}
+	
+	// Ne marche pas, on voit pas trop pourquoi...
+	public void testGenModel(){
+		String str1 = "test";
+		AttributeValue val1 = new AttributeValue("test");
+		m1.addAttribute(str1, val1);
+		c42 = Code.genModel(m1);
+		c43 = new Code();
+		c43.append("function " + m1.getName() + "() {\n");
+		c43.append("\tthis." + str1 + " = ");
+		c43.append("'" + val1.getCode() + "'");
+		c43.append(";\n");
+		c43.append("}\n");
+		assertEquals(c42,c43);
 	}
 }

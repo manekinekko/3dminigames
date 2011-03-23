@@ -10,11 +10,11 @@ import org.jdom.input.*;
 public class Model implements Symbol {
 
     public static String xml = "./xml/attributesv2.xml"; //Linux (Fonctionne aussi sous windows)
-    private static List<Model> generated;
+    private /*public pour JUnit tests*/ static List<Model> generated;
     private String name;
-    private Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
-    private Map<String, Model> inheritance;
-    private int generate = 0;
+    private /*public pour JUnit tests*/ Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
+    private /*public pour JUnit tests*/ Map<String, Model> inheritance;
+    public int generate = 0;
 
     /**
      * Constructor with only model name.
@@ -29,7 +29,7 @@ public class Model implements Symbol {
 
     /**
      * Constructor with inherited models.
-     * @param name name model
+     * @param name model name
      * @param subtypes list of inherited models
      */
     public Model(String name, Model... subtypes) {
@@ -52,7 +52,7 @@ public class Model implements Symbol {
     }
 
     /**
-     * Get a list of all attributes of the model with theirs value.
+     * Get a list of all attributes of the model with their value.
      * @return Map<String, AttributeValue> of attributes of the model.
      */
     public Map<String, AttributeValue> getAllAttributes() {

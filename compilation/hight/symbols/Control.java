@@ -55,7 +55,7 @@ public class Control implements Symbol{
         return d;
     }
 
-    public String getCommance(){
+    public String getCommande(){
         return commande;
     }
 

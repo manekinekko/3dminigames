@@ -479,7 +479,25 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 //gérer le disable commande
 
 commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
-    ^(COMMAND_KW listplay=player_list[st] listcommand=actionCommande_list[st])
+    ^(COMMAND_KW listplay=player_list[st] listCommand=actionCommande_list[st])
+    {ArrayList <Control> list_clavier = new ArrayList<Control>();ArrayList <Control> list_souris = new ArrayList<Control>();
+        Iterator<Control> it = listCommand.iterator();
+	while(it.hasNext()) {
+	    Control ctr = it.next();
+            if(ctr.getSource() == Control.Source.SOURIS)
+                list_souris.add(ctr);
+            else
+                list_clavier.add(ctr);
+       }
+
+       if(!list_clavier.isEmpty()){
+
+       }
+       if(!list_souris.isEmpty()){
+       //tu bosses ici thomas :D
+       }
+
+    }
     ;
 
 player_list [SymbolTable st] returns [ArrayList<Symbol> list] @init{list = new ArrayList<Symbol>();}:

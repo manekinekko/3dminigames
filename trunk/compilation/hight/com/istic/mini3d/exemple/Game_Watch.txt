@@ -1,0 +1,245 @@
+//////////// PRESENTATION ////////////
+
+// Ce Game&Watch est un jeu ou le joueur déplace un droid possédant des marteaux à chaque bras.
+// Des iphones et des coeurs apparaissent régulièrement et se déplacent dans une direction.
+// Le droid doit écraser les iphones avec ses marteaux.
+// Il perd une vie quand un iphone a parcouru une certaine distance et il gagne une vie en rammassant un coeur.
+// Si
+// Lorsqu'il a 0 vie sur 3, la partie est perdue.
+
+// l'interface des coeurs est intégrée à l'environnements (coeurs en 3D sur socle derrière le droid)
+
+//////////// INFOS GAME ////////////
+Game has stage at grid;
+Game has name at "Watch n' Droid 3D";
+//////////// TYPES HERITES ////////////
+// rien
+
+//////////// INITIALISATION ////////////
+
+cam1 is Camera free;   
+
+joueur is Player;
+joueur has controller at "human";
+joueur has score at 0;
+
+
+// Le personnage joueur
+droid is Character;
+droid has life at 3;
+
+niveauJeu is Counter;
+niveauJeu has name at "Level";
+niveauJeu has currentValue at 0; //xml current et pas curent
+niveauJeu has max at 12;
+
+prochainNiveau is Counter;
+niveauJeu has currentValue at 0; //xml current et pas curent
+niveauJeu has max at 0;
+
+// Les armes du peronnage joueur : des marteaux
+marteauGauche is Sword;
+marteauDroit is Sword;
+
+droid has marteauGauche;
+droid has marteauDroit;
+
+// Les iphone a détruire avec une collision avec les marteaux
+iphone is Projectile;
+iphone has speed at 10;
+
+// Bonus de vie
+coeurBonus is Bonus;
+coeurBonus has speed at 15;
+
+sol1 is Ground;
+
+// Zone de génération des iphones et des coeurs
+zoneGen is Zone;
+
+socleCoeurs is Object;
+zoneInterfaceCoeur is Zone;
+
+coeur1 is Object;
+coeur1 has size at (size of coeur * 1.5) (size of coeur * 1.5) (size of coeur * 1.5);
+coeur2 is Object;
+coeur2 has size at (size of coeur * 1.5) (size of coeur * 1.5) (size of coeur * 1.5);
+coeur3 is Object;
+coeur3 has size at (size of coeur * 1.5) (size of coeur * 1.5) (size of coeur * 1.5);
+
+
+// Zone où les iphones ne doivent pas arriver et où les coeurs sont perdus
+zoneCritique is Zone;
+
+// limites de déplacements du droid
+c1 is TranslationConstraint;
+c1 has min at -5 -2 0;//en case Game grid
+c1 has minActivation at true true true;
+c1 has min at 5 2 0;
+c1 has minActivation at true true true;
+
+droid has c1;
+
+//////////// DEFINITIONS ////////////
+definition initCoeurs means 
+	generate coeur1,
+	coeur1 turns right by 180 during 500 ms,
+	generate coeur2,
+	coeur2 turns right by 180 during 500 ms,
+	generate coeur3,
+	coeur3 turns right by 720 during 2 s;
+	
+definition retirerCoeurUp
+	if coeur3 is generated then
+		coeur3 move up by 1 during 1 s
+	else
+		if coeur2 is generated then
+			coeur2 move up by 1 during 1 s
+		else
+			if coeur1 is generated then
+				coeur1 move up by 1 during 1 s//cases ?
+			endif;
+		endif
+	endif;
+
+	
+definition retirerCoeur means
+	if coeur3 is generated then
+		coeur3 turns left by 180 during 500 ms,
+		efface coeur3
+	else
+		if coeur2 is generated then
+			coeur2 turns left by 180 during 500 ms,
+			efface coeur2
+		else
+			if coeur1 is generated then
+				coeur1 turns left by 180 during 500 ms,
+				efface coeur1
+			endif;
+		endif
+	endif;
+	
+
+	
+definition ajouterCoeur means
+	if coeur2 is generated then
+		if coeur3 is not generated then
+			generate coeur3,
+			coeur3 turns right by 180 during 500 ms
+		endif
+	else
+		generate coeur2,
+		coeur2 turns right by 180 during 500 ms
+	endif;
+
+definition frapperAGauche means
+	marteauGauche turns anticlockwise by 45,
+	wait 300 ms then
+		marteauGauche turns clockwise by 45
+	endwait;
+
+definition frapperADroite means
+	marteauDroit turns clockwise by 45,
+	wait 300 ms then
+		marteauDroit turns anticlockwise by 45
+	endwait;
+
+
+//////////// COMMANDES ////////////
+command for joueur is
+	key left for droid move left by 1,
+	key right for droid move right by 1,
+	key up for droid move left by 1,
+	key down for droid move right by 1,
+	key A for frapperAGauche,
+	key Z for frapperADroit,
+	mouse lClick for frapperAGauche,
+	mouse rClick for frapperADroite;
+
+//////////// REGLES DU JEU ////////////
+rule Game starts then
+    generate sol1,
+	generate droid,
+	generate marteauDroit,
+	generate marteauGauche,
+	generate socleCoeurs,
+	initCoeurs,
+	assign 3 to max of prochainNiveau;
+
+	
+rule droid dies then
+	retirerCoeur,
+	defeat of joueur : "Noob !",
+	Game ends;
+	
+rule iphone touches zoneCritique then
+	sub 1 to life of droid,
+	retirerCoeur;
+	
+rule iphone touches zoneCritique then //pour faire les actions en parallèle
+	retirerCoeurUp;
+	
+rule droid touches coeur then
+	efface coeur,
+	if life of droid < 3 then
+		add 1 of life of droid,
+		ajouterCoeur
+	endif;
+	
+rule marteauDroit touches coeur then
+	efface coeur;
+	
+rule marteauGauche touches coeur then
+	efface coeur;
+	
+rule prochainNiveau ends then 
+	add 1 to currentValue of niveauJeu,
+	assign 0 to currentValue of prochainNiveau,
+	assign (3 * currentValue of niveauJeu) to max of prochainNiveau
+	add (currentValue of niveauJeu) to speed of iphone;
+	//pour changer de niveau :
+	//  niv 0 : 3 iphones à vitesse 15
+	//  niv 1 : 6 iphones à vitesse 16 (+1)
+	//  niv 2 : 9 iphones à vitesse 18 (+1+2) 11+10+9+8+7+6
+	//  ...
+	//  niv 11 (dernier) : 36 iphones à vitesse 66 (+1+2+3+...+11 = 11 * (11/2)+1 )
+	//  niv 12 : fin
+
+rule niveauJeu ends then
+	victory of joueur : "Jeu terminé !",
+	Game ends;
+	
+// iphone à écraser
+rule true then
+	wait (2500-currentValue of niveauJeu*100) ms then
+		generate iphone in zoneGen;
+	endWait;
+		
+rule iphone is generated then
+	iphone move up by 1 //case ?
+	wait 300 ms then 
+		iphone move backward by 100 during 10 s
+	endwait;
+   
+rule marteau touches iphone then
+	add 1 to score of joueur,
+	assign 0 to z of size of phone,
+	efface iphone;
+       
+		
+// Coeur à ramasser
+rule true then
+	if (life of droid > 0) then
+		wait (5*life of droid) s then
+			generate coeur in zoneGen
+		endWait
+	endif;
+       
+       
+rule coeur touches zoneCritique then
+	efface coeur;
+
+
+
+
+ 

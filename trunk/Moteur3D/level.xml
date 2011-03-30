@@ -18,9 +18,9 @@
 		<material_layer texture="#wallcolour" mapinput="UV1" mapto="M_COLOR" />
 	</material>
 
-	<camera id="maincamera" loc_y="5" loc_x="2" loc_z="50" rot_order="ROT_XYZ" xtype="C_ORTHO" rot_z="0.0" rot_x="0.0" rot_y="0.0" /> 
+<!--	<camera id="maincamera" loc_y="5" loc_x="2" loc_z="50" rot_order="ROT_XYZ" xtype="C_ORTHO" rot_z="0.0" rot_x="0.0" rot_y="0.0" /> -->
 	
-	<scene id="mainscene" camera="#maincamera" ambient_color="#666" fog_type="FOG_NONE">
+	<scene id="mainscene"  ambient_color="#666" fog_type="FOG_NONE">
 
 <!--		<collada id="sol" document="dae/sol.dae" loc_x="0" loc_y="-1.2" loc_z="0" scale="10" />
 		

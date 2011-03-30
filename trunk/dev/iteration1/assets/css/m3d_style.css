@@ -5,9 +5,16 @@
 * @file assets/css/m3d_style.css
 */
 
+@font-face {
+font-family: 'Coda';
+font-style: normal;
+font-weight: 800;
+src: local('Coda Heavy'), local('Coda-Heavy'), url('../font/Coda-Heavy.woff') format('woff');
+}
+
 body {
 position: relative;
-min-width: 1200px;
+min-width: 900px;
 min-height:600px;
 font-size: 0.8em;
 background: #eee url('../dae/free/images/e8clangfloor.jpg') repeat center center scroll;

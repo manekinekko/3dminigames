@@ -58,7 +58,7 @@
 		if ( ! M3D.DB.contains(key) ){
 			
 			$.ajax({
-				url:'bin/xml_to_json.php',
+				url:'bin/xml_to_json.php?_='+(new Date()).get,
 				type:'POST',
 				dataType:'json',
 				data:{filename:'attributes.xml'},

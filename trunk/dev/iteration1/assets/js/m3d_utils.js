@@ -1067,10 +1067,11 @@
 		else {
 			sens = -1;
 		}	
-
+		
 		if(!cam.lookAt){
 			cam.setLookat([0,0,0]);
 		}
+		
 		
 		var abs = camPos.x - cam.lookAt[0];
 		var ord = camPos.y - cam.lookAt[1];
@@ -1079,9 +1080,11 @@
 		var hypo = Math.sqrt(carreA+carreO);
 		var div = ord/hypo;
 		var angle = Math.acos(div);
-		var newAngle = (angle+(0.08*sens))%(2*Math.PI); console.log(Math.sin(angle)+" ... "+Math.sin(newAngle)); 
+		var newAngle = (angle+(0.08*sens))%(2*Math.PI); 
+		console.log(Math.sin(angle)+" ... "+Math.sin(newAngle)); 
 		var newAbs = Math.sin(newAngle)*hypo;
-		var newOrd = Math.cos(newAngle)*hypo;	//console.log(newOrd+" ... "+newAbs);
+		var newOrd = Math.cos(newAngle)*hypo;	
+		//console.log(newOrd+" ... "+newAbs);
 		var cotesin = 1;
 		var cotecos = -1;
 		if (Math.sin(newAngle) <= 0){cotesin = -1;};
@@ -1089,7 +1092,7 @@
 		cam.setLocX(cam.lookAt[0] + (cotesin*newAbs));	
 		cam.setLocY(cam.lookAt[1] + (/*cotecos**/newOrd));
 		
-	//	cam.setLocZ(camPos.z + mouvVerti);
+		//	cam.setLocZ(camPos.z + mouvVerti);
 		
 		mouseRecord = mouseGlobale.getMousePosition ();	// ajoutee par Tom
 	};

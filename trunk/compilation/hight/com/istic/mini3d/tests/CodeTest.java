@@ -1,17 +1,23 @@
 package com.istic.mini3d.tests;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.istic.mini3d.attributes.AttributeValue;
 import com.istic.mini3d.code.Code;
 import com.istic.mini3d.code.SymbolTable;
+import com.istic.mini3d.symbols.Definition;
+import com.istic.mini3d.symbols.Entity;
 import com.istic.mini3d.symbols.Model;
 import junit.framework.TestCase;
 
 
 public class CodeTest extends TestCase {
 	Code c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39,c40,c41;
-	Model m1;
-	Code c42, c43;
+	Model m1; Entity e1; Definition d1, d2;
+	Code c42, c43, c44;
 	SymbolTable tabSymb;
+	List<String> params;
 	protected void setUp() throws Exception {
 		super.setUp();
 		c1 = new Code();
@@ -61,6 +67,7 @@ public class CodeTest extends TestCase {
 		m1 = new Model("ab");
 		tabSymb = new SymbolTable();
 		Model.init(tabSymb);
+		params = new ArrayList<String>();
 		}
 	public void testAppend(){
 		assertNotNull(c1.getCode());
@@ -145,10 +152,9 @@ public class CodeTest extends TestCase {
 		assertEquals(c41.getCode(),";");
 	}
 	
-	// Ne marche pas, on voit pas trop pourquoi...
 	public void testGenModel(){
-		String str1 = "test";
-		AttributeValue val1 = new AttributeValue("test");
+		String str1 = "testString";
+		AttributeValue val1 = new AttributeValue("testVal");
 		m1.addAttribute(str1, val1);
 		c42 = Code.genModel(m1);
 		c43 = new Code();
@@ -157,6 +163,139 @@ public class CodeTest extends TestCase {
 		c43.append("'" + val1.getCode() + "'");
 		c43.append(";\n");
 		c43.append("}\n");
-		assertEquals(c42,c43);
+		assertEquals(c42.getCode(),c43.getCode());
+	}
+	
+	/*
+     * ent.listModifyAttributes() ou ent.listAttributes() ?
+     * si on suit bien le raisonnement, on veut recuperer les attributs du premier model
+     * pour ensuite les marquer du genre : entity.attr="val"; 
+     * et c'est grace a listAttributes qu on les recupere
+     */
+	public void testGenFuncEntity(){
+		String str1 = "test";
+		AttributeValue val1 = new AttributeValue("testVal");
+		m1.addAttribute(str1, val1);
+		e1 =new Entity("testEnt",m1);
+		c42= Code.genFuncEntity(e1);
+		c43 = new Code();
+        c43.append("function gen" + e1.getName() + "() {\n");
+        c43.append("\tvar entity = new " + e1.listModels().get(0).getName() + "();\n");
+        /* Voir commentaires dans le code de genFuncEntity
+         * c43.append("\tentity." + str1 + " = '" + val1.getCode() + "';\n");
+         * */
+        c43.append("\treturn entity;\n}\n");
+        assertEquals(c42.getCode(),c43.getCode());
+	}
+	
+	public void testGenFuncDef(){
+		c42 = new Code("codeTest");
+		d1 = new Definition("testDef",c42,m1,m1);
+		d2 = new Definition("testDef2",c42,m1,m1);
+		c43 = Code.genFuncDef(d1);
+		c41 = Code.genFuncDef(d2);
+		c44 = new Code();
+		c44.append("function " + d1.getName() + "(");
+		c44.append("arg" + "0");
+		c44.append(",");
+		c44.append("arg" + "1");
+		c44.append(") {\n");
+        c44.append(c42.getCode());
+        c44.append("}\n\n");
+		assertEquals(c43.getCode(), c44.getCode());
+		assertNotSame(c41.getCode(), c43.getCode());
+		assertNotSame(c41.getCode(), c44.getCode());
+	}
+	
+	public void testGenEntity(){
+		String str1 = "testString";
+		AttributeValue val1 = new AttributeValue("testVal");
+		m1.addAttribute(str1, val1);
+		e1 =new Entity("testLol",m1);
+		c41 = Code.genEntity(new Entity("testEnt"));
+		c42 = Code.genEntity(e1);
+		c43 = new Code();
+		c43.append(e1.getName() + " = gen" + e1.getName() + "();\n");
+		assertEquals(c42.getCode(), c43.getCode());
+		assertNotSame(c41.getCode(), c42.getCode());
+		assertNotSame(c41.getCode(), c43.getCode());
+	}
+	
+	public void testGenFuncCall(){
+		params.add("testParam1");
+		params.add("testParam2");
+		params.add("testParam3");
+		c41 = Code.genFuncCall("testFuncCall", params);
+		params.add("testParam4");
+		c42 = Code.genFuncCall("testFuncCall", params);
+		c43 = new Code();
+		c43.append("testFuncCall");
+    	c43.append("(");
+    	c43.append(params.get(0));
+    	c43.append(",");
+    	c43.append(params.get(1));
+    	c43.append(",");
+    	c43.append(params.get(2));
+    	c43.append(",");
+    	c43.append(params.get(3));
+    	c43.append(");\n");
+    	assertEquals(c42.getCode(), c43.getCode());
+		assertNotSame(c41.getCode(), c42.getCode());
+		assertNotSame(c41.getCode(), c43.getCode());
+	}
+	
+	public void testGenAddObject(){
+		String str1 = "testString";
+		AttributeValue val1 = new AttributeValue("testVal");
+		m1.addAttribute(str1, val1);
+		e1 =new Entity("testLol",m1);
+		e1.addAttribute("posX", new AttributeValue("val1"));
+		e1.addAttribute("posY", new AttributeValue("val2"));
+		e1.addAttribute("posZ", new AttributeValue("val3"));
+		e1.addAttribute("orX", new AttributeValue("val4"));
+		e1.addAttribute("orY", new AttributeValue("val5"));
+		e1.addAttribute("orZ", new AttributeValue("val6"));
+		e1.addAttribute("sizeX", new AttributeValue("val7"));
+		c41 = Code.genAddObject(e1);
+		e1.addAttribute("sizeX", new AttributeValue("val8"));
+		c42 = Code.genAddObject(e1);
+		assertNotSame(c41.getCode(), c42.getCode());
+	}
+	
+	public void testGenTab(){
+		Integer i = 5;
+		Integer i2 = 6;
+		Integer i3 = null;
+		c40 = Code.genTab("testGenTab", i3);
+		c41 = Code.genTab("testGenTab", i2);
+		c42 = Code.genTab("testGenTab", i);
+		assertNotSame(c42.getCode(), c41.getCode());
+		assertEquals(c40.getCode(),"testGenTab= new Array();");
+	}
+	
+	public void testGenClearInterval(){
+		c41 = Code.genClearInterval("testClear");
+		c42 = Code.genClearInterval("testClear2");
+		assertEquals(c41.getCode(),"clearInterval(testClear);\n");
+		assertNotSame(c42.getCode(), c41.getCode());
+	}
+	
+	public void testGenSetInterval(){
+		c41 = Code.genSetInterval("code", "testSet");
+		c42 = Code.genSetInterval("code2", "testSet");
+		c43 = Code.genSetInterval("code", "testSet2");
+		assertEquals(c41.getCode(),"setInterval(code,testSet);\n");
+		assertNotSame(c42.getCode(), c41.getCode());
+		assertNotSame(c43.getCode(), c41.getCode());
+		assertNotSame(c42.getCode(), c43.getCode());
+	}
+	
+	public void testGenRefreshLoop(){
+		c41 = Code.genRefreshLoop();
+		assertNotSame(c41.getCode(),null);
+	}
+	
+	public void testGenSetTimeout(){
+		
 	}
 }

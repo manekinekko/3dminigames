@@ -10,6 +10,8 @@ header('Content-Type: text/javascript; charset=utf-8');
 header('Expires: '.gmdate("D, d M Y H:i:s", time() + 3600*24*30).' GMT'); // 1 month
 
 $files = array(
+				'lib/jquery.min.js',
+				'lib/jquery-ui.min.js',
 				'lib/modernizr.min.js',
 				'lib/fileuploader.js',
 				'lib/json.min.js',

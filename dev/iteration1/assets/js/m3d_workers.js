@@ -1,4 +1,8 @@
-// Web Worker
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file assets/js/m3d_webworker.js
+ * @deprecated this file is not yet used! 
+ */
 self.addEventListener('message', function(e){
 
 	var data = e.data;
@@ -14,4 +18,4 @@ self.addEventListener('message', function(e){
 	
 	};
 	
-	}, false);
+}, false);

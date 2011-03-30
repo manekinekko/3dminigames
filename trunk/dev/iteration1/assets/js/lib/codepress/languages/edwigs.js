@@ -14,6 +14,7 @@ Language.syntax = [
 ]
 
 Language.snippets = [
+	{ input : 'game', output : 'game has $0 at $0 ;\n\n' },	
 	{ input : 'type', output : 'type $0 is Object ;\n\n' },
 	{ input : 'hasat', output : '$0 has /*attribut*/ at /*value*/ ;\n\n' },
 	{ input : 'is', output : '$0 is /*type*/;\n\n' },
@@ -27,6 +28,7 @@ Language.complete = [
 	{ input : '"', output : '"$0"' },
 	{ input : '(', output : '\($0\)' },
 	{ input : '[', output : '\[$0\]' },
+	{ input : '<', output : '\<$0\>' },
 	{ input : '{', output : '{\n\t$0\n}' }
 ]
 

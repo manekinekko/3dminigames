@@ -82,6 +82,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			};
 				
 			// Preview images
+			/*
 			this.previewNow = function(event) {		
 				bin = preview.result;
 				var img = document.createElement("img"); 
@@ -90,7 +91,8 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 			    img.src = bin;
 				document.getElementById(show).appendChild(img);
 			};
-
+			*/
+			
 		reader = new FileReader();
 		// Firefox 3.6, WebKit
 		if(reader.addEventListener) { 
@@ -155,7 +157,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	        	/* xhr.responseXML permet d'obtenir le fichier XML
 	        	xhr.responseText aurait retourné le fichier sous format texte */
 				
-				document.getElementById(status).innerHTML = "Model not uplaoded (server error)";       	
+				document.getElementById(status).innerHTML = "Model not uploaded (server error)";       	
 	
 	    	}
 			else {
@@ -190,22 +192,20 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	 	var files = dt.files;
 	 	for (var i = 0; i<files.length; i++) {
 			var file = files[i];
+			var ext = file.fileName.split('.');
+			var size = file.size;
 			
 			// file type
-			var ext = file.fileName.split('.');
 			if( ext[ext.length-1] != "dae" ){
 				alert("Please upload Collada files only!");
 				return false;
 			}
-			
 			// limit to 5Mo
-			var size = file.size;
-			if ( size > 5242880 )
+			else if ( size > 5242880 )
 			{
 				alert("Collada files must be lower than 5Mo each!");
 				return false;
 			}
-			
 			
 			upload(file);
 	 	}
@@ -219,18 +219,20 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 	this.uploadPlace.addEventListener("dragover", function(event) {
 		event.stopPropagation(); 
 		event.preventDefault();
-		document.getElementById('status').innerHTML = "Drop your model here";
+		document.getElementById('status').style.backgroundColor = "#ffefd5";
 	}, true);
 	this.uploadPlace.addEventListener("dragenter", function(event){
 	}, false);
 	this.uploadPlace.addEventListener("dragleave", function(event){
-		document.getElementById('status').innerHTML = "";
+		document.getElementById('status').style.backgroundColor = "#fff";
 	}, false);
 	this.uploadPlace.addEventListener("drop", this.drop, false); 
 
 };
 
-
+/**
+ * Ajax file upload 
+ */
 M3D.AJAXUpload = function(){            
     var uploader = new qq.FileUploader({
         element: document.getElementById('upload-model'),

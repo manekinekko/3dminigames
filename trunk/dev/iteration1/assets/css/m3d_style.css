@@ -135,7 +135,6 @@ display:none;
 }
 
 #viewmenu {
-background: none repeat scroll 0 0 transparent;
 bottom: 140px;
 height: 30px;
 padding: 5px;
@@ -167,6 +166,25 @@ display:none;
 #upload-model ul{
 display:none;
 }
+
+#upload-model {
+}
+
+.qq-upload-drop-area,
+.qq-upload-drop-area-active {
+border: 2px dashed #AAAAAA;
+border-radius: 10px 10px 10px 10px;
+height: 100px;
+width: 100%;
+}
+
+.qq-upload-drop-area {
+background-color:white;	
+}
+.qq-upload-drop-area-active {
+background-color:#fffacd;
+}
+
 
 #loading {
 display: none;
@@ -252,6 +270,7 @@ padding: 10px;
 -webkit-border-radius: 5px 5px 0 0;
 -moz-border-radius: 5px 5px 0 0;
 border-radius: 5px 5px 0 0;
+cursor:move;
 }
 
 td:first-child {
@@ -307,6 +326,10 @@ float:right;
 float:left;
 }
 
+.text-center {
+text-align: center;
+}
+
 label {
 float: left;
 width: 20px;
@@ -348,10 +371,14 @@ text-shadow:0 1px 1px #333;
 text-transform:uppercase;
 }
 
+select {
+padding:4px 10px !important;
+}
+
 .button,
 input[type=submit],
 input[type=button] {
-color:#fff;
+color:black;
 text-align:center;
 font-size:0.9em;
 margin:0 2px 0 2px;
@@ -376,6 +403,7 @@ background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
 background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
 border-color:#093c75;
 text-decoration:none;
+color:white;
 }
 
 .button:not(:disabled):active,

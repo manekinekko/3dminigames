@@ -31,9 +31,9 @@
 	 */
 	M3D.DB.REGEX_CONTENT_PATTERN = new RegExp('('+
 											DB_PATTERN_ATTR+
-										'|'+DB_PATTERN_TYPE+
-										'|'+DB_PATTERN_OBJ+
-										'|'+DB_PATTERN_EDITOR+
+											'|'+DB_PATTERN_TYPE+
+											'|'+DB_PATTERN_OBJ+
+											'|'+DB_PATTERN_EDITOR+
 										')$');
 	
 	/**
@@ -42,6 +42,7 @@
 	 * @see Object.detectPreviousContent
 	 */
 	M3D.DB.init = function(){
+		log('initializating the database ...');
 		M3D.DB.storeDefaultAttributes();
 		M3D.DB.detectPreviousContent();
 	};
@@ -58,15 +59,15 @@
 		if ( ! M3D.DB.contains(key) ){
 			
 			$.ajax({
-				url:'bin/xml_to_json.php?_='+(new Date()).get,
+				url:'bin/xml_to_json.php?_='+(new Date()).getTime(),
 				type:'POST',
 				dataType:'json',
 				data:{filename:'attributes.xml'},
 				success:function(d){
-					_set({name:key, value:d.attributes});
+					_set({uid:key, value:d.attributes});
 				},
 				error:function(){
-					alert('Could not load Models attributes! A server error has occured!');
+					alert('Could not load the default models attributes! A server error may has occured!');
 				}
 			});
 			
@@ -116,7 +117,7 @@
 	M3D.DB.setEditor = function(data){
 		data.uid += DB_PATTERN_EDITOR;
 		return _set(data);
-	}
+	};
 	 	
 	/**
 	 * Get a stored object's info from the local storage.
@@ -143,7 +144,7 @@
 	M3D.DB.getEditor = function(t){
 		t = _regex(DB_PATTERN_EDITOR).test(t) ? t : t+DB_PATTERN_EDITOR;
 		return _get(t);
-	}
+	};
 	
 	/**
 	 * Get all stored types info from the local storage.
@@ -153,9 +154,10 @@
 	M3D.DB.getAllTypes = function(){
 		return _getAll('type');
 	};
-			
+
 	/**
-	 * Check if there was a previous content that was stored.
+	 * Check if there was a previous content that was stored and 
+	 * open up the rigth window.
 	 * @see Object._hasContent
 	 * @see Object.M3D.GUI.showPopup
 	 */
@@ -163,14 +165,18 @@
 		if ( _hasContent() ){
 			M3D.GUI.showPopup('confirmation-load');
 		}
+		else {
+			M3D.GUI.showPopup('game-info');
+		}
 	};
 	
 	/**
 	 * Load and add stored 3D models into canvas.
+	 * @param {Function} cb A callback function
 	 * @see Object.getObject
 	 * @see Object.M3D.GUI.importModel
 	 */
-	M3D.DB.load = function(){
+	M3D.DB.load = function(cb){
 		var key = null;
 		var value = null;
 		for( var i=0; i<localStorage.length; i++ ){
@@ -182,7 +188,7 @@
 			
 			if ( e.test(key) ) {
 				editor = M3D.DB.getEditor(key);
-				M3D.Editor.setContent(editor);
+				M3D.Editor.setContent(editor, cb);
 			}
 			else if ( o.test(key) ){
 				
@@ -203,12 +209,11 @@
 					'docUrl': value.url,
 					'autoAddToScene': true
 				});
-
+				
 			}
-
+			
 		}
-	}; 
-
+	};
 	
 	/**
 	 * Remove an entry from the Local Storage.
@@ -250,11 +255,11 @@
 		}
 	};
 		
-	
+	/**
+	 * 
+	 */
 	M3D.DB.saveEditor = function(data){
-		
 		M3D.DB.setEditor(data);
-	
 	}
 	
 	/**
@@ -272,8 +277,16 @@
 	M3D.DB.clear = function(){
 		for(var i in localStorage){
 			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
-				log("clearing entry '"+i+"'");
-				localStorage.removeItem(i);
+				
+				// if editor
+				if (  _regex(M3D.DB.DB_PATTERN_EDITOR).test(i)  ) {
+						M3D.Editor.clear();
+				}
+				// others
+				else {
+					M3D.DB.remove(i);
+				}
+				
 			}
 		}
 	};
@@ -298,6 +311,15 @@
 	M3D.DB.containsObj = function(v){
 		return M3D.DB.contains(v+DB_PATTERN_OBJ);
 	};
+	
+	/**
+	 * Check if the stored editor's content is a valid
+	 * content.
+	 * return True if so, False if not
+	 */
+	M3D.DB.checkEditorContentFromDB = function(){
+		return /game has name at/.test(M3D.DB.getEditor('edwigs'));
+	}
 	
 	/**
 	 * Store a given content into the local storage.
@@ -377,7 +399,9 @@
 	_hasContent = function(){
 		var key = null;
 		for (var i = 0; i < localStorage.length; i++) {
-			if (M3D.DB.REGEX_CONTENT_PATTERN.test( localStorage.key(i) )) {
+			if (M3D.DB.REGEX_CONTENT_PATTERN.test( localStorage.key(i) ) 
+			&& M3D.DB.checkEditorContentFromDB()
+		) {
 				return true;
 			}
 		}

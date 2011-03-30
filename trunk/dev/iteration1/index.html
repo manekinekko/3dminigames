@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<title id="title">3DWIGS UI</title>
-		
 		<!-- start: css parsing -->
 		<link href="assets/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
 		<!-- end: css parsing -->
 	</head>
-	<body onload="M3D.AJAXUpload(); new M3D.Upload.uploader('container', 'status', M3D.Config.uploader, null, doc);">
+	<body onload="M3D.AJAXUpload(); new M3D.Upload.uploader('upload-model', 'status', M3D.Config.uploader, null, doc);">
 		
 		<div id="modal" ></div>
 				
@@ -38,7 +37,7 @@
 					
 					<!-- start: menu -->
 					<div id="viewmenu">
-						<div id="upload-model" class="button float-left"></div>
+						<div id="upload" class="button float-left">Upload</div>
 						
 						<div id="create-game" class="button float-right">Create My Game</div>
 
@@ -132,6 +131,7 @@
 			<div id="windows-container">
 				
 				<div id="status" class="ui-state-highlight"></div>
+				
 				<div id="entity-info" class="window box-shadow closed">
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>
@@ -139,9 +139,20 @@
 					<br/>
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
-						<input type="button" id="save-entity-info" value="Save" name="save" />
+						<input type="button" class="validate" id="save-entity-info" value="Save" name="save" />
 					</div>
 				</div>
+				
+				<div id="game-info" class="window box-shadow closed">
+					<h2>Welcome to 3DWIGS</h2>
+					<label for="game-name">Game name<em>*</em></label>
+					<input type="text" class="alphanumeric required" name="game-name" id="game-name" value="" placeholder="Game name" />
+					<br/>
+					<div id="window-buttons">
+						<input type="button" class="validate" id="save-game-info" value="Save" name="save" />
+					</div>
+				</div>
+				
 				
 				<div id="help" class="window box-shadow closed">
 					<h2>Help</h2>
@@ -165,7 +176,7 @@
 					<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
 					</div>
 					<div id="window-buttons">
-						<input type="button" value="YES" name="confirm-clear-canvas" id="confirm-clear-canvas">
+						<input type="button" class="validate" value="clear content" name="confirm-clear-canvas" id="confirm-clear-canvas">
 						<input type="button" class="cancel" value="NO" name="cancel">
 					</div>
 				</div>
@@ -176,8 +187,20 @@
 					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
 					</div>
 					<div id="window-buttons">
-						<input type="button" value="YES" name="confirm-load-content" id="confirm-load-content">
+						<input type="button" class="validate" value="load" name="confirm-load-content" id="confirm-load-content">
 						<input type="button" class="cancel" value="NO" name="cancel">
+					</div>
+				</div>
+				
+				<div id="upload-form" class="window box-shadow closed"  >
+					<h2>Upload form</h2>
+					<p class="text-center">
+						Click on the area below or just drag &amp; drop your file to upload your model</i>
+					</p>
+					<div id="upload-model" class="pointer"></div>
+					<br />
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Cancel" name="cancel">
 					</div>
 				</div>
 				

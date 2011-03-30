@@ -11,6 +11,13 @@ $(function(){
 	 */
 	$('a[href^="#"]').live("click", function(e){ e.preventDefault(); });
 	
+	/** 
+	 *
+	 */
+	$('.window').draggable({
+		'handle':'.window h2'	
+	});
+	
 	/**
 	 * Bind the canvas mouse down event to the picking function, and the mouse up to the editor update function.
 	 * @see M3D.GUI.pickObject
@@ -181,6 +188,28 @@ $(function(){
 			_nameElement.addClass('required');
 		}
 	});
+	
+	/**
+	 *
+	 */
+	$('#save-game-info').bind('click', function(){
+		
+		var _b = $(this);
+		var _el = $('#game-name');
+		var _name = _el.val();
+		if ( _name === ''  ){
+			_el.addClass('warning');
+		}else {
+			_el.removeClass('warning');
+			
+			_b.val('saving...');
+			M3D.Editor.setGameInfo(_name, function(){
+				M3D.GUI.hidePopup('game-info');
+				_b.val('save');				
+			});		
+		}
+		
+	});
 
 	/**
 	 * Bind showing the help window
@@ -217,10 +246,20 @@ $(function(){
 		M3D.GUI.showPopup('confirmation-clear');
 	});
 	$('#confirm-clear-canvas').bind('click', function(){
+		
+		var button = $(this);
+		button.val('clearing content...');
+		
 		M3D.GUI.clearCanvas();
 		M3D.GUI.clearSelectBox();
 		M3D.DB.clear();
-		M3D.GUI.hidePopup('confirmation-clear');
+		
+		M3D.Editor.clear(function(){
+			M3D.GUI.hidePopup('confirmation-clear');
+			button.val('YES');
+			M3D.GUI.showPopup('game-info', null, true);
+		});
+		
 	});
 	
 	/**
@@ -229,8 +268,14 @@ $(function(){
 	 * @see M3D.GUI.hidePopup
 	 */
 	$('#confirm-load-content').bind('click', function(){
-		M3D.DB.load();
-		M3D.GUI.hidePopup('confirmation-load');
+		
+		var _b = $(this);
+		
+		_b.val('loading...');
+		M3D.DB.load(function(){
+			_b.val('load');
+			M3D.GUI.hidePopup('confirmation-load');
+		});
 	});
 	
 	/**
@@ -239,7 +284,7 @@ $(function(){
 	 * @deprecated This binding will probably be moved elsewhere!
 	 */
 	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
-
+	
 	/**
 	 * Bind the editor content storing into the DB.
 	 * @see M3D.DB.update_grammar
@@ -257,8 +302,8 @@ $(function(){
 		}
 	});
 	
-	/*
-	 *
+	/**
+	 * Bind the keypress events
 	 */
 	$(document).bind('keypress', function(){
 		
@@ -266,15 +311,14 @@ $(function(){
 		
 		if( _w.length === 1 ){
 			
-			if ( keys.isKeyPressed(GLGE.KI_Y) ){
-				_w.find('input[type="button"][value="YES"]').trigger('click');
+			if ( keys.isKeyPressed(GLGE.KI_ENTER) ){
+				_w.find('input.validate').trigger('click');
 			}
-			else if ( keys.isKeyPressed(GLGE.KI_N) ){
-				_w.find('input[type="button"][value="NO"]').trigger('click');				
+			else if ( keys.isKeyPressed(GLGE.KI_ESCAPE) ){
+				_w.find('input.cancel').trigger('click');				
 			}
 			
 		}
-		
 		
 	});
 	
@@ -327,7 +371,6 @@ $(function(){
 			}
 			
 		}
-		
 		
 	});
 

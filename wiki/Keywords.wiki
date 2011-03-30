@@ -41,6 +41,16 @@ definition accelerer means
 	add 30 to acceleration of batman;
 }}}
 
+{{{
+rule mario touches teteSuperGoomba
+    then 
+        sub 1 for life of superGoomba, 
+        add 1 for nbOfJumpInTheAir,   
+        sub 1 for nbOfJumpInTheAir,
+        add 300 for score of joueur_principal;
+}}}
+
+
 ==alive==
 _Prtie *Règles du jeu*_
   * état de *vivant* pour un caractère/entité.
@@ -220,6 +230,20 @@ command for joueur1, joueur2 is   //joueur2 seulement si c'est un Player 'human'
 
 }}}
 
+==comp==
+_Partie *règles du jeu*_
+  * Il compte les nombre des fois qu'une sous-condition est vrai.
+{{{
+rule in choix premier is blanche touches trous then
+	if noire is generated       //comment dire qu'il faut que toutes les boules de la couleur du joueur en cours soient rentrées plus la noire
+	then
+		if comp cptBandes of blanche >= 3 
+		then victory "Bien joué"
+		else victory
+	else
+	endIf
+}}}
+
 ----
 =D=
 ----
@@ -326,7 +350,7 @@ _Prtie *Règles du jeu*_
 
 
 ==else==
-  * La partie sinon de condition.
+  * La partie sinon de condition. (voir *if*, *then*).
 {{{
 if zoneGenNouvellePlateforme touches other plateforme
 then generate 1 plateforme in zoneGenNouvellePlateforme
@@ -335,7 +359,7 @@ endif;
 }}}
 
 ==endif==
-  * La balise qui férme une condition.
+  * La balise qui férme une condition. (voir *if*, *then*, *else*).
 {{{
 	if nbLives of tux = 0 then
 		defeat of joueur_principal
@@ -483,7 +507,21 @@ _Partie *Règles du jeu*_
 _Partie *Règles du jeu*_
   * état de *généré* pour un caractère/entité.
 {{{
-
+definition retirerCoeur means
+	if coeur3 is generated then
+		coeur3 turns left by 180 during 500 ms,
+		efface coeur3
+	else
+		if coeur2 is generated then
+			coeur2 turns left by 180 during 500 ms,
+			efface coeur2
+		else
+			if coeur1 is generated then
+				coeur1 turns left by 180 during 500 ms,
+				efface coeur1
+			endif;
+		endif
+	endif;
 }}}
 
 
@@ -834,6 +872,22 @@ _Partie *Règles du jeu*_
 
 }}}
 
+==not==
+_Partie *Règles du jeu*_
+  *  "non" logique; dans une condition vérifie qu'un ou plusieurs condition(s) n'est(ont) pas vrai.
+{{{
+definition ajouterCoeur means
+	if coeur2 is generated then
+		if coeur3 is not generated then
+			generate coeur3,
+			coeur3 turns right by 180 during 500 ms
+		endif
+	else
+		generate coeur2,
+		coeur2 turns right by 180 during 500 ms
+	endif;
+}}}
+
 ==notowned==
 _Partie *règles du jeu*_
   * Déclencheur qui devient vrai si un entité n'est pas pris par autre personnage/entité.
@@ -907,6 +961,13 @@ _Partie *règles du jeu*_
 {{{
 rule alien2 owns boot then  
 	add 5 to speed of alien2
+}}}
+
+==or==
+_Partie *règles du jeu*_
+  * "ou" logique. Dans une condition complexe vérifie qu'au moins un condition est vrai. voir *if*. 
+{{{
+
 }}}
 
 ----
@@ -1124,6 +1185,15 @@ _Partie *règles du jeu*_
 rule batman dies then
 	sub 1 to nbLives of batman,
 	generate batman at 0 0 0;
+}}}
+
+{{{
+rule mario touches teteSuperGoomba
+    then 
+        sub 1 for life of superGoomba, 
+        add 1 for nbOfJumpInTheAir,   
+        sub 1 for nbOfJumpInTheAir,
+        add 300 for score of joueur_principal;
 }}}
 
 ----

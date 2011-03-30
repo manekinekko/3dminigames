@@ -138,6 +138,16 @@ rule value of jaugeForce becomes <= min of jaugeForce then
 rule score of joueur_principal becomes scoreAAtteindre of tux then  
 	defeat of ordinateur;
 }}}
+  * Utilisé comme affectation.
+{{{
+definition switchIAHumanJoueur2 means
+	if controller of joueur = "human"
+		controller of joueur2 becomes ia1
+	else
+		controller of joueur2 becomes human
+	endif;
+}}}
+
 
 ==between==
 _Parties *Définitions* et *Règles du jeu*_
@@ -246,10 +256,16 @@ definition  tirer  means
 
 ==dies==
 _Prtie *Règles du jeu*_
-  * Déclare la mort d'en personnage/entité.
+  * Déclare la mort d'en personnage/entité. Il peut être utilisé comme un déclancheur. 
 {{{
 rule mario touches zoneDeVide
 	then mario dies;
+}}}
+{{{
+rule droid dies then
+	retirerCoeur,
+	defeat of joueur : "Noob !",
+	Game ends;
 }}}
 
   * Déclencher les évènements dans cas la mort.
@@ -346,6 +362,13 @@ rule chronoGen ends then
 		add 1 to value of nbWindows
 	endif,
 	start chronoGen;
+}}}
+  * Utilisé comme déclancheur d'une fin. 
+{{{
+rule prochainNiveau ends then 
+	add 1 to currentValue of niveauJeu,
+	assign 0 to currentValue of prochainNiveau,
+	assign (3 * currentValue of niveauJeu) to max of prochainNiveau
 }}}
 
 ==endwait==
@@ -629,6 +652,38 @@ rule true then
 ----
 =K=
 ----
+==key==
+_Partie *règles du jeu*_
+  * Déclarer les actions liés au clavier.
+{{{
+command for player is
+	key left for bougerJeep1,
+	key right for bougerJeep2;
+
+command for joueur1 is
+	key space for changerIA,
+	key enter for switchIAHumanJoueur2;
+}}}
+
+==keyboard==
+_Partie *règles du jeu*_
+  * Utilisé pour activation et désactivation du clavier.
+{{{
+definition initialisation means
+	generate table,
+	generate queue,
+	generate blanche,
+	generate zbande,
+	activate keyboard
+}}}
+
+==killed==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai si un entité est mort.
+{{{
+
+}}}
+
 ==kills==
 _Partie *règles du jeu*_
   * Déclencheur qui devient vrai dans cas de mourir un entité.
@@ -699,6 +754,24 @@ _Parties *Initialisations*_
 demo1 is media once;
 }}}
 
+==mouse==
+_Parties *Règles du jeu*_
+  * Déclarer les actions liés au souris d'ordinateur.
+{{{
+command for joueurPrincipal is 
+	key left for defL1,
+	key right for defR1,
+	key up for defU1,
+	key down for defD1,
+	mouse left for defL2,
+	mouse right for defR2,
+	mouse up for defU2,
+	mouse down for defD2,
+	//mouse lClick for booster,
+	mouse rClick for tirer,
+	mouse scrollUp for accelerer,
+	mouse scrollDown for decelerer;
+}}}
 
 ==move==
 _Parties *Règles du jeu*_
@@ -761,9 +834,16 @@ _Partie *Règles du jeu*_
 
 }}}
 
+==notowned==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai si un entité n'est pas pris par autre personnage/entité.
+{{{
+
+}}}
+
 ==notowns==
 _Partie *règles du jeu*_
-  * Déclencheur qui devient vrai dans cas de ne pas avoir un objet.
+  * Déclencheur qui devient vrai dans cas de ne pas avoir un objet. (voir owns).
 {{{
 
 }}}
@@ -812,6 +892,13 @@ _Parties *Initialisations*_
   * Définie qu'un média s'interprète une seul fois. (voir *media*)
 {{{
 dem3 is media once.
+}}}
+
+==owned==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai si un entité est pris par autre personnage/entité.
+{{{
+
 }}}
 
 ==owns==
@@ -948,6 +1035,11 @@ rule Game starts then
 	reinit
 	;
 }}}
+{{{
+rule in choixPremier is
+	turn of choixPremier becomes 2 then
+		nextphase jeu;
+}}}
 
 ----
 =S=
@@ -1063,6 +1155,13 @@ _Parties *Initialisations*_
   * Déclare que point de vu est le point de vu différant de joueur principal. (voir *camera*)
 {{{
 cam5 is camera third person;
+}}}
+
+==touched==
+_Partie *règles du jeu*_
+  * Déclencheur qui devient vrai si un entité/zone est touché.
+{{{
+
 }}}
 
 ==touches==

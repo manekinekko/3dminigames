@@ -50,18 +50,21 @@
         <attribute name="type" type="String" value=""/>
         <attribute name="friction" type="number" value="100"/>
         <attribute name="url" type="String" value=""/><!--l'url d'un modèle 3D ou d'une image en niveau de gris en tant que heightmap-->
-    </model>
+		<attribute name="isLoad" type="boolean" value="false"/>
+	</model>
     <model>
         <name>Room</name><!-- objets qui sont à l'intérieur du volume englobant -->
         <inheritance value="Empty"/>
         <attribute name="url" type="String" value=""/><!--l'url d'un modèle 3D ou d'une image en niveau de gris en tant que heightmap-->
-    </model>
+		<attribute name="isLoad" type="boolean" value="false"/>
+	</model>
     <model><!--contrairement à Empty et ses classes filles, Obstacle a un collada associé comme Object-->
         <name>Obstacle</name>
         <inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
         <attribute name="name" type="String" value="'Obstacle1'"/>
         <attribute name="isGenerated" type="boolean" value="false"/>
         <attribute name="url" type="String" value=""/>
+		<attribute name="isLoad" type="boolean" value="false"/>
     </model>
     <model>
         <name>Object</name>
@@ -75,6 +78,7 @@
         <attribute name="isGenerated" type="boolean" value="false"/><!-- je ne sais pas si c'est utile -->
         <attribute name="message" type="String" value="'Message1 !'"/><!-- si jamais on implémente le 'speaks' -->
         <attribute name="url" type="String" value="" />
+		<attribute name="isLoad" type="boolean" value="false"/>
     </model>
     <model>
         <name>Character</name>

@@ -30,47 +30,55 @@
         <script type="text/javascript" src="js/moteur_camera.js"></script>       
 		<script type="text/javascript" src="js/moteur_debugger.js"></script>
 		<script type="text/javascript" src="js/moteur_keyboard.js"></script>
+
 			   
 		<script type="text/javascript">
 			
+			var voiture = new Array;;
+			voiture.vitesse = [0,0,0];
+			voiture.acceleration = [0,0,0];
+			
 			initScene = function(){
 				//M3D.MOTEUR.addObject("lapin","dae/lapin.dae",[0,5,0,0,0,0,1,1,1]);
-				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,10,10,10]);
-				M3D.MOTEUR.addGroup("voiture1",[0,1,0,0,0,0,1,1,1]);
+				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,10,10,10],false);
+				M3D.MOTEUR.addGroup("voiture1",[0,0,0,0,0,0,1,1,1]);
 				M3D.MOTEUR.addGroup("voiture2",[10,1,3,0,0,0,1,1,1]);
-				M3D.MOTEUR.addObject("jeep1","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],"voiture1");
-				M3D.MOTEUR.addObject("chasseur1","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],"voiture1");
-				M3D.MOTEUR.addObject("jeep2","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],"voiture2");
-				M3D.MOTEUR.addObject("chasseur2","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],"voiture2");
+				M3D.MOTEUR.addObject("jeep1","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],false,"voiture1");
+				M3D.MOTEUR.addObject("chasseur1","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],false,"voiture1");
+				M3D.MOTEUR.addObject("jeep2","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],false,"voiture2");
+				M3D.MOTEUR.addObject("chasseur2","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],false,"voiture2");
+				M3D.MOTEUR.addCamera("maincamera",[2,5,50,0,0,0]);
+				M3D.MOTEUR.activeCamera("maincamera");	
 			}
 	
 			M3D.MOTEUR.initialisation('level.xml','canvas');
-			setTimeout("initScene()",20);			
+			setTimeout("initScene()",100);			
 			
 			panelControl = function(){			
 				if(KEY_Z) M3D.MOTEUR.translate("voiture1",[0.1,0,0],false,"voiture1");
 				if(KEY_S) M3D.MOTEUR.translate("voiture1",[-0.1,0,0],false,"voiture1");
-				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05,0]);
-				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05,0]);
+				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05,0],false);
+				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05,0],false);
 				
 				if(KEY_T) M3D.MOTEUR.translate("voiture2",[0.1,0,0],false,"voiture2");
 				if(KEY_G) M3D.MOTEUR.translate("voiture2",[-0.1,0,0],false,"voiture2");
-				if(KEY_F) M3D.MOTEUR.rotate("voiture2",[0,0.01,0],"voiture2");
-				if(KEY_H) M3D.MOTEUR.rotate("voiture2",[0,-0.01,0],"voiture2");
+				if(KEY_F) M3D.MOTEUR.rotate("voiture2",[0,0.01,0],false,"voiture2");
+				if(KEY_H) M3D.MOTEUR.rotate("voiture2",[0,-0.01,0],false,"voiture2");
 
-				if(KEY_O) M3D.MOTEUR.translateCamera("maincamera",[0.1,0,0],"maincamera");
-				if(KEY_L) M3D.MOTEUR.translateCamera("maincamera",[-0.1,0,0],"maincamera");
-				if(KEY_U) M3D.MOTEUR.translateCamera("maincamera",[0,0,0.01],"maincamera");
-				if(KEY_J) M3D.MOTEUR.translateCamera("maincamera",[0,0,-0.01 ],"maincamera");
+				if(KEY_O) M3D.MOTEUR.translateCamera("maincamera",[1,0,0],"maincamera");
+				if(KEY_L) M3D.MOTEUR.translateCamera("maincamera",[-1,0,0],"maincamera");
+				if(KEY_U) M3D.MOTEUR.translateCamera("maincamera",[0,0,1],"maincamera");
+				if(KEY_N) M3D.MOTEUR.translateCamera("maincamera",[0,0,-0.01 ],"maincamera");
 				if(KEY_K) M3D.MOTEUR.rotateCamera("maincamera",[0,0.05,0]);
 				if(KEY_M) M3D.MOTEUR.rotateCamera("maincamera",[0,-0.05,0]);
 				
-				if(KEY_SPACE) M3D.MOTEUR.setAngle("voiture2",[1,0,0],"voiture1");
-				if(KEY_X) {M3D.MOTEUR.setScale("voiture2",[2,3,4]);M3D.MOTEUR.test();}
+				if(KEY_SPACE) voiture.acceleration = [1,0,0];
+				if(KEY_X) alert(M3D.MOTEUR.ecart("sol","voiture1",1));
 				if(KEY_ENTER) M3D.MOTEUR.test();
 			}
 
 			rendu = function(){
+				voiture.acceleration = [0,0,0];
 				panelControl();
 				M3D.MOTEUR.render();
 			}

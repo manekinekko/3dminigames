@@ -283,6 +283,22 @@
 			if(array[i] == element) return i
 		}
 		return -1;
+	},
+	
+	
+	// ecart entre deux box, l'inférieur avant le supérieur, 1 2 ou 3 pour sélectionner les axes.
+	M3D.MOTEUR.ecart = function(idObject1,idObject2,dimension){
+		var obj1 = M3D.MOTEUR.getObject(idObject1);
+		var obj2 = M3D.MOTEUR.getObject(idObject2);
+		var box1 = obj1.getBoundingVolume(false);
+		var box2 = obj2.getBoundingVolume(false);
+		var ret;
+		if(testColl){
+			ret = 0;
+		}else{
+			ret = box1.limits[2*dimension] - box2.limits[2*dimension+1];
+		}
+		return ret;
 	};
  
 })(window.M3D);

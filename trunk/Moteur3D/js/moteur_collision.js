@@ -92,7 +92,24 @@
 			 
 		}
 		return list;
+	},
+	
+	// test uniquement entre des objets descendants de fils différents de la scène
+	M3D.MOTEUR.testAllCollision = function(){
+		var sceneAllSon = M3D.MOTEUR.getChildren("mainscene");
+		var sceneObjectSon = sceneAllSon[0];	
+		var list = [];
+		for(var i = 0 ; i < sceneObjectSon.length ; i++){
+			for(var j = i+1 ; j < sceneObjectSon.length ; j++){
+				var obj1 = M3D.MOTEUR.getObject(sceneObjectSon[i]);
+				var obj2 = M3D.MOTEUR.getObject(sceneObjectSon[j]);
+				if(M3D.MOTEUR.collisionBoxBox(obj1.getBoundingVolume(false),obj2.getBoundingVolume(false))){
+					var collisionList = M3D.MOTEUR.preciseCollision(obj1,obj2);
+					list = list.concat(collisionList);
+				}
+			}
+		}
+		return list;
 	};
-
 	
 })(window.M3D);

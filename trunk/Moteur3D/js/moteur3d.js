@@ -29,6 +29,10 @@ var frameratebuffer=60;
 start=parseInt(new Date().getTime());
 var now;
 
+
+// PHYSIQUE
+var coefFrottement = 1;
+
 (function(M3D){
 
 	var gameRenderer;
@@ -46,20 +50,15 @@ var now;
 		
             // Initialisation des tableaux
 			gameScene.id = "mainscene";
+			tabObject["mainscene"] = gameScene;
+			//tabCamera["maincamera"] = gameScene.getCamera();
         } 
 		doc.load(xmlDoc);
 	},
 	
 	// uniquement pour les tests
 	M3D.MOTEUR.test = function(){
-		var cam = gameScene.getCamera();
-		var x = cam.getNear();
-		var y = cam.getFar();
-		var z = cam.getFovY();
-		var a = cam.getType();
-		var b = cam.getLocalMatrix();
-		var c = cam.parent;
-		alert(x+'  '+y+'  '+z+'  '+a+'  '+b+'  '+cam.matrix);
+		alert(tabObject["voiture1"].getBoundingVolume());
 	},
  
 /**

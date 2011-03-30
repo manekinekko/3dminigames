@@ -29,13 +29,12 @@
 		var modelParent = object.parent.getModelMatrix();
 		var relRotRefSurParent = GLGE.mulMat4(GLGE.inverseMat4(modelParent),modelRef);
 		var relTranslation = GLGE.mulMat4Vec4(relRotRefSurParent,refTranslation);	
-		var modelMatrix = object.getModelMatrix();
+		var modelMatrix = object.getLocalMatrix();
 		var newModelMatrix = GLGE.mulMat4(GLGE.translateMatrix(relTranslation),modelMatrix);
 		object.setStaticMatrix(newModelMatrix);
-		
+		M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
-			alert(0);
 			tab = M3D.MOTEUR.testCollision(object);
 			if(tab.length > 0){
 				object.setStaticMatrix(modelMatrix);
@@ -70,7 +69,7 @@
 		var modelMatrix = object.getModelMatrix();
 		var newModelMatrix = GLGE.mulMat4(GLGE.translateMatrix(transPosition),GLGE.getModelMatrix());          
         object.setStaticMatrix(newModelMatrix);
-        
+        M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
@@ -109,7 +108,7 @@
 		var currentModelMatrix = object.getModelMatrix();
         var newModelMatrix = GLGE.mulMat4(currentModelMatrix,relRot);
         object.setStaticMatrix(newModelMatrix);
-        
+        M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
@@ -150,7 +149,7 @@
 		var scaleMatrix = GLGE.scaleMatrix(M3D.MOTEUR.getRelativeScale(object));
         var newModelMatrix = GLGE.mulMat4(translateMatrix,GLGE.mulMat4(relRot,scaleMatrix));
         object.setStaticMatrix(newModelMatrix);
-        
+        M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
@@ -173,7 +172,7 @@
 		var currentModelMatrix = object.getModelMatrix();
 		var modelMatrix = GLGE.mulMat4(currentModelMatrix,GLGE.scaleMatrix(coefScale));	
 		object.setStaticMatrix(modelMatrix);
-		
+		M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);
@@ -198,7 +197,7 @@
 		var newScale = GLGE.scaleMatrix(coefScale);
 		var modelMatrix = GLGE.mulMat4(currentModelMatrix,GLGE.mulMat4(GLGE.inverseMat4(currentScale),newScale));
 		object.setStaticMatrix(modelMatrix);
-		
+		M3D.MOTEUR.corrigeCamBug(object.childCam);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);

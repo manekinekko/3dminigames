@@ -14,9 +14,10 @@
  * @param: idObject: identifiant de l'objet à ajouter.
  *   	   urlObject: adresse du fichier collada de l'objet à ajouter.
  *         tabCoord: tableau de taille 9, avec les coord positions, rotations et taille de l'objet par rapport à son éventuel père !
+ *		   testCollision: test des collisions activé ou désactivé
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
  */
-	M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, idParent){
+	M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, testCollision, idParent){
 		var group = new GLGE.Group();
 		group.id = idObject;
 		var object = new GLGE.Collada();
@@ -24,6 +25,7 @@
 		object.id = idCollada;
 		object.setDocument(urlObject);
 		group.addChild(object);
+		group.childCam = [];
 		var transMat = GLGE.translateMatrix(tabCoord[0], tabCoord[1], tabCoord[2]);
 		var rotMat = GLGE.rotateMatrix(tabCoord[3], tabCoord[4], tabCoord[5]);
 		var scaleMat = GLGE.scaleMatrix(tabCoord[6], tabCoord[7], tabCoord[8]);
@@ -35,10 +37,18 @@
 			var parent = M3D.MOTEUR.getObject(idParent);
 		}
 		parent.addChild(group);
-		tabObject[idObject] = group;
-		tabObject[idCollada] = object;
-		tabIdObject.push(idCollada);
-		// COLLISION
+		var tab = [];
+		if(testCollision){
+			tab = M3D.MOTEUR.testCollision(object);
+		}
+		if(tab.length == 0){
+			tabObject[idObject] = group;
+			tabObject[idCollada] = object;
+			tabIdObject.push(idCollada);
+		}else{
+			parent.removeChild(group);
+		}
+        return tab;
 	},
 	
 /**
@@ -50,6 +60,7 @@
 	M3D.MOTEUR.addGroup = function(idGroup, tabCoord, idParent){
 		var group = new GLGE.Group();
 		group.id = idGroup;
+		group.childCam = [];
 		var transMat = GLGE.translateMatrix(tabCoord[0], tabCoord[1], tabCoord[2]);
 		var rotMat = GLGE.rotateMatrix(tabCoord[3], tabCoord[4], tabCoord[5]);
 		var scaleMat = GLGE.scaleMatrix(tabCoord[6], tabCoord[7], tabCoord[8]);
@@ -91,7 +102,6 @@
  */
 	M3D.MOTEUR.changeParent = function(idObject,idNewParent){
 		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
-		var currentParent = object.parent;
 		var modelMatrix = object.getModelMatrix();
 		if(idNewParent == null){
 			var newParent = gameScene;
@@ -100,11 +110,10 @@
 		}
 		var newParentModelMatrix = newParent.getModelMatrix();
 		var newLocalMatrix = GLGE.mulMat4(GLGE.inverseMat4(newParentModelMatrix),modelMatrix);
-		
-		currentParent.removeChild(object);
+		if(this.parent)	object.parent.removeChild(object);
 		newParent.addChild(object);
 		object.setStaticMatrix(newLocalMatrix);
-		
+		object.getModelMatrix();
 	};
 	
 })(window.M3D);

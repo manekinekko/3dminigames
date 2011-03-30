@@ -14,6 +14,7 @@ options {
     import com.istic.mini3d.attributes.*;
     import java.util.Iterator;
     import java.util.Hashtable;
+    import java.util.Enumeration;
 }
 
 @members { 
@@ -490,21 +491,74 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 
 commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
     ^(COMMAND_KW listplay=player_list[st] listCommand=actionCommande_list[st])
-    {ArrayList <Control> list_clavier = new ArrayList<Control>();ArrayList <Control> list_souris = new ArrayList<Control>();
-        Iterator<Control> it = listCommand.iterator();
+    {boolean present = false;
+     Code [] tab = new Code[4];
+     ArrayList <Control> list_event = new ArrayList<Control>();
+     ArrayList <Control> list_save = new ArrayList<Control>();
+     Iterator<Control> it = listCommand.iterator();
 	while(it.hasNext()) {
 	    Control ctr = it.next();
-            if(ctr.getSource() == Control.Source.SOURIS)
-                list_souris.add(ctr);
+            if(ctr.getName().equals("3_UP")|ctr.getName().equals("3_DOWN") | ctr.getName().equals("3_LEFT") | ctr.getName().equals("3_RIGHT"))
+                list_save.add(ctr);
             else
-                list_clavier.add(ctr);
+                list_event.add(ctr);
        }
 
-       if(!list_clavier.isEmpty()){
-
+       if(!list_event.isEmpty()){
+            present = true;
+            Iterator<Control> ic = list_event.iterator();
+            System.out.println("souris + clavier");
+            while(ic.hasNext()){
+                Control ctr = ic.next();
+                System.out.println(ctr.getName());
+                }
        }
-       if(!list_souris.isEmpty()){
-       //tu bosses ici thomas :D
+       if(!list_save.isEmpty()){
+
+           /* System.out.println("Position");
+            Iterator<Control> ei = list_save.iterator();
+            while(ei.hasNext()){
+                Control ctrl = ei.next();
+                Definition def = ctrl.getDefinition();
+                Code v = new Code(def.getName()+"(");
+                if(!def.getSignature().isEmpty()){
+                  Iterator<Model> im = def.getSignature().iterator();
+                  while(im.hasNext()){
+                    Model m = im.next();
+                    System.out.println(m.getName());
+                    Code l = new Code();
+                    Enumeration enu = aggreg.keys();
+                    
+                    while(enu.hasMoreElements()){
+                        String e = (String)enu.nextElement();
+                        String q = aggreg.get(e);
+                        System.out.println("Mouhahahah"+e);
+
+                        if(st.get(e).getType() == Symbol.Type.ENTITY){
+                        Entity fi = (Entity)st.get(e);
+                        System.out.println(e);
+                        Entity et = (Entity)st.get(q);
+                        if(et == null){
+                            System.out.println("LOL ?"+e);
+                            System.exit(-1);
+                        }
+                        if(fi.listModels().contains(m) && aggreg.get(e).equals(listplay.get(0).getName())){
+                            l.append(e);
+                            break;
+                        }
+                    }
+                   }
+                    if(l.getCode().equals("")){
+                        System.out.println("pas d'alternatives");
+                        System.exit(-1);
+                    }else
+                        v.append(l);
+
+                  }
+                }
+                v.append(");");
+                System.out.println(v.getCode());
+            }*/
        }
 
     }

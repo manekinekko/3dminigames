@@ -17,80 +17,98 @@ public class Main {
 
     private static String jsFile, m3dFile;
     //private static String errorFile, errorFormat;
-    private static boolean minimize;
+    private static boolean minimize, debug;
     private static PrintStream output, error;
+
+    public static boolean isDebug() {
+        return debug;
+    }
 
     public static void main(String[] args) {
 
-	//errorFile = null; errorFormat = null;
-	minimize = false;
-	jsFile = null;
+        //errorFile = null; errorFormat = null;
+        debug = false;
+        minimize = false;
+        jsFile = null;
 
-	error = System.out;
-	for (int i = 0; i < args.length; i++) {
-	    if (args[i].equals("-out")) {
-		jsFile = args[i + 1];
-		i++;
-	    /*} else if(args[i].equals("-errorFormat")) {
-		errorFormat = args[i + 1];
-		i++;
-	    } else if (args[i].equals("-errorFile")) {
-		errorFile = args[i + 1];
-		i++;*/
-	    } else if (args[i].equals("-minimize")) {
-		minimize = true;
-	    } else {
-		m3dFile = args[i];
-	    }
-	}
+        error = System.out;
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-out")) {
+                jsFile = args[i + 1];
+                i++;
+                /*} else if(args[i].equals("-errorFormat")) {
+                errorFormat = args[i + 1];
+                i++;
+                } else if (args[i].equals("-errorFile")) {
+                errorFile = args[i + 1];
+                i++;*/
+            } else if (args[i].equals("-debug")) {
+                debug = true;
+            } else if (args[i].equals("-minimize")) {
+                minimize = true;
+            } else {
+                m3dFile = args[i];
+            }
+        }
 
-	File m3d;
-	FileReader m3dReader;
-	Code c = null;
-	try {
-	    //Test pour vérifier que le fichier existe.
-	    m3d = new File(m3dFile);
-	    m3dReader = new FileReader(m3d);
+        File m3d;
 
-	    ANTLRFileStream input = new ANTLRFileStream(args[0]);
-	    highLexer lexer = new highLexer(input);
-	    CommonTokenStream tokens = new CommonTokenStream(lexer);
-	    highParser parser = new highParser(tokens);
-	    highParser.game_return r = parser.game();
+        FileReader m3dReader;
 
-	    //resulting tree
-	    CommonTree t = (CommonTree) r.getTree();
+        Code c = null;
 
-	    CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
-	    highTree tparser = new highTree(nodes);
-	    
 
-	    SymbolTable ts = new SymbolTable();
-	    Model.init(ts);
+        try {
+            //Test pour vérifier que le fichier existe.
+            m3d = new File(m3dFile);
+            m3dReader = new FileReader(m3d);
 
-	    c = tparser.game(ts);
+            ANTLRFileStream input = new ANTLRFileStream(args[0]);
+            highLexer lexer = new highLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            highParser parser = new highParser(tokens);
+            highParser.game_return r = parser.game();
 
-	    FileWriter m3dJS = null;
+            //resulting tree
+            CommonTree t = (CommonTree) r.getTree();
 
-	    if(jsFile != null) {
-		try {
-		    m3dJS = new FileWriter(jsFile);
-		    m3dJS.write(c.getCode());
-		} catch(IOException ex) {
-		    error.println("Le fichier "+jsFile+" existe déjà.");
-		} finally {
-		    if(m3dJS != null)
-			m3dJS.close();
-		}
-	    } else {
-		System.out.println(c.getCode());
+            CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
+            highTree tparser = new highTree(nodes);
+
+
+            SymbolTable ts = new SymbolTable();
+            Model.init(ts);
+
+            c = tparser.game(ts);
+
+            FileWriter m3dJS = null;
+
+            if (jsFile != null) {
+                try {
+                    m3dJS = new FileWriter(jsFile);
+                    m3dJS.write(c.getCode());
+
+
+                } catch (IOException ex) {
+                    error.println("Le fichier " + jsFile + " existe déjà.");
+
+
+                } finally {
+                    if (m3dJS != null) {
+                        m3dJS.close();
+                    }
+
+
+                }
+            } else {
+                System.out.println(c.getCode());
                 ts.print();
-	    }
 
-	} catch (FileNotFoundException e) {
-	} catch (IOException e) {
-	} catch (RecognitionException e) {
-	    
-	}
+            }
+
+        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
+        } catch (RecognitionException e) {
+        }
     }
 }

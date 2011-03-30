@@ -7,6 +7,7 @@ options {
 
 @header {
     package com.istic.mini3d.grammars;
+    import com.istic.mini3d.Main;
     import com.istic.mini3d.code.*;
     import com.istic.mini3d.symbols.*;
     import com.istic.mini3d.lib.*;
@@ -18,14 +19,23 @@ options {
 @members { 
     private int INT_DUPLICABLE=10;
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
+    private ErrorHandler handler = ErrorHandler.getInstance();
 
     /*public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-        String hdr = getErrorHeader(e);
-        String msg = getErrorMessage(e, tokenNames);
-
-	//System.out.println(e.node);
-        System.out.println(((CommonErrorNode)e.node).start.getLine());
-        //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
+        if(Main.isDebug()) {
+            System.out.println("plop");
+            super.displayRecognitionError(tokenNames, e);
+        }
+        else {
+            String hdr = getErrorHeader(e);
+            String msg = getErrorMessage(e, tokenNames);
+            int line = ((CommonErrorNode)e.node).start.getLine();
+            String word = ((CommonErrorNode)e.node).trappedException.token.getText();
+        	//System.out.println(e.node);
+            //System.out.println(((CommonErrorNode)e.node).start.getLine());
+            handler.add(ErrorHandler.ErrorType.FATAL, line, "Erreur sur \""+word+"\"");
+            //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
+        }
     }*/
 }
 

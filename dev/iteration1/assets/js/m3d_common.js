@@ -17,15 +17,18 @@
 	 * @param {Mixed} An unlimited number of parameters
 	 */
     M3D.Common.log = log = function(){
-        if (console) {
-            var script = "console.log('[M3D]', arguments[0]";
-			for(var i=1;i<arguments.length;i++){ script += ",arguments["+i+"]"; }
-			script += ")";
-			eval(script);
-		}
-        else {
-	        alert('console.log() was not found!');
-		}
+      if (console) {
+        var script = "console.info('[3DWIGS]', arguments[0]";
+				for(var i=1;i<arguments.length;i++){ script += ",arguments["+i+"]"; }
+				script += ")";
+				
+				// the eval function is very very bad!! 
+				// but hoppefully it must be disabled during prod cycle!!
+				eval(script);
+			}
+      else {
+        alert('console.log() was not found! Please disable the log feature.');
+			}
     };
     
     /**

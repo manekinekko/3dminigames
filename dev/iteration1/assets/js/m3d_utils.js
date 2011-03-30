@@ -22,7 +22,7 @@
 
 	// Init
 	M3D.GUI.init = function(){
-		/*M3D.GUI.initTypes();*/ //local storage
+		log('initializating the GUI...');
 		M3D.GUI.drawGrid();
 	};
 
@@ -316,15 +316,15 @@
 	
 		$('#modal').fadeIn(100, function(){
 			
-			var window = $('.window.opened'); 
-			if ( window.length > 0 ){
+			var _window = $('.window.opened'); 
+			if ( _window.length > 0 ){
 				
 				
 				// the window we want is hidden, so show it!
-				if ( window.attr('id') != name ){
+				if ( _window.attr('id') != name ){
 					
 					// close the opened one ...
-					window.animate({ top: M3D.GUI.ANIMATE_WINDOW_CLOSE_POS }, function(){
+					_window.animate({ top: M3D.GUI.ANIMATE_WINDOW_CLOSE_POS }, function(){
 						
 						// ... tag it as closed ...
 						$(this).removeClass('opened').addClass('closed');

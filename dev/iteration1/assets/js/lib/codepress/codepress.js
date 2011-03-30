@@ -41,7 +41,7 @@ CodePress = function(obj) {
 	// obj can by a textarea id or a string (code)
 	self.edit = function(obj,language, cb) {
 		
-		// -- fix me: set the new path to codepress directory
+		// -- fix: set the new path to codepress directory
 		var _path = window.location.href.replace('index.html', '');
 		CodePress.path = _path+'assets/js/lib/codepress/';
 		// --
@@ -53,6 +53,8 @@ CodePress = function(obj) {
 		if(self.attachEvent) self.attachEvent('onload',self.initialize);
 		else self.addEventListener('load',function(){
 			self.initialize();
+			
+			// execute a callback function if any
 			if ( cb ){
 				cb();
 			};

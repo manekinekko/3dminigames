@@ -7,19 +7,33 @@
 (function(M3D){
 	
 	/**
-	 * Initializes the editor. This function is called once the document is loaded.
+	 * Initializes the editor. 
+	 * This function is called once the document is loaded.
 	 */
-	M3D.Editor.init = function(){		
+	M3D.Editor.init = function(){	
+		
+		log('initializating the editor ...');	
+		
 		var c = M3D.DB.getEditor('edwigs');
-		log(localStorage);
-		if ( c ===  null || c === ""){
-			_setContent('/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n');
+		if ( !c || c ===  null || c === ""){
+			M3D.Editor.clear();
 		}
 		else {
-			_setContent(c);
+			M3D.Editor.setContent(c);
 		}
 	};
 	
+	/**
+	 * Insert the game name
+	 * @param {String} name The game name
+	 * @param {Function} cb The callback function
+	 */
+	M3D.Editor.setGameInfo = function(name, cb){
+		if ( !cb ){
+			var cb = function(){};
+		}
+		M3D.Editor.setContent('game has name at "'+name+'" ;\n', cb);
+	};
 	
 	/**
 	 * Init for indexedDB the editor's content
@@ -40,7 +54,6 @@
 		return new RegExp(str).test(edwigs.getCode());
 	};
 	
-	
 	/**
 	 * Get the current content of the editor.
 	 * @return The current content of the editor
@@ -48,6 +61,21 @@
 	 */
 	M3D.Editor.getContent = function(){
 		return edwigs.getCode();
+	};
+	
+	/**
+	 * Clear the editor content
+	 * @param {Function} cb The function to be executed after the editor is cleared
+	 */
+	M3D.Editor.clear = function(cb){
+		if ( !cb ){
+			var cb = function(){};
+		}
+		var _str = [];
+		_str.push('/* Game created by 3DWIGS */\n');
+		_str.push('/* On '+(new Date()).toGMTString()+' */\n\n');
+		_str.push('');
+		_setAndClearContent(_str.join(''), cb);
 	};
 	
 	/**
@@ -69,20 +97,21 @@
 		if ( M3D.Editor.getContent() !== null ) {
 			_str = M3D.Editor.getContent() + _str;		
 		}
-		_setContent(_str);
+		M3D.Editor.setContent(_str);
 	};
 	
 	/**
-	 * Set the new content of the editor.
+	 * This function append the new content to the old one.
+	 * Or set the new content of the editor.
 	 * @param {String} value The new content
+	 * @param {Function} cb The callback function
 	 */
-	M3D.Editor.setContent = function(value){
+	M3D.Editor.setContent = function(value, cb){
 		var _old = M3D.Editor.getContent();
 		_old = _old === '' ? _old : _old+"\n";
-		_setContent(_old+value);
+		_setAndClearContent(_old+value, cb);
 	};	 
 	
-	// update the selected object's properties
 	/**
 	 * Update a given 3D model's position/rotation/scale's values inside the editor. 
 	 * @param {Object} o An object containing the id string of the 3D model, its position, rotation and scale X/Y/Z values.
@@ -108,16 +137,19 @@
 												'rotation at '+r.x+' '+r.y+' '+r.z);
 			}
 		}
-		_setContent( content.join(NEWLINE), cb );
+		_setAndClearContent( content.join(NEWLINE), cb );
 		
 	};
 	
 	/**
-	 * Set the editor's content
+	 * Set the editor's content. 
+	 * Bear in mind this function erase the editor's content and set a new content!
 	 * @param {Object} value The new content of the editor
+	 * @param {Function} cb The callback function 
+	 * that will be excexuted after the editor is updated
 	 * @private
 	 */
-	var _setContent = function(value, cb){
+	var _setAndClearContent = function(value, cb){
 		
 		// create a new callback function
 		var _cb = function(){

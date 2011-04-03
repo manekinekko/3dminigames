@@ -28,12 +28,12 @@ if(!window["M3D"].MOTEUR){
 				vit[i] = Math.min(0,vit[i]-coefFrottement*vit[i]);
 			}
 			vit[i] += acc[i];
-			if(Math.abs(vit[i]<0.01)){
+			if(Math.abs(vit[i])<0.01){
 				vit[i]=0;
 			}
 		}
 		gObject.vitesse = vit;
-		M3D.MOTEUR.translate(idObject,vit,false,idObject);
+		return M3D.MOTEUR.translate(idObject,vit,true,idObject);
 	},
 	
 	M3D.MOTEUR.applyVitesseGravity = function(idObject,gObject){
@@ -51,16 +51,18 @@ if(!window["M3D"].MOTEUR){
 			}
 		}
 		gObject.vitesse = vit;
-		M3D.MOTEUR.translate(idObject,vit,false,idObject);
+		return M3D.MOTEUR.translate(idObject,vit,true,idObject);
 	},
 	
 	M3D.MOTEUR.applyPhysique = function(idList,gObjList,gIdList,gGObjList){
+		var tab = [];
 		for(var i = 0 ; i < gObjList.length ; i++){
-			M3D.MOTEUR.applyVitesse(idList[i],gObjList[i]);
+			tab.push(M3D.MOTEUR.applyVitesse(idList[i],gObjList[i]));
 		}
 		for(var i = 0 ; i < gGObjList.length ; i++){
-			M3D.MOTEUR.applyVitesseGravity(gIdList[i],gGObjList[i]);
-		}	
+			tab.push(M3D.MOTEUR.applyVitesseGravity(gIdList[i],gGObjList[i]));
+		}
+		return tab;
 	};
 	
 

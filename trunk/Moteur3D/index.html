@@ -43,12 +43,15 @@
 			var voiture = new Array;
 			voiture.vitesse = [0,0,0];
 			voiture.acceleration = [0,0,0];
-			voiture.masse = 800;
+			voiture.masse = 100;
+			voiture.id = "voiture1";
+			gravityObject.push(voiture);
+			gravityObjectId.push("voiture1");
 			
 			initScene = function(){
 				//M3D.MOTEUR.addObject("lapin","dae/lapin.dae",[0,5,0,0,0,0,1,1,1]);
-				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,10,10,10],false);
-				M3D.MOTEUR.addGroup("voiture1",[0,0,0,0,0,0,1,1,1]);
+				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,50,50,50],false);
+				M3D.MOTEUR.addGroup("voiture1",[0,20,0,0,0,0,1,1,1]);
 				M3D.MOTEUR.addGroup("perso",[0,0,0,0,0,0,1,1,1],"voiture1");
 				
 				M3D.MOTEUR.addObject("jeep1","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],false,"voiture1");
@@ -62,7 +65,7 @@
 				M3D.MOTEUR.setGravite([0,-9.81/60000,0]);
 				M3D.MOTEUR.setCoefFrottement(0.01);
 				
-				setInterval(rendu,1);
+				setInterval(rendu,10);
 			}
 
 			M3D.MOTEUR.initialisation('level.xml','canvas');
@@ -71,15 +74,10 @@
 			panelControl = function(){			
 				//if(KEY_Z) M3D.MOTEUR.translate("voiture1",[0.1,0,0],true,"voiture1");
 				//if(KEY_S) M3D.MOTEUR.translate("voiture1",[-0.5,0,0],true,"voiture1");
-				if(KEY_Z){if(voiture.vitesse[0]<1) voiture.acceleration[0] = 0.1;}
-				if(KEY_S){if(voiture.vitesse[0]>-1) voiture.acceleration[0] = -0.1;}
-				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05,0],true);
-				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05,0],true);
-				
-				/*if(KEY_T) M3D.MOTEUR.translate("voiture2",[0.1,0,0],false,"voiture2");
-				if(KEY_G) M3D.MOTEUR.translate("voiture2",[-0.1,0,0],false,"voiture2");
-				if(KEY_F) M3D.MOTEUR.rotate("voiture2",[0,0.01,0],false,"voiture2");
-				if(KEY_H) M3D.MOTEUR.rotate("voiture2",[0,-0.01,0],false,"voiture2");*/
+				if(KEY_Z) {if(voiture.vitesse[0]<1) voiture.acceleration[0] = 0.05;}
+				if(KEY_S) {if(voiture.vitesse[0]>-1) voiture.acceleration[0] = -0.05;}
+				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05*voiture.vitesse[0],0],false);
+				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05*voiture.vitesse[0],0],false);
 
 				if(KEY_O) M3D.MOTEUR.translateCamera("maincamera",[1,0,0],"maincamera");
 				if(KEY_L) M3D.MOTEUR.translateCamera("maincamera",[-1,0,0],"maincamera");
@@ -90,6 +88,7 @@
 				
 				if(KEY_SPACE) lancer();
 				if(KEY_X) charger();
+				if(KEY_N) alert(gravityObjectId);
 				if(KEY_ENTER) M3D.MOTEUR.test();
 			}
 
@@ -101,6 +100,7 @@
 					Missile[numeroMissile].acceleration = [0,0,0];
 					Missile[numeroMissile].vitesse = [0,0,0];
 					Missile[numeroMissile].masse = 20;
+					Missile[numeroMissile].id = "missile"+numeroMissile;
 					M3D.MOTEUR.addObject("missile"+numeroMissile,"dae/missile.dae",[0,0,0,0,0,0,1,1,1],false,"bazooka");
 					numeroMissile += 1;
 				}
@@ -110,19 +110,62 @@
 				if(bazookaCharge){
 					var num = numeroMissile-1;
 					bazookaCharge = false;
-					Missile[num].vitesse = [0,0,-3];
+					Missile[num].vitesse = [0,0,-5];
 					gravityObject.push(Missile[num]);
 					gravityObjectId.push("missile"+num);
 					M3D.MOTEUR.changeParent("missile"+num);
 				}			
 			}
 			
+			supprimerMissile = function(idMissile){
+				var num = parseInt(idMissile.substring(7,idMissile.length));
+				k=-1;
+				for(var i = 0 ; i<gravityObject.length ; i++){
+					if(gravityObjectId[i] == idMissile){
+						k=i;
+					}
+				}
+				gravityObject.splice(k,1);
+				gravityObjectId.splice(k,1);
+				M3D.MOTEUR.removeObject(idMissile);
+			}
 			
 			rendu = function(){
 				voiture.acceleration = [0,0,0];
 				panelControl();
-				var x = new Array;
-				M3D.MOTEUR.applyPhysique(["voiture1"],[voiture],gravityObjectId,gravityObject);
+				x = M3D.MOTEUR.applyPhysique([],[],gravityObjectId,gravityObject);
+				var k = 0;
+				for(var i = 0 ; i<x.length ; i++){
+					if(x[i].length > 0){
+						if(i==0){ // la voiture peut entrer en collision avec n'importe quoi
+							for(var j = 0 ; j<x[i].length ; j++){
+								if(x[i][j][1]=="sol"){
+									voiture.vitesse[1]=0;
+									M3D.MOTEUR.translate("voiture1",[0,-M3D.MOTEUR.ecart("voiture1","sol",1),0],false,"voiture1");
+								}
+							}
+							M3D.MOTEUR.translate("voiture1",voiture.vitesse,false,"voiture1");
+						}
+						else if(i>0){
+							supprime = false;
+							for(var j = 0 ; j<x[i].length ; j++){
+								if(x[i][j][1]=="sol"){
+									supprime = true;
+									supprimerMissile(x[i][j][0]);
+								}else if(x[i][j][1]=="lapin"){
+									supprime = true;
+									supprimerMissile(x[i][j][0]);
+									M3D.MOTEUR.removeObject("lapin");
+								}
+							}
+							if(!supprime){
+								M3D.MOTEUR.translate(gravityObjectId[k],gravityObject[k].vitesse,false,gravityObjectId[k]);
+								k += 1;								
+							}
+						}
+					}				
+				}
+				
 				M3D.MOTEUR.render();
 			}
 			

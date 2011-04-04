@@ -1,301 +1,331 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-	Cette version est une copie du fichier
-	http://code.google.com/p/3dminigames/source/browse/trunk/compilation/hight/xml/attributesv2.xml
-	version: r437
--->
 <m3d>
     <model>
         <name>Empty</name>
-        <description><![CDATA[
-        Un objet vide	
-        ]]></description>
-        <attribute name="posX" type="number" value="0" description=""/>
-        <attribute name="posY" type="number" value="0" description=""/>
-        <attribute name="posZ" type="number" value="0" description=""/>
-        <attribute name="orX" type="number" value="0" description=""/>
-        <attribute name="orY" type="number" value="0" description=""/>
-        <attribute name="orZ" type="number" value="0" description=""/>
-        <attribute name="sizeX" type="number" value="0" description=""/>
-        <attribute name="sizeY" type="number" value="0" description=""/>
-        <attribute name="sizeZ" type="number" value="0" description=""/>
-        <attribute name="belonging" type="Empty" value="null" description=""/>
+        <description><![CDATA[Cette classe représente un objet vide (invisible).]]><description> 
+        <attribute name="posX" type="number" value="0" description="La position sur l'axe x de l'objet par rapport à sa référence."/>
+        <attribute name="posY" type="number" value="0" description="La position sur l'axe y de l'objet par rapport à sa référence."/>
+        <attribute name="posZ" type="number" value="0" description="La position sur l'axe z de l'objet par rapport à sa référence."/>
+        <attribute name="orX" type="number" value="0" description="L'orientation sur l'axe x de l'objet par rapport à sa référence."/>
+        <attribute name="orY" type="number" value="0" description="L'orientation sur l'axe y de l'objet par rapport à sa référence."/>
+        <attribute name="orZ" type="number" value="0" description="L'orientation sur l'axe z de l'objet par rapport à sa référence."/>
+        <attribute name="sizeX" type="number" value="0" description="La taille sur l'axe x de l'objet par rapport à sa référence."/>
+        <attribute name="sizeY" type="number" value="0" description="La taille sur l'axe y de l'objet par rapport à sa référence."/>
+        <attribute name="sizeZ" type="number" value="0" description="La taille sur l'axe z de l'objet par rapport à sa référence."/>
+        <attribute name="belonging" type="Empty" value="null" description="Un attribut d'appartenance. Sa valeur est l'objet qui l'appartient (il ne peut y en avoir qu'un seul)."/>
         <!--<attribute name="constraints" type="List" subType="Constraint" value="null"/>-->
-        <attribute name="speed" type="number" value="0" description=""/><!--attribut calcul� avec l'acc�l�ration, peut �tre modifi� par l'utilisateur dans son code-->
+        <attribute name="speed" type="number" value="0" description="La vitesse de l'objet, calculée grâce à son accélération."/><!--attribut calculé avec l'accélération, peut être modifié par l'utilisateur dans son code-->
     </model>
     <model>
         <name>Camera</name>
+        <description><![CDATA[L'objet primitif 'caméra', permet d'afficher la scène 3D.]]><description> 
         <inheritance value="Empty"/> <!--les tailles 'tX' et 'tY' sont les dimensions du canvas 2D et 'tZ' est la focale-->
-        <attribute name="name" type="String" value="'Camera1'"/>
-        <attribute name="view" type="Enum" values="free, firstPerson, secondPerson" value="free" />
-        <attribute name="target" type="Empty" value="null"/><!-- il faudrait pr�ciser l'objet concern� par la cam si elle n'est pas free (trackTo pour le moteur 3D) -->
-        <attribute name="orthographic" type="boolean" value="false"/>
+        <attribute name="name" type="String" value="'Camera1'" description="Le nom de la caméra (sert pour les affichages)."/>
+        <attribute name="view" type="Enum" values="free, firstPerson, thirdPerson" value="free" description="Le type de vue. Peut être soit 'free' (caméra libre), soit 'firstPerson' (caméra en vue à la première personne : sert pour les FPS), soit 'thirdPerson' (caméra en vue à la troisième personne : déplacement possible autour d'un Empty)."/>
+        <attribute name="target" type="Empty" value="null" description="L'Empty que vise la caméra lorsque l'attribut view est à 'thirdPerson'"/><!-- il faudrait préciser l'objet concerné par la cam si elle n'est pas free (trackTo pour le moteur 3D) -->
+        <attribute name="orthographic" type="boolean" value="false" description="Un attribut permettant de spécifier si la caméra a une vue orthographique (en perspective cavalière), ou 3D."/>
     </model>
     <model>
         <name>Zone</name>
-        <inheritance value="Empty"/> <!--Zone n'h�rite plus d'Object-->
-        <attribute name="name" type="String" value="'Zone1'"/>
-        <attribute name="isGenerated" type="boolean" value="false"/>
-        <attribute name="redc" type="number" value="255"/><!--couleur de la Zone (rvb) et alpha pour la transparence-->
-        <attribute name="greenc" type="number" value="255"/>
-        <attribute name="bluec" type="number" value="255"/>
-        <attribute name="alpha" type="number" value="255"/>
-        <attribute name="type" type="Enum" values="cubic, spheric" value="cubic"/><!-- � voir si une zone peut-�tre d�finie de cette mani�re-->
+        <description><![CDATA[Une zone permettant de déclencher des actions si un objet la touche (ex: ligne d'arrivée, piège à éviter...). Elle peut être invisible.]]><description> 
+        <inheritance value="Empty"/> <!--Zone n'hérite plus d'Object-->
+        <attribute name="name" type="String" value="'Zone1'" description="Le nom de la zone (sert pour les affichages)."/>
+        <attribute name="isGenerated" type="boolean" value="false" description="Attribut permettant de savoir si la zone est générée."/>
+        <attribute name="redc" type="number" value="255" description="L'attribut de coloration rouge de la zone (si l'attribut de transparence 'alpha' est suprieur à 0)."/><!--couleur de la Zone (rvb) et alpha pour la transparence-->
+        <attribute name="greenc" type="number" value="255" description="L'attribut de coloration vert de la zone (si l'attribut de transparence 'alpha' est suprieur à 0)."/>
+        <attribute name="bluec" type="number" value="255" description="L'attribut de coloration bleu de la zone (si l'attribut de transparence 'alpha' est suprieur à 0)."/>
+        <attribute name="alpha" type="number" value="255" description="L'attribut de transparence (0 : zone invisible, 255 : zone opaque)."/>
+        <attribute name="type" type="Enum" values="cubic, spheric" value="cubic" description="Le type de zone. Peut être soit 'cubic', soit 'spheric'."/><!-- à voir si une zone peut-être définie de cette manière-->
     </model>
-    <model><!--� voir avec le groupe moteur 3D-->
+    <model><!--à voir avec le groupe moteur 3D-->
         <name>Lamp</name>
+        <description><![CDATA[L'objet primitif 'lampe', permet de mieux voir les éléments de la scène selon sa luminosité.]]><description> 
         <inheritance value="Empty"/>
-        <attribute name="type" type="Enum" values="lamp, spot, sun" value="sun"/>
-        <attribute name="effect" type="Enum" values="generic, constant, linear, stroboscopic" value="generic"/><!--effet d'extinction de la lumi�re-->
-        <attribute name="interval" type="Time" value="1" unit="s"/><!--pour constant, stroboscopic et linear-->
-        <attribute name="redc" type="number" value="255"/><!--couleur de la lampe-->
-        <attribute name="greenc" type="number" value="255"/>
-        <attribute name="bluec" type="number" value="255"/>
+        <attribute name="type" type="Enum" values="lamp, spot, sun" value="sun" description="Le type de lampe. Peut être soit 'lamp' pour un éclairage diffus à partir d'un point (ampoule), soit 'spot' pour un éclairage cônique (phares de voiture), soit 'sun' pour un éclairage dont les rayons lumineux sont dirigés dans la même direction (soleil)."/>
+        <attribute name="displayShadows" type="boolean" value="true" description="Attribut permettant d'activer ou non les ombres projetées par la lampe."/>
+        <attribute name="effect" type="Enum" values="generic, constant, linear, stroboscopic" value="generic" description="L'effet d'allumage et d'extinction proposé par la lampe. Peut être soit 'generic' pour une lampe sans effet, soit 'constant' pour une lampe s'allumant et s'éteignant normalement, 'linear' pour une lampe dont la luminosité décroit et s'accroit linéairement (signal lumineux), 'stroboscopic' pour une lampe s'éteignant et s'allumant avec un temps aléatoire la durée ou elle est normalement éteinte (néon défectueux)."/><!--effet d'extinction de la lumière-->
+        <attribute name="interval" type="Time" value="1" unit="s" description="L'intervalle d'allumage et d'exctinction de la lampe (si l'effet est 'generic', cet attribut n'est pas pris en compte)."/><!--pour constant, stroboscopic et linear-->
+        <attribute name="redc" type="number" value="255" description="L'attribut de coloration rouge de la lampe."/><!--couleur de la lampe-->
+        <attribute name="greenc" type="number" value="255" description="L'attribut de coloration vert de la lampe."/>
+        <attribute name="bluec" type="number" value="255" description="L'attribut de coloration bleu de la lampe."/>
     </model>
     <model>
         <name>Ground</name>
+        <description><![CDATA[Le sol de la scène (un objet 3D). Il est fixe et ne peut pas être traversé par les objets environnants.]]><description> 
         <inheritance value="Empty"/>
-        <attribute name="type" type="String" value=""/>
-        <attribute name="friction" type="number" value="100"/>
-        <attribute name="url" type="String" value=""/><!--l'url d'un mod�le 3D ou d'une image en niveau de gris en tant que heightmap-->
-    </model>
+        <attribute name="type" type="String" value="" description=" "/><!--Attribut à revoir.-->
+        <attribute name="friction" type="number" value="100" description="Le coefficient de frottement du sol (100 : bitume, 10 : glace...)."/>
+        <attribute name="url" type="String" value="" description="Le chemin vers l'objet 3D représentant le sol."/><!--l'url d'un modèle 3D ou d'une image en niveau de gris en tant que heightmap-->
+		<attribute name="isLoad" type="boolean" value="false"/>
+	</model>
     <model>
-        <name>Room</name><!-- objets qui sont � l'int�rieur du volume englobant -->
+        <name>Room</name><!-- objets qui sont à l'intérieur du volume englobant -->
+		<description><![CDATA[Un objet 3D dont les collisions se calculent depuis l'intérieur, sert pour représenter une pièce, une salle...]]><description> 
         <inheritance value="Empty"/>
-        <attribute name="url" type="String" value=""/><!--l'url d'un mod�le 3D ou d'une image en niveau de gris en tant que heightmap-->
-    </model>
-    <model><!--contrairement � Empty et ses classes filles, Obstacle a un collada associ� comme Object-->
+        <attribute name="url" type="String" value="" description="Le chemin vers l'objet 3D représentant la pièce."/><!--l'url d'un modèle 3D ou d'une image en niveau de gris en tant que heightmap-->
+		<attribute name="isLoad" type="boolean" value="false"/>
+	</model>
+    <model><!--contrairement à Empty et ses classes filles, Obstacle a un collada associé comme Object-->
         <name>Obstacle</name>
+        <description><![CDATA[Un objet 3D fixe et non-traversable.]]><description> 
         <inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
-        <attribute name="name" type="String" value="'Obstacle1'"/>
-        <attribute name="isGenerated" type="boolean" value="false"/>
-        <attribute name="url" type="String" value=""/>
+        <attribute name="name" type="String" value="'Obstacle1'" description="Le nom de l'obstacle (sert pour les affichages)."/>
+        <attribute name="isGenerated" type="boolean" value="false" description="Attribut permettant de savoir si l'obstacle est généré dans la scène ou non."/>
+        <attribute name="url" type="String" value="" description="Le chemin vers l'objet 3D représentant l'obstacle."/>
+		<attribute name="isLoad" type="boolean" value="false"/>
     </model>
     <model>
         <name>Object</name>
+        <description><![CDATA[Un objet 3D possédant les caractéristiques d'un Empty.]]><description> 
         <inheritance value="Empty"/>
-        <attribute name="name" type="String" value="'Object1'"/>
-        <attribute name="mass" type="number" value="10"/>
-        <attribute name="inertia" type="number" value="10"/>
-        <attribute name="friction" type="number" value="10"/>
-        <attribute name="isFix" type="boolean" value="false"/>
-        <attribute name="isTraversable" type="boolean" value="false"/>
-        <attribute name="isGenerated" type="boolean" value="false"/><!-- je ne sais pas si c'est utile -->
-        <attribute name="message" type="String" value="'Message1 !'"/><!-- si jamais on impl�mente le 'speaks' -->
-        <attribute name="url" type="String" value="" />
+        <attribute name="name" type="String" value="'Object1'" description="Le nom de l'objet (sert pour les affichages)."/>
+        <attribute name="mass" type="number" value="10" description=" "/>
+        <attribute name="inertia" type="number" value="10" description=" "/>
+        <attribute name="friction" type="number" value="10" description="Le coefficient de frottement de l'objet (100 : caoutchouc, 10 : glace...). Dépend aussi de l'autre objet en collision."/>
+        <attribute name="isFix" type="boolean" value="false" description="Attribut permettant de rendre l'objet fixe (il ne bougera pas si un autre objet entre en colision avec)."/>
+        <attribute name="isTraversable" type="boolean" value="false" description="Attribut permettant de faire en sorte que les autres objets le traversent lors d'une collision."/>
+        <attribute name="isGenerated" type="boolean" value="false" description="Attribut permettant de savoir si l'objet est généré dans la scène ou non."/><!-- je ne sais pas si c'est utile -->
+        <attribute name="message" type="String" value="'Message1 !'" description="Le message qu'un objet peut délivrer (fonction non-implémentée pour l'instant)."/><!-- si jamais on implémente le 'speaks' -->
+        <attribute name="url" type="String" value="" description="Le chemin vers l'objet 3D."/>
+		<attribute name="isLoad" type="boolean" value="false"/>
     </model>
     <model>
         <name>Character</name>
+        <description><![CDATA[Un objet 3D représentant un avatar.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="life" type="number" value="100"/>
-        <attribute name="lifeMax" type="number" value="1"/>
-        <attribute name="lifeMin" type="number" value="1"/>
-        <attribute name="nbLives" type="number" value="1"/>
-        <attribute name="magic" type="number" value="0"/>
-        <attribute name="magicMax" type="number" value="1"/>
-        <attribute name="magicMin" type="number" value="0"/>
-        <attribute name="level" type="number" value="0"/>
-        <attribute name="attack" type="number" value="0"/>
-        <attribute name="defense" type="number" value="0"/>
-        <attribute name="maxJumpsInTheAir" type="number" value="0"/>
-        <attribute name="money" type="number" value="0"/>
-        <attribute name="class" type="String" value="'Class1'"/>
-        <attribute name="race" type="String" value="'Race1'"/>
-        <attribute name="acceleration" type="number" value="1"/>
-        <attribute name="inventories" type="List" subType="Inventory" value="null"/>
-        <attribute name="moveWithCamera" type="boolean" value="false"/><!-- si � true le perso avance comme tout jeu de plateforme / si false avance comme dans Resident Evil 1 -->
-        <attribute name="equipedObject" type="Object" value="null"/>
+        <attribute name="description" type="String" value="'Description1'" description="La description du personnage (sert pour les affichages)."/>
+        <attribute name="life" type="number" value="100" description="La vie du personnage."/>
+        <attribute name="lifeMax" type="number" value="100" description="La vie maximum du personnage pour éviter qu'il n'en regagne plus que nécessaire."/>
+        <attribute name="lifeMin" type="number" value="1" description="La vie minimum du personnage, si cette valeur est atteinte, le personnage est mort (il peut reprendre à un checkpoint par exemple)."/>
+        <attribute name="nbLives" type="number" value="1" description="Le nombre de vies du personnage (diffère de l'attribut 'life'). "/>
+		<attribute name="nbLivesMax" type="number" value="100" description="Le nombre de vies maximum du personnage pour éviter qu'il n'en regagne plus que nécessaire."/>
+        <attribute name="nbLivesMin" type="number" value="1" description="Le nombre de vies minimum du personnage, si cette valeur est atteinte, en général, la partie est terminée."/>
+        <attribute name="magic" type="number" value="0" description="Le nombre de points de magie (mana) du personnage."/>
+        <attribute name="magicMax" type="number" value="1" description="Le nombre de points de magie maximum du personnage, si cette valeur est atteinte, pour éviter qu'il n'en regagne plus que nécessaire."/>
+        <attribute name="magicMin" type="number" value="0" description="Le nombre de points de magie minimum du personnage, si cette valeur est atteinte, en général, il ne peut plus lancer de sorts."/>
+        <attribute name="level" type="number" value="0" description="Le niveau du personnage."/>
+        <attribute name="attack" type="number" value="0" description="L'attaque du personnage."/>
+        <attribute name="defense" type="number" value="0" description="La défense du personnage."/>
+        <attribute name="maxJumpsInTheAir" type="number" value="0" description="le nombre de sauts maximum que le personnage peut effectuer en l'air."/>
+        <attribute name="money" type="number" value="0" description="L'argent quepossède le personnage."/>
+        <attribute name="class" type="String" value="'Class1'" description="La classe du personnage (sert pour les affichages)."/>
+        <attribute name="race" type="String" value="'Race1'" description="La race du personnage (sert pour les affichages)."/>
+        <attribute name="acceleration" type="number" value="1" description="Un attribut permettant de connaitre l'accélération du personnage (en lien avec sa vitesse)."/>
+        <attribute name="inventories" type="List" subType="Inventory" value="null" description="Les inventaires du personnage (il peut en avoir plusieurs pour classer ses possessions, ex : armes, potions...)."/>
+        <attribute name="moveWithCamera" type="boolean" value="false" description="Permet de spécifier si le personnage avancera, reculera et se déplacera sur les côtés normalement (ex : FPS), ou s'il avancera tout le temps dans une direction donnée par les commandes et la position de la caméra (ex : jeu de plateforme, jeu d'aventure...)."/><!-- si à true le perso avance comme tout jeu de plateforme / si false avance comme dans Resident Evil 1 -->
+        <attribute name="equipedObject" type="Object" value="null" description="L'objet d'un inventaire dont le personnage s'est équippé."/><!-- un seul pour simplifier-->
     </model>
     <model>
         <name>Projectile</name>
+        <description><![CDATA[Un objet 3D dont la seule fonction est d'occasioner des dégâts aux points de vie d'un autre objet.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="damages" type="number" value="1"/>
-        <attribute name="damageRadius" type="num" value="0"/>
-        <attribute name="expeler" type="Object" value="null"/><!--attribut permettant de savoir qui a tir�-->
-        <attribute name="lifeTime" type="time" value="5" unit="s"/>
+        <attribute name="damages" type="number" value="1" description="Le nombre de dégâts que peut occasionner le projectile."/>
+        <attribute name="damageRadius" type="num" value="0" description="Le rayon d'action du projectile s'il est censé exploser en ayant touché sa cible (missile)."/>
+        <attribute name="expeler" type="Object" value="null" description="Attribut permettant de savoir quel objet a tiré le projectile."/>
+        <attribute name="lifeTime" type="time" value="5" unit="s" description="La durée de vie du projectile. Il est effacé de la scène une fois la durée atteinte après son expulsion."/>
     </model>
     <model>
         <name>Weapon</name><!-- pour simplifier, 1 seul type de munitions -->
+        <description><![CDATA[Un objet 3D tirant des projectiles.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="munitions" type="Items" value="null"/>
-        <attribute name="name" type="string" value="'Weapon1'"/>
-        <attribute name="nbMunitions" type="number" value="-1"/>
-        <attribute name="nbMunitionsMax" type="number" value="-1"/>
-        <attribute name="shootPower" type="number" value="1"/>
-        <attribute name="shootInterval" type="time"  value="1" unit="s"/>
-        <attribute name="reloadTime" type="time" value="1" unit="s"/>
+        <attribute name="munitions" type="Container" value="null" description="Le type de munition de l'arme."/>
+        <attribute name="name" type="String" value="'Weapon1'" description="Le nom de l'arme (sert pour les affichages)."/>
+        <attribute name="shootPower" type="number" value="1" description="La puissance de feu de l'arme."/>
+        <attribute name="shootInterval" type="time"  value="1" unit="s" description="Le temps entre chaque tir de l'arme."/>
+        <attribute name="reloadTime" type="time" value="1" unit="s" description="Le temps qu'il faut pour recharger l'arme avant de pouvoir tirer à nouveau avec."/>
     </model>
     <model>
         <name>Sword</name><!-- pour simplifier, 1 seul type de mutnitions -->
+        <description><![CDATA[Un objet 3D représentant une arme blanche, un marteau, etc, pouvant être porté par un personnage par exemple.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="name" type="string" value="'Sword1'"/>
-        <attribute name="damages" type="number" value="1"/>
+        <attribute name="name" type="String" value="'Sword1'" description="Le nom de l'arme (sert pour les affichages)."/>
+        <attribute name="damages" type="number" value="1" description="Le nombre de dégâts que peut occasionner l'arme."/>
     </model>
     <model>
         <name>Vehicle</name>
+        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant sur le sol.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="minSpeed" type="number" value="0"/><!--les bornes de vitesse sont essentielles lorsque l'objet est g�r� avec une acc�l�ration-->
-        <attribute name="maxSpeed" type="number" value="100"/>
-        <attribute name="boost" type="number" value="0"/><!--la vitesse est tt le tps = � speed+boost-->
-        <attribute name="maxBoost" type="number" value="0"/>
-        <attribute name="boostDuration" type="time" value="5" unit="s"/><!--combien de temps va durer le boost-->
-        <attribute name="boostInterval" type="time" value="1" unit="s"/><!--combien de temps avant de r�utiliser une nouvelle fois un boost-->
+        <attribute name="description" type="String" value="'Description1'" description="La description du véhicule (sert pour les affichages)."/>
+        <attribute name="minSpeed" type="number" value="0" description="La vitesse minimale du véhicule."/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
+        <attribute name="maxSpeed" type="number" value="100" description="La vitesse maximale du véhicule."/>
+        <attribute name="boost" type="number" value="0" description="Le niveau de boost du véhicule. La vitesse finale d'un véhicule est calculée par sa vitesse + son boost."/><!--la vitesse est tt le tps = à speed+boost-->
+        <attribute name="maxBoost" type="number" value="0" description="Le niveau de boost maximum du véhicule."/>
+        <attribute name="boostDuration" type="time" value="5" unit="s" description="La durée du boost."/><!--combien de temps va durer le boost-->
+        <attribute name="boostInterval" type="time" value="1" unit="s" description="L'intervalle entre chaque utilisation du boost."/><!--combien de temps avant de réutiliser une nouvelle fois un boost-->
     </model>
     <model>
-        <name>Craft</name> <!--masse � 0 par d�faut / regroupe les vaisseaux spatiaux et les avions -->
+        <name>Craft</name> <!--masse à 0 par défaut / regroupe les vaisseaux spatiaux et les avions -->
+        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant dans les airs (avion, vaisseau spatial) et n'étant pas (ou très peu) soumis à la gravité.]]><description> 
         <inheritance value="Object"/>
-        <attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="minSpeed" type="number" value="0"/><!--les bornes de vitesse sont essentielles lorsque l'objet est g�r� avec une acc�l�ration-->
-        <attribute name="maxSpeed" type="number" value="100"/>
+        <attribute name="description" type="String" value="'Description1'" description="La description du vaisseau (sert pour les affichages)."/>
+        <attribute name="minSpeed" type="number" value="0" description="La vitesse minimale du vaisseau."/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
+        <attribute name="maxSpeed" type="number" value="100" description="La vitesse maximale du vaisseau."/>
+		<attribute name="boost" type="number" value="0" description="Le niveau de boost du vaisseau. La vitesse finale d'un véhicule est calculée par sa vitesse + son boost."/><!--la vitesse est tt le tps = à speed+boost-->
+        <attribute name="maxBoost" type="number" value="0" description="Le niveau de boost maximum du vaisseau."/>
     </model>
-    <model><!--sert � avoir un certain nombre d'un seul m�me objet (pas forc�ment duplicable), sert pour l'inventaire, exemple : boite de munitions-->
-        <name>Items</name><!--Items-->
+    <model><!--sert à avoir un certain nombre d'un seul même objet (pas forcément duplicable), sert pour l'inventaire, exemple : boite de munitions-->
+        <description><![CDATA[Un objet 3D pouvant contenir un certain nombre d'objets du même type (ex : chargeur de munition).]]><description> 
+        <name>Container</name><!--anciennement Items-->
         <inheritance value="Object"/>
-        <attribute name="name" type="string" value="'Items1'"/>
-        <attribute name="description" type="String" value="'Description1'"/>
-        <attribute name="type" type="Object" value="null"/><!-- UN seul Object -->
-        <attribute name="amount" type="number" value="0"/>
-        <attribute name="unit" type="string" value=""/>
-        <attribute name="capacity" type="number" value="-1"/><!--nombre max, emp�chera l'incr�mentation de 'amount -->
-        <attribute name="maxWeight" type="number" value="-1"/><!--peut �tre g�r� avec (masse de l'objet x amount) , emp�chera l'incr�mentation de 'amount-->
-    </model>
-    <model>
-        <name>Ball</name><!-- volume englobant sph�rique -->
-        <inheritance value="Object"/>
-    </model>
-    <model>
-        <name>Teleporter</name><!-- volume englobant sph�rique -->
-        <inheritance value="Object"/>
-        <attribute name="exits" type="List" subType="Teleporter" value="null"/>
+        <attribute name="name" type="string" value="'Container1'" description="Le nom du conteneur (sert pour les affichages)."/>
+        <attribute name="description" type="String" value="'Description1'" description="La description du conteneur (sert pour les affichages)."/>
+        <attribute name="type" type="Object" value="null" description="Le type de l'objet contenu."/><!-- UN seul Object et pas lui même -->
+        <attribute name="amount" type="number" value="0" description="Le nombre d'objets dans le conteneur."/>
+        <attribute name="unit" type="string" value="" description="Une unité pour le type d'objet contenu (sert pour les affichages)."/>
+        <attribute name="capacity" type="number" value="-1" description="La capacité maximum (en nombre d'objets) du conteneur."/><!--nombre max, empêchera l'incrémentation de 'amount -->
+        <attribute name="maxWeight" type="number" value="-1" description="La capacité maximum (en terme de poids pour chaque objet) du conteneur."/><!--peut être géré avec (masse de l'objet x amount) , empêchera l'incrémentation de 'amount-->
     </model>
     <model>
-        <name>Breakable</name><!-- volume englobant sph�rique -->
+        <name>Ball</name><!-- volume englobant sphérique -->
+        <description><![CDATA[Un objet 3D dont les collisions sont calculées de manière shpérique (ex : billard).]]><description> 
         <inheritance value="Object"/>
-        <attribute name="life" type="number" value="1"/>
-        <attribute name="url" type="String" value="" />
-        <attribute name="url_broken" type="String" value="" />
     </model>
-<!--Objet sans h�ritages-->
+    <model>
+        <name>Teleporter</name>
+        <description><![CDATA[Un objet 3D téléporteur permettant aux objets de passer d'un endroit à un autre instantanément.]]><description> 
+        <inheritance value="Object"/>
+        <attribute name="exits" type="List" subType="Teleporter" value="null" description="Les sorties différentes possibles pour se téléporter."/>
+    </model>
+    <model>
+        <name>Breakable</name>
+        <description><![CDATA[Un objet 3D ayant deux états : normal ou cassé (ex : une fenêtre, une caisse, un objet à détruire).]]><description> 
+        <inheritance value="Object"/>
+        <attribute name="life" type="number" value="1" description="La vie de l'objet. Si elle tombe à 0, l'objet est cassé et l'objet 3D cassé le remplace."/>
+        <attribute name="url_broken" type="String" value="" description="Le chemin vers l'objet 3D cassé."/>
+    </model>
+<!--Objet sans héritages-->
     <model>
         <name>Inventory</name>
-        <attribute name="name" type="String" value="'Inventory1'"/>
-        <attribute name="elements" type="List" subType="Object" value="null"/><!--peut contenir des Object dont les Items -->
-        <attribute name="capacity" type="number" value="-1"/><!--emp�chera l'ajout d'un nouvel �l�ment dans la liste 'elements'-->
-        <attribute name="maxWeight" type="number" value="-1"/><!--peut �tre g�r� avec la masse de chaque objet-->
+        <description><![CDATA[Un inventaire permettant de répertorier plusieurs objets.]]><description> 
+        <attribute name="name" type="String" value="'Inventory1'" description="Le nom de l'inventaire (sert pour les affichages)."/>
+        <attribute name="elements" type="List" subType="Object" value="null" description="La liste d'objets que contient l'inventaire."/><!--peut contenir des Object dont les Items -->
+        <attribute name="capacity" type="number" value="-1" description="La capacité maximale de l'inventaire. Elle ne peut pas être dépassée."/><!--empêchera l'ajout d'un nouvel élément dans la liste 'elements'-->
+        <attribute name="maxWeight" type="number" value="-1" description="Le poids maximal que peut supporter l'inventaire (enfonction de l'attribut 'mass' des objets). Il ne peut pas être dépassé."/><!--peut être géré avec la masse de chaque objet-->
     </model>
-    <model><!--peut servir pour les vagues par exemple-->
+    <model><!--peut servir pour les vagues d'ennemis par exemple-->
         <name>Counter</name>
-        <attribute name="name" type="String" value="'Counter1'"/>
-        <attribute name="unit" type="String" value=""/><!--l'unit� servira � l'affichage, pas obligatoire-->
-        <attribute name="curentValue" type="number" value="0"/>
-        <attribute name="step" type="number" value="1"/><!--l'incr�ment (pas ou step) peut-�tre n�gatif dans le cas d'un d�compte-->
-        <attribute name="min" type="number" value="0"/>
-        <attribute name="max" type="number" value="-1"/>
+        <description><![CDATA[Un compteur.]]><description> 
+        <attribute name="name" type="String" value="'Counter1'" description="Le nom du compteur (sert pour les affichages)."/>
+        <attribute name="unit" type="String" value="" description="Une unité pour le compteur (sert pour les affichages)."/><!--l'unité servira à l'affichage, pas obligatoire-->
+        <attribute name="value" type="number" value="0" description="La valeur du compteur."/>
+        <attribute name="step" type="number" value="1" description="L'incrément (ou pas) du compteur. Il peut être négatif dans le cas d'un décompte."/><!--l'incrément (pas ou step) peut-être négatif dans le cas d'un décompte-->
+        <attribute name="min" type="number" value="0" description="La borne minimum du compteur."/>
+        <attribute name="max" type="number" value="-1" description="La borne maximum du compteur."/>
     </model>
-    <model><!--aura les m�mes actions (play stop pause) que Media -->
+    <model><!--aura les mêmes actions (play stop pause) que Media -->
         <name>Chrono</name>
-        <attribute name="name" type="String" value="'Chrono1'"/>
-        <attribute name="value" type="time" value="0" unit="s"/>
-        <attribute name="start" type="time" value="0" unit="s"/>
-        <attribute name="end" type="time" value="-1" unit="s"/><!--relation avec le 'IDENT ends' dans la grammaire-->
-        <attribute name="active" type="boolean" value="false"/>
+        <description><![CDATA[Un chronomètre permettant, par exemple, de déclencher des actions lorsqu'il termine.]]><description> 
+        <attribute name="name" type="String" value="'Chrono1'" description="Le nom du chronomètre (sert pour les affichages)."/>
+        <attribute name="value" type="time" value="0" unit="s" description="La valeur courante du chronomètre."/>
+        <attribute name="start" type="time" value="0" unit="s" description="La valeur de départ du chronomètre."/>
+        <attribute name="end" type="time" value="-1" unit="s" description="La valeur de fin du chronomètre, si l'attribut 'value' dépasse la fin, le chronomètre s'arrête et l'attribut 'active' passe à false."/><!--relation avec le 'IDENT ends' dans la grammaire-->
+        <attribute name="active" type="boolean" value="false" description="Indique si le chronomètre est actif ou en pause."/>
     </model>
     <model>
         <name>Media</name>
-        <attribute name="url" type="String" value=""/>
-        <attribute name="loop" type="boolean" value="false"/>
-        <attribute name="volume" type="number" value="100"/>
-        <attribute name="active" type="boolean" value="false"/><!--relation avec le 'IDENT ends' dans la grammaire-->
+        <description><![CDATA[Un fichier audio ou vidéo, servant à renforcer l'ambiance ou expliquer l'histoire.]]><description> 
+        <attribute name="url" type="String" value="" description="Le chemin vers le média."/>
+        <attribute name="loop" type="boolean" value="false" description="Attribut permettant de spécifier si le média est joué en boucle."/>
+        <attribute name="volume" type="number" value="100" description="Le volume sonore du média."/>
+        <attribute name="active" type="boolean" value="false" description="Indique si le média est actif ou en pause."/><!--relation avec le 'IDENT ends' dans la grammaire-->
     </model>
-    <model><!-- l'image de fond si elle est g�r�e un jour -->
+    <model><!-- l'image de fond si elle est gérée un jour -->
         <name>Background</name>
-        <attribute name="url" type="String" value=""/>
-        <attribute name="orX" type="number" value="0"/>
-        <attribute name="orY" type="number" value="0"/>
-        <attribute name="orZ" type="number" value="0"/>
-        <attribute name="sizeX" type="number" value="0"/>
-        <attribute name="sizeY" type="number" value="0"/>
-        <attribute name="sizeZ" type="number" value="0"/>
+        <description><![CDATA[Une image de fond projetée autour de la scène.]]><description> 
+        <attribute name="url" type="String" value="" description="Le chemin vers l'image de fond."/>
+        <attribute name="orX" type="number" value="0" description="L'orientation sur l'axe x de l'image par rapport à l'axe de référence."/>
+        <attribute name="sizeX" type="number" value="0" description="La distance entre l'image et l'origine de la scène."/>
+        <attribute name="sizeY" type="number" value="0" description="La taille sur l'axe y de l'image."/>
+        <attribute name="sizeZ" type="number" value="0" description="La taille sur l'axe z de l'image."/>
     </model>
-    <model><!--sert pour l'attribut elements de Team et pour �viter de d�clarer les m�mes attributs 2 fois dans Team et Player -->
+    <model><!--sert pour l'attribut elements de Team et pour éviter de déclarer les mêmes attributs 2 fois dans Team et Player -->
         <name>Side</name>
-        <attribute name="name" type="String" value="'Side1'"/>
-        <attribute name="score" type="num" value="0"/>
-        <attribute name="victory" type="boolean" value="false"/>
-        <attribute name="defeat" type="boolean" value="false"/>
+        <description><![CDATA[Une Team ou un Player.]]><description> 
+        <attribute name="name" type="String" value="'Side1'" description="Le nom de l'équipe ou du joueur (sert pour les affichages)."/>
+        <attribute name="score" type="num" value="0" description="Le score de l'équipe ou du joueur."/>
+        <attribute name="victory" type="boolean" value="false" description="Indique si l'équipe ou le joueur ont gagné."/>
+        <attribute name="defeat" type="boolean" value="false" description="Indique si l'équipe ou le joueur ont perdu."/>
     </model>
     <model>
         <name>Team</name>
+        <description><![CDATA[Une équipe de joueurs ou d'autres équipes.]]><description> 
         <inheritance value="Side"/>
-        <attribute name="capacity" type="num" value="-1"/>
-        <attribute name="elements" type="List" subType="Side" value="null"/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-m�me -->
+        <attribute name="capacity" type="num" value="-1" description="Le nombre maximal d'éléments dont peut être composée l'équipe."/>
+        <attribute name="elements" type="List" subType="Side" value="null" description="La liste de joueurs et/ou équipes que contient l'équipe."/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-même -->
     </model>
     <model>
         <name>Player</name>
+        <description><![CDATA[Un joueur (humain ou IA).]]><description> 
         <inheritance value="Side"/>
-        <attribute name="controller" type="Enum" values="human, IDENT" value="human"/><!-- human ou le nom d'une IA apr�s les r�gles du jeu dans le code-->
+        <attribute name="controller" type="Enum" values="human, IDENT" value="human" description="Le contrôleur du joueur : soit 'human' pour un contrôle clavier/souris, soit le nom de l'intelligence artificielle désirée."/><!-- human ou le nom d'une IA après les règles du jeu dans le code-->
     </model>
 	
 <!--Contraintes-->	
-    <const><!-- les contraintes � voir avec le groupe moteur 3D -->
+    <const><!-- les contraintes à voir avec le groupe moteur 3D -->
         <name>Constraint</name>
-        <attribute name="influence" type="number" value="1"/><!--multiplicateur de 0 � 1-->
+        <description><![CDATA[Une contrainte à appliquer à un objet.]]><description> 
+        <attribute name="influence" type="number" value="1" description="L'influence de la contrainte (0 : pas de contrainte, 1 : contrainte maximum)."/><!--multiplicateur de 0 à 1-->
     </const>
     <const><!-- contrainte de parentage -->
         <name>ChildOfConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="parent" type="Empty" value="null"/>
-        <attribute name="translation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="rotation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="scale" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="parent" type="Empty" value="null" description=" "/>
+        <attribute name="translation" type="BVector" x="true" y="true" z="true" description=" "/>
+        <attribute name="rotation" type="BVector" x="true" y="true" z="true" description=" "/>
+        <attribute name="scale" type="BVector" x="true" y="true" z="true" description=" "/>
     </const>
     <const><!-- contrainte de copie de transformation (choix de la transformation)-->
         <name>CopyConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation"/>
-        <attribute name="coordinates" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="offset" type="boolean" value="true"/>
+        <attribute name="target" type="Empty" value="null" description=" "/>
+        <attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation" description=" "/>
+        <attribute name="coordinates" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="offset" type="boolean" value="true" description=" "/>
     </const>
     <const><!-- contrainte de limitation en translation-->
         <name>TranslationConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="minActivation" type="BVector" x="true" y="true" z="true" description=" "/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true" description=" "/>
     </const>
     <const><!-- contrainte de limitation en rotation-->
         <name>RotationConstraint</name>
-        <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="activation" type="BVector" x="true" y="true" z="true"/>
+        <description><![CDATA[  ]]><description> 
+        <inheritance value="Constraint" description=" "/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="activation" type="BVector" x="true" y="true" z="true" description=" "/>
     </const>
     <const><!-- contrainte de limitation en scale-->
         <name>ScaleConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="min" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="minActivation" type="BVector" x="true" y="true" z="true"/>
-        <attribute name="max" type="Vector" x="1" y="1" z="1"/>
-        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true"/>
+        <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="minActivation" type="BVector" x="true" y="true" z="true" description=" "/>
+        <attribute name="max" type="Vector" x="1" y="1" z="1" description=" "/>
+        <attribute name="maxActivation" type="BVector" x="true" y="true" z="true" description=" "/>
     </const>
     <const><!-- contrainte de distance entre les centres de 2 objets -->
         <name>DistanceConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="region" type="Enum" values="inside, outside, surface" value="outside"/>
-        <attribute name="distance" type="number" value="0"/>
+        <attribute name="target" type="Empty" value="null" description=" "/>
+        <attribute name="region" type="Enum" values="inside, outside, surface" value="outside" description=" "/>
+        <attribute name="distance" type="number" value="0" description=" "/>
     </const>
-    <const><!-- contrainte de suivi (sert pour une cam�ra suivant un objet) -->
+    <const><!-- contrainte de suivi (sert pour une caméra suivant un objet) -->
         <name>TrackToConstraint</name>
+        <description><![CDATA[  ]]><description> 
         <inheritance value="Constraint"/>
-        <attribute name="target" type="Empty" value="null"/>
-        <attribute name="alignTo" type="Enum" values="x, y, z" value="x"/>
-        <attribute name="upTo" type="Enum" values="x, y, z" value="z"/>
-        <attribute name="align" type="boolean" value="false"/>
+        <attribute name="target" type="Empty" value="null" description=" "/>
+        <attribute name="alignTo" type="Enum" values="x, y, z" value="x" description=" "/>
+        <attribute name="upTo" type="Enum" values="x, y, z" value="z" description=" "/>
+        <attribute name="align" type="boolean" value="false" description=" "/>
     </const>
 	
     <model>

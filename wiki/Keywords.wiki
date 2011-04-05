@@ -17,67 +17,46 @@
 =A=
 ----
 ==accelerate==
-_Partie *règles du jeu*_
-  * Déclarer l'accélération des entités.
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'accélérer avec une valeur (voir 'by') :
 {{{
 definition acc1 means 
-	sonic accelerate by 20;
+	sonic accelerate by 20; // sonic accélère de 20
 }}}
 
 ==activate==
-_Partie *règles du jeu*_
-  * Activer un commande/action/util.
+_Partie *Définitions*_
+  * activer une commande ou toutes les commandes (voir 'commands' et 'desactivate') :
 {{{
-definition cinematique1 means
-		disable commands,   
-		activate P,         
+definition activerTout means
+	activate commands;
+definition activerPauseSeulement means 
+	activate P; //active la touche P sur le clavier
 }}}
 
 ==add==
-_Partie *règles du jeu*_
-  * Additionner.
+_Partie *Définitions*_
+  * ajouter une valeur à un attribut numérique : 
 {{{
-definition accelerer means 
-	add 30 to acceleration of batman;
+definition donnerBonus means 
+	add 30 to life of batman; // l'attribut 'life' de l'entité batman de type Character va augmenter de 30
 }}}
 
+==ai==
+_Partie *Intelligence Artificielle*_
+  * détailler le contenu d'une ia (voir 'is' et 'rule') :
 {{{
-rule mario touches teteSuperGoomba
-    then 
-        sub 1 for life of superGoomba, 
-        add 1 for nbOfJumpInTheAir,   
-        sub 1 for nbOfJumpInTheAir,
-        add 300 for score of joueur_principal;
+ai ia_1 is
+	rule /*déclencheur*/ then /*conséquencess*/;
 }}}
-
 
 ==alive==
-_Prtie *Règles du jeu*_
-  * état de *vivant* pour un caractère/entité.
+_Partie *Définitions*_
+  * dans une condition, teste si l'entité ayant un attribut 'life' (ex : Character) est en vie (si son attribut 'life' n'a pas atteint 0) :
 {{{
-
-}}}
-
-
-==and==
-_Partie *Déclaration de nouveaux types*_
-  * séparer les types lors de la déclaration d'un nouveau type :
-{{{
-type SuperPlombier is Plombier and Weapon and Vehicle; // on peut ajouter autant de type que nécessaire avec 'and' du moment que les types existent déjà et ne soient pas redondants
-}}}
-_Parties *Définitions* et *Règles du jeu*_
-  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir 'if') :
-{{{
-if (life of perso1 = 0 and life of perso2 >= 5) //les conditions doivent être toutes les deux vraies pour pouvoir accéder à la conséquence (dans le then)
+if (perso is alive) // (voir 'is')
 then /*conséquences*/
 endif;
-}}}
-  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'between' ) :
-{{{
-distance between perso1 and perso2 > 10
-angle between perso1 and perso2 > 10
-random between 1 and 20 
-// ces valeurs peuvent être assignées ou testées dans une condition
 }}}
 
 ==all==
@@ -85,39 +64,65 @@ random between 1 and 20
 {{{
 assign 100 at life of all; // (voir 'assign') va assigner 100 à l'attribut 'life' de tous les objets 3D qui en possèdent un
 if life of all = 0 then /*conséquences*/ endif; // (voir 'if') va tester si tous les objets générés qui ont un attribut 'life' l'ont à 0
-rule all moves then /*conséquencess*/; //(voir 'rule') teste si l'un des objets générés bouge
+rule all moves then /*actions*/; // (voir 'rule') teste si l'un des objets générés bouge
 }}}
 
+==and==
+_Partie *Déclaration de nouveaux types*_
+  * séparer les types lors de la déclaration d'un nouveau type :
+{{{
+type SuperPlombier is Plombier and Weapon and Vehicle; // on peut ajouter autant de type que nécessaire avec 'and' du moment que les types existent déjà et ne soient pas redondants
+}}}
+_Partie *Définitions*_
+  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir 'if') :
+{{{
+if (life of perso1 = 0 and life of perso2 >= 5) //les conditions doivent être toutes les deux vraies pour pouvoir accéder à la conséquence (dans le then)
+then /*conséquences*/
+endif;
+}}}
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'between') :
+{{{
+distance between perso1 and perso2 > 10
+angle between perso1 and perso2 > 10
+random between 1 and 20 
+// ces valeurs peuvent être assignées ou testées dans une condition
+}}}
+
+==angle==
+_Parties *Initialisations* et *Définitions*_
+  * retourner la valeur de l'angle (sur l'axe z) formé par l'orientation entre deux objets (voir 'turn', 'by' et 'clockwise') :
+{{{
+definition calculAngle means 
+	if angle between perso1 and perso2 > 10 
+	then assign (angle between perso1 and perso2) to z of orientation of perso3 // (voir 'assign')
+	endif;
+}}}
 
 ==anticlockwise==
-_Partie *règles du jeu*_
-  * Déclare le sens de tournage dans le sens contre des aiguilles d'une montre.
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'effectuer une rotation dans le sens anti-horaire (trigonométrique) (voir 'turn', 'by' et 'clockwise') :
 {{{
 definition defL1 means 
-	batman turn anticlockwise by 10;
+	avion turn anticlockwise by 10; 
 }}}
 
 ==assign==
-_Partie *règles du jeu*_
-  * Affectation une valeur à un variable ou état.
+_Partie *Définitions*_
+  * affecter une valeur à un attribut (la valeur doit correspondre au type de l'attribut) :
 {{{
-definition switchCam means
-	if active of cam1 = true then
-		assign true to active of cam2 ,
-		assign false to active of cam1
-	else
-		assign true to active of cam1 ,
-		assign false to active of cam2
-	endif;
+definition assigner means
+	assign true to active of camera1,
+	assign 10 to life of perso1,
+	assign "Nom" to name of perso2;
 }}}
 
 ==at==
 (voir 'has')
 
 _Partie *Description du jeu*_
-  * assigner une valeur (numérique ou non) à un attribut de la classe Game :
+  * assigner une valeur (numérique ou non) à un attribut de game :
 {{{
-Game has name at "mon jeu";
+game has name at "mon jeu";
 }}}
 _Partie *Initialisations*_
   * assigner une valeur (numérique ou non) à un attribut d'une classe ou d'un objet :
@@ -131,37 +136,28 @@ perso2 has belonging at perso2; // ici, l'attribut belonging est un Object (Char
 =B=
 ----
 ==backward==
-_Parties *Règles du jeu*_
-  * Sens recule pour déplacement ou orientation.
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'aller en arrière pour une translation (voir 'move', 'by' et 'forward') :
 {{{
-definition bougerJeep1 means 
-	jeep move backward by 10;
+definition bougerJeep means 
+	jeep move backward by 10; // la jeep va reculer de 10
+definition bougerMario means 
+	mario move backward by 10; // si mario (de type Character) a son attribut 'moveWithCamera' à true, il va se déplacer vers la caméra
 }}}
 
 ==becomes==
 _Parties *Règles du jeu*_
-  * Un déclencheur qui déclenche quand un variable devient égal ou inégal (par rapport de définition) d'un valeur ou variable.
+  * sert à déclencher des actions lorsque la valeur d'un attribut devient (ou ne devient plus) exactement une autre valeur (voir 'rule') : 
 {{{
-rule value of jaugeForce becomes <= min of jaugeForce then
-	assign 1 to step of jaugeForce;
-
-rule score of joueur_principal becomes scoreAAtteindre of tux then  
-	defeat of ordinateur;
+rule value of jaugeForce becomes 10 then
+	/*actions*/;
+rule name of perso1 becomes "Nouveau nom" then
+	/*actions*/;
 }}}
-  * Utilisé comme affectation.
-{{{
-definition switchIAHumanJoueur2 means
-	if controller of joueur = "human"
-		controller of joueur2 becomes ia1
-	else
-		controller of joueur2 becomes human
-	endif;
-}}}
-
 
 ==between==
-_Parties *Définitions* et *Règles du jeu*_
-  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and' ) :
+_Parties *Initialisations* et *Définitions*_
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and') :
 {{{
 distance between perso1 and perso2 > 10
 angle between perso1 and perso2 > 10
@@ -169,152 +165,135 @@ random between 1 and 20
 // ces valeurs peuvent être assignées ou testées dans une condition
 }}}
 
-==block==
-_Partie *Definitions*_
-  * Prévenir de transformation/rotation/changement de taille d'un objet.
+==brake==
+_Partie *Définitions*_
+  * ordonner à l'entité désignée de freiner d'une valeur (voir 'by') :
 {{{
-
-}}}
-
-==break==
-_Partie *règles du jeu*_
-  * Déclarer le freinage.
-{{{
-definition brk means 
-	vaisseau brake by 5;
+definition freiner means 
+	vaisseau brake by 5; // la vitesse du vaisseau va décroître de 5
 }}}
 
 ==by==
-_Partie *Règles du jeu*_
-  * Utilisée pour définir le changement d'une valeur liée à la déplacement des entités. 
+_Partie *Définitions*_
+  * définit la valeur associée à un changement (voir 'jump', 'move', 'turn', 'accelerate', 'brake', 'expels') : 
 {{{
-command mario for joueur_principal is 
-	space for mario jump by 10, 
-	key Z for mario move forward by 10,    
-	key S for mario move backward by 10
+mario jump by 10
+mario move forward by 10   
+jeep accelerate by 10
+jeep brake by 10   
+yoshi expels goomba by 10
 }}}
 
 ----
 =C=
 ----
-==camera==
-_Partie *Initialisations*_
-  * Définie un point de vu. 
-{{{
-cam1 is camera first person;
-}}}
-
 ==clockwise==
-_Partie *règles du jeu*_
-  * Déclare le sens de tournage dans le sens aiguilles d'une montre.
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'effectuer une rotation dans le sens horaire (voir 'turn', 'by' et 'anticlockwise') :
 {{{
 definition defR1 means 
-	batman turn clockwise by 10;
+	avion turn clockwise by 10; 
 }}}
 
 ==command==
-_Partie *règles du jeu*_
-  * Déclarer la liste des contrôles/commandes autorisées pour joueur(s).
+_Partie *Commandes*_
+  * déclarer la liste des commandes pour chaque joueur :
 {{{
-command for joueur1, joueur2 is   //joueur2 seulement si c'est un Player 'human'
+command for joueur1, joueur2 is    // les mêmes commandes sont autorisées pour deux joueurs si le mode tour par tour est actif (attribut 'turnbased' de game)
 	mouse right for viserR,
-	mouse left for viserL,
-	mouse rClick for valider,
-	mouse lClick for annulerDirection,
-	key escape for pause;
+	mouse left for viserL;
+}}}
+
+==commands==
+_Partie *Définitions*_
+  * activer / désactiver l'ensemble des commandes pour le clavier et la souris (voir 'activate' et 'disable') :
+{{{
+activate commands
+disable commands
 }}}
 
 ==contains==
-  * Vérifier dans une condition si un objet appartient d'une liste.
+  * dans une condition, vérifier si un objet appartient à une liste (voir 'list') :
 {{{
-
-}}}
-
-==comp==
-_Partie *règles du jeu*_
-  * Il compte les nombre des fois qu'une sous-condition est vrai.
-{{{
-rule in choix premier is blanche touches trous then
-	if noire is generated       //comment dire qu'il faut que toutes les boules de la couleur du joueur en cours soient rentrées plus la noire
-	then
-		if comp cptBandes of blanche >= 3 
-		then victory "Bien joué"
-		else victory
-	else
-	endIf
+if elements of inventory1 contains arme1 then  // l'attribut 'elements' de inventory1 est une liste d'objets
+	/*conséquence*/
+endif;
 }}}
 
 ----
 =D=
 ----
 ==dead==
-_Prtie *Règles du jeu*_
-  * état de *mort* pour un caractère/entité.
+_Partie *Définitions*_
+  * dans une condition, tester si l'entité ayant un attribut 'life' (ex : Character) est mort (si son attribut 'life' a atteint 0) :
 {{{
-
+if (perso is dead) // (voir 'is')
+then /*conséquences*/
+endif;
 }}}
 
 ==defeat==
 _Partie *Définitions*_
-  * Déclare la échec d'un ou plusieurs joueur(s)/caractère(s).
+  * déclarer l'échec d'un joueur dans la partie :
 {{{
-definition manger means defeat pacman;
-}}}
-{{{
-rule nbLives of batman becomes 0 then
-	defeat of joueurPrincipal : "ahah noob !",
-	Game ends;
+definition echec means 
+	defeat of joueurPrincipal : "Echec du joueur pricipal !",  // il est possible d'afficher un message
+	defeat of joueurAllie;
 }}}
 
 ==definition==
 _Partie *Définitions*_
-  * Défini un nom pour ensemble d'un ou plusieurs action/affectation. 
+  * déclarer un ensemble d'actions réutilisables plusieurs fois dans des règles du jeu ou des commandes différentes (voir 'means') : 
 {{{
-definition  tirer  means 
+definition tirer means  // le nom 'tirer' pourra être appelé tel quel dans une règle du jeu
 	bazooka expels missile by 100, 
 	wait 200 ms then 
 		generate missile 
 	endwait;
+command for joueur1 is
+	key space for tirer;  // appel de tirer dans la règle du jeu
 }}}
-
+rule /*déclencheur*/ then
+	tirer;  // appel de tirer dans la règle du jeu
+}}}
 
 ==dies==
-_Prtie *Règles du jeu*_
-  * Déclare la mort d'en personnage/entité. Il peut être utilisé comme un déclancheur. 
+_Partie *Définitions*_
+  * déclare la mort d'un objet de type Character :
 {{{
-rule mario touches zoneDeVide
-	then mario dies;
+rule mario touches zoneDeVide then
+	mario dies;
 }}}
+  * tester si l'objet de type Character vient juste de mourir :
 {{{
-rule droid dies then
-	retirerCoeur,
-	defeat of joueur : "Noob !",
+rule mario dies then
 	Game ends;
 }}}
 
-  * Déclencher les évènements dans cas la mort.
-{{{
-rule batman dies then
-	sub 1 to nbLives of batman,
-	generate batman at 0 0 0;
-}}}
-
 ==disable==
-_Partie *règles du jeu*_
-  * Désactiver un commande/action/util.
+_Partie *Définitions*_
+  * désactiver une commande ou toutes les commandes (voir 'commands' et 'desactivate') :
 {{{
-definition cinematique1 means
-		disable commands,   
-		activate P,         
+definition desactiverTout means
+	disable commands;
+definition desactiverPauseSeulement means 
+	disable P; //désactive la touche P sur le clavier
 }}}
-
 
 ==duplicable==
-_Partie *Initialisations* et *Définitions*_
-  * Indique que l'objet/entité est duplicable; c'est possible avoir plusieurs exemplaires d'objet. 
+_Partie *Initialisations*_
+  * Indique que l'objet peut être copié en plusieurs exemplaires lors d'un generate : 
 {{{
 lapin is duplicable;
 }}}
+
+----
+----
+----
+*token* : partie supérieure achevée
+----
+----
+----
 
 ==during==
 _Partie *Règles du jeu*_
@@ -1356,7 +1335,7 @@ _Parties *Règles du jeu*_
 }}}
 
 ==world==
-_Partie * Information about game *_
+_Partie *Description du jeu*_
   * Défini le type de carte de jeu (map).
 {{{
 world at grid;
@@ -1372,25 +1351,13 @@ _Parties *Règles du jeu*_
 ----
 =X=
 ----
-_Partie **_
-  * :
-{{{
 
-}}}
 ----
 =Y=
 ----
-_Partie **_
-  * :
-{{{
 
-}}}
 ----
 =Z=
 ----
-_Partie **_
-  * :
-{{{
 
-}}}
 ----

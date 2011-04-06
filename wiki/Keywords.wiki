@@ -108,7 +108,7 @@ definition defL1 means
 
 ==assign==
 _Partie *Définitions*_
-  * affecter une valeur à un attribut (la valeur doit correspondre au type de l'attribut) :
+  * affecter une valeur à un attribut, elle doit correspondre au type de l'attribut (voir 'to') :
 {{{
 definition assigner means
 	assign true to active of camera1,
@@ -430,7 +430,7 @@ key enter for */action*/;
 
 ==equip==
 _Partie *Définitions*_
-  * équiper une entité de type Character avec un objet de son inventaire
+  * équiper une entité de type Character avec un objet de son inventaire :
 {{{
 definition equiper means 
 	perso1 equip arme1; //l'attribut 'equipedObject' de perso1 devient arme1
@@ -445,7 +445,7 @@ key escape for */action*/;
 
 ==expels==
 _Partie *Définitions*_
-  * ordonner à un objet d'en lâcher un autre qui lui appartient (voir 'has', 'ingests' et 'grasps'):
+  * ordonner à un objet d'en lâcher un autre qui lui appartient (voir 'has', 'ingests' et 'grasps') :
 {{{
 definition tirer means 
 	batman expels missile by 20; // (voir 'by') l'objet est expulsé avec une force de 20
@@ -654,84 +654,99 @@ command for player is
 	key up held for /*action*/; // 'held' n'est pas obligatoire
 }}}
 
----
+----
 =I=
----
-==ident==
-_Partie *Information about game* et *Inheritance, creation of type* et *Initializations*_
-  * Ident est un nom/mot propre pour indiquer/appeler/pointer un entité. Chaque ident est composé des lettres et des chiffres et il faut commencer par un lettre. 
-{{{
-name_kw at NightHunter3;
-arretGauche is Zobstacle;
-lapin1 is Lapin enemy;
-}}}
-
+----
 ==if==
-  * Mot-clé pour déclaration une condition. 
+_Partie *Définitions*_
+  * exprimer un choix avec une condition (voir 'then', 'else' et 'endif') :
 {{{
-definition viserR means
-	if value of etapes = "choixDirection" then
-		cam1 turn right by 10
-	endif;
+if /*condition*/ // si la condition est repectée les actions après le 'then' seront exécutées
+then /*conséquence (condition respectée)*/
+endif; // fin, condition repectée ou non
+
+if /*condition 1*/ 
+then /*(condition respectée)*/
+	if /*condition 2*/ // d'autre conditions peuvent être imbriquées
+	then /*conséquence (condition respectée)*/
+	endif; 
+endif; 
+
+if /*condition*/ // si la condition est repectée les actions après le 'then' seront exécutées sinon ce sont celles après le 'else' qui le seront
+then /*conséquence 1 (condition respectée)*/
+else /*conséquence 2 (condition non-repectée)*/ 
+endif;
 }}}
 
 ==in==
 _Partie *Initialisations*_
-  * (voir *insert*)
+  * désigner une liste lorsqu'on y accède :
+{{{
+assign 5 to life of num 3 in list1 // la liste doit contenir au moins 3 éléments et les attributs appelés doivent exister
+}}}
+  * désigner une liste lorsqu'on y place un nouvel élément :
+{{{
+insert arme1 in list1; // (voir 'insert')
+}}}
+_Partie *Définitions*_
+  * désigner une liste lorsqu'on y place un nouvel élément :
+{{{
+insert arme1 in list1; // (voir 'insert')
+yoshi ingest ennemi1 in inventaireEnnemis; // (voir 'ingest')
+}}}
+  * générer un objet à l'intérieur d'une zone (voir 'generate'):
+{{{
+generate mario in zoneDepart;
+}}}
 
 ==ingests==
 _Partie *Règles du jeu*_
-  * Un personnage/entité range un autre entité dans un emplacement.
+  * ordonner à un objet d'en prendre un autre qui ne lui appartient pas (voir 'has', 'grasps' et 'expels'), l'objet pris est effacé et mis dans un inventaire :
 {{{
-definition placebook means 
-           prince ingests book in library
+definition placeBook means 
+	perso1 ingests book1 in inventaireLibrairie;
 }}}
 
 ==insert==
-_Partie *Initialisations*_
-  * Ajouter un entité à un groupe/liste.
+_Parties *Initialisations* et *Définitions*_
+  * placer un objet dans une liste (voir 'remove' et 'in') :
 {{{
-insert Lapan1 in Ennemies;
+insert arme1 in list1 num 2; // (voir 'num') l'objet arme1 sera placé à la deuxième place dans la liste list1 (la dernière place si le nombre d'éléments est plus petit)
+insert arme1 in list1; // l'objet arme1 sera placé à la fin de la liste list1
 }}}
 
 ==invert==
-_Partie *règles du jeu*_
-  * Invertir deux valeurs.
+_Partie *Définitions*_
+  * intervertir les valeurs de deux attributs (voir 'with') :
 {{{
-definition accelerer means 
+definition intervertir means 
 	invert speed of mario with speed of luigi;
 }}}
 
 ==is==
-_Partie *Initialisations*_
+_Partie *Déclaration de nouveaux types*_
   * déclarer un nouveau type (une nouvelle classe) (voir 'type') :
 {{{
 type Plombier is Character; // le type doit déjà exister ou avoir été défini plus haut dans le code de la même manière
 type SuperPlombier is Plombier and Weapon; // on peut déclarer de nouveaux types qui sont composés de plusieurs déjà existant
 }}}
-_Partie *Déclaration de nouveaux types*_
+_Partie *Initialisations*_
 {{{
 mario is Plombier; // le type doit exister
+}}}
+_Partie *Définitions*_ 
+  * tester l'état d'un objet selon son type dans une condition (voir 'if') :
+{{{
+if audio1 is started then /*conséquences*/ endif; // (voir 'started') pour un objet de type Media
+if perso1 is dead then /*conséquences*/ endif; // (voir 'dead') pour un objet de type Character
 }}}
 _Partie *Commandes*_ (voir 'command' et 'for')
   * déclarer une commmande : se place après la déclaration :
 {{{
 command objet1 for player1 is definition1;
 }}}
-_Partie *Définitions et Règles du jeu*_ 
-  * tester l'état d'un objet selon son type dans une condition (voir 'if') :
-{{{
-if audio1 is started then /*conséquences*/ endif; // (voir 'started') pour un objet de type Media
-if perso1 is dead then /*conséquences*/ endif; // (voir 'dead') pour un objet de type Character
-}}}
-_Partie *Règles du jeu*_ (voir 'rule' et 'then')
-  * préciser le nom d'une règle du jeu *(facultatif)* :
-{{{
-rule /*declencheur*/ then /*conséquences*/ ; // règle sans nom
-rule nom_de_regle is /*declencheur*/ then /*conséquences*/ ; // règle avec
-}}}
 _Partie *Intelligence Artificielle*_ (voir 'ai' et 'then')
-  * préciser le nom d'une règle du jeu *(facultatif)* :
+  * préciser le nom d'une règle du jeu :
 {{{
 ai nom_ia is /*conséquences*/ ; 
 }}}
@@ -740,12 +755,10 @@ ai nom_ia is /*conséquences*/ ;
 =J=
 ----
 ==jump==
-_Partie *Règles du jeu*_
-  * Déclare le saute du personnage/entité.
+_Partie *Définitions*_
+  * ordonner à un personnage de sauter en indiquant la puissance (voir 'by') :
 {{{
-rule true then
-	superGoomba move left by 10 during 2 sec,
-	superGoomba jump by 5
+superGoomba jump by 5;
 }}}
 
 ----

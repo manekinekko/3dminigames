@@ -257,7 +257,11 @@ $(function(){
 		M3D.Editor.clear(function(){
 			M3D.GUI.hidePopup('confirmation-clear');
 			button.val('YES');
-			M3D.GUI.showPopup('game-info', null, true);
+			
+			// delay 
+			setTimeout(function(){
+				M3D.GUI.showPopup('game-info', null, true);
+			}, 1000);
 		});
 		
 	});
@@ -300,6 +304,17 @@ $(function(){
 				M3D.DB.update_grammar(M3D.Editor.getContent());
 			}
 		}
+	});
+	
+	/**
+	 * Bind the attributes description toggling
+	 */
+	$('.attributes_name').live('click', function(){
+		$(this).next('.attributes_desc').toggle();
+	});
+	
+	$('#toggle-attributes').bind('click', function(){
+		$('#attributes_panel').toggle();
 	});
 	
 	/**

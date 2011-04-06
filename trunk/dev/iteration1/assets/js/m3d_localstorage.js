@@ -43,7 +43,9 @@
 	 */
 	M3D.DB.init = function(){
 		log('initializating the database ...');
-		M3D.DB.storeDefaultAttributes();
+		M3D.DB.storeDefaultAttributes(function(){
+			M3D.GUI.initAttributPanel();
+		});
 		M3D.DB.detectPreviousContent();
 	};
 	
@@ -52,9 +54,9 @@
 	 * @see Object.contains
 	 * @see Object._set
 	 */
-	M3D.DB.storeDefaultAttributes = function(){
+	M3D.DB.storeDefaultAttributes = function(cb){
 		
-		var key = '__default_attributes__';
+		var key = 'default'+DB_PATTERN_ATTR;
 		
 		if ( ! M3D.DB.contains(key) ){
 			
@@ -65,12 +67,16 @@
 				data:{filename:'attributes.xml'},
 				success:function(d){
 					_set({uid:key, value:d.attributes});
+					if(cb){cb();}
 				},
 				error:function(){
 					alert('Could not load the default models attributes! A server error may has occured!');
 				}
 			});
 			
+		}
+		else {
+			if(cb){cb();}
 		}
 		
 	};
@@ -380,7 +386,7 @@
 		for(var i in localStorage){
 			if ( Exp.test(i) ){
 				t.push({
-					'uid':i.replace('_'+str, ''), // get rid off of "_str"
+					'uid':i.replace('_'+str, ''), // get rid off of "_<str>"
 					'value':localStorage.getItem(i)
 				});
 			}

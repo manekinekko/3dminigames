@@ -35,43 +35,73 @@
 						<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>
 					</div>
 					
-					<!-- start: menu -->
-					<div id="viewmenu">
-						<div id="upload" class="button float-left">Upload</div>
-						
-						<div id="create-game" class="button float-right">Create My Game</div>
-
-						<select style="width:100px;" class="float-right" id="importUrl" name="importUrl">
-							<optgroup id="myModels" label="My models">
-							</optgroup>
-							<optgroup label="Free models">
-								<option value="assets/dae/free/duck.dae" selected="true">Duck</option>
-								<option value="assets/dae/free/f.dae" >Girl</option>
-								<option value="assets/dae/free/avion.dae" >Plane</option>
-							</optgroup>
-							<optgroup label="Presets">
-								<option value="assets/dae/presets/cube.dae">Cube</option>
-								<option value="assets/dae/presets/sphere.dae">Sphere</option>
-								<option value="assets/dae/presets/cylinder.dae">Cylinder</option>
-							</optgroup>
-						</select>
-						<div id="import" class="button float-right" >Add a model</div>
-						
-						<div id="clear-canvas" class="button float-right" >Clear Canvas</div>
-
-						<select id="select-model" class="float-right">
-								<option value="">--select model--</option>
-						</select>
-
-					</div>
-					<!-- end: menu -->
 				</div>
 				
 				<!-- start: editor -->
 				<div id="editor">
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
+					<div id="attributes_panel"></div>
 				</div>
 				<!-- end: editor -->
+				
+				<!-- start: menu -->
+				<div id="viewmenu">
+					<ul>
+		
+						<li>
+							<select id="select-model">
+									<option value="">--select model--</option>
+							</select>
+						</li>
+				
+						<li class="separator"></li>
+	
+						<li>
+							<select style="width:100px;" id="importUrl" name="importUrl">
+								<optgroup id="myModels" label="My models">
+								</optgroup>
+								<optgroup label="Free models">
+									<option value="assets/dae/free/duck.dae" selected="true">Duck</option>
+									<option value="assets/dae/free/f.dae" >Girl</option>
+									<option value="assets/dae/free/avion.dae" >Plane</option>
+								</optgroup>
+								<optgroup label="Presets">
+									<option value="assets/dae/presets/cube.dae">Cube</option>
+									<option value="assets/dae/presets/sphere.dae">Sphere</option>
+									<option value="assets/dae/presets/cylinder.dae">Cylinder</option>
+								</optgroup>
+							</select>
+						</li>
+	
+						<li>
+							<div id="import" class="button" >Add selected model</div>
+						</li>
+
+						<li class="separator"></li>
+
+						<li>
+							<div id="upload" class="button">Upload new model</div>
+						</li>
+
+						<li class="separator"></li>
+
+						<li>
+							<div id="clear-canvas" class="button" >Clear Canvas</div>
+						</li>
+	
+						<li class="separator"></li>
+
+						<li>
+							<div id="toggle-attributes" class="button" >Preset Attributes</div>
+						</li>
+						
+						<li style="float:right">
+							<div id="create-game" class="button">Create My Game</div>
+						</li>
+
+					</ul>
+				</div>
+				<!-- end: menu -->
 				
 				<!-- start: bottom info panel -->
 				<div id="info-bottom" class="animate">

@@ -81,6 +81,57 @@
 		}
 	};
 	
+	/**
+	 * Set and initialize the attributes panel
+	 * This function is loaded when the DB is ready!
+	 */
+	M3D.GUI.initAttributPanel = function(){
+		var _attrHTML = [];
+		var _models = M3D.DB.getAttributes('default').model;
+		var _attributes = [];
+		var _name = '', _type = '', _desc = '';
+		
+		for(var i=0; i<_models.length; i++){
+			
+			if ( _models[i] && _models[i]['name'] ){
+				_attrHTML.push('<h3>'+_models[i]['name']+'</h3>');
+			}
+			
+			if ( _models[i] && _models[i]['attribute'] ){
+				_attributes = _models[i]['attribute'];
+				
+				for(var j=0; j<_attributes.length; j++){
+	
+					if ( _attributes[i] && _attributes[i]['@attributes'] ){
+	
+						_name = _attributes[j]['@attributes']['name'];
+						_type = _attributes[j]['@attributes']['type'] || 'N/A';
+						_dflt = _attributes[j]['@attributes']['value'] || 'N/A';
+						_desc = _attributes[j]['@attributes']['description'] || 'N/A';
+	
+	
+						_attrHTML.push('<div class="attributes_details">\
+									<div class="attributes_name">\
+										<span>'+_name+'</span>\
+									</div>\
+									<div class="attributes_desc">\
+										<b>Type</b>&nbsp;'+_type+'<br/>\
+										<b>Default</b>&nbsp;'+_dflt+'<br/>\
+										<b>Description</b>&nbsp;'+_desc+'<br/>\
+									</div>\
+								</div>');
+						
+					} 
+					
+				}
+			
+			}
+			
+		}
+		
+		$('#attributes_panel').append(_attrHTML.join(''));
+	};
+	
 	// -- Create a new game based on its scenario
 	M3D.GUI.createGame = function(){
 		var _scenario = M3D.Editor.getContent();
@@ -307,14 +358,14 @@
 		}
 		
 		if ( name == "entity-info" ){
-			$('.animate').animate({top: M3D.GUI.ANIMATE_BOTTOM_START_POS});
+			var nameValue = $('.window #name').attr('uid', uid);
 		}
 		
-		$('#viewmenu').fadeOut(100);
+		//$('#viewmenu ul').fadeOut(100);
 	
-		$('#entity-info').show();
+		//$('#entity-info').show();
 	
-		$('#modal').fadeIn(100, function(){
+		$('#modal').show(100, function(){
 			
 			var _window = $('.window.opened'); 
 			if ( _window.length > 0 ){
@@ -343,9 +394,6 @@
 				$('#'+name).addClass('opened').removeClass('closed').animate({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS }, M3D.GUI.ANIMATE_WINDOW_SPEED);
 			}
 			
-			var nameValue = $('.window #name');
-			nameValue.attr('uid', uid);
-			
 		});
 		
 		
@@ -358,7 +406,7 @@
 		$('.window.opened').animate({ top:M3D.GUI.ANIMATE_WINDOW_CLOSE_POS }, function(){
 			
 			$(this).removeClass('opened').addClass('closed');
-			$('#viewmenu').fadeIn(100);
+			//$('#viewmenu ul').fadeIn(100);
 			$('#modal').hide(100);
 		});
 		

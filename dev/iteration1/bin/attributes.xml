@@ -98,7 +98,7 @@
         <attribute name="lifeMax" type="number" value="100" description="La vie maximum du personnage pour éviter qu'il n'en regagne plus que nécessaire."/>
         <attribute name="lifeMin" type="number" value="1" description="La vie minimum du personnage, si cette valeur est atteinte, le personnage est mort (il peut reprendre à un checkpoint par exemple)."/>
         <attribute name="nbLives" type="number" value="1" description="Le nombre de vies du personnage (diffère de l'attribut 'life'). "/>
-		<attribute name="nbLivesMax" type="number" value="100" description="Le nombre de vies maximum du personnage pour éviter qu'il n'en regagne plus que nécessaire."/>
+        <attribute name="nbLivesMax" type="number" value="100" description="Le nombre de vies maximum du personnage pour éviter qu'il n'en regagne plus que nécessaire."/>
         <attribute name="nbLivesMin" type="number" value="1" description="Le nombre de vies minimum du personnage, si cette valeur est atteinte, en général, la partie est terminée."/>
         <attribute name="magic" type="number" value="0" description="Le nombre de points de magie (mana) du personnage."/>
         <attribute name="magicMax" type="number" value="1" description="Le nombre de points de magie maximum du personnage, si cette valeur est atteinte, pour éviter qu'il n'en regagne plus que nécessaire."/>

@@ -2,7 +2,7 @@
 <m3d>
     <model>
         <name>Empty</name>
-        <description><![CDATA[Cette classe représente un objet vide (invisible).]]><description> 
+        <description><![CDATA[Cette classe représente un objet vide (invisible).]]></description> 
         <attribute name="posX" type="number" value="0" description="La position sur l'axe x de l'objet par rapport à sa référence."/>
         <attribute name="posY" type="number" value="0" description="La position sur l'axe y de l'objet par rapport à sa référence."/>
         <attribute name="posZ" type="number" value="0" description="La position sur l'axe z de l'objet par rapport à sa référence."/>
@@ -18,7 +18,7 @@
     </model>
     <model>
         <name>Camera</name>
-        <description><![CDATA[L'objet primitif 'caméra', permet d'afficher la scène 3D.]]><description> 
+        <description><![CDATA[L'objet primitif 'caméra', permet d'afficher la scène 3D.]]></description> 
         <inheritance value="Empty"/> <!--les tailles 'tX' et 'tY' sont les dimensions du canvas 2D et 'tZ' est la focale-->
         <attribute name="name" type="String" value="'Camera1'" description="Le nom de la caméra (sert pour les affichages)."/>
         <attribute name="view" type="Enum" values="free, firstPerson, thirdPerson" value="free" description="Le type de vue. Peut être soit 'free' (caméra libre), soit 'firstPerson' (caméra en vue à la première personne : sert pour les FPS), soit 'thirdPerson' (caméra en vue à la troisième personne : déplacement possible autour d'un Empty)."/>
@@ -27,7 +27,7 @@
     </model>
     <model>
         <name>Zone</name>
-        <description><![CDATA[Une zone permettant de déclencher des actions si un objet la touche (ex: ligne d'arrivée, piège à éviter...). Elle peut être invisible.]]><description> 
+        <description><![CDATA[Une zone permettant de déclencher des actions si un objet la touche (ex: ligne d'arrivée, piège à éviter...). Elle peut être invisible.]]></description> 
         <inheritance value="Empty"/> <!--Zone n'hérite plus d'Object-->
         <attribute name="name" type="String" value="'Zone1'" description="Le nom de la zone (sert pour les affichages)."/>
         <attribute name="isGenerated" type="boolean" value="false" description="Attribut permettant de savoir si la zone est générée."/>
@@ -39,7 +39,7 @@
     </model>
     <model><!--à voir avec le groupe moteur 3D-->
         <name>Lamp</name>
-        <description><![CDATA[L'objet primitif 'lampe', permet de mieux voir les éléments de la scène selon sa luminosité.]]><description> 
+        <description><![CDATA[L'objet primitif 'lampe', permet de mieux voir les éléments de la scène selon sa luminosité.]]></description> 
         <inheritance value="Empty"/>
         <attribute name="type" type="Enum" values="lamp, spot, sun" value="sun" description="Le type de lampe. Peut être soit 'lamp' pour un éclairage diffus à partir d'un point (ampoule), soit 'spot' pour un éclairage cônique (phares de voiture), soit 'sun' pour un éclairage dont les rayons lumineux sont dirigés dans la même direction (soleil)."/>
         <attribute name="displayShadows" type="boolean" value="true" description="Attribut permettant d'activer ou non les ombres projetées par la lampe."/>
@@ -51,7 +51,7 @@
     </model>
     <model>
         <name>Ground</name>
-        <description><![CDATA[Le sol de la scène (un objet 3D). Il est fixe et ne peut pas être traversé par les objets environnants.]]><description> 
+        <description><![CDATA[Le sol de la scène (un objet 3D). Il est fixe et ne peut pas être traversé par les objets environnants.]]></description> 
         <inheritance value="Empty"/>
         <attribute name="type" type="String" value="" description=" "/><!--Attribut à revoir.-->
         <attribute name="friction" type="number" value="100" description="Le coefficient de frottement du sol (100 : bitume, 10 : glace...)."/>
@@ -60,14 +60,14 @@
 	</model>
     <model>
         <name>Room</name><!-- objets qui sont à l'intérieur du volume englobant -->
-		<description><![CDATA[Un objet 3D dont les collisions se calculent depuis l'intérieur, sert pour représenter une pièce, une salle...]]><description> 
+		<description><![CDATA[Un objet 3D dont les collisions se calculent depuis l'intérieur, sert pour représenter une pièce, une salle...]]></description> 
         <inheritance value="Empty"/>
         <attribute name="url" type="String" value="" description="Le chemin vers l'objet 3D représentant la pièce."/><!--l'url d'un modèle 3D ou d'une image en niveau de gris en tant que heightmap-->
 		<attribute name="isLoad" type="boolean" value="false"/>
 	</model>
     <model><!--contrairement à Empty et ses classes filles, Obstacle a un collada associé comme Object-->
         <name>Obstacle</name>
-        <description><![CDATA[Un objet 3D fixe et non-traversable.]]><description> 
+        <description><![CDATA[Un objet 3D fixe et non-traversable.]]></description> 
         <inheritance value="Empty"/><!--objet fixe, non-traversable, pas de masse -->
         <attribute name="name" type="String" value="'Obstacle1'" description="Le nom de l'obstacle (sert pour les affichages)."/>
         <attribute name="isGenerated" type="boolean" value="false" description="Attribut permettant de savoir si l'obstacle est généré dans la scène ou non."/>
@@ -76,7 +76,7 @@
     </model>
     <model>
         <name>Object</name>
-        <description><![CDATA[Un objet 3D possédant les caractéristiques d'un Empty.]]><description> 
+        <description><![CDATA[Un objet 3D possédant les caractéristiques d'un Empty.]]></description> 
         <inheritance value="Empty"/>
         <attribute name="name" type="String" value="'Object1'" description="Le nom de l'objet (sert pour les affichages)."/>
         <attribute name="mass" type="number" value="10" description=" "/>
@@ -91,7 +91,7 @@
     </model>
     <model>
         <name>Character</name>
-        <description><![CDATA[Un objet 3D représentant un avatar.]]><description> 
+        <description><![CDATA[Un objet 3D représentant un avatar.]]></description> 
         <inheritance value="Object"/>
         <attribute name="description" type="String" value="'Description1'" description="La description du personnage (sert pour les affichages)."/>
         <attribute name="life" type="number" value="100" description="La vie du personnage."/>
@@ -117,7 +117,7 @@
     </model>
     <model>
         <name>Projectile</name>
-        <description><![CDATA[Un objet 3D dont la seule fonction est d'occasioner des dégâts aux points de vie d'un autre objet.]]><description> 
+        <description><![CDATA[Un objet 3D dont la seule fonction est d'occasioner des dégâts aux points de vie d'un autre objet.]]></description> 
         <inheritance value="Object"/>
         <attribute name="damages" type="number" value="1" description="Le nombre de dégâts que peut occasionner le projectile."/>
         <attribute name="damageRadius" type="num" value="0" description="Le rayon d'action du projectile s'il est censé exploser en ayant touché sa cible (missile)."/>
@@ -126,7 +126,7 @@
     </model>
     <model>
         <name>Weapon</name><!-- pour simplifier, 1 seul type de munitions -->
-        <description><![CDATA[Un objet 3D tirant des projectiles.]]><description> 
+        <description><![CDATA[Un objet 3D tirant des projectiles.]]></description> 
         <inheritance value="Object"/>
         <attribute name="munitions" type="Container" value="null" description="Le type de munition de l'arme."/>
         <attribute name="name" type="String" value="'Weapon1'" description="Le nom de l'arme (sert pour les affichages)."/>
@@ -136,14 +136,14 @@
     </model>
     <model>
         <name>Sword</name><!-- pour simplifier, 1 seul type de mutnitions -->
-        <description><![CDATA[Un objet 3D représentant une arme blanche, un marteau, etc, pouvant être porté par un personnage par exemple.]]><description> 
+        <description><![CDATA[Un objet 3D représentant une arme blanche, un marteau, etc, pouvant être porté par un personnage par exemple.]]></description> 
         <inheritance value="Object"/>
         <attribute name="name" type="String" value="'Sword1'" description="Le nom de l'arme (sert pour les affichages)."/>
         <attribute name="damages" type="number" value="1" description="Le nombre de dégâts que peut occasionner l'arme."/>
     </model>
     <model>
         <name>Vehicle</name>
-        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant sur le sol.]]><description> 
+        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant sur le sol.]]></description> 
         <inheritance value="Object"/>
         <attribute name="description" type="String" value="'Description1'" description="La description du véhicule (sert pour les affichages)."/>
         <attribute name="minSpeed" type="number" value="0" description="La vitesse minimale du véhicule."/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
@@ -155,7 +155,7 @@
     </model>
     <model>
         <name>Craft</name> <!--masse à 0 par défaut / regroupe les vaisseaux spatiaux et les avions -->
-        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant dans les airs (avion, vaisseau spatial) et n'étant pas (ou très peu) soumis à la gravité.]]><description> 
+        <description><![CDATA[Un objet 3D représentant un véhicule se déplaçant dans les airs (avion, vaisseau spatial) et n'étant pas (ou très peu) soumis à la gravité.]]></description> 
         <inheritance value="Object"/>
         <attribute name="description" type="String" value="'Description1'" description="La description du vaisseau (sert pour les affichages)."/>
         <attribute name="minSpeed" type="number" value="0" description="La vitesse minimale du vaisseau."/><!--les bornes de vitesse sont essentielles lorsque l'objet est géré avec une accélération-->
@@ -164,7 +164,7 @@
         <attribute name="maxBoost" type="number" value="0" description="Le niveau de boost maximum du vaisseau."/>
     </model>
     <model><!--sert à avoir un certain nombre d'un seul même objet (pas forcément duplicable), sert pour l'inventaire, exemple : boite de munitions-->
-        <description><![CDATA[Un objet 3D pouvant contenir un certain nombre d'objets du même type (ex : chargeur de munition).]]><description> 
+        <description><![CDATA[Un objet 3D pouvant contenir un certain nombre d'objets du même type (ex : chargeur de munition).]]></description> 
         <name>Container</name><!--anciennement Items-->
         <inheritance value="Object"/>
         <attribute name="name" type="string" value="'Container1'" description="Le nom du conteneur (sert pour les affichages)."/>
@@ -177,18 +177,18 @@
     </model>
     <model>
         <name>Ball</name><!-- volume englobant sphérique -->
-        <description><![CDATA[Un objet 3D dont les collisions sont calculées de manière shpérique (ex : billard).]]><description> 
+        <description><![CDATA[Un objet 3D dont les collisions sont calculées de manière shpérique (ex : billard).]]></description> 
         <inheritance value="Object"/>
     </model>
     <model>
         <name>Teleporter</name>
-        <description><![CDATA[Un objet 3D téléporteur permettant aux objets de passer d'un endroit à un autre instantanément.]]><description> 
+        <description><![CDATA[Un objet 3D téléporteur permettant aux objets de passer d'un endroit à un autre instantanément.]]></description> 
         <inheritance value="Object"/>
         <attribute name="exits" type="List" subType="Teleporter" value="null" description="Les sorties différentes possibles pour se téléporter."/>
     </model>
     <model>
         <name>Breakable</name>
-        <description><![CDATA[Un objet 3D ayant deux états : normal ou cassé (ex : une fenêtre, une caisse, un objet à détruire).]]><description> 
+        <description><![CDATA[Un objet 3D ayant deux états : normal ou cassé (ex : une fenêtre, une caisse, un objet à détruire).]]></description> 
         <inheritance value="Object"/>
         <attribute name="life" type="number" value="1" description="La vie de l'objet. Si elle tombe à 0, l'objet est cassé et l'objet 3D cassé le remplace."/>
         <attribute name="url_broken" type="String" value="" description="Le chemin vers l'objet 3D cassé."/>
@@ -196,7 +196,7 @@
 <!--Objet sans héritages-->
     <model>
         <name>Inventory</name>
-        <description><![CDATA[Un inventaire permettant de répertorier plusieurs objets.]]><description> 
+        <description><![CDATA[Un inventaire permettant de répertorier plusieurs objets.]]></description> 
         <attribute name="name" type="String" value="'Inventory1'" description="Le nom de l'inventaire (sert pour les affichages)."/>
         <attribute name="elements" type="List" subType="Object" value="null" description="La liste d'objets que contient l'inventaire."/><!--peut contenir des Object dont les Items -->
         <attribute name="capacity" type="number" value="-1" description="La capacité maximale de l'inventaire. Elle ne peut pas être dépassée."/><!--empêchera l'ajout d'un nouvel élément dans la liste 'elements'-->
@@ -204,7 +204,7 @@
     </model>
     <model><!--peut servir pour les vagues d'ennemis par exemple-->
         <name>Counter</name>
-        <description><![CDATA[Un compteur.]]><description> 
+        <description><![CDATA[Un compteur.]]></description> 
         <attribute name="name" type="String" value="'Counter1'" description="Le nom du compteur (sert pour les affichages)."/>
         <attribute name="unit" type="String" value="" description="Une unité pour le compteur (sert pour les affichages)."/><!--l'unité servira à l'affichage, pas obligatoire-->
         <attribute name="value" type="number" value="0" description="La valeur du compteur."/>
@@ -214,7 +214,7 @@
     </model>
     <model><!--aura les mêmes actions (play stop pause) que Media -->
         <name>Chrono</name>
-        <description><![CDATA[Un chronomètre permettant, par exemple, de déclencher des actions lorsqu'il termine.]]><description> 
+        <description><![CDATA[Un chronomètre permettant, par exemple, de déclencher des actions lorsqu'il termine.]]></description> 
         <attribute name="name" type="String" value="'Chrono1'" description="Le nom du chronomètre (sert pour les affichages)."/>
         <attribute name="value" type="time" value="0" unit="s" description="La valeur courante du chronomètre."/>
         <attribute name="start" type="time" value="0" unit="s" description="La valeur de départ du chronomètre."/>
@@ -223,7 +223,7 @@
     </model>
     <model>
         <name>Media</name>
-        <description><![CDATA[Un fichier audio ou vidéo, servant à renforcer l'ambiance ou expliquer l'histoire.]]><description> 
+        <description><![CDATA[Un fichier audio ou vidéo, servant à renforcer l'ambiance ou expliquer l'histoire.]]></description> 
         <attribute name="url" type="String" value="" description="Le chemin vers le média."/>
         <attribute name="loop" type="boolean" value="false" description="Attribut permettant de spécifier si le média est joué en boucle."/>
         <attribute name="volume" type="number" value="100" description="Le volume sonore du média."/>
@@ -231,7 +231,7 @@
     </model>
     <model><!-- l'image de fond si elle est gérée un jour -->
         <name>Background</name>
-        <description><![CDATA[Une image de fond projetée autour de la scène.]]><description> 
+        <description><![CDATA[Une image de fond projetée autour de la scène.]]></description> 
         <attribute name="url" type="String" value="" description="Le chemin vers l'image de fond."/>
         <attribute name="orX" type="number" value="0" description="L'orientation sur l'axe x de l'image par rapport à l'axe de référence."/>
         <attribute name="sizeX" type="number" value="0" description="La distance entre l'image et l'origine de la scène."/>
@@ -240,7 +240,7 @@
     </model>
     <model><!--sert pour l'attribut elements de Team et pour éviter de déclarer les mêmes attributs 2 fois dans Team et Player -->
         <name>Side</name>
-        <description><![CDATA[Une Team ou un Player.]]><description> 
+        <description><![CDATA[Une Team ou un Player.]]></description> 
         <attribute name="name" type="String" value="'Side1'" description="Le nom de l'équipe ou du joueur (sert pour les affichages)."/>
         <attribute name="score" type="num" value="0" description="Le score de l'équipe ou du joueur."/>
         <attribute name="victory" type="boolean" value="false" description="Indique si l'équipe ou le joueur ont gagné."/>
@@ -248,14 +248,14 @@
     </model>
     <model>
         <name>Team</name>
-        <description><![CDATA[Une équipe de joueurs ou d'autres équipes.]]><description> 
+        <description><![CDATA[Une équipe de joueurs ou d'autres équipes.]]></description> 
         <inheritance value="Side"/>
         <attribute name="capacity" type="num" value="-1" description="Le nombre maximal d'éléments dont peut être composée l'équipe."/>
         <attribute name="elements" type="List" subType="Side" value="null" description="La liste de joueurs et/ou équipes que contient l'équipe."/><!--nouveau : SideList, attention : interdire la que la Team se contienne elle-même -->
     </model>
     <model>
         <name>Player</name>
-        <description><![CDATA[Un joueur (humain ou IA).]]><description> 
+        <description><![CDATA[Un joueur (humain ou IA).]]></description> 
         <inheritance value="Side"/>
         <attribute name="controller" type="Enum" values="human, IDENT" value="human" description="Le contrôleur du joueur : soit 'human' pour un contrôle clavier/souris, soit le nom de l'intelligence artificielle désirée."/><!-- human ou le nom d'une IA après les règles du jeu dans le code-->
     </model>
@@ -263,12 +263,12 @@
 <!--Contraintes-->	
     <const><!-- les contraintes à voir avec le groupe moteur 3D -->
         <name>Constraint</name>
-        <description><![CDATA[Une contrainte à appliquer à un objet.]]><description> 
+        <description><![CDATA[Une contrainte à appliquer à un objet.]]></description> 
         <attribute name="influence" type="number" value="1" description="L'influence de la contrainte (0 : pas de contrainte, 1 : contrainte maximum)."/><!--multiplicateur de 0 à 1-->
     </const>
     <const><!-- contrainte de parentage -->
         <name>ChildOfConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="parent" type="Empty" value="null" description=" "/>
         <attribute name="translation" type="BVector" x="true" y="true" z="true" description=" "/>
@@ -277,7 +277,7 @@
     </const>
     <const><!-- contrainte de copie de transformation (choix de la transformation)-->
         <name>CopyConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="target" type="Empty" value="null" description=" "/>
         <attribute name="transformation" type="Enum" values="translation, rotation, scale" value="translation" description=" "/>
@@ -286,7 +286,7 @@
     </const>
     <const><!-- contrainte de limitation en translation-->
         <name>TranslationConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
         <attribute name="minActivation" type="BVector" x="true" y="true" z="true" description=" "/>
@@ -295,7 +295,7 @@
     </const>
     <const><!-- contrainte de limitation en rotation-->
         <name>RotationConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint" description=" "/>
         <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
         <attribute name="max" type="Vector" x="1" y="1" z="1" description=" "/>
@@ -303,7 +303,7 @@
     </const>
     <const><!-- contrainte de limitation en scale-->
         <name>ScaleConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="min" type="Vector" x="1" y="1" z="1" description=" "/>
         <attribute name="minActivation" type="BVector" x="true" y="true" z="true" description=" "/>
@@ -312,7 +312,7 @@
     </const>
     <const><!-- contrainte de distance entre les centres de 2 objets -->
         <name>DistanceConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="target" type="Empty" value="null" description=" "/>
         <attribute name="region" type="Enum" values="inside, outside, surface" value="outside" description=" "/>
@@ -320,7 +320,7 @@
     </const>
     <const><!-- contrainte de suivi (sert pour une caméra suivant un objet) -->
         <name>TrackToConstraint</name>
-        <description><![CDATA[  ]]><description> 
+        <description><![CDATA[  ]]></description> 
         <inheritance value="Constraint"/>
         <attribute name="target" type="Empty" value="null" description=" "/>
         <attribute name="alignTo" type="Enum" values="x, y, z" value="x" description=" "/>

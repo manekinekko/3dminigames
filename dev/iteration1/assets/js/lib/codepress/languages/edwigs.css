@@ -5,5 +5,5 @@
 em {color:#d21318;font-weight:bold;} /* number */
 b {color:#7F0055;font-weight:bold;} /* reserved words */
 u {color:darkblue;font-weight:bold;} /* special words */
-i, i b, i s, i u {color:green;font-weight:normal;} /* comments */
-s, s b, s u {color:#2A00FF;font-weight:normal;} /* strings */
+i, i b, i span, i u {color:green !important;font-weight:normal !important;} /* comments */
+span, span b, span u {color:#2A00FF !important;font-weight:normal !important;} /* strings */

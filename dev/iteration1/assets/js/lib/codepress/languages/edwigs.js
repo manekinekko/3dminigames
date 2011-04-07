@@ -93,7 +93,7 @@ Language.snippets = [
 	},
 	{
 		input: 'iso',
-		output: 'is Object ;\n$0'
+		output: 'is Object ;\n\n$0'
 	},
 	{
 		input: 'ist',
@@ -124,33 +124,33 @@ Language.snippets = [
 	},
 	{
 		input: 'wait',
-		output: 'wait $0 s then \n  // your actions here...\nendwait ;\n'
+		output: 'wait $0 s then \n  // your actions here...\nendwait ;\n\n'
 	},
 
 	{
 		input: 'acc',
-		output: 'accelerates by $0 ;\n'
+		output: 'accelerates by $0 ;\n\n'
 	},
 	{
 		input: 'brk',
-		output: 'brakes by $0 ;\n'
+		output: 'brakes by $0 ;\n\n'
 	},
 
 	{
 		input: 'add',
-		output: 'add $0 to    ;\n'
+		output: 'add $0 to    ;\n\n'
 	},
 	{
 		input: 'sub',
-		output: 'sub $0 to    ;\n'
+		output: 'sub $0 to    ;\n\n'
 	},
 	{
 		input: 'assign',
-		output: 'assign $0 to    ;\n'
+		output: 'assign $0 to    ;\n\n'
 	},
 	{
 		input: 'invert',
-		output: 'invert $0 and    ;\n'
+		output: 'invert $0 and    ;\n\n'
 	},
 
 	{
@@ -195,14 +195,14 @@ Language.snippets = [
 	
 	{
 		input: 'rule',
-		output: 'rule $0 then \n  // rule action here...\n\n'
+		output: 'rule $0 then \n  // rule action here...\n;\n\n'
 	},
 
 	//   7. Partie Intelligence Artificielle 
 	
 	{
 		input: 'ai',
-		output: 'ai $0 is \n // your rules here... ;\n\n'
+		output: 'ai $0 is \n // your rules here... \n;\n\n'
 	},
 
 	//   8. mots uniques

@@ -1,12 +1,7 @@
 #labels Featured,Phase-Implementation
-329 IA
-
-[Keywords#left Essai lien 'left']
-
-[Keywords#=other= A regarder impérativement!!!]
+[Keywords#other other à regarder impérativement!!!]
 
 =Glossaire des mots-clés=
-*(Ordre alphabétique (Parties) )*
 
 ===Organisation du jeu===
   # _Partie *Description du jeu*_
@@ -16,6 +11,9 @@
   # _Partie *Commandes*_
   # _Partie *Règles du jeu*_
   # _Partie *Intelligence Artificielle*_
+
+*[Keywords#A A] - [Keywords#B B] - [Keywords#C C] - [Keywords#D D] - [Keywords#E E] - [Keywords#F F] - [Keywords#G G] - [Keywords#H H] - [Keywords#I I] - [Keywords#J J] - [Keywords#K K] - [Keywords#L L] - [Keywords#M M] - [Keywords#N N] - [Keywords#O O] - [Keywords#P P] - [Keywords#Q Q] - [Keywords#R R] - [Keywords#S S] - [Keywords#T T] - [Keywords#U U] - [Keywords#V V] - [Keywords#W W] - [Keywords#X X] - [Keywords#Y Y] - [Keywords#Z Z]*
+
 
 ----
 =A=
@@ -40,7 +38,7 @@ definition activerPauseSeulement means
 
 ==add==
 _Partie *Définitions*_
-  * ajouter une valeur à un attribut numérique : 
+  * ajouter une valeur à un attribut numérique (voir 'to' et 'sub') : 
 {{{
 definition donnerBonus means 
 	add 30 to life of batman; // l'attribut 'life' de l'entité batman de type Character va augmenter de 30
@@ -242,7 +240,7 @@ endif;
 
 ==defeat==
 _Partie *Définitions*_
-  * déclarer l'échec d'un joueur dans la partie :
+  * déclarer l'échec d'un joueur dans la partie (voir 'victory') :
 {{{
 definition echec means 
 	defeat of joueurPrincipal : "Echec du joueur pricipal !",  // il est possible d'afficher un message
@@ -276,7 +274,7 @@ rule mario touches zoneDeVide then
   * tester si l'objet de type Character vient juste de mourir :
 {{{
 rule mario dies then
-	Game ends;
+	game ends;
 }}}
 
 ==disable==
@@ -314,7 +312,7 @@ definition incliner means
 _Partie *Commandes*_
   * indiquer une commande clavier, touche flèche du bas (voir 'key') :
 {{{
-key down for */action*/;
+key down for /*action*/;
 }}}
   * indiquer une commande souris, déplacement du curseur vers le bas (voir 'mouse') :
 {{{
@@ -395,19 +393,20 @@ definition finJeu means
 definition finJeuMessage means
 	game ends : "Fin du jeu !"; // le message à afficher est facultatif
 }}}
-  * arrêter un Chrono actif :
+  * arrêter un Chrono actif (voir 'starts' et 'pause') :
 {{{
 definition arrêtChrono means
 	chrono1 ends : "Time's up." // le message à afficher est facultatif
 }}}
 _Partie *Règles du jeu*_
-  * tester si un chrono vient juste de se terminer :
+  * tester si un chrono vient juste de se terminer (voir 'starts') :
 {{{
 rule chrono1 ends then
 	/*actions*/
 }}}
 
 ==endwait==
+_Partie *Définitions*_
   * fermer une attente (voir 'wait'). Cela sert à repérer jusqu'à où l'attente va faire effet :
 {{{
 wait 5 s then
@@ -425,7 +424,7 @@ endwait;
 _Partie *Commandes*_
   * indiquer une commande clavier, touche Entrée (voir 'key') :
 {{{
-key enter for */action*/;
+key enter for /*action*/;
 }}}
 
 ==equip==
@@ -442,7 +441,7 @@ definition equiper means
 _Partie *Commandes*_
   * indiquer une commande clavier, touche Echap (voir 'key') :
 {{{
-key escape for */action*/;
+key escape for /*action*/;
 }}}
 
 ==expels==
@@ -473,12 +472,6 @@ if (chrono1 is finished) // (voir 'is')
 then /*conséquences*/
 endif;
 }}}
-  * dans une condition, tester si un Media est arrêté (voir 'if') :
-{{{
-if (media is finished) // (voir 'is')
-then /*conséquences*/
-endif;
-}}}
 
 ==first==
 _Partie *Initialisations*_
@@ -503,7 +496,7 @@ command for player1, player2 is // deux joueurs
 }}}
   * désigner l'action associée à une commande (voir 'command') :
 {{{
-key space for */action*/;
+key space for /*action*/;
 }}}
 
 ==forward==
@@ -725,7 +718,7 @@ definition placeBook means
 
 ==insert==
 _Parties *Initialisations* et *Définitions*_
-  * placer un objet dans une liste (voir 'remove' et 'in') :
+  * placer un objet dans une liste (voir 'list', 'in' et 'remove') :
 {{{
 insert arme1 in list1 num 2; // (voir 'num') l'objet arme1 sera placé à la deuxième place dans la liste list1 (la dernière place si le nombre d'éléments est plus petit)
 insert arme1 in list1; // l'objet arme1 sera placé à la fin de la liste list1
@@ -853,7 +846,7 @@ definition tournerMario means
 _Partie *Commandes*_
   * indiquer une commande clavier, touche flèche de gauche (voir 'key') :
 {{{
-key left for */action*/;
+key left for /*action*/;
 }}}
   * indiquer une commande souris, déplacement du curseur vers la gauche (voir 'mouse') :
 {{{
@@ -869,7 +862,7 @@ listeEnnemie is list of goomba1, goomba2, goomba3;
 
 ==loop==
 _Partie *Initialisations*_
-  * indiquer qu'un média est interprété en boucle (voir 'is' et 'once') :
+  * indiquer qu'un Media est interprété en boucle (voir 'is' et 'once') :
 {{{
 musiqueAmbiance is Media loop;
 }}}
@@ -945,7 +938,7 @@ chrono1 has end at 750 ms
 
 ==mute==
 _Partie *Définitions*_
-  * désactiver le son d'un média (voir 'on' et 'off') :
+  * désactiver le son d'un Media (voir 'on' et 'off') :
 {{{
 definition desactiverMusique means
 	mute on mediaMusique; // désactive le son du média
@@ -954,7 +947,7 @@ definition desactiverMusique means
 
 ==muted==
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du média a été coupé (voir 'mute', 'on' et 'off') :
+  * dans une condition, tester si le son du Media a été coupé (voir 'mute', 'on' et 'off') :
 {{{
 if musiqueAmbiance is muted on // ou bien 'muted off'
 then /*conséquence*/
@@ -1033,13 +1026,13 @@ defeat of player1;
 
 ==off==
 _Partie *Définitions*_
-  * réactiver le son d'un média (voir 'mute' et 'on') :
+  * réactiver le son d'un Media (voir 'mute' et 'on') :
 {{{
 definition activerMusique means
 	mute off mediaMusique; // réactive le son du média
 }}}
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du média a été réactivé (voir 'muted' et 'on') :
+  * dans une condition, tester si le son du Media a été réactivé (voir 'muted' et 'on') :
 {{{
 if musiqueAmbiance is muted off
 then /*conséquence*/
@@ -1048,13 +1041,13 @@ endif;
 
 ==on==
 _Partie *Définitions*_
-  * désactiver le son d'un média (voir 'mute' et 'off') :
+  * désactiver le son d'un Media (voir 'mute' et 'off') :
 {{{
 definition desactiverMusique means
 	mute on mediaMusique; // désactive le son du média
 }}}
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du média a été coupé (voir 'muted' et 'off') :
+  * dans une condition, tester si le son du Media a été coupé (voir 'muted' et 'off') :
 {{{
 if musiqueAmbiance is muted on
 then /*conséquence*/
@@ -1070,6 +1063,13 @@ then /*conséquences*/
 endif;
 }}}
 
+==orientation==
+_Parties *Initialisations* et *Définitions*_
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à son orientation dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir 'position' et 'size') :
+{{{
+objet1 has orientation at 90 0 180; // l'orientation de l'objet est de 90 autour de l'axe x, 0 autour de l'axe y et 180 autour de l'axe z
+}}}
+
 ==other==
 _Partie *Règles du *_
 l'a t'on gardé ?
@@ -1078,93 +1078,125 @@ l'a t'on gardé ?
 =P=
 ----
 ==pause==
-_Partie *Definition*_
-  * Arreter le jeu ou un compteur temporairement.
+_Partie *Définitions*_
+  * stopper le jeu temporairement :
 {{{
-definition pauseOnOff means
-	pause prout
+definition pauseOn means
+	game pause; // une fois le jeu mis en pause, il est possible de reprendre la partie avec le menu contextuel
 }}}
-  * Arreter un son.
+  * stopper un Chrono temporairement (voir 'starts' et 'ends') :
 {{{
-
+definition stopperChrono means
+	chrono1 pause;
+}}}
+  * stopper un Media temporairement (voir 'play' et 'stop') :
+{{{
+definition stopperMedia means
+	pause musiqueAmbiance;
 }}}
 
 ==paused==
-_Partie *Règles du jeu*_
-  * état de *arrêté provisoirement* pour un jeu, compteur ou média.
+_Partie *Définitions*_
+  * dans une condition, tester si un Media est arrêté temporairement (voir 'if') :
 {{{
-
+if musiqueAmbiance is paused
+then /*conséquences*/
+endif;
 }}}
-
-
+  * dans une condition, tester si un Chrono est arrêté temporairement (voir 'if') :
+{{{
+if chrono1 is paused
+then /*conséquences*/
+endif;
+}}}
 
 ==person==
 _Partie *Initialisations*_
-  * Pour définir point du vu de camera. (voir *camera*)
+  * définir le point de vue de la camera à la première personne ou à la troisième personne (voir 'first' et 'third'):
 {{{
-cam1 is camera third person.
+cam1 is camera first person;
+cam2 is camera third person;
 }}}
 
 ==play==
-_Partie *Definitions*_
-  * Commencer interprétation d'un média.
+  * lancer ou relancer un Media arrêté (voir 'pause' et 'stop') :
 {{{
-
+definition jouerMedia means
+	play musiqueAmbiance;
 }}}
 
 ==played==
-_Partie *Règles du jeu*_
-  * état de *en cours d'interprétation* pour un média.
+_Partie *Définitions*_
+  * dans une condition, tester si un Media est actif (voir 'if') :
 {{{
-
+if musiqueAmbiance is played
+then /*conséquences*/
+endif;
 }}}
 
-
-==player==
-_Parties *Initialisations*_
-  * Défini le joueur principal.
+==position==
+_Parties *Initialisations* et *Définitions*_
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa position dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir 'orientation' et 'size') :
 {{{
-player1 is player solo;
+objet1 has position at 0 10 20; // la position de l'objet est de 0 sur l'axe x, 10 sur l'axe y et 20 sur l'axe z
 }}}
 
 ==pressed==
-_Parties *Règles du jeu*_
-  * Préciser la condition d'un touche de clavier ou souris comme pressé.
+_Partie *Commandes*_
+  * préciser qu'une commande s'effectue lorsqu'une touche du clavier est juste pressée une fois (voir 'key', 'held' et 'released') :
 {{{
 command for player is 
-	key wup pressed for jmp1,
+	key up pressed for /*action*/, // 'pressed' n'est pas obligatoire
+	key up for /*action*/; // ne rien mettre équivaut à pressed
 }}}
 
+==previous==
+_Partie *Définitions*_
+  * équiper une entité de type Character avec l'objet de son inventaire venant avant l'objet déjà équipé (voir 'equip' et 'next') :
+{{{
+definition equiper means 
+	perso1 equip previous; //l'attribut 'equipedObject' de perso1 devient l'objet précédent
+}}}
 
 ----
 =Q=
 ----
-_Partie **_
-  * :
-{{{
-
-}}}
 ----
 =R=
 ----
-==rClick==
-_Partie *règles du jeu*_
-  * Le touche droite de souris.
+==random==
+_Parties *Initialisations* et *Définitions*_
+  * donner une valeur aléatoire entre deux valeur numériques, ces valeurs peuvent être des attributs (voir 'between' et 'and') :
+{{{
+random between 0 and 1 // donne soit 0 soit 1
+random between life of perso1 and life of perso2 // les deux attributs doivent être numériques
+}}}
 
+==ranking==
+_Partie *Description du jeu*_
+  * établir un classement final des joueurs sous la forme d'une liste (voir 'game' et 'list') :
+{{{
+game has ranking at joueur1, joueur2;
+}}}
+
+==rclick==
+_Partie *Commandes*_
+  * indiquer une commande souris, clic droit (voir 'mouse') :
+{{{
+mouse rclick for /*action*/;
+}}}
 
 ==released==
-_Parties *Règles du jeu*_
-  * Préciser la condition d'un touche de clavier ou souris comme lâché.
+_Partie *Commandes*_
+  * préciser qu'une commande s'effectue lorsqu'une touche du clavier relâchée (voir 'key', 'pressed' et 'held') :
 {{{
-command for joueur_principal is 
-	key P for pause,
-	key space for switchCam,
-	key space released for switchCam;
+command for player is 
+	key up released for /*action*/; // 'released' n'est pas obligatoire
 }}}
 
 ==remove==
-_Parties *Initialisations*, *Règles du jeu* et *Définitions*_ (voir 'list' et 'from')
-  * pour désigner le nom de la liste lorsqu'on lui retire un élément :
+_Parties *Initialisations* et *Définitions*_ 
+  * pour retire un élément d'une liste (voir 'list', 'from' et 'insert') :
 {{{
 remove num 1 from liste1; // l'élément doit exister et être dans la liste désignée
 remove first from liste1; // (voir 'first') supprime le premier élément si la liste n'est pas vide
@@ -1172,305 +1204,318 @@ remove last from liste1; // (voir 'last') supprime le dernier élément si la li
 }}}
 
 ==ribbon==
-_Partie *Information about game*_
-  * Type de carte (map) ruban; dans ce type de carte les entités déplacent sûr un chemin relativement longe et étroit.
+_Partie *Description du jeu*_
+  * type d'environnement (map) adapté aux jeux linéaires (voir 'world', 'generic' et 'grid') :
 {{{
-world at riboon;
+game has world at ribbon;
 }}}
 
 ==right==
-_Parties *Règles du jeu*_
-  * Direction droit pour les commandes de déplacement, rotation ou orientation.
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'aller à droite pour une translation (voir 'moves', 'by' et 'left') :
 {{{
-command mario for joueur_principal is 
-	space for mario jump by 10, 
-	key D for mario move right by 10,
+definition bougerObjet means 
+	objet moves right by 10; // l'objet va se décaler sur sa droite de 10
+definition bougerMario means 
+	mario moves right by 10; // si mario (de type Character) a son attribut 'moveWithCamera' à true, il va se déplacer vers la droite de l'écran
+}}}
+  * ordonner à l'entité désignée d'effectuer une rotation vers la droite (voir 'turns', 'by' et 'left') :
+{{{
+definition tournerMario means 
+	mario turns right by 10; // mario va tourner à droite
+}}}
+_Partie *Commandes*_
+  * indiquer une commande clavier, touche flèche de droite (voir 'key') :
+{{{
+key right for /*action*/;
+}}}
+  * indiquer une commande souris, déplacement du curseur vers la droite (voir 'mouse') :
+{{{
+mouse right for /*action*/;
 }}}
 
 ==rule==
 _Parties *Règles du jeu*_
-  * Définir les règles du jeu. Chaque règle a besoin un(e) déclencheur/condition.
+  * définir une règles du jeu. Chaque règle a besoin d'un déclencheur et est déclenchée en parallèle. À l'intérieur, chaque action (nom de définition) est éxécutée en série :
 {{{
 rule Game starts then
-	generate sol,
-	generate teleport1,
-	generate teleport2,
-	generate zoneDepart,
-	generate zoneGenWindows,
-	reinit
-	;
-}}}
-{{{
-rule in choixPremier is
-	turn of choixPremier becomes 2 then
-		nextphase jeu;
+	/*action 1*/,
+	/*action 2*/,
+	/*action n*/;
 }}}
 
 ----
 =S=
 ----
-==save==
-_Partie *Règles du jeu*_
-  * Enregistrer le jeu.
+==s==
+_Parties *Initialisations* et *Définitions*_
+  * l'une des unités de temps disponibles, la seconde (voir 'frame(s)', 'min' et 'ms')
 {{{
-
+chrono1 has end at 10 s
 }}}
 
-==scrollUp==
-_Partie *Règles du jeu*_
-  * Lier tournage vers haut de roulette de souris avec une action.
+==save==
+_Partie *Définitions*_
+  * enregistrer le jeu :
 {{{
-command for joueurPrincipal is 
-	mouse rClick for tirer,
-	mouse scrollUp for accelerer,
-	mouse scrollDown for decelerer;
+definition sauverJeu means
+	save;
 }}}
 
 ==scrollDown==
-_Partie *Règles du jeu*_
-  * Lier tournage vers bas roulette de souris avec une action.
+_Partie *Commandes*_
+  * indiquer une commande souris, un cran de molette vers le bas (voir 'mouse') :
 {{{
-command for joueurPrincipal is 
-	mouse rClick for tirer,
-	mouse scrollUp for accelerer,
-	mouse scrollDown for decelerer;
+mouse scrollDown for /*action*/;
+}}}
+
+==scrollUp==
+_Partie *Commandes*_
+  * indiquer une commande souris, un cran de molette vers le haut (voir 'mouse') :
+{{{
+mouse scrollUp for /*action*/;
+}}}
+
+==size==
+_Parties *Initialisations* et *Définitions*_
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa taille selon son référentiel (le référentiel peut être un objet) (voir 'position' et 'orientation') :
+{{{
+objet1 has size at 1 2 3; // la taille de l'objet est de 1 sur l'axe x, 2 sur l'axe y et 3 sur l'axe z
 }}}
 
 ==solo==
 _Partie *Initialisations*_
-  * Déclare que joueur n'a pas coéquipière. (voir *player*)
+  * déclarer que joueur n'a personne d'autre que lui dans son équipe (voir 'is') :
 {{{
-player1 is player solo;
+player1 is Player solo; // le nom de l'équipe de 'joueur1' est 'joueur1'
+}}}
+
+==space==
+_Partie *Commandes*_
+  * indiquer une commande clavier, touche Espace (voir 'key') :
+{{{
+key space for /*action*/;
 }}}
 
 ==started==
-_Partie *Règles du jeu*_
-  * état de *démarré* pour un jeu, compteur ou média.
+  * dans une condition, tester si un Chrono est actif (voir 'if') :
 {{{
-
+if chrono1 is started
+then /*conséquences*/
+endif;
 }}}
-
 
 ==starts==
-_Partie *Definition*_
-  * Démarer le jeu ou un compeur.
+_Partie *Définitions*_
+  * lancer ou relancer un Chrono arrêté (voir 'pause' et 'ends') :
 {{{
-rule defeat then
-	play musiqueGameOver,
-	wait 5 sec then Game starts
+definition demarrerChrono means
+	chrono1 starts;
 }}}
-  * Déclencheur qui marque débout de jeu ou démarrage d'un compteur.
+_Partie *Règles du jeu*_
+  * tester si le jeu vient juste de démarrer :
 {{{
-rule Game starts then
-		generate plateformeDepart,
-		generate 1 plateforme in zoneGenNouvellePlateforme,
-		generate mario,
-		cinematique1;
+rule game starts then
+	/*action de début du jeu*/;
+}}}
+  * tester si un Chrono vient juste de démarrer :
+{{{
+rule chrono1 starts then
+	/*action*/;
 }}}
 
 ==stop==
-_Partie *Definitions*_
-  * Arrêter interprétation d'un média.
+_Partie *Définitions*_
+  * arrêter un Media (voir 'play' et 'pause') :
 {{{
-
+definition stopperMedia means
+	stop musiqueAmbiance;
 }}}
 
 ==stopped==
-_Partie *Règles du jeu*_
-  * état de *arrêté* pour un jeu, compteur ou média.
+_Partie *Définitions*_
+  * dans une condition, tester si un Media n'est pas actif (voir 'if') :
 {{{
-
+if musiqueAmbiance is stopped
+then /*conséquences*/
+endif;
 }}}
 
 ==sub==
-_Partie *règles du jeu*_
-  * Soustraction.
+_Partie *Définitions*_
+  * soustraire une valeur à un attribut numérique (voir 'to' et 'add') : 
 {{{
-rule batman dies then
-	sub 1 to nbLives of batman,
-	generate batman at 0 0 0;
-}}}
-
-{{{
-rule mario touches teteSuperGoomba
-    then 
-        sub 1 for life of superGoomba, 
-        add 1 for nbOfJumpInTheAir,   
-        sub 1 for nbOfJumpInTheAir,
-        add 300 for score of joueur_principal;
+definition prendreVie means 
+	sub 30 to life of batman; // l'attribut 'life' de l'entité batman de type Character va baisser de 30
 }}}
 
 ----
 =T=
 ----
 ==then==
-_Parties *Règles du jeu*_
-  * Séparer la partie déclencheur/condition des règles des partie "alors".
+_Partie *Définitions*_
+  * déclarer une condition (voir 'if') : se place après la déclaration :
 {{{
-rule batman touches CharacterEnemy then
-	sub (attack of CharacterEnemy) to batman,
-	sub (attack of batman) to CharacterEnemy,
-	assign true to isTraversable of batman,
-	wait 3 s then 
-		assign false to isTraversable of batman
-	endwait
-}}}
+if /*condition*/ then
+then /*conséquences*/
+endif;
+}}} 
+  * déclarer une attente (voir 'wait') : se place après la déclaration :
 {{{
-mario touches superGoomba then 
-	sub attack of superGoomba to life of mario,
-	assign true to isTraversable of mario,
-	wait 4 s then
-		assign false to isTraversable of mario
-	endwait
+wait 5 s then
+/*actions*/
+endwait;
+}}} 
+_Partie *Règles du jeu*_
+  * déclarer une règle du jeu (voir 'rule') : se place après la déclaration :
+{{{
+rule /*déclencheur*/ then
+	/*actions*/;
 }}}
 
 ==third==
-_Parties *Initialisations*_
-  * Déclare que point de vu est le point de vu différant de joueur principal. (voir *camera*)
+_Partie *Initialisations*_
+  * définir le point de vue de camera à la troisième personne, pour un jeu de type plateforme par exemple (voir 'is') :
 {{{
-cam5 is camera third person;
+cam1 is camera third person;
 }}}
 
-==touched==
-_Partie *règles du jeu*_
-  * Déclencheur qui devient vrai si un entité/zone est touché.
+==to==
+_Parties *Initialisations* et *Définitions*_
+  * désigner l'attribut d'un objet lors d'une opération mathématique ou d'une assignation (voir 'add', 'sub' et 'assign') :
 {{{
-
+definition toucherLapin means
+    sub 1 to life of lapin1,
+	assign "Lapin n°2" to name of lapin2;
 }}}
 
 ==touches==
 _Parties *Règles du jeu*_
-  * Un déclencheur qui manifeste dans cas de taucher un entité ou un zone.
+  * tester si une entité entre en contact avec une autre ou avec une zone :
 {{{
-mario touches goomba then 
-	sub attack of goomba to life of mario,
-	assign true to isTraversable of mario,
-	wait 4 s then
-		assign false to isTraversable of mario
-	endwait
+rule mario touches goomba then 
+	/*actions*/;
 }}}
 
 ==touching==
-_Partie *Règles du jeu*_
-  * état de *touché* pour un caractère/entité.
+_Partie *Définitions*_
+  * dans une condition, teste si une entité est en train d'en toucher une autre ou une zone (voir 'if' et 'is') :
 {{{
-
+if mario is touching zoneDepart
+then /*conséquence*/
+endif;
 }}}
 
+==turns==
+_Partie *Définitions*_
+  * déclarer une rotation (voir 'right', 'left', 'clockwise', 'anticlockwise' et 'moves') :
+{{{
+definition faireAvancerAiguille means 
+	aiguille turns clockwise by 10;
+}}}
 
 ==turnbased==
-_Partie *Information about game*_
-  * Un booléen qui défini si les joueur jouent tour par tour.
+_Partie *Description du jeu*_
+  * définir le type de jeu : temps réel ou tour par tour (voir 'game') :
 {{{
-turnbased at false;
+game has turn based at true;
 }}}
 
 ==type==
-_Partie *Inheritance, creation of type*_
-  * Type est un nom donné pour identifier un groupe des entités/personnage/objets qui sont certains caractéristiques en commun. Chaque type peux composé de plusieurs autres type. 
+_Partie *Déclaration de nouveaux types*_
+  * créer un nouveau type d'entités issu d'un ou de plusieurs autres. Les objets ensuite créés avec ce type, auront les mêmes attributs que les types de base ont :
 {{{
-type Zobstacle is Zone and Obstacle;  // transparent + on ne peut pas le traverser
-}}}
-
-==true==
-  * Valeur booléen représentant "vrai".
-
-==turn==
-_Parties *Règles du jeu*_
-  * Tourner/orienter le personnage/entité/camera .
-{{{
-definition viserR means
-	if value of etapes = "choixDirection" then
-		cam1 turn right by 10
-	endif;
+type EpeeFlingue is Sword and Weapon;  // les objets créés avec ce nouveau type auront les attributs de Sword et de Weapon
+type EpeeFlingueEnnemis is EpeeFlingue and Character; // ce nouveau type aura les attributs de Sword, Weapon et Character
 }}}
 
 ----
 =U=
 ----
-==until==
-_Partie *Règles du jeu*_
-  * Continuer un évènement jusqu'à satisfaire la/les condition(s).
+==up==
+_Partie *Définitions*_
+  * ordonner à l'entité désignée d'aller en haut pour une translation (voir 'moves', 'by' et 'down') :
 {{{
-rule blanche moves then
-	efface queue,
-	changerCamera,
-	wait until listeBoules stops,
-	reinitNbBandes,
-	changerCamera,
-	generate queue
+definition bougerHelico means 
+	helico moves up by 10; // l'hélicoptère va monter verticalement de 10
 }}}
+  * ordonner à l'entité désignée d'effectuer une rotation vers le haut (voir 'turns', 'by' et 'down') :
+{{{
+definition incliner means 
+	avion turns up by 10; // l'avion va s'incliner vers l'arrière
+}}}
+_Partie *Commandes*_
+  * indiquer une commande clavier, touche flèche du haut (voir 'key') :
+{{{
+key up for /*action*/;
+}}}
+  * indiquer une commande souris, déplacement du curseur vers le haut (voir 'mouse') :
+{{{
+mouse up for /*action*/;
+}}}
+
+==until==
+_Partie *Définitions*_
+  * poursuivre une action jusqu'à ce qu'un événement se déclenche (voir 'happens' et 'during') :
+{{{
+mario moves forward until 
+	mario touches zone1 happens;
+}}}
+
 ----
 =V=
 ----
 ==victory==
 _Partie *Définitions*_
-  * Déclare la victoire d'un ou plusieurs joueur(s)/caractère(s).
+  * déclarer la victoire d'un joueur dans la partie (voir 'defeat') :
 {{{
-definition manger means victory pacman;
+definition victoire means 
+	victory of joueurPrincipal : "Victoire du joueur pricipal !",  // il est possible d'afficher un message
+	victory of joueurAllie;
 }}}
-
-{{{
-	if couleur of Ball = "noire" then
-		if active of joueur1 = true then
-			victory of joueur2
-		else
-			victory of joueur1
-		endif
-	else
-}}}
-
-==virg==
-_Partie **_
-  * Séparation différant champs/attributs des détentions/initialisations.  
-{{{
-game has gravity at 5, turnbased true; 
-}}}
-
 
 ----
 =W=
 ----
 ==wait==
 _Partie *Définitions*_
-  * Arreter une action pour un durée défini.
+  * arrêter une action pour un temps défini, les actions placée à l'intérieur s'effectuent après cette attente (voir 'endwait') :
 {{{
-rule batman touches CharacterEnemy then
-	sub (attack of CharacterEnemy) to batman,
-	sub (attack of batman) to CharacterEnemy,
-	assign true to isTraversable of batman,
-	wait 3 s then 
-		assign false to isTraversable of batman
-	endwait
+wait 5 s then
+/*actions*/
+endwait;
+
+wait 5 s then
+	wait 10 s then
+	/*actions*/
+	endwait;
+endwait;
 }}}
 
 ==waiting==
-_Partie *Règles du jeu*_
-  * état de *en attente* pour un caractère/entité.
+_Partie *Définitions*_
+  * dans une condition, tester si une entité est fixe (sa position est la même) :
 {{{
-
+if mario is waiting
+then /*conséquences*/
+endif;
 }}}
 
-
-==wdown==
-_Parties *Règles du jeu*_
-  * Sens bas pour les commandes de déplacement, orientation ou tournage de roulette de souris.
+==with==
+_Partie *Définitions*_
+  * intervertir les valeurs de deux attributs (voir 'invert') :
 {{{
-
+definition intervertir means 
+	invert speed of mario with speed of luigi;
 }}}
 
 ==world==
 _Partie *Description du jeu*_
-  * Défini le type de carte de jeu (map).
+  * spécifier l'environnement du jeu (voir 'game', 'generic', 'grid' et 'ribbon') :
 {{{
-world at grid;
-}}}
-
-==wup==
-_Parties *Règles du jeu*_
-  * Sens haut pour les commandes de déplacement, orientation ou tournage de roulette de souris.
-{{{
-
+game has world at generic; // l'attribut 'world' est 'generic' de base
+game has world at grid;
+game has world at ribbon;
 }}}
 
 ----
@@ -1485,4 +1530,5 @@ _Parties *Règles du jeu*_
 =Z=
 ----
 
-----
+
+*[Keywords#A A] - [Keywords#B B] - [Keywords#C C] - [Keywords#D D] - [Keywords#E E] - [Keywords#F F] - [Keywords#G G] - [Keywords#H H] - [Keywords#I I] - [Keywords#J J] - [Keywords#K K] - [Keywords#L L] - [Keywords#M M] - [Keywords#N N] - [Keywords#O O] - [Keywords#P P] - [Keywords#Q Q] - [Keywords#R R] - [Keywords#S S] - [Keywords#T T] - [Keywords#U U] - [Keywords#V V] - [Keywords#W W] - [Keywords#X X] - [Keywords#Y Y] - [Keywords#Z Z]*

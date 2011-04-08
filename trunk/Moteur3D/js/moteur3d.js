@@ -36,25 +36,59 @@ var coefFrottement = 1;
 (function(M3D){
 
 	var gameRenderer;
-		
+	
 /** 
  * Méthode initialisation: initialise le moteur.
  * @param: xmlDoc: adresse du fichier xml contenant l'état initial de la scène.
  *         idCanvas: identifiant de la fenêtre canvas où est affiché la scene.
+  *        initFunctionName: nom de la fonction qui met en place la scène initiale.
  */
-	M3D.MOTEUR.initialisation = function(xmlDoc, canvas){
+	M3D.MOTEUR.initialisation = function(xmlDoc, canvas, initFunctionName){
+		M3D.MOTEUR.includeAllJS();
+		M3D.MOTEUR.initialisationAux(xmlDoc,canvas);
+		setTimeout(initFunctionName,100);
+	},
+	
+/**
+ * Méthode includeJS: ajouter un fichier javascript au HTML
+ * @param: jsFile: Nom du fichier javascript, par rapport à la page html où il est chargé sans le .js à la fin
+ */
+	M3D.MOTEUR.includeJS = function(jsFile){
+		document.write('<script type="text/javascript" src="'+jsFile+'.js"></script>')
+	},
+	
+/**
+ * Méthode includeAllJS : Charge tous les fichiers javascripts du moteur
+ */
+	M3D.MOTEUR.includeAllJS = function(){
+		M3D.MOTEUR.includeJS('js/moteur_tools');
+		M3D.MOTEUR.includeJS('js/moteur_management');
+		M3D.MOTEUR.includeJS('js/moteur_collision');
+		M3D.MOTEUR.includeJS('js/moteur_movement');
+		M3D.MOTEUR.includeJS('js/moteur_camera');
+		M3D.MOTEUR.includeJS('js/moteur_management');
+		M3D.MOTEUR.includeJS('js/moteur_debugger');
+		M3D.MOTEUR.includeJS('js/moteur_keyboard');
+		M3D.MOTEUR.includeJS('js/moteur_physique');
+	},
+	
+/**
+ * Méthode initialisationAux: méthode auxiliaire à la fonction d'initialisation qui permet de charger une scène vide
+ */
+	M3D.MOTEUR.initialisationAux = function(xmlDoc, canvas){
         doc.onLoad = function(){
             gameRenderer = new GLGE.Renderer(document.getElementById(canvas));
             gameScene = doc.getElement("mainscene");
             gameRenderer.setScene(gameScene);
-		
-            // Initialisation des tableaux
+			
+			// initialisation des tableaux
 			gameScene.id = "mainscene";
 			tabObject["mainscene"] = gameScene;
-			//tabCamera["maincamera"] = gameScene.getCamera();
+			//tabCamera["maincamera"] = gameScene.getCamera();		
         } 
 		doc.load(xmlDoc);
-	},
+	},	
+	
 	
 	// uniquement pour les tests
 	M3D.MOTEUR.test = function(){

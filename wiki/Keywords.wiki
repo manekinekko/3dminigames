@@ -1,11 +1,7 @@
 #labels Featured,Phase-Implementation
 [Keywords#other other à regarder impérativement!!!]
 
-supprimer touched comme le voulait Emeric
-
-
 =Glossaire des mots-clés=
-*(Ordre alphabétique (Parties) )*
 
 ===Organisation du jeu===
   # _Partie *Description du jeu*_
@@ -28,7 +24,7 @@ supprimer touched comme le voulait Emeric
 ----
 ==accelerates==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'accélérer avec une valeur (voir 'by') :
+  * ordonner à l'entité désignée d'accélérer avec une valeur (voir [Keywords#by 'by']) :
 {{{
 definition acc1 means 
 	sonic accelerates by 20; // sonic accélère de 20
@@ -36,7 +32,7 @@ definition acc1 means
 
 ==activate==
 _Partie *Définitions*_
-  * activer une commande ou toutes les commandes (voir 'disable', 'keyboard', 'mouse' et 'commands') :
+  * activer une commande ou toutes les commandes (voir [Keywords#disable 'disable'], [Keywords#keayboard 'keyboard'], [Keywords#mouse 'mouse'] et [Keywords#commands 'commands']) :
 {{{
 definition activerTout means
 	activate commands;
@@ -46,7 +42,7 @@ definition activerPauseSeulement means
 
 ==add==
 _Partie *Définitions*_
-  * ajouter une valeur à un attribut numérique (voir 'to' et 'sub') : 
+  * ajouter une valeur à un attribut numérique (voir [Keywords#to 'to'] et [Keywords#sub 'sub']) : 
 {{{
 definition donnerBonus means 
 	add 30 to life of batman; // l'attribut 'life' de l'entité batman de type Character va augmenter de 30
@@ -54,7 +50,7 @@ definition donnerBonus means
 
 ==ai==
 _Partie *Intelligence Artificielle*_
-  * détailler le contenu d'une ia (voir 'is' et 'rule') :
+  * détailler le contenu d'une ia (voir [Keywords#is 'is'] et [Keywords#rule 'rule']) :
 {{{
 ai ia_1 is
 	rule /*déclencheur*/ then /*conséquences*/;
@@ -62,7 +58,7 @@ ai ia_1 is
 
 ==alive==
 _Partie *Définitions*_
-  * dans une condition, tester si l'entité avec un attribut 'life' (ex : Character) ne l'a pas à 0 (voir 'if') :
+  * dans une condition, tester si l'entité avec un attribut [Keywords#life 'life'] (ex : Character) ne l'a pas à 0 (voir [Keywords#if 'if']) :
 {{{
 if (perso is alive) // (voir 'is')
 then /*conséquences*/
@@ -84,13 +80,13 @@ _Partie *Déclaration de nouveaux types*_
 type SuperPlombier is Plombier and Weapon and Vehicle; // on peut ajouter autant de type que nécessaire avec 'and' du moment que les types existent déjà et ne soient pas redondants
 }}}
 _Partie *Définitions*_
-  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir 'if', 'or' et 'not') :
+  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir [Keywords#if 'if'], [Keywords#or 'or'] et [Keywords#not 'not']) :
 {{{
 if (life of perso1 = 0 and life of perso2 >= 5) //les conditions doivent être toutes les deux vraies pour pouvoir accéder à la conséquence (dans le then)
 then /*conséquences*/
 endif;
 }}}
-  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'between') :
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir [Keywords#distance 'distance'], [Keywords#angle 'angle'], [Keywords#random 'random'] et [Keywords#between 'between']) :
 {{{
 distance between perso1 and perso2 > 10
 angle between perso1 and perso2 > 10
@@ -110,7 +106,7 @@ definition calculAngle means
 
 ==anticlockwise==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'effectuer une rotation dans le sens anti-horaire (trigonométrique) (voir 'turns', 'by' et 'clockwise') :
+  * ordonner à l'entité désignée d'effectuer une rotation dans le sens anti-horaire (trigonométrique) (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#clockwise 'clockwise']) :
 {{{
 definition defL1 means 
 	avion turns anticlockwise by 10; 
@@ -118,7 +114,7 @@ definition defL1 means
 
 ==assign==
 _Partie *Définitions*_
-  * affecter une valeur à un attribut, elle doit correspondre au type de l'attribut (voir 'to') :
+  * affecter une valeur à un attribut, elle doit correspondre au type de l'attribut (voir [Keywords#to 'to']) :
 {{{
 definition assigner means
 	assign true to active of camera1,
@@ -128,19 +124,19 @@ definition assigner means
 
 ==at==
 _Partie *Description du jeu*_
-  * assigner une valeur (numérique ou non) à un attribut de game (voir 'has') :
+  * assigner une valeur (numérique ou non) à un attribut de game (voir [Keywords#has 'has']) :
 {{{
 game has name at "mon jeu";
 }}}
 _Partie *Initialisations*_
-  * assigner une valeur (numérique ou non) à un attribut d'une classe ou d'un objet (voir 'has') :
+  * assigner une valeur (numérique ou non) à un attribut d'une classe ou d'un objet (voir [Keywords#has 'has']) :
 {{{
 Character has life at 100; // tous les objets de type Character commenceront avec l'attribut life à 100
 perso1 has life at 10; // la valeur fournie à l'attribut doit être de même type obligatoirement, ici, l'attribut 'life' est un nombre
 perso2 has belonging at perso2; // ici, l'attribut belonging est un Object (Character hérite de Object)
 }}}
 _Partie *Définitions*_
-  * générer un objet à une position bien précise (voir 'generate') :
+  * générer un objet à une position bien précise (voir [Keywords#generate 'generate']) :
 {{{
 generate mario at 0 0 0;
 }}}
@@ -190,7 +186,7 @@ definition freiner means
 
 ==by==
 _Partie *Définitions*_
-  * définit la valeur associée à un changement (voir 'jump', 'moves', 'turns', 'accelerates', 'brakes', 'expels') : 
+  * définit la valeur associée à un changement (voir 'jumps', 'moves', 'turns', 'accelerates', 'brakes', 'expels') : 
 {{{
 mario jumps by 10;
 mario moves forward by 10;
@@ -790,11 +786,11 @@ ai nom_ia is /*conséquences*/ ;
 =J=
 [Keywords#K K] - [Keywords#L L] - [Keywords#M M] - [Keywords#N N] - [Keywords#O O] - [Keywords#P P] - [Keywords#Q Q] - [Keywords#R R] - [Keywords#S S] - [Keywords#T T] - [Keywords#U U] - [Keywords#V V] - [Keywords#W W] - [Keywords#X X] - [Keywords#Y Y] - [Keywords#Z Z]
 ----
-==jump==
+==jumps==
 _Partie *Définitions*_
   * ordonner à un personnage de sauter en indiquant la puissance (voir 'by') :
 {{{
-superGoomba jump by 5;
+superGoomba jumps by 5;
 }}}
 <br />
 ----
@@ -1435,6 +1431,14 @@ _Parties *Initialisations* et *Définitions*_
 definition toucherLapin means
     sub 1 to life of lapin1,
 	assign "Lapin n°2" to name of lapin2;
+}}}
+
+==touched==
+_Parties *Règles du jeu*_
+  * tester si une entité entre en contact avec une autre ou avec une zone :
+{{{
+rule mario is touched by goomba then 
+	/*actions*/;
 }}}
 
 ==touches==

@@ -20,18 +20,11 @@
     <body>
 		<style>
 			body{background-color: #000;color: #fff;font-family:arial}
-		</style>		
+		</style>	
+		
 		<script type="text/javascript" src="lib/glge_v0.8/glge-compiled-min.js"></script>
         <script type="text/javascript" src="js/moteur3d.js"></script>
-		<script type="text/javascript" src="js/moteur_tools.js"></script>
-		<script type="text/javascript" src="js/moteur_management.js"></script>
-		<script type="text/javascript" src="js/moteur_collision.js"></script>
-		<script type="text/javascript" src="js/moteur_movement.js"></script>
-        <script type="text/javascript" src="js/moteur_camera.js"></script>       
-		<script type="text/javascript" src="js/moteur_debugger.js"></script>
-		<script type="text/javascript" src="js/moteur_keyboard.js"></script>
-		<script type="text/javascript" src="js/moteur_physique.js"></script>
-			   
+	   
 		<script type="text/javascript">
 			
 			var numeroMissile = 0;
@@ -68,8 +61,7 @@
 				setInterval(rendu,10);
 			}
 
-			M3D.MOTEUR.initialisation('level.xml','canvas');
-			setTimeout("initScene()",100);			
+			M3D.MOTEUR.initialisation('level.xml','canvas','initScene()');		
 			
 			panelControl = function(){			
 				//if(KEY_Z) M3D.MOTEUR.translate("voiture1",[0.1,0,0],true,"voiture1");

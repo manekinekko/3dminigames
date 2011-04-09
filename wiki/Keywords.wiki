@@ -32,7 +32,7 @@ definition acc1 means
 
 ==activate==
 _Partie *Définitions*_
-  * activer une commande ou toutes les commandes (voir [Keywords#disable 'disable'], [Keywords#keayboard 'keyboard'], [Keywords#mouse 'mouse'] et [Keywords#commands 'commands']) :
+  * activer une commande ou toutes les commandes (voir [Keywords#disable 'disable'], [Keywords#keyboard 'keyboard'], [Keywords#mouse 'mouse'] et [Keywords#commands 'commands']) :
 {{{
 definition activerTout means
 	activate commands;
@@ -58,7 +58,7 @@ ai ia_1 is
 
 ==alive==
 _Partie *Définitions*_
-  * dans une condition, tester si l'entité avec un attribut [Keywords#life 'life'] (ex : Character) ne l'a pas à 0 (voir [Keywords#if 'if']) :
+  * dans une condition, tester si l'entité avec un attribut 'life' (ex : Character) ne l'a pas à 0 (voir [Keywords#if 'if']) :
 {{{
 if (perso is alive) // (voir 'is')
 then /*conséquences*/
@@ -75,7 +75,7 @@ rule all moves then /*actions*/; // (voir 'rule') teste si l'un des objets gén�
 
 ==and==
 _Partie *Déclaration de nouveaux types*_
-  * séparer les types lors de la déclaration d'un nouveau type :
+  * séparer les types lors de la déclaration d'un nouveau type (voir [Keywords#type 'type'] et [Keywords#is 'is']) :
 {{{
 type SuperPlombier is Plombier and Weapon and Vehicle; // on peut ajouter autant de type que nécessaire avec 'and' du moment que les types existent déjà et ne soient pas redondants
 }}}
@@ -148,7 +148,7 @@ generate mario at 0 0 0;
 ----
 ==backward==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller en arrière pour une translation (voir 'moves', 'by' et 'forward') :
+  * ordonner à l'entité désignée d'aller en arrière pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#forward 'forward']) :
 {{{
 definition bougerObjet means 
 	objet moves backward by 10; // l'objet va reculer de 10
@@ -158,7 +158,7 @@ definition bougerMario means
 
 ==becomes==
 _Parties *Règles du jeu*_
-  * sert à déclencher des actions lorsque la valeur d'un attribut devient (ou ne devient plus) exactement une autre valeur (voir 'rule') : 
+  * sert à déclencher des actions lorsque la valeur d'un attribut devient (ou ne devient plus) exactement une autre valeur (voir [Keywords#rule 'rule']) : 
 {{{
 rule value of jaugeForce becomes 10 then
 	/*actions*/;
@@ -168,7 +168,7 @@ rule name of perso1 becomes "Nouveau nom" then
 
 ==between==
 _Parties *Initialisations* et *Définitions*_
-  * définir les bornes d'un calcul ou d'une génération aléatoire (voir 'distance', 'angle', 'random' et 'and') :
+  * définir les bornes d'un calcul ou d'une génération aléatoire (voir [Keywords#distance 'distance'], [Keywords#angle 'angle'], [Keywords#random 'random'] et [Keywords#and 'and']) :
 {{{
 distance between perso1 and perso2 > 10
 angle between perso1 and perso2 > 10
@@ -178,7 +178,7 @@ random between 1 and 20
 
 ==brakes==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée de freiner d'une valeur (voir 'by') :
+  * ordonner à l'entité désignée de freiner d'une valeur (voir [Keywords#by 'by']) :
 {{{
 definition freiner means 
 	vaisseau brakes by 5; // la vitesse du vaisseau va décroître de 5
@@ -186,7 +186,7 @@ definition freiner means
 
 ==by==
 _Partie *Définitions*_
-  * définit la valeur associée à un changement (voir 'jumps', 'moves', 'turns', 'accelerates', 'brakes', 'expels') : 
+  * définit la valeur associée à un changement (voir [Keywords#jumps 'jumps'], [Keywords#moves 'moves'], [Keywords#turns 'turns'], [Keywords#accelerates 'accelerates'], [Keywords#brakes 'brakes'] et [Keywords#expels 'expels']) : 
 {{{
 mario jumps by 10;
 mario moves forward by 10;
@@ -202,7 +202,7 @@ yoshi expels goomba by 10;
 ----
 ==clockwise==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'effectuer une rotation dans le sens horaire (voir 'turns', 'by' et 'anticlockwise') :
+  * ordonner à l'entité désignée d'effectuer une rotation dans le sens horaire (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#anticlockwise 'anticlockwise']) :
 {{{
 definition defR1 means 
 	avion turns clockwise by 10; 
@@ -220,14 +220,14 @@ command for joueur1, joueur2 is    // les mêmes commandes sont autorisées pour
 
 ==commands==
 _Partie *Définitions*_
-  * activer / désactiver l'ensemble des commandes pour le clavier et la souris (voir 'activate', 'disable', 'keyboard' et 'mouse') :
+  * activer / désactiver l'ensemble des commandes pour le clavier et la souris (voir [Keywords#activate 'activate'], [Keywords#disable 'disable'], [Keywords#keyboard 'keyboard'] et [Keywords#mouse 'mouse']) :
 {{{
 activate commands
 disable commands
 }}}
 
 ==contains==
-  * dans une condition, vérifier si un objet appartient à une liste (voir 'list') :
+  * dans une condition, vérifier si un objet appartient à une liste (voir [Keywords#list 'list']) :
 {{{
 if elements of inventory1 contains arme1 then  // l'attribut 'elements' de inventory1 est une liste d'objets
 	/*conséquence*/
@@ -250,7 +250,7 @@ endif;
 
 ==defeat==
 _Partie *Définitions*_
-  * déclarer l'échec d'un joueur dans la partie (voir 'victory') :
+  * déclarer l'échec d'un joueur dans la partie (voir [Keywords#victory 'victory']) :
 {{{
 definition echec means 
 	defeat of joueurPrincipal : "Echec du joueur pricipal !",  // il est possible d'afficher un message
@@ -259,7 +259,7 @@ definition echec means
 
 ==definition==
 _Partie *Définitions*_
-  * déclarer un ensemble d'actions réutilisables plusieurs fois dans des règles du jeu ou des commandes différentes (voir 'means') : 
+  * déclarer un ensemble d'actions réutilisables plusieurs fois dans des règles du jeu ou des commandes différentes (voir [Keywords#means 'means']) : 
 {{{
 definition tirer means  // le nom 'tirer' pourra être appelé tel quel dans une règle du jeu
 	bazooka expels missile by 100, 
@@ -289,7 +289,7 @@ rule mario dies then
 
 ==disable==
 _Partie *Définitions*_
-  * désactiver une commande ou toutes les commandes (voir 'activate', 'keyboard', 'mouse' et 'commands') :
+  * désactiver une commande ou toutes les commandes (voir [Keywords#activate 'activate'], [Keywords#keyboard 'keyboard'], [Keywords#mouse 'mouse'] et [Keywords#commands 'commands']) :
 {{{
 definition desactiverTout means
 	disable commands;
@@ -299,7 +299,7 @@ definition desactiverPauseSeulement means
 
 ==distance==
 _Parties *Initialisations* et *Définitions*_
-  * retourner la valeur de la distance entre deux objets (voir 'between') :
+  * retourner la valeur de la distance entre deux objets (voir [Keywords#between 'between']) :
 {{{
 definition calculDistance means 
 	if distance between perso1 and perso2 > 10 
@@ -309,31 +309,29 @@ definition calculDistance means
 
 ==down==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller en bas pour une translation (voir 'moves', 'by' et 'up') :
+  * ordonner à l'entité désignée d'aller en bas pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#up 'up']) :
 {{{
 definition bougerHelico means 
 	helico moves down by 10; // l'hélicoptère va descendre verticalement de 10
 }}}
-  * ordonner à l'entité désignée d'effectuer une rotation vers le bas (voir 'turns', 'by' et 'up') :
+  * ordonner à l'entité désignée d'effectuer une rotation vers le bas (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#up 'up']) :
 {{{
 definition incliner means 
 	avion turns down by 10; // l'avion va s'incliner vers l'avant
 }}}
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche flèche du bas (voir 'key') :
+  * indiquer une commande clavier, touche flèche du bas (voir [Keywords#key 'key']) :
 {{{
 key down for /*action*/;
 }}}
-  * indiquer une commande souris, déplacement du curseur vers le bas (voir 'mouse') :
+  * indiquer une commande souris, déplacement du curseur vers le bas (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse down for /*action*/;
 }}}
 
 ==duplicable==
-(voir 'generate')
-
 _Partie *Initialisations*_
-  * Indique que l'objet peut être copié en plusieurs exemplaires lors d'un generate : 
+  * Indique que l'objet peut être copié en plusieurs exemplaires lors d'un generate (voir [Keywords#generate 'generate']) : 
 {{{
 lapin is Character duplicable; 
 
@@ -345,7 +343,7 @@ definition genererPlusieurslapins means
 
 ==during==
 _Partie *Définitions*_
-  * poursuivre une action pendant un certain temps (voir 'until') :
+  * poursuivre une action pendant un certain temps (voir [Keywords#until 'until']) :
 {{{
 goomba moves left by 5 during 2 sec;
 }}}
@@ -357,7 +355,7 @@ goomba moves left by 5 during 2 sec;
 ----
 ==efface==
 _Partie *Définitions*_
-  * effacer un objet de la scène 3D (il reste en mémoire) (voir 'generate') :
+  * effacer un objet de la scène 3D (il reste en mémoire) (voir [Keywords#generate 'generate']) :
 {{{
 definition effacerPerso means
 	efface perso1;
@@ -365,7 +363,7 @@ definition effacerPerso means
 
 ==effaced==
 _Partie *Définitions*_
-  * dans une condition, tester si l'entité n'a pas été générée ou n'est pas dans la scène 3D (voir 'if', 'generate' et 'generated')) :
+  * dans une condition, tester si l'entité n'a pas été générée ou n'est pas dans la scène 3D (voir [Keywords#if 'if'], [Keywords#generate 'generate'] et [Keywords#generated 'generated']) :
 {{{
 if (perso is generated) // (voir 'is')
 then /*conséquences*/
@@ -374,7 +372,7 @@ endif;
 
 ==else==
 _Partie *Définitions*_
-  * le branchement conditionnel dans le cas où la condition du 'if' n'est pas respectée (voir 'if', 'then' et 'endif'). Il n'est pas oligatoire s'il ne s'avère pas nécessaire :
+  * le branchement conditionnel dans le cas où la condition du 'if' n'est pas respectée (voir [Keywords#if 'if'], [Keywords#then 'then'] et [Keywords#endif 'endif']). Il n'est pas oligatoire s'il ne s'avère pas nécessaire :
 {{{
 if /*condition*/
 then /*conséquence 1 (condition respectée)*/
@@ -384,7 +382,7 @@ endif;
 
 ==endif==
 _Partie *Définitions*_
-  * fermer une condition (voir 'if', 'then' et 'else'). Cela sert à déterminer jusqu'où la condition va faire effet :
+  * fermer une condition (voir [Keywords#if 'if'], [Keywords#then 'then'] et [Keywords#else 'else']). Cela sert à déterminer jusqu'où la condition va faire effet :
 {{{
 if /*condition*/
 then 
@@ -405,13 +403,13 @@ definition finJeu means
 definition finJeuMessage means
 	game ends : "Fin du jeu !"; // le message à afficher est facultatif
 }}}
-  * arrêter un Chrono actif (voir 'starts' et 'pause') :
+  * arrêter un Chrono actif (voir [Keywords#starts 'starts'] et [Keywords#pause 'pause']) :
 {{{
 definition arrêtChrono means
 	chrono1 ends : "Time's up." // le message à afficher est facultatif
 }}}
 _Partie *Règles du jeu*_
-  * tester si un chrono vient juste de se terminer (voir 'starts') :
+  * tester si un chrono vient juste de se terminer (voir [Keywords#starts 'starts']) :
 {{{
 rule chrono1 ends then
 	/*actions*/
@@ -419,7 +417,7 @@ rule chrono1 ends then
 
 ==endwait==
 _Partie *Définitions*_
-  * fermer une attente (voir 'wait'). Cela sert à repérer jusqu'à où l'attente va faire effet :
+  * fermer une attente (voir [Keywords#wait 'wait']). Cela sert à repérer jusqu'à où l'attente va faire effet :
 {{{
 wait 5 s then
 /*actions*/
@@ -435,14 +433,14 @@ endwait;
 
 ==enter==
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche Entrée (voir 'key') :
+  * indiquer une commande clavier, touche Entrée (voir [Keywords#key 'key']) :
 {{{
 key enter for /*action*/;
 }}}
 
 ==equip==
 _Partie *Définitions*_
-  * équiper une entité de type Character avec un objet de son inventaire (voir 'previous' et 'next') :
+  * équiper une entité de type Character avec un objet de son inventaire (voir [Keywords#previous 'previous'] et [Keywords#next 'next']) :
 {{{
 definition equiper means 
 	perso1 equip arme1, //l'attribut 'equipedObject' de perso1 devient arme1
@@ -452,14 +450,14 @@ definition equiper means
 
 ==escape==
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche Echap (voir 'key') :
+  * indiquer une commande clavier, touche Echap (voir [Keywords#key 'key']) :
 {{{
 key escape for /*action*/;
 }}}
 
 ==expels==
 _Partie *Définitions*_
-  * ordonner à un objet d'en lâcher un autre qui lui appartient (voir 'has', 'ingests' et 'grasps') :
+  * ordonner à un objet d'en lâcher un autre qui lui appartient (voir [Keywords#has 'has'], [Keywords#ingests 'ingests'] et [Keywords#grasps 'grasps']) :
 {{{
 definition tirer means 
 	batman expels missile by 20; // (voir 'by') l'objet est expulsé avec une force de 20
@@ -468,7 +466,7 @@ definition lacher means
 	batman expels missile by 0; // sans force, l'objet est juste lâché
 }}}
 _Partie *Règles du jeu*_
-  * tester si un objet vient juste d'en relâcher un autre (voir 'gets') :
+  * tester si un objet vient juste d'en relâcher un autre (voir [Keywords#gets 'gets']) :
 {{{
 rules mario expels etoile then
 	/*actions*/;
@@ -481,7 +479,7 @@ rules mario expels etoile then
 ----
 ==finished==
 _Partie *Définitions*_
-  * dans une condition, tester si un Chrono est arrêté (voir 'if') :
+  * dans une condition, tester si un Chrono est arrêté (voir [Keywords#if 'if']) :
 {{{
 if (chrono1 is finished) // (voir 'is')
 then /*conséquences*/
@@ -490,12 +488,12 @@ endif;
 
 ==first==
 _Partie *Initialisations*_
-  * définir le point de vue de camera à la première personne, pour un jeu de type FPS par exemple (voir 'is') :
+  * définir le point de vue de camera à la première personne, pour un jeu de type FPS par exemple (voir [Keywords#is 'is']) :
 {{{
 cam1 is camera first person;
 }}}
 _Parties *Définitions*_
-  * désigner le premier élément d'une liste (voir 'list') :
+  * désigner le premier élément d'une liste (voir [Keywords#list 'list']) :
 {{{
 first of list1
 }}}
@@ -509,14 +507,14 @@ command for player1 is // un seul joueur
 command for player1, player2 is // deux joueurs
 	/*commandes*/;
 }}}
-  * désigner l'action associée à une commande (voir 'command') :
+  * désigner l'action associée à une commande (voir [Keywords#command 'command']) :
 {{{
 key space for /*action*/;
 }}}
 
 ==forward==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller en avant pour une translation (voir 'moves', 'by' et 'backward') :
+  * ordonner à l'entité désignée d'aller en avant pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#backward 'backward']) :
 {{{
 definition bougerObjet means 
 	objet moves forward by 10; // l'objet va avancer de 10
@@ -526,20 +524,20 @@ definition bougerMario means
 
 ==frame(s)==
 _Parties *Initialisations* et *Définitions*_
-  * l'une des unités de temps disponibles, l'image (voir 'min', 's' et 'ms')
+  * l'une des unités de temps disponibles, l'image (voir [Keywords#min 'min'], [Keywords#S 's'] et [Keywords#ms 'ms']) :
 {{{
 chrono1 has end at 100 frames //la fin du chrono est à 100 image, à 25 images par secondes, cela fait environ 4 secondes
 }}}
 
 ==free==
 _Partie *Initialisations*_
-  * définir le point de vue de camera sans contraintes sur celle-ci (voir 'is') :
+  * définir le point de vue de camera sans contraintes sur celle-ci (voir [Keywords#is 'is']) :
 {{{
 cam1 is camera free;
 }}}
 
 ==from==
-_Parties *Initialisations* et *Définitions*_ (voir 'list' et 'remove')
+_Parties *Initialisations* et *Définitions*_ (voir [Keywords#list 'list'] et [Keywords#revove 'remove'])
   * pour désigner le nom de la liste lorsqu'on lui retire un élément :
 {{{
 remove elt1 from liste1; // l'élément doit exister et être dans la liste désignée
@@ -559,7 +557,7 @@ game has gravity at 10, score at 0;
 
 ==generate==
 _Partie *Définitions*_
-  * faire apparaître un objet dans l'environnement 3D (voir 'game') :
+  * faire apparaître un objet dans l'environnement 3D (voir [Keywords#game 'game']) :
 {{{
 definition depart means
 	generate sol,
@@ -579,7 +577,7 @@ definition genGoombas means
 
 ==grasps==
 _Partie *Définitions*_
-  * ordonner à un objet d'en attraper un autre pour le faire sien (voir 'has', 'ingests' et 'expels'):
+  * ordonner à un objet d'en attraper un autre pour le faire sien (voir [Keywords#has 'has'], [Keywords#ingests 'ingests'] et [Keywords#expels 'expels']):
 {{{
 definition entrerDansVoiture means 
 	voiture grasps perso1; // c'est la voiture qui attrape le personnage afin de le conduire quelque part
@@ -587,7 +585,7 @@ definition entrerDansVoiture means
 
 ==generated==
 _Partie *Définitions*_
-  * dans une condition, tester si un objet est présent dans l'environnement 3D (voir 'generate') :
+  * dans une condition, tester si un objet est présent dans l'environnement 3D (voir [Keywords#generate 'generate']) :
 {{{
 definition objetExiste means
 	if objet1 is generated then
@@ -604,21 +602,21 @@ game has gravity at 1 1 1;
 
 ==gridsize==
 _Partie *Description du jeu*_
-  * définir la taille de chaque case dans le cas d'un jeu de type grille (voir 'world' et 'grid') :
+  * définir la taille de chaque case dans le cas d'un jeu de type grille (voir [Keywords#world 'world'] et [Keywords#grid 'grid']) :
 {{{
 game has gridsize at 12;
 }}}
 
 ==generic==
 _Partie *Description du jeu*_
-  * type d'environnement (map) général sans spécification spéciale (voir 'world', 'grid' et 'ribbon') :
+  * type d'environnement (map) général sans spécification spéciale (voir [Keywords#world 'world'], [Keywords#grid 'grid'] et [Keywords#ribbon 'ribbon']) :
 {{{
 game has world at generic;
 }}}
 
 ==gets==
 _Partie *Règles du jeu*_
-  * tester si un objet vient juste d'en obtenir un autre par l'intermédiaire de ingests ou grasps (voir 'ingests', 'grasps' et 'expels') :
+  * tester si un objet vient juste d'en obtenir un autre par l'intermédiaire de ingests ou grasps (voir [Keywords#ingests 'ingests'], [Keywords#grasps 'grasps'] et [Keywords#expels 'expels']) :
 {{{
 rules mario gets etoile then
 	/*actions*/;
@@ -626,7 +624,7 @@ rules mario gets etoile then
 
 ==grid==
 _Partie *Description du jeu*_
-  * type de d'environnement (map) découpé en cases de taille fixée par l'attribut gridsize (voir 'world', 'generic', 'ribbon' et 'gridsize') :
+  * type de d'environnement (map) découpé en cases de taille fixée par l'attribut gridsize (voir [Keywords#world 'world'], [Keywords#generic 'generic'], [Keywords#ribbon 'ribbon'] et [Keywords#gridsize 'gridsize']) :
 {{{
 game has world at grid;
 }}}
@@ -637,7 +635,7 @@ game has world at grid;
 [Keywords#I I] - [Keywords#J J] - [Keywords#K K] - [Keywords#L L] - [Keywords#M M] - [Keywords#N N] - [Keywords#O O] - [Keywords#P P] - [Keywords#Q Q] - [Keywords#R R] - [Keywords#S S] - [Keywords#T T] - [Keywords#U U] - [Keywords#V V] - [Keywords#W W] - [Keywords#X X] - [Keywords#Y Y] - [Keywords#Z Z]
 ----
 ==happens==
-  * poursuivre une action jusqu'à ce qu'un événement se déclenche (voir 'until') :
+  * poursuivre une action jusqu'à ce qu'un événement se déclenche (voir [Keywords#until 'until']) :
 {{{
 mario moves forward until 
 	mario touches zone1 happens;
@@ -645,18 +643,18 @@ mario moves forward until
 
 ==has==
 _Partie *Description du jeu*_
-  * spécifier les attributs de game (voir 'at') :
+  * spécifier les attributs de game (voir [Keywords#at 'at']) :
 {{{
 game has name at "mon jeu";
 }}}
 _Partie *Initialisations*_
-  * accéder à un attribut existant d'une classe ou d'un objet pour le définir (voir 'at') :
+  * accéder à un attribut existant d'une classe ou d'un objet pour le définir (voir [Keywords#at 'at']) :
 {{{
 Character has life at 100; // tous les objets de type Character commenceront avec l'attribut life à 100
 perso1 has life at 10; // l'objet perso1 (de type Character commenceront avec l'attribut life à 100
 perso1 has life at life of perso2; // l'attribut life de perso1 se basera sur l'attribut life de perso2
 }}}
-  * déclarer un nouvel attribut n'appartenant pas déjà à une classe (voir 'at') :
+  * déclarer un nouvel attribut n'appartenant pas déjà à une classe (voir [Keywords#at 'at']) :
 {{{
 Character has mon_attribut_1 at 100; // l'attribut nommé 'mon_attribut_1' n'existe pas dans la classe Character, tous les objets de type Character commenceront avec cet attribut initialisé à 20
 perso1 has mon_attribut_2 at 20; // perso1 est de type Character, l'attribut nommé 'mon_attribut_2' n'existant pas dans cette classe, perso1 commencera avec cet attribut initialisé à 50
@@ -667,7 +665,7 @@ perso1 has mon_attribut_3 at "texte1"; // une chaîne de caractère peut être a
 perso1 has arme1; // l'objet perso1 s'approprie l'objet arme1 (son attribut belonging devient 'true')
 }}}
 _Partie *Définitions*_
-  * dans une condition, tester l'appartenance d'un objet pour un autre (voir 'if') :
+  * dans une condition, tester l'appartenance d'un objet pour un autre (voir [Keywords#if 'if']) :
 {{{
 if perso1 has arme1
 then /*conséquence*/
@@ -676,7 +674,7 @@ endif; // l'objet perso1 s'approprie l'objet arme1 (son attribut belonging devie
 
 ==held==
 _Partie *Commandes*_
-  * préciser qu'une commande s'effectue lorsqu'une touche du clavier est maintenue enfoncée (voir 'key', 'pressed' et 'released') :
+  * préciser qu'une commande s'effectue lorsqu'une touche du clavier est maintenue enfoncée (voir [Keywords#key 'key'], [Keywords#pressed 'pressed'] et [Keywords#released 'released']) :
 {{{
 command for player is 
 	key up held for /*action*/; // 'held' n'est pas obligatoire
@@ -689,7 +687,7 @@ command for player is
 ----
 ==if==
 _Partie *Définitions*_
-  * exprimer un choix avec une condition (voir 'then', 'else' et 'endif') :
+  * exprimer un choix avec une condition (voir [Keywords#then 'then'], [Keywords#else 'else'] et [Keywords#endif 'endif']) :
 {{{
 if /*condition*/ // si la condition est repectée les actions après le 'then' seront exécutées
 then /*conséquence (condition respectée)*/
@@ -714,24 +712,24 @@ _Partie *Initialisations*_
 {{{
 assign 5 to life of num 3 in list1 // la liste doit contenir au moins 3 éléments et les attributs appelés doivent exister
 }}}
-  * désigner une liste lorsqu'on y place un nouvel élément :
+  * désigner une liste lorsqu'on y place un nouvel élément (voir [Keywords#insert 'insert']) :
 {{{
-insert arme1 in list1; // (voir 'insert')
+insert arme1 in list1; 
 }}}
 _Partie *Définitions*_
-  * désigner une liste lorsqu'on y place un nouvel élément :
+  * désigner une liste lorsqu'on y place un nouvel élément (voir [Keywords#insert 'insert'] et [Keywords#ingests 'ingests']) :
 {{{
-insert arme1 in list1; // (voir 'insert')
-yoshi ingest ennemi1 in inventaireEnnemis; // (voir 'ingest')
+insert arme1 in list1; 
+yoshi ingests ennemi1 in inventaireEnnemis;
 }}}
-  * générer un objet à l'intérieur d'une zone (voir 'generate'):
+  * générer un objet à l'intérieur d'une zone (voir [Keywords#generate 'generate']):
 {{{
 generate mario in zoneDepart;
 }}}
 
 ==ingests==
 _Partie *Règles du jeu*_
-  * ordonner à un objet d'en prendre un autre qui ne lui appartient pas (voir 'has', 'grasps' et 'expels'), l'objet pris est effacé et mis dans un inventaire :
+  * ordonner à un objet d'en prendre un autre qui ne lui appartient pas (voir [Keywords#has 'has'], [Keywords#grasps 'grasps'] et [Keywords#expels 'expels']), l'objet pris est effacé et mis dans un inventaire :
 {{{
 definition placeBook means 
 	perso1 ingests book1 in inventaireLibrairie;
@@ -739,7 +737,7 @@ definition placeBook means
 
 ==insert==
 _Parties *Initialisations* et *Définitions*_
-  * placer un objet dans une liste (voir 'list', 'in' et 'remove') :
+  * placer un objet dans une liste (voir [Keywords#list 'list'], [Keywords#in 'in'] et [Keywords#remove 'remove']) :
 {{{
 insert arme1 in list1 num 2; // (voir 'num') l'objet arme1 sera placé à la deuxième place dans la liste list1 (la dernière place si le nombre d'éléments est plus petit)
 insert arme1 in list1; // l'objet arme1 sera placé à la fin de la liste list1
@@ -747,7 +745,7 @@ insert arme1 in list1; // l'objet arme1 sera placé à la fin de la liste list1
 
 ==invert==
 _Partie *Définitions*_
-  * intervertir les valeurs de deux attributs (voir 'with') :
+  * intervertir les valeurs de deux attributs (voir [Keywords#with 'with']) :
 {{{
 definition intervertir means 
 	invert speed of mario with speed of luigi;
@@ -755,7 +753,7 @@ definition intervertir means
 
 ==is==
 _Partie *Déclaration de nouveaux types*_
-  * déclarer un nouveau type (une nouvelle classe) (voir 'type') :
+  * déclarer un nouveau type (une nouvelle classe) (voir [Keywords#type 'type']) :
 {{{
 type Plombier is Character; // le type doit déjà exister ou avoir été défini plus haut dans le code de la même manière
 type SuperPlombier is Plombier and Weapon; // on peut déclarer de nouveaux types qui sont composés de plusieurs déjà existant
@@ -765,18 +763,18 @@ _Partie *Initialisations*_
 mario is Plombier; // le type doit exister
 }}}
 _Partie *Définitions*_ 
-  * tester l'état d'un objet selon son type dans une condition (voir 'if') :
+  * tester l'état d'un objet selon son type dans une condition (voir [Keywords#if 'if']) :
 {{{
 if audio1 is started then /*conséquences*/ endif; // (voir 'started') pour un objet de type Media
 if perso1 is dead then /*conséquences*/ endif; // (voir 'dead') pour un objet de type Character
 }}}
 _Partie *Commandes*_
-  * déclarer une commmande : se place après la déclaration (voir 'command' et 'for') :
+  * déclarer une commmande : se place après la déclaration (voir [Keywords#command 'command'] et [Keywords#for 'for']) :
 {{{
 command objet1 for player1 is definition1;
 }}}
 _Partie *Intelligence Artificielle*_ 
-  * préciser le nom d'une règle du jeu (voir 'ai') :
+  * préciser le nom d'une règle du jeu (voir [Keywords#ai 'ai']) :
 {{{
 ai nom_ia is /*conséquences*/ ; 
 }}}
@@ -788,7 +786,7 @@ ai nom_ia is /*conséquences*/ ;
 ----
 ==jumps==
 _Partie *Définitions*_
-  * ordonner à un personnage de sauter en indiquant la puissance (voir 'by') :
+  * ordonner à un personnage de sauter en indiquant la puissance (voir [Keywords#by 'by']) :
 {{{
 superGoomba jumps by 5;
 }}}
@@ -800,7 +798,7 @@ superGoomba jumps by 5;
 ----
 ==key==
 _Partie *Commandes*_
-  * déclarer une commande liée clavier (voir 'command' et 'mouse'), les commandes sont : lettre de 'A' à 'Z', 'up', 'down', 'left', 'right', 'space', 'escape' ou 'enter' :
+  * déclarer une commande liée clavier (voir [Keywords#command 'command'] et [Keywords#mouse 'mouse']), les commandes sont : lettre de 'A' à 'Z', 'up', 'down', 'left', 'right', 'space', 'escape' ou 'enter' :
 {{{
 command for joueur1 is
 	key left for bougerJeepGauche,
@@ -809,7 +807,7 @@ command for joueur1 is
 
 ==keyboard==
 _Partie *Définitions*_
-  * activer / désactiver l'ensemble des commandes pour le clavier seulement (voir 'activate', 'disable', 'mouse' et 'commands') :
+  * activer / désactiver l'ensemble des commandes pour le clavier seulement (voir [Keywords#activate 'activate'], [Keywords#disable 'disable'], [Keywords#mouse 'mouse'] et [Keywords#commands 'commands']) :
 {{{
 activate keyboard
 disable keyboard
@@ -843,7 +841,7 @@ rule mario kills goomba then
 ----
 ==last==
 _Partie *Définitions*_
-  * désigner le dernier élément d'une liste (voir 'list') :
+  * désigner le dernier élément d'une liste (voir [Keywords#list 'list']) :
 {{{
 last of list1
 }}}
@@ -851,31 +849,31 @@ last of list1
 
 ==lclick==
 _Partie *Commandes*_
-  * indiquer une commande souris, clic gauche (voir 'mouse') :
+  * indiquer une commande souris, clic gauche (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse lclick for /*action*/;
 }}}
 
 ==left==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller à gauche pour une translation (voir 'moves', 'by' et 'right') :
+  * ordonner à l'entité désignée d'aller à gauche pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#right 'right']) :
 {{{
 definition bougerObjet means 
 	objet moves left by 10; // l'objet va se décaler sur sa gauche de 10
 definition bougerMario means 
 	mario moves left by 10; // si mario (de type Character) a son attribut 'moveWithCamera' à true, il va se déplacer vers la gauche de l'écran
 }}}
-  * ordonner à l'entité désignée d'effectuer une rotation vers la gauche (voir 'turns', 'by' et 'right') :
+  * ordonner à l'entité désignée d'effectuer une rotation vers la gauche (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#right 'right']) :
 {{{
 definition tournerMario means 
 	mario turns left by 10; // mario va tourner à gauche
 }}}
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche flèche de gauche (voir 'key') :
+  * indiquer une commande clavier, touche flèche de gauche (voir [Keywords#key 'key']) :
 {{{
 key left for /*action*/;
 }}}
-  * indiquer une commande souris, déplacement du curseur vers la gauche (voir 'mouse') :
+  * indiquer une commande souris, déplacement du curseur vers la gauche (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse left for /*action*/;
 }}}
@@ -889,7 +887,7 @@ listeEnnemie is list of goomba1, goomba2, goomba3;
 
 ==loop==
 _Partie *Initialisations*_
-  * indiquer qu'un Media est interprété en boucle (voir 'is' et 'once') :
+  * indiquer qu'un Media est interprété en boucle (voir [Keywords#is 'is'] et [Keywords#once 'once']) :
 {{{
 musiqueAmbiance is Media loop;
 }}}
@@ -901,7 +899,7 @@ musiqueAmbiance is Media loop;
 ----
 ==mclick==
 _Partie *Commandes*_
-  * indiquer une commande souris, clic du bonton central (molette) s'il y en a un (voir 'mouse') :
+  * indiquer une commande souris, clic du bonton central (molette) s'il y en a un (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse mclick for /*action*/;
 }}}
@@ -916,20 +914,20 @@ definition bougerJeep means
 
 ==min==
 _Parties *Initialisations* et *Définitions*_
-  * l'une des unités de temps disponibles, la minute (voir 'frame(s)', 's' et 'ms')
+  * l'une des unités de temps disponibles, la minute (voir [Keywords#frame(s) 'frame(s)'], [Keywords#S 's'] et [Keywords#ms 'ms'])
 {{{
 chrono1 has end at 1 min
 }}}
 
 ==mouse==
 _Partie *Définitions*_
-  * activer / désactiver l'ensemble des commandes pour la souris seulement (voir 'activate', 'disable', 'keyboard' et 'commands') :
+  * activer / désactiver l'ensemble des commandes pour la souris seulement (voir [Keywords#activate 'activate'], [Keywords#disable 'disable'], [Keywords#keyboard 'keyboard'] et [Keywords#commands 'commands']) :
 {{{
 activate mouse
 disable mouse
 }}}
 _Partie *Commandes*_
-  * déclarer une commande liée à la souris (voir 'command' et 'key'), les commandes sont 'up', 'down', 'right', 'lClick', 'mClick', 'rClick', 'scrollUp' ou 'scrollDown' :
+  * déclarer une commande liée à la souris (voir [Keywords#command 'command'] et [Keywords#key 'key']), les commandes sont 'up', 'down', 'right', 'lClick', 'mClick', 'rClick', 'scrollUp' ou 'scrollDown' :
 {{{
 command for joueur1 is
 	mouse down for seBaisser,
@@ -938,7 +936,7 @@ command for joueur1 is
 
 ==moves==
 _Partie *Définitions*_
-  * déclarer un déplacement (voir 'right', 'left', 'forward', 'backward' et 'turns') :
+  * déclarer un déplacement (voir [Keywords#right 'right'], [Keywords#left 'left'], [Keywords#forward 'forward'], [Keywords#backward 'backward'] et [Keywords#turns 'turns']) :
 {{{
 definition bougerObjet means 
 	objet moves backward by 10;
@@ -960,14 +958,14 @@ endif;
 
 ==ms==
 _Parties *Initialisations* et *Définitions*_
-  * l'une des unités de temps disponibles, la milliseconde (voir 'frame(s)', 'min' et 's')
+  * l'une des unités de temps disponibles, la milliseconde (voir [Keywords#frame(s) 'frame(s)'], [Keywords#min 'min'] et [Keywords#S 's'])
 {{{
 chrono1 has end at 750 ms
 }}}
 
 ==mute==
 _Partie *Définitions*_
-  * désactiver le son d'un Media (voir 'on' et 'off') :
+  * désactiver le son d'un Media (voir [Keywords#on 'on'] et [Keywords#off 'off']) :
 {{{
 definition desactiverMusique means
 	mute on mediaMusique; // désactive le son du média
@@ -976,7 +974,7 @@ definition desactiverMusique means
 
 ==muted==
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du Media a été coupé (voir 'mute', 'on' et 'off') :
+  * dans une condition, tester si le son du Media a été coupé (voir [Keywords#mute 'mute'], [Keywords#on 'on'] et [Keywords#off 'off']) :
 {{{
 if musiqueAmbiance is muted on // ou bien 'muted off'
 then /*conséquence*/
@@ -990,14 +988,14 @@ endif;
 ----
 ==name==
 _Partie *Description du jeu*_
-  * définir le nom du jeu (voir 'game') :
+  * définir le nom du jeu (voir [Keywords#game 'game']) :
 {{{
 game has name at "Mon jeu";
 }}}
 
 ==next==
 _Partie *Définitions*_
-  * équiper une entité de type Character avec l'objet de son inventaire venant après l'objet déjà équipé (voir 'equip' et 'previous') :
+  * équiper une entité de type Character avec l'objet de son inventaire venant après l'objet déjà équipé (voir [Keywords#equip 'equip'] et [Keywords#previous 'previous']) :
 {{{
 definition equiper means 
 	perso1 equip next; //l'attribut 'equipedObject' de perso1 devient l'objet suivant
@@ -1005,14 +1003,14 @@ definition equiper means
 
 ==nexturn==
 _Partie *Définitions*_
-  * déclarer le tour du joueur suivant lors d'un jeu en tour par tour (voir 'game' et 'turnbased') :
+  * déclarer le tour du joueur suivant lors d'un jeu en tour par tour (voir [Keywords#game 'game'] et [Keywords#turnbased 'turnbased']) :
 {{{
 nexturn joueur2;
 }}}
 
 ==not==
 _Partie *Définitions*_
-  * dans une condition, exprimer la négation logique (voir 'and' et 'or'):
+  * dans une condition, exprimer la négation logique (voir [Keywords#and 'and'] et [Keywords#or 'or']):
 {{{
 definition genererMario means
 	if mario is not generated then // dans une condition
@@ -1027,7 +1025,7 @@ definition destroyMario means
 
 ==num==
 _Parties *Initialisations* et *Définitions*_
-  * accéder à l'élément d'une liste à partir de sa position (voir 'list' et 'in') :
+  * accéder à l'élément d'une liste à partir de sa position (voir [Keywords#list 'list'] et [Keywords#in 'in']) :
 {{{
 name of num 1 in listeDesPersos; // accès à l'attribut nom du premier élément de la liste 'listeDesPersos'
 insert arme1 in list1 num 2; // (voir 'insert')
@@ -1041,7 +1039,7 @@ remove num 1 from liste1; // (voir 'remove')
 ----
 ==of==
 _Partie *Initialisations*_
-  * énumérer le contenu d'une liste à sa création (voir 'is' et 'list')
+  * énumérer le contenu d'une liste à sa création (voir [Keywords#is 'is'] et [Keywords#list 'list']) :
 {{{
 liste1 is list of perso1, perso2, perso3;
 }}}
@@ -1051,7 +1049,7 @@ _Parties *Définitions* et *Règles du jeu*_
 life of perso1
 x of position of perso1 // x est un attribut de position et position est un attribut de perso1
 }}}
-  * indiquer quelle Team ou quel Player est en condition de victoire ou de défaite (voir 'victory' et 'defeat') :
+  * indiquer quelle Team ou quel Player est en condition de victoire ou de défaite (voir [Keywords#victory 'victory'] et [Keywords#defeat 'defeat']) :
 {{{
 victory of team1; 
 defeat of player1; 
@@ -1059,13 +1057,13 @@ defeat of player1;
 
 ==off==
 _Partie *Définitions*_
-  * réactiver le son d'un Media (voir 'mute' et 'on') :
+  * réactiver le son d'un Media (voir [Keywords#mute 'mute'] et [Keywords#on 'on']) :
 {{{
 definition activerMusique means
 	mute off mediaMusique; // réactive le son du média
 }}}
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du Media a été réactivé (voir 'muted' et 'on') :
+  * dans une condition, tester si le son du Media a été réactivé (voir [Keywords#muted 'muted'] et [Keywords#on 'on']) :
 {{{
 if musiqueAmbiance is muted off
 then /*conséquence*/
@@ -1074,13 +1072,13 @@ endif;
 
 ==on==
 _Partie *Définitions*_
-  * désactiver le son d'un Media (voir 'mute' et 'off') :
+  * désactiver le son d'un Media (voir [Keywords#mute 'mute'] et [Keywords#off 'off']) :
 {{{
 definition desactiverMusique means
 	mute on mediaMusique; // désactive le son du média
 }}}
 _Partie *Règles du jeu*_
-  * dans une condition, tester si le son du Media a été coupé (voir 'muted' et 'off') :
+  * dans une condition, tester si le son du Media a été coupé (voir [Keywords#muted 'muted'] et [Keywords#off 'off']) :
 {{{
 if musiqueAmbiance is muted on
 then /*conséquence*/
@@ -1089,7 +1087,7 @@ endif;
 
 ==or==
 _Partie *Définitions*_
-  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir 'if', 'and' et 'not') :
+  * combiner plusieurs sous conditions à l'intérieur d'une condition (voir [Keywords#if 'if'], [Keywords#and 'and'] et [Keywords#not 'not']) :
 {{{
 if (life of perso1 = 0 or life of perso2 >= 5) //une seul des deux conditions doit être vraie pour pouvoir accéder à la conséquence (dans le then)
 then /*conséquences*/
@@ -1098,7 +1096,7 @@ endif;
 
 ==orientation==
 _Parties *Initialisations* et *Définitions*_
-  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à son orientation dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir 'position' et 'size') :
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à son orientation dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir [Keywords#position 'position'] et [Keywords#size 'size']) :
 {{{
 objet1 has orientation at 90 0 180; // l'orientation de l'objet est de 90 autour de l'axe x, 0 autour de l'axe y et 180 autour de l'axe z
 }}}
@@ -1119,12 +1117,12 @@ _Partie *Définitions*_
 definition pauseOn means
 	game pause; // une fois le jeu mis en pause, il est possible de reprendre la partie avec le menu contextuel
 }}}
-  * stopper un Chrono temporairement (voir 'starts' et 'ends') :
+  * stopper un Chrono temporairement (voir [Keywords#starts 'starts'] et [Keywords#ends 'ends']) :
 {{{
 definition stopperChrono means
 	chrono1 pause;
 }}}
-  * stopper un Media temporairement (voir 'play' et 'stop') :
+  * stopper un Media temporairement (voir [Keywords#play 'play'] et [Keywords#stop 'stop']) :
 {{{
 definition stopperMedia means
 	pause musiqueAmbiance;
@@ -1132,13 +1130,13 @@ definition stopperMedia means
 
 ==paused==
 _Partie *Définitions*_
-  * dans une condition, tester si un Media est arrêté temporairement (voir 'if') :
+  * dans une condition, tester si un Media est arrêté temporairement (voir [Keywords#if 'if']) :
 {{{
 if musiqueAmbiance is paused
 then /*conséquences*/
 endif;
 }}}
-  * dans une condition, tester si un Chrono est arrêté temporairement (voir 'if') :
+  * dans une condition, tester si un Chrono est arrêté temporairement (voir [Keywords#if 'if']) :
 {{{
 if chrono1 is paused
 then /*conséquences*/
@@ -1147,14 +1145,14 @@ endif;
 
 ==person==
 _Partie *Initialisations*_
-  * définir le point de vue de la camera à la première personne ou à la troisième personne (voir 'first' et 'third'):
+  * définir le point de vue de la camera à la première personne ou à la troisième personne (voir [Keywords#first 'first'] et [Keywords#third 'third']):
 {{{
 cam1 is camera first person;
 cam2 is camera third person;
 }}}
 
 ==play==
-  * lancer ou relancer un Media arrêté (voir 'pause' et 'stop') :
+  * lancer ou relancer un Media arrêté (voir [Keywords#pause 'pause'] et [Keywords#stop 'stop']) :
 {{{
 definition jouerMedia means
 	play musiqueAmbiance;
@@ -1162,7 +1160,7 @@ definition jouerMedia means
 
 ==played==
 _Partie *Définitions*_
-  * dans une condition, tester si un Media est actif (voir 'if') :
+  * dans une condition, tester si un Media est actif (voir [Keywords#if 'if']) :
 {{{
 if musiqueAmbiance is played
 then /*conséquences*/
@@ -1171,14 +1169,14 @@ endif;
 
 ==position==
 _Parties *Initialisations* et *Définitions*_
-  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa position dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir 'orientation' et 'size') :
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa position dans l'environnement 3D selon son référentiel (le référentiel peut être un objet) (voir [Keywords#orientation 'orientation'] et [Keywords#size 'size']) :
 {{{
 objet1 has position at 0 10 20; // la position de l'objet est de 0 sur l'axe x, 10 sur l'axe y et 20 sur l'axe z
 }}}
 
 ==pressed==
 _Partie *Commandes*_
-  * préciser qu'une commande s'effectue lorsqu'une touche du clavier est juste pressée une fois (voir 'key', 'held' et 'released') :
+  * préciser qu'une commande s'effectue lorsqu'une touche du clavier est juste pressée une fois (voir [Keywords#key 'key'], [Keywords#held 'held'] et [Keywords#released 'released']) :
 {{{
 command for player is 
 	key up pressed for /*action*/, // 'pressed' n'est pas obligatoire
@@ -1187,7 +1185,7 @@ command for player is
 
 ==previous==
 _Partie *Définitions*_
-  * équiper une entité de type Character avec l'objet de son inventaire venant avant l'objet déjà équipé (voir 'equip' et 'next') :
+  * équiper une entité de type Character avec l'objet de son inventaire venant avant l'objet déjà équipé (voir [Keywords#equip 'equip'] et [Keywords#next 'next']) :
 {{{
 definition equiper means 
 	perso1 equip previous; //l'attribut 'equipedObject' de perso1 devient l'objet précédent
@@ -1206,7 +1204,7 @@ definition equiper means
 ----
 ==random==
 _Parties *Initialisations* et *Définitions*_
-  * donner une valeur aléatoire entre deux valeur numériques, ces valeurs peuvent être des attributs (voir 'between' et 'and') :
+  * donner une valeur aléatoire entre deux valeur numériques, ces valeurs peuvent être des attributs (voir [Keywords#between 'between'] et [Keywords#and 'and']) :
 {{{
 random between 0 and 1 // donne soit 0 soit 1
 random between life of perso1 and life of perso2 // les deux attributs doivent être numériques
@@ -1214,21 +1212,21 @@ random between life of perso1 and life of perso2 // les deux attributs doivent �
 
 ==ranking==
 _Partie *Description du jeu*_
-  * établir un classement final des joueurs sous la forme d'une liste (voir 'game' et 'list') :
+  * établir un classement final des joueurs sous la forme d'une liste (voir [Keywords#game 'game'] et [Keywords#list 'list']) :
 {{{
 game has ranking at joueur1, joueur2;
 }}}
 
 ==rclick==
 _Partie *Commandes*_
-  * indiquer une commande souris, clic droit (voir 'mouse') :
+  * indiquer une commande souris, clic droit (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse rclick for /*action*/;
 }}}
 
 ==released==
 _Partie *Commandes*_
-  * préciser qu'une commande s'effectue lorsqu'une touche du clavier relâchée (voir 'key', 'pressed' et 'held') :
+  * préciser qu'une commande s'effectue lorsqu'une touche du clavier relâchée (voir [Keywords#key 'key'], [Keywords#pressed 'pressed'] et [Keywords#held 'held']) :
 {{{
 command for player is 
 	key up released for /*action*/; // 'released' n'est pas obligatoire
@@ -1236,7 +1234,7 @@ command for player is
 
 ==remove==
 _Parties *Initialisations* et *Définitions*_ 
-  * pour retire un élément d'une liste (voir 'list', 'from' et 'insert') :
+  * pour retire un élément d'une liste (voir [Keywords#list 'list'], [Keywords#from 'from'] et [Keywords#insert 'insert']) :
 {{{
 remove num 1 from liste1; // l'élément doit exister et être dans la liste désignée
 remove first from liste1; // (voir 'first') supprime le premier élément si la liste n'est pas vide
@@ -1245,31 +1243,31 @@ remove last from liste1; // (voir 'last') supprime le dernier élément si la li
 
 ==ribbon==
 _Partie *Description du jeu*_
-  * type d'environnement (map) adapté aux jeux linéaires (voir 'world', 'generic' et 'grid') :
+  * type d'environnement (map) adapté aux jeux linéaires (voir [Keywords#world 'world'], [Keywords#generic 'generic'] et [Keywords#grid 'grid']) :
 {{{
 game has world at ribbon;
 }}}
 
 ==right==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller à droite pour une translation (voir 'moves', 'by' et 'left') :
+  * ordonner à l'entité désignée d'aller à droite pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#left 'left']) :
 {{{
 definition bougerObjet means 
 	objet moves right by 10; // l'objet va se décaler sur sa droite de 10
 definition bougerMario means 
 	mario moves right by 10; // si mario (de type Character) a son attribut 'moveWithCamera' à true, il va se déplacer vers la droite de l'écran
 }}}
-  * ordonner à l'entité désignée d'effectuer une rotation vers la droite (voir 'turns', 'by' et 'left') :
+  * ordonner à l'entité désignée d'effectuer une rotation vers la droite (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#left 'left']) :
 {{{
 definition tournerMario means 
 	mario turns right by 10; // mario va tourner à droite
 }}}
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche flèche de droite (voir 'key') :
+  * indiquer une commande clavier, touche flèche de droite (voir [Keywords#key 'key']) :
 {{{
 key right for /*action*/;
 }}}
-  * indiquer une commande souris, déplacement du curseur vers la droite (voir 'mouse') :
+  * indiquer une commande souris, déplacement du curseur vers la droite (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse right for /*action*/;
 }}}
@@ -1291,7 +1289,7 @@ rule Game starts then
 ----
 ==s==
 _Parties *Initialisations* et *Définitions*_
-  * l'une des unités de temps disponibles, la seconde (voir 'frame(s)', 'min' et 'ms')
+  * l'une des unités de temps disponibles, la seconde (voir [Keywords#frame(s) 'frame(s)'], [Keywords#min 'min'] et [Keywords#ms 'ms']) :
 {{{
 chrono1 has end at 10 s
 }}}
@@ -1306,41 +1304,41 @@ definition sauverJeu means
 
 ==scrollDown==
 _Partie *Commandes*_
-  * indiquer une commande souris, un cran de molette vers le bas (voir 'mouse') :
+  * indiquer une commande souris, un cran de molette vers le bas (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse scrollDown for /*action*/;
 }}}
 
 ==scrollUp==
 _Partie *Commandes*_
-  * indiquer une commande souris, un cran de molette vers le haut (voir 'mouse') :
+  * indiquer une commande souris, un cran de molette vers le haut (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse scrollUp for /*action*/;
 }}}
 
 ==size==
 _Parties *Initialisations* et *Définitions*_
-  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa taille selon son référentiel (le référentiel peut être un objet) (voir 'position' et 'orientation') :
+  * l'attribut d'un objet de type Empty (ou de ses dérivés), correspondant à sa taille selon son référentiel (le référentiel peut être un objet) (voir [Keywords#position 'position'] et [Keywords#orientation 'orientation']) :
 {{{
 objet1 has size at 1 2 3; // la taille de l'objet est de 1 sur l'axe x, 2 sur l'axe y et 3 sur l'axe z
 }}}
 
 ==solo==
 _Partie *Initialisations*_
-  * déclarer que joueur n'a personne d'autre que lui dans son équipe (voir 'is') :
+  * déclarer que joueur n'a personne d'autre que lui dans son équipe (voir [Keywords#is 'is']) :
 {{{
 player1 is Player solo; // le nom de l'équipe de 'joueur1' est 'joueur1'
 }}}
 
 ==space==
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche Espace (voir 'key') :
+  * indiquer une commande clavier, touche Espace (voir [Keywords#key 'key']) :
 {{{
 key space for /*action*/;
 }}}
 
 ==started==
-  * dans une condition, tester si un Chrono est actif (voir 'if') :
+  * dans une condition, tester si un Chrono est actif (voir [Keywords#if 'if']) :
 {{{
 if chrono1 is started
 then /*conséquences*/
@@ -1349,7 +1347,7 @@ endif;
 
 ==starts==
 _Partie *Définitions*_
-  * lancer ou relancer un Chrono arrêté (voir 'pause' et 'ends') :
+  * lancer ou relancer un Chrono arrêté (voir [Keywords#pause 'pause'] et [Keywords#ends 'ends']) :
 {{{
 definition demarrerChrono means
 	chrono1 starts;
@@ -1368,7 +1366,7 @@ rule chrono1 starts then
 
 ==stop==
 _Partie *Définitions*_
-  * arrêter un Media (voir 'play' et 'pause') :
+  * arrêter un Media (voir [Keywords#play 'play'] et [Keywords#pause 'pause']) :
 {{{
 definition stopperMedia means
 	stop musiqueAmbiance;
@@ -1376,7 +1374,7 @@ definition stopperMedia means
 
 ==stopped==
 _Partie *Définitions*_
-  * dans une condition, tester si un Media n'est pas actif (voir 'if') :
+  * dans une condition, tester si un Media n'est pas actif (voir [Keywords#if 'if']) :
 {{{
 if musiqueAmbiance is stopped
 then /*conséquences*/
@@ -1385,7 +1383,7 @@ endif;
 
 ==sub==
 _Partie *Définitions*_
-  * soustraire une valeur à un attribut numérique (voir 'to' et 'add') : 
+  * soustraire une valeur à un attribut numérique (voir [Keywords#to 'to'] et [Keywords#add 'add']) : 
 {{{
 definition prendreVie means 
 	sub 30 to life of batman; // l'attribut 'life' de l'entité batman de type Character va baisser de 30
@@ -1398,20 +1396,20 @@ definition prendreVie means
 ----
 ==then==
 _Partie *Définitions*_
-  * déclarer une condition (voir 'if') : se place après la déclaration :
+  * déclarer une condition (voir [Keywords#if 'if']) : se place après la déclaration :
 {{{
 if /*condition*/ then
 then /*conséquences*/
 endif;
 }}} 
-  * déclarer une attente (voir 'wait') : se place après la déclaration :
+  * déclarer une attente (voir [Keywords#wait 'wait']) : se place après la déclaration :
 {{{
 wait 5 s then
 /*actions*/
 endwait;
 }}} 
 _Partie *Règles du jeu*_
-  * déclarer une règle du jeu (voir 'rule') : se place après la déclaration :
+  * déclarer une règle du jeu (voir [Keywords#rule 'rule']) : se place après la déclaration :
 {{{
 rule /*déclencheur*/ then
 	/*actions*/;
@@ -1419,14 +1417,14 @@ rule /*déclencheur*/ then
 
 ==third==
 _Partie *Initialisations*_
-  * définir le point de vue de camera à la troisième personne, pour un jeu de type plateforme par exemple (voir 'is') :
+  * définir le point de vue de camera à la troisième personne, pour un jeu de type plateforme par exemple (voir [Keywords#is 'is']) :
 {{{
 cam1 is camera third person;
 }}}
 
 ==to==
 _Parties *Initialisations* et *Définitions*_
-  * désigner l'attribut d'un objet lors d'une opération mathématique ou d'une assignation (voir 'add', 'sub' et 'assign') :
+  * désigner l'attribut d'un objet lors d'une opération mathématique ou d'une assignation (voir [Keywords#add 'add'], [Keywords#sub 'sub'] et [Keywords#assign 'assign']) :
 {{{
 definition toucherLapin means
     sub 1 to life of lapin1,
@@ -1451,7 +1449,7 @@ rule mario touches goomba then
 
 ==touching==
 _Partie *Définitions*_
-  * dans une condition, teste si une entité est en train d'en toucher une autre ou une zone (voir 'if' et 'is') :
+  * dans une condition, teste si une entité est en train d'en toucher une autre ou une zone (voir [Keywords#if 'if'] et [Keywords#is 'is']) :
 {{{
 if mario is touching zoneDepart
 then /*conséquence*/
@@ -1460,7 +1458,7 @@ endif;
 
 ==turns==
 _Partie *Définitions*_
-  * déclarer une rotation (voir 'right', 'left', 'clockwise', 'anticlockwise' et 'moves') :
+  * déclarer une rotation (voir [Keywords#right 'right'], [Keywords#left 'left'], [Keywords#clockwise 'clockwise'], [Keywords#anticlockwise 'anticlockwise'] et [Keywords#moves 'moves']) :
 {{{
 definition faireAvancerAiguille means 
 	aiguille turns clockwise by 10;
@@ -1468,7 +1466,7 @@ definition faireAvancerAiguille means
 
 ==turnbased==
 _Partie *Description du jeu*_
-  * définir le type de jeu : temps réel ou tour par tour (voir 'game') :
+  * définir le type de jeu : temps réel ou tour par tour (voir [Keywords#game 'game']) :
 {{{
 game has turn based at true;
 }}}
@@ -1488,29 +1486,29 @@ type EpeeFlingueEnnemis is EpeeFlingue and Character; // ce nouveau type aura le
 ----
 ==up==
 _Partie *Définitions*_
-  * ordonner à l'entité désignée d'aller en haut pour une translation (voir 'moves', 'by' et 'down') :
+  * ordonner à l'entité désignée d'aller en haut pour une translation (voir [Keywords#moves 'moves'], [Keywords#by 'by'] et [Keywords#down 'down']) :
 {{{
 definition bougerHelico means 
 	helico moves up by 10; // l'hélicoptère va monter verticalement de 10
 }}}
-  * ordonner à l'entité désignée d'effectuer une rotation vers le haut (voir 'turns', 'by' et 'down') :
+  * ordonner à l'entité désignée d'effectuer une rotation vers le haut (voir [Keywords#turns 'turns'], [Keywords#by 'by'] et [Keywords#down 'down']) :
 {{{
 definition incliner means 
 	avion turns up by 10; // l'avion va s'incliner vers l'arrière
 }}}
 _Partie *Commandes*_
-  * indiquer une commande clavier, touche flèche du haut (voir 'key') :
+  * indiquer une commande clavier, touche flèche du haut (voir [Keywords#key 'key']) :
 {{{
 key up for /*action*/;
 }}}
-  * indiquer une commande souris, déplacement du curseur vers le haut (voir 'mouse') :
+  * indiquer une commande souris, déplacement du curseur vers le haut (voir [Keywords#mouse 'mouse']) :
 {{{
 mouse up for /*action*/;
 }}}
 
 ==until==
 _Partie *Définitions*_
-  * poursuivre une action jusqu'à ce qu'un événement se déclenche (voir 'happens' et 'during') :
+  * poursuivre une action jusqu'à ce qu'un événement se déclenche (voir [Keywords#happens 'happens'] et [Keywords#during 'during']) :
 {{{
 mario moves forward until 
 	mario touches zone1 happens;
@@ -1523,7 +1521,7 @@ mario moves forward until
 ----
 ==victory==
 _Partie *Définitions*_
-  * déclarer la victoire d'un joueur dans la partie (voir 'defeat') :
+  * déclarer la victoire d'un joueur dans la partie (voir [Keywords#defeat 'defeat']) :
 {{{
 definition victoire means 
 	victory of joueurPrincipal : "Victoire du joueur pricipal !",  // il est possible d'afficher un message
@@ -1537,7 +1535,7 @@ definition victoire means
 ----
 ==wait==
 _Partie *Définitions*_
-  * arrêter une action pour un temps défini, les actions placée à l'intérieur s'effectuent après cette attente (voir 'endwait') :
+  * arrêter une action pour un temps défini, les actions placée à l'intérieur s'effectuent après cette attente (voir [Keywords#endwait 'endwait']) :
 {{{
 wait 5 s then
 /*actions*/
@@ -1561,7 +1559,7 @@ endif;
 
 ==with==
 _Partie *Définitions*_
-  * intervertir les valeurs de deux attributs (voir 'invert') :
+  * intervertir les valeurs de deux attributs (voir [Keywords#invert 'invert']) :
 {{{
 definition intervertir means 
 	invert speed of mario with speed of luigi;
@@ -1569,7 +1567,7 @@ definition intervertir means
 
 ==world==
 _Partie *Description du jeu*_
-  * spécifier l'environnement du jeu (voir 'game', 'generic', 'grid' et 'ribbon') :
+  * spécifier l'environnement du jeu (voir [Keywords#game 'game'], [Keywords#generic 'generic'], [Keywords#grid 'grid'] et [Keywords#ribbon 'ribbon']) :
 {{{
 game has world at generic; // l'attribut 'world' est 'generic' de base
 game has world at grid;

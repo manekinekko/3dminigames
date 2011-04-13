@@ -31,33 +31,81 @@
 			var Missile = [];
 			var bazookaCharge = false;
 			var gravityObject = [];
-			var gravityObjectId = [];
+			
+			
+			initObject = function(gObject){
+				gObject.posX = 0;
+				gObject.posY = 0;
+				gObject.posZ = 0;
+				gObject.orX = 0;
+				gObject.orY = 0;
+				gObject.orZ = 0;
+				gObject.sizeX = 1;
+				gObject.sizeY = 1;
+				gObject.sizeZ = 1;
+			}
+				
+			var sol = new Array;
+			initObject(sol);
+			sol.id = "sol";
+			sol.url = "dae/sol.dae";
+			sol.posY = -1.2;
+			sol.sizeX = 50;
+			sol.sizeY = 50;
+			sol.sizeZ = 50;
 			
 			var voiture = new Array;
 			voiture.vitesse = [0,0,0];
+			voiture.id = "voiture";
 			voiture.acceleration = [0,0,0];
 			voiture.masse = 100;
-			voiture.id = "voiture1";
-			gravityObject.push(voiture);
-			gravityObjectId.push("voiture1");
+			initObject(voiture);
+			voiture.url= "dae/jeep.dae";
+			voiture.posY = 10;
+			voiture.posZ = 1;
 			
+			var chasseur = new Array;
+			initObject(chasseur);
+			chasseur.id = "chasseur";
+			chasseur.url = "dae/chasseur.dae";
+			chasseur.posZ = 1;
+			
+			var bazooka = new Array;
+			initObject(bazooka);
+			bazooka.id = "bazooka";
+			bazooka.url = "dae/bazooka.dae"
+			bazooka.orY = -1.57;
+			bazooka.sizeX = 0.5;
+			bazooka.sizeY = 0.5;
+			bazooka.sizeZ = 0.5;
+			
+			var lapin = new Array;
+			initObject(lapin);
+			lapin.id = "lapin";
+			lapin.url = "dae/lapin.dae";
+			
+
+			gravityObject.push(voiture);
+
 			initScene = function(){
-				//M3D.MOTEUR.addObject("lapin","dae/lapin.dae",[0,5,0,0,0,0,1,1,1]);
-				M3D.MOTEUR.addObject("sol","dae/sol.dae",[0,-1.2,0,0,0,0,50,50,50],false);
-				M3D.MOTEUR.addGroup("voiture1",[0,20,0,0,0,0,1,1,1]);
-				M3D.MOTEUR.addGroup("perso",[0,0,0,0,0,0,1,1,1],"voiture1");
+				M3D.MOTEUR.addObject(sol,false);
 				
-				M3D.MOTEUR.addObject("jeep1","dae/jeep.dae",[0,0,1,0,0,0,1,1,1],false,"voiture1");
-				M3D.MOTEUR.addObject("chasseur1","dae/chasseur.dae",[0,0,1,0,0,0,1,1,1],false,"perso");
-				M3D.MOTEUR.addObject("bazooka","dae/bazooka.dae",[0,1.5,1,0,-1.57,0,0.5,0.5,0.5],false,"perso");
-				
-				M3D.MOTEUR.addObject("lapin","dae/lapin.dae",[10,1,1,0,0,0,1,1,1],false);
+				M3D.MOTEUR.addObject(voiture,false);
+	
+				M3D.MOTEUR.addObject(chasseur,false,voiture.id);
+
+				M3D.MOTEUR.addObject(bazooka,false,chasseur.id);
+				M3D.MOTEUR.setPosition(bazooka,[0,1.5,1],false,chasseur.id);
+
+				M3D.MOTEUR.addObject(lapin,false);
+				M3D.MOTEUR.setPosition(lapin,[10,1,0],false);
 				
 				M3D.MOTEUR.addCamera("maincamera",[2,5,50,0,0,0]);
 				M3D.MOTEUR.activeCamera("maincamera");
+				
 				M3D.MOTEUR.setGravite([0,-9.81/60000,0]);
 				M3D.MOTEUR.setCoefFrottement(0.01);
-				
+
 				setInterval(rendu,10);
 			}
 
@@ -68,8 +116,8 @@
 				//if(KEY_S) M3D.MOTEUR.translate("voiture1",[-0.5,0,0],true,"voiture1");
 				if(KEY_Z) {if(voiture.vitesse[0]<1) voiture.acceleration[0] = 0.05;}
 				if(KEY_S) {if(voiture.vitesse[0]>-1) voiture.acceleration[0] = -0.05;}
-				if(KEY_Q) M3D.MOTEUR.rotate("voiture1",[0,0.05*voiture.vitesse[0],0],false);
-				if(KEY_D) M3D.MOTEUR.rotate("voiture1",[0,-0.05*voiture.vitesse[0],0],false);
+				if(KEY_Q) M3D.MOTEUR.rotate(voiture,[0,0.05*voiture.vitesse[0],0],false);
+				if(KEY_D) M3D.MOTEUR.rotate(voiture,[0,-0.05*voiture.vitesse[0],0],false);
 
 				if(KEY_O) M3D.MOTEUR.translateCamera("maincamera",[1,0,0],"maincamera");
 				if(KEY_L) M3D.MOTEUR.translateCamera("maincamera",[-1,0,0],"maincamera");
@@ -80,7 +128,7 @@
 				
 				if(KEY_SPACE) lancer();
 				if(KEY_X) charger();
-				if(KEY_N) alert(gravityObject[1].vitesse);
+				if(KEY_N) alert(0);
 				if(KEY_ENTER) M3D.MOTEUR.test();
 			}
 
@@ -93,7 +141,11 @@
 					Missile[numeroMissile].vitesse = [0,0,0];
 					Missile[numeroMissile].masse = 20;
 					Missile[numeroMissile].id = "missile"+numeroMissile;
-					M3D.MOTEUR.addObject("missile"+numeroMissile,"dae/missile.dae",[0,0,0,0,0,0,1,1,1],false,"bazooka");
+					initObject(Missile[numeroMissile]);							
+					Missile[numeroMissile].url = "dae/missile.dae";
+					M3D.MOTEUR.addObject(Missile[numeroMissile],false,bazooka.id);
+					M3D.MOTEUR.setPosition(Missile[numeroMissile],[0,0,0],false,bazooka.id);
+					M3D.MOTEUR.changeParent(Missile[numeroMissile].id,bazooka.id);
 					numeroMissile += 1;
 				}
 			}
@@ -102,10 +154,8 @@
 				if(bazookaCharge){
 					var num = numeroMissile-1;
 					bazookaCharge = false;
-					Missile[num].vitesse = voiture.vitesse.slice(0);
-					Missile[num].vitesse[2] -= 3;
+					Missile[num].vitesse = [0,0,-3];
 					gravityObject.push(Missile[num]);
-					gravityObjectId.push("missile"+num);
 					M3D.MOTEUR.changeParent("missile"+num);
 				}			
 			}
@@ -114,19 +164,19 @@
 				var num = parseInt(idMissile.substring(7,idMissile.length));
 				k=-1;
 				for(var i = 0 ; i<gravityObject.length ; i++){
-					if(gravityObjectId[i] == idMissile){
+					if(gravityObject[i].id == idMissile){
 						k=i;
 					}
 				}
 				gravityObject.splice(k,1);
-				gravityObjectId.splice(k,1);
 				M3D.MOTEUR.removeObject(idMissile);
 			}
 			
 			rendu = function(){
 				voiture.acceleration = [0,0,0];
 				panelControl();
-				x = M3D.MOTEUR.applyPhysique([],[],gravityObjectId,gravityObject);
+
+				x = M3D.MOTEUR.applyPhysique([],gravityObject);
 				var k = 1;
 				for(var i = 0 ; i<x.length ; i++){
 					if(x[i].length > 0){
@@ -134,10 +184,10 @@
 							for(var j = 0 ; j<x[i].length ; j++){
 								if(x[i][j][1]=="sol"){
 									voiture.vitesse[1]=0;
-									M3D.MOTEUR.translate("voiture1",[0,-M3D.MOTEUR.ecart("voiture1","sol",1),0],false,"voiture1");
+									M3D.MOTEUR.translate(voiture,[0,-M3D.MOTEUR.ecart(voiture.id,sol.id,1),0],false,voiture.id);
 								}
 							}
-							M3D.MOTEUR.translate("voiture1",voiture.vitesse,false,"voiture1");
+							M3D.MOTEUR.translate(voiture,voiture.vitesse,false,voiture.id);
 						}
 						else if(i>0){
 							supprime = false;
@@ -152,13 +202,12 @@
 								}
 							}
 							if(!supprime){
-								M3D.MOTEUR.translate(gravityObjectId[k],gravityObject[k].vitesse,false,gravityObjectId[k]);
+								M3D.MOTEUR.translate(gravityObject[k],gravityObject[k].vitesse,false,gravityObject[k].id);
 								k += 1;								
 							}
 						}
 					}				
 				}
-				
 				M3D.MOTEUR.render();
 			}
 			

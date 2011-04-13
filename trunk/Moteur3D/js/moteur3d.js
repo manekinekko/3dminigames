@@ -46,7 +46,7 @@ var coefFrottement = 1;
 	M3D.MOTEUR.initialisation = function(xmlDoc, canvas, initFunctionName){
 		M3D.MOTEUR.includeAllJS();
 		M3D.MOTEUR.initialisationAux(xmlDoc,canvas);
-		setTimeout(initFunctionName,100);
+		setTimeout(initFunctionName,200);
 	},
 	
 /**
@@ -92,7 +92,7 @@ var coefFrottement = 1;
 	
 	// uniquement pour les tests
 	M3D.MOTEUR.test = function(){
-		alert(tabObject["voiture1"].getBoundingVolume());
+		alert(tabObject["chasseur"].getLocalMatrix());
 	},
  
 /**

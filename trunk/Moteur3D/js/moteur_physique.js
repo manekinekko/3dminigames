@@ -18,7 +18,8 @@ if(!window["M3D"].MOTEUR){
 		coefFrottement = newCoef;
 	},
 	
-	M3D.MOTEUR.applyVitesse = function(idObject,gObject){
+	M3D.MOTEUR.applyVitesse = function(gObject){
+		var idObject = gObject.id;
 		var acc = gObject.acceleration;
 		var vit = gObject.vitesse;
 		for(var i = 0; i < 3 ; i++){
@@ -33,10 +34,11 @@ if(!window["M3D"].MOTEUR){
 			}
 		}
 		gObject.vitesse = vit;
-		return M3D.MOTEUR.translate(idObject,vit,true,idObject);
+		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
-	M3D.MOTEUR.applyVitesseGravity = function(idObject,gObject){
+	M3D.MOTEUR.applyVitesseGravity = function(gObject){
+		var idObject = gObject.id;
 		var acc = gObject.acceleration;
 		var vit = gObject.vitesse;
 		for(var i = 0; i < 3 ; i++){
@@ -51,16 +53,16 @@ if(!window["M3D"].MOTEUR){
 			}
 		}
 		gObject.vitesse = vit;
-		return M3D.MOTEUR.translate(idObject,vit,true,idObject);
+		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
-	M3D.MOTEUR.applyPhysique = function(idList,gObjList,gIdList,gGObjList){
+	M3D.MOTEUR.applyPhysique = function(gObjList,gGObjList){
 		var tab = [];
 		for(var i = 0 ; i < gObjList.length ; i++){
-			tab.push(M3D.MOTEUR.applyVitesse(idList[i],gObjList[i]));
+			tab.push(M3D.MOTEUR.applyVitesse(gObjList[i]));
 		}
 		for(var i = 0 ; i < gGObjList.length ; i++){
-			tab.push(M3D.MOTEUR.applyVitesseGravity(gIdList[i],gGObjList[i]));
+			tab.push(M3D.MOTEUR.applyVitesseGravity(gGObjList[i]));
 		}
 		return tab;
 	};

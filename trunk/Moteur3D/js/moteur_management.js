@@ -17,7 +17,9 @@
  *		   testCollision: test des collisions activé ou désactivé
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
  */
-	M3D.MOTEUR.addObject = function(idObject,urlObject, tabCoord, testCollision, idParent){
+	M3D.MOTEUR.addObject = function(gObject, testCollision, idParent){
+		var idObject = gObject.id;
+		var urlObject = gObject.url
 		var group = new GLGE.Group();
 		group.id = idObject;
 		var object = new GLGE.Collada();
@@ -26,17 +28,17 @@
 		object.setDocument(urlObject);
 		group.addChild(object);
 		group.childCam = [];
-		var transMat = GLGE.translateMatrix(tabCoord[0], tabCoord[1], tabCoord[2]);
-		var rotMat = GLGE.rotateMatrix(tabCoord[3], tabCoord[4], tabCoord[5]);
-		var scaleMat = GLGE.scaleMatrix(tabCoord[6], tabCoord[7], tabCoord[8]);
+		var transMat = GLGE.translateMatrix(gObject.posX, gObject.posY, gObject.posZ);
+		var rotMat = GLGE.rotateMatrix(gObject.orX, gObject.orY, gObject.orZ);
+		var scaleMat = GLGE.scaleMatrix(gObject.sizeX, gObject.sizeY, gObject.sizeZ);
 		var localMatrix = GLGE.mulMat4(transMat,GLGE.mulMat4(rotMat,scaleMat));
-		group.setStaticMatrix(localMatrix);
 		if(idParent == null){
 			var parent = gameScene;
 		} else {
 			var parent = M3D.MOTEUR.getObject(idParent);
 		}
 		parent.addChild(group);
+		group.setStaticMatrix(localMatrix);
 		var tab = [];
 		if(testCollision){
 			tab = M3D.MOTEUR.testCollision(object);

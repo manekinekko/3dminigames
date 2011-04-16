@@ -87,12 +87,6 @@ var coefFrottement = 1;
 			//tabCamera["maincamera"] = gameScene.getCamera();		
         } 
 		doc.load(xmlDoc);
-	},	
-	
-	
-	// uniquement pour les tests
-	M3D.MOTEUR.test = function(){
-		alert(tabObject["chasseur"].getLocalMatrix());
 	},
  
 /**

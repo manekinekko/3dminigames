@@ -41,6 +41,9 @@
 				object.setStaticMatrix(modelMatrix);
 			}
 		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updatePosition(gObject);
+		}
         return tab;
 	},
 
@@ -78,6 +81,9 @@
 			if(tab.length > 0){
 				object.setStaticMatrix(modelMatrix);
 			}
+		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updatePosition(gObject);
 		}
         return tab;
 	},
@@ -118,6 +124,9 @@
 			if(tab.length > 0){
 				object.setStaticMatrix(currentModelMatrix);
 			}
+		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updateOrientation(gObject);
 		}
         return tab;
 	},
@@ -161,6 +170,9 @@
 				object.setStaticMatrix(currentModelMatrix);
 			}
 		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updateOrientation(gObject);
+		}
         return tab;
 	},
 
@@ -184,6 +196,9 @@
 			if(tab.length > 0){
 				object.setStaticMatrix(currentModelMatrix);
 			}
+		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updateScale(gObject);
 		}
         return tab;
 	},
@@ -210,6 +225,9 @@
 			if(tab.length > 0){
 				object.setStaticMatrix(currentModelMatrix);
 			}
+		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updateScale(gObject);
 		}
         return tab;
 	};

@@ -217,6 +217,62 @@
 	},
 	
 /**
+ * Méthode getAngleFromTanCos: retourne l'angle entre -pi et pi ayant une tangente et un cosinus donné
+ * @param: t: tangente de l'angle cherché
+ * @param: c: cosinus de l'angle cherché
+ * @return: angle compris entre -pi et pi
+ */
+ 
+	M3D.MOTEUR.getAngleFromTanCos = function(t,c){
+		var a = Math.atan(t);
+		a = a-(t>0)*(c<0)*Math.PI+(t<0)*(c<0)*Math.PI;
+		return a;
+	},
+	
+/**
+ * Méthode getRotFromRotMatrix: retourne les 3 angles (sous forme d'un tableau) qui permettent de 
+ * retrouver la matrice donnée avec les mêmes rotations (valable uniquement pour des rotations dans l'ordre x y z
+ * @param: mat: matrice de rotation dont on veut récupérer les angles qui ont permis de la créer
+ * @return: un tableau ayant 3 éléments : les angles selon les axes x,y et z
+ */
+	M3D.MOTEUR.getRotFromRotMatrix = function(mat){
+		var mat02 = GLGE.getMat4(mat,0,2);
+		if(Math.abs(mat02)==1){ // cas où b = pi/2
+			var mat21 = GLGE.getMat4(mat,2,1);
+			var mat11 = GLGE.getMat4(mat,1,1);
+			var b = mat02*Math.PI/2;
+			var c = 0;
+			var a = M3D.MOTEUR.getAngleFromTanCos(mat21/mat11,mat11);
+		} else {
+			var mat01 = GLGE.getMat4(mat,0,1);
+			var mat00 = GLGE.getMat4(mat,0,0);
+			var mat12 = GLGE.getMat4(mat,1,2);
+			var mat22 = GLGE.getMat4(mat,2,2);
+			var b = Math.atan(mat02/Math.sqrt(mat00*mat00+mat01*mat01));
+			var a = M3D.MOTEUR.getAngleFromTanCos(-mat12/mat22,mat22);
+			var c = M3D.MOTEUR.getAngleFromTanCos(-mat01/mat00,mat00);
+		}
+		return [a,b,c]
+	},
+	
+	
+/**
+ * Méthode getRotFromMatrix: Retourne les 3 orientations à partir d'une matrice de model
+ * @param: mat: modelmatrix
+ * @return: les 3 orientations dans un tableau
+ */
+	M3D.MOTEUR.getRotFromMatrix = function(mat){
+		var norVec = GLGE.Vec4(0,0,0,1);
+		GLGE.setMat4(mat,0,3,0);
+		GLGE.setMat4(mat,1,3,0);
+		GLGE.setMat4(mat,2,3,0);
+		var matrixMT = GLGE.mulMat4(mat,GLGE.transposeMat4(mat));
+		var mat = GLGE.mulMat4(mat,GLGE.translateMatrix(1/GLGE.getMat4(matrixMT,0,0),1/GLGE.getMat4(matrixMT,1,1),1/GLGE.getMat4(matrixMT,2,2)));
+		return M3D.MOTEUR.getRotFromRotMatrix(mat);
+	},
+	
+	
+/**
  * Méthode getRelativePos: retourne un GLGE.Vec3 comportant la position relativement au père de l'objet donné.
  * @param: object: objet dont il faut calculer la position relative.
  * @return: position relative par rapport à son père.
@@ -260,6 +316,54 @@
 		var modMat = GLGE.Mat4(object.getModelMatrix());
 		return M3D.MOTEUR.getScaleFromMatrix(modMat);
 	},
+		
+/**
+ * Méthode getRelativeAngle: retourne un GLGE.Vec3 comportant les orientations relativement au père de l'objet donné.
+ * @param: object: objet dont il faut calculer l'échelle relative.
+ * @return: angles relatifs par rapport à son père.
+ */	
+	M3D.MOTEUR.getRelativeAngle = function(object){
+		var modMat = GLGE.Mat4(object.getLocalMatrix());
+		return M3D.MOTEUR.getRotFromMatrix(modMat);
+	},
+
+/**
+ * Méthode getAbsoluteAngle: retourne un GLGE.Vec3 comportant les orientations absolues d'un objet donné.
+ * @param: object: objet dont il faut calculer l'orientation absolue.
+ * @return: orientations absolues.
+ */
+	M3D.MOTEUR.getAbsoluteAngle = function(object){
+		var modMat = GLGE.Mat4(object.getModelMatrix());
+		return M3D.MOTEUR.getRotFromMatrix(modMat);
+	},
+	////////////// MISE A JOUR DES DONNEES LOCALES
+	
+	M3D.MOTEUR.updatePosition = function(gObject){
+		var idObject = gObject.id;
+		var object = M3D.MOTEUR.getObject(idObject);
+		var pos = M3D.MOTEUR.getRelativePos(object);
+		gObject.posX = pos[0];
+		gObject.posY = pos[1];
+		gObject.posZ = pos[2];
+	},
+	
+	M3D.MOTEUR.updateOrientation = function(gObject){
+		var idObject = gObject.id;
+		var object = M3D.MOTEUR.getObject(idObject);
+		var rot = M3D.MOTEUR.getRelativeAngle(object);
+		gObject.orX = rot[0];
+		gObject.orY = rot[1];
+		gObject.orZ = rot[2];	
+	},
+	
+	M3D.MOTEUR.updateScale = function(gObject){
+		var idObject = gObject.id;
+		var object = M3D.MOTEUR.getObject(idObject);
+		var size = M3D.MOTEUR.getRelativeScale(object);
+		gObject.sizeX = size[0];
+		gObject.sizeY = size[1];
+		gObject.sizeZ = size[2];	
+	},	
 	
 	////////////// AUTRES
 

@@ -105,7 +105,6 @@
 				
 				M3D.MOTEUR.setGravite([0,-9.81/60000,0]);
 				M3D.MOTEUR.setCoefFrottement(0.01);
-
 				setInterval(rendu,10);
 			}
 
@@ -128,8 +127,7 @@
 				
 				if(KEY_SPACE) lancer();
 				if(KEY_X) charger();
-				if(KEY_N) alert(0);
-				if(KEY_ENTER) M3D.MOTEUR.test();
+				if(KEY_ENTER) alert(voiture.orX);
 			}
 
 			
@@ -145,7 +143,7 @@
 					Missile[numeroMissile].url = "dae/missile.dae";
 					M3D.MOTEUR.addObject(Missile[numeroMissile],false,bazooka.id);
 					M3D.MOTEUR.setPosition(Missile[numeroMissile],[0,0,0],false,bazooka.id);
-					M3D.MOTEUR.changeParent(Missile[numeroMissile].id,bazooka.id);
+					M3D.MOTEUR.changeParent(Missile[numeroMissile],bazooka.id);
 					numeroMissile += 1;
 				}
 			}
@@ -156,7 +154,7 @@
 					bazookaCharge = false;
 					Missile[num].vitesse = [0,0,-3];
 					gravityObject.push(Missile[num]);
-					M3D.MOTEUR.changeParent("missile"+num);
+					M3D.MOTEUR.changeParent(Missile[num]);
 				}			
 			}
 			

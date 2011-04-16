@@ -11,8 +11,7 @@
  
 /**
  * Méthode addObject: Ajoute un objet dans la scène.
- * @param: idObject: identifiant de l'objet à ajouter.
- *   	   urlObject: adresse du fichier collada de l'objet à ajouter.
+ * @param: gObject: object de la grammaire à ajouter
  *         tabCoord: tableau de taille 9, avec les coord positions, rotations et taille de l'objet par rapport à son éventuel père !
  *		   testCollision: test des collisions activé ou désactivé
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
@@ -104,7 +103,7 @@
 
 /**
  * Méthode changeParent: change le père d'un élément (groupe, caméra ou collada).
- * @param: idObject: identifiant de l'élément dont changer le père.
+ * @param: gObject: objet de la grammaire dont changer le père.
  *         idNewParent: identifiant de l'élément (groupe ou collada) nouveau père.
  */
 	M3D.MOTEUR.changeParent = function(gObject,idNewParent){

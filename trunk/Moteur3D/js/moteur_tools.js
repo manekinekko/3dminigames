@@ -336,8 +336,13 @@
 		var modMat = GLGE.Mat4(object.getModelMatrix());
 		return M3D.MOTEUR.getRotFromMatrix(modMat);
 	},
-	////////////// MISE A JOUR DES DONNEES LOCALES
 	
+	////////////// MISE A JOUR DES DONNEES LOCALES DES OBJETS DE LA GRAMMAIRE
+	
+/**
+* Méthode updatePosition: met à jour les attributs des objets de la grammaire concernant les positions
+* @pram: gObject: objet de la grammaire à mettre à jour
+*/
 	M3D.MOTEUR.updatePosition = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -346,7 +351,11 @@
 		gObject.posY = pos[1];
 		gObject.posZ = pos[2];
 	},
-	
+
+/**
+* Méthode updateOrientation: met à jour les attributs des objets de la grammaire concernant les orientations
+* @pram: gObject: objet de la grammaire à mettre à jour
+*/	
 	M3D.MOTEUR.updateOrientation = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -355,7 +364,11 @@
 		gObject.orY = rot[1];
 		gObject.orZ = rot[2];	
 	},
-	
+
+/**
+* Méthode updateScale: met à jour les attributs des objets de la grammaire concernant les échelles
+* @pram: gObject: objet de la grammaire à mettre à jour
+*/	
 	M3D.MOTEUR.updateScale = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -390,7 +403,7 @@
 	},
 	
 	
-	// ecart entre deux box, l'inférieur de la 1 et le supérieur de la 2 selon la dimension dim.
+	// ecart entre deux box, l'inférieur de la 1 et le supérieur de la 2 selon la dimension dim 0 pour x 1 pour y et 2 pour z.
 	M3D.MOTEUR.ecart = function(idObject1,idObject2,dimension){
 		var obj1 = M3D.MOTEUR.getObject(idObject1);
 		var obj2 = M3D.MOTEUR.getObject(idObject2);

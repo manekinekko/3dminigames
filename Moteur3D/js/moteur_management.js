@@ -50,6 +50,11 @@
 		}else{
 			parent.removeChild(group);
 		}
+		if(tab.length == 0){
+			M3D.MOTEUR.updatePosition(gObject);
+			M3D.MOTEUR.updateOrientation(gObject);
+			M3D.MOTEUR.updateScale(gObject);
+		}
         return tab;
 	},
 	
@@ -102,7 +107,8 @@
  * @param: idObject: identifiant de l'élément dont changer le père.
  *         idNewParent: identifiant de l'élément (groupe ou collada) nouveau père.
  */
-	M3D.MOTEUR.changeParent = function(idObject,idNewParent){
+	M3D.MOTEUR.changeParent = function(gObject,idNewParent){
+		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
 		var modelMatrix = object.getModelMatrix();
 		if(idNewParent == null){
@@ -116,6 +122,9 @@
 		newParent.addChild(object);
 		object.setStaticMatrix(newLocalMatrix);
 		object.getModelMatrix();
+		M3D.MOTEUR.updatePosition(gObject);
+		M3D.MOTEUR.updateOrientation(gObject);
+		M3D.MOTEUR.updateScale(gObject);
 	};
 	
 })(window.M3D);

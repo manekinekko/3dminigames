@@ -11,7 +11,7 @@
 
 /**
  * Méthode translate: Translate un objet d'un vecteur donné dans un certain référentiel si il n'y a pas de collision (pour l'instant, teste de la collision uniquement à l'arrivée).
- * @param: id: identifiant de l'élément que l'on souhaite déplacer.
+ * @param: gObject: objet de la grammaire que l'on souhaite déplacer.
  *         tabVector: vecteur de 3 coordonnées x y z représentant le déplacement.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu.
@@ -50,7 +50,7 @@
 
 /**
  * Méthode setPosition: Place un objet à une certaine position dans un référentiel donné s'il n'y a pas de collision.
- * @param: id: identifiant de l'élément que l'on souhaite déplacer.
+ * @param: gObject: objet de la grammaire que l'on souhaite déplacer.
  *         tabPos : vecteur de 3 coordonnées x y z représentant la nouvelle position dans le nouveau référentiel.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu.
@@ -91,7 +91,7 @@
 
 /**
  * Méthode rotate: Effectue une rotation dans un repère donné sur l'élément donné et vérifie la collision à l'arrivée seulement.
- * @param: id: identifiant de l'élément que l'on souhaite tourner.
+ * @param: gObject: objet de la grammaire que l'on souhaite tourner.
  *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu.
@@ -134,7 +134,7 @@
 
 /**
  * Méthode setAngle: Fixe les angles d'un élément donné par rapport au repère d'un référentiel et vérifie la collision à l'arrivée seulement
- * @param: id: identifiant de l'élément que l'on souhaite tourner
+ * @param: gObject: objet de la grammaire que l'on souhaite tourner.
  *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la donnée des angles sinon référentiel absolu.
@@ -178,7 +178,7 @@
 
 /**
  * Méthode mulSscale: Multiplie l'échelle d'un objet par les coefficients donnés.
- * @param: id: identifiant de l'objet que l'on souhaite redimensionner
+ * @param: gObject: objet de la grammaire que l'on souhaite redimensionner.
  *	 	   coefScale : tableau de 3 coordonnées représentant les coefficients par lesquels multipliés les coefficients actuels
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
@@ -205,7 +205,7 @@
 	
 /**
  * Méthode setScale: Définit une nouvelle échelle d'un objet par les coefficients donnés.
- * @param: id: identifiant de l'objet que l'on souhaite redimensionner
+ * @param: gObject: objet de la grammaire que l'on souhaite redimensionner.
  *	 	   coefScale : tableau de 3 coordonnées représentant la nouvelle échelle
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.

@@ -1,3 +1,11 @@
+/**
+ * Moteur3d de 3DWIGS: moteur_physique.js
+ * Fichier contenant l'ensemble des fonctions liées à la ph.
+ *
+ * @author: Jérôme BOUZILLARD, Emeric KIEN, Thibault LE CORRONC, Philippe WEINZAEPFEL and Ludovic ZADITH
+ * @version 1.02.28
+ */
+
  if(!window["M3D"]){
 	window["M3D"] = {};
 }
@@ -8,7 +16,7 @@ if(!window["M3D"].MOTEUR){
 
 (function(M3D){
 
-	// gravite [0,-9.8,0]
+	// gravite [0,-9.8,0] * temps de refresh en seconde au carré
 	M3D.MOTEUR.setGravite = function(newGravite){
 		gravite = newGravite;
 	},
@@ -18,6 +26,7 @@ if(!window["M3D"].MOTEUR){
 		coefFrottement = newCoef;
 	},
 	
+	// calcule la nouvelle vitesse
 	M3D.MOTEUR.applyVitesse = function(gObject){
 		var idObject = gObject.id;
 		var acc = gObject.acceleration;
@@ -37,6 +46,7 @@ if(!window["M3D"].MOTEUR){
 		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
+	// calcule la nouvelle vitesse en appliquant la gravite
 	M3D.MOTEUR.applyVitesseGravity = function(gObject){
 		var idObject = gObject.id;
 		var acc = gObject.acceleration;
@@ -56,6 +66,8 @@ if(!window["M3D"].MOTEUR){
 		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
+	// applique la physique sur la première liste, et la physique incluant la gravite sur la seconde
+	// renvoie un tableau dont chaque élément est un tableau des collisions pour chaque objet
 	M3D.MOTEUR.applyPhysique = function(gObjList,gGObjList){
 		var tab = [];
 		for(var i = 0 ; i < gObjList.length ; i++){

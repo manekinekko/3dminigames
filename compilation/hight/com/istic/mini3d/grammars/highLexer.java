@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-03-30 18:12:12
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-04-20 11:15:54
 
     package com.istic.mini3d.grammars;
 
@@ -241,15 +241,15 @@ public class highLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g"; }
 
     // $ANTLR start "GAME_KW"
     public final void mGAME_KW() throws RecognitionException {
         try {
             int _type = GAME_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:7:9: ( 'GAME_KW' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:7:11: 'GAME_KW'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:7:9: ( 'GAME_KW' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:7:11: 'GAME_KW'
             {
             match("GAME_KW"); 
 
@@ -269,8 +269,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GAME_ATTRIBUT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:8:18: ( 'GAME_ATTRIBUT_KW' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:8:20: 'GAME_ATTRIBUT_KW'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:8:18: ( 'GAME_ATTRIBUT_KW' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:8:20: 'GAME_ATTRIBUT_KW'
             {
             match("GAME_ATTRIBUT_KW"); 
 
@@ -290,8 +290,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INIT_IS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:9:12: ( 'INIT_IS_KW' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:9:14: 'INIT_IS_KW'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:9:12: ( 'INIT_IS_KW' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:9:14: 'INIT_IS_KW'
             {
             match("INIT_IS_KW"); 
 
@@ -311,8 +311,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:10:5: ( 'DEC' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:10:7: 'DEC'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:10:5: ( 'DEC' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:10:7: 'DEC'
             {
             match("DEC"); 
 
@@ -332,8 +332,8 @@ public class highLexer extends Lexer {
         try {
             int _type = T__221;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:11:8: ( 'true' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:11:10: 'true'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:11:8: ( 'true' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:11:10: 'true'
             {
             match("true"); 
 
@@ -353,8 +353,8 @@ public class highLexer extends Lexer {
         try {
             int _type = T__222;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:12:8: ( 'false' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:12:10: 'false'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:12:8: ( 'false' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:12:10: 'false'
             {
             match("false"); 
 
@@ -374,12 +374,12 @@ public class highLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:13: ( '//' (~ '\\n' )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:15: '//' (~ '\\n' )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:13: ( '//' (~ '\\n' )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:15: '//' (~ '\\n' )*
             {
             match("//"); 
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:19: (~ '\\n' )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:19: (~ '\\n' )*
             loop1:
             do {
                 int alt1=2;
@@ -392,7 +392,7 @@ public class highLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:20: ~ '\\n'
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:421:20: ~ '\\n'
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -429,8 +429,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:423:4: ( ')' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:423:6: ')'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:423:4: ( ')' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:423:6: ')'
             {
             match(')'); 
 
@@ -449,8 +449,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:424:4: ( '(' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:424:6: '('
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:424:4: ( '(' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:424:6: '('
             {
             match('('); 
 
@@ -469,8 +469,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:425:5: ( ';' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:425:7: ';'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:425:5: ( ';' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:425:7: ';'
             {
             match(';'); 
 
@@ -489,8 +489,8 @@ public class highLexer extends Lexer {
         try {
             int _type = VIRG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:426:6: ( ',' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:426:8: ','
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:426:6: ( ',' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:426:8: ','
             {
             match(','); 
 
@@ -509,8 +509,8 @@ public class highLexer extends Lexer {
         try {
             int _type = HAS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:427:5: ( 'has' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:427:7: 'has'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:427:5: ( 'has' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:427:7: 'has'
             {
             match("has"); 
 
@@ -530,8 +530,8 @@ public class highLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:428:4: ( 'at' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:428:6: 'at'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:428:4: ( 'at' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:428:6: 'at'
             {
             match("at"); 
 
@@ -551,8 +551,8 @@ public class highLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:429:4: ( 'is' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:429:6: 'is'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:429:4: ( 'is' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:429:6: 'is'
             {
             match("is"); 
 
@@ -572,8 +572,8 @@ public class highLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:430:5: ( 'and' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:430:7: 'and'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:430:5: ( 'and' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:430:7: 'and'
             {
             match("and"); 
 
@@ -593,8 +593,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:431:4: ( 'of' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:431:6: 'of'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:431:4: ( 'of' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:431:6: 'of'
             {
             match("of"); 
 
@@ -614,8 +614,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:432:6: ( 'with' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:432:8: 'with'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:432:6: ( 'with' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:432:8: 'with'
             {
             match("with"); 
 
@@ -635,8 +635,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BETWEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:433:9: ( 'between' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:433:11: 'between'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:433:9: ( 'between' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:433:11: 'between'
             {
             match("between"); 
 
@@ -656,8 +656,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:434:6: ( '+' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:434:8: '+'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:434:6: ( '+' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:434:8: '+'
             {
             match('+'); 
 
@@ -676,8 +676,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:435:7: ( '-' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:435:9: '-'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:435:7: ( '-' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:435:9: '-'
             {
             match('-'); 
 
@@ -696,8 +696,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MUL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:436:5: ( '*' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:436:7: '*'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:436:5: ( '*' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:436:7: '*'
             {
             match('*'); 
 
@@ -716,8 +716,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DIV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:437:5: ( '/' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:437:7: '/'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:437:5: ( '/' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:437:7: '/'
             {
             match('/'); 
 
@@ -736,8 +736,8 @@ public class highLexer extends Lexer {
         try {
             int _type = POW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:438:5: ( '^' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:438:7: '^'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:438:5: ( '^' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:438:7: '^'
             {
             match('^'); 
 
@@ -756,8 +756,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:439:5: ( '%' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:439:7: '%'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:439:5: ( '%' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:439:7: '%'
             {
             match('%'); 
 
@@ -776,8 +776,8 @@ public class highLexer extends Lexer {
         try {
             int _type = X;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:440:3: ( 'x' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:440:5: 'x'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:440:3: ( 'x' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:440:5: 'x'
             {
             match('x'); 
 
@@ -796,8 +796,8 @@ public class highLexer extends Lexer {
         try {
             int _type = Y;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:441:3: ( 'y' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:441:5: 'y'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:441:3: ( 'y' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:441:5: 'y'
             {
             match('y'); 
 
@@ -816,8 +816,8 @@ public class highLexer extends Lexer {
         try {
             int _type = Z;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:442:3: ( 'z' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:442:5: 'z'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:442:3: ( 'z' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:442:5: 'z'
             {
             match('z'); 
 
@@ -836,8 +836,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ALL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:443:5: ( 'all' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:443:7: 'all'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:443:5: ( 'all' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:443:7: 'all'
             {
             match("all"); 
 
@@ -857,8 +857,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:444:5: ( 'not' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:444:7: 'not'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:444:5: ( 'not' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:444:7: 'not'
             {
             match("not"); 
 
@@ -878,8 +878,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:445:5: ( 'min' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:445:7: 'min'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:445:5: ( 'min' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:445:7: 'min'
             {
             match("min"); 
 
@@ -899,8 +899,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SEC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:446:5: ( 's' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:446:7: 's'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:446:5: ( 's' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:446:7: 's'
             {
             match('s'); 
 
@@ -919,8 +919,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:447:4: ( 'ms' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:447:6: 'ms'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:447:4: ( 'ms' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:447:6: 'ms'
             {
             match("ms"); 
 
@@ -940,8 +940,8 @@ public class highLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:448:6: ( 'then' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:448:8: 'then'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:448:6: ( 'then' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:448:8: 'then'
             {
             match("then"); 
 
@@ -961,8 +961,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:449:5: ( 'for' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:449:7: 'for'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:449:5: ( 'for' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:449:7: 'for'
             {
             match("for"); 
 
@@ -982,8 +982,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:450:8: ( '=' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:450:10: '='
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:450:8: ( '=' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:450:10: '='
             {
             match('='); 
 
@@ -1002,8 +1002,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:451:5: ( '<' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:451:8: '<'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:451:5: ( '<' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:451:8: '<'
             {
             match('<'); 
 
@@ -1022,8 +1022,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:452:5: ( '>' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:452:8: '>'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:452:5: ( '>' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:452:8: '>'
             {
             match('>'); 
 
@@ -1042,8 +1042,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INFEG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:453:7: ( '<=' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:453:9: '<='
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:453:7: ( '<=' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:453:9: '<='
             {
             match("<="); 
 
@@ -1063,8 +1063,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SUPED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:454:7: ( '>=' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:454:9: '>='
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:454:7: ( '>=' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:454:9: '>='
             {
             match(">="); 
 
@@ -1084,8 +1084,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DIFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:455:6: ( '!=' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:455:8: '!='
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:455:6: ( '!=' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:455:8: '!='
             {
             match("!="); 
 
@@ -1105,8 +1105,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FROM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:456:7: ( 'from' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:456:8: 'from'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:456:7: ( 'from' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:456:8: 'from'
             {
             match("from"); 
 
@@ -1126,8 +1126,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DBP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:457:9: ( ':' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:457:11: ':'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:457:9: ( ':' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:457:11: ':'
             {
             match(':'); 
 
@@ -1146,8 +1146,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:459:7: ( 'game' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:459:9: 'game'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:459:7: ( 'game' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:459:9: 'game'
             {
             match("game"); 
 
@@ -1167,8 +1167,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GRAVITY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:460:12: ( 'gravity' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:460:14: 'gravity'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:460:12: ( 'gravity' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:460:14: 'gravity'
             {
             match("gravity"); 
 
@@ -1188,8 +1188,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:461:8: ( 'score' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:461:10: 'score'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:461:8: ( 'score' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:461:10: 'score'
             {
             match("score"); 
 
@@ -1209,8 +1209,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TURNBASED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:462:17: ( 'turnbased' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:462:19: 'turnbased'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:462:17: ( 'turnbased' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:462:19: 'turnbased'
             {
             match("turnbased"); 
 
@@ -1230,8 +1230,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WORLD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:463:17: ( 'world' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:463:19: 'world'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:463:17: ( 'world' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:463:19: 'world'
             {
             match("world"); 
 
@@ -1251,8 +1251,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GRIDSIZE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:464:17: ( 'gridsize' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:464:19: 'gridsize'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:464:17: ( 'gridsize' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:464:19: 'gridsize'
             {
             match("gridsize"); 
 
@@ -1272,8 +1272,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GENERIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:465:17: ( 'generic' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:465:19: 'generic'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:465:17: ( 'generic' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:465:19: 'generic'
             {
             match("generic"); 
 
@@ -1293,8 +1293,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GRID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:466:15: ( 'grid' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:466:17: 'grid'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:466:15: ( 'grid' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:466:17: 'grid'
             {
             match("grid"); 
 
@@ -1314,8 +1314,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RIBBON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:467:17: ( 'ribbon' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:467:19: 'ribbon'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:467:17: ( 'ribbon' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:467:19: 'ribbon'
             {
             match("ribbon"); 
 
@@ -1335,8 +1335,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NAME_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:468:17: ( 'name' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:468:19: 'name'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:468:17: ( 'name' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:468:19: 'name'
             {
             match("name"); 
 
@@ -1356,8 +1356,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:469:7: ( 'type' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:469:9: 'type'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:469:7: ( 'type' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:469:9: 'type'
             {
             match("type"); 
 
@@ -1377,8 +1377,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INSERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:470:11: ( 'insert' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:470:14: 'insert'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:470:11: ( 'insert' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:470:14: 'insert'
             {
             match("insert"); 
 
@@ -1398,8 +1398,8 @@ public class highLexer extends Lexer {
         try {
             int _type = REMOVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:471:11: ( 'remove' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:471:13: 'remove'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:471:11: ( 'remove' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:471:13: 'remove'
             {
             match("remove"); 
 
@@ -1419,8 +1419,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SOLO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:472:7: ( 'solo' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:472:9: 'solo'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:472:7: ( 'solo' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:472:9: 'solo'
             {
             match("solo"); 
 
@@ -1440,8 +1440,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PLAYER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:473:9: ( 'Player' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:473:11: 'Player'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:473:9: ( 'Player' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:473:11: 'Player'
             {
             match("Player"); 
 
@@ -1461,8 +1461,8 @@ public class highLexer extends Lexer {
         try {
             int _type = LIST_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:474:10: ( 'list' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:474:12: 'list'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:474:10: ( 'list' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:474:12: 'list'
             {
             match("list"); 
 
@@ -1482,8 +1482,8 @@ public class highLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:475:5: ( 'in' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:475:7: 'in'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:475:5: ( 'in' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:475:7: 'in'
             {
             match("in"); 
 
@@ -1503,8 +1503,8 @@ public class highLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:476:7: ( 'loop' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:476:9: 'loop'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:476:7: ( 'loop' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:476:9: 'loop'
             {
             match("loop"); 
 
@@ -1524,8 +1524,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ONCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:477:7: ( 'once' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:477:9: 'once'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:477:7: ( 'once' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:477:9: 'once'
             {
             match("once"); 
 
@@ -1545,8 +1545,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RANDOM_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:478:11: ( 'random' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:478:13: 'random'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:478:11: ( 'random' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:478:13: 'random'
             {
             match("random"); 
 
@@ -1566,8 +1566,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DEFINITION_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:479:15: ( 'definition' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:479:17: 'definition'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:479:15: ( 'definition' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:479:17: 'definition'
             {
             match("definition"); 
 
@@ -1587,8 +1587,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MEANS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:480:8: ( 'means' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:480:10: 'means'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:480:8: ( 'means' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:480:10: 'means'
             {
             match("means"); 
 
@@ -1608,8 +1608,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PAUSE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:481:10: ( 'pause' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:481:12: 'pause'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:481:10: ( 'pause' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:481:12: 'pause'
             {
             match("pause"); 
 
@@ -1629,8 +1629,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MUTE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:482:10: ( 'mute' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:482:12: 'mute'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:482:10: ( 'mute' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:482:12: 'mute'
             {
             match("mute"); 
 
@@ -1650,8 +1650,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:483:5: ( 'on' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:483:7: 'on'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:483:5: ( 'on' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:483:7: 'on'
             {
             match("on"); 
 
@@ -1671,8 +1671,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:484:6: ( 'off' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:484:8: 'off'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:484:6: ( 'off' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:484:8: 'off'
             {
             match("off"); 
 
@@ -1692,8 +1692,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PLAY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:485:10: ( 'play' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:485:12: 'play'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:485:10: ( 'play' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:485:12: 'play'
             {
             match("play"); 
 
@@ -1713,8 +1713,8 @@ public class highLexer extends Lexer {
         try {
             int _type = STOP_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:486:10: ( 'stop' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:486:12: 'stop'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:486:10: ( 'stop' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:486:12: 'stop'
             {
             match("stop"); 
 
@@ -1734,8 +1734,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ENDS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:487:10: ( 'ends' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:487:12: 'ends'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:487:10: ( 'ends' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:487:12: 'ends'
             {
             match("ends"); 
 
@@ -1755,8 +1755,8 @@ public class highLexer extends Lexer {
         try {
             int _type = STARTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:488:11: ( 'starts' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:488:13: 'starts'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:488:11: ( 'starts' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:488:13: 'starts'
             {
             match("starts"); 
 
@@ -1776,8 +1776,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BLOCK_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:489:10: ( 'block' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:489:12: 'block'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:489:10: ( 'block' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:489:12: 'block'
             {
             match("block"); 
 
@@ -1797,8 +1797,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TRANSLATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:490:13: ( 'translation' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:490:15: 'translation'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:490:13: ( 'translation' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:490:15: 'translation'
             {
             match("translation"); 
 
@@ -1818,8 +1818,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ROTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:491:10: ( 'rotation' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:491:12: 'rotation'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:491:10: ( 'rotation' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:491:12: 'rotation'
             {
             match("rotation"); 
 
@@ -1839,8 +1839,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SCALE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:492:8: ( 'scale' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:492:10: 'scale'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:492:8: ( 'scale' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:492:10: 'scale'
             {
             match("scale"); 
 
@@ -1860,8 +1860,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EFFACE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:493:11: ( 'efface' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:493:13: 'efface'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:493:11: ( 'efface' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:493:13: 'efface'
             {
             match("efface"); 
 
@@ -1881,8 +1881,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GENERATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:494:13: ( 'generate' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:494:15: 'generate'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:494:13: ( 'generate' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:494:15: 'generate'
             {
             match("generate"); 
 
@@ -1902,8 +1902,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WAIT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:495:10: ( 'wait' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:495:12: 'wait'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:495:10: ( 'wait' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:495:12: 'wait'
             {
             match("wait"); 
 
@@ -1923,8 +1923,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ENDWAIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:496:10: ( 'endWait' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:496:12: 'endWait'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:496:10: ( 'endWait' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:496:12: 'endWait'
             {
             match("endWait"); 
 
@@ -1944,8 +1944,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SAVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:497:10: ( 'save' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:497:12: 'save'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:497:10: ( 'save' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:497:12: 'save'
             {
             match("save"); 
 
@@ -1965,8 +1965,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RULE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:498:10: ( 'rule' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:498:12: 'rule'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:498:10: ( 'rule' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:498:12: 'rule'
             {
             match("rule"); 
 
@@ -1986,8 +1986,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MOVES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:499:10: ( 'moves' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:499:12: 'moves'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:499:10: ( 'moves' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:499:12: 'moves'
             {
             match("moves"); 
 
@@ -2007,8 +2007,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DIES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:500:9: ( 'dies' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:500:11: 'dies'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:500:9: ( 'dies' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:500:11: 'dies'
             {
             match("dies"); 
 
@@ -2028,8 +2028,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TOUCHES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:501:12: ( 'touches' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:501:14: 'touches'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:501:12: ( 'touches' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:501:14: 'touches'
             {
             match("touches"); 
 
@@ -2049,8 +2049,8 @@ public class highLexer extends Lexer {
         try {
             int _type = KILLS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:502:10: ( 'kills' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:502:12: 'kills'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:502:10: ( 'kills' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:502:12: 'kills'
             {
             match("kills"); 
 
@@ -2070,8 +2070,8 @@ public class highLexer extends Lexer {
         try {
             int _type = KILLED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:503:11: ( 'killed' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:503:13: 'killed'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:503:11: ( 'killed' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:503:13: 'killed'
             {
             match("killed"); 
 
@@ -2091,8 +2091,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TOUCHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:504:12: ( 'touched' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:504:14: 'touched'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:504:12: ( 'touched' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:504:14: 'touched'
             {
             match("touched"); 
 
@@ -2112,8 +2112,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:505:4: ( 'by' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:505:6: 'by'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:505:4: ( 'by' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:505:6: 'by'
             {
             match("by"); 
 
@@ -2133,8 +2133,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:506:7: ( 'other' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:506:9: 'other'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:506:7: ( 'other' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:506:9: 'other'
             {
             match("other"); 
 
@@ -2154,8 +2154,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BECOMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:507:9: ( 'becomes' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:507:11: 'becomes'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:507:9: ( 'becomes' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:507:11: 'becomes'
             {
             match("becomes"); 
 
@@ -2175,8 +2175,8 @@ public class highLexer extends Lexer {
         try {
             int _type = VICTORY_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:508:12: ( 'victory' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:508:14: 'victory'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:508:12: ( 'victory' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:508:14: 'victory'
             {
             match("victory"); 
 
@@ -2196,8 +2196,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DEFEAT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:509:11: ( 'defeat' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:509:13: 'defeat'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:509:11: ( 'defeat' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:509:13: 'defeat'
             {
             match("defeat"); 
 
@@ -2217,8 +2217,8 @@ public class highLexer extends Lexer {
         try {
             int _type = IF_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:510:7: ( 'if' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:510:9: 'if'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:510:7: ( 'if' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:510:9: 'if'
             {
             match("if"); 
 
@@ -2238,8 +2238,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:511:6: ( 'else' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:511:8: 'else'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:511:6: ( 'else' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:511:8: 'else'
             {
             match("else"); 
 
@@ -2259,8 +2259,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:512:7: ( 'endIf' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:512:9: 'endIf'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:512:7: ( 'endIf' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:512:9: 'endIf'
             {
             match("endIf"); 
 
@@ -2280,8 +2280,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:513:4: ( 'or' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:513:6: 'or'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:513:4: ( 'or' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:513:6: 'or'
             {
             match("or"); 
 
@@ -2301,8 +2301,8 @@ public class highLexer extends Lexer {
         try {
             int _type = COMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:514:6: ( 'comp' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:514:8: 'comp'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:514:6: ( 'comp' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:514:8: 'comp'
             {
             match("comp"); 
 
@@ -2322,8 +2322,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DEAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:515:9: ( 'dead' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:515:11: 'dead'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:515:9: ( 'dead' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:515:11: 'dead'
             {
             match("dead"); 
 
@@ -2343,8 +2343,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ALIVE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:516:10: ( 'alive' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:516:12: 'alive'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:516:10: ( 'alive' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:516:12: 'alive'
             {
             match("alive"); 
 
@@ -2364,8 +2364,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EFFACED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:517:12: ( 'effaced' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:517:13: 'effaced'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:517:12: ( 'effaced' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:517:13: 'effaced'
             {
             match("effaced"); 
 
@@ -2385,8 +2385,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GENERATED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:518:14: ( 'generated' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:518:16: 'generated'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:518:14: ( 'generated' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:518:16: 'generated'
             {
             match("generated"); 
 
@@ -2406,8 +2406,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TOUCHING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:519:13: ( 'touching' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:519:15: 'touching'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:519:13: ( 'touching' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:519:15: 'touching'
             {
             match("touching"); 
 
@@ -2427,8 +2427,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MOVING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:520:11: ( 'moving' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:520:13: 'moving'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:520:11: ( 'moving' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:520:13: 'moving'
             {
             match("moving"); 
 
@@ -2448,8 +2448,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WAITING_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:521:12: ( 'waiting' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:521:14: 'waiting'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:521:12: ( 'waiting' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:521:14: 'waiting'
             {
             match("waiting"); 
 
@@ -2469,8 +2469,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FINISHED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:522:13: ( 'finished' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:522:15: 'finished'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:522:13: ( 'finished' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:522:15: 'finished'
             {
             match("finished"); 
 
@@ -2490,8 +2490,8 @@ public class highLexer extends Lexer {
         try {
             int _type = STARTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:523:12: ( 'started' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:523:14: 'started'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:523:12: ( 'started' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:523:14: 'started'
             {
             match("started"); 
 
@@ -2511,8 +2511,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PAUSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:524:11: ( 'paused' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:524:13: 'paused'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:524:11: ( 'paused' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:524:13: 'paused'
             {
             match("paused"); 
 
@@ -2532,8 +2532,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MUTED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:525:10: ( 'muted' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:525:12: 'muted'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:525:10: ( 'muted' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:525:12: 'muted'
             {
             match("muted"); 
 
@@ -2553,8 +2553,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PLAYED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:526:11: ( 'played' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:526:13: 'played'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:526:11: ( 'played' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:526:13: 'played'
             {
             match("played"); 
 
@@ -2574,8 +2574,8 @@ public class highLexer extends Lexer {
         try {
             int _type = STOPPED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:527:12: ( 'stopped' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:527:14: 'stopped'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:527:12: ( 'stopped' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:527:14: 'stopped'
             {
             match("stopped"); 
 
@@ -2595,8 +2595,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ASSIGN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:528:11: ( 'assign' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:528:13: 'assign'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:528:11: ( 'assign' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:528:13: 'assign'
             {
             match("assign"); 
 
@@ -2616,8 +2616,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ADD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:529:8: ( 'add' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:529:10: 'add'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:529:8: ( 'add' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:529:10: 'add'
             {
             match("add"); 
 
@@ -2637,8 +2637,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SUB_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:530:8: ( 'sub' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:530:10: 'sub'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:530:8: ( 'sub' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:530:10: 'sub'
             {
             match("sub"); 
 
@@ -2658,8 +2658,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INVERT_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:531:11: ( 'invert' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:531:13: 'invert'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:531:11: ( 'invert' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:531:13: 'invert'
             {
             match("invert"); 
 
@@ -2679,8 +2679,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NUM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:532:7: ( 'num' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:532:9: 'num'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:532:7: ( 'num' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:532:9: 'num'
             {
             match("num"); 
 
@@ -2700,8 +2700,8 @@ public class highLexer extends Lexer {
         try {
             int _type = IA_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:533:8: ( 'ai' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:533:11: 'ai'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:533:8: ( 'ai' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:533:11: 'ai'
             {
             match("ai"); 
 
@@ -2721,8 +2721,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DURING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:534:8: ( 'during' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:534:10: 'during'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:534:8: ( 'during' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:534:10: 'during'
             {
             match("during"); 
 
@@ -2742,8 +2742,8 @@ public class highLexer extends Lexer {
         try {
             int _type = UNTIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:535:7: ( 'until' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:535:9: 'until'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:535:7: ( 'until' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:535:9: 'until'
             {
             match("until"); 
 
@@ -2763,8 +2763,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EQUIP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:536:7: ( 'equip' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:536:9: 'equip'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:536:7: ( 'equip' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:536:9: 'equip'
             {
             match("equip"); 
 
@@ -2784,8 +2784,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:537:6: ( 'next' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:537:8: 'next'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:537:6: ( 'next' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:537:8: 'next'
             {
             match("next"); 
 
@@ -2805,8 +2805,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PREVIOUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:538:10: ( 'previous' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:538:12: 'previous'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:538:10: ( 'previous' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:538:12: 'previous'
             {
             match("previous"); 
 
@@ -2826,8 +2826,8 @@ public class highLexer extends Lexer {
         try {
             int _type = KEYBOARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:539:10: ( 'keyboard' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:539:12: 'keyboard'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:539:10: ( 'keyboard' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:539:12: 'keyboard'
             {
             match("keyboard"); 
 
@@ -2847,8 +2847,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ACTIVATE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:540:13: ( 'activate' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:540:15: 'activate'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:540:13: ( 'activate' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:540:15: 'activate'
             {
             match("activate"); 
 
@@ -2868,8 +2868,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DISABLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:541:11: ( 'disable' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:541:12: 'disable'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:541:11: ( 'disable' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:541:12: 'disable'
             {
             match("disable"); 
 
@@ -2889,8 +2889,8 @@ public class highLexer extends Lexer {
         try {
             int _type = COMMANDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:542:9: ( 'commands' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:542:10: 'commands'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:542:9: ( 'commands' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:542:10: 'commands'
             {
             match("commands"); 
 
@@ -2910,8 +2910,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CLOCKWISE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:543:15: ( 'clockwise' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:543:17: 'clockwise'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:543:15: ( 'clockwise' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:543:17: 'clockwise'
             {
             match("clockwise"); 
 
@@ -2931,8 +2931,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ANTICLOCKWISE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:544:15: ( 'anticlockwise' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:544:17: 'anticlockwise'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:544:15: ( 'anticlockwise' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:544:17: 'anticlockwise'
             {
             match("anticlockwise"); 
 
@@ -2952,8 +2952,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NEXTURN_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:545:12: ( 'nexturn' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:545:14: 'nexturn'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:545:12: ( 'nexturn' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:545:14: 'nexturn'
             {
             match("nexturn"); 
 
@@ -2973,8 +2973,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RELOAD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:546:11: ( 'reload' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:546:13: 'reload'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:546:11: ( 'reload' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:546:13: 'reload'
             {
             match("reload"); 
 
@@ -2994,8 +2994,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GRASPS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:547:10: ( 'grasps' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:547:11: 'grasps'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:547:10: ( 'grasps' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:547:11: 'grasps'
             {
             match("grasps"); 
 
@@ -3015,8 +3015,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EXPELS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:548:10: ( 'expels' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:548:12: 'expels'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:548:10: ( 'expels' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:548:12: 'expels'
             {
             match("expels"); 
 
@@ -3036,8 +3036,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INGESTS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:549:11: ( 'ingests' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:549:13: 'ingests'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:549:11: ( 'ingests' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:549:13: 'ingests'
             {
             match("ingests"); 
 
@@ -3057,8 +3057,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DUPLICABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:550:12: ( 'duplicable' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:550:14: 'duplicable'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:550:12: ( 'duplicable' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:550:14: 'duplicable'
             {
             match("duplicable"); 
 
@@ -3078,8 +3078,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:551:8: ( 'first' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:551:10: 'first'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:551:8: ( 'first' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:551:10: 'first'
             {
             match("first"); 
 
@@ -3099,8 +3099,8 @@ public class highLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:552:8: ( 'third' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:552:10: 'third'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:552:8: ( 'third' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:552:10: 'third'
             {
             match("third"); 
 
@@ -3120,8 +3120,8 @@ public class highLexer extends Lexer {
         try {
             int _type = POSITION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:553:10: ( 'position' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:553:12: 'position'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:553:10: ( 'position' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:553:12: 'position'
             {
             match("position"); 
 
@@ -3141,8 +3141,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ORIENTATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:554:13: ( 'orientation' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:554:15: 'orientation'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:554:13: ( 'orientation' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:554:15: 'orientation'
             {
             match("orientation"); 
 
@@ -3162,8 +3162,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SIZE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:555:7: ( 'size' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:555:9: 'size'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:555:7: ( 'size' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:555:9: 'size'
             {
             match("size"); 
 
@@ -3183,8 +3183,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PERSON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:556:9: ( 'person' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:556:11: 'person'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:556:9: ( 'person' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:556:11: 'person'
             {
             match("person"); 
 
@@ -3204,8 +3204,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FREE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:557:7: ( 'free' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:557:9: 'free'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:557:7: ( 'free' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:557:9: 'free'
             {
             match("free"); 
 
@@ -3225,7 +3225,7 @@ public class highLexer extends Lexer {
         try {
             int _type = FRAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:8: ( 'frame' | 'frames' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:8: ( 'frame' | 'frames' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3286,7 +3286,7 @@ public class highLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:10: 'frame'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:10: 'frame'
                     {
                     match("frame"); 
 
@@ -3294,7 +3294,7 @@ public class highLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:20: 'frames'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:558:20: 'frames'
                     {
                     match("frames"); 
 
@@ -3316,8 +3316,8 @@ public class highLexer extends Lexer {
         try {
             int _type = PRESSED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:559:12: ( 'pressed' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:559:14: 'pressed'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:559:12: ( 'pressed' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:559:14: 'pressed'
             {
             match("pressed"); 
 
@@ -3337,8 +3337,8 @@ public class highLexer extends Lexer {
         try {
             int _type = HELD_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:560:9: ( 'held' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:560:11: 'held'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:560:9: ( 'held' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:560:11: 'held'
             {
             match("held"); 
 
@@ -3358,8 +3358,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RELEASED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:561:13: ( 'released' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:561:15: 'released'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:561:13: ( 'released' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:561:15: 'released'
             {
             match("released"); 
 
@@ -3379,8 +3379,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OWNES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:562:10: ( 'ownes' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:562:12: 'ownes'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:562:10: ( 'ownes' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:562:12: 'ownes'
             {
             match("ownes"); 
 
@@ -3400,8 +3400,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NOTOWNES_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:563:13: ( 'notOwnes' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:563:16: 'notOwnes'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:563:13: ( 'notOwnes' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:563:16: 'notOwnes'
             {
             match("notOwnes"); 
 
@@ -3421,8 +3421,8 @@ public class highLexer extends Lexer {
         try {
             int _type = OWNED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:564:9: ( 'owned' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:564:10: 'owned'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:564:9: ( 'owned' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:564:10: 'owned'
             {
             match("owned"); 
 
@@ -3442,8 +3442,8 @@ public class highLexer extends Lexer {
         try {
             int _type = NOTOWNED_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:565:12: ( 'notOwned' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:565:13: 'notOwned'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:565:12: ( 'notOwned' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:565:13: 'notOwned'
             {
             match("notOwned"); 
 
@@ -3463,8 +3463,8 @@ public class highLexer extends Lexer {
         try {
             int _type = HAPPENS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:566:9: ( 'happens' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:566:12: 'happens'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:566:9: ( 'happens' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:566:12: 'happens'
             {
             match("happens"); 
 
@@ -3484,8 +3484,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CONTAINS_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:567:14: ( 'contains' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:567:17: 'contains'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:567:14: ( 'contains' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:567:17: 'contains'
             {
             match("contains"); 
 
@@ -3505,8 +3505,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DISTANCE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:568:13: ( 'distance' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:568:15: 'distance'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:568:13: ( 'distance' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:568:15: 'distance'
             {
             match("distance"); 
 
@@ -3526,8 +3526,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ANGLE_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:569:10: ( 'angle' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:569:12: 'angle'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:569:10: ( 'angle' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:569:12: 'angle'
             {
             match("angle"); 
 
@@ -3547,8 +3547,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:572:5: ( 'up' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:572:7: 'up'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:572:5: ( 'up' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:572:7: 'up'
             {
             match("up"); 
 
@@ -3568,8 +3568,8 @@ public class highLexer extends Lexer {
         try {
             int _type = WDOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:573:7: ( 'down' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:573:9: 'down'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:573:7: ( 'down' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:573:9: 'down'
             {
             match("down"); 
 
@@ -3589,8 +3589,8 @@ public class highLexer extends Lexer {
         try {
             int _type = LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:574:6: ( 'left' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:574:8: 'left'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:574:6: ( 'left' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:574:8: 'left'
             {
             match("left"); 
 
@@ -3610,8 +3610,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:575:7: ( 'right' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:575:9: 'right'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:575:7: ( 'right' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:575:9: 'right'
             {
             match("right"); 
 
@@ -3631,8 +3631,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:576:7: ( 'space' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:576:9: 'space'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:576:7: ( 'space' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:576:9: 'space'
             {
             match("space"); 
 
@@ -3652,8 +3652,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ESCAPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:577:8: ( 'escape' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:577:10: 'escape'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:577:8: ( 'escape' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:577:10: 'escape'
             {
             match("escape"); 
 
@@ -3673,8 +3673,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ENTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:578:7: ( 'enter' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:578:9: 'enter'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:578:7: ( 'enter' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:578:9: 'enter'
             {
             match("enter"); 
 
@@ -3694,8 +3694,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MOUSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:579:7: ( 'mouse' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:579:9: 'mouse'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:579:7: ( 'mouse' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:579:9: 'mouse'
             {
             match("mouse"); 
 
@@ -3715,8 +3715,8 @@ public class highLexer extends Lexer {
         try {
             int _type = KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:580:5: ( 'key' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:580:7: 'key'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:580:5: ( 'key' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:580:7: 'key'
             {
             match("key"); 
 
@@ -3736,8 +3736,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CLICK_LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:581:12: ( 'lClick' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:581:14: 'lClick'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:581:12: ( 'lClick' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:581:14: 'lClick'
             {
             match("lClick"); 
 
@@ -3757,8 +3757,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CLICK_MIDDLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:582:14: ( 'mClick' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:582:16: 'mClick'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:582:14: ( 'mClick' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:582:16: 'mClick'
             {
             match("mClick"); 
 
@@ -3778,8 +3778,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CLICK_RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:583:13: ( 'rClick' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:583:15: 'rClick'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:583:13: ( 'rClick' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:583:15: 'rClick'
             {
             match("rClick"); 
 
@@ -3799,8 +3799,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SCROLL_UP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:584:11: ( 'scrollUp' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:584:13: 'scrollUp'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:584:11: ( 'scrollUp' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:584:13: 'scrollUp'
             {
             match("scrollUp"); 
 
@@ -3820,8 +3820,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SCROLL_DOWN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:585:13: ( 'scrollDown' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:585:15: 'scrollDown'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:585:13: ( 'scrollDown' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:585:15: 'scrollDown'
             {
             match("scrollDown"); 
 
@@ -3841,8 +3841,8 @@ public class highLexer extends Lexer {
         try {
             int _type = COMMAND_KW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:587:12: ( 'command' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:587:14: 'command'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:587:12: ( 'command' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:587:14: 'command'
             {
             match("command"); 
 
@@ -3862,8 +3862,8 @@ public class highLexer extends Lexer {
         try {
             int _type = JUMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:588:6: ( 'jump' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:588:8: 'jump'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:588:6: ( 'jump' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:588:8: 'jump'
             {
             match("jump"); 
 
@@ -3883,8 +3883,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MOVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:589:6: ( 'move' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:589:8: 'move'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:589:6: ( 'move' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:589:8: 'move'
             {
             match("move"); 
 
@@ -3904,8 +3904,8 @@ public class highLexer extends Lexer {
         try {
             int _type = FORWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:590:9: ( 'forward' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:590:11: 'forward'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:590:9: ( 'forward' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:590:11: 'forward'
             {
             match("forward"); 
 
@@ -3925,8 +3925,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BACKWARD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:591:10: ( 'backward' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:591:12: 'backward'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:591:10: ( 'backward' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:591:12: 'backward'
             {
             match("backward"); 
 
@@ -3946,8 +3946,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:592:6: ( 'turn' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:592:8: 'turn'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:592:6: ( 'turn' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:592:8: 'turn'
             {
             match("turn"); 
 
@@ -3967,8 +3967,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ACCELERATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:593:12: ( 'accelerate' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:593:14: 'accelerate'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:593:12: ( 'accelerate' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:593:14: 'accelerate'
             {
             match("accelerate"); 
 
@@ -3988,8 +3988,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BRAKE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:594:7: ( 'brake' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:594:9: 'brake'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:594:7: ( 'brake' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:594:9: 'brake'
             {
             match("brake"); 
 
@@ -4009,8 +4009,8 @@ public class highLexer extends Lexer {
         try {
             int _type = CAMERA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:597:8: ( 'Camera' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:597:10: 'Camera'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:597:8: ( 'Camera' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:597:10: 'Camera'
             {
             match("Camera"); 
 
@@ -4030,8 +4030,8 @@ public class highLexer extends Lexer {
         try {
             int _type = MEDIA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:598:7: ( 'Media' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:598:9: 'Media'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:598:7: ( 'Media' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:598:9: 'Media'
             {
             match("Media"); 
 
@@ -4051,8 +4051,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:599:6: ( 'Time' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:599:8: 'Time'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:599:6: ( 'Time' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:599:8: 'Time'
             {
             match("Time"); 
 
@@ -4072,8 +4072,8 @@ public class highLexer extends Lexer {
         try {
             int _type = VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:601:8: ( 'value' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:601:10: 'value'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:601:8: ( 'value' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:601:10: 'value'
             {
             match("value"); 
 
@@ -4093,8 +4093,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BOOST_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:603:16: ( 'boostInterval' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:603:18: 'boostInterval'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:603:16: ( 'boostInterval' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:603:18: 'boostInterval'
             {
             match("boostInterval"); 
 
@@ -4114,8 +4114,8 @@ public class highLexer extends Lexer {
         try {
             int _type = SHOOT_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:604:16: ( 'shootInterval' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:604:18: 'shootInterval'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:604:16: ( 'shootInterval' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:604:18: 'shootInterval'
             {
             match("shootInterval"); 
 
@@ -4135,8 +4135,8 @@ public class highLexer extends Lexer {
         try {
             int _type = RELOAD_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:605:13: ( 'reloadTime' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:605:15: 'reloadTime'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:605:13: ( 'reloadTime' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:605:15: 'reloadTime'
             {
             match("reloadTime"); 
 
@@ -4156,8 +4156,8 @@ public class highLexer extends Lexer {
         try {
             int _type = INVENTORY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:607:11: ( 'inventory' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:607:13: 'inventory'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:607:11: ( 'inventory' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:607:13: 'inventory'
             {
             match("inventory"); 
 
@@ -4177,8 +4177,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EQUIPED_OBJECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:608:16: ( 'equipedObjects' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:608:18: 'equipedObjects'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:608:16: ( 'equipedObjects' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:608:18: 'equipedObjects'
             {
             match("equipedObjects"); 
 
@@ -4198,8 +4198,8 @@ public class highLexer extends Lexer {
         try {
             int _type = ENTRANCES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:609:11: ( 'entrances' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:609:13: 'entrances'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:609:11: ( 'entrances' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:609:13: 'entrances'
             {
             match("entrances"); 
 
@@ -4219,8 +4219,8 @@ public class highLexer extends Lexer {
         try {
             int _type = EXITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:610:8: ( 'exits' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:610:10: 'exits'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:610:8: ( 'exits' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:610:10: 'exits'
             {
             match("exits"); 
 
@@ -4240,8 +4240,8 @@ public class highLexer extends Lexer {
         try {
             int _type = DAMAGE_ZONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:611:13: ( 'damageZone' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:611:15: 'damageZone'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:611:13: ( 'damageZone' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:611:15: 'damageZone'
             {
             match("damageZone"); 
 
@@ -4261,8 +4261,8 @@ public class highLexer extends Lexer {
         try {
             int _type = COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:612:12: ( 'collectors' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:612:14: 'collectors'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:612:12: ( 'collectors' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:612:14: 'collectors'
             {
             match("collectors"); 
 
@@ -4282,8 +4282,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TYPES_COLLECTORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:613:17: ( 'typesCollectors' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:613:19: 'typesCollectors'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:613:17: ( 'typesCollectors' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:613:19: 'typesCollectors'
             {
             match("typesCollectors"); 
 
@@ -4303,8 +4303,8 @@ public class highLexer extends Lexer {
         try {
             int _type = GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:614:12: ( 'generators' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:614:14: 'generators'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:614:12: ( 'generators' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:614:14: 'generators'
             {
             match("generators"); 
 
@@ -4324,8 +4324,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TYPE_GENERATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:615:17: ( 'typeGenerators' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:615:19: 'typeGenerators'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:615:17: ( 'typeGenerators' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:615:19: 'typeGenerators'
             {
             match("typeGenerators"); 
 
@@ -4345,8 +4345,8 @@ public class highLexer extends Lexer {
         try {
             int _type = BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:616:10: ( 'breakers' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:616:12: 'breakers'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:616:10: ( 'breakers' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:616:12: 'breakers'
             {
             match("breakers"); 
 
@@ -4366,8 +4366,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TYPES_BREAKERS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:617:16: ( 'typesBreakers' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:617:18: 'typesBreakers'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:617:16: ( 'typesBreakers' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:617:18: 'typesBreakers'
             {
             match("typesBreakers"); 
 
@@ -4387,8 +4387,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:618:15: ( 'teleportables' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:618:17: 'teleportables'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:618:15: ( 'teleportables' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:618:17: 'teleportables'
             {
             match("teleportables"); 
 
@@ -4408,8 +4408,8 @@ public class highLexer extends Lexer {
         try {
             int _type = TYPES_TELEPORTABLES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:620:2: ( 'typesTeleportables' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:620:5: 'typesTeleportables'
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:620:2: ( 'typesTeleportables' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:620:5: 'typesTeleportables'
             {
             match("typesTeleportables"); 
 
@@ -4429,8 +4429,8 @@ public class highLexer extends Lexer {
         try {
             int _type = LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:623:8: ( 'a' .. 'z' | 'A' .. 'Z' )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:623:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -4457,10 +4457,10 @@ public class highLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:7: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:9: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )+ )?
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:9: ( '0' .. '9' )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:9: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -4474,7 +4474,7 @@ public class highLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:10: '0' .. '9'
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:10: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -4490,7 +4490,7 @@ public class highLexer extends Lexer {
                 cnt3++;
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:21: ( '.' ( '0' .. '9' )+ )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:21: ( '.' ( '0' .. '9' )+ )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -4499,10 +4499,10 @@ public class highLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:22: '.' ( '0' .. '9' )+
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:22: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:26: ( '0' .. '9' )+
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:26: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -4516,7 +4516,7 @@ public class highLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:27: '0' .. '9'
+                    	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:624:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -4554,11 +4554,11 @@ public class highLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:7: ( LETTER ( LETTER | '0' .. '9' | '_' | '-' | '@' )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:9: LETTER ( LETTER | '0' .. '9' | '_' | '-' | '@' )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:7: ( LETTER ( LETTER | '0' .. '9' | '_' | '-' | '@' )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:9: LETTER ( LETTER | '0' .. '9' | '_' | '-' | '@' )*
             {
             mLETTER(); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:15: ( LETTER | '0' .. '9' | '_' | '-' | '@' )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:625:15: ( LETTER | '0' .. '9' | '_' | '-' | '@' )*
             loop6:
             do {
                 int alt6=2;
@@ -4571,7 +4571,7 @@ public class highLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             	    {
             	    if ( input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -4607,10 +4607,10 @@ public class highLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:5: ( ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:626:9: ( ' ' | '\\t' | '\\r' | '\\n' | '\\u000C' )+
             int cnt7=0;
             loop7:
             do {
@@ -4624,7 +4624,7 @@ public class highLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
             	        input.consume();
@@ -4661,1398 +4661,1398 @@ public class highLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__221 | T__222 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
+        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:8: ( GAME_KW | GAME_ATTRIBUT_KW | INIT_IS_KW | DEC | T__221 | T__222 | COMMENT | PD | PG | FIN | VIRG | HAS | AT | IS | AND | OF | WITH | BETWEEN | PLUS | MINUS | MUL | DIV | POW | MOD | X | Y | Z | ALL | NOT | MIN | SEC | MS | THEN | FOR | EQUALS | INF | SUP | INFEG | SUPED | DIFF | FROM | DBP | GAME | GRAVITY_KW | SCORE | TURNBASED_KW | WORLD_KW | GRIDSIZE_KW | GENERIC | GRID | RIBBON | NAME_KW | TYPE | INSERT_KW | REMOVE_KW | SOLO | PLAYER | LIST_KW | IN | LOOP | ONCE | RANDOM_KW | DEFINITION_KW | MEANS | PAUSE_KW | MUTE_KW | ON | OFF | PLAY_KW | STOP_KW | ENDS_KW | STARTS_KW | BLOCK_KW | TRANSLATION | ROTATION | SCALE | EFFACE_KW | GENERATE_KW | WAIT_KW | ENDWAIT | SAVE_KW | RULE_KW | MOVES_KW | DIES_KW | TOUCHES_KW | KILLS_KW | KILLED_KW | TOUCHED_KW | BY | OTHER | BECOMES | VICTORY_KW | DEFEAT_KW | IF_KW | ELSE | ENDIF | OR | COMP | DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW | MOVING_KW | WAITING_KW | FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW | PLAYED_KW | STOPPED_KW | ASSIGN_KW | ADD_KW | SUB_KW | INVERT_KW | NUM | IA_KW | DURING | UNTIL | EQUIP | NEXT | PREVIOUS | KEYBOARD | ACTIVATE_KW | DISABLE_KW | COMMANDS | CLOCKWISE | ANTICLOCKWISE | NEXTURN_KW | RELOAD_KW | GRASPS_KW | EXPELS_KW | INGESTS_KW | DUPLICABLE | FIRST | THIRD | POSITION | ORIENTATION | SIZE | PERSON | FREE | FRAME | PRESSED_KW | HELD_KW | RELEASED_KW | OWNES_KW | NOTOWNES_KW | OWNED_KW | NOTOWNED_KW | HAPPENS | CONTAINS_KW | DISTANCE_KW | ANGLE_KW | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER | MOUSE | KEY | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN | COMMAND_KW | JUMP | MOVE | FORWARD | BACKWARD | TURN | ACCELERATE | BRAKE | CAMERA | MEDIA | TIME | VALUE | BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME | INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES | LETTER | FLOAT | IDENT | WS )
         int alt8=199;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:10: GAME_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:10: GAME_KW
                 {
                 mGAME_KW(); 
 
                 }
                 break;
             case 2 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:18: GAME_ATTRIBUT_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:18: GAME_ATTRIBUT_KW
                 {
                 mGAME_ATTRIBUT_KW(); 
 
                 }
                 break;
             case 3 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:35: INIT_IS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:35: INIT_IS_KW
                 {
                 mINIT_IS_KW(); 
 
                 }
                 break;
             case 4 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:46: DEC
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:46: DEC
                 {
                 mDEC(); 
 
                 }
                 break;
             case 5 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:50: T__221
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:50: T__221
                 {
                 mT__221(); 
 
                 }
                 break;
             case 6 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:57: T__222
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:57: T__222
                 {
                 mT__222(); 
 
                 }
                 break;
             case 7 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:64: COMMENT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:64: COMMENT
                 {
                 mCOMMENT(); 
 
                 }
                 break;
             case 8 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:72: PD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:72: PD
                 {
                 mPD(); 
 
                 }
                 break;
             case 9 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:75: PG
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:75: PG
                 {
                 mPG(); 
 
                 }
                 break;
             case 10 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:78: FIN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:78: FIN
                 {
                 mFIN(); 
 
                 }
                 break;
             case 11 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:82: VIRG
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:82: VIRG
                 {
                 mVIRG(); 
 
                 }
                 break;
             case 12 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:87: HAS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:87: HAS
                 {
                 mHAS(); 
 
                 }
                 break;
             case 13 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:91: AT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:91: AT
                 {
                 mAT(); 
 
                 }
                 break;
             case 14 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:94: IS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:94: IS
                 {
                 mIS(); 
 
                 }
                 break;
             case 15 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:97: AND
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:97: AND
                 {
                 mAND(); 
 
                 }
                 break;
             case 16 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:101: OF
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:101: OF
                 {
                 mOF(); 
 
                 }
                 break;
             case 17 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:104: WITH
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:104: WITH
                 {
                 mWITH(); 
 
                 }
                 break;
             case 18 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:109: BETWEEN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:109: BETWEEN
                 {
                 mBETWEEN(); 
 
                 }
                 break;
             case 19 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:117: PLUS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:117: PLUS
                 {
                 mPLUS(); 
 
                 }
                 break;
             case 20 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:122: MINUS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:122: MINUS
                 {
                 mMINUS(); 
 
                 }
                 break;
             case 21 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:128: MUL
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:128: MUL
                 {
                 mMUL(); 
 
                 }
                 break;
             case 22 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:132: DIV
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:132: DIV
                 {
                 mDIV(); 
 
                 }
                 break;
             case 23 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:136: POW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:136: POW
                 {
                 mPOW(); 
 
                 }
                 break;
             case 24 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:140: MOD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:140: MOD
                 {
                 mMOD(); 
 
                 }
                 break;
             case 25 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:144: X
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:144: X
                 {
                 mX(); 
 
                 }
                 break;
             case 26 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:146: Y
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:146: Y
                 {
                 mY(); 
 
                 }
                 break;
             case 27 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:148: Z
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:148: Z
                 {
                 mZ(); 
 
                 }
                 break;
             case 28 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:150: ALL
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:150: ALL
                 {
                 mALL(); 
 
                 }
                 break;
             case 29 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:154: NOT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:154: NOT
                 {
                 mNOT(); 
 
                 }
                 break;
             case 30 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:158: MIN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:158: MIN
                 {
                 mMIN(); 
 
                 }
                 break;
             case 31 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:162: SEC
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:162: SEC
                 {
                 mSEC(); 
 
                 }
                 break;
             case 32 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:166: MS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:166: MS
                 {
                 mMS(); 
 
                 }
                 break;
             case 33 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:169: THEN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:169: THEN
                 {
                 mTHEN(); 
 
                 }
                 break;
             case 34 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:174: FOR
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:174: FOR
                 {
                 mFOR(); 
 
                 }
                 break;
             case 35 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:178: EQUALS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:178: EQUALS
                 {
                 mEQUALS(); 
 
                 }
                 break;
             case 36 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:185: INF
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:185: INF
                 {
                 mINF(); 
 
                 }
                 break;
             case 37 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:189: SUP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:189: SUP
                 {
                 mSUP(); 
 
                 }
                 break;
             case 38 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:193: INFEG
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:193: INFEG
                 {
                 mINFEG(); 
 
                 }
                 break;
             case 39 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:199: SUPED
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:199: SUPED
                 {
                 mSUPED(); 
 
                 }
                 break;
             case 40 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:205: DIFF
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:205: DIFF
                 {
                 mDIFF(); 
 
                 }
                 break;
             case 41 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:210: FROM
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:210: FROM
                 {
                 mFROM(); 
 
                 }
                 break;
             case 42 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:215: DBP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:215: DBP
                 {
                 mDBP(); 
 
                 }
                 break;
             case 43 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:219: GAME
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:219: GAME
                 {
                 mGAME(); 
 
                 }
                 break;
             case 44 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:224: GRAVITY_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:224: GRAVITY_KW
                 {
                 mGRAVITY_KW(); 
 
                 }
                 break;
             case 45 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:235: SCORE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:235: SCORE
                 {
                 mSCORE(); 
 
                 }
                 break;
             case 46 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:241: TURNBASED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:241: TURNBASED_KW
                 {
                 mTURNBASED_KW(); 
 
                 }
                 break;
             case 47 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:254: WORLD_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:254: WORLD_KW
                 {
                 mWORLD_KW(); 
 
                 }
                 break;
             case 48 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:263: GRIDSIZE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:263: GRIDSIZE_KW
                 {
                 mGRIDSIZE_KW(); 
 
                 }
                 break;
             case 49 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:275: GENERIC
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:275: GENERIC
                 {
                 mGENERIC(); 
 
                 }
                 break;
             case 50 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:283: GRID
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:283: GRID
                 {
                 mGRID(); 
 
                 }
                 break;
             case 51 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:288: RIBBON
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:288: RIBBON
                 {
                 mRIBBON(); 
 
                 }
                 break;
             case 52 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:295: NAME_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:295: NAME_KW
                 {
                 mNAME_KW(); 
 
                 }
                 break;
             case 53 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:303: TYPE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:303: TYPE
                 {
                 mTYPE(); 
 
                 }
                 break;
             case 54 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:308: INSERT_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:308: INSERT_KW
                 {
                 mINSERT_KW(); 
 
                 }
                 break;
             case 55 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:318: REMOVE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:318: REMOVE_KW
                 {
                 mREMOVE_KW(); 
 
                 }
                 break;
             case 56 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:328: SOLO
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:328: SOLO
                 {
                 mSOLO(); 
 
                 }
                 break;
             case 57 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:333: PLAYER
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:333: PLAYER
                 {
                 mPLAYER(); 
 
                 }
                 break;
             case 58 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:340: LIST_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:340: LIST_KW
                 {
                 mLIST_KW(); 
 
                 }
                 break;
             case 59 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:348: IN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:348: IN
                 {
                 mIN(); 
 
                 }
                 break;
             case 60 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:351: LOOP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:351: LOOP
                 {
                 mLOOP(); 
 
                 }
                 break;
             case 61 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:356: ONCE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:356: ONCE
                 {
                 mONCE(); 
 
                 }
                 break;
             case 62 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:361: RANDOM_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:361: RANDOM_KW
                 {
                 mRANDOM_KW(); 
 
                 }
                 break;
             case 63 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:371: DEFINITION_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:371: DEFINITION_KW
                 {
                 mDEFINITION_KW(); 
 
                 }
                 break;
             case 64 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:385: MEANS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:385: MEANS
                 {
                 mMEANS(); 
 
                 }
                 break;
             case 65 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:391: PAUSE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:391: PAUSE_KW
                 {
                 mPAUSE_KW(); 
 
                 }
                 break;
             case 66 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:400: MUTE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:400: MUTE_KW
                 {
                 mMUTE_KW(); 
 
                 }
                 break;
             case 67 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:408: ON
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:408: ON
                 {
                 mON(); 
 
                 }
                 break;
             case 68 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:411: OFF
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:411: OFF
                 {
                 mOFF(); 
 
                 }
                 break;
             case 69 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:415: PLAY_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:415: PLAY_KW
                 {
                 mPLAY_KW(); 
 
                 }
                 break;
             case 70 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:423: STOP_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:423: STOP_KW
                 {
                 mSTOP_KW(); 
 
                 }
                 break;
             case 71 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:431: ENDS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:431: ENDS_KW
                 {
                 mENDS_KW(); 
 
                 }
                 break;
             case 72 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:439: STARTS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:439: STARTS_KW
                 {
                 mSTARTS_KW(); 
 
                 }
                 break;
             case 73 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:449: BLOCK_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:449: BLOCK_KW
                 {
                 mBLOCK_KW(); 
 
                 }
                 break;
             case 74 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:458: TRANSLATION
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:458: TRANSLATION
                 {
                 mTRANSLATION(); 
 
                 }
                 break;
             case 75 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:470: ROTATION
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:470: ROTATION
                 {
                 mROTATION(); 
 
                 }
                 break;
             case 76 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:479: SCALE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:479: SCALE
                 {
                 mSCALE(); 
 
                 }
                 break;
             case 77 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:485: EFFACE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:485: EFFACE_KW
                 {
                 mEFFACE_KW(); 
 
                 }
                 break;
             case 78 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:495: GENERATE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:495: GENERATE_KW
                 {
                 mGENERATE_KW(); 
 
                 }
                 break;
             case 79 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:507: WAIT_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:507: WAIT_KW
                 {
                 mWAIT_KW(); 
 
                 }
                 break;
             case 80 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:515: ENDWAIT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:515: ENDWAIT
                 {
                 mENDWAIT(); 
 
                 }
                 break;
             case 81 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:523: SAVE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:523: SAVE_KW
                 {
                 mSAVE_KW(); 
 
                 }
                 break;
             case 82 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:531: RULE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:531: RULE_KW
                 {
                 mRULE_KW(); 
 
                 }
                 break;
             case 83 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:539: MOVES_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:539: MOVES_KW
                 {
                 mMOVES_KW(); 
 
                 }
                 break;
             case 84 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:548: DIES_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:548: DIES_KW
                 {
                 mDIES_KW(); 
 
                 }
                 break;
             case 85 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:556: TOUCHES_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:556: TOUCHES_KW
                 {
                 mTOUCHES_KW(); 
 
                 }
                 break;
             case 86 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:567: KILLS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:567: KILLS_KW
                 {
                 mKILLS_KW(); 
 
                 }
                 break;
             case 87 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:576: KILLED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:576: KILLED_KW
                 {
                 mKILLED_KW(); 
 
                 }
                 break;
             case 88 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:586: TOUCHED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:586: TOUCHED_KW
                 {
                 mTOUCHED_KW(); 
 
                 }
                 break;
             case 89 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:597: BY
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:597: BY
                 {
                 mBY(); 
 
                 }
                 break;
             case 90 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:600: OTHER
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:600: OTHER
                 {
                 mOTHER(); 
 
                 }
                 break;
             case 91 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:606: BECOMES
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:606: BECOMES
                 {
                 mBECOMES(); 
 
                 }
                 break;
             case 92 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:614: VICTORY_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:614: VICTORY_KW
                 {
                 mVICTORY_KW(); 
 
                 }
                 break;
             case 93 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:625: DEFEAT_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:625: DEFEAT_KW
                 {
                 mDEFEAT_KW(); 
 
                 }
                 break;
             case 94 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:635: IF_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:635: IF_KW
                 {
                 mIF_KW(); 
 
                 }
                 break;
             case 95 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:641: ELSE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:641: ELSE
                 {
                 mELSE(); 
 
                 }
                 break;
             case 96 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:646: ENDIF
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:646: ENDIF
                 {
                 mENDIF(); 
 
                 }
                 break;
             case 97 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:652: OR
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:652: OR
                 {
                 mOR(); 
 
                 }
                 break;
             case 98 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:655: COMP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:655: COMP
                 {
                 mCOMP(); 
 
                 }
                 break;
             case 99 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:660: DEAD_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:660: DEAD_KW
                 {
                 mDEAD_KW(); 
 
                 }
                 break;
             case 100 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:668: ALIVE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:668: ALIVE_KW
                 {
                 mALIVE_KW(); 
 
                 }
                 break;
             case 101 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:677: EFFACED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:677: EFFACED_KW
                 {
                 mEFFACED_KW(); 
 
                 }
                 break;
             case 102 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:688: GENERATED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:688: GENERATED_KW
                 {
                 mGENERATED_KW(); 
 
                 }
                 break;
             case 103 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:701: TOUCHING_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:701: TOUCHING_KW
                 {
                 mTOUCHING_KW(); 
 
                 }
                 break;
             case 104 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:713: MOVING_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:713: MOVING_KW
                 {
                 mMOVING_KW(); 
 
                 }
                 break;
             case 105 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:723: WAITING_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:723: WAITING_KW
                 {
                 mWAITING_KW(); 
 
                 }
                 break;
             case 106 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:734: FINISHED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:734: FINISHED_KW
                 {
                 mFINISHED_KW(); 
 
                 }
                 break;
             case 107 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:746: STARTED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:746: STARTED_KW
                 {
                 mSTARTED_KW(); 
 
                 }
                 break;
             case 108 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:757: PAUSED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:757: PAUSED_KW
                 {
                 mPAUSED_KW(); 
 
                 }
                 break;
             case 109 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:767: MUTED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:767: MUTED_KW
                 {
                 mMUTED_KW(); 
 
                 }
                 break;
             case 110 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:776: PLAYED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:776: PLAYED_KW
                 {
                 mPLAYED_KW(); 
 
                 }
                 break;
             case 111 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:786: STOPPED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:786: STOPPED_KW
                 {
                 mSTOPPED_KW(); 
 
                 }
                 break;
             case 112 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:797: ASSIGN_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:797: ASSIGN_KW
                 {
                 mASSIGN_KW(); 
 
                 }
                 break;
             case 113 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:807: ADD_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:807: ADD_KW
                 {
                 mADD_KW(); 
 
                 }
                 break;
             case 114 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:814: SUB_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:814: SUB_KW
                 {
                 mSUB_KW(); 
 
                 }
                 break;
             case 115 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:821: INVERT_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:821: INVERT_KW
                 {
                 mINVERT_KW(); 
 
                 }
                 break;
             case 116 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:831: NUM
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:831: NUM
                 {
                 mNUM(); 
 
                 }
                 break;
             case 117 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:835: IA_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:835: IA_KW
                 {
                 mIA_KW(); 
 
                 }
                 break;
             case 118 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:841: DURING
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:841: DURING
                 {
                 mDURING(); 
 
                 }
                 break;
             case 119 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:848: UNTIL
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:848: UNTIL
                 {
                 mUNTIL(); 
 
                 }
                 break;
             case 120 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:854: EQUIP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:854: EQUIP
                 {
                 mEQUIP(); 
 
                 }
                 break;
             case 121 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:860: NEXT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:860: NEXT
                 {
                 mNEXT(); 
 
                 }
                 break;
             case 122 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:865: PREVIOUS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:865: PREVIOUS
                 {
                 mPREVIOUS(); 
 
                 }
                 break;
             case 123 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:874: KEYBOARD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:874: KEYBOARD
                 {
                 mKEYBOARD(); 
 
                 }
                 break;
             case 124 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:883: ACTIVATE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:883: ACTIVATE_KW
                 {
                 mACTIVATE_KW(); 
 
                 }
                 break;
             case 125 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:895: DISABLE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:895: DISABLE_KW
                 {
                 mDISABLE_KW(); 
 
                 }
                 break;
             case 126 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:906: COMMANDS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:906: COMMANDS
                 {
                 mCOMMANDS(); 
 
                 }
                 break;
             case 127 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:915: CLOCKWISE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:915: CLOCKWISE
                 {
                 mCLOCKWISE(); 
 
                 }
                 break;
             case 128 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:925: ANTICLOCKWISE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:925: ANTICLOCKWISE
                 {
                 mANTICLOCKWISE(); 
 
                 }
                 break;
             case 129 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:939: NEXTURN_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:939: NEXTURN_KW
                 {
                 mNEXTURN_KW(); 
 
                 }
                 break;
             case 130 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:950: RELOAD_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:950: RELOAD_KW
                 {
                 mRELOAD_KW(); 
 
                 }
                 break;
             case 131 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:960: GRASPS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:960: GRASPS_KW
                 {
                 mGRASPS_KW(); 
 
                 }
                 break;
             case 132 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:970: EXPELS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:970: EXPELS_KW
                 {
                 mEXPELS_KW(); 
 
                 }
                 break;
             case 133 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:980: INGESTS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:980: INGESTS_KW
                 {
                 mINGESTS_KW(); 
 
                 }
                 break;
             case 134 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:991: DUPLICABLE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:991: DUPLICABLE
                 {
                 mDUPLICABLE(); 
 
                 }
                 break;
             case 135 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1002: FIRST
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1002: FIRST
                 {
                 mFIRST(); 
 
                 }
                 break;
             case 136 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1008: THIRD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1008: THIRD
                 {
                 mTHIRD(); 
 
                 }
                 break;
             case 137 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1014: POSITION
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1014: POSITION
                 {
                 mPOSITION(); 
 
                 }
                 break;
             case 138 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1023: ORIENTATION
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1023: ORIENTATION
                 {
                 mORIENTATION(); 
 
                 }
                 break;
             case 139 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1035: SIZE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1035: SIZE
                 {
                 mSIZE(); 
 
                 }
                 break;
             case 140 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1040: PERSON
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1040: PERSON
                 {
                 mPERSON(); 
 
                 }
                 break;
             case 141 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1047: FREE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1047: FREE
                 {
                 mFREE(); 
 
                 }
                 break;
             case 142 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1052: FRAME
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1052: FRAME
                 {
                 mFRAME(); 
 
                 }
                 break;
             case 143 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1058: PRESSED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1058: PRESSED_KW
                 {
                 mPRESSED_KW(); 
 
                 }
                 break;
             case 144 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1069: HELD_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1069: HELD_KW
                 {
                 mHELD_KW(); 
 
                 }
                 break;
             case 145 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1077: RELEASED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1077: RELEASED_KW
                 {
                 mRELEASED_KW(); 
 
                 }
                 break;
             case 146 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1089: OWNES_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1089: OWNES_KW
                 {
                 mOWNES_KW(); 
 
                 }
                 break;
             case 147 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1098: NOTOWNES_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1098: NOTOWNES_KW
                 {
                 mNOTOWNES_KW(); 
 
                 }
                 break;
             case 148 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1110: OWNED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1110: OWNED_KW
                 {
                 mOWNED_KW(); 
 
                 }
                 break;
             case 149 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1119: NOTOWNED_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1119: NOTOWNED_KW
                 {
                 mNOTOWNED_KW(); 
 
                 }
                 break;
             case 150 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1131: HAPPENS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1131: HAPPENS
                 {
                 mHAPPENS(); 
 
                 }
                 break;
             case 151 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1139: CONTAINS_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1139: CONTAINS_KW
                 {
                 mCONTAINS_KW(); 
 
                 }
                 break;
             case 152 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1151: DISTANCE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1151: DISTANCE_KW
                 {
                 mDISTANCE_KW(); 
 
                 }
                 break;
             case 153 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1163: ANGLE_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1163: ANGLE_KW
                 {
                 mANGLE_KW(); 
 
                 }
                 break;
             case 154 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1172: WUP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1172: WUP
                 {
                 mWUP(); 
 
                 }
                 break;
             case 155 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1176: WDOWN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1176: WDOWN
                 {
                 mWDOWN(); 
 
                 }
                 break;
             case 156 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1182: LEFT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1182: LEFT
                 {
                 mLEFT(); 
 
                 }
                 break;
             case 157 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1187: RIGHT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1187: RIGHT
                 {
                 mRIGHT(); 
 
                 }
                 break;
             case 158 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1193: SPACE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1193: SPACE
                 {
                 mSPACE(); 
 
                 }
                 break;
             case 159 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1199: ESCAPE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1199: ESCAPE
                 {
                 mESCAPE(); 
 
                 }
                 break;
             case 160 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1206: ENTER
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1206: ENTER
                 {
                 mENTER(); 
 
                 }
                 break;
             case 161 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1212: MOUSE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1212: MOUSE
                 {
                 mMOUSE(); 
 
                 }
                 break;
             case 162 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1218: KEY
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1218: KEY
                 {
                 mKEY(); 
 
                 }
                 break;
             case 163 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1222: CLICK_LEFT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1222: CLICK_LEFT
                 {
                 mCLICK_LEFT(); 
 
                 }
                 break;
             case 164 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1233: CLICK_MIDDLE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1233: CLICK_MIDDLE
                 {
                 mCLICK_MIDDLE(); 
 
                 }
                 break;
             case 165 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1246: CLICK_RIGHT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1246: CLICK_RIGHT
                 {
                 mCLICK_RIGHT(); 
 
                 }
                 break;
             case 166 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1258: SCROLL_UP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1258: SCROLL_UP
                 {
                 mSCROLL_UP(); 
 
                 }
                 break;
             case 167 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1268: SCROLL_DOWN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1268: SCROLL_DOWN
                 {
                 mSCROLL_DOWN(); 
 
                 }
                 break;
             case 168 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1280: COMMAND_KW
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1280: COMMAND_KW
                 {
                 mCOMMAND_KW(); 
 
                 }
                 break;
             case 169 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1291: JUMP
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1291: JUMP
                 {
                 mJUMP(); 
 
                 }
                 break;
             case 170 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1296: MOVE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1296: MOVE
                 {
                 mMOVE(); 
 
                 }
                 break;
             case 171 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1301: FORWARD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1301: FORWARD
                 {
                 mFORWARD(); 
 
                 }
                 break;
             case 172 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1309: BACKWARD
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1309: BACKWARD
                 {
                 mBACKWARD(); 
 
                 }
                 break;
             case 173 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1318: TURN
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1318: TURN
                 {
                 mTURN(); 
 
                 }
                 break;
             case 174 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1323: ACCELERATE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1323: ACCELERATE
                 {
                 mACCELERATE(); 
 
                 }
                 break;
             case 175 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1334: BRAKE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1334: BRAKE
                 {
                 mBRAKE(); 
 
                 }
                 break;
             case 176 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1340: CAMERA
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1340: CAMERA
                 {
                 mCAMERA(); 
 
                 }
                 break;
             case 177 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1347: MEDIA
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1347: MEDIA
                 {
                 mMEDIA(); 
 
                 }
                 break;
             case 178 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1353: TIME
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1353: TIME
                 {
                 mTIME(); 
 
                 }
                 break;
             case 179 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1358: VALUE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1358: VALUE
                 {
                 mVALUE(); 
 
                 }
                 break;
             case 180 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1364: BOOST_INTERVAL
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1364: BOOST_INTERVAL
                 {
                 mBOOST_INTERVAL(); 
 
                 }
                 break;
             case 181 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1379: SHOOT_INTERVAL
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1379: SHOOT_INTERVAL
                 {
                 mSHOOT_INTERVAL(); 
 
                 }
                 break;
             case 182 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1394: RELOAD_TIME
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1394: RELOAD_TIME
                 {
                 mRELOAD_TIME(); 
 
                 }
                 break;
             case 183 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1406: INVENTORY
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1406: INVENTORY
                 {
                 mINVENTORY(); 
 
                 }
                 break;
             case 184 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1416: EQUIPED_OBJECT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1416: EQUIPED_OBJECT
                 {
                 mEQUIPED_OBJECT(); 
 
                 }
                 break;
             case 185 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1431: ENTRANCES
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1431: ENTRANCES
                 {
                 mENTRANCES(); 
 
                 }
                 break;
             case 186 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1441: EXITS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1441: EXITS
                 {
                 mEXITS(); 
 
                 }
                 break;
             case 187 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1447: DAMAGE_ZONE
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1447: DAMAGE_ZONE
                 {
                 mDAMAGE_ZONE(); 
 
                 }
                 break;
             case 188 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1459: COLLECTORS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1459: COLLECTORS
                 {
                 mCOLLECTORS(); 
 
                 }
                 break;
             case 189 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1470: TYPES_COLLECTORS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1470: TYPES_COLLECTORS
                 {
                 mTYPES_COLLECTORS(); 
 
                 }
                 break;
             case 190 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1487: GENERATORS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1487: GENERATORS
                 {
                 mGENERATORS(); 
 
                 }
                 break;
             case 191 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1498: TYPE_GENERATORS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1498: TYPE_GENERATORS
                 {
                 mTYPE_GENERATORS(); 
 
                 }
                 break;
             case 192 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1514: BREAKERS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1514: BREAKERS
                 {
                 mBREAKERS(); 
 
                 }
                 break;
             case 193 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1523: TYPES_BREAKERS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1523: TYPES_BREAKERS
                 {
                 mTYPES_BREAKERS(); 
 
                 }
                 break;
             case 194 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1538: TELEPORTABLES
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1538: TELEPORTABLES
                 {
                 mTELEPORTABLES(); 
 
                 }
                 break;
             case 195 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1552: TYPES_TELEPORTABLES
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1552: TYPES_TELEPORTABLES
                 {
                 mTYPES_TELEPORTABLES(); 
 
                 }
                 break;
             case 196 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1572: LETTER
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1572: LETTER
                 {
                 mLETTER(); 
 
                 }
                 break;
             case 197 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1579: FLOAT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1579: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
             case 198 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1585: IDENT
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1585: IDENT
                 {
                 mIDENT(); 
 
                 }
                 break;
             case 199 :
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1591: WS
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:1:1591: WS
                 {
                 mWS(); 
 

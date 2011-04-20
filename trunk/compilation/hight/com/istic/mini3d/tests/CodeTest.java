@@ -290,10 +290,10 @@ public class CodeTest extends TestCase {
 		assertNotSame(c42.getCode(), c43.getCode());
 	}
 	
-	public void testGenRefreshLoop(){
+	/*public void testGenRefreshLoop(){
 		c41 = Code.genRefreshLoop();
 		assertNotSame(c41.getCode(),null);
-	}
+	}*/
 	
 	public void testGenSetTimeout(){
 		

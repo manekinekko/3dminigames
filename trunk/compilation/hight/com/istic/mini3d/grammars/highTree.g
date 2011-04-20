@@ -47,8 +47,8 @@ options {
 game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
     ^(GAME_KW 
-    {c.append(Code.genRefreshLoop());}
     gd=gameData[st]?
+    {}
     newType[st]*
     in=initialization[st]
     {
@@ -64,7 +64,9 @@ game [SymbolTable st] returns [Code c]
     }
     )*
 
-    com=commande[st]+ reg=reglesJeu[st]+ ia=iaBasique[st]*)
+    com=commande[st]+
+    {c.append(com);}
+    reg=reglesJeu[st]+ ia=iaBasique[st]*)
     ;
 	
 
@@ -196,7 +198,21 @@ init [SymbolTable st] returns [Code c]:
 		Pair<String,AttributeValue> p = ite.next();
 		String attributeValue = p.getFirst();
                 if(p.getSecond().getType()==AttributeValue.Type.AGGR){
-		    aggreg.put(attributeValue,s.getName());
+                    boolean pl = false;
+                    Entity s2 = (Entity)s;
+                    List<Model> am = s2.listModels();
+                    Iterator<Model> imod = am.iterator();
+                    while(imod.hasNext()){
+                        Model mod = imod.next();
+                        if(mod.getName().equals("Player")){
+                            Entity e1 = (Entity)st.get(attributeValue);
+                            e1.setPlayerName(s.getName());
+                            pl = true;
+                            break;
+                        }
+                    }
+                    if(!pl)
+                        aggreg.put(attributeValue,s.getName());
                 }else{
 		    AttributeValue attr = s.getAttribute(attributeValue);
                     if(attr != null && attr.getType() != p.getSecond().getType()) {
@@ -489,14 +505,14 @@ coordinates [SymbolTable st] returns [Coordonnees coo]:
 /* Initialization of commands */
 //gérer le disable commande
 
-commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
+commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code();} :
     ^(COMMAND_KW listplay=player_list[st] listCommand=actionCommande_list[st])
     {boolean present = false;
      Code [] tab = new Code[4];
      ArrayList <Control> list_event = new ArrayList<Control>();
      ArrayList <Control> list_save = new ArrayList<Control>();
      Iterator<Control> it = listCommand.iterator();
-	while(it.hasNext()) {
+     while(it.hasNext()) {
 	    Control ctr = it.next();
             if(ctr.getName().equals("3_UP")|ctr.getName().equals("3_DOWN") | ctr.getName().equals("3_LEFT") | ctr.getName().equals("3_RIGHT"))
                 list_save.add(ctr);
@@ -505,17 +521,55 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
        }
 
        if(!list_event.isEmpty()){
+            System.out.println("Event");
             present = true;
-            Iterator<Control> ic = list_event.iterator();
-            System.out.println("souris + clavier");
-            while(ic.hasNext()){
-                Control ctr = ic.next();
-                System.out.println(ctr.getName());
+            Iterator<Control> ei = list_event.iterator();
+            while(ei.hasNext()){
+                Control ctrl = ei.next();
+                Definition def = ctrl.getDefinition();
+                Code v = new Code(def.getName()+"(");
+                if(!def.getSignature().isEmpty()){
+                  Iterator<Model> im = def.getSignature().iterator();
+                  while(im.hasNext()){
+                    Model m = im.next();
+                    System.out.println(m.getName());
+                    Code l = new Code();
+                    Enumeration enu = aggreg.keys();
+
+                    while(enu.hasMoreElements()){
+                        String e = (String)enu.nextElement();
+                        String q = aggreg.get(e);
+
+                        Entity fi = (Entity)st.get(e);
+                        Entity et = (Entity)st.get(q);
+
+                        if(et != null&&fi!= null){
+                            String a = aggreg.get(q);
+                            if(a!=null){
+                                Entity et1 = (Entity)st.get(a);
+                                System.out.println(et1.getPlayerName()+listplay.get(0).getName());
+                                }
+                            if(fi.listModels().contains(m) && ((et.getName().equals(listplay.get(0).getName()))||(et.getPlayerName().equals(listplay.get(0).getName())))){
+                                l.append(e);
+                                break;
+                            }
+                        }
+                   }
+                    if(l.getCode().equals("")){
+                        System.out.println("pas d'alternatives");
+                        System.exit(-1);
+                    }else
+                        v.append(l);
+
+                  }
                 }
+                v.append(");");
+                System.out.println(v.getCode());
+            }
        }
        if(!list_save.isEmpty()){
 
-           /* System.out.println("Position");
+           System.out.println("Position");
             Iterator<Control> ei = list_save.iterator();
             while(ei.hasNext()){
                 Control ctrl = ei.next();
@@ -532,21 +586,21 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
                     while(enu.hasMoreElements()){
                         String e = (String)enu.nextElement();
                         String q = aggreg.get(e);
-                        System.out.println("Mouhahahah"+e);
 
-                        if(st.get(e).getType() == Symbol.Type.ENTITY){
                         Entity fi = (Entity)st.get(e);
-                        System.out.println(e);
                         Entity et = (Entity)st.get(q);
-                        if(et == null){
-                            System.out.println("LOL ?"+e);
-                            System.exit(-1);
+
+                        if(et != null&&fi!= null){
+                            String a = aggreg.get(q);
+                            if(a!=null){
+                                Entity et1 = (Entity)st.get(a);
+                                System.out.println(et1.getPlayerName()+listplay.get(0).getName());
+                                }
+                            if(fi.listModels().contains(m) && ((et.getName().equals(listplay.get(0).getName()))||(et.getPlayerName().equals(listplay.get(0).getName())))){
+                                l.append(e);
+                                break;
+                            }
                         }
-                        if(fi.listModels().contains(m) && aggreg.get(e).equals(listplay.get(0).getName())){
-                            l.append(e);
-                            break;
-                        }
-                    }
                    }
                     if(l.getCode().equals("")){
                         System.out.println("pas d'alternatives");
@@ -557,11 +611,15 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;} :
                   }
                 }
                 v.append(");");
+                if(ctrl.getName().equals("3_UP")){tab[0] = v;}
+                else if(ctrl.getName().equals("3_DOWN")){tab[1] = v;}
+                else if(ctrl.getName().equals("3_LEFT")){tab[2] = v;}
+                else{tab[3] = v;}
                 System.out.println(v.getCode());
-            }*/
+            }
        }
-
-    }
+       c.append(Code.genRefreshLoop(tab));
+       }
     ;
 
 player_list [SymbolTable st] returns [ArrayList<Symbol> list] @init{list = new ArrayList<Symbol>();}:
@@ -635,7 +693,7 @@ souris [SymbolTable st] returns [String c]:
     ;
  
 clavier [SymbolTable st] returns [String l]:
-    i=LETTER {l = i.getText();l=l.toLowerCase();}| WUP{l="38";} | WDOWN{l="40";} | LEFT{l="37";} | RIGHT{l="39";} | SPACE{l="32";} | ESCAPE{l="27";} | ENTER{l="13";}          //CHAR : Z,Q,S,D,...
+    i=LETTER {l = i.getText();l=l.toLowerCase();l=String.valueOf(new Character(l.charAt(0)).hashCode());}| WUP{l="38";} | WDOWN{l="40";} | LEFT{l="37";} | RIGHT{l="39";} | SPACE{l="32";} | ESCAPE{l="27";} | ENTER{l="13";}          //CHAR : Z,Q,S,D,...
     ;
   
 activCommande [SymbolTable st] returns [Code c]:

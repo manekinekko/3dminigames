@@ -586,8 +586,15 @@ public class Code {
     //////////////////////////////////////////////////////////////////////
     ///////////////////////Boucle de rafraichissement/////////////////////
     //////////////////////////////////////////////////////////////////////
-    public static Code genRefreshLoop() {
+    public static Code genRefreshLoop(Code [] tab) {
+        boolean com = false;
         Code c = new Code();
+        for(int v = 0; v < tab.length;v++){
+            if(tab[v]!=null){
+                com = true;
+                break;
+            }
+        }
         /* ************* Bool Array -> command ************************* */
 
         c.append("/* Array of commands */\n");
@@ -597,11 +604,18 @@ public class Code {
 
         c.append("var refresh;\n\n");
 
-        /* ************* Paused variable ************************* */
+        /* ************* Paused & positions variables ************************* */
 
-        c.append("/* The game is paused(or not) */\n");
-        c.append("var paused = false;\n\n");
-
+        c.append("/* The game is paused(or not");
+        if(com)
+            c.append("and current position of mouse");
+        c.append("*/\n");
+        c.append("var paused = false;\n");
+        if(com){
+            c.append("var soux;\n");
+            c.append("var souy;\n");
+        }
+        c.append("\n");
         /* ************* Main function and refresh loop call ****************************** */
 
         c.append("/* Main function */\n");

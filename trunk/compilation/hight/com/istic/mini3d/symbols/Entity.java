@@ -14,6 +14,7 @@ public class Entity implements Symbol {
     /*private*/ public Map<String, AttributeValue> attributes;
     private boolean duplicable = false;
     private int generate = 0;
+    private String playerName ="";
 
     public Entity(String name, Model... m) {
         this.name = name;
@@ -93,5 +94,13 @@ public class Entity implements Symbol {
 
     public Type getType() {
 	return Type.ENTITY;
+    }
+
+    public void setPlayerName(String s){
+        playerName = s;
+    }
+
+    public String getPlayerName(){
+        return playerName;
     }
 }

@@ -60,6 +60,7 @@
 			parent = parent.parent;
 		}
 		M3D.MOTEUR.corrigeCamBug([idCamera]);
+		M3D.MOTEUR.resetChildren(M3D.MOTEUR.getCamera(idCamera));
 	},
 
 /**
@@ -73,6 +74,7 @@
 			var cam = M3D.MOTEUR.getCamera(idCamera);
 			delete tabCamera[idCamera];
 			cam.parent.removeChild(cam);
+			M3D.MOTEUR.resetchildren(cam);
 		}
 		return bool;
 	},

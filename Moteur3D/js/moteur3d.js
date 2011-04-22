@@ -84,7 +84,8 @@ var coefFrottement = 1;
 			// initialisation des tableaux
 			gameScene.id = "mainscene";
 			tabObject["mainscene"] = gameScene;
-			//tabCamera["maincamera"] = gameScene.getCamera();		
+			tabCamera["maincamera"] = gameScene.getCamera();
+			tabCamera["maincamera"].id = "maincamera";
         } 
 		doc.load(xmlDoc);
 	},

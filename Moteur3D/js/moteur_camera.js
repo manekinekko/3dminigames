@@ -33,14 +33,14 @@
 // CA MARCHE PAS AVEC DES PARENTS
 /**
  * Méthode addCamera: Ajoute une caméra dans la scène.
- * @param: idObject: identifiant de la caméra à ajouter.
- *         tabCoord: tableau de taille 6, avec les coord positions et rotations de la caméra par rapport à son éventuel père !
+ * @param: gCamera: caméra de la grammaire (avec l'attribut id comme identfiant et posX posY posZ orX orY orZ comme attributs de positions et orientations)
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache la caméra sinon elle est rattaché à la scène.
  */
-	M3D.MOTEUR.addCamera = function(idCamera, tabCoord, idParent){
+	M3D.MOTEUR.addCamera = function(gCamera, idParent){
+		var idCamera = gCamera.id;
 		var cam = new GLGE.Camera();
-		var transMat = GLGE.inverseMat4(GLGE.translateMatrix(tabCoord[0], tabCoord[1], tabCoord[2]));
-		var rotMat = GLGE.rotateMatrix(tabCoord[3], tabCoord[4], tabCoord[5]);
+		var transMat = GLGE.inverseMat4(GLGE.translateMatrix(gCamera.posX, gCamera.posY, gCamera.posZ));
+		var rotMat = GLGE.rotateMatrix(gCamera.orX, gCamera.orY, gCamera.orZ);
 		var localMatrix = GLGE.mulMat4(transMat,rotMat);
 		cam.setType(GLGE.C_PERSPECTIVE);
 		cam.setFovY(35);
@@ -63,39 +63,54 @@
 	},
 
 /**
- * Méthode removeCamera: supprime une caméra de la scène.
- * @param: idObject: identifiant de la caméra à supprimer.
+ * Méthode removeCamera: supprime une caméra de la scène si elle n'est pas active.
+ * @param: idCamera: identifiant de la caméra à supprimer.
+ * @return: true si la caméra a été supprimée, false sinon
  */
 	M3D.MOTEUR.removeCamera = function(idCamera){
-		var cam = M3D.MOTEUR.getCamera(idCamera);
-		delete tabCamera[idCamera];
-		cam.parent.removeChild(cam);
+		var bool = (gameScene.getCamera().id != idCamera);
+		if(bool){
+			var cam = M3D.MOTEUR.getCamera(idCamera);
+			delete tabCamera[idCamera];
+			cam.parent.removeChild(cam);
+		}
+		return bool;
 	},
 
-
-	M3D.MOTEUR.translateCamera = function(idCamera,tabVector,idRef){
+	// idem Translate pour une caméra
+	M3D.MOTEUR.translateCamera = function(gCamera,tabVector,idRef){
 		if(idRef==undefined){
-			M3D.MOTEUR.translate(idCamera,tabVector,false);
+			M3D.MOTEUR.translate(gCamera,tabVector,false);
 		}else{
-			M3D.MOTEUR.translate(idCamera,tabVector,false,idRef);
+			M3D.MOTEUR.translate(gCamera,tabVector,false,idRef);
 		}
 	},
 
-	
-	M3D.MOTEUR.setPositionCamera = function(idCamera,tabPos,idRef){
-		M3D.MOTEUR.setPosition(idCamera,tabPos,false,idRef);
+	// idem setPosition pour une caméra
+	M3D.MOTEUR.setPositionCamera = function(gCamera,tabPos,idRef){
+		if(idRef==undefined){
+			M3D.MOTEUR.setPosition(gCamera,tabPos,false);
+		}else{
+			M3D.MOTEUR.setPosition(gCamera,tabPos,false,idRef);
+		}
 	}, 
 
-	M3D.MOTEUR.rotateCamera = function(idCamera,tabRot,idRef){
+	// idem rotate pour une caméra
+	M3D.MOTEUR.rotateCamera = function(gCamera,tabRot,idRef){
 		if(idRef==undefined){
-			M3D.MOTEUR.rotate(idCamera,[-tabRot[0],-tabRot[1],-tabRot[2]],false);
+			M3D.MOTEUR.rotate(gCamera,tabRot,false);
 		}else{
-			M3D.MOTEUR.rotate(idCamera,tabRot,false,idRef);
+			M3D.MOTEUR.rotate(gCamera,tabRot,false,idRef);
 		}
 	},
 	
-	M3D.MOTEUR.setAngleCamera = function(idCamera,tabRot,idRef){
-		M3D.MOTEUR.rotate(idCamera,tabRot,false,idRef);
+	// idem setAngle pour une caméra
+	M3D.MOTEUR.setAngleCamera = function(gCamera,tabRot,idRef){
+		if(idRef==undefined){
+			M3D.MOTEUR.setAngle(gCamera,tabRot,false);
+		}else{
+			M3D.MOTEUR.setAngle(gCamera,tabRot,false,idRef);
+		}
 	};
 
 })(window.M3D);

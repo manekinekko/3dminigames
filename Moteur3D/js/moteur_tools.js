@@ -337,6 +337,22 @@
 		return M3D.MOTEUR.getRotFromMatrix(modMat);
 	},
 	
+	////////////// RECUPERATION DES DONNES GLOBALES D'UN OBJET
+	
+	// retourne la position de l'élément d'identifiant idObject
+	M3D.MOTEUR.getGlobalPosition = function(idObject){
+		return M3D.MOTEUR.getAbsolutePos(M3D.MOTEUR.getObjectOrCamera(idObject));
+	},
+	
+	//retourne lorientation de lélément d'identifiant idObject
+	M3D.MOTEUR.getGlobalOrientation = function(idObject){
+		return M3D.MOTEUR.getAbsoluteAngle(M3D.MOTEUR.getObjectOrCamera(idObject));
+	},
+	
+	// retourne l'échelle de l'élément d'identifiant idObject
+	M3D.MOTEUR.getGlobalScale = function(idObject){
+		return M3D.MOTEUR.getAbsoluteScale(M3D.MOTEUR.getObjectOrCamera(idObject));
+	},
 	////////////// MISE A JOUR DES DONNEES LOCALES DES OBJETS DE LA GRAMMAIRE
 	
 /**
@@ -403,14 +419,22 @@
 	},
 	
 	
-	// ecart entre deux box, l'inférieur de la 1 et le supérieur de la 2 selon la dimension dim 0 pour x 1 pour y et 2 pour z.
+	// ecart entre deux box, l'inférieur de la 1 et le supérieur de la 2 selon la dimension dim 1 pour x, 2 pour y, 3 pour z et négatif pour inverser le sens des 2 objets.
 	M3D.MOTEUR.ecart = function(idObject1,idObject2,dimension){
-		var obj1 = M3D.MOTEUR.getObject(idObject1);
-		var obj2 = M3D.MOTEUR.getObject(idObject2);
-		var box1 = obj1.getBoundingVolume(false);
-		var box2 = obj2.getBoundingVolume(false);
-		return (box1.limits[2*dimension] - box2.limits[2*dimension+1]);
-
+		if(dimension==0 || Math.abs(dimension) > 3){
+			alert('error in M3D.MOTEUR.ecart : dimension = 0');
+			return;
+		}
+		if(dimension<0){
+			return M3D.MOTEUR.ecart(idObject2,idObject1,-dim);
+		}else{
+			var d = dimension-1;
+			var obj1 = M3D.MOTEUR.getObject(idObject1);
+			var obj2 = M3D.MOTEUR.getObject(idObject2);
+			var box1 = obj1.getBoundingVolume(false);
+			var box2 = obj2.getBoundingVolume(false);
+			return (box1.limits[2*d] - box2.limits[2*d+1]);
+		}
 	};
  
 })(window.M3D);

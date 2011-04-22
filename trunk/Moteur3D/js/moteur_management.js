@@ -9,14 +9,27 @@
 
 (function(M3D){
  
-/**
- * Méthode addObject: Ajoute un objet dans la scène.
+ 
+ /** Méthode addObject: Ajoute un objet ou un groupe à la scène (selon si l'url est vide ou non)
  * @param: gObject: object de la grammaire à ajouter
- *         tabCoord: tableau de taille 9, avec les coord positions, rotations et taille de l'objet par rapport à son éventuel père !
  *		   testCollision: test des collisions activé ou désactivé
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
  */
 	M3D.MOTEUR.addObject = function(gObject, testCollision, idParent){
+		if(!gObject.url){
+			M3D.MOTEUR.addGroup(gObject,idParent);
+		}else{
+			M3D.MOTEUR.addCollada(gObject, testCollision, idParent);
+		}
+	}
+ 
+/**
+ * Méthode addCollada: Ajoute un objet dans la scène.
+ * @param: gObject: object de la grammaire à ajouter
+ *		   testCollision: test des collisions activé ou désactivé
+ *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
+ */
+	M3D.MOTEUR.addCollada = function(gObject, testCollision, idParent){
 		var idObject = gObject.id;
 		var urlObject = gObject.url
 		var group = new GLGE.Group();
@@ -59,17 +72,16 @@
 	
 /**
  * Méthode addGroup: Ajoute un groupe dans la scène.
- * @param: idObject: identifiant du groupe à ajouter.
- *         tabCoord: tableau de taille 9, avec les coord positions, rotations et taille du groupe par rapport à son éventuel père !
+ * @param: gGroup: objet de la grammaire mais sans url
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache le groupe sinon il est rattaché à la scène.
  */
-	M3D.MOTEUR.addGroup = function(idGroup, tabCoord, idParent){
+	M3D.MOTEUR.addGroup = function(gGroup, idParent){
 		var group = new GLGE.Group();
 		group.id = idGroup;
 		group.childCam = [];
-		var transMat = GLGE.translateMatrix(tabCoord[0], tabCoord[1], tabCoord[2]);
-		var rotMat = GLGE.rotateMatrix(tabCoord[3], tabCoord[4], tabCoord[5]);
-		var scaleMat = GLGE.scaleMatrix(tabCoord[6], tabCoord[7], tabCoord[8]);
+		var transMat = GLGE.translateMatrix(gGroup.posX,gGroup.posY,gGroup.posZ);
+		var rotMat = GLGE.rotateMatrix(gGroup.orX,gGroup.orY,gGroup.orZ);
+		var scaleMat = GLGE.scaleMatrix(gGroup.sizeX,gGroup.sizeY,gGroup.sizeZ);
 		var localMatrix = GLGE.mulMat4(transMat,GLGE.mulMat4(rotMat,scaleMat));
 		group.setStaticMatrix(localMatrix);
 		if(idParent == null){

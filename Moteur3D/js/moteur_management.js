@@ -17,9 +17,12 @@
  */
 	M3D.MOTEUR.addObject = function(gObject, testCollision, idParent){
 		if(!gObject.url){
-			M3D.MOTEUR.addGroup(gObject,idParent);
+			var tab = M3D.MOTEUR.addGroup(gObject,idParent);
 		}else{
-			M3D.MOTEUR.addCollada(gObject, testCollision, idParent);
+			var tab = M3D.MOTEUR.addCollada(gObject, testCollision, idParent);
+		}
+		if(tab.length==0){
+			M3D.MOTEUR.resetChildren(M3D.MOTEUR.getObject(gObject.id));
 		}
 	}
  
@@ -91,6 +94,7 @@
 		}
 		parent.addChild(group);
 		tabObject[idGroup] = group;
+		return [];
 	},
 
 /**
@@ -111,6 +115,7 @@
 			delete tabCamera[allChild[2][i]];
 		}
 		object.parent.removeChild(object);
+		M3D.MOTEUR.resetChildren(object);
 	},
 
 /**
@@ -121,6 +126,7 @@
 	M3D.MOTEUR.changeParent = function(gObject,idNewParent){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
+		M3D.MOTEUR.resetChildren(object);
 		var modelMatrix = object.getModelMatrix();
 		if(idNewParent == null){
 			var newParent = gameScene;
@@ -136,6 +142,7 @@
 		M3D.MOTEUR.updatePosition(gObject);
 		M3D.MOTEUR.updateOrientation(gObject);
 		M3D.MOTEUR.updateScale(gObject);
+		M3D.MOTEUR.resetChildren(object);
 	};
 	
 })(window.M3D);

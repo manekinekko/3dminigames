@@ -60,23 +60,37 @@
 		
 	/////// FONCTIONS POUR LA GESTION DU GRAPHE 
 	
+/** Méthode resetChildren: remet à null les attributs moteurChildren et moteurAllChildren d'un objet et de ses ascendants
+ *@param: object: object dont réinitialiser les fils
+ */
+	M3D.MOTEUR.resetChildren = function(object){
+		object.moteurChildren = null;
+		object.moteurAllChildren = null;
+		if(object.parent){
+			M3D.MOTEUR.resetChildren(object.parent);
+		}
+	},
+	
 /**
 * Méthode getChildren: Retourne les enfants d'un objet ayant l'identifiant donné, triés selon leurs types.
 * @param: idObject: identifiant de l'objet dont on veut récupérer les fils.
 * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
 */
 	M3D.MOTEUR.getChildren = function(idObject){
-		return M3D.MOTEUR.getChildrenAux(idObject,[[],[],[],[]]);
+		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
+		if(!object.moteurChildren){
+			object.moteurChildren= M3D.MOTEUR.getChildrenAux(object,[[],[],[],[]]);
+		}
+		return object.moteurChildren;
 	},
 
 /**
 * Méthode getChildrenAux: Fonction auxiliaire de getChildren : prend en plus un tableau à 4 éléments en arguments pour y ajouter directement les fils.
-* @param: idObject: identifiant de l'objet dont on veut récupérer les fils.
+* @param: object: objet dont on veut récupérer les fils.
 *         list: tableau provisoire où ajouter les éléments.
 * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
 */	
-	M3D.MOTEUR.getChildrenAux = function(idObject,list){
-		var object = M3D.MOTEUR.getObject(idObject);
+	M3D.MOTEUR.getChildrenAux = function(object,list){
 		var child = object.getChildren();
 		for(var i = 0 ; i<child.length ; i++){
 			var s = child[i].id;
@@ -100,12 +114,17 @@
 * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
 */
 	M3D.MOTEUR.getAllChildren = function(idObject){
-		if(M3D.MOTEUR.getObject(idObject) instanceof GLGE.Collada){
-			var tab = [[],[idObject],[],[]];
-		}else{
-			var tab = M3D.MOTEUR.getAllChildrenAux([[idObject],[],[],[]],0);
+		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
+		if(!object.moteurAllChildren){
+			if(object instanceof GLGE.Collada){
+				object.moteurAllChildren = [[],[idObject],[],[]];
+			}else if(object instanceof GLGE.Camera){
+				object.moteurAllChildren = [[],[],[idObject],[]];
+			}else{
+				object.moteurAllChildren = M3D.MOTEUR.getAllChildrenAux([[idObject],[],[],[]],0);
+			}
 		}
-		return tab;
+		return object.moteurAllChildren;
 	},
 
 /**
@@ -117,7 +136,7 @@
 	M3D.MOTEUR.getAllChildrenAux = function(list,indice){
 		if(indice != list[0].length){
 			var idObject = list[0][indice];
-			list = M3D.MOTEUR.getChildrenAux(idObject,list);
+			var list = M3D.MOTEUR.getChildrenAux(M3D.MOTEUR.getObjectOrCamera(idObject),list);
 			return M3D.MOTEUR.getAllChildrenAux(list,indice+1);
 		}else{
 			return list;

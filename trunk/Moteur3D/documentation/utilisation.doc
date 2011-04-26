@@ -1,0 +1,356 @@
+{\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch13\stshfloch0\stshfhich0\stshfbi0\deflang1036\deflangfe2052{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f10\fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}{\f13\fnil\fcharset134\fprq2{\*\panose 02010600030101010101}SimSun{\*\falt ??\'a1\'a7??};}
+{\f36\fnil\fcharset134\fprq2{\*\panose 02010600030101010101}@SimSun;}{\f47\froman\fcharset238\fprq2 Times New Roman CE;}{\f48\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f50\froman\fcharset161\fprq2 Times New Roman Greek;}
+{\f51\froman\fcharset162\fprq2 Times New Roman Tur;}{\f52\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f53\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f54\froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\f55\froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f67\fmodern\fcharset238\fprq1 Courier New CE;}{\f68\fmodern\fcharset204\fprq1 Courier New Cyr;}{\f70\fmodern\fcharset161\fprq1 Courier New Greek;}
+{\f71\fmodern\fcharset162\fprq1 Courier New Tur;}{\f72\fbidi \fmodern\fcharset177\fprq1 Courier New (Hebrew);}{\f73\fbidi \fmodern\fcharset178\fprq1 Courier New (Arabic);}{\f74\fmodern\fcharset186\fprq1 Courier New Baltic;}
+{\f75\fmodern\fcharset163\fprq1 Courier New (Vietnamese);}{\f179\fnil\fcharset0\fprq2 SimSun Western{\*\falt ??\'a1\'a7??};}{\f409\fnil\fcharset0\fprq2 @SimSun Western;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;
+\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;
+\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs20\lang1036\langfe2052\kerning28\loch\f0\hich\af0\dbch\af13\cgrid\langnp1036\langfenp2052 \snext0 Normal;}{\*\cs10 \additive \ssemihidden Default Paragraph Font;}{\*
+\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\trcbpat1\trcfpat1\tscellwidthfts0\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv 
+\ql \li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20 \ltrch\fcs0 \fs20\lang1024\langfe1024\loch\f0\hich\af0\dbch\af13\cgrid\langnp1024\langfenp1024 \snext11 \ssemihidden Normal Table;}{\*\cs15 \additive 
+\rtlch\fcs1 \af0 \ltrch\fcs0 \sbasedon10 \styrsid933158 hps;}{\*\cs16 \additive \rtlch\fcs1 \af0 \ltrch\fcs0 \sbasedon10 \styrsid933158 hps atn;}}{\*\listtable{\list\listtemplateid1686793962\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid-1329197768\'01-;}{\levelnumbers;}\loch\af0\hich\af0\dbch\af13\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895299\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0
+{\leveltext\leveltemplateid67895301\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext
+\leveltemplateid67895297\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895299
+\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895301\'01\u-3929 ?;}{\levelnumbers;}
+\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895297\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040
+\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895299\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid67895301\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid2042585203}}
+{\*\listoverridetable{\listoverride\listid2042585203\listoverridecount0\ls1}}{\*\rsidtbl \rsid743807\rsid933158\rsid1185889\rsid2169604\rsid2644705\rsid2757779\rsid3296936\rsid3558942\rsid5115977\rsid5451861\rsid5453700\rsid7275526\rsid7561143\rsid8419443
+\rsid9245177\rsid9917063\rsid10494274\rsid10710729\rsid11300418\rsid11419877\rsid12926142\rsid13194948\rsid13632330\rsid13647125\rsid14557169\rsid15413761\rsid15418841\rsid15474205}{\*\generator Microsoft Word 10.0.2627;}{\info{\author 27004527}
+{\operator 27004527}{\creatim\yr2011\mo4\dy26\hr15\min50}{\revtim\yr2011\mo4\dy26\hr17\min21}{\version26}{\edmins70}{\nofpages4}{\nofwords1843}{\nofchars10142}{\*\company ISTIC}{\nofcharsws11962}{\vern16437}}
+\paperw11899\paperh16837\margl1797\margr1797\ltrsect \widowctrl\ftnbj\aenddoc\hyphhotz425\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\horzdoc\dghspace120\dgvspace120\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3
+\jcompress\viewkind1\viewscale100\nolnhtadjtbl\rsidroot7561143 \fet0{\*\docvar {ColorPos}{-1}}{\*\docvar {ColorSet}{-1}}{\*\docvar {StylePos}{-1}}{\*\docvar {StyleSet}{-1}}\ltrpar \sectd \ltrsect\pgnrestart\linex0\footery864\sectdefaultcl\sftnbj {\header 
+\ltrpar \pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\tqc\tx4320\tqr\tx8640\nooverflow\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1036\langfe2052\kerning28\loch\af0\hich\af0\dbch\af13\cgrid\langnp1036\langfenp2052 {
+\rtlch\fcs1 \af0 \ltrch\fcs0 \kerning0\insrsid933158 
+\par }}{\footer \ltrpar \pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\tqc\tx4320\tqr\tx8640\nooverflow\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs20\lang1036\langfe2052\kerning28\loch\af0\hich\af0\dbch\af13\cgrid\langnp1036\langfenp2052 {\rtlch\fcs1 \af0 \ltrch\fcs0 \kerning0\insrsid933158 
+\par }}{\*\pnseclvl1\pnucrm\pnqc\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl2\pnucltr\pnqc\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnqc\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnqc\pnstart1\pnindent720\pnhang 
+{\pntxta )}}{\*\pnseclvl5\pndec\pnqc\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnqc\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnqc\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}
+{\*\pnseclvl8\pnlcltr\pnqc\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnqc\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\qc \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 \rtlch\fcs1 
+\af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1036\langfe2052\kerning28\loch\af0\hich\af0\dbch\af13\cgrid\langnp1036\langfenp2052 {\rtlch\fcs1 \ab\af0\afs40 \ltrch\fcs0 \b\fs40\ul\cf6\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Manuel d
+\hich\f0 \rquote \loch\f0 utilisation de la partie MOTEUR 3D du projet 3DWIGS}{\rtlch\fcs1 \ab\af0\afs40 \ltrch\fcs0 \b\fs40\ul\cf6\insrsid933158 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7275526 {\rtlch\fcs1 \ab\af0\afs40 \ltrch\fcs0 \b\fs40\ul\cf6\insrsid7275526 
+\par }{\rtlch\fcs1 \ab\af0\afs40 \ltrch\fcs0 \b\fs40\ul\cf6\insrsid12926142 
+\par }{\rtlch\fcs1 \ab\af0\afs40 \ltrch\fcs0 \b\fs40\ul\cf6\insrsid12926142\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3296936 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid7561143\charrsid14556966 \hich\af0\dbch\af13\loch\f0 Introduction}{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 
+\b\fs36\ul\insrsid7561143 
+\par }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\ul\insrsid2169604\charrsid2169604 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid13194948 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 3DWIGS (3D Web Interactive Game Studio) est une plateforme de cr
+\'e9\loch\f0 ation}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0  de jeux vid\'e9\loch\f0 o}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+ pour le web utilisant la technologie WebG}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0 L (via la librairie GLGE r\'e9\loch\f0 \hich\f0 alis\'e9\loch\f0 e}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  par }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Paul Brunt(1)}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 ) }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 po\hich\af0\dbch\af13\loch\f0 ur son rendu graphique. Pour c}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 \hich\f0 e faire, il utilise un moteur 3D d\'e9\loch\f0 \hich\f0 velopp\'e9\loch\f0 \hich\f0  par une des \'e9\loch\f0 quipes du groupe 3DWIGS.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7561143 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7561143 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 Le moteur 3D}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 \hich\f0  n'est pas destin\'e9\loch\f0 \hich\f0  \'e0\loch\f0 \hich\f0  \'ea\loch\f0 \hich\f0 tre utilis\'e9\loch\f0 \hich\f0  directement par l'utilisateur du logiciel. Ses fonctions et m\'e9\loch\f0 \hich\f0 
+thodes sont implant\'e9\loch\f0 es dans une couc\hich\af0\dbch\af13\loch\f0 \hich\f0 he inf\'e9\loch\f0 rieure du logiciel et son}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 t}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  appel\'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 es}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+ via la compilation du langage de description.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid13194948 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Cependant, il est possible d}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0 e passer \'e0\loch\f0  travers afin d\hich\f0 \rquote \loch\f0 \hich\f0 am\'e9\loch\f0 liorer}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+ son propre jeu en appelant directeme}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0 nt les fonctions et m\'e9\loch\f0 thodes du moteur.}{\rtlch\fcs1 \ab\af0\afs24 \ltrch\fcs0 
+\b\fs24\ul\insrsid7561143\charrsid14556966 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7561143 {\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\ul\insrsid7561143 
+\par }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\ul\insrsid12926142\charrsid14556966 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3296936 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Pr\'e9\loch\f0 requis}{\rtlch\fcs1 
+\ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid7561143 
+\par }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\ul\insrsid2169604\charrsid2169604 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7561143 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Pour utiliser le\hich\af0\dbch\af13\loch\f0  moteur3D, il faut vous munir:
+
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid13194948 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 - D'un navigateur web supportant le HTML5 (}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid13194948 \hich\af0\dbch\af13\loch\f0 Mozilla Firefox-4, S}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 afari?, Chrome-10,}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 
+ Chromium,}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  IE9 ou des versions}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0  ult\'e9\loch\f0 rieures}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 )
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid13194948 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13194948 \hich\af0\dbch\af13\loch\f0 \hich\f0 - De votre \'e9\loch\f0 diteur favori}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  (ex: Notepad++)}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid7561143 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid12926142\charrsid14556966 
+\par }{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid7561143\charrsid14556966 \hich\af0\dbch\af13\loch\f0 Utilisation}{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid7561143 
+\par }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\ul\insrsid2169604\charrsid2169604 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Avant de commencer \'e0\loch\f0  utiliser les fonctions d
+\hich\af0\dbch\af13\loch\f0 u moteur, il faut indiquer le chemin d\hich\f0 \rquote \loch\f0 \hich\f0 acc\'e8\loch\f0 \hich\f0 s \'e0\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid14557169 \hich\af0\dbch\af13\loch\f0 celles-ci}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  afin de pouvoir les utiliser dans le fichier HTML. 
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 Pour cela, il est imp\'e9\loch\f0 ratif d\hich\f0 \rquote \loch\f0 \hich\f0 ins\'e9\loch\f0 rer la balise suivant}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid14557169 \hich\af0\dbch\af13\loch\f0 e}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  dans le code\~:
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 <script type="text/javascript" src="js/moteur3d.js"></script>
+\par 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0 (Attention \hich\af0\dbch\af13\loch\f0 au chemin d\hich\f0 \rquote 
+\loch\f0 \hich\f0 acc\'e8\loch\f0 s du fichier .JS, dans notre cas, le fichier HTML se situe dans le }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid14557169 \hich\af0\dbch\af13\loch\f0 \hich\f0 m\'ea\loch\f0 \hich\f0 me r\'e9\loch\f0 pertoire que le}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid7561143\charrsid7561143 \hich\af0\dbch\af13\loch\f0  moteur 3D)
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0 Il faut ensuite }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+appeler la fonction M3D.MOTEUR.initialisation(xmlDoc, canvas, initFunctionName) avec}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \~\hich\af0\dbch\af13\loch\f0 :
+\par {\listtext\pard\plain\ltrpar \rtlch\fcs1 \af0\afs20 \ltrch\fcs0 \fs20\kerning28\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 -\tab}}\pard \ltrpar\qj \fi-360\li720\ri0\nowidctlpar
+\jclisttab\tx720\nooverflow\faauto\ls1\rin0\lin720\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 xmlDoc}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \~\hich\af0\dbch\af13\loch\f0 :
+\hich\af0\dbch\af13\loch\f0  le lien vers un document XML\hich\af0\dbch\af13\loch\f0  contenant l\hich\f0 \rquote \loch\f0 initialisation d\loch\af0\dbch\af13\hich\f0 \rquote }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 \hich\f0 une sc\'e8\loch\f0 ne vide (}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0 exemple\~\hich\af0\dbch\af13\loch\f0 :\hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 level.xml \'e0\loch\f0  placer da}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0 ns le dossier js}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 )\hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 
+\par {\listtext\pard\plain\ltrpar \rtlch\fcs1 \af0\afs20 \ltrch\fcs0 \fs20\kerning28\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 -\tab}}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 canvas}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid11300418 \~\hich\af0\dbch\af13\loch\f0 :\hich\af0\dbch\af13\loch\f0 \hich\f0  le nom du canvas o\'f9\loch\f0  afficher\hich\af0\dbch\af13\loch\f0 \hich\f0  la sc\'e8\loch\f0 ne
+\par {\listtext\pard\plain\ltrpar \rtlch\fcs1 \af0\afs20 \ltrch\fcs0 \fs20\kerning28\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 -\tab}}\pard \ltrpar\qj \fi-360\li720\ri0\nowidctlpar
+\jclisttab\tx720\nooverflow\faauto\ls1\rin0\lin720\itap0\pararsid12926142 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 initFunctionName}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \~
+\hich\af0\dbch\af13\loch\f0 :}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  le nom de la fonction qui}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0  place initialement les objets\~
+\hich\af0\dbch\af13\loch\f0 ;}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  le corps de la fonction}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0  initFunctionName}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  peut \'ea\loch\f0 tr}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11300418 \hich\af0\dbch\af13\loch\f0 e vide en cas d\hich\f0 \rquote \loch\f0 initialisation d
+\loch\af0\dbch\af13\hich\f0 \rquote }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 une sc\'e8\loch\f0 ne vide.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 La partie moteur3d u\hich\af0\dbch\af13\loch\f0 \hich\f0 
+tilise la notion de graphe de sc\'e8\loch\f0 ne.}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 \hich\af0\dbch\af13\loch\f0  En effet\hich\af0\dbch\af13\loch\f0  l}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+\hich\f0 a sc\'e8\loch\f0 \hich\f0 ne et les objets sont des \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ments qui peuvent avoir des fils (objet, cam\'e9\loch\f0 \hich\f0 ra, lumi\'e8\loch\f0 re). Lorsqu\hich\f0 \rquote \loch\f0 \hich\f0 
+une transformation est appliqu\'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 \hich\af0\dbch\af13\loch\f0 e}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  \'e0\loch\f0 \hich\f0  un \'e9\loch\f0 
+\hich\f0 l\'e9\loch\f0 \hich\f0 ment, elle est \'e9\loch\f0 \hich\f0 galement appliqu\'e9\loch\f0 \hich\f0 e \'e0\loch\f0 \hich\f0  tous ses descendants. Il est \'e9\loch\f0 galement po\hich\af0\dbch\af13\loch\f0 \hich\f0 ssible de cr\'e9\loch\f0 
+\hich\f0 er des groupes qui ne repr\'e9\loch\f0 sentent}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 \hich\af0\dbch\af13\loch\f0  rien au niveau physique (\hich\af0\dbch\af13\loch\f0 tel\hich\af0\dbch\af13\loch\f0  un objet sans collada}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 ) mais qui permet de lier le comportement de diff\'e9\loch\f0 rents objets.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 Dans la sc\'e8\loch\f0 ne, l\hich\f0 \rquote \loch\f0 \hich\f0 axe X est dirig\'e9\loch\f0  vers la droite, l\hich\f0 \rquote \loch\f0 axe Y vers le haut et l\hich\f0 \rquote \loch\f0 axe Z vers
+\hich\af0\dbch\af13\loch\f0  l\hich\f0 \rquote \loch\f0 avant.
+\par 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid12926142 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Les rotations sont fait}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 
+\hich\af0\dbch\af13\loch\f0 e}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 s dans des rep\'e8\loch\f0 res mobiles.}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid12926142\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+La partie moteur3d manipule directement les objets de la grammaire. Ceux-ci ont donc les attributs suivants : 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 - url : lien vers le mod\'e8\loch\f0 le de l\hich\f0 \rquote 
+\loch\f0 objet
+\par \hich\af0\dbch\af13\loch\f0 - id : identifiant de l\hich\f0 \rquote \loch\f0 \hich\f0 objet dans la sc\'e8\loch\f0 ne\hich\af0\dbch\af13\loch\f0 \hich\f0  (doit \'ea\loch\f0 tre unique)
+\par \hich\af0\dbch\af13\loch\f0 - posX posY posZ : position de l\hich\f0 \rquote \loch\f0 \hich\f0 objet dans le rep\'e8\loch\f0 \hich\f0 re du p\'e8\loch\f0 re
+\par \hich\af0\dbch\af13\loch\f0 - rotX rotY rotZ : rotation de l\hich\f0 \rquote \loch\f0 \hich\f0 objet dans le rep\'e8\loch\f0 \hich\f0 re du p\'e8\loch\f0 re
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 - sizeX sizeY sizeZ : \'e9\loch\f0 chelle de l\hich\f0 \rquote \loch\f0 \hich\f0 objet dans le rep\'e8\loch\f0 \hich\f0 re du p\'e8\loch\f0 re
+\par \hich\af0\dbch\af13\loch\f0 - vitess}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 \hich\af0\dbch\af13\loch\f0 \hich\f0 e : tableau \'e0\loch\f0 \hich\f0  3 composants d\'e9\loch\f0 crivant}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0  la vite\hich\af0\dbch\af13\loch\f0 \hich\f0 sse dans le rep\'e8\loch\f0 \hich\f0 re du p\'e8\loch\f0 re
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 - acc\'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ration}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11419877 \hich\af0\dbch\af13\loch\f0 \hich\f0  : tableau \'e0\loch\f0 \hich\f0  3 composantes d\'e9\loch\f0 crivant}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  l\hich\f0 \rquote \loch\f0 \hich\f0 acc\'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ration dans le rep\'e8\loch\f0 \hich\f0 re du p\'e8\loch\f0 re
+\par \hich\af0\dbch\af13\loch\f0 - masse : masse de l\hich\f0 \rquote \loch\f0 objet (pour l\hich\f0 \rquote \loch\f0 \hich\f0 application de la gravit\'e9\loch\f0 )
+\par 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid11419877 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Les \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 
+ments seront donc manipul\'e9\loch\f0 \hich\f0 s via leur identifiant : par d\'e9\loch\f0 faut, l\hich\f0 \rquote \loch\f0 identifia\hich\af0\dbch\af13\loch\f0 \hich\f0 nt de la sc\'e8\loch\f0 ne est : \hich\f0 \lquote \loch\f0 mainscene\hich\f0 \rquote 
+\loch\f0 .
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15418841\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Manipulation des \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 
+ments de la sc\'e8\loch\f0 ne
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Les fonctions suivantes permettent de manipuler les diff\'e9\loch\f0 
+\hich\f0 rents \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ments d\hich\f0 \rquote \loch\f0 \hich\f0 une sc\'e8\loch\f0 ne.
+\par 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.addObjet(gObject,testCollision,idParent) permet d\hich\f0 \rquote 
+\loch\f0 \hich\f0 ajouter un objet \'e0\loch\f0 \hich\f0  la sc\'e8\loch\f0 ne, dont \hich\af0\dbch\af13\loch\f0 \hich\f0 le p\'e8\loch\f0 re est l\hich\f0 \rquote \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ment d\hich\f0 \rquote \loch\f0 
+identifiant idParent. Si ce dernier est nul, l\hich\f0 \rquote \loch\f0 \hich\f0 objet est attach\'e9\loch\f0 \hich\f0  directement \'e0\loch\f0 \hich\f0  la sc\'e8\loch\f0 \hich\f0 ne. Le mod\'e8\loch\f0 l}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15474205 
+\hich\af0\dbch\af13\loch\f0 e de l\hich\f0 \rquote \loch\f0 objet est gObject.url (s\loch\af0\dbch\af13\hich\f0 \rquote }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 il est ind\'e9\loch\f0 \hich\f0 
+fini, un groupe est ajout\'e9\loch\f0 \hich\f0  \'e0\loch\f0 \hich\f0  la sc\'e8\loch\f0 \hich\f0 ne), il est positionn\'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15474205 \hich\af0\dbch\af13\loch\f0  \hich\af0\dbch\af13\loch\f0 relativement aux}{
+\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  \hich\af0\dbch\af13\loch\f0 attributs de posi\hich\af0\dbch\af13\loch\f0 \hich\f0 tion/rotation/\'e9\loch\f0 \hich\f0 chelle par rapport au p\'e8\loch\f0 \hich\f0 
+re. Le bool\'e9\loch\f0 en testCollision permet d\hich\f0 \rquote \loch\f0 \hich\f0 activer (si testCollision vaut true) ou non la d\'e9\loch\f0 tection de collision lors du placement de l\hich\f0 \rquote \loch\f0 objet.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 La fonction retourne un tableau :
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 - vide : si testCollision est \'e0\loch\f0  faux ou qu\hich\f0 \rquote \loch\f0 au\hich\af0\dbch\af13\loch\f0 cune collision n\hich\f0 \rquote \loch\f0 \hich\f0 est d\'e9\loch\f0 \hich\f0 tect\'e9}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid15474205 \hich\af0\dbch\af13\loch\f0 e}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 - dont chaque \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 
+ment est un tableau \'e0\loch\f0 \hich\f0  2 \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ments dont le premier \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ment est l\hich\f0 \rquote \loch\f0 \hich\f0 objet ajout\'e9\loch\f0  et le second l\hich\f0 \rquote 
+\loch\f0 objet avec lequel il est en collision.
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 Si le tableau retourn\'e9\loch\f0  est vide, l\hich\f0 \rquote \loch\f0 \hich\f0 objet a bien \'e9\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  ajout\'e9\loch\f0 \hich\f0  \'e0\loch\f0 \hich\f0  la sc\'e8\loch\f0 ne, s
+\hich\f0 \rquote \loch\f0 il est \hich\af0\dbch\af13\loch\f0 non vide, l\hich\f0 \rquote \loch\f0 objet n\hich\f0 \rquote \loch\f0 \hich\f0 a pas \'e9\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  ajout\'e9\loch\f0 \hich\f0  \'e0\loch\f0 \hich\f0  la sc\'e8
+\loch\f0 ne. 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 
+M3D.MOTEUR.removeObjet(idObject) permet de supprimer un objet ou un groupe dans la sc\'e8\loch\f0 ne. L\hich\f0 \rquote \loch\f0 \hich\f0 argument idObject correspond \'e0\loch\f0  l\hich\f0 \rquote \loch\f0 identifiant de l\hich\f0 \rquote \'e9\loch\f0 
+\hich\f0 l\'e9\loch\f0 ment que l\hich\f0 \rquote \loch\f0 on souhaite supprimer. Attention, tous ses fils \hich\af0\dbch\af13\loch\f0 \hich\f0 seront \'e9\loch\f0 \hich\f0 galement supprim\'e9\loch\f0 s. Cette fonction ne renvoie rien.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid743807 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 M3D.MOTEUR.changeParent(gObject,idParent) permet de changer le p\'e8
+\loch\f0 re d\hich\f0 \rquote \loch\f0 \hich\f0 un objet dans la sc\'e8\loch\f0 ne. L\hich\f0 \rquote \loch\f0 \hich\f0 argument gObject repr\'e9\loch\f0 sente l\hich\f0 \rquote \loch\f0 \hich\f0 objet de la grammaire dont on veut changer le p\'e8
+\loch\f0 re. L\hich\f0 \rquote \loch\f0 argument idPare\hich\af0\dbch\af13\loch\f0 \hich\f0 nt repr\'e9\loch\f0 sente l\hich\f0 \rquote \loch\f0 \hich\f0 identifiant du nouveau parent (la sc\'e8\loch\f0 ne si l\hich\f0 \rquote \loch\f0 
+argument vaut null). Les attributs de transformatio}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13632330 \hich\af0\dbch\af13\loch\f0 n de gObject sont mis}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid1185889 \hich\af0\dbch\af13\loch\f0 \hich\f0  \'e0\loch\f0 
+ jour. Cette}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  fonction ne renvoie rien.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15418841\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Transformation}{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 
+\b\fs36\ul\insrsid3558942 \hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  g\'e9\loch\f0 \hich\f0 om\'e9\loch\f0 trique}{\rtlch\fcs1 \ab\af0\afs36 
+\ltrch\fcs0 \b\fs36\ul\insrsid3558942 \hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  des \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ments de la sc\'e8
+\loch\f0 ne
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Les fonctions suivantes conc\hich\af0\dbch\af13\loch\f0 \hich\f0 
+ernent les transformations g\'e9\loch\f0 \hich\f0 om\'e9\loch\f0 trique}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  appliq}{
+\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 \hich\f0 u\'e9\loch\f0 \hich\f0 es \'e0\loch\f0 \hich\f0  un objet dans la sc\'e8\loch\f0 ne. Elle}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 s prennent tou}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 te}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 s en argument gObject (l\hich\f0 \rquote 
+\loch\f0 \hich\f0 objet de la grammaire \'e0\loch\f0 \hich\f0  d\'e9\loch\f0 placer dont les attributs de tran}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 \hich\f0 sformation g\'e9\loch\f0 \hich\f0 om\'e9\loch\f0 
+trique sont mis}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  \'e0\loch\f0  jour\hich\af0\dbch\af13\loch\f0 \hich\f0  apr\'e8\loch\f0 s chaque transformation) et un boo\hich\af0\dbch\af13\loch\f0 
+\hich\f0 l\'e9\loch\f0 en testCollision qui permet d\hich\f0 \rquote \loch\f0 \hich\f0 activer ou non les collisions lors du d\'e9\loch\f0 placement. }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Chacune renvoie un tableau :
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 - vide si les collisions sont d\'e9\loch\f0 \hich\f0 sactiv\'e9
+\loch\f0 \hich\f0 es ou si aucune collision lors du d\'e9\loch\f0 placement n\hich\f0 \rquote \loch\f0 \hich\f0 est d\'e9\loch\f0 \hich\f0 tect\'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 e}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 - dont chaque \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 
+ment est un tableau \'e0\loch\f0 \hich\f0  lui-m\'ea\hich\af0\dbch\af13\loch\f0 \hich\f0 me 2 \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ment}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  : le premier est un objet (le fils d\'e9\loch\f0 \hich\f0 plac\'e9\loch\f0  ou un de ses descendants) et le second l\hich\f0 \rquote \loch\f0 \hich\f0 objet autre dans la sc\'e8\loch\f0 
+ne avec lequel il rentre en collision.
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 Si le tableau retourn\'e9\loch\f0 \hich\f0  est vide, la transformation g\'e9\loch\f0 \hich\f0 om\'e9\loch\f0 \hich\f0 trique a \'e9\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  effectu\'e9\loch\f0 \hich\f0 e avec succ\'e8
+\loch\f0 s. S\hich\f0 \rquote \loch\f0 il \hich\af0\dbch\af13\loch\f0 est non vide, la transformation n\hich\f0 \rquote \loch\f0 \hich\f0 a pas \'e9\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  effectu\'e9\loch\f0 e.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Les fonctions de d\'e9\loch\f0 \hich\f0 
+placement et de rotation ont \'e9\loch\f0 \hich\f0 galement un argument idRef. Il permet de d\'e9\loch\f0 \hich\f0 finir dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel de quel objet (d\'e9\loch\f0 \hich\f0 
+fini par son identifiant) sont donn\'e9\loch\f0 es les valeurs de la transfor}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid3558942 \hich\af0\dbch\af13\loch\f0 \hich\f0 mation \'e0}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 \hich\f0  effectuer. Si cet argument est nul, elles sont calcul\'e9\loch\f0 \hich\f0 es dans le rep\'e8\loch\f0 re global.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid3558942 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 
+M3D.MOTEUR.translate(gObject,tabVector,testCollision,idRef) permet de translater un objet de tabVector (tableau \'e0\loch\f0 \hich\f0  3 composantes) dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel donn\'e9\loch\f0  par idRef e
+\hich\af0\dbch\af13\loch\f0 \hich\f0 n consid\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 
+M3D.MOTEUR.setPosition(gObject,tabPos,testCollision,idRef) permet de placer un objet \'e0\loch\f0 \hich\f0  la position tabPos (tableau \'e0\loch\f0 \hich\f0  3 composantes) dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel donn\'e9\loch\f0 
+\hich\f0  par idRef en consid\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.\hich\af0\dbch\af13\loch\f0 
+rotate(gObject,tabRot,testCollision,idRef) permet de faire tourner un objet d\hich\f0 \rquote \loch\f0 \hich\f0 angles tabRot (tableau \'e0\loch\f0 \hich\f0  3 composantes) dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel donn\'e9\loch\f0 
+\hich\f0  par idRef en consid\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.setAngle(gObject,tabRot,testCollision,idRef) permet \hich\af0\dbch\af13\loch\f0 
+\hich\f0 de d\'e9\loch\f0 finir l\hich\f0 \rquote \loch\f0 \hich\f0 orientation (via  tabRot : tableau \'e0\loch\f0  3 composantes) d\hich\f0 \rquote \loch\f0 \hich\f0 un objet dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel donn\'e9
+\loch\f0 \hich\f0  par idRef en consid\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5115977 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.mulScale(gObject,coefScale,testCollision) permet de multiplier l
+\hich\f0 \rquote \'e9\loch\f0 chelle d\hich\f0 \rquote \loch\f0 un objet par les co\hich\af0\dbch\af13\loch\f0 efficients dans }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid3558942 \hich\af0\dbch\af13\loch\f0 co}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid5115977 \hich\af0\dbch\af13\loch\f0 efScale}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  (tableau \'e0\loch\f0 \hich\f0  3 composantes) en consid\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 M3D.MOTEUR.setScale(gObject,coefScale,testCollision) permet de d\'e9\loch\f0 finir l
+\hich\f0 \rquote \'e9\loch\f0 chelle d\hich\f0 \rquote \loch\f0 un objet par l}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid5115977 \hich\af0\dbch\af13\loch\f0 es coefficients dans coefScale}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 \hich\f0  (tableau \'e0\loch\f0  3 composantes) en cons\hich\af0\dbch\af13\loch\f0 \hich\f0 id\'e9\loch\f0 rant ou non les collisions.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15418841\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Application des lois physiques
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Le moteur3d }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 
+\hich\af0\dbch\af13\loch\f0 permet \hich\af0\dbch\af13\loch\f0 l\loch\af0\dbch\af13\hich\f0 \rquote \loch\f0 application de\hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 r
+\'e8\loch\f0 gles de la physique}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 \hich\af0\dbch\af13\loch\f0 \hich\f0  \'e0\loch\f0  l\loch\af0\dbch\af13\hich\f0 \rquote \hich\af0\dbch\af13\loch\f0 \hich\f0 univers 3D cr\'e9\'e9}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  : il est possible de d\'e9\loch\f0 finir une force constante applicable sur plusieurs o}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 \hich\af0\dbch\af13\loch\f0 \hich\f0 
+bjets (comme la gravit\'e9\loch\f0 \hich\f0 ) d\'e9\loch\f0 crite}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  par 3 coeffic\hich\af0\dbch\af13\loch\f0 ients}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 
+\hich\af0\dbch\af13\loch\f0  x, y\hich\af0\dbch\af13\loch\f0  et z}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  et \hich\af0\dbch\af13\loch\f0 un coefficient}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 
+\hich\af0\dbch\af13\loch\f0 \hich\f0  suppl\'e9\loch\f0 mentaire}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  de frottement g\'e9\loch\f0 \hich\f0 n\'e9\loch\f0 ral\hich\af0\dbch\af13\loch\f0 
+ qui ralentit la }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 \hich\af0\dbch\af13\loch\f0 vitesse des objets\hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+(multiplie la vitesse par 1-coef}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 \hich\af0\dbch\af13\loch\f0 ficient\hich\af0\dbch\af13\loch\f0 \hich\f0  \'e0\loch\f0  chaque \hich\af0\dbch\af13\loch\f0 calcul\hich\af0\dbch\af13\loch\f0 \hich\f0  de la sc
+\'e8\loch\f0 ne}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 ).
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 La fonction d\hich\f0 \rquote \loch\f0 \hich\f0 
+application de la physique met \'e0\loch\f0 \hich\f0  jour les variables vitesse et acc\'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ration pour tous l\hich\af0\dbch\af13\loch\f0 \hich\f0 es objets concern\'e9\loch\f0 s. 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 M3D.MOTEUR.setGravite(newGravite) permet de d\'e9\loch\f0 \hich\f0 finir le tableau \'e0\loch\f0 \hich\f0  3 composantes de la gravit\'e9\loch\f0 .
+\par \hich\af0\dbch\af13\loch\f0 Cette fonction ne renvoie rien.
+\par 
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 M3D.MOTEUR.setCoefFrottement(newCoef) permet de d\'e9\loch\f0 finir un nouveau coefficient de frottement.
+\par \hich\af0\dbch\af13\loch\f0 Cette foncti\hich\af0\dbch\af13\loch\f0 on ne renvoie rien.
+\par 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 
+M3D.MOTEUR.applyPhysique(gObjList,gGObjList) applique les lois de la physique \'e0\loch\f0 \hich\f0  diff\'e9\loch\f0 \hich\f0 rents objets de la grammaire. Les arguments gObjList et gGObjList sont tous deux des tableaux dont chaque \'e9\loch\f0 \hich\f0 
+l\'e9\loch\f0 ment est un objet de la grammaire. Le pre\hich\af0\dbch\af13\loch\f0 \hich\f0 mier correspond \'e0\loch\f0  la liste des objets auxquels}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2644705 \hich\af0\dbch\af13\loch\f0  seront
+\hich\af0\dbch\af13\loch\f0 \hich\f0  appliqu\'e9\hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  les lois de la physique sans la gravit\'e9\loch\f0 \hich\f0 
+, et le second avec la gravit\'e9\loch\f0 .
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 La fonction renvoie un tableau dont la taille e}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid10494274 \hich\af0\dbch\af13\loch\f0 s}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 t la somme des tailles des deux tableaux en arguments.
+\par \hich\af0\dbch\af13\loch\f0 \hich\f0 Chaque \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ment}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid10494274 \hich\af0\dbch\af13\loch\f0  de ce tableau contient }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\hich\af0\dbch\af13\loch\f0 un\hich\af0\dbch\af13\loch\f0  tableau :
+\par \hich\af0\dbch\af13\loch\f0 - vide si l\hich\f0 \rquote \loch\f0 \hich\f0 objet a pu \'ea\loch\f0 \hich\f0 tre d\'e9\loch\f0 \hich\f0 plac\'e9\loch\f0  sans collision (dans ce cas l\hich\f0 \rquote \loch\f0 \hich\f0 objet a bien \'e9\loch\f0 \hich\f0 t
+\'e9\loch\f0 \hich\f0  d\'e9\loch\f0 \hich\f0 plac\'e9\loch\f0 )
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10494274 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 - dont chaque \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 
+ment est un tableau \'e0\loch\f0 \hich\f0  2 \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 ments avec le premier qui est l\hich\f0 \rquote \loch\f0 identifiant de l\hich\f0 \rquote \loch\f0 \hich\f0 objet qui a voulu \'ea\loch\f0 \hich\f0 tre d\'e9\loch\f0 
+\hich\f0 plac\'e9\loch\f0  (ou l\hich\f0 \rquote \loch\f0 un de ses descendants) \hich\af0\dbch\af13\loch\f0 et le second l\hich\f0 \rquote \loch\f0 \hich\f0 objet de la sc\'e8\loch\f0 ne avec lequel il est en collision (si le tableau est non vide, l
+\hich\f0 \rquote \loch\f0 objet n\hich\f0 \rquote \loch\f0 \hich\f0 a pas \'e9\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  d\'e9\loch\f0 \hich\f0 plac\'e9\loch\f0 \hich\f0 , il faut le translater du tableau \'e0\loch\f0  3 composantes de l\hich\f0 \rquote 
+\loch\f0 attribut vitesse si on souhaite ignorer les collisions)}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid10494274 \hich\af0\dbch\af13\loch\f0 .}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15418841 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15418841\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Manipulation des cam\'e9\loch\f0 r\hich\af0\dbch\af13\loch\f0 as
+
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid5453700 \hich\af0\dbch\af13\loch\f0 \hich\f0 De la m\'ea\loch\f0 \hich\f0 me fa\'e7\loch\f0 on que l\hich\f0 \rquote \loch\f0 on
+}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  peut effectuer des transformations g\'e9\loch\f0 \hich\f0 om\'e9\loch\f0 \hich\f0 triques sur les objets ou les manipuler dans la sc\'e8\loch\f0 \hich\f0 
+ne, on peut le faire sur les cam\'e9\loch\f0 \hich\f0 ras (attention une cam\'e9\loch\f0 ra ne peut avoir de fils).
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 M3D.MOTEUR.activeCamera(idCamera) permet de d\'e9\loch\f0 fini
+\hich\af0\dbch\af13\loch\f0 \hich\f0 r une cam\'e9\loch\f0 \hich\f0 ra comme celle de la sc\'e8\loch\f0 ne. L\hich\f0 \rquote \loch\f0 \hich\f0 argument idCamera repr\'e9\loch\f0 sente l\hich\f0 \rquote \loch\f0 \hich\f0 identifiant de la cam\'e9\loch\f0 
+\hich\f0 ra \'e0\loch\f0  activer. Cette fonction ne renvoie rien.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.addCamera(gCamera,idParent) permet d\hich\f0 \rquote \loch\f0 
+\hich\f0 ajouter une cam\'e9\loch\f0 \hich\f0 ra dans la sc\'e8\loch\f0 ne dont l\hich\f0 \rquote \loch\f0 \hich\f0 identifiant est donn\'e9\loch\f0  par l\hich\f0 \lquote \hich\af0\dbch\af13\loch\f0 \hich\f0 
+attribut id de gCamera. Les positions et orientations sont donn\'e9\loch\f0 \hich\f0 es via les attributs posX posY posZ orX orY orZ dans le r\'e9\loch\f0 \hich\f0 f\'e9\loch\f0 \hich\f0 rentiel du p\'e8\loch\f0 \hich\f0 re donn\'e9\loch\f0 \hich\f0 
+ par son identifiant idParent (si nul, le p\'e8\loch\f0 \hich\f0 re est la sc\'e8\loch\f0 ne). Cette fonction ne renvoie rien.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.remov\hich\af0\dbch\af13\loch\f0 \hich\f0 
+eCamera(idCamera) permet de supprimer une cam\'e9\loch\f0 ra uniquement si elle n\hich\f0 \rquote \loch\f0 \hich\f0 est pas active. Cette fonction renvoie un bool\'e9\loch\f0 \hich\f0 en indiquant si la cam\'e9\loch\f0 \hich\f0 ra a \'e9\loch\f0 \hich\f0 
+t\'e9\loch\f0 \hich\f0  supprim\'e9\loch\f0 \hich\f0 e avec succ\'e8\loch\f0 s.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid5453700 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+M3D.MOTEUR.translateCamera(gCamera,tabVector,idRef) fonctionne comme pour la foncti\hich\af0\dbch\af13\loch\f0 \hich\f0 on M3D.MOTEUR.translate mais avec gCamera objet de la grammaire correspondant \'e0\loch\f0 \hich\f0  une cam\'e9\loch\f0 \hich\f0 
+ra. De la m\'ea\loch\f0 me }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid5453700 \hich\af0\dbch\af13\loch\f0 f\hich\af0\dbch\af13\loch\f0 \hich\f0 a\'e7\loch\f0 o}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 
+n, il existe des fonctions M3D.MOTEUR.setPositionCamera(gCamera,tabPos,idRef), M3D.MOTEUR.rotateCamera(gCamera,tabRot,idRef) et M3D.MOTEUR.setAngl\hich\af0\dbch\af13\loch\f0 eCamera(gCamera,tabRot,idRef).
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af0\afs36 \ltrch\fcs0 \b\fs36\ul\insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Autres outils
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid8419443 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 Il est possible de calculer la position, l\hich\f0 \rquote \loch\f0 
+orientation et l\hich\f0 \rquote \'e9\loch\f0 \hich\f0 chelle dans le rep\'e8\loch\f0 re global de l\hich\f0 \rquote \loch\f0 \hich\f0 objet. Ces fonctions retournent chacune un tableau \'e0\loch\f0  3 composantes.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid10710729 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.getGlobalPosition(idObject) retour\hich\af0\dbch\af13\loch\f0 
+\hich\f0 ne la position dans le rep\'e8\loch\f0 re global de l\hich\f0 \rquote \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ment repr\'e9\loch\f0 \hich\f0 sent\'e9\loch\f0  par son identifiant. \hich\af0\dbch\af13\loch\f0 \hich\f0 De m\'ea\loch\f0 
+me pour l\hich\f0 \rquote \loch\f0 orientation avec}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid5453700 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.getGlobalOrientation(idObject) \hich\af0\dbch\af13\loch\f0 et pour l\hich\f0 \rquote \'e9\loch\f0 chelle avec }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid5453700 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid8419443 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.getGlobalScale(idObject)}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid8419443 \hich\af0\dbch\af13\loch\f0 .}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid15413761 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid15413761 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 Il est \'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\hich\af0\dbch\af13\loch\f0 galement}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0  possible de conna\'ee\loch\f0 tre \hich\af0\dbch\af13\loch\f0 l\hich\f0 \rquote \'e9}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0 cart entre deux}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0  objets selon un certain axe.
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid15413761 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 M3D.MOTEUR.ecart(idObject1,idObject2,dim) retourne l\hich\f0 \rquote \'e9
+\loch\f0 \hich\f0 cart entre les volumes englobant des objets donn\'e9\loch\f0 s par leur identifiant. Si dim est compris entre 1 et 3 alors l\hich\f0 \rquote \'e9\loch\f0 \hich\f0 cart est donn\'e9\loch\f0 \hich\f0  entre le c\'f4\loch\f0 \hich\f0 t\'e9
+\loch\f0 \hich\f0  inf\'e9\loch\f0 rieur (\hich\af0\dbch\af13\loch\f0 gauche,}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15413761 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 bas,}{
+\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15413761 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 avant) du premier et le c\'f4\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  sup\'e9
+\loch\f0 rieur (droite\hich\af0\dbch\af13\loch\f0 ,}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid15413761 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 haut,}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid15413761 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 \hich\af0\dbch\af13\loch\f0 \hich\f0 arri\'e8\loch\f0 re) du second, s\hich\f0 \rquote \loch\f0 il est compris entre -3 et -1, il s\hich\f0 
+\rquote \loch\f0 agit de l\hich\f0 \rquote \'e9\loch\f0 \hich\f0 cart entre le c\'f4\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  inf\'e9\loch\f0 \hich\f0 rieur du premier et le c\'f4\loch\f0 \hich\f0 t\'e9\loch\f0 \hich\f0  sup\'e9\loch\f0 rieur du second.
+
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid933158 {\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\insrsid933158\charrsid933158 \hich\af0\dbch\af13\loch\f0 (1)}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 
+\hich\af0\dbch\af13\loch\f0 \hich\f0  Le Britannique Paul Brunt est le cr\'e9\loch\f0 ate\hich\af0\dbch\af13\loch\f0 ur de la librairie GLGE. Il s\hich\f0 \rquote \loch\f0 agit d\hich\f0 \rquote \loch\f0 une librairie JavaScript facilitant l\hich\f0 
+\rquote \loch\f0 utilisation du WebGL}{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 . Elle}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 
+\hich\af0\dbch\af13\loch\f0 \hich\f0 permet d'acc\'e9\loch\f0 der directement}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \loch\af0\dbch\af13\hich\f0 \'e0}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 OpenGL}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 ES2}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  et elle permet ainsi l\hich\f0 \rquote \loch\f0 \hich\f0 acc\'e8\loch\f0 \hich\f0 s \'e0\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\cs16\insrsid933158 \hich\af0\dbch\af13\loch\f0 l'}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0 utilisation }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 de}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 \hich\f0 l'acc\'e9\loch\f0 \hich\f0 l\'e9\loch\f0 \hich\f0 ration mat\'e9\loch\f0 rielle}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 des applications}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 2D/3D}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 sans avoir}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0  beso\hich\af0\dbch\af13\loch\f0 in de t}{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \loch\af0\dbch\af13\hich\f0 \'e9\loch\f0 \hich\f0 l\'e9\loch\f0 charger aucun plugins}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0 .
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid933158 {\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 Le but}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{
+\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 de}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 GLGE}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 est de}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 masquer}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 l\hich\f0 \rquote \loch\f0 utilisation directe
+}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 du}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 WebGL}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 au}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 \hich\f0 d\'e9\loch\f0 veloppeur}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 web}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0 , }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 qui}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 peut}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 
+\hich\af0\dbch\af13\loch\f0 alors}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 \hich\f0 se concentrer sur la cr\'e9\loch\f0 ation}{\rtlch\fcs1 
+\af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  d\hich\f0 \rquote }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 un contenu plus riche}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }
+{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 pour le}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0  }{\rtlch\fcs1 \af0 \ltrch\fcs0 \cs15\insrsid933158 \hich\af0\dbch\af13\loch\f0 web}{
+\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0 .
+\par }\pard \ltrpar\qj \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0\pararsid933158 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158 \hich\af0\dbch\af13\loch\f0 La documentation concernant cette librairie est disponible s\hich\af0\dbch\af13\loch\f0 
+ur son site web\~: }{\rtlch\fcs1 \ab\af0 \ltrch\fcs0 \b\insrsid933158\charrsid16015799 \hich\af0\dbch\af13\loch\f0 http://www.glge.org/}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid16015799 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\nooverflow\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid933158\charrsid7561143 
+\par }}

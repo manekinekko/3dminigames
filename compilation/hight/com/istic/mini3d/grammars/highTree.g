@@ -509,6 +509,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
     ^(COMMAND_KW listplay=player_list[st] listCommand=actionCommande_list[st])
     {boolean present = false;
      Code [] tab = new Code[4];
+     boolean clavier = false;
      ArrayList <Control> list_event = new ArrayList<Control>();
      ArrayList <Control> list_save = new ArrayList<Control>();
      Iterator<Control> it = listCommand.iterator();
@@ -516,8 +517,10 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
 	    Control ctr = it.next();
             if(ctr.getName().equals("3_UP")|ctr.getName().equals("3_DOWN") | ctr.getName().equals("3_LEFT") | ctr.getName().equals("3_RIGHT"))
                 list_save.add(ctr);
-            else
+            else{
+                clavier = true;
                 list_event.add(ctr);
+                }
        }
 
        if(!list_event.isEmpty()){
@@ -618,7 +621,10 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
                 System.out.println(v.getCode());
             }
        }
-       c.append(Code.genRefreshLoop(tab));
+       c.append(Code.genRefreshLoop(tab,clavier));
+       c.append(Code.genEventListener(clavier,false,false));
+       c.append(Code.genCMDKeyDown(list_event));
+       c.append(Code.genCMDKeyUp(list_event));
        }
     ;
 

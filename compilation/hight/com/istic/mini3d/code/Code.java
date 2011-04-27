@@ -639,7 +639,7 @@ public class Code {
         if(clavier){
             c.append("\tfor(var i = 0; i< tabCMD.length;i++) {\n");
             c.append("\t\t if(tabCMD[i][0]&&tabCMD[i][1]){\n");
-            c.append("\t\t\t cmdExec(i);\n");
+            c.append("\t\t\t CMDExec(i);\n");
             c.append("\t\t}\n");
             c.append("\t}\n");
         }
@@ -762,6 +762,30 @@ public class Code {
                 }else{
                     c.append("\t\t\ttabCMD["+i+"][0] = true;\n");
                 }
+                c.append("\t\t\tbreak;\n");
+            }
+            i++;
+        }
+        c.append("\t\tdefault :\n \t\t\t break;\n");
+        c.append("\t}\n");
+        c.append("}\n\n");
+        return c;
+    }
+
+        public static Code genCMDExec(ArrayList <Control> list_event, ArrayList<Code> liste){
+        Code c = new Code();
+        c.append("var CMDExec = function(num){\n");
+        Iterator <Control> it = list_event.iterator();
+        int i = 0;
+        c.append("\tswitch(num){\n");
+        while(it.hasNext()){
+            Control co = it.next();
+            if(co.getSource()== Control.Source.CLAVIER){
+                c.append("\t\tcase "+i+":\n");
+                if(co.getMode()==Control.Mode.PRESSED||co.getMode()==Control.Mode.RELEASED){
+                    c.append("\t\t\ttabCMD["+i+"][0] = false;\n");
+                }
+                c.append("\t\t\t"+liste.get(i).getCode()+"\n");
                 c.append("\t\t\tbreak;\n");
             }
             i++;

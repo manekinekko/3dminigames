@@ -5,12 +5,14 @@
 package com.istic.mini3d.code;
 
 import com.istic.mini3d.attributes.*;
+import com.istic.mini3d.symbols.Control;
 import java.util.Iterator;
 import java.util.List;
 
 import com.istic.mini3d.symbols.Definition;
 import com.istic.mini3d.symbols.Entity;
 import com.istic.mini3d.symbols.Model;
+import java.util.ArrayList;
 
 /**
  *
@@ -586,7 +588,7 @@ public class Code {
     //////////////////////////////////////////////////////////////////////
     ///////////////////////Boucle de rafraichissement/////////////////////
     //////////////////////////////////////////////////////////////////////
-    public static Code genRefreshLoop(Code [] tab) {
+    public static Code genRefreshLoop(Code [] tab, boolean clavier) {
         boolean com = false;
         Code c = new Code();
         for(int v = 0; v < tab.length;v++){
@@ -596,9 +598,10 @@ public class Code {
             }
         }
         /* ************* Bool Array -> command ************************* */
-
-        c.append("/* Array of commands */\n");
-        c.append("var cmdTab = new Array();\n\n");
+        if(clavier){
+            c.append("/* Array of commands */\n");
+            c.append("var tabCMD = new Array();\n\n");
+        }
 
         /* ************	Global refresh variable ************************ */
 
@@ -629,6 +632,17 @@ public class Code {
 
         c.append("/* Refresh loop */\n");
         c.append("function refreshGame(){\n");
+        if(com){
+            c.append("var soux;\n");
+            c.append("var souy;\n");
+        }
+        if(clavier){
+            c.append("\tfor(var i = 0; i< tabCMD.length;i++) {\n");
+            c.append("\t\t if(tabCMD[i][0]&&tabCMD[i][1]){\n");
+            c.append("\t\t\t cmdExec(i);\n");
+            c.append("\t\t}\n");
+            c.append("\t}\n");
+        }
         c.append("}\n\n");
 
         /* ************* Pause function *************************** */
@@ -691,5 +705,70 @@ public class Code {
     	Code c = new Code();	
     	c.append("arg"+n);
     	return c;
+    }
+
+    public static Code genEventListener(boolean clavier,boolean souris,boolean possouris){
+        Code c = new Code();
+        c.append("window.addEventListener('load', function () {\n");
+        if(clavier){
+            c.append("\twindow.document.onkeydown = CMDKeyDown;\n");
+            c.append("\twindow.document.onkeyup = CMDKeyUp;\n");
+        }
+        if(souris){
+            c.append("\twindow.document.onclick=CMDClk;");
+        }
+	c.append("}, false);\n\n");
+        return c;
+    }
+    public static Code genCMDKeyDown(ArrayList <Control> list_event){
+        Code c = new Code();
+        c.append("CMDKeyDown = function(event){\n");
+        Iterator <Control> it = list_event.iterator();
+        int i = 0;
+        c.append("\tvar intKeyCode = event.keyCode;\n");
+        c.append("\tswitch(intKeyCode){\n");
+        while(it.hasNext()){
+            Control co = it.next();
+            if(co.getSource()== Control.Source.CLAVIER){
+                c.append("\t\tcase "+co.getCommande()+":\n");
+                if(co.getMode()==Control.Mode.PRESSED||co.getMode()==Control.Mode.HELD){
+                    c.append("\t\t\ttabCMD["+i+"][0] = true;\n");
+                }else{
+                    c.append("\t\t\ttabCMD["+i+"][0] = false;\n");
+                }
+                c.append("\t\t\tbreak;\n");
+            }
+            i++;
+        }
+        c.append("\t\tdefault :\n \t\t\t break;\n");
+        c.append("\t}\n");
+        c.append("}\n\n");
+        return c;
+    }
+
+    public static Code genCMDKeyUp(ArrayList <Control> list_event){
+        Code c = new Code();
+        c.append("CMDKeyUp = function(event){\n");
+        Iterator <Control> it = list_event.iterator();
+        int i = 0;
+        c.append("\tvar intKeyCode = event.keyCode;\n");
+        c.append("\tswitch(intKeyCode){\n");
+        while(it.hasNext()){
+            Control co = it.next();
+            if(co.getSource()== Control.Source.CLAVIER){
+                c.append("\t\tcase "+co.getCommande()+":\n");
+                if(co.getMode()==Control.Mode.PRESSED||co.getMode()==Control.Mode.HELD){
+                    c.append("\t\t\ttabCMD["+i+"][0] = false;\n");
+                }else{
+                    c.append("\t\t\ttabCMD["+i+"][0] = true;\n");
+                }
+                c.append("\t\t\tbreak;\n");
+            }
+            i++;
+        }
+        c.append("\t\tdefault :\n \t\t\t break;\n");
+        c.append("\t}\n");
+        c.append("}\n\n");
+        return c;
     }
 }

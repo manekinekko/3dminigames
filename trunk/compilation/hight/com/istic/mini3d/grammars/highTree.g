@@ -512,6 +512,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
      boolean clavier = false;
      ArrayList <Control> list_event = new ArrayList<Control>();
      ArrayList <Control> list_save = new ArrayList<Control>();
+     ArrayList <Code> list_signature = new ArrayList<Code>();
      Iterator<Control> it = listCommand.iterator();
      while(it.hasNext()) {
 	    Control ctr = it.next();
@@ -567,7 +568,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
                   }
                 }
                 v.append(");");
-                System.out.println(v.getCode());
+                list_signature.add(v);
             }
        }
        if(!list_save.isEmpty()){
@@ -625,6 +626,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
        c.append(Code.genEventListener(clavier,false,false));
        c.append(Code.genCMDKeyDown(list_event));
        c.append(Code.genCMDKeyUp(list_event));
+       c.append(Code.genCMDExec(list_event,list_signature));
        }
     ;
 

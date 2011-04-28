@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_G_W/sceneGameWatch.blend</source_data>
+		</contributor>
+		<created>2011-02-15T20:25:01.669768</created>
+		<modified>2011-02-15T20:25:01.669804</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="faceIphone_png_001-fx" name="faceIphone_png_001-fx">
+			<profile_COMMON>
+				<newparam sid="faceIphone_png_001-surface">
+					<surface type="2D">
+						<init_from>faceIphone_png_001-img</init_from>
+						<format>A8R8G8B8</format>
+					</surface>
+				</newparam>
+				<newparam sid="faceIphone_png_001-sampler">
+					<sampler2D>
+						<source>faceIphone_png_001-surface</source>
+						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</ambient>
+						<diffuse>
+							<texture texcoord="CHANNEL1" texture="faceIphone_png_001-sampler"/>
+						</diffuse>
+						<specular>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</specular>
+						<shininess>
+							<float>12.5</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_images>
+		<image id="faceIphone_png_001-img" name="faceIphone_png_001-img">
+			<init_from>/h/000000/Blend/GameWatch/faceIphone.png</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="faceIphone_png_001" name="faceIphone_png_001">
+			<instance_effect url="#faceIphone_png_001-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="Cube_007" name="Cube_007">
+			<mesh>
+				<source id="Cube_007-Position">
+					<float_array count="36" id="Cube_007-Position-array">0.50073 0.02779 -0.86228 0.48252 -0.02912 -0.84312 -0.48252 -0.02912 -0.84312 -0.50073 0.02779 -0.86228 0.50073 0.02779 0.86228 0.48252 -0.02912 0.84312 -0.48252 -0.02912 0.84312 -0.50073 0.02779 0.86228 0.45293 0.08063 0.78851 -0.45293 0.08063 0.78851 -0.45293 0.08063 -0.78851 0.45293 0.08063 -0.78851</float_array>
+					<technique_common>
+						<accessor count="12" source="#Cube_007-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cube_007-Normals">
+					<float_array count="120" id="Cube_007-Normals-array">0.69448 0.35249 -0.62722 0.45189 -0.77044 -0.44966 -0.45189 -0.77044 -0.44966 -0.69448 0.35249 -0.62722 0.69448 0.35249 0.62722 -0.69448 0.35249 0.62722 -0.45189 -0.77044 0.44963 0.45189 -0.77044 0.44963 0.69448 0.35249 -0.62722 0.69448 0.35249 0.62722 0.45189 -0.77044 0.44963 0.45189 -0.77044 -0.44966 0.45189 -0.77044 -0.44966 0.45189 -0.77044 0.44963 -0.45189 -0.77044 0.44963 -0.45189 -0.77044 -0.44966 -0.45189 -0.77044 -0.44966 -0.45189 -0.77044 0.44963 -0.69448 0.35249 0.62722 -0.69448 0.35249 -0.62722 -0.69448 0.35249 0.62722 0.69448 0.35249 0.62722 0.27915 0.93487 0.21918 -0.27915 0.93487 0.21918 -0.69448 0.35249 -0.62722 -0.69448 0.35249 0.62722 -0.27915 0.93487 0.21918 -0.27915 0.93487 -0.21918 0.69448 0.35249 0.62722 0.69448 0.35249 -0.62722 0.27915 0.93487 -0.21918 0.27915 0.93487 0.21918 0.69448 0.35249 -0.62722 -0.69448 0.35249 -0.62722 -0.27915 0.93487 -0.21918 0.27915 0.93487 -0.21918 0.27915 0.93487 0.21918 0.27915 0.93487 -0.21918 -0.27915 0.93487 -0.21918 -0.27915 0.93487 0.21918</float_array>
+					<technique_common>
+						<accessor count="40" source="#Cube_007-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cube_007-UV">
+					<float_array count="80" id="Cube_007-UV-array">0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 1.00150 0.00202 1.00150 1.00452 0.01096 1.00452 0.01096 0.00202 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135 0.31418 0.34357 0.36196 0.34357 0.36196 0.39135 0.31418 0.39135</float_array>
+					<technique_common>
+						<accessor count="40" source="#Cube_007-UV-array" stride="2">
+							<param type="float" name="S"></param>
+							<param type="float" name="T"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cube_007-Vertex">
+					<input semantic="POSITION" source="#Cube_007-Position"/>
+				</vertices>
+				<polygons count="10" material="faceIphone_png_001">
+					<input offset="0" semantic="VERTEX" source="#Cube_007-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Cube_007-Normals"/>
+					<input offset="2" semantic="TEXCOORD" source="#Cube_007-UV"/>
+					<p>0 0 0 1 1 1 2 2 2 3 3 3</p>
+					<p>4 4 4 7 5 5 6 6 6 5 7 7</p>
+					<p>0 8 8 4 9 9 5 10 10 1 11 11</p>
+					<p>1 12 12 5 13 13 6 14 14 2 15 15</p>
+					<p>2 16 16 6 17 17 7 18 18 3 19 19</p>
+					<p>7 20 20 4 21 21 8 22 22 9 23 23</p>
+					<p>3 24 24 7 25 25 9 26 26 10 27 27</p>
+					<p>4 28 28 0 29 29 11 30 30 8 31 31</p>
+					<p>0 32 32 3 33 33 10 34 34 11 35 35</p>
+					<p>8 36 36 11 37 37 10 38 38 9 39 39</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L14" id="Cube_002" name="Cube_002">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Cube_007">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="faceIphone_png_001" target="#faceIphone_png_001">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="Cube_002-PhysicsMaterial" name="Cube_002-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="Cube_002-RigidBody" sid="Cube_002-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#Cube_002-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#Cube_007"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="Cube_002-RigidBody" target="#Cube_002"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

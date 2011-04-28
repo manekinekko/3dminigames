@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_pacman/pacman.blend</source_data>
+		</contributor>
+		<created>2011-02-15T21:16:24.742639</created>
+		<modified>2011-02-15T21:16:24.742677</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="Material_001-fx" name="Material_001-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.01431 0.36870 0.00016 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.02862 0.73741 0.00031 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_008-fx" name="Material_008-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.43645 0.42507 0.09162 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.87290 0.85014 0.18324 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_009-fx" name="Material_009-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.49901 0.24554 0.09201 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.99803 0.49107 0.18402 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_010-fx" name="Material_010-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.37254 0.08582 0.08582 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.74507 0.17165 0.17165 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_011-fx" name="Material_011-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.16731 0.03406 0.18474 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.33463 0.06813 0.36948 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_012-fx" name="Material_012-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.10987 0.19109 0.31121 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.21973 0.38218 0.62243 1</color>
+						</diffuse>
+						<specular>
+							<color>0.82495 0.82495 0.82495 1</color>
+						</specular>
+						<shininess>
+							<float>48.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_013-fx" name="Material_013-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.41330 0.44275 0.30781 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.82660 0.88549 0.61561 1</color>
+						</diffuse>
+						<specular>
+							<color>0.12166 0.12166 0.12166 1</color>
+						</specular>
+						<shininess>
+							<float>11.0</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Material_001" name="Material_001">
+			<instance_effect url="#Material_001-fx"/>
+		</material>
+		<material id="Material_008" name="Material_008">
+			<instance_effect url="#Material_008-fx"/>
+		</material>
+		<material id="Material_009" name="Material_009">
+			<instance_effect url="#Material_009-fx"/>
+		</material>
+		<material id="Material_010" name="Material_010">
+			<instance_effect url="#Material_010-fx"/>
+		</material>
+		<material id="Material_011" name="Material_011">
+			<instance_effect url="#Material_011-fx"/>
+		</material>
+		<material id="Material_012" name="Material_012">
+			<instance_effect url="#Material_012-fx"/>
+		</material>
+		<material id="Material_013" name="Material_013">
+			<instance_effect url="#Material_013-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="apple-Geometry" name="apple-Geometry">
+			<mesh>
+				<source id="apple-Geometry-Position">
+					<float_array count="144" id="apple-Geometry-Position-array">0.00132 -0.00000 0.68306 0.28090 -0.00000 0.75403 0.44498 -0.00000 0.65362 0.31665 -0.00000 0.08941 0.18535 -0.00000 -0.00479 0.08771 0.26590 0.75403 0.13842 0.42195 0.65362 0.15104 0.46078 0.49736 0.14044 0.42816 0.34880 0.09876 0.29990 0.08941 0.05819 0.17502 -0.00479 -0.22487 0.16433 0.75403 -0.35761 0.26078 0.65362 -0.39065 0.28478 0.49736 -0.36289 0.26462 0.34880 -0.25379 0.18535 0.08941 -0.14757 0.10817 -0.00479 -0.22487 -0.16433 0.75403 -0.35761 -0.26078 0.65362 -0.39065 -0.28478 0.49736 -0.36289 -0.26462 0.34880 -0.25379 -0.18535 0.08941 -0.14757 -0.10817 -0.00479 0.08771 -0.26590 0.75403 0.13842 -0.42195 0.65362 0.15104 -0.46078 0.49736 0.14044 -0.42816 0.34880 0.09876 -0.29990 0.08941 0.05819 -0.17502 -0.00479 0.21501 -0.00000 1.02989 0.00814 -0.00000 0.75880 0.02763 -0.00000 0.88691 0.09659 -0.00000 0.97727 0.19552 -0.00000 0.90177 0.12656 -0.00000 0.81141 0.39584 -0.00000 0.19708 0.12323 0.37522 0.19708 -0.31786 0.23190 0.19708 -0.31786 -0.23190 0.19708 0.12323 -0.37522 0.19708 0.26885 -0.30639 0.49754 0.26976 -0.27792 0.34997 0.31504 -0.18054 0.23253 0.35326 -0.17454 0.58730 0.35326 0.17454 0.58730 0.31504 0.18054 0.23253 0.26976 0.27792 0.34997 0.26885 0.30639 0.49754</float_array>
+					<technique_common>
+						<accessor count="48" source="#apple-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="apple-Geometry-Normals">
+					<float_array count="519" id="apple-Geometry-Normals-array">0.87024 0.00000 -0.49257 0.92621 0.36702 0.08597 0.92621 -0.36702 0.08597 0.88888 0.00000 0.45811 0.88845 -0.36003 -0.28462 0.88845 0.36003 -0.28462 0.92083 -0.34617 -0.17948 0.92083 0.34617 -0.17948 0.88845 0.36003 -0.28462 0.88845 -0.36003 -0.28462 0.92083 -0.34617 -0.17948 0.93811 -0.34577 -0.01892 0.93811 0.34577 -0.01892 0.92083 0.34617 -0.17948 0.93811 -0.34577 -0.01892 0.92621 -0.36702 0.08597 0.92621 0.36702 0.08597 0.93811 0.34577 -0.01892 0.69921 0.00000 -0.71487 0.21607 -0.66500 -0.71487 0.18012 -0.55437 -0.81252 0.58290 0.00000 -0.81252 0.69921 0.00000 -0.71487 0.87024 0.00000 -0.49257 0.32554 -0.76760 -0.55205 0.21607 -0.66500 -0.71487 0.13898 0.00000 0.99026 0.04294 -0.13218 0.99026 0.36674 -0.72802 0.57918 0.88888 0.00000 0.45811 0.00000 0.00000 1.00000 0.04294 -0.13218 0.99026 0.13898 0.00000 0.99026 -0.56569 -0.41099 -0.71487 -0.47157 -0.34260 -0.81252 0.18012 -0.55437 -0.81252 0.21607 -0.66500 -0.71487 -0.56569 -0.41099 -0.71487 0.21607 -0.66500 -0.71487 0.32554 -0.76760 -0.55205 -0.71151 -0.51692 -0.47591 -0.77529 -0.56328 -0.28562 -0.71151 -0.51692 -0.47591 0.32554 -0.76760 -0.55205 0.26380 -0.92621 -0.26923 -0.80892 -0.58769 0.01462 -0.77529 -0.56328 -0.28562 0.26380 -0.92621 -0.26923 0.28855 -0.95724 0.02017 -0.63637 -0.46236 0.61742 -0.80892 -0.58769 0.01462 0.28855 -0.95724 0.02017 0.36674 -0.72802 0.57918 -0.11243 -0.08170 0.99026 -0.63637 -0.46236 0.61742 0.36674 -0.72802 0.57918 0.04294 -0.13218 0.99026 0.00000 0.00000 1.00000 -0.11243 -0.08170 0.99026 0.04294 -0.13218 0.99026 0.00000 0.00000 1.00000 -0.11243 0.08170 0.99026 -0.11243 -0.08170 0.99026 -0.11243 0.08170 0.99026 -0.63637 0.46236 0.61742 -0.63637 -0.46236 0.61742 -0.11243 -0.08170 0.99026 -0.63637 0.46236 0.61742 -0.80892 0.58769 0.01462 -0.80892 -0.58769 0.01462 -0.63637 -0.46236 0.61742 -0.80892 0.58769 0.01462 -0.77529 0.56328 -0.28562 -0.77529 -0.56328 -0.28562 -0.80892 -0.58769 0.01462 -0.77529 0.56328 -0.28562 -0.71151 0.51692 -0.47591 -0.71151 -0.51692 -0.47591 -0.77529 -0.56328 -0.28562 -0.56569 0.41099 -0.71487 -0.56569 -0.41099 -0.71487 -0.71151 -0.51692 -0.47591 -0.71151 0.51692 -0.47591 -0.56569 0.41099 -0.71487 -0.47157 0.34260 -0.81252 -0.47157 -0.34260 -0.81252 -0.56569 -0.41099 -0.71487 0.00000 0.00000 1.00000 0.04294 0.13218 0.99026 -0.11243 0.08170 0.99026 0.04294 0.13218 0.99026 0.36674 0.72802 0.57918 -0.63637 0.46236 0.61742 -0.11243 0.08170 0.99026 0.36674 0.72802 0.57918 0.28855 0.95724 0.02017 -0.80892 0.58769 0.01462 -0.63637 0.46236 0.61742 0.28855 0.95724 0.02017 0.26380 0.92621 -0.26923 -0.77529 0.56328 -0.28562 -0.80892 0.58769 0.01462 0.26380 0.92621 -0.26923 0.32554 0.76760 -0.55205 -0.71151 0.51692 -0.47591 -0.77529 0.56328 -0.28562 0.21607 0.66500 -0.71487 -0.56569 0.41099 -0.71487 -0.71151 0.51692 -0.47591 0.32554 0.76760 -0.55205 0.21607 0.66500 -0.71487 0.18012 0.55437 -0.81252 -0.47157 0.34260 -0.81252 -0.56569 0.41099 -0.71487 0.69921 0.00000 -0.71487 0.58290 0.00000 -0.81252 0.18012 0.55437 -0.81252 0.21607 0.66500 -0.71487 0.69921 0.00000 -0.71487 0.21607 0.66500 -0.71487 0.32554 0.76760 -0.55205 0.87024 0.00000 -0.49257 0.00000 0.00000 1.00000 0.13898 0.00000 0.99026 0.04294 0.13218 0.99026 0.13898 0.00000 0.99026 0.88888 0.00000 0.45811 0.36674 0.72802 0.57918 0.04294 0.13218 0.99026 0.87024 0.00000 -0.49257 0.92621 -0.36702 0.08597 0.32554 -0.76760 -0.55205 0.26380 -0.92621 -0.26923 0.32554 -0.76760 -0.55205 0.92621 -0.36702 0.08597 0.93811 -0.34577 -0.01892 0.28855 -0.95724 0.02017 0.26380 -0.92621 -0.26923 0.93811 -0.34577 -0.01892 0.92083 -0.34617 -0.17948 0.36674 -0.72802 0.57918 0.28855 -0.95724 0.02017 0.92083 -0.34617 -0.17948 0.88845 -0.36003 -0.28462 0.88888 0.00000 0.45811 0.36674 -0.72802 0.57918 0.88845 -0.36003 -0.28462 0.88888 0.00000 0.45811 0.88845 0.36003 -0.28462 0.36674 0.72802 0.57918 0.36674 0.72802 0.57918 0.88845 0.36003 -0.28462 0.92083 0.34617 -0.17948 0.28855 0.95724 0.02017 0.28855 0.95724 0.02017 0.92083 0.34617 -0.17948 0.93811 0.34577 -0.01892 0.26380 0.92621 -0.26923 0.26380 0.92621 -0.26923 0.93811 0.34577 -0.01892 0.92621 0.36702 0.08597 0.32554 0.76760 -0.55205 0.87024 0.00000 -0.49257 0.32554 0.76760 -0.55205 0.92621 0.36702 0.08597 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000</float_array>
+					<technique_common>
+						<accessor count="173" source="#apple-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="apple-Geometry-Vertex">
+					<input semantic="POSITION" source="#apple-Geometry-Position"/>
+				</vertices>
+				<polygons count="12" material="Material_001">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>1 26 23 27 24 28 2 29</p>
+					<p>0 30 23 31 1 32</p>
+					<p>17 53 18 54 24 55 23 56</p>
+					<p>0 57 17 58 23 59</p>
+					<p>0 60 11 61 17 62</p>
+					<p>11 63 12 64 18 65 17 66</p>
+					<p>0 87 5 88 11 89</p>
+					<p>5 90 6 91 12 92 11 93</p>
+					<p>0 122 1 123 5 124</p>
+					<p>1 125 2 126 6 127 5 128</p>
+					<p>30 165 31 166 32 167 34 168</p>
+					<p>33 169 34 170 32 171 29 172</p>
+				</polygons>
+				<polygons count="7" material="Material_008">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>18 49 19 50 25 51 24 52</p>
+					<p>12 67 13 68 19 69 18 70</p>
+					<p>6 94 7 95 13 96 12 97</p>
+					<p>24 140 25 141 40 142 43 143</p>
+					<p>2 144 24 145 43 146</p>
+					<p>2 147 44 148 6 149</p>
+					<p>6 150 44 151 47 152 7 153</p>
+				</polygons>
+				<polygons count="5" material="Material_009">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>19 45 20 46 26 47 25 48</p>
+					<p>13 71 14 72 20 73 19 74</p>
+					<p>7 98 8 99 14 100 13 101</p>
+					<p>25 136 26 137 41 138 40 139</p>
+					<p>7 154 47 155 46 156 8 157</p>
+				</polygons>
+				<polygons count="7" material="Material_010">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>20 41 38 42 39 43 26 44</p>
+					<p>14 75 37 76 38 77 20 78</p>
+					<p>8 102 36 103 37 104 14 105</p>
+					<p>35 129 42 130 39 131</p>
+					<p>26 132 39 133 42 134 41 135</p>
+					<p>8 158 46 159 45 160 36 161</p>
+					<p>35 162 36 163 45 164</p>
+				</polygons>
+				<polygons count="5" material="Material_011">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>3 22 35 23 39 24 27 25</p>
+					<p>21 37 27 38 39 39 38 40</p>
+					<p>15 79 21 80 38 81 37 82</p>
+					<p>9 106 15 107 37 108 36 109</p>
+					<p>3 118 9 119 36 120 35 121</p>
+				</polygons>
+				<polygons count="5" material="Material_012">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>3 18 27 19 28 20 4 21</p>
+					<p>21 33 22 34 28 35 27 36</p>
+					<p>15 83 16 84 22 85 21 86</p>
+					<p>9 110 10 111 16 112 15 113</p>
+					<p>3 114 4 115 10 116 9 117</p>
+				</polygons>
+				<polygons count="5" material="Material_013">
+					<input offset="0" semantic="VERTEX" source="#apple-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#apple-Geometry-Normals"/>
+					<p>35 0 45 1 42 2</p>
+					<p>2 3 43 4 44 5</p>
+					<p>40 6 47 7 44 8 43 9</p>
+					<p>40 10 41 11 46 12 47 13</p>
+					<p>41 14 42 15 45 16 46 17</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L12" id="apple" name="apple">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#apple-Geometry">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material_001" target="#Material_001">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_008" target="#Material_008">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_009" target="#Material_009">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_010" target="#Material_010">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_011" target="#Material_011">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_012" target="#Material_012">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_013" target="#Material_013">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="apple-PhysicsMaterial" name="apple-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="apple-RigidBody" sid="apple-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#apple-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#apple-Geometry"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="apple-RigidBody" target="#apple"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

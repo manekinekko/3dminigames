@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_billard/billard.blend</source_data>
+		</contributor>
+		<created>2011-02-15T21:42:09.585065</created>
+		<modified>2011-02-15T21:42:09.585097</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="Material_004-fx" name="Material_004-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.18734 0.15437 0.03933 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.37469 0.30873 0.07865 1</color>
+						</diffuse>
+						<specular>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</specular>
+						<shininess>
+							<float>12.5</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Material_004" name="Material_004">
+			<instance_effect url="#Material_004-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="bar-Geometry" name="bar-Geometry">
+			<mesh>
+				<source id="bar-Geometry-Position">
+					<float_array count="159" id="bar-Geometry-Position-array">10.86959 29.18158 -13.34525 10.86959 -30.18158 -13.34525 8.24879 -32.49700 -13.34525 8.24879 31.49700 -13.34525 10.86959 29.18158 3.61116 10.86959 -30.18200 3.61116 8.24879 -32.49699 3.61116 8.24879 31.49701 3.61116 5.72996 31.49700 -13.34525 5.72996 31.49701 3.61116 5.72996 -32.49700 -13.34525 5.72996 -32.49699 3.61116 -2.30924 -27.79298 21.35271 -2.30924 -27.79298 -14.28888 -9.25971 -26.34273 -14.28888 -9.25971 -26.34273 21.35271 0.63979 -32.74273 21.35270 0.63979 -32.74273 -14.28889 -4.30996 -37.69247 -14.28886 -4.30996 -37.69247 21.35271 -2.30924 26.30753 21.35271 -2.30924 26.30753 -14.28886 0.63979 31.25727 -14.28889 0.63979 31.25727 21.35270 -9.25971 24.85727 21.35271 -9.25971 24.85727 -14.28888 -4.30996 36.20702 -14.28888 -4.30996 36.20702 21.35271 -8.70761 -27.21009 16.02883 -8.70761 26.21008 16.02884 -4.02761 26.92602 18.68888 -4.02761 -27.92599 18.68888 -4.02761 26.92600 22.42422 -4.02761 -27.92600 22.42421 -9.25971 -37.74273 21.35271 -9.25971 -37.74273 -14.28888 -9.25971 36.25727 -14.28888 -9.25971 36.25727 21.35271 -0.01481 -32.49700 -13.34525 -0.01481 -32.49699 3.61116 -1.07359 -30.18199 3.61116 -1.07359 -30.18201 -13.34525 5.72996 -30.18199 3.61116 5.72996 -30.18201 -13.34525 8.24879 -30.18199 3.61116 -6.75121 -27.20534 5.59652 -9.27004 -27.20534 5.59652 -9.27004 25.59629 5.59652 -6.75121 25.59629 5.59652 -9.27004 25.59629 6.08773 -6.75121 25.59629 6.08773 -9.27004 -27.20534 6.08773 -6.75121 -27.20534 6.08773</float_array>
+					<technique_common>
+						<accessor count="53" source="#bar-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="bar-Geometry-Normals">
+					<float_array count="297" id="bar-Geometry-Normals-array">0.91159 0.41102 0.00000 0.79928 0.36036 0.48088 0.61412 -0.27692 0.73901 0.91159 -0.41105 0.00000 0.91159 -0.41105 0.00000 0.61412 -0.27692 0.73901 0.24177 -0.63884 0.73034 0.35392 -0.93524 0.00000 0.79928 0.36036 0.48088 0.91159 0.41102 0.00000 0.35395 0.93524 0.00000 0.24177 0.63884 0.73034 0.24177 0.63884 0.73034 0.35395 0.93524 0.00000 0.00000 1.00000 0.00000 0.00000 0.70708 0.70708 0.35392 -0.93524 0.00000 0.24177 -0.63884 0.73034 0.00000 -0.70708 0.70708 0.00000 -1.00000 0.00000 0.20423 0.97891 0.00000 0.20423 0.97891 0.00000 0.58068 0.81411 0.00000 0.58068 0.81411 0.00000 0.99231 -0.12369 0.00000 0.38734 -0.92190 0.00000 0.38734 -0.92190 0.00000 0.99231 -0.12369 0.00000 0.58068 0.81411 0.00000 0.99231 -0.12369 0.00000 0.99231 -0.12369 0.00000 0.58068 0.81411 0.00000 0.01013 -0.99994 0.00000 0.38734 -0.92190 0.00000 0.38734 -0.92190 0.00000 0.01013 -0.99994 0.00000 0.20423 -0.97891 0.00000 0.58068 -0.81411 0.00000 0.58068 -0.81411 0.00000 0.20423 -0.97891 0.00000 0.38734 0.92190 0.00000 0.99231 0.12369 0.00000 0.99231 0.12369 0.00000 0.38734 0.92190 0.00000 0.99231 0.12369 0.00000 0.58068 -0.81411 0.00000 0.58068 -0.81411 0.00000 0.99231 0.12369 0.00000 0.01013 0.99994 0.00000 0.01013 0.99994 0.00000 0.38734 0.92190 0.00000 0.38734 0.92190 0.00000 1.00000 0.00000 0.00000 0.86431 0.00000 -0.50291 0.86431 0.00000 -0.50291 1.00000 0.00000 0.00000 0.86431 0.00000 -0.50291 0.49413 0.00000 -0.86935 0.49413 0.00000 -0.86935 0.86431 0.00000 -0.50291 0.00000 -1.00000 0.00000 0.00000 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 -1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 0.00000 0.00000 0.70708 0.70708 0.00000 0.31620 0.94867 0.79928 0.36036 0.48088 0.24177 0.63884 0.73034 0.00000 0.00000 1.00000 0.61412 -0.27692 0.73901 0.61412 -0.27692 0.73901 0.00000 0.00000 1.00000 0.24177 -0.63884 0.73034 0.24177 -0.63884 0.73034 0.00000 0.00000 1.00000 0.00000 0.31620 0.94867 0.00000 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 0.31620 0.94867 0.00000 0.70708 0.70708 0.00000 -0.70708 0.70708 0.24177 0.63884 0.73034 0.00000 0.70708 0.70708 0.00000 0.31620 0.94867 0.00000 0.00000 1.00000 -0.70708 0.00000 0.70708 0.00000 0.00000 1.00000 0.00000 0.00000 1.00000 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 -0.70708 0.00000 -0.70708</float_array>
+					<technique_common>
+						<accessor count="99" source="#bar-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="bar-Geometry-Vertex">
+					<input semantic="POSITION" source="#bar-Geometry-Position"/>
+				</vertices>
+				<polygons count="25" material="Material_004">
+					<input offset="0" semantic="VERTEX" source="#bar-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#bar-Geometry-Normals"/>
+					<p>0 0 4 1 5 2 1 3</p>
+					<p>1 4 5 5 6 6 2 7</p>
+					<p>4 8 0 9 3 10 7 11</p>
+					<p>7 12 3 13 8 14 9 15</p>
+					<p>2 16 6 17 11 18 10 19</p>
+					<p>14 20 15 21 12 22 13 23</p>
+					<p>16 24 19 25 18 26 17 27</p>
+					<p>12 28 16 29 17 30 13 31</p>
+					<p>35 32 18 33 19 34 34 35</p>
+					<p>25 36 21 37 20 38 24 39</p>
+					<p>27 40 23 41 22 42 26 43</p>
+					<p>23 44 20 45 21 46 22 47</p>
+					<p>36 48 37 49 27 50 26 51</p>
+					<p>33 52 31 53 30 54 32 55</p>
+					<p>31 56 28 57 29 58 30 59</p>
+					<p>10 60 11 61 39 62 38 63</p>
+					<p>43 64 41 65 40 66 42 67</p>
+					<p>4 68 7 69 44 70 5 71</p>
+					<p>5 72 44 73 6 74</p>
+					<p>6 75 44 76 42 77 11 78</p>
+					<p>11 79 42 80 40 81 39 82</p>
+					<p>7 83 9 84 42 85 44 86</p>
+					<p>48 87 47 88 46 89 45 90</p>
+					<p>48 91 45 92 52 93 50 94</p>
+					<p>52 95 51 96 49 97 50 98</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L16" id="bar" name="bar">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#bar-Geometry">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material_004" target="#Material_004">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="bar-PhysicsMaterial" name="bar-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="bar-RigidBody" sid="bar-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#bar-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#bar-Geometry"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="bar-RigidBody" target="#bar"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

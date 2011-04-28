@@ -552,7 +552,7 @@ remove elt1 from liste1; // l'élément doit exister et être dans la liste dés
 _Partie *Description du jeu*_
   * le mot-clé pour définir les attributs principaux de jeu. Ses attributs sont 'gravity', 'world', 'gridsize', 'name', 'turnbased' et 'ranking' :
 {{{
-game has gravity at 10, score at 0; 
+game has gravity at 10, name at "Mon Jeu"; 
 }}}
 
 ==generate==
@@ -575,14 +575,6 @@ definition genGoombas means
 	generate 3 goombas on sol;
 }}}
 
-==grasps==
-_Partie *Définitions*_
-  * ordonner à un objet d'en attraper un autre pour le faire sien (voir [Keywords#has 'has'], [Keywords#ingests 'ingests'] et [Keywords#expels 'expels']):
-{{{
-definition entrerDansVoiture means 
-	voiture grasps perso1; // c'est la voiture qui attrape le personnage afin de le conduire quelque part
-}}}
-
 ==generated==
 _Partie *Définitions*_
   * dans une condition, tester si un objet est présent dans l'environnement 3D (voir [Keywords#generate 'generate']) :
@@ -591,20 +583,6 @@ definition objetExiste means
 	if objet1 is generated then
 		/*conséquence*/
 	endif;
-}}}
-
-==gravity==
-_Partie *Description du jeu*_
-  * définir la gravité de l'environnement. la gravité peut être définie par un vecteur (trois chiffre float) ou un chiffre (gravité vers bas) :
-{{{
-game has gravity at 1 1 1;
-}}}
-
-==gridsize==
-_Partie *Description du jeu*_
-  * définir la taille de chaque case dans le cas d'un jeu de type grille (voir [Keywords#world 'world'] et [Keywords#grid 'grid']) :
-{{{
-game has gridsize at 12;
 }}}
 
 ==generic==
@@ -621,12 +599,33 @@ _Partie *Règles du jeu*_
 rules mario gets etoile then
 	/*actions*/;
 }}}
+==grasps==
+_Partie *Définitions*_
+  * ordonner à un objet d'en attraper un autre pour le faire sien (voir [Keywords#has 'has'], [Keywords#ingests 'ingests'] et [Keywords#expels 'expels']):
+{{{
+definition entrerDansVoiture means 
+	voiture grasps perso1; // c'est la voiture qui attrape le personnage afin de le conduire quelque part
+}}}
+
+==gravity==
+_Partie *Description du jeu*_
+  * définir la gravité de l'environnement. la gravité peut être définie par un vecteur (trois chiffre float) ou un chiffre (gravité vers bas) :
+{{{
+game has gravity at 1 1 1;
+}}}
 
 ==grid==
 _Partie *Description du jeu*_
   * type de d'environnement (map) découpé en cases de taille fixée par l'attribut gridsize (voir [Keywords#world 'world'], [Keywords#generic 'generic'], [Keywords#ribbon 'ribbon'] et [Keywords#gridsize 'gridsize']) :
 {{{
 game has world at grid;
+}}}
+
+==gridsize==
+_Partie *Description du jeu*_
+  * définir la taille de chaque case dans le cas d'un jeu de type grille (voir [Keywords#world 'world'] et [Keywords#grid 'grid']) :
+{{{
+game has gridsize at 12;
 }}}
 <br />
 ----

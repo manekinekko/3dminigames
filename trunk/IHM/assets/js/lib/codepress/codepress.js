@@ -42,7 +42,7 @@ CodePress = function(obj) {
 	self.edit = function(obj,language, cb) {
 		
 		// -- fix: set the new path to codepress directory
-		var _path = window.location.href.replace('index.html', '');
+		var _path = window.location.href.replace('index.php', '');
 		CodePress.path = _path+'assets/js/lib/codepress/';
 		// --
 		

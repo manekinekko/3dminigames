@@ -1,7 +1,18 @@
+<?php
+	
+	require_once('bin/includes/global.fn.php');
+	require_once('bin/includes/Session.class.php');
+	
+	if( $session->ok() == false )
+	{
+		redirect('login.php');
+	}
+	
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title id="title">3DWIGS UI</title>
+		<title id="title">3DWIGS</title>
 		<!-- start: css parsing -->
 		<link href="assets/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
@@ -95,8 +106,14 @@
 							<div id="toggle-attributes" class="button" >Preset Attributes</div>
 						</li>
 						
-						<li style="float:right">
+						<li class="separator"></li>
+
+						<li>
 							<div id="create-game" class="button">Create My Game</div>
+						</li>
+						
+						<li style="float:right">
+							<div id="logout" class="button">Logout</div>
 						</li>
 
 					</ul>
@@ -174,7 +191,8 @@
 				</div>
 				
 				<div id="game-info" class="window box-shadow closed">
-					<h2>Welcome to 3DWIGS</h2>
+					<h2>Welcome <?php echo $session->get('login'); ?>!</h2>
+					<p>Please create your game.</p>
 					<label for="game-name">Game name<em>*</em></label>
 					<input type="text" class="alphanumeric required" name="game-name" id="game-name" value="" placeholder="Game name" />
 					<br/>
@@ -212,7 +230,7 @@
 				</div>
 				
 				<div id="confirmation-load" class="window box-shadow closed">
-					<h2>Welcome back!</h2>
+					<h2>Welcome back, <?php echo $session->get('login'); ?>!</h2>
 					<div>Do you want to load your previous content ?<br/>
 					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
 					</div>
@@ -261,6 +279,9 @@
 		
 		<!-- start: js parsing -->
 		<script type="text/javascript" src="assets/js/loadjs.php"></script>
+		<script>
+		M3D.Config.username = "<?php echo $session->get('login'); ?>";
+		</script>
 		<!-- end: js parsing -->
 
 	</body>

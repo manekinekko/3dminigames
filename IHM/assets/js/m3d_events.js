@@ -389,4 +389,15 @@ $(function(){
 		
 	});
 
+	
+	/**
+	 * Bind the logout operation.
+	 */
+	 $('#logout').bind('click', function(){
+	 	
+		window.location.href = 'logout.php';
+		
+	 });
+	
+
 });

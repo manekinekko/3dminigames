@@ -1,7 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_config.js
- * @projectDescription This is a config file.
+ * @projectDescription This script loads a configuration data from an XML file.
  */
 $(document).ready(function()
 {
@@ -27,7 +27,7 @@ $(document).ready(function()
 			$('#loading-message').text('UI configuration loaded!');
 		}, 1000);
 		$('#title').append(" - ver"+M3D.Config.version);
-		
+
 	}
   });
 });

@@ -2,7 +2,8 @@
  * @name m3d_db.js
  * @author marginier david
  */
-
+(function(M3D){
+ 
 if(!window["M3D"]){
 	window["M3D"]={};	
 }
@@ -27,7 +28,7 @@ if ('webkitIndexedDB' in window) {
   //--------------------------------------------------
   //------------	Open indexedDB	------------------
   //--------------------------------------------------
-	
+
 /**
  * The IndexedDB initialization process.
  * @see Object.idbCreate_entity
@@ -35,14 +36,18 @@ if ('webkitIndexedDB' in window) {
  * @see Object.idbCreate_attributes
  */
 M3D.DB.init = function(){
+	M3D.GUI.showPopup('game-info');
+}
+
+M3D.DB.start = function(name){
 	if (window.indexedDB) {	// Open our IndexedDB if the browser supports it.
-		var idbRequest = window.indexedDB.open("m3d","3DWIGS project");
+		var idbRequest = window.indexedDB.open("m3d_"+name,"3DWIGS project");
 		idbRequest.onsuccess = function(event) {
 			db = idbRequest.result;
 			var e= idbRequest;
 			if(e.result.version != "1"){
 				idbCreate_entity();
-				idbCreate_grammar();
+				idbCreate_grammar(name);
 				/*idbCreate_attributes();*/				
 			}else{
 				M3D.GUI.showPopup('confirmation-load');
@@ -62,7 +67,7 @@ M3D.DB.init = function(){
  * @see Object.M3D.Editor.setContent
  * @see Object.M3D.GUI.importModel
  */
-M3D.DB.load = function(){
+M3D.DB.load = function(cp){
 	if (!db.objectStoreNames.contains('entity')||!db.objectStoreNames.contains('grammar')) {
 	  log("Object store not yet created.");
 	  return;
@@ -85,7 +90,8 @@ M3D.DB.load = function(){
 									locX: tmpArr[i].position.X, locY: tmpArr[i].position.Y, locZ: tmpArr[i].position.Z, 
 									scaleX: tmpArr[i].scale.X, scaleY: tmpArr[i].scale.Y, scaleZ: tmpArr[i].scale.Z, 
 									rotX: tmpArr[i].rotation.X, rotY: tmpArr[i].rotation.Y, rotZ: tmpArr[i].rotation.Z});
-		}
+			}
+			cp();
 			return;
 		}
 		tmpArr.push(cursor.value);
@@ -122,7 +128,7 @@ function idbCreate_entity() {	// name, url, position of entity
  * Create ObjectStore of grammar.
  * @private
  */ 
-function idbCreate_grammar() {	// grammar 
+function idbCreate_grammar(name) {	// grammar 
 	var request = db.setVersion('1');
 	request.onerror = function(e){log("Error: IndexedDB create grammar");};
 	request.onsuccess = function(e) {
@@ -130,7 +136,7 @@ function idbCreate_grammar() {	// grammar
 			try {
 				db.createObjectStore('grammar', {keyPath: 'id'});
 				log("Object store grammar created");
-				var ini='\n/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\n';
+				var ini='/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\ngame has name at "'+name+'" ;\n';
 				M3D.DB.setGrammar(ini);
 				M3D.Editor.initDB(ini);
 				
@@ -263,17 +269,20 @@ M3D.DB.containsObj = function(name){
 M3D.DB.updateSelectedObject = function() {
 	if ( obj ){
 		var _obj = obj.parent;
-		var uid = _obj.uid;
+		var uid = obj.uid;
 		var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("entity");
 		var request_entity = objectStore.get(uid);
 		request_entity.onsuccess=function(e){
 			var element=request_entity.result;
+			var eleName=element.name;
+			var eleUrl=element.url;
+			var eleId=element.id;
 			objectStore.delete(uid);
-			var request = objectStore.add({name: element.name, url: element.url, 
+			var request = objectStore.add({name: eleName, url: eleUrl, 
 											position: {	X: _obj.getLocX(), Y: _obj.getLocY(), Z: _obj.getLocZ() },
 											scale: { X: _obj.getScaleX(), Y: _obj.getScaleY(), Z: _obj.getScaleZ() }, 
 											rotation: {	X: _obj.getRotX(), Y: _obj.getRotY(), Z: _obj.getRotZ()
-											}, id: element.id});
+											}, id: eleId});
 			request.onerror = function(e){log("Error: IndexedDB update_entity");};
 			request.onsuccess = function(event) {log("Update entity k");};			
 		};
@@ -282,7 +291,7 @@ M3D.DB.updateSelectedObject = function() {
 }
 
 M3D.DB.saveEditor = function(data){
-	M3D.DB.setEditor({value: data.content});
+	M3D.DB.setEditor({value: data.value});
 }
 
 /**
@@ -290,10 +299,10 @@ M3D.DB.saveEditor = function(data){
  * @param {Object} data New grammar.
  */
 M3D.DB.setEditor = function(data) {
-	var grammar = data.value;	
+	var gra = data.value;
 	var objectStore = db.transaction([], IDBTransaction.READ_WRITE).objectStore("grammar");
 	objectStore.delete("gram");
-	var request = objectStore.add({grammar: grammar+"", id: "gram"});
+	var request = objectStore.add({grammar: gra+"", id: "gram"});
 	request.onerror = function(e){log("Error: IndexedDB update_grammar");};
 	request.onsuccess = function(event) {log("Update grammar k");};	
 }
@@ -358,3 +367,4 @@ M3D.DB.clear = function(){
 	}
 }
 
+})(window.M3D);

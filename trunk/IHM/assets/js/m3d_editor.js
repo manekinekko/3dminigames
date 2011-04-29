@@ -10,16 +10,20 @@
 	 * Initializes the editor. 
 	 * This function is called once the document is loaded.
 	 */
+	var indexed=false;	//Permet de differencier localStorage et IndexedDB
 	M3D.Editor.init = function(){	
 		
 		log('initializating the editor ...');	
-		
-		var c = M3D.DB.getEditor('edwigs');
-		if ( !c || c ===  null || c === ""){
-			M3D.Editor.clear();
+		if(indexed){
+			//M3D.Editor.clear();
 		}
-		else {
-			M3D.Editor.setContent(c);
+		else{
+			var c = M3D.DB.getEditor('edwigs');
+			if ( !c || c ===  null || c === ""){
+				M3D.Editor.clear();
+			} else {
+				M3D.Editor.setContent(c);
+			}
 		}
 	};
 	
@@ -32,7 +36,12 @@
 		if ( !cb ){
 			var cb = function(){};
 		}
-		M3D.Editor.setContent('game has name at "'+name+'" ;\n', cb);
+		if(indexed){
+			M3D.DB.start(name);
+			cb();
+		}else{
+			M3D.Editor.setContent('game has name at "'+name+'" ;\n', cb);
+		}
 	};
 	
 	/**
@@ -107,9 +116,14 @@
 	 * @param {Function} cb The callback function
 	 */
 	M3D.Editor.setContent = function(value, cb){
-		var _old = M3D.Editor.getContent();
-		_old = _old === '' ? _old : _old+"\n";
-		_setAndClearContent(_old+value, cb);
+		if(indexed){
+			M3D.Editor.initDB(value);
+		}
+		else{
+			var _old = M3D.Editor.getContent();
+			_old = _old === '' ? _old : _old+"\n";
+			_setAndClearContent(_old+value, cb);
+		}
 	};	 
 	
 	/**
@@ -149,21 +163,19 @@
 	 * that will be excexuted after the editor is updated
 	 * @private
 	 */
-	var _setAndClearContent = function(value, cb){
-		
+	var _setAndClearContent = function(val, cb){
 		// create a new callback function
 		var _cb = function(){
-			
 			M3D.DB.setEditor({
 				'uid': 'edwigs', 
-				'value': value	
+				'value': val	
 			});
 			
 			if ( cb ){
 				cb();
 			}
 		}
-		edwigs.edit( value, 'edwigs', _cb );
+		edwigs.edit( val, 'edwigs', _cb );
 	};
 	
 })(window.M3D);

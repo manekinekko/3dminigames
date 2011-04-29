@@ -1,15 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.istic.mini3d.lib;
 
 /**
  *
  * @param <A> 
  * @param <B>
- * @author Quentin
+ * @author Mini3D
+ * @version 1.0
  */
 public class Pair<A, B> {
     private A first;

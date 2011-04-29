@@ -1,15 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.istic.mini3d.lib;
 
 import com.istic.mini3d.code.Code;
 
 /**
  *
- * @author Beben
+ * @author Mini3D
+ * @version 1.0
  */
 public class Coordonnees{
 

@@ -117,6 +117,11 @@ public class AttributeValue {
 	type = Type.TIME;
     }
     
+    public AttributeValue(Array a) {
+	value = a.getCode();
+	type = Type.ARRAY;
+    }
+
     /**
      * Constructeur d'un attribut par code et type.
      * Initialise la valeur de l'attribut par l'objet Code passé en paramètre.
@@ -124,7 +129,6 @@ public class AttributeValue {
      * @param c le code représentatif de la valeur de l'attribut.
      * @param t le type de l'attribut.
      */
-
     public AttributeValue(Code c, Type t) {
 	value = c;
 	type = t;

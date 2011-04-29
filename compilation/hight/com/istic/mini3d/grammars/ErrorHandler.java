@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.istic.mini3d.grammars;
 
 import com.istic.mini3d.lib.Pair;
@@ -10,12 +5,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Quentin
+ * Gestionnaire d'erreurs.
+ * @author Mini3D
+ * @version 1.0
  */
 public class ErrorHandler {
 
-    public static enum ErrorType{WARNING, ERROR, FATAL};
+    /**
+     * Type énuméré ErrorType.
+     * Il défini le niveau de l'erreur.
+     */
+    public static enum ErrorType{
+	/**
+	 * Type WARNING.
+	 * Il est utilisé pour attirer l'attention de l'utilisateur sur une incertitude ou sur un comportement non désirable.
+	 */
+	WARNING,
+	/**
+	 * Type ERROR.
+	 * Il est utilisé pour les erreurs communes, mais qui ne nécessite pas un arrêt du compilateur.
+	 */
+	ERROR,
+	/**
+	 * Type FATAL.
+	 * Il est utilisé dès qu'une erreur empêchant le compilateur de s'exécuter normalement est détectée.
+	 */
+	FATAL};
     private List<Pair<Integer, String>> errors;
     private static ErrorHandler instance;
 
@@ -23,6 +38,11 @@ public class ErrorHandler {
         this.errors = new ArrayList<Pair<Integer, String>>();
     }
 
+    /**
+     * Patern Singleton.
+     * Retourne l'unique instance du Gestionnaire d'erreur.
+     * @return ErrorHandler instance.
+     */
     public static ErrorHandler getInstance() {
         if(instance == null) {
             instance = new ErrorHandler();
@@ -30,6 +50,12 @@ public class ErrorHandler {
         return instance;
     }
 
+    /**
+     * Ajoute une erreur à la liste. Si l'erreur est FATAL, elle arrête le compilateur et affiche les erreurs.
+     * @param type Type de l'erreur.
+     * @param line Ligne où l'erreur est intervenue.
+     * @param msg Message de l'erreur.
+     */
     public void add(ErrorType type, int line, String msg) {
         switch(type) {
             case WARNING:
@@ -75,6 +101,9 @@ public class ErrorHandler {
         System.exit(-1);
     }
 
+    /**
+     * Affiche les erreurs.
+     */
     public void printErrors() {
         for(Pair<Integer, String> p : this.errors) {
             System.out.println(p.getFirst());

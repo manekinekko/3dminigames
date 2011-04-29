@@ -7,12 +7,19 @@ package com.istic.mini3d.lib;
 
 /**
  *
+ * @param <A> 
+ * @param <B>
  * @author Quentin
  */
 public class Pair<A, B> {
     private A first;
     private B second;
 
+    /**
+     *
+     * @param first
+     * @param second
+     */
     public Pair(A first, B second) {
         super();
         this.first = first;
@@ -46,18 +53,34 @@ public class Pair<A, B> {
            return "(" + first + ", " + second + ")";
     }
 
+    /**
+     *
+     * @return
+     */
     public A getFirst() {
         return first;
     }
 
+    /**
+     * 
+     * @param first
+     */
     public void setFirst(A first) {
         this.first = first;
     }
 
+    /**
+     *
+     * @return
+     */
     public B getSecond() {
         return second;
     }
 
+    /**
+     *
+     * @param second
+     */
     public void setSecond(B second) {
         this.second = second;
     }

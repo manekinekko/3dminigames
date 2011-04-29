@@ -13,8 +13,14 @@ import com.istic.mini3d.code.Code;
  */
 public class Coordonnees{
 
-public Code x,y,z;
+    public Code x,y,z;
 
+/**
+ *
+ * @param x
+ * @param y
+ * @param z
+ */
 public Coordonnees(Code x, Code y, Code z){
     this.x = x;
     this.y = y;
@@ -22,14 +28,29 @@ public Coordonnees(Code x, Code y, Code z){
 }
 
 
+/**
+ *
+ */
 public Coordonnees(){
     this.x = new Code();
     this.y = new Code();
     this.z = new Code();
 }
 
+/**
+ *
+ * @return
+ */
 public Code getX(){return x;};
+/**
+ *
+ * @return
+ */
 public Code getY(){return y;};
+/**
+ *
+ * @return
+ */
 public Code getZ(){return z;};
 
 

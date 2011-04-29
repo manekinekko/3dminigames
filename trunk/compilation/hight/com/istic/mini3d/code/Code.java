@@ -15,31 +15,56 @@ import com.istic.mini3d.symbols.Model;
 import java.util.ArrayList;
 
 /**
- *
- * @author Quentin
+ * Classe de gestion des Objets de type Code
+ * @author Mini3D
+ * @version 1.0
  */
 public class Code {
 
     private String c;
 
+    /**
+     * Constructeur simple de la classe
+     * Permet de créer un objet de type code vide.
+     */
     public Code() {
         c = "";
     }
 
+    /**
+     * Constructeur paramétrable de la classe.
+     * Permet de créer un objet de type code qui contient le code du string s.
+     * @param s valeur qui doit être contenue dans l'objet de type code.
+     */
     public Code(String s) {
         c = s;
     }
 
+    /**
+     * Concatenateur de code/chaine de caractère.
+     * Permet d'ajouter un chaine de caractère a la suite du code existant.
+     * @param s chaine de caractère a ajouter a la suite du code courant.
+     */
     public void append(String s) {
         c += s;
     }
 
+    /**
+     * Concatenateur de code/code.
+     * Permet d'ajouter un code a la suite du code existant.
+     * @param co objet Code a ajouter a la suite du code courant.
+     */
     public void append(Code co) {
         if (co != null) {
             c += co.getCode();
         }
     }
 
+    /**
+     * Accesseur au code
+     * Permet de réccupérer le javaScrit contenu dans l'objet code
+     * @return code Javascript stocké dans l'objet
+     */
     public String getCode() {
         return c;
     }
@@ -49,10 +74,24 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode de génération du code d'une entité.
+     * Permet de générer le JavaScript voulu.
+     * @param name nom de l'entité.
+     * @return code JavaScript représentatif de la déclaration de l'entité.
+     */
     public static Code genEntity(String name) {
         return new Code("object" + name + "=");
     }
 
+    /**
+     * Méthode de génération du code d'une ressource.
+     * Permet de générer le code pour la déclaration d'une ressource.
+     * @param name nom de la ressource.
+     * @param value valeur de la ressource sous forme de float.
+     * @param fin boolen représentatif de la fin de ligne.
+     * @return code JavaScript représentatif de la déclaration de l'entité.
+     */
     public static Code genRessourceI(String name, float value, boolean fin) {
         Code co = new Code(" " + name + "=" + value);
         if (fin) {
@@ -63,6 +102,14 @@ public class Code {
         return co;
     }
 
+    /**
+     * Méthode de génération du code d'une ressource.
+     * Permet de générer le code pour la déclaration d'une ressource.
+     * @param name nom de la ressource.
+     * @param value valeur de la ressource sous forme de chaine de caractère.
+     * @param fin boolen représentatif de la fin de ligne.
+     * @return code JavaScript l'affectation de la ressource.
+     */
     public static Code genRessourceS(String name, String value, boolean fin) {
         Code co = new Code(" " + name + "=" + value);
         if (fin) {
@@ -112,16 +159,38 @@ public class Code {
     return co;
     }*/
 
+    /**
+     * 
+     * @param name
+     * @param pre
+     * @return
+     */
     public static Code genSigPre(String name, String pre) {
         return new Code(name + "->" + pre + ";");
     }
 
+    /**
+     * 
+     * @param name
+     * @param entities
+     * @param ress
+     * @param op
+     * @param value
+     * @return
+     */
     public static Code genSigOp(String name, String entities, String ress, String op, float value) {
         return new Code(name + "->" + entities + "." + ress + "apply (" + op + value + ");");
     }
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Assignation//////////////////////////////////////
+    /**
+     * Methode qui permet de générer le code de l'affectation.
+     * Permet de créer le code JavaScript d'une affectation de la forme "A = B;".
+     * @param s1 code de l'objet qui subit l'affectation.
+     * @param s2 code de la valeur a affecter.
+     * @return code JavaScript de l'affectation.
+     */
     public static Code genAffect(Code s1, Code s2) {
         Code cod = new Code();
 
@@ -132,6 +201,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Methode qui permet de générer le code de l'incrémentation.
+     * Permet de créer le code JavaScript d'une incrémentation de la forme "A += B;".
+     * @param s1 code de la variable a incrémenter.
+     * @param s2 code de la valeur a incrémenter.
+     * @return code JavaScript de l'incrémentation.
+     */
     public static Code genIncr(Code s1, Code s2) {
         Code cod = new Code();
 
@@ -142,6 +218,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Methode qui permet de générer le code de l'incrémentation.
+     * Permet de créer le code JavaScript d'une incrémentation de la forme "A -= B;".
+     * @param s1 code de la variable a décrémenter.
+     * @param s2 code de la valeur a décrémenter.
+     * @return code JavaScript de l'incrémentation.
+     */
     public static Code genSub(Code s1, Code s2) {
         Code cod = new Code();
 
@@ -152,6 +235,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Methode qui permet de générer le code de l'inversion de deux variables.
+     * Permet de créer le code JavaScript d'une inversion de contenu entre deux variables.
+     * @param s1 code d'une variable a inverser.
+     * @param s2 code d'une variable a inverser.
+     * @return code JavaScript de l'invertion de la variable.
+     */
     public static Code genInvert(Code s1, Code s2) {
         Code cod = new Code("var tmp = ");
 
@@ -169,6 +259,12 @@ public class Code {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Conditions///////////////////////////////////////
+    /**
+     * Methode qui permet de générer le code de l'inversion d'une variable.
+     * Permet de générer le code Javascript qui inverse la valeur booleenne d'un code.
+     * @param c code a inverser (sens booléen)
+     * @return code Javascript de l'inversion de c
+     */
     public static Code genNot(Code c) {
         Code cod = new Code();
 
@@ -179,6 +275,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "ou"
+     * Permet de générer le code pour réaliser un "ou" logique entre deux conditions passées en paramètre sous forme de code.
+     * @param cond1 une des conditions
+     * @param cond2 une des conditions
+     * @return code JavaScript du "ou"
+     */
     public static Code genOr(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -191,6 +294,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "et"
+     * Permet de générer le code pour réaliser un "et" logique entre deux conditions passées en paramètre sous forme de code.
+     * @param cond1 une des conditions
+     * @param cond2 une des conditions
+     * @return code JavaScript du "et"
+     */
     public static Code genAnd(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -203,6 +313,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "<="
+     * Permet de générer le code pour réaliser un "<="  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du "<="
+     */
     public static Code genInfEg(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -215,6 +332,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "<"
+     * Permet de générer le code pour réaliser un "<"  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du "<"
+     */
     public static Code genInf(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -227,6 +351,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le ">="
+     * Permet de générer le code pour réaliser un ">="  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du ">="
+     */
     public static Code genSupEg(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -239,6 +370,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le ">"
+     * Permet de générer le code pour réaliser un ">"  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du ">"
+     */
     public static Code genSup(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -251,6 +389,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "=="
+     * Permet de générer le code pour réaliser un "=="  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du "=="
+     */
     public static Code genEquals(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -263,6 +408,13 @@ public class Code {
         return cod;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "!="
+     * Permet de générer le code pour réaliser un "!="  entre deux valeur passées en paramètre sous forme de code.
+     * @param cond1 une des valeur
+     * @param cond2 une des valeur
+     * @return code JavaScript du "!="
+     */
     public static Code genDiff(Code cond1, Code cond2) {
         Code cod = new Code();
 
@@ -277,6 +429,13 @@ public class Code {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Opérations///////////////////////////////////////
+    /**
+     * Méthode qui permet de générer le code pour un random
+     * Permet de générer le code pour réaliser un random  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du "random"
+     */
     public static Code genRD(Code c1, Code c2) { //Math.round() arrondi ?
         Code c = new Code("Math.random()*(");
         c.append(c2);
@@ -288,6 +447,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "+"
+     * Permet de générer le code pour réaliser un "+"  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du "+"
+     */
     public static Code genPLUS(Code c1, Code c2) {
         Code c = new Code("(");
         c.append(c1);
@@ -297,6 +463,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "-"
+     * Permet de générer le code pour réaliser un "-"  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du "-"
+     */
     public static Code genMINUS(Code c1, Code c2) {
         Code c = new Code("(");
         c.append(c1);
@@ -306,6 +479,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "*"
+     * Permet de générer le code pour réaliser un "*"  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du "*"
+     */
     public static Code genMUL(Code c1, Code c2) {
         Code c = new Code("(");
         c.append(c1);
@@ -315,6 +495,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le "/"
+     * Permet de générer le code pour réaliser un "/"  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du "/"
+     */
     public static Code genDIV(Code c1, Code c2) {
         Code c = new Code("(");
         c.append(c1);
@@ -324,6 +511,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour le modulo
+     * Permet de générer le code pour réaliser un modulo  entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript du modulo
+     */
     public static Code genMOD(Code c1, Code c2) {
         Code c = new Code("(");
         c.append(c1);
@@ -333,6 +527,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui permet de générer le code pour les puissances
+     * Permet de générer le code pour réaliser une puissance entre deux valeur passées en paramètre sous forme de code.
+     * @param c1 une des valeur
+     * @param c2 une des valeur
+     * @return code JavaScript de la puissance
+     */
     public static Code genPOW(Code c1, Code c2) {
         Code c = new Code("Math.pow(");
         c.append(c1);
@@ -344,43 +545,105 @@ public class Code {
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Coordonnées//////////////////////////////////////
+    /**
+     * Méthode qui génère le code d'accès a la position de l'entité.
+     * Permet de génèrer le code d'accès a la position de l'entité sur l'axe des X.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la position.
+     */
     public static Code genPosX(String s) {
         return new Code(s + ".posX");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a l'orientation de l'entité.
+     * Permet de génèrer le code d'accès a l'orientation de l'entité sur l'axe des X.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a l'orientation.
+     */
     public static Code genoRX(String s) {
         return new Code(s + ".orX");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a la taille de l'entité.
+     * Permet de génèrer le code d'accès a la taille de l'entité sur l'axe des X.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la taille.
+     */
     public static Code genTX(String s) {
         return new Code(s + ".tX");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a la position de l'entité.
+     * Permet de génèrer le code d'accès a la position de l'entité sur l'axe des Y.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la position.
+     */
     public static Code genPosY(String s) {
         return new Code(s + ".posY");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a l'orientation de l'entité.
+     * Permet de génèrer le code d'accès a l'orientation de l'entité sur l'axe des Y.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a l'orientation.
+     */
     public static Code genoRY(String s) {
         return new Code(s + ".orY");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a la taille de l'entité.
+     * Permet de génèrer le code d'accès a la taille de l'entité sur l'axe des Y.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la taille.
+     */
     public static Code genTY(String s) {
         return new Code(s + ".tY");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a la position de l'entité.
+     * Permet de génèrer le code d'accès a la position de l'entité sur l'axe des Z.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la position.
+     */
     public static Code genPosZ(String s) {
         return new Code(s + ".posZ");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a l'orientation de l'entité.
+     * Permet de génèrer le code d'accès a l'orientation de l'entité sur l'axe des Z.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a l'orientation.
+     */
     public static Code genoRZ(String s) {
         return new Code(s + ".orZ");
     }
 
+    /**
+     * Méthode qui génère le code d'accès a la taille de l'entité.
+     * Permet de génèrer le code d'accès a la taille de l'entité sur l'axe des Z.
+     * @param s nom de l'entité.
+     * @return code JavaScript d'accès a la taille.
+     */
     public static Code genTZ(String s) {
         return new Code(s + ".tZ");
     }
     ///////////////////////////////////////////////////////////////////////////////
 
+    /**
+     * Méthode qui génère le code du if.
+     * Permet de générer le code du if...then...else... Si le deuxième paramètre est null on génère juste if...then...
+     * @param co condition du if.
+     * @param r1 action du then.
+     * @param r2 action du else.
+     * @return code JavaScript du if.
+     */
     public static Code genIF(Code co, Code r1, Code r2) {
         Code c = new Code("if(");
         c.append(co);
@@ -395,6 +658,13 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui génère le code d'un accès.
+     * Permet de générer le code JavaScript d'un accès a l'attribut d'une entité.
+     * @param nom nom de l'entité.
+     * @param at nom de l'attribut.
+     * @return code JavaScript de l'accès de données.
+     */
     public static Code genAccess(String nom, String at) {
         Code c = new Code(nom);
         c.append(".");
@@ -402,12 +672,22 @@ public class Code {
         return c;
     }
 
+    /**
+     * Méthode qui génère le code de fin de ligne.
+     * Permet la génération du ";" de fin de ligne.
+     * @return code JavaScript de la fin de ligne.
+     */
     public static Code genEOL() {
         return new Code(";");
     }
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Models/Entitées//////////////////////////////////
+    /**
+     * 
+     * @param m
+     * @return
+     */
     public static Code genModel(Model m) {
         if (Model.generated(m)) //On vérifie que le model n'est pas déjà généré.
         {
@@ -435,6 +715,11 @@ public class Code {
         return cod;
     }
 
+    /**
+     * 
+     * @param ent
+     * @return
+     */
     public static Code genFuncEntity(Entity ent) {
         Code cod = new Code();
         cod.append("function gen" + ent.getName() + "() {\n");
@@ -461,6 +746,11 @@ public class Code {
 
     return cod;
     }*/
+    /**
+     * 
+     * @param def
+     * @return
+     */
     public static Code genFuncDef(Definition def) {
 
         Code c = new Code();
@@ -484,6 +774,11 @@ public class Code {
 
     }
 
+    /**
+     * 
+     * @param ent
+     * @return
+     */
     public static Code genEntity(Entity ent) {
         Code c = new Code();
         c.append(ent.getName() + " = gen" + ent.getName() + "();\n");
@@ -493,6 +788,12 @@ public class Code {
 
     
     //Appel de fonction JavaScript exemple :  "f(p1, p2 , p3);"
+    /**
+     * 
+     * @param name
+     * @param params
+     * @return
+     */
     public static Code genFuncCall(String name , List<String> params){
     	Code c = new Code();
     	
@@ -515,6 +816,11 @@ public class Code {
     
     /* Appel de la fonction addObject du moteur3D
     MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
+     */
+    /**
+     * 
+     * @param ent
+     * @return
      */
     public static Code genAddObject(Entity ent) {
 
@@ -550,6 +856,12 @@ public class Code {
      *           Tab[v]-> genTab("Tab");
      */
 
+    /**
+     * 
+     * @param name
+     * @param x
+     * @return
+     */
     public static Code genTab(String name, Integer x) {
         Code c = new Code();
         c.append(name + "= new Array();");
@@ -562,6 +874,11 @@ public class Code {
     }
 
     //clearInterval(id_of_setinterval)
+    /**
+     * 
+     * @param id
+     * @return
+     */
     public static Code genClearInterval(String id) {
         Code c = new Code();
 
@@ -573,6 +890,12 @@ public class Code {
     }
 
     //setInterval(code,millisec
+    /**
+     * 
+     * @param cod
+     * @param t
+     * @return
+     */
     public static Code genSetInterval(String cod, String t) {
         Code c = new Code();
 
@@ -588,6 +911,12 @@ public class Code {
     //////////////////////////////////////////////////////////////////////
     ///////////////////////Boucle de rafraichissement/////////////////////
     //////////////////////////////////////////////////////////////////////
+    /**
+     * 
+     * @param tab
+     * @param clavier
+     * @return
+     */
     public static Code genRefreshLoop(Code [] tab, boolean clavier) {
         boolean com = false;
         Code c = new Code();
@@ -669,6 +998,13 @@ public class Code {
     
     
     //setTimeout(code,millisec)
+    /**
+     * 
+     * @param cod
+     * @param time
+     * @param timeUnit
+     * @return
+     */
     public static Code genSetTimeout(Code cod , Code time , String timeUnit){
     	Code c = new Code();
     	
@@ -701,12 +1037,24 @@ public class Code {
 		return c;
     }
     
+    /**
+     * 
+     * @param n
+     * @return
+     */
     public static Code genArg(int n){
     	Code c = new Code();	
     	c.append("arg"+n);
     	return c;
     }
 
+    /**
+     * 
+     * @param clavier
+     * @param souris
+     * @param possouris
+     * @return
+     */
     public static Code genEventListener(boolean clavier,boolean souris,boolean possouris){
         Code c = new Code();
         c.append("window.addEventListener('load', function () {\n");
@@ -720,6 +1068,11 @@ public class Code {
 	c.append("}, false);\n\n");
         return c;
     }
+    /**
+     * 
+     * @param list_event
+     * @return
+     */
     public static Code genCMDKeyDown(ArrayList <Control> list_event){
         Code c = new Code();
         c.append("CMDKeyDown = function(event){\n");
@@ -746,6 +1099,11 @@ public class Code {
         return c;
     }
 
+    /**
+     * 
+     * @param list_event
+     * @return
+     */
     public static Code genCMDKeyUp(ArrayList <Control> list_event){
         Code c = new Code();
         c.append("CMDKeyUp = function(event){\n");
@@ -772,7 +1130,13 @@ public class Code {
         return c;
     }
 
-        public static Code genCMDExec(ArrayList <Control> list_event, ArrayList<Code> liste){
+    /**
+     * 
+     * @param list_event
+     * @param liste
+     * @return
+     */
+    public static Code genCMDExec(ArrayList <Control> list_event, ArrayList<Code> liste){
         Code c = new Code();
         c.append("var CMDExec = function(num){\n");
         Iterator <Control> it = list_event.iterator();

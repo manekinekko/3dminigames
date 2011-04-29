@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.istic.mini3d.code;
 
 import com.istic.mini3d.attributes.*;
@@ -684,9 +680,10 @@ public class Code {
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Models/Entitées//////////////////////////////////
     /**
-     * 
-     * @param m
-     * @return
+     * Méthode qui génère le code d'un Model.
+     * Permet le génération d'une classe JavaScript correspondant au model.
+     * @param m Model à générer.
+     * @return code JavaScript du model.
      */
     public static Code genModel(Model m) {
         if (Model.generated(m)) //On vérifie que le model n'est pas déjà généré.
@@ -716,9 +713,9 @@ public class Code {
     }
 
     /**
-     * 
-     * @param ent
-     * @return
+     * Méthode qui génère une fonction JavaScript. Cette dernière retournera une instance de l'entité passé en paramètre.
+     * @param ent Entité qui doit être générée.
+     * @return code JavaScript de la fonction de génération de l'entité.
      */
     public static Code genFuncEntity(Entity ent) {
         Code cod = new Code();
@@ -740,16 +737,10 @@ public class Code {
         return cod;
     }
 
-    /* public static Code genEntity(Entity ent) {
-    Code cod = new Code();
-    cod.append("var "+ent.getName()+" = gen"+ent.getName()+"();\n");
-
-    return cod;
-    }*/
     /**
-     * 
-     * @param def
-     * @return
+     * Méthode qui génère le code JavaScript d'un définition.
+     * @param def Définition à générer.
+     * @return code JavaScript de la définition.
      */
     public static Code genFuncDef(Definition def) {
 
@@ -775,9 +766,9 @@ public class Code {
     }
 
     /**
-     * 
-     * @param ent
-     * @return
+     * Méthode qui génère l'appel pour la création d'une nouvelle entité.
+     * @param ent Entité à générer.
+     * @return code JavaScript de l'appel de la fonction permettant de générer l'entité.
      */
     public static Code genEntity(Entity ent) {
         Code c = new Code();
@@ -789,10 +780,10 @@ public class Code {
     
     //Appel de fonction JavaScript exemple :  "f(p1, p2 , p3);"
     /**
-     * 
-     * @param name
-     * @param params
-     * @return
+     * Méthode qui génère l'appel d'un fonction JavaScript avec des paramètres.
+     * @param name Nom de la fonction appellée.
+     * @param params Liste des paramètre de la fonction.
+     * @return code Javascript de l'appel de fonction.
      */
     public static Code genFuncCall(String name , List<String> params){
     	Code c = new Code();
@@ -818,9 +809,9 @@ public class Code {
     MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
      */
     /**
-     * 
-     * @param ent
-     * @return
+     * Méthode qui génère la commande pour ajouter une entité au moteur 3D.
+     * @param ent Entité à ajouter au moteur 3D
+     * @return code JavaScript de l'ajout de l'entité au moteur 3D.
      */
     public static Code genAddObject(Entity ent) {
 
@@ -857,10 +848,10 @@ public class Code {
      */
 
     /**
-     * 
-     * @param name
-     * @param x
-     * @return
+     * Méthode qui génère un tableau à 1 ou 2 dimensions vide.
+     * @param name Nom du tableau
+     * @param x taille du tableau.
+     * @return code JavaScript du tableau généré.
      */
     public static Code genTab(String name, Integer x) {
         Code c = new Code();
@@ -912,7 +903,7 @@ public class Code {
     ///////////////////////Boucle de rafraichissement/////////////////////
     //////////////////////////////////////////////////////////////////////
     /**
-     * 
+     * Méthode qui génère la Boucle de rafraichissement.
      * @param tab
      * @param clavier
      * @return

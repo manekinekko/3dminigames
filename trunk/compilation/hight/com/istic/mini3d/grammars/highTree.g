@@ -22,22 +22,22 @@ options {
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
     private ErrorHandler handler = ErrorHandler.getInstance();
 
-    /*public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+    public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
         if(Main.isDebug()) {
-            System.out.println("plop");
             super.displayRecognitionError(tokenNames, e);
         }
         else {
-            String hdr = getErrorHeader(e);
             String msg = getErrorMessage(e, tokenNames);
             int line = ((CommonErrorNode)e.node).start.getLine();
             String word = ((CommonErrorNode)e.node).trappedException.token.getText();
-        	//System.out.println(e.node);
-            //System.out.println(((CommonErrorNode)e.node).start.getLine());
-            handler.add(ErrorHandler.ErrorType.FATAL, line, "Erreur sur \""+word+"\"");
-            //System.out.println(((CommonErrorNode)e.node).trappedException.token.getText());
+
+            handler.add(ErrorHandler.ErrorType.FATAL, line, "Erreur sur \""+word+"\". ");
         }
-    }*/
+    }
+
+    public int getLine(CommonTree i) {
+	return i.token.getLine();
+    }
 }
 
 /*------------------------------------------------------------------
@@ -105,8 +105,7 @@ newType [SymbolTable st]
 	String id = i.getText();
         Symbol verif = st.get(id);
 	if(verif != null) {
-	    System.out.println("Type \""+id+"\" déjà déclaré.");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Type \""+id+"\" déjà déclaré.");
 	} else {
 	    Model[] tab = (Model[])sub.toArray(new Model[0]);
 	    Model t = new Model(id, tab);
@@ -121,11 +120,9 @@ subType [SymbolTable st, List<Model> sub] :
 	String id = i.getText();
 	Symbol verif = st.get(id);
 	if(verif == null) {
-	    System.out.println("Model \""+id+"\" non défini.");
-	    System.exit(-1);
-	} else if(!verif.getName().equals(id)) {
-	    System.out.println("Gros Gros bug !!!");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Model \""+id+"\" non défini.");
+	} else if(verif.getType() != Symbol.Type.MODEL) {
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), id+"\" n'est pas un Model.");
 	} else {
 	    sub.add((Model)verif);
 	}
@@ -174,8 +171,7 @@ init [SymbolTable st] returns [Code c]:
 	String id = i.getText();
         Symbol verif = st.get(id);
 	if(verif != null) {
-	    System.out.println("Elément \""+id+"\" déjà déclaré.");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Elément \""+id+"\" déjà déclaré.");
 	} else {
 	    int mode = d.getSecond();
 	    
@@ -216,8 +212,7 @@ init [SymbolTable st] returns [Code c]:
                 }else{
 		    AttributeValue attr = s.getAttribute(attributeValue);
                     if(attr != null && attr.getType() != p.getSecond().getType()) {
-			System.out.println("Erreur : Type incompatible");
-                        System.exit(-1);
+			handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Type incompatible.");
                     }
                     s.addAttribute(p.getFirst(),p.getSecond());
                 }
@@ -264,8 +259,7 @@ list_declaration [SymbolTable st] returns [Code c]
 	String id = i.getText();
 	Symbol verif = st.get(id);
 	if(verif == null) {
-	    System.out.println("Model \""+id+"\" non défini.");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Model \""+id+"\" non défini.");
 	}
     })+
     ;
@@ -276,11 +270,7 @@ typeEntity [SymbolTable st] returns [Model t]:
 	String id = i.getText();
 	Symbol verif = st.get(id);
 	if(verif == null) {
-	    System.out.println("Model \""+id+"\" non défini.");
-	    System.exit(-1);
-	} else if(!verif.getName().equals(id)) {
-	    System.out.println("Gros Gros bug !!!");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Model \""+id+"\" non défini.");
 	} else {
 	    t = (Model)verif;
 	}
@@ -365,8 +355,7 @@ definition [SymbolTable st] returns [Code c] @init{ Definition d = new Definitio
     {
 	String ident = i.getText();
 	if(st.get(ident)!=null) {
-	    System.out.println("l'ident "+ ident + " est deja defini");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "La définition \""+ident+"\" est déjà défini.");
 	} else {
 	    
 	    d.setName(ident);
@@ -433,8 +422,7 @@ action [SymbolTable st] returns [Code c]
 
 	    //Erreur entité déja générée
 	    if(!((Entity)e).getDuplicable() && (e.getGenerate()>=1)){
-		System.out.println("L'entité " + e.getName() + " n'est pas duplicable!");
-		System.exit(-1);
+		handler.add(ErrorHandler.ErrorType.FATAL, 0, e.getName() + " n'est pas duplicable!");
 	    }
 	    if(td!=null){
 		e.getAttribute("posX").setCode(td.getX());
@@ -633,14 +621,12 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
 player_list [SymbolTable st] returns [ArrayList<Symbol> list] @init{list = new ArrayList<Symbol>();}:
     (i=IDENT{String e = i.getText();Symbol m = st.get(e);
             if(m==null){
-                System.out.println("Entité "+ e + "inexistante");
-                System.exit(0);
+		handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Entité "+ e + "inexistante");
             }else{
                 if( m.getType()== Symbol.Type.ENTITY){
                     list.add(m);
                 }else{
-                    System.out.println(e + " n'est pas une entitée");
-                    System.exit(0);
+		    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), e + " n'est pas une Entité");
                 }
             }} )+
     ;
@@ -658,8 +644,7 @@ actionCommande [SymbolTable st] returns [Control c]:
     }
     Symbol s = st.get(c.getName());
     if(s != null){
-        System.out.println("Commande déjà définie");
-        System.exit(0);
+	handler.add(ErrorHandler.ErrorType.FATAL, 0, "Commande déjà définie");
         }
     st.add(c.getName(),c);
     }
@@ -671,8 +656,7 @@ actionCommande [SymbolTable st] returns [Control c]:
     }
     Symbol s = st.get(c.getName());
     if(s != null){
-        System.out.println("Commande déjà définie");
-        System.exit(0);
+        handler.add(ErrorHandler.ErrorType.FATAL, 0, "Commande déjà définie");
         }
     st.add(c.getName(),c);
     }
@@ -685,14 +669,12 @@ commandMode returns [Control.Mode m]:
 definitionId [SymbolTable st] returns [Definition d]:
     i=IDENT{String nom = i.getText(); Symbol s = st.get(nom);
         if(s == null){
-            System.out.println("Definition"+nom+"n'existe pas");
-            System.exit(0);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "La Definition "+nom+" n'existe pas");
         }else{
         if( s.getType()== Symbol.Type.DEFINITION){
                     d=(Definition)s;
         }else{
-             System.out.println(nom+"n'est pas une définition");
-             System.exit(0);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), nom+" n'est pas une Définition");
     }}}
     ;	
  
@@ -910,12 +892,10 @@ variable [SymbolTable st , Definition d] returns [Code c]:
 	AttributeValue a = si.getAttribute(ident);
 	String access = new String();
 	if(a==null){
-	    System.out.println(si.getName()+" n'a pas l'attribut "+ident);
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), si.getName()+" n'a pas l'attribut "+ident);
 	}
 	else if(a.getType()!= AttributeValue.Type.NUMBER){
-	    System.out.println(ident+" n'est pas un nombre.");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), ident+" n'est pas un nombre.");
 	}else{
 	    
 	    if(si.getType() == Symbol.Type.MODEL){
@@ -953,8 +933,7 @@ variable [SymbolTable st , Definition d] returns [Code c]:
     {//TODO
 	Symbol si = ac.get(0); AttributeValue a = si.getAttribute(at);
 	if(a==null){
-	    System.out.println(si.getName()+" n'a pas l'attribut "+at);
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), si.getName()+" n'a pas l'attribut "+at);
 	}
 	else{
 	    c=Code.genAccess(si.getName(),at);
@@ -972,8 +951,7 @@ accesClass [SymbolTable st] returns [ArrayList<Symbol> sb]
     {
 	String ident = i.getText(); Symbol s = st.get(ident);
 	if(s==null){
-	    System.out.println("L'identifiant "+ident+" n'est pas défini.");
-	    System.exit(-1);
+	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), ident+" n'est pas défini.");
 	}else{
 	    sb.add(s);
 	}

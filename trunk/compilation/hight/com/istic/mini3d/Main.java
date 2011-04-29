@@ -36,12 +36,6 @@ public class Main {
             if (args[i].equals("-out")) {
                 jsFile = args[i + 1];
                 i++;
-                /*} else if(args[i].equals("-errorFormat")) {
-                errorFormat = args[i + 1];
-                i++;
-                } else if (args[i].equals("-errorFile")) {
-                errorFile = args[i + 1];
-                i++;*/
             } else if (args[i].equals("-debug")) {
                 debug = true;
             } else if (args[i].equals("-minimize")) {
@@ -63,7 +57,7 @@ public class Main {
             m3d = new File(m3dFile);
             m3dReader = new FileReader(m3d);
 
-            ANTLRFileStream input = new ANTLRFileStream(args[0]);
+            ANTLRFileStream input = new ANTLRFileStream(m3dFile);
             highLexer lexer = new highLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             highParser parser = new highParser(tokens);
@@ -102,8 +96,6 @@ public class Main {
                 }
             } else {
                 System.out.println(c.getCode());
-                ts.print();
-
             }
 
         } catch (FileNotFoundException e) {

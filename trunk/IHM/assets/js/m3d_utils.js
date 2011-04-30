@@ -110,11 +110,11 @@
 						_desc = _attributes[j]['@attributes']['description'] || 'N/A';
 	
 	
-						_attrHTML.push('<div class="attributes_details">\
-									<div class="attributes_name">\
+						_attrHTML.push('<div class="attributes-details">\
+									<div class="attributes-name">\
 										<span>'+_name+'</span>\
 									</div>\
-									<div class="attributes_desc">\
+									<div class="attributes-desc">\
 										<b>Type</b>&nbsp;'+_type+'<br/>\
 										<b>Default</b>&nbsp;'+_dflt+'<br/>\
 										<b>Description</b>&nbsp;'+_desc+'<br/>\
@@ -129,7 +129,7 @@
 			
 		}
 		
-		$('#attributes_panel').append(_attrHTML.join(''));
+		$('#attributes-panel-body').append(_attrHTML.join(''));
 	};
 	
 	// -- Create a new game based on its scenario

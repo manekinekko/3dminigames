@@ -51,7 +51,10 @@
 				<!-- start: editor -->
 				<div id="editor">
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
-					<div id="attributes_panel"></div>
+					<div id="attributes-panel">
+						<div id="attributes-panel-body"></div>
+						<div id="attributes-panel-footer"></div>
+					</div>
 				</div>
 				<!-- end: editor -->
 				
@@ -97,12 +100,6 @@
 						<li class="separator"></li>
 
 						<li>
-							<div id="clear-canvas" class="button" >Clear Canvas</div>
-						</li>
-	
-						<li class="separator"></li>
-
-						<li>
 							<div id="toggle-attributes" class="button" >Preset Attributes</div>
 						</li>
 						
@@ -111,7 +108,10 @@
 						<li>
 							<div id="create-game" class="button">Create My Game</div>
 						</li>
-						
+						<li>
+							<div id="clear-canvas" class="button" >Clear Canvas</div>
+						</li>
+	
 						<li style="float:right">
 							<div id="logout" class="button">Logout</div>
 						</li>

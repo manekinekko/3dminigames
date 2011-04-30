@@ -330,12 +330,12 @@ $(function(){
 	/**
 	 * Bind the attributes description toggling
 	 */
-	$('.attributes_name').live('click', function(){
-		$(this).next('.attributes_desc').toggle();
+	$('.attributes-name').live('click', function(){
+		$(this).next('.attributes-desc').toggle();
 	});
 	
 	$('#toggle-attributes').bind('click', function(){
-		$('#attributes_panel').toggle();
+		$('#attributes-panel').toggle();
 	});
 	
 	/**

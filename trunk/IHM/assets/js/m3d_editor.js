@@ -5,10 +5,12 @@
  * @projectDescription This file contains all necessary functions that are used by the editor.
  */
 (function(M3D){
-	
+
+
 	/**
 	 * Initializes the editor. 
 	 * This function is called once the document is loaded.
+	 * @deprecated This function is never called anymore!
 	 */
 	var indexed=false;	//Permet de differencier localStorage et IndexedDB
 	M3D.Editor.init = function(){	
@@ -33,14 +35,19 @@
 	 * @param {Function} cb The callback function
 	 */
 	M3D.Editor.setGameInfo = function(name, cb){
+		
 		if ( !cb ){
 			var cb = function(){};
 		}
+		
 		if(indexed){
 			M3D.DB.start(name);
 			cb();
 		}else{
-			M3D.Editor.setContent('game has name at "'+name+'" ;\n', cb);
+			var _str = [];
+			_str.push(_getInitialTemplate());
+			_str.push('game has name at "'+name+'" ;\n');
+			M3D.Editor.setContent(_str.join(''), cb);
 		}
 	};
 	
@@ -80,11 +87,7 @@
 		if ( !cb ){
 			var cb = function(){};
 		}
-		var _str = [];
-		_str.push('/* Game created by 3DWIGS */\n');
-		_str.push('/* On '+(new Date()).toGMTString()+' */\n\n');
-		_str.push('');
-		_setAndClearContent(_str.join(''), cb);
+		_setAndClearContent(_getInitialTemplate(), cb);
 	};
 	
 	/**
@@ -92,26 +95,26 @@
 	 * @param {string} names The name of the objects to be added
 	 */
 	M3D.Editor.setDefaultContent = function(names){
-		var _name, _str = "";
+		var _name, _str = [];
 		for(var i=0; i<names.length; i++){
 			
 			_name = names[i];
-			_str += 'type '+_name+' is Object;\n'+
+			_str.push('type '+_name+' is Object;\n'+
 								_name+' has position at 0.00 0.00 0.00;\n'+
 								_name+' has rotation at 0.00 0.00 0.00;\n'+
-								_name+' has scale at 0.00 0.00 0.00;\n';
+								_name+' has scale at 0.00 0.00 0.00;\n');
 			
 		}
 		
 		if ( M3D.Editor.getContent() !== null ) {
-			_str = M3D.Editor.getContent() + _str;		
+			_str.push( M3D.Editor.getContent() + _str.join(''));
 		}
-		M3D.Editor.setContent(_str);
+		M3D.Editor.setContent(_str.join(''));
 	};
 	
 	/**
 	 * This function append the new content to the old one.
-	 * Or set the new content of the editor.
+	 * Or set the new content of the empty editor.
 	 * @param {String} value The new content
 	 * @param {Function} cb The callback function
 	 */
@@ -156,6 +159,31 @@
 	};
 	
 	/**
+	 * This function erase the editor's content
+	 * @param {Function} cb The callback function 
+	 */
+	M3D.Editor.empty = function(cb){
+		if ( !cb ){
+			var cb = function(){};
+		}
+		edwigs.edit( '', 'edwigs', cb );
+	}
+	
+	/**
+	 * Construct a new initial template
+	 * @return The initial template
+	 * @type {String}
+	 * @private
+	 */
+	var _getInitialTemplate = function(){
+		var _str = [];
+		_str.push('/* Game created by 3DWIGS */\n');
+		_str.push('/* On '+(new Date()).toGMTString()+' */\n\n');
+		_str.push('');
+		return _str.join('');
+	}
+	
+	/**
 	 * Set the editor's content. 
 	 * Bear in mind this function erase the editor's content and set a new content!
 	 * @param {Object} value The new content of the editor
@@ -164,8 +192,10 @@
 	 * @private
 	 */
 	var _setAndClearContent = function(val, cb){
-		// create a new callback function
+		// wrap the callback function with a new one
+		// coz' we need to update the DB content!
 		var _cb = function(){
+			
 			M3D.DB.setEditor({
 				'uid': 'edwigs', 
 				'value': val	

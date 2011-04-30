@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/js/lib/qunit/qunit.css" type="text/css" media="screen" />
+
+		<script src="assets/js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/qunit/qunit.js"></script>
+
+		<script>
+			
+			// initialise the necessary objects
+			var M3D = {};
+			M3D.DB = {};
+			M3D.Editor = {};
+			M3D.Common = {};
+			
+		</script>
+
+		<!-- load the necessary modules -->
+		<script type="text/javascript" src="assets/js/m3d_common.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_localstorage.js"></script>
+
+		<script type="text/javascript" src="assets/js/lib/codepress/codepress.js"></script>
+		<script type="text/javascript" src="assets/js/m3d_editor.js"></script>
+		
+		<script>
+
+		
+			$(document).ready( function() {
+
+				// a sample test
+				test("a basic test example", function() {
+					ok( true, "this test is fine" );
+					var value = "hello";
+					equals( "hello", value, "We expect value to be hello" );
+				});
+				
+				/**
+				 * START : The LocalStorage Module
+				 */
+				
+				module("Module m3d_localstorage");
+
+				test("Write a new editor entry", function() {
+					
+					M3D.DB.setEditor({
+						'uid':'edwigs', 'value':"game has name at 'Game Test'"
+					});
+					
+					var value = "game has name at 'Game Test'";
+					equals( M3D.DB.getEditor('edwigs'), value, "The editor entry value is : game has name at 'Game Test'" );
+					
+				});
+				
+				test("Empty the editor entry", function() {
+					
+					M3D.DB.setEditor({
+						'uid':'edwigs', 'value':' '
+					});
+					
+					var value = ' ';
+					equals( M3D.DB.getEditor('edwigs'), value, "The editor entry value is empty" );
+					
+				});
+				
+				test("Check for OBJ entries", function() {
+				
+					equals( M3D.DB.containsObj(), false, "The DB does not contain any OBJ" );
+					
+				});
+				
+				
+				
+				test("Clearing the Database", function() {
+				
+					M3D.DB.clear();
+					
+					expect(3);
+					ok( M3D.DB.contains('edwigs'+DB_PATTERN_EDITOR), "The DB still contains the editor" );
+					ok( M3D.DB.contains('default'+DB_PATTERN_ATTR), "The DB still contains the default attributes" );
+					equals( M3D.DB.containsObj(), false, "All OBJs were removed from the DB" );
+					
+				});	
+				
+				/**
+				 * End : The LocalStorage Module
+				 */
+
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h1 id="qunit-header">QUnit For 3DWIGS</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar">
+		</div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests">
+		</ol>
+		<div id="qunit-fixture">
+			test markup, will be hidden
+			<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
+		</div>
+	</body>
+</html>

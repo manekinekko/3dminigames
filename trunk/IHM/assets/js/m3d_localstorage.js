@@ -121,6 +121,7 @@
 	 * @see Object._set
 	 */
 	M3D.DB.setEditor = function(data){
+		log('setting a new editor entry with content "'+data.value+'"');
 		data.uid += DB_PATTERN_EDITOR;
 		return _set(data);
 	};
@@ -147,9 +148,9 @@
 		return _get(t);
 	};
 	
-	M3D.DB.getEditor = function(t){
-		t = _regex(DB_PATTERN_EDITOR).test(t) ? t : t+DB_PATTERN_EDITOR;
-		return _get(t);
+	M3D.DB.getEditor = function(ed){
+		ed = _regex(DB_PATTERN_EDITOR).test(ed) ? ed : ed+DB_PATTERN_EDITOR;
+		return _get(ed);
 	};
 	
 	/**
@@ -169,6 +170,12 @@
 	 */
 	M3D.DB.detectPreviousContent = function(){
 		if ( _hasContent() ){
+			/**
+			* Firefox bug fix #???
+			*/
+			edwigs.edit('', 'edwigs');
+			/**/
+			
 			M3D.GUI.showPopup('confirmation-load');
 		}
 		else {
@@ -185,6 +192,8 @@
 	M3D.DB.load = function(cb){
 		var key = null;
 		var value = null;
+		var _editor_loaded = false;
+		
 		for( var i=0; i<localStorage.length; i++ ){
 			
 			key = localStorage.key(i);
@@ -192,11 +201,8 @@
 			var o = _regex(DB_PATTERN_OBJ);
 			var e = _regex(DB_PATTERN_EDITOR);
 			
-			if ( e.test(key) ) {
-				editor = M3D.DB.getEditor(key);
-				M3D.Editor.setContent(editor, cb);
-			}
-			else if ( o.test(key) ){
+			// load the models
+			if ( o.test(key) ){
 				
 				value = M3D.DB.getObject(key);
 				
@@ -216,6 +222,13 @@
 					'autoAddToScene': true
 				});
 				
+			}
+			
+			// load the editor
+			else if ( !_editor_loaded && e.test(key) ) {
+				editor = M3D.DB.getEditor(key);
+				M3D.Editor.setContent(editor, cb);
+				_editor_loaded = true;
 			}
 			
 		}
@@ -284,12 +297,26 @@
 		for(var i in localStorage){
 			if ( M3D.DB.REGEX_CONTENT_PATTERN.test(i) ){
 				
-				// if editor
-				if (  _regex(M3D.DB.DB_PATTERN_EDITOR).test(i)  ) {
-						M3D.Editor.clear();
+				// if editor entry, clear its content
+				if (  _regex(DB_PATTERN_EDITOR).test(i)  ) {
+					
+					log('clearing the editor entry ...');
+					
+					// remove the old editor entry
+					M3D.DB.remove(i);
+					// set a new one
+					M3D.DB.setEditor({
+						'uid': 'edwigs', 
+						'value': ' '	
+					});
+					
 				}
-				// others
-				else {
+				// if attributes entry, continue
+				else if ( _regex(DB_PATTERN_ATTR).test(i) ){
+					continue;
+				}
+				// if OBJs entry, remove them
+				else if ( _regex(DB_PATTERN_OBJ).test(i) ) {
 					M3D.DB.remove(i);
 				}
 				
@@ -356,7 +383,7 @@
 		} catch (e) {
 			log(e);
 			if (QUOTA_EXCEEDED_ERR && e === QUOTA_EXCEEDED_ERR) {
-				alert('The allocated quota has exceeded! Please allow 3DWIGS to use more space!'); 
+				alert('The allocated quota has exceeded!'); 
 			}
 		}
 	};
@@ -403,7 +430,6 @@
 	 * @private 
 	 */
 	_hasContent = function(){
-		var key = null;
 		for (var i = 0; i < localStorage.length; i++) {
 			if (M3D.DB.REGEX_CONTENT_PATTERN.test( localStorage.key(i) ) 
 			&& M3D.DB.checkEditorContentFromDB()
@@ -415,7 +441,7 @@
 	};
 	
 	/**
-	 * Create a new RegExp object with the pattern v
+	 * Create a new RegExp object with an ending pattern v
 	 * @param {Object} v The pattern used to create the regexp
 	 * @return The RegExp object
 	 * @type {RegExp}

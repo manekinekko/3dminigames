@@ -4,12 +4,12 @@
  */
 (function(M3D){
  
-if(!window["M3D"]){
-	window["M3D"]={};	
+if(!window.M3D){
+	window.M3D={};	
 }
 
-if (!window["M3D"].DB){
-		window["M3D"].DB={};
+if (!window.M3D.DB){
+		window.M3D.DB={};
 }
 var db;
 	

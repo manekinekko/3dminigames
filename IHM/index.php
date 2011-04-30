@@ -236,7 +236,7 @@
 					</div>
 					<div id="window-buttons">
 						<input type="button" class="validate" value="load" name="confirm-load-content" id="confirm-load-content">
-						<input type="button" class="cancel" value="NO" name="cancel">
+						<input type="button" class="cancel" value="NO" name="cancel" id="confirm-no-load-content">
 					</div>
 				</div>
 				

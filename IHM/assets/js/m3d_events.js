@@ -190,7 +190,9 @@ $(function(){
 	});
 	
 	/**
-	 *
+	 * Set the new game info
+	 * @see M3D.Editor.setGameInfo
+	 * @see M3D.GUI.hidePopup
 	 */
 	$('#save-game-info').bind('click', function(){
 		
@@ -203,6 +205,7 @@ $(function(){
 			_el.removeClass('warning');
 			
 			_b.val('saving...');
+			
 			M3D.Editor.setGameInfo(_name, function(){
 				M3D.GUI.hidePopup('game-info');
 				_b.val('save');				
@@ -253,8 +256,8 @@ $(function(){
 		M3D.GUI.clearCanvas();
 		M3D.GUI.clearSelectBox();
 		M3D.DB.clear();
-		
-		M3D.Editor.clear(function(){
+		M3D.Editor.empty(function(){
+			
 			M3D.GUI.hidePopup('confirmation-clear');
 			button.val('YES');
 			
@@ -269,18 +272,36 @@ $(function(){
 	/**
 	 * Bind loading the previous saved content.
 	 * @see M3D.DB.load
+	 * @see M3D.Editor.init
 	 * @see M3D.GUI.hidePopup
 	 */
 	$('#confirm-load-content').bind('click', function(){
+			
+		/**
+		 * Firefox 4 bug fix #18
+		 */
+		window.edwigs.textarea.value = "";
+		/**/
 		
 		var _b = $(this);
-		
 		_b.val('loading...');
 		M3D.DB.load(function(){
 			_b.val('load');
 			M3D.GUI.hidePopup('confirmation-load');
 		});
+
 	});
+	
+	/**
+	 * Bind NOT to load the previous saved content.
+	 * @see M3D.GUI.showPopup
+	 */
+	 $('#confirm-no-load-content').bind('click', function(){
+	 	// delay the fn call better performance
+		setTimeout(function(){
+			M3D.GUI.showPopup('game-info');
+		}, 1000);
+	 });
 	
 	/**
 	 * Bind generating a GLGE xml level file from the current canvas.
@@ -291,7 +312,7 @@ $(function(){
 	
 	/**
 	 * Bind the editor content storing into the DB.
-	 * @see M3D.DB.update_grammar
+	 * @see M3D.DB.update_grammar (indexedDB)
 	 * @deprecated This binding is not really done yet!
 	 */
 	$('#editor iframe').live('keypress', function (e){
@@ -379,7 +400,7 @@ $(function(){
 			}
 			else if ( _c('camera-position') ) {
 				var _cam = scene.camera;
-				alert('Pos('+_cam.getLocX()+' '+_cam.getLocY()+' '+_cam.getLocZ()+')');
+				alert('Camera Pos('+_cam.getLocX()+' '+_cam.getLocY()+' '+_cam.getLocZ()+')');
 			}
 			else {
 				M3D.GUI.CAMERA_STATE = null;

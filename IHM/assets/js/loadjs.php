@@ -39,6 +39,7 @@ $files = array(
 				'm3d_events.js'
 		);
 
+// this is a hack to choose between the LocalStorage way and the IndexedBD one !
 if ( isset($_GET['db'])) {
 	$files[] = 'm3d_db.js';
 }

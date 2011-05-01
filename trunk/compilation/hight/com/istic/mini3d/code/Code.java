@@ -904,9 +904,9 @@ public class Code {
     //////////////////////////////////////////////////////////////////////
     /**
      * Méthode qui génère la Boucle de rafraichissement.
-     * @param tab
-     * @param clavier
-     * @return
+     * @param tab tableau des signatures des méthodes a lancer en cas de déplacement de la sourris
+     * @param clavier booleen permettant de savoir si des commandes au clavier/clic de sourris sont a gérer
+     * @return code de la boucle de rafraichissement
      */
     public static Code genRefreshLoop(Code [] tab, boolean clavier) {
         boolean com = false;
@@ -1040,11 +1040,11 @@ public class Code {
     }
 
     /**
-     * 
-     * @param clavier
-     * @param souris
-     * @param possouris
-     * @return
+     * Méthode qui gènère le code de créations des différents listeners
+     * @param clavier booleen représente les commandes au clavier
+     * @param souris booleen représente les commandes a la souris (clic + molette)
+     * @param possouris booleen représente les commandes au souris (déplacement)
+     * @return code de la création des events
      */
     public static Code genEventListener(boolean clavier,boolean souris,boolean possouris){
         Code c = new Code();
@@ -1060,9 +1060,9 @@ public class Code {
         return c;
     }
     /**
-     * 
-     * @param list_event
-     * @return
+     * Génère code java script a executé en cas d'appuis sur une touche du clavier
+     * @param list_event liste des control.
+     * @return code JavaScript de la fonction d'event de type KeyDown.
      */
     public static Code genCMDKeyDown(ArrayList <Control> list_event){
         Code c = new Code();
@@ -1091,9 +1091,9 @@ public class Code {
     }
 
     /**
-     * 
-     * @param list_event
-     * @return
+     * Génère code java script a executé en cas de relachement sur une touche du clavier
+     * @param list_event liste des control.
+     * @return code JavaScript de la fonction d'event de type KeyUp.
      */
     public static Code genCMDKeyUp(ArrayList <Control> list_event){
         Code c = new Code();
@@ -1122,10 +1122,11 @@ public class Code {
     }
 
     /**
-     * 
-     * @param list_event
-     * @param liste
-     * @return
+     * Méthode générant le code JavaScript pour le fonction CMDExec.
+     * Permet de générer le code de la méthode qui fait le lien entre le tableau de booleen des commandes et les fonction a executer.
+     * @param list_event liste des objets Controls demandés par l'utilisateur.
+     * @param liste liste des signatures associés aux différents controles.
+     * @return code JavaScript de la fonction d'execution des commandes.
      */
     public static Code genCMDExec(ArrayList <Control> list_event, ArrayList<Code> liste){
         Code c = new Code();

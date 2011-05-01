@@ -1,6 +1,8 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
- * @file assets/js/m3d_utils.js
+ * @namespace M3D.GUI
+ * @file assets/js/m3d_gui.js
+ * @projectDescription This file contains all the necessary GUI functions.
  */
 (function(M3D){
 	

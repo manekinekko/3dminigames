@@ -2,7 +2,8 @@
 
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
- * This file combines all js files in one single js gzipped js file!
+ * @file assets/js/loadjs.php
+ * @projectDescription This file combines all js files in one single js gzipped js file!
  */
 
 ob_start('ob_gzhandler');
@@ -30,7 +31,7 @@ $files = array(
 				'm3d_init.js',
 				'm3d_config.js',
 				'm3d_glge.js',
-				'm3d_utils.js',
+				'm3d_gui.js',
 				
 				/* and the other scripts */
 				'm3d_common.js',

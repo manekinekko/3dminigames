@@ -740,7 +740,7 @@
 			val = current.val();
 			
 			// handle required fields for now
-			if ( current.hasClass('required') && M3D.Common.isAlphanumeric() )
+			if ( current.hasClass('required') && M3D.Common.isAlphanumeric(val) )
 			{
 				isOK = true;
 				current.removeClass('warning');

@@ -233,7 +233,7 @@ M3D.Upload.uploader = function(place, status, targetPHP, show, doc) {
 /**
  * Ajax file upload 
  */
-M3D.AJAXUpload = function(){            
+M3D.Upload.AJAXUpload = function(){            
     var uploader = new qq.FileUploader({
         element: document.getElementById('upload-model'),
         action: M3D.Config.uploader,

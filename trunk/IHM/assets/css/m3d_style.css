@@ -20,7 +20,7 @@ body {
 	margin: 0;
 	padding: 0;
 	cursor: default;
-	font-size:11px;
+	font-size:12px;
 }
 #title {
 	z-index: 100;
@@ -171,21 +171,16 @@ li.separator {
 	background-color:#fffacd;
 }
 #loading {
-	display: none;
-	top: 7px;
-	left: 420px;
-	z-index: 100;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background: red url('img/ajax-loader.gif') no-repeat center center;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius:10px;
-	-moz-box-shadow:0 0 4px #aaa;
-	-webkit-box-shadow:0 0 4px #aaa;
-	box-shadow:0 0 4px #aaa;
-}
+    background: url("img/ajax-loader.gif") no-repeat scroll left center transparent;
+    border-radius: 18px 18px 18px 18px;
+    display: none;
+    height: 24px;
+    left: 1040px;
+    position: absolute;
+    top: 6px;
+    width: 24px;
+    z-index: 100;
+}  
 #window-buttons {
 	margin-top: 10px;
 	border-top: 1px solid #aaa;
@@ -387,6 +382,7 @@ input[type=button] {
 	border-color:#093c75;
 	text-decoration:none;
 	color:white;
+	box-shadow: 0 0 26px #80BDE9;
 }
 .button:not(:disabled):active, input[type=button]:not(:disabled):active, input[type=button]:not(:disabled):focus {
 	background:#0459b7;

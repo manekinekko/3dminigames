@@ -121,7 +121,6 @@
 	 * @see Object._set
 	 */
 	M3D.DB.setEditor = function(data){
-		log('setting a new editor entry with content "'+data.value+'"');
 		data.uid += DB_PATTERN_EDITOR;
 		return _set(data);
 	};

@@ -168,25 +168,35 @@ $(function(){
 	 * @see M3D.GUI.validateFields
 	 * @see M3D.GUI.updateEntityList
 	 * @see M3D.GUI.addObjectToScene
-	 * @see M3D.Editor.setContent
+	 * @see M3D.Editor.setDefaultContent
 	 */
 	$('#save-entity-info').bind('click', function(){
+		
+		var _btn = $(this);
+
+		// the name of the new entity is a time stamp
 		var _nameElement = $('#name');
 		var _name = _nameElement.val();
 		if (M3D.GUI.validateFields(this) && !M3D.DB.containsObj( _name )) {
 			
 			_nameElement.removeClass('required');
 			
-			M3D.GUI.updateEntityList();
+			M3D.GUI.updateEntityListAndAddToDB();
 			M3D.GUI.addObjectToScene();
 			
 			_name = $(this).closest('.window').find('#name').val();
 			_name = M3D.Common.ucfirst(_name);
-			M3D.Editor.setDefaultContent([_name]); // an array of names
+			
+			_btn.val('Saving ...');
+			M3D.Editor.setDefaultContent([_name], function(){
+				_btn.val('Save');
+				M3D.GUI.hidePopup();
+			}); // an array of names
 		}
 		else {
 			_nameElement.addClass('required');
 		}
+		
 	});
 	
 	/**
@@ -302,14 +312,7 @@ $(function(){
 			M3D.GUI.showPopup('game-info');
 		}, 1000);
 	 });
-	
-	/**
-	 * Bind generating a GLGE xml level file from the current canvas.
-	 * @see M3D.GUI.generateLevelFile
-	 * @deprecated This binding will probably be moved elsewhere!
-	 */
-	$('#generate-xml').bind('click', M3D.GUI.generateLevelFile);
-	
+
 	/**
 	 * Bind the editor content storing into the DB.
 	 * @see M3D.DB.update_grammar (indexedDB)

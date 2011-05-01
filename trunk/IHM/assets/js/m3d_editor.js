@@ -47,6 +47,7 @@
 			var _str = [];
 			_str.push(_getInitialTemplate());
 			_str.push('game has name at "'+name+'" ;\n');
+			M3D.Editor.empty();
 			M3D.Editor.setContent(_str.join(''), cb);
 		}
 	};
@@ -92,24 +93,27 @@
 	
 	/**
 	 * Set the default content of the editor
-	 * @param {string} names The name of the objects to be added
+	 * @param {Array} names An array of names of the objects to be added
 	 */
-	M3D.Editor.setDefaultContent = function(names){
-		var _name, _str = [];
+	M3D.Editor.setDefaultContent = function(names, cb){
+		var _name, _str = [], _old = [];
+		
+		if ( M3D.Editor.getContent() !== null ) {
+			_str.push(M3D.Editor.getContent());
+			_str.push('\n');
+		}
+		
 		for(var i=0; i<names.length; i++){
 			
 			_name = names[i];
-			_str.push('type '+_name+' is Object;\n'+
-								_name+' has position at 0.00 0.00 0.00;\n'+
-								_name+' has rotation at 0.00 0.00 0.00;\n'+
-								_name+' has scale at 0.00 0.00 0.00;\n');
+			_str.push('type '+_name+' is Object ;\n'+
+								_name+' has position at 0.00 0.00 0.00 ;\n'+
+								_name+' has rotation at 0.00 0.00 0.00 ;\n'+
+								_name+' has scale at 0.00 0.00 0.00 ;\n');
 			
 		}
 		
-		if ( M3D.Editor.getContent() !== null ) {
-			_str.push( M3D.Editor.getContent() + _str.join(''));
-		}
-		M3D.Editor.setContent(_str.join(''));
+		M3D.Editor.setContent(_str.join(''), cb);
 	};
 	
 	/**
@@ -123,9 +127,7 @@
 			M3D.Editor.initDB(value);
 		}
 		else{
-			var _old = M3D.Editor.getContent();
-			_old = _old === '' ? _old : _old+"\n";
-			_setAndClearContent(_old+value, cb);
+			_setAndClearContent(value, cb);
 		}
 	};	 
 	

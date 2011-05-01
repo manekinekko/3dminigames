@@ -21,6 +21,8 @@ $(function(){
 	/**
 	 * Bind the canvas mouse down event to the picking function, and the mouse up to the editor update function.
 	 * @see M3D.GUI.pickObject
+	 * @see updateSelectedObject
+	 * @see M3D.DB.updateSelectedObject
 	 */
 	$('#canvas').bind('mousedown', function(e){
 
@@ -203,25 +205,22 @@ $(function(){
 	 * Set the new game info
 	 * @see M3D.Editor.setGameInfo
 	 * @see M3D.GUI.hidePopup
+	 * @see M3D.GUI.validateFields
 	 */
 	$('#save-game-info').bind('click', function(){
 		
-		var _b = $(this);
+		var _btn = $(this);
 		var _el = $('#game-name');
 		var _name = _el.val();
-		if ( _name === ''  ){
-			_el.addClass('warning');
-		}else {
-			_el.removeClass('warning');
-			
-			_b.val('saving...');
-			
+		if ( M3D.GUI.validateFields( _el ) ){
+
+			_btn.val('saving...');
 			M3D.Editor.setGameInfo(_name, function(){
 				M3D.GUI.hidePopup('game-info');
-				_b.val('save');				
+				_btn.val('save');				
 			});		
+			
 		}
-		
 	});
 
 	/**

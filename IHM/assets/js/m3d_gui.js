@@ -246,7 +246,7 @@
 					
 					M3D.GUI.setMaterialEmit(0.1);
 					
-					//scene.camera.setLookat(obj.getPosition());
+					scene.camera.setLookat(obj.getPosition());
 					
 					M3D.GUI.updateInputValuesFromObject();
 					
@@ -721,11 +721,15 @@
 		
 	};
 	
-	
-	// TODO: fix this
+	/**
+	 * Validate the a given input and all of its siblings
+	 * @param {DOM} el The input field
+	 * @return True if ALL fields are valid, False otherwise
+	 * @type {Boolean}
+	 */
 	M3D.GUI.validateFields = function(el){
 		
-		var isOK = true;
+		var isOK = false;
 		var parent = $(el).closest('.window');
 		var inputs = parent.find('input[type="text"]:visible, select:visible');
 		var current, val;
@@ -736,15 +740,17 @@
 			val = current.val();
 			
 			// handle required fields for now
-			// TODO : add support for more inputs validation
-			if ( current.hasClass('required') && M3D.Common.isEmpty(val) ){
+			if ( current.hasClass('required') && M3D.Common.isAlphanumeric() )
+			{
+				isOK = true;
+				current.removeClass('warning');
+			}
+			else {
 				isOK = false;
 				current.addClass('warning');
 			}
-			else {
-				current.removeClass('warning');
-			}
 		});
+		
 		return isOK;
 		
 	};

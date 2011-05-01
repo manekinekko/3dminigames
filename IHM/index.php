@@ -12,13 +12,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title id="title">3DWIGS</title>
+		<title id="title">3DWIGS - 3D Web Interactive Game Studio</title>
+		<link rel="icon" type="image/gif" href="assets/css/img/ajax-loader.gif">
 		<!-- start: css parsing -->
 		<link href="assets/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
 		<!-- end: css parsing -->
 	</head>
-	<body onload="M3D.AJAXUpload(); new M3D.Upload.uploader('upload-model', 'status', M3D.Config.uploader, null, doc);">
+	<body onload="M3D.Upload.AJAXUpload(); new M3D.Upload.uploader('upload-model', 'status', M3D.Config.uploader, null, doc);">
 		
 		<div id="modal" ></div>
 				

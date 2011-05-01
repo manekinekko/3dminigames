@@ -87,9 +87,12 @@
 	 */
 	M3D.GUI.initAttributPanel = function(){
 		var _attrHTML = [];
+		
+		// get all model tags
 		var _models = M3D.DB.getAttributes('default').model;
+		
 		var _attributes = [];
-		var _name = '', _type = '', _desc = '';
+		var _name = '', _type = '', _desc = '', _dflt = '';
 		
 		for(var i=0; i<_models.length; i++){
 			
@@ -136,11 +139,13 @@
 	M3D.GUI.createGame = function(){
 		var _scenario = M3D.Editor.getContent();
 		
-		if ( _scenario === "" ){
+		if ( _scenario === "" || !/game has name at/.test(_scenario)){
+			
 			$('#status').show().text('Your scenario is empty!');
 			setTimeout(function(){
 				$('#status').hide().text('');
 			}, 2000);
+			
 		}
 		else {
 			var _gameName = "edwigs_game_"+(new Date()).getTime();
@@ -413,7 +418,53 @@
 		
 	};
 	
+	M3D.GUI.updateEntityListAndAddToDB = function(){
+            
+	    var _nameElement = $('#name');
+	    var uid = _nameElement.attr('uid');
+	    var name  = _nameElement.val();
+	            
+	    M3D.GUI.addOptionToSelectBox({'uid':uid, 'name':name});
 	
+	    // [DB]
+	    var element = {
+	                    'uid' : uid,
+	                    'value' : {
+                            'name': name,
+                            'url': urlCollada,
+                            'position' : {
+                                    'X': M3D.lastImportedModel.getLocX(),
+                                    'Y': M3D.lastImportedModel.getLocY(), 
+                                    'Z': M3D.lastImportedModel.getLocZ()
+                            },
+
+                            'scale' : {
+                                    'X': M3D.lastImportedModel.getScaleX(), 
+                                    'Y': M3D.lastImportedModel.getScaleY(), 
+                                    'Z': M3D.lastImportedModel.getScaleZ()
+                            },
+                            'rotation' : {
+                                    'X': M3D.lastImportedModel.getRotX(), 
+                                    'Y': M3D.lastImportedModel.getRotY(), 
+                                    'Z': M3D.lastImportedModel.getRotZ()
+                            }
+                        }
+                    };
+	    
+	    // handle the bbox
+	    var _bbox = {'X':'#','Y':'#','Z':'#'};
+	    if ( M3D.lastImportedModel.boundingVolume ) {
+	            var _bv = M3D.lastImportedModel.boundingVolume.dim;
+	            _bbox = {'X': _bv[0],
+	                            'Y': _bv[1],
+	                            'Z': _bv[2]};
+	    }
+	    element.value.bbox = _bbox;
+	    
+	    M3D.DB.setObject(element);
+	    // [/DB]
+
+	};
 	
 	// -- adapt the correct type input based on user selection
 	M3D.GUI.toggleInputSelect = function(el){
@@ -449,254 +500,6 @@
 		
 	};
 	
-	
-	M3D.GUI.saveNewRule = function(){
-		
-		var ruleName = $('#rule-name').val();
-		var entityName = $('#entity-name').val();
-		var entityAttribut = $('#entity-attribut').val();
-		var ruleCondition = $('#rule-condition').val();
-		var conditionValue = $('#rule-condition-value').val();
-		var action = $('#rule-action').val();
-		
-		var value = [];
-		value.push('rule '+ruleName+' is'); 
-		value.push(entityAttribut+' of');
-		value.push(entityName);
-		value.push(ruleCondition);
-		value.push(conditionValue+' then');
-		value.push(action);
-		var ruleHTML = '<div><input class="input-rule" type="text" name="rules[]" value="'+value.join(' ')+'" disabled="true"/>&nbsp;<a href="#" class="delete-rule" title="Delete">Delete</a></div>';
-	
-		if ( isNewRule(value.join(' ')) ){
-			$('#rules-list').prepend(ruleHTML);
-			
-			// [DB]
-			// Save the new rule into DB
-	
-		}
-		else {
-			alert('The same rule has already been saved!');
-		}
-		
-		// local function
-		function isNewRule(v){
-			var inputs = $('#rules-list input[type="text"]');
-			var len = inputs.length;
-			for(var i=0; i<len; i++){
-	
-				if (inputs[i].value === v) {
-					return false;
-				}
-				
-			}
-	
-			return true;
-		}
-	};
-	
-	
-	M3D.GUI.deleteRule = function(el){
-		
-		var rule = $(el).closest('div');
-		rule.remove(); 
-		
-		// [DB]
-		// delete this rule from DB
-		
-	};
-	
-	
-	
-	M3D.GUI.saveNewEntity = function(){
-		var entityInfo = $('#new-entity input[name="entity-name"]');
-		var val = entityInfo.val();
-		var lbl = entityInfo.val();
-		var newEntityHtml = "<option value='"+val+"'>"+lbl+"</option>";		
-		$('#entity').removeClass('required').append( newEntityHtml ).val(val);
-		
-		M3D.GUI.showPopup('entity-info');
-		
-		// [DB]
-		// Save the new entity and its attributes into DB
-		var attributes = [];
-		$('.entry-attributes').each(function(){
-			
-			var entry = $(this);			
-			var name = entry.find('input[name="attributes-name[]"]').val();
-			var type = entry.find('input[name="attributes-type[]"]').val();
-			var value = entry.find('input[name="attributes-value[]"]').val();
-			
-			attributes.push({
-					'name': name,
-					'type': type,
-					'value': value
-				});
-			
-		});
-
-		var inheritance = [];
-		$('input[name="entity-type[]"]:checked').each(function(){
-			inheritance.push($(this).val());
-		});
-
-		M3D.DB.setAttributes({
-				'name': entityInfo.val(),
-				'value': attributes
-			});
-					
-		M3D.DB.setType({
-			'name': entityInfo.val(),
-			'value':{
-				'inheritance': inheritance
-			}
-		});	
-			
-	};
-	
-	M3D.GUI.saveNewAttribut = function(){
-		
-		var name = $('#quick-new-attribut-name').val();
-		var type = $('#quick-new-attribut-type').val();
-		var value;
-		var html;
-		
-		switch(type){
-			
-			case "boolean": 
-				value = $('#quick-new-attribut-value-select').val(); 
-	            html = "<select id='attribut-" + name + "' name='attribut-" + name + "' >";
-	            html += "<option value='true' " + M3D.Common.printSelected(value, 'true') + " >True</option>";
-	            html += "<option value='false' " + M3D.Common.printSelected(value, 'true') + " >False</option>";
-	            html += "<select>";
-			
-			break;
-			default: 
-				
-				value = $('#quick-new-attribut-value-input').val(); 
-				html = "<input class='"+type+"' type='text' id='" + name + "' name='" + name + "' value='" + value + "'/><br/>";
-			
-			break;
-			
-		}
-		
-		html = "<label for='" + name + "'>" + name + "</label>" + html;
-		html = "<div class='custom-attributes'>"+html+"</div>";
-		
-		$('#attributes').append(html);
-		
-		// quick hack to scoll down the attributes in order to show the new added attribut
-		document.getElementById('attributes').scrollTop += 10000000; // we chose that huge number for purpose !!!
-		
-		// reset
-		$('#quick-new-attribut-name, #quick-new-attribut-type, #quick-new-attribut-value-input, #quick-new-attribut-value-select').val('');	
-	
-	
-		// [DB]
-		// Save the new attribut into DB and add the DB id to the new attribut in the list
-		// so we can easily delete an attribut
-	
-	};
-	
-	
-	M3D.GUI.addNewAttribut = function(){
-		
-		var name = $('#new-attribut-name');
-		var type = $('#new-attribut-type');
-		var value;
-		
-		
-		if (type.val() == 'boolean') {
-			value = $('#new-attribut-value-select');
-		}
-		else {
-			value = $('#new-attribut-value-input');
-		}
-		
-		if ( !M3D.Common.isEmpty(name.val()) 
-			&& !M3D.Common.isEmpty(value.val())) 
-		{
-			
-			var attr = '<div class="entry-attributes">'+
-							'<input name="attributes-name[]" class="width-100" disabled="true" type="text" value="'+name.val()+'" />'+
-							'<input name="attributes-type[]" class="width-100" disabled="true" type="text" value="'+type.val()+'" />'+
-							'<input name="attributes-value[]" class="width-100" disabled="true" type="text" value="'+value.val()+'" />'+
-							'<a href="#" class="detele-attribut">Delete</a>'+
-						'</div>';
-			
-			// add html
-			$('#entity-attributes-list').prepend( attr );
-			
-			// clear input
-			name.val('');
-			type.val('');
-			value.val('');
-			
-		}
-		
-	};
-	
-	
-	
-	M3D.GUI.deleteAttributFromList = function(el){
-		
-		var parent = $(el).closest('.entry-attributes');
-		parent.remove();
-		
-		// [DB]
-		// Delete this attribut from the DB using its DB id that has been inserted during its creation
-		
-	};
-	
-	M3D.GUI.updateEntityList = function(){
-		
-		var _nameElement = $('#name');
-		var uid = _nameElement.attr('uid');
-		var name  = _nameElement.val();
-			
-		M3D.GUI.addOptionToSelectBox({'uid':uid, 'name':name});
-
-		M3D.GUI.hidePopup();
-
-		// [DB]
-		var element = {
-				'uid' : uid,
-				'value' : {
-						'name': name,
-						'url': urlCollada,
-						'position' : {
-							'X': M3D.lastImportedModel.getLocX(),
-							'Y': M3D.lastImportedModel.getLocY(), 
-							'Z': M3D.lastImportedModel.getLocZ()
-						},
-
-						'scale' : {
-							'X': M3D.lastImportedModel.getScaleX(), 
-							'Y': M3D.lastImportedModel.getScaleY(), 
-							'Z': M3D.lastImportedModel.getScaleZ()
-						},
-						'rotation' : {
-							'X': M3D.lastImportedModel.getRotX(), 
-							'Y': M3D.lastImportedModel.getRotY(), 
-							'Z': M3D.lastImportedModel.getRotZ()
-						}
-					}
-				};
-		
-		// handle the bbox
-		var _bbox = {'X':'#','Y':'#','Z':'#'};
-		if ( M3D.lastImportedModel.boundingVolume ) {
-			var _bv = M3D.lastImportedModel.boundingVolume.dim;
-			_bbox = {'X': _bv[0],
-					'Y': _bv[1],
-					'Z': _bv[2]};
-		}
-		element.value.bbox = _bbox;
-		
-		M3D.DB.setObject(element);
-		// [/DB]
-
-	};
 	
 	M3D.GUI.addOptionToSelectBox = function(o){
 		$('#select-model').append('<option value="'+o.uid+'">'+o.name+'</option>');
@@ -1365,60 +1168,6 @@
 			} 
 		}
 	};
-
-	
-	M3D.GUI.generateLevelFile = function(){
-		
-		var camera = scene.camera;
-		var light = doc.getElement("mainlight");
-		
-		var data = {};
-		data.scene = {id:'scene1'};
-		data.cam = {
-						id:'camera1',
-						loc_x:camera.getLocX(),
-						loc_y:camera.getLocY(),
-						loc_z:camera.getLocZ(),
-						rot_x:camera.getRotX(),
-						rot_y:camera.getRotY(),
-						rot_z:camera.getRotZ()
-					};
-					
-		data.lights = [];
-		data.lights.push({
-							id:light.getId(),
-							loc_x:light.getLocX(),
-							loc_y:light.getLocY(),
-							loc_z:light.getLocZ(),
-							type:light.getType()
-						});
-		
-		// sample
-		// please get the real collada models from DB
-		data.colladas = [];
-		data.colladas.push({id:'collada1',document:'path/to/collada1.dae',loc_x:0,loc_y:0,loc_z:0,rot_x:0,rot_y:0,rot_z:0,scale:1,isDuplicable:false});
-		data.colladas.push({id:'collada2',document:'path/to/collada2.dae',loc_x:0,loc_y:0,loc_z:0,rot_x:0,rot_y:0,rot_z:0,scale:1,isDuplicable:true});
-		
-		var dataString = JSON.stringify(data);
-		$.ajax({
-			url: 'bin/xml_gen.php',
-			type: 'POST',
-			dataType:'json',
-			data: { glge:dataString },
-			success:function(a){
-				//alert('Generated file name is : '+ a.filename);
-	
-				// FOR DEBUGGING ONLY
-				var newwindow = window.open(a.url, a.url, 'height=400,width=400');
-				if (window.focus()) {
-					newwindow.focus();
-				}
-				//
-			}	
-		});
-		
-	};
-	
 	
 	// -- camera controler
 	M3D.GUI.CameraController = function(element) {
@@ -1472,46 +1221,6 @@
 	            }
 	        }
 	    };
-	};
-	
-	
-	M3D.GUI.WebWorkers = function(workerUrl){
-		var worker = this;
-		this.url = workerUrl;
-		this.cmd = null;
-		this.extra = null;
-		this.ww = null;
-		
-		function checkSupport() {
-		  return !!window.Worker;
-		}
-		
-		function init(){
-			worker.ww = new Worker(worker.url);	
-		}
-		
-		function post(){
-		    worker.ww.postMessage({'cmd': worker.cmd, 'extra' : worker.extra});
-		}
-		
-		this.setCommand = function(cmd){
-			worker.cmd = cmd;
-			return worker;
-		};
-		
-		this.setExtra = function(extra){
-			worker.extra = extra;
-			return worker;
-		};
-		
-		this.run = function(){
-			
-			checkSupport();
-			init();
-			post();
-		};
-		
-		
 	};
 
 

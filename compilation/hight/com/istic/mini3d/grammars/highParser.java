@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-04-27 17:53:26
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-05-02 17:18:54
 
     package com.istic.mini3d.grammars;
     import java.util.LinkedList;
@@ -573,7 +573,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: iaBasique, definition, init, gameData, newType, reglesJeu, commande
+            // elements: reglesJeu, commande, init, definition, gameData, newType, iaBasique
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -975,7 +975,7 @@ public class highParser extends Parser {
 
 
                             // AST REWRITE
-                            // elements: GRAVITY_KW, FLOAT, FLOAT, FLOAT
+                            // elements: FLOAT, FLOAT, GRAVITY_KW, FLOAT
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -1298,7 +1298,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: TYPE, subType, IDENT, subType
+            // elements: subType, subType, IDENT, TYPE
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1524,7 +1524,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, declarationObjet
+                    // elements: declarationObjet, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2075,7 +2075,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, operation, LIST_KW
+                    // elements: IDENT, LIST_KW, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2147,7 +2147,7 @@ public class highParser extends Parser {
 
 
                             // AST REWRITE
-                            // elements: PERSON, view
+                            // elements: view, PERSON
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -2726,7 +2726,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: valAggregation, IDENT
+                    // elements: IDENT, valAggregation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2826,7 +2826,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: attributListeOuObjet, IDENT
+                    // elements: IDENT, attributListeOuObjet
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2881,7 +2881,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: timeUnit, operation, attributTps
+                    // elements: operation, attributTps, timeUnit
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3046,7 +3046,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: operation, timeUnit
+                    // elements: timeUnit, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -5277,7 +5277,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: souris, definitionId, commandMode
+                    // elements: commandMode, definitionId, souris
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -5358,7 +5358,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: definitionId, commandMode, clavier
+                    // elements: commandMode, clavier, definitionId
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6401,7 +6401,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: variable, varOuNB
+                    // elements: varOuNB, variable
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -7073,7 +7073,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: NOT, conditionOu
+            // elements: conditionOu, NOT
             // token labels: 
             // rule labels: retval
             // token list labels: 

@@ -272,7 +272,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "ou"
+     * Méthode qui permet de générer le code pour le "ou".
      * Permet de générer le code pour réaliser un "ou" logique entre deux conditions passées en paramètre sous forme de code.
      * @param cond1 une des conditions
      * @param cond2 une des conditions
@@ -291,7 +291,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "et"
+     * Méthode qui permet de générer le code pour le "et".
      * Permet de générer le code pour réaliser un "et" logique entre deux conditions passées en paramètre sous forme de code.
      * @param cond1 une des conditions
      * @param cond2 une des conditions
@@ -310,7 +310,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "<="
+     * Méthode qui permet de générer le code pour le "<=".
      * Permet de générer le code pour réaliser un "<="  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -329,7 +329,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "<"
+     * Méthode qui permet de générer le code pour le "<".
      * Permet de générer le code pour réaliser un "<"  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -348,7 +348,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le ">="
+     * Méthode qui permet de générer le code pour le ">=".
      * Permet de générer le code pour réaliser un ">="  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -367,7 +367,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le ">"
+     * Méthode qui permet de générer le code pour le ">".
      * Permet de générer le code pour réaliser un ">"  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -386,7 +386,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "=="
+     * Méthode qui permet de générer le code pour le "==".
      * Permet de générer le code pour réaliser un "=="  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -405,7 +405,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "!="
+     * Méthode qui permet de générer le code pour le "!=".
      * Permet de générer le code pour réaliser un "!="  entre deux valeur passées en paramètre sous forme de code.
      * @param cond1 une des valeur
      * @param cond2 une des valeur
@@ -444,7 +444,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "+"
+     * Méthode qui permet de générer le code pour le "+".
      * Permet de générer le code pour réaliser un "+"  entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur
@@ -460,7 +460,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "-"
+     * Méthode qui permet de générer le code pour le "-".
      * Permet de générer le code pour réaliser un "-"  entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur
@@ -476,7 +476,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "*"
+     * Méthode qui permet de générer le code pour le "*".
      * Permet de générer le code pour réaliser un "*"  entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur
@@ -492,7 +492,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le "/"
+     * Méthode qui permet de générer le code pour le "/".
      * Permet de générer le code pour réaliser un "/"  entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur
@@ -508,7 +508,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour le modulo
+     * Méthode qui permet de générer le code pour le modulo.
      * Permet de générer le code pour réaliser un modulo  entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur
@@ -524,7 +524,7 @@ public class Code {
     }
 
     /**
-     * Méthode qui permet de générer le code pour les puissances
+     * Méthode qui permet de générer le code pour les puissances.
      * Permet de générer le code pour réaliser une puissance entre deux valeur passées en paramètre sous forme de code.
      * @param c1 une des valeur
      * @param c2 une des valeur

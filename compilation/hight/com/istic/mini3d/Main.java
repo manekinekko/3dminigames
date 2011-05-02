@@ -10,8 +10,9 @@ import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
 
 /**
- *
- * @author Quentin
+ * Classe principale du compilateur.
+ * @author Mini3D
+ * @version 1.0
  */
 public class Main {
 

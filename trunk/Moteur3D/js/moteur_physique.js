@@ -16,17 +16,27 @@ if(!window["M3D"].MOTEUR){
 
 (function(M3D){
 
-	// gravite [0,-9.8,0] * temps de refresh en seconde au carré
+/**
+ * Méthode setGravite: initialise la gravité.
+ * @param: newGravite: vecteur [x,y,z], [0,-9.8,0] pour la Terre par exemple.
+ */
 	M3D.MOTEUR.setGravite = function(newGravite){
 		gravite = newGravite;
 	},
 	
-	// juste un entier
+/**
+ * Méthode setCoefFrottement: initialise le coefficient de frottement.
+ * @param: newCoef: entier représentant le coefficient.
+ */
 	M3D.MOTEUR.setCoefFrottement = function(newCoef){
 		coefFrottement = newCoef;
 	},
 	
-	// calcule la nouvelle vitesse
+/**
+ * Méthode applyVitesse: retourne la nouvelle vitesse d'un objet.
+ * @param: gObject: objet auquel on veut appliquer la vitesse.
+ * @return: nouvelle vitesse de l'objet.
+ */
 	M3D.MOTEUR.applyVitesse = function(gObject){
 		var idObject = gObject.id;
 		var acc = gObject.acceleration;
@@ -46,7 +56,11 @@ if(!window["M3D"].MOTEUR){
 		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
-	// calcule la nouvelle vitesse en appliquant la gravite
+/**
+ * Méthode applyVitesseGravity: retourne la nouvelle vitesse d'un objet en appliquant la gravité.
+ * @param: gObject: objet auquel on veut appliquer la vitesse.
+ * @return: nouvelle vitesse de l'objet.
+ */	
 	M3D.MOTEUR.applyVitesseGravity = function(gObject){
 		var idObject = gObject.id;
 		var acc = gObject.acceleration;
@@ -66,6 +80,12 @@ if(!window["M3D"].MOTEUR){
 		return M3D.MOTEUR.translate(gObject,vit,true,idObject);
 	},
 	
+/**
+ * Méthode applyPhysique: applique la physique sur deux listes, la première sans la gravité et la seconde avec la gravité.
+ * @param: gObjList: liste d'objets auxquels on veut appliquer la physique (sans la gravité).
+ *		   gGObjList: liste d'objets auxquels on veut appliquer la physique (avec la gravité).
+ * @return: tableau dont chaque élément est un tableau des collisions pour chaque objet.
+ */
 	// applique la physique sur la première liste, et la physique incluant la gravite sur la seconde
 	// renvoie un tableau dont chaque élément est un tableau des collisions pour chaque objet
 	M3D.MOTEUR.applyPhysique = function(gObjList,gGObjList){

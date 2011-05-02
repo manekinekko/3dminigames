@@ -10,12 +10,12 @@
 (function(M3D){
 
 /**
- * Méthode translate: Translate un objet d'un vecteur donné dans un certain référentiel si il n'y a pas de collision (pour l'instant, teste de la collision uniquement à l'arrivée).
+ * Méthode translate: translate un objet d'un vecteur donné dans un certain référentiel, si il n'y a pas de collision (pour l'instant, teste de la collision uniquement à l'arrivée).
  * @param: gObject: objet de la grammaire que l'on souhaite déplacer.
- *         tabVector: vecteur de 3 coordonnées x y z représentant le déplacement.
+ *         tabVector: vecteur de 3 coordonnées x, y et z représentant le déplacement.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.translate = function(gObject,tabVector,testCollision,idRef){
 		var id = gObject.id;
@@ -47,14 +47,13 @@
         return tab;
 	},
 
-
 /**
- * Méthode setPosition: Place un objet à une certaine position dans un référentiel donné s'il n'y a pas de collision.
+ * Méthode setPosition: place un objet à une certaine position dans un référentiel donné, s'il n'y a pas de collision.
  * @param: gObject: objet de la grammaire que l'on souhaite déplacer.
- *         tabPos : vecteur de 3 coordonnées x y z représentant la nouvelle position dans le nouveau référentiel.
+ *         tabPos : vecteur de 3 coordonnées x, y et z représentant la nouvelle position dans le nouveau référentiel.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.setPosition = function(gObject,tabPos,testCollision,idRef){
 		var id = gObject.id;
@@ -88,14 +87,13 @@
         return tab;
 	},
 
-
 /**
- * Méthode rotate: Effectue une rotation dans un repère donné sur l'élément donné et vérifie la collision à l'arrivée seulement.
+ * Méthode rotate: effectue une rotation dans un repère donné sur l'élément donné et vérifie la collision à l'arrivée seulement.
  * @param: gObject: objet de la grammaire que l'on souhaite tourner.
- *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué.
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation à effectuer.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.rotate = function(gObject,tabRot,testCollision,idRef){
 		var id = gObject.id;
@@ -133,12 +131,12 @@
 
 
 /**
- * Méthode setAngle: Fixe les angles d'un élément donné par rapport au repère d'un référentiel et vérifie la collision à l'arrivée seulement
+ * Méthode setAngle: fixe les angles d'un élément donné par rapport au repère d'un référentiel et vérifie la collision à l'arrivée seulement.
  * @param: gObject: objet de la grammaire que l'on souhaite tourner.
- *         tabRot : vecteur de 3 coordonnées représentant la rotation a effectué
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation à effectuer.
  *         testCollision: true pour tester les collisions, false pour les désactiver.
  *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la donnée des angles sinon référentiel absolu.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.setAngle = function(gObject,tabRot,testCollision,idRef){
 		var id = gObject.id;
@@ -177,11 +175,11 @@
 	},
 
 /**
- * Méthode mulSscale: Multiplie l'échelle d'un objet par les coefficients donnés.
+ * Méthode mulSscale: multiplie l'échelle d'un objet par les coefficients donnés.
  * @param: gObject: objet de la grammaire que l'on souhaite redimensionner.
- *	 	   coefScale : tableau de 3 coordonnées représentant les coefficients par lesquels multipliés les coefficients actuels
+ *	 	   coefScale : tableau de 3 coordonnées représentant les coefficients par lesquels on veut multiplier les coefficients actuels
  *         testCollision: true pour tester les collisions, false pour les désactiver.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.mulScale = function (gObject,coefScale,testCollision){
 		var id = gObject.id;
@@ -204,11 +202,11 @@
 	},
 	
 /**
- * Méthode setScale: Définit une nouvelle échelle d'un objet par les coefficients donnés.
+ * Méthode setScale: définit une nouvelle échelle d'un objet par les coefficients donnés.
  * @param: gObject: objet de la grammaire que l'on souhaite redimensionner.
  *	 	   coefScale : tableau de 3 coordonnées représentant la nouvelle échelle
  *         testCollision: true pour tester les collisions, false pour les désactiver.
- * @return: Un tableau contenant des tableaux à 2 éléments des colladas en collision.
+ * @return: tableau contenant des tableaux à 2 éléments des colladas en collision.
  */
 	M3D.MOTEUR.setScale = function (gObject,coefScale,testCollision){
 		var id = gObject.id;

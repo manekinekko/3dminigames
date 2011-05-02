@@ -40,7 +40,7 @@ var coefFrottement = 1;
 /** 
  * Méthode initialisation: initialise le moteur.
  * @param: xmlDoc: adresse du fichier xml contenant l'état initial de la scène.
- *         idCanvas: identifiant de la fenêtre canvas où est affiché la scene.
+ *         canvas: identifiant de la fenêtre canvas où est affichée la scène.
   *        initFunctionName: nom de la fonction qui met en place la scène initiale.
  */
 	M3D.MOTEUR.initialisation = function(xmlDoc, canvas, initFunctionName){
@@ -50,15 +50,15 @@ var coefFrottement = 1;
 	},
 	
 /**
- * Méthode includeJS: ajouter un fichier javascript au HTML
- * @param: jsFile: Nom du fichier javascript, par rapport à la page html où il est chargé sans le .js à la fin
+ * Méthode includeJS: ajoute un fichier javascript au HTML
+ * @param: jsFile: nom du fichier javascript, par rapport à la page html où il est chargé sans le .js à la fin
  */
 	M3D.MOTEUR.includeJS = function(jsFile){
 		document.write('<script type="text/javascript" src="'+jsFile+'.js"></script>')
 	},
 	
 /**
- * Méthode includeAllJS : Charge tous les fichiers javascripts du moteur
+ * Méthode includeAllJS : charge tous les fichiers javascripts du moteur
  */
 	M3D.MOTEUR.includeAllJS = function(){
 		M3D.MOTEUR.includeJS('js/moteur_tools');
@@ -74,6 +74,8 @@ var coefFrottement = 1;
 	
 /**
  * Méthode initialisationAux: méthode auxiliaire à la fonction d'initialisation qui permet de charger une scène vide
+ * @param: xmlDoc: adresse du fichier xml contenant l'état initial de la scène.
+ *         canvas: identifiant de la fenêtre canvas où est affichée la scène.
  */
 	M3D.MOTEUR.initialisationAux = function(xmlDoc, canvas){
         doc.onLoad = function(){
@@ -91,7 +93,7 @@ var coefFrottement = 1;
 	},
  
 /**
- * Méthode render: Permet l'affichage de la scène et met à jour le frame rate.
+ * Méthode render: permet l'affichage de la scène et met à jour le frame rate.
  */
 	M3D.MOTEUR.render = function(){
 		if(gameRenderer){

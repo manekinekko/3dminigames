@@ -47,9 +47,11 @@ public class Entity implements Symbol {
         List<String> res = new ArrayList<String>();
 
         Iterator<Model> it = this.models.iterator();
+        Model m;
         while (it.hasNext()) {
-            Model m = it.next();
-            res.addAll(m.listAttributes());
+            m = it.next();
+            if(m != null)
+            {res.addAll(m.listAttributes());}
         }
 
         String[] tab = (String[]) this.attributes.keySet().toArray(new String[0]);

@@ -15,7 +15,7 @@ AttributeValue a1;
 		AttributeValue a1 = new AttributeValue(3);
 		//Symbol t1 = new Symbol();
 	}
-public void testGet(){
+/*public void testGet(){
 	s1.add("abc",t1);
-}
+}*/
 }

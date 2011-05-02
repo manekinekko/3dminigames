@@ -7,19 +7,30 @@ import java.io.*;
 import org.jdom.*;
 import org.jdom.input.*;
 
+/**
+ * Classe permettant de gérer les models.
+ * @author Mini3D
+ * @version 1.0
+ */
 public class Model implements Symbol {
 
+    /**
+     * Constante qui défini le chemin vers le fichier xml des attributs prédéfinis.
+     */
     public static String xml = "./com/istic/mini3d/xml/attributesv2.xml"; //Linux (Fonctionne aussi sous windows)
     private /*public pour JUnit tests*/ static List<Model> generated;
     private String name;
     private /*public pour JUnit tests*/ Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
     private /*public pour JUnit tests*/ Map<String, Model> inheritance;
+    /**
+     * Entier représentatif de la génération de code.
+     */
     public int generate = 0;
 
     /**
-     * Constructor with only model name.
-     * Typically used by predefined models.
-     * @param name model name
+     * Constructeur de création de modèle avec le nom.
+     * Utilisé avec les models prédéfinis
+     * @param name nom du model
      */
     public Model(String name) {
 	this.name = name;
@@ -28,9 +39,9 @@ public class Model implements Symbol {
     }
 
     /**
-     * Constructor with inherited models.
-     * @param name model name
-     * @param subtypes list of inherited models
+     * Constructeur avec les models hérités.
+     * @param name nom du modèle
+     * @param subtypes liste des models hérités
      */
     public Model(String name, Model... subtypes) {
 	this.name = name;
@@ -43,34 +54,34 @@ public class Model implements Symbol {
     }
 
     /**
-     * Add an attribute to the model.
-     * @param attr Name attribute
-     * @param value Value attribute
+     * Ajoute un attribut au model.
+     * @param attr nom de l'attribut
+     * @param value valeur de l'attribut
      */
     public void addAttribute(String attr, AttributeValue value) {
 	this.attributs.put(attr, value);
     }
 
     /**
-     * Get a list of all attributes of the model with their value.
-     * @return Map<String, AttributeValue> of attributes of the model.
+     * Accesseur a la liste d'attribut avec leur valeur.
+     * @return Map<String, AttributeValue> des attributs du model.
      */
     public Map<String, AttributeValue> getAllAttributes() {
 	return new HashMap<String, AttributeValue>(attributs);
     }
 
     /**
-     * Returns the value of attribute passed as parameter.
-     * @param n Attribute name
-     * @return AttributeValue's instance.
+     * Accesseur a la valeur d'un attribut grâce a son nom.
+     * @param n nom de l'attribut
+     * @return la valeur de l'attribut sous forme d'AttributeValue
      */
     public AttributeValue getAttribute(String n) {
 	return this.attributs.get(n);
     }
 
     /**
-     * Returns list of all attributes of model.
-     * @return List<Model> of attributes
+     * Accesseur a toute la liste des attributs du model.
+     * @return la liste des noms des attributs du model.
      */
     public List<String> listAttributes() {
 	List<String> res = new ArrayList<String>();
@@ -82,18 +93,18 @@ public class Model implements Symbol {
     }
 
     /**
-     * Check if the attribute is present in the model.
-     * @param attr Attribute name
-     * @return True if attribute exists, false otherwise.
+     * Vérifie si l'attribut est présent dans le model.
+     * @param attr nom de l'attribut.
+     * @return vrai si l'attribut existe.
      */
     public boolean contains(String attr) {
 	return attributs.containsKey(attr);
     }
 
     /**
-     * Check if current model inherits the model passed as parameter.
-     * @param model
-     * @return
+     * Vérifie si le modèle courant hérite du modèle passé en paramètre.
+     * @param model model dont on veut vérifier qu'il est hérité.
+     * @return vrai s'il hérite du modèle
      */
     public boolean ineheritsOf(String model) {
 	return inheritance.containsKey(model);
@@ -128,32 +139,33 @@ public class Model implements Symbol {
     }
 
     /**
-     * Debug fonction
+     * Fonction de debug
      */
     public void print() {
 	System.out.println(attributs.toString());
     }
 
     /**
-     * Add the model passed as a parameter to the list of generated models.
-     * @param m model to add
+     * Ajoute le model passé en paramètre a la liste des modèles déjà générés
+     * @param m model a ajouter
      */
     public static void addGenerated(Model m) {
 	generated.add(m);
     }
 
     /**
-     * Checks if model has already been generated.
-     * @param m model checking
-     * @return true if model has already been generated
+     * Vérifie si un model a déjà été généré.
+     * @param m model a vérifier
+     * @return vrai si le model a déjà été généré.
      */
     public static boolean generated(Model m) {
 	return generated.contains(m);
     }
 
     /**
-     * Initializes the default models the compiler.
-     * @param st Symbole Table
+     * Parse le xml et initialise les models par défaut.
+     * Fonctionne grâce a la librairie JDOM.
+     * @param st table des symboles
      */
     @SuppressWarnings("unchecked")
     public static void init(SymbolTable st) {

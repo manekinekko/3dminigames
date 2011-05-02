@@ -46,7 +46,7 @@ public class AttributeValue {
          */
         TIME,
         /**
-         * Type aggrégatio,.
+         * Type aggrégation.
          * Il est utilisé lorsque que l'utilisateur va faire une aggrégation de deux entités.
          */
         AGGR,
@@ -107,8 +107,8 @@ public class AttributeValue {
     }
 
     /**
-     * Constructeur d'un attribut de type chaine de caractères.
-     * Initialise la valeur de l'attribut par la valeur de l'objet Duration passée en paramètre(qui est convertie en code).
+     * Constructeur d'un attribut de type temps.
+     * Initialise la valeur de l'attribut par la valeur de l'objet Duration passé en paramètre(qui est convertie en code).
      * Le type est mis automatiquement à TIME.
      * @param d l'objet Duration représentatif de la valeur de l'attribut.
      */
@@ -116,7 +116,13 @@ public class AttributeValue {
 	value = d.getCode();
 	type = Type.TIME;
     }
-    
+
+    /**
+     * Constructeur d'un attribut de type liste/tableau.
+     * Initialise la valeur de l'attribut par la valeur de l'objet Array passé en paramètre(qui est convertie en code).
+     * Le type est mis automatiquement à ARRAY.
+     * @param d l'objet Array représentatif de la valeur de l'attribut.
+     */
     public AttributeValue(Array a) {
 	value = a.getCode();
 	type = Type.ARRAY;

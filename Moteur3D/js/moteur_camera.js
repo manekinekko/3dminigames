@@ -20,7 +20,7 @@
 	
 /**
  * Méthode activeCamera: permet l'activation de la caméra placée en paramètre.
- * (si la caméra n'existe pas, aucun changement s'effectue)
+ * (si la caméra n'existe pas, aucun changement ne s'effectue).
  * @param: idCamera: identifiant de la caméra que l'on souhaite activer.
  */
 	M3D.MOTEUR.activeCamera = function(idCamera){
@@ -30,11 +30,11 @@
 	},
 	
 	
-// CA MARCHE PAS AVEC DES PARENTS
+// CA NE MARCHE PAS BIEN AVEC DES PARENTS !
 /**
- * Méthode addCamera: Ajoute une caméra dans la scène.
- * @param: gCamera: caméra de la grammaire (avec l'attribut id comme identfiant et posX posY posZ orX orY orZ comme attributs de positions et orientations)
- *		   [Optionnel]idParent: identifiant du parent auquel on rattache la caméra sinon elle est rattaché à la scène.
+ * Méthode addCamera: ajoute une caméra dans la scène.
+ * @param: gCamera: caméra de la grammaire (avec l'attribut id comme identfiant et posX, posY, posZ, orX, orY et orZ comme attributs de positions et orientations).
+ *		   [Optionnel]idParent: identifiant du parent auquel on rattache la caméra sinon elle est rattachée à la scène.
  */
 	M3D.MOTEUR.addCamera = function(gCamera, idParent){
 		var idCamera = gCamera.id;
@@ -66,7 +66,7 @@
 /**
  * Méthode removeCamera: supprime une caméra de la scène si elle n'est pas active.
  * @param: idCamera: identifiant de la caméra à supprimer.
- * @return: true si la caméra a été supprimée, false sinon
+ * @return: true si la caméra a été supprimée, false sinon.
  */
 	M3D.MOTEUR.removeCamera = function(idCamera){
 		var bool = (gameScene.getCamera().id != idCamera);
@@ -79,7 +79,12 @@
 		return bool;
 	},
 
-	// idem Translate pour une caméra
+/**
+ * Méthode translateCamera: translate une caméra d'un vecteur donné dans un certain référentiel.
+ * @param: gCamera: caméra de la grammaire que l'on souhaite déplacer.
+ *         tabVector: vecteur de 3 coordonnées x, y et z représentant le déplacement.
+ *         [Optionnel]idRef: identifiant de l'objet servant de référentiel au déplacement sinon référentiel absolu.
+ */
 	M3D.MOTEUR.translateCamera = function(gCamera,tabVector,idRef){
 		if(idRef==undefined){
 			M3D.MOTEUR.translate(gCamera,tabVector,false);
@@ -88,7 +93,12 @@
 		}
 	},
 
-	// idem setPosition pour une caméra
+/**
+ * Méthode setPositionCamera: place une caméra à une certaine position dans un référentiel donné.
+ * @param: gCamera: caméra de la grammaire que l'on souhaite déplacer.
+ *         tabPos : vecteur de 3 coordonnées x, y et z représentant la nouvelle position dans le nouveau référentiel.
+ *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la nouvelle position sinon référentiel absolu.
+ */
 	M3D.MOTEUR.setPositionCamera = function(gCamera,tabPos,idRef){
 		if(idRef==undefined){
 			M3D.MOTEUR.setPosition(gCamera,tabPos,false);
@@ -97,7 +107,12 @@
 		}
 	}, 
 
-	// idem rotate pour une caméra
+/**
+ * Méthode rotateCamera: effectue une rotation dans un repère donné sur la caméra donnée.
+ * @param: gCamera: caméra de la grammaire que l'on souhaite tourner.
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation à effectuer.
+ *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la rotation sinon référentiel absolu.
+ */
 	M3D.MOTEUR.rotateCamera = function(gCamera,tabRot,idRef){
 		if(idRef==undefined){
 			M3D.MOTEUR.rotate(gCamera,tabRot,false);
@@ -106,6 +121,12 @@
 		}
 	},
 	
+/**
+ * Méthode setAngleCamera: fixe les angles d'une caméra donnée par rapport au repère d'un référentiel.
+ * @param: gCamera: caméra de la grammaire que l'on souhaite tourner.
+ *         tabRot : vecteur de 3 coordonnées représentant la rotation à effectuer.
+ *         [Optionnel]idRef: identifiant de l'objet servant de référentiel à la donnée des angles sinon référentiel absolu.
+ */
 	// idem setAngle pour une caméra
 	M3D.MOTEUR.setAngleCamera = function(gCamera,tabRot,idRef){
 		if(idRef==undefined){

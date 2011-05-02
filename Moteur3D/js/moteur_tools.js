@@ -9,10 +9,10 @@
 
 (function(M3D){
 
-/////// FONCTIONS POUR LES TABLEAUX
+	/////// FONCTIONS POUR LES TABLEAUX
 
 /**
- * Méthode getObject: Retourne l'objet associé à l'identifiant donné (-1 s'il n'existe pas).
+ * Méthode getObject: retourne l'objet associé à l'identifiant donné (-1 s'il n'existe pas).
  * @param: idObject: identifiant de l'objet que l'on veut récupérer.
  * @return: l'objet s'il existe, -1 sinon.
  */
@@ -23,7 +23,7 @@
 	},
 
 /**
- * Méthode getCamera: Retourne la caméra associé à l'identifiant donné (-1 s'il n'existe pas).
+ * Méthode getCamera: retourne la caméra associée à l'identifiant donné (-1 s'il n'existe pas).
  * @param: idCamera: identifiant de la caméra que l'on veut récupérer.
  * @return: la caméra si elle existe, -1 sinon.
  */
@@ -34,9 +34,9 @@
 	},
 	
 /**
- * Méthode getObjectOrCamera: Retourne l'objet ou la caméra associé à l'identifiant donné (-1 s'il existe pas).
+ * Méthode getObjectOrCamera: retourne l'objet ou la caméra associé(e) à l'identifiant donné (-1 s'il existe pas).
  * @param: idCamera: identifiant de l'objet ou de la caméra que l'on veut récupérer.
- * @return: l'objet ou la caméra s'il existe, -1 sinon.
+ * @return: l'objet ou la caméra s'il/elle existe, -1 sinon.
  */
 	M3D.MOTEUR.getObjectOrCamera = function(id){
 		var object = M3D.MOTEUR.getObject(id);
@@ -47,10 +47,10 @@
 	},
 
 /**
-* Méthode getIndexOfCollada: Retourne la position du collada ayant l'identifiant donné dans le tableau des colladas.
-* @param: idObject: identifiant de l'objet dont on souhaite récupérer la position.
-* @return: la position dans le tableau des colladas de l'identifiant donné.
-*/
+ * Méthode getIndexOfCollada: retourne la position du collada ayant l'identifiant donné dans le tableau des colladas.
+ * @param: idObject: identifiant de l'objet dont on souhaite récupérer la position.
+ * @return: la position dans le tableau des colladas de l'identifiant donné.
+ */
 	M3D.MOTEUR.getIndexOfCollada = function(idObject){
 		for(var i = 0 ; i<tabIdObject.length ; i++){
 			if(tabIdObject[i] == idObject) return i
@@ -60,8 +60,9 @@
 		
 	/////// FONCTIONS POUR LA GESTION DU GRAPHE 
 	
-/** Méthode resetChildren: remet à null les attributs moteurChildren et moteurAllChildren d'un objet et de ses ascendants
- *@param: object: object dont réinitialiser les fils
+/** 
+ * Méthode resetChildren: remet à null les attributs moteurChildren et moteurAllChildren d'un objet et de ses ascendants.
+ * @param: object: object dont on veut réinitialiser les fils.
  */
 	M3D.MOTEUR.resetChildren = function(object){
 		object.moteurChildren = null;
@@ -72,7 +73,7 @@
 	},
 	
 /**
-* Méthode getChildren: Retourne les enfants d'un objet ayant l'identifiant donné, triés selon leurs types.
+* Méthode getChildren: retourne les enfants d'un objet ayant l'identifiant donné, triés selon leur type.
 * @param: idObject: identifiant de l'objet dont on veut récupérer les fils.
 * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
 */
@@ -85,7 +86,7 @@
 	},
 
 /**
-* Méthode getChildrenAux: Fonction auxiliaire de getChildren : prend en plus un tableau à 4 éléments en arguments pour y ajouter directement les fils.
+* Méthode getChildrenAux: fonction auxiliaire de getChildren : prend en plus un tableau à 4 éléments en argument pour y ajouter directement les fils.
 * @param: object: objet dont on veut récupérer les fils.
 *         list: tableau provisoire où ajouter les éléments.
 * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
@@ -109,10 +110,10 @@
 	},
 	
 /**
-* Méthode getAllChildren: Retourne tous les descendants d'un objet ayant l'identifiant donné, triés selon leurs types.
-* @param: idObject: identifiant de l'objet dont on veut récupérer les descendants.
-* @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
-*/
+ * Méthode getAllChildren: retourne tous les descendants d'un objet ayant l'identifiant donné, triés selon leur type.
+ * @param: idObject: identifiant de l'objet dont on veut récupérer les descendants.
+ * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
+ */
 	M3D.MOTEUR.getAllChildren = function(idObject){
 		var object = M3D.MOTEUR.getObjectOrCamera(idObject);
 		if(!object.moteurAllChildren){
@@ -128,11 +129,11 @@
 	},
 
 /**
-* Méthode getAllChildrenAux: Fonction auxiliaire de getAllChildren : prend en argument le tableau prévisoire et l'indice du groupe à traiter dans list[0].
-* @param: list: tableau provisoire où ajouter les éléments.
-*         indice: prochain groupe à traiter dans la descendance.
-* @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
-*/
+ * Méthode getAllChildrenAux: fonction auxiliaire de getAllChildren : prend en argument le tableau prévisoire et l'indice du groupe à traiter dans list[0].
+ * @param: list: tableau provisoire où ajouter les éléments.
+ *         indice: prochain groupe à traiter dans la descendance.
+ * @return: un tableau à 4 éléments, dont chacun est un tableau représentant la liste des groupes, des colladas, des caméras et des lumières.
+ */
 	M3D.MOTEUR.getAllChildrenAux = function(list,indice){
 		if(indice != list[0].length){
 			var idObject = list[0][indice];
@@ -144,7 +145,7 @@
 	},
 	
 /**
- * Méthode getFatherBranch: Retourne l'ancêtre d'un objet qui est fils de la scène.
+ * Méthode getFatherBranch: retourne l'ancêtre d'un objet qui est fils de la scène.
  * @param: object: élément dont on veut récupérer l'ancêtre.
  * @return: ancêtre de l'objet qui est fils de la scène.
  */
@@ -155,7 +156,7 @@
 	},
 	
 	
-	/////// FONCTIONS AJOUTES A GLGE
+	/////// FONCTIONS AJOUTEES A GLGE
 
 /**
  * Méthode vec4ToVec3: convertit un GLGE.Vec4 en GLGE.Vec3 en supprimant le 4e élément.
@@ -169,7 +170,7 @@
 /**
  * Méthode vec3ToVec4: convertit un GLGE.Vec3 en GLGE.Vec4 en ajoutant une nouvelle valeur.
  * @param:  vec: le vecteur GLGE.Vec3 ou un tableau à convertir.
-			newValue: nouvelle valeur pour compléter le vecteur.
+ *			newValue: nouvelle valeur pour compléter le vecteur.
  * @return: le vecteur GLGE.Vec3 obtenu.
  */
 	M3D.MOTEUR.vec3ToVec4 = function(vec,newValue){
@@ -178,8 +179,8 @@
 
 /**
  * Méthode addNumVec3: additionne deux GLGE.vec3.
- * @param: vec1: premier vecteur.
- *         vec2: second vecteur.
+ * @param: vec1: premier vecteur à additionner.
+ *         vec2: second vecteur à additionner.
  * @return: nouveau GLGE.vec3 somme des deux arguments.
  */
 	M3D.MOTEUR.addNumVec3 = function(vec1,vec2){
@@ -216,11 +217,11 @@
 		return (GLGE.Vec3(parseFloat(vec1[0])*parseFloat(vec2[0]),parseFloat(vec1[1])*parseFloat(vec2[1]),parseFloat(vec1[2])*parseFloat(vec2[2])));
 	},
 	
-	//////// FONCTIONS POUR LA POSITION D'UN OBJET PLACEABLE
+	//////// FONCTIONS POUR POSITIONNER UN OBJET PLACABLE
 	
 /**
  * Méthode getScaleFromMatrix: extrait d'une GLGE.Mat4 représentant une modelMatrix les coefficients de la matrice d'échelle.
- * @param: matrix: matrce d'où calculer les coefficients de la matrice d'échelle.
+ * @param: matrix: matrice d'où calculer les coefficients de la matrice d'échelle.
  * @return: un tableau de 3 éléments représentant le facteur d'échelle en x,y et z.
  */
 	M3D.MOTEUR.getScaleFromMatrix = function(matrix){
@@ -236,12 +237,11 @@
 	},
 	
 /**
- * Méthode getAngleFromTanCos: retourne l'angle entre -pi et pi ayant une tangente et un cosinus donné
- * @param: t: tangente de l'angle cherché
- * @param: c: cosinus de l'angle cherché
- * @return: angle compris entre -pi et pi
+ * Méthode getAngleFromTanCos: retourne l'angle entre -pi et pi ayant une tangente et un cosinus donné.
+ * @param: 	t: tangente de l'angle cherché.
+ * 			c: cosinus de l'angle cherché.
+ * @return: angle compris entre -pi et pi.
  */
- 
 	M3D.MOTEUR.getAngleFromTanCos = function(t,c){
 		var a = Math.atan(t);
 		a = a-(t>0)*(c<0)*Math.PI+(t<0)*(c<0)*Math.PI;
@@ -250,9 +250,9 @@
 	
 /**
  * Méthode getRotFromRotMatrix: retourne les 3 angles (sous forme d'un tableau) qui permettent de 
- * retrouver la matrice donnée avec les mêmes rotations (valable uniquement pour des rotations dans l'ordre x y z
- * @param: mat: matrice de rotation dont on veut récupérer les angles qui ont permis de la créer
- * @return: un tableau ayant 3 éléments : les angles selon les axes x,y et z
+ * retrouver la matrice donnée avec les mêmes rotations (valable uniquement pour des rotations dans l'ordre x y z.
+ * @param: mat: matrice de rotation dont on veut récupérer les angles qui ont permis de la créer.
+ * @return: un tableau ayant 3 éléments : les angles selon les axes x,y et z.
  */
 	M3D.MOTEUR.getRotFromRotMatrix = function(mat){
 		var mat02 = GLGE.getMat4(mat,0,2);
@@ -274,11 +274,10 @@
 		return [a,b,c]
 	},
 	
-	
 /**
- * Méthode getRotFromMatrix: Retourne les 3 orientations à partir d'une matrice de model
- * @param: mat: modelmatrix
- * @return: les 3 orientations dans un tableau
+ * Méthode getRotFromMatrix: retourne les 3 orientations à partir d'une matrice de model.
+ * @param: mat: modelmatrix.
+ * @return: les 3 orientations dans un tableau.
  */
 	M3D.MOTEUR.getRotFromMatrix = function(mat){
 		var norVec = GLGE.Vec4(0,0,0,1);
@@ -289,7 +288,6 @@
 		var mat = GLGE.mulMat4(mat,GLGE.translateMatrix(1/GLGE.getMat4(matrixMT,0,0),1/GLGE.getMat4(matrixMT,1,1),1/GLGE.getMat4(matrixMT,2,2)));
 		return M3D.MOTEUR.getRotFromRotMatrix(mat);
 	},
-	
 	
 /**
  * Méthode getRelativePos: retourne un GLGE.Vec3 comportant la position relativement au père de l'objet donné.
@@ -305,8 +303,8 @@
 		
 /**
  * Méthode getAbsolutePos: retourne un GLGE.Vec3 comportant la position absolue d'un objet donné.
- * @param: object: objet dont il faut calculer la position absolute.
- * @return: position absolue.
+ * @param: object: objet dont il faut calculer la position absolue.
+ * @return: position absolue calculée.
  */
 	M3D.MOTEUR.getAbsolutePos = function(object){
 		var modMat = object.getModelMatrix();
@@ -315,7 +313,6 @@
 		return (M3D.MOTEUR.vec4ToVec3(pos));	
 	},
 	
-
 /**
  * Méthode getRelativeScale: retourne un GLGE.Vec3 comportant l'échelle relativement au père de l'objet donné.
  * @param: object: objet dont il faut calculer l'échelle relative.
@@ -329,7 +326,7 @@
 /**
  * Méthode getAbsoluteScale: retourne un GLGE.Vec3 comportant l'échelle absolue d'un objet donné.
  * @param: object: objet dont il faut calculer l'échelle absolue.
- * @return: échelle absolue.
+ * @return: échelle absolue calculée.
  */
 	M3D.MOTEUR.getAbsoluteScale = function(object){
 		var modMat = GLGE.Mat4(object.getModelMatrix());
@@ -356,28 +353,41 @@
 		return M3D.MOTEUR.getRotFromMatrix(modMat);
 	},
 	
-	////////////// RECUPERATION DES DONNES GLOBALES D'UN OBJET
+	//////// RECUPERATION DES DONNEES GLOBALES D'UN OBJET
 	
-	// retourne la position de l'élément d'identifiant idObject
+/**
+ * Méthode getGlobalPosition: retourne la position de l'élément d'identifiant idObject.
+ * @param: idObject: identifiant de l'objet.
+ * @return: position de l'élément.
+ */
 	M3D.MOTEUR.getGlobalPosition = function(idObject){
 		return M3D.MOTEUR.getAbsolutePos(M3D.MOTEUR.getObjectOrCamera(idObject));
 	},
 	
-	//retourne lorientation de lélément d'identifiant idObject
+/**
+ * Méthode getGlobalOrientation: retourne l'orientation de l'élément d'identifiant idObject.
+ * @param: idObject: identifiant de l'objet.
+ * @return: orientation de l'élément.
+ */
 	M3D.MOTEUR.getGlobalOrientation = function(idObject){
 		return M3D.MOTEUR.getAbsoluteAngle(M3D.MOTEUR.getObjectOrCamera(idObject));
 	},
-	
-	// retourne l'échelle de l'élément d'identifiant idObject
+
+/**
+ * Méthode getGlobalScale: retourne l'échelle de l'élément d'identifiant idObject.
+ * @param: idObject: identifiant de l'objet.
+ * @return: échelle de l'élément.
+ */
 	M3D.MOTEUR.getGlobalScale = function(idObject){
 		return M3D.MOTEUR.getAbsoluteScale(M3D.MOTEUR.getObjectOrCamera(idObject));
 	},
-	////////////// MISE A JOUR DES DONNEES LOCALES DES OBJETS DE LA GRAMMAIRE
+	
+	///////// MISE A JOUR DES DONNEES LOCALES DES OBJETS DE LA GRAMMAIRE
 	
 /**
-* Méthode updatePosition: met à jour les attributs des objets de la grammaire concernant les positions
-* @pram: gObject: objet de la grammaire à mettre à jour
-*/
+ * Méthode updatePosition: met à jour les attributs des objets de la grammaire concernant les positions.
+ * @pram: gObject: objet de la grammaire à mettre à jour.
+ */
 	M3D.MOTEUR.updatePosition = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -388,9 +398,9 @@
 	},
 
 /**
-* Méthode updateOrientation: met à jour les attributs des objets de la grammaire concernant les orientations
-* @pram: gObject: objet de la grammaire à mettre à jour
-*/	
+ * Méthode updateOrientation: met à jour les attributs des objets de la grammaire concernant les orientations.
+ * @pram: gObject: objet de la grammaire à mettre à jour.
+ */	
 	M3D.MOTEUR.updateOrientation = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -401,9 +411,9 @@
 	},
 
 /**
-* Méthode updateScale: met à jour les attributs des objets de la grammaire concernant les échelles
-* @pram: gObject: objet de la grammaire à mettre à jour
-*/	
+ * Méthode updateScale: met à jour les attributs des objets de la grammaire concernant les échelles.
+ * @pram: gObject: objet de la grammaire à mettre à jour.
+ */	
 	M3D.MOTEUR.updateScale = function(gObject){
 		var idObject = gObject.id;
 		var object = M3D.MOTEUR.getObject(idObject);
@@ -413,7 +423,7 @@
 		gObject.sizeZ = size[2];	
 	},	
 	
-	////////////// AUTRES
+	//////// AUTRES FONCTIONS DISPONOBLES
 
 /**
  * Méthode idColladaToIdGroup: convertit le nom d'un collada en son groupe père (retire le premier caractère).
@@ -424,10 +434,10 @@
 		return str.substring(1,str.length);
 	},
  
- /**
+/**
  * Méthode getIndexArray: renvoie la position d'un élément dans un tableau, -1 sinon.
  * @param: array: tableau où chercher l'élément.
- *         element: élément à chercher dans le tableau
+ *         element: élément à chercher dans le tableau.
  * @return: la position de l'élément dans le tableau s'il est dedans, -1 sinon.
  */
 	M3D.MOTEUR.getIndexArray = function(array,element){
@@ -437,8 +447,13 @@
 		return -1;
 	},
 	
-	
-	// ecart entre deux box, l'inférieur de la 1 et le supérieur de la 2 selon la dimension dim 1 pour x, 2 pour y, 3 pour z et négatif pour inverser le sens des 2 objets.
+/**
+ * Méthode ecart: calcule l'écart entre les bounding box de deux objets selon une des trois dimensions x, y ou z.
+ * @param: idObject1: premier objet.
+ * 		idObject2: second objet.
+ *		 	dimension: dimension prise en compte (1 pour x, 2 pour y, 3 pour z, ces chiffres en négatif pour inverser le sens des deux objets).
+ * @return: écart calculé entre les box des deux objets.
+ */
 	M3D.MOTEUR.ecart = function(idObject1,idObject2,dimension){
 		if(dimension==0 || Math.abs(dimension) > 3){
 			alert('error in M3D.MOTEUR.ecart : dimension = 0');

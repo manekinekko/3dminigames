@@ -10,11 +10,11 @@
 (function(M3D){
  
  
- /** Méthode addObject: Ajoute un objet ou un groupe à la scène (selon si l'url est vide ou non)
- * @param: gObject: object de la grammaire à ajouter
- *		   testCollision: test des collisions activé ou désactivé
- *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
- */
+ /** Méthode addObject: ajoute un objet ou un groupe à la scène (selon si l'url est vide ou non)
+  * @param: gObject: objet de la grammaire à ajouter
+  *		   testCollision: test des collisions activé ou désactivé
+  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
+  */
 	M3D.MOTEUR.addObject = function(gObject, testCollision, idParent){
 		if(!gObject.url){
 			var tab = M3D.MOTEUR.addGroup(gObject,idParent);
@@ -27,8 +27,8 @@
 	}
  
 /**
- * Méthode addCollada: Ajoute un objet dans la scène.
- * @param: gObject: object de la grammaire à ajouter
+ * Méthode addCollada: ajoute un objet dans la scène.
+ * @param: gObject: objet de la grammaire à ajouter
  *		   testCollision: test des collisions activé ou désactivé
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache l'objet sinon l'objet est rattaché à la scène.
  */
@@ -74,7 +74,7 @@
 	},
 	
 /**
- * Méthode addGroup: Ajoute un groupe dans la scène.
+ * Méthode addGroup: ajoute un groupe dans la scène.
  * @param: gGroup: objet de la grammaire mais sans url
  *		   [Optionnel]idParent: identifiant du parent auquel on rattache le groupe sinon il est rattaché à la scène.
  */
@@ -98,7 +98,7 @@
 	},
 
 /**
- * Méthode removeObject: supprime un élément (collada ou groupe) dans la scène ainsi que tous ces descendants.
+ * Méthode removeObject: supprime un élément (collada ou groupe) dans la scène ainsi que tous ses descendants.
  * @param: idObject: identifiant de l'objet à supprimer.
  */
 	M3D.MOTEUR.removeObject = function(idObject){
@@ -120,7 +120,7 @@
 
 /**
  * Méthode changeParent: change le père d'un élément (groupe, caméra ou collada).
- * @param: gObject: objet de la grammaire dont changer le père.
+ * @param: gObject: objet de la grammaire dont on veut changer le père.
  *         idNewParent: identifiant de l'élément (groupe ou collada) nouveau père.
  */
 	M3D.MOTEUR.changeParent = function(gObject,idNewParent){

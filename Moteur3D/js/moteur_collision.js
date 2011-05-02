@@ -69,7 +69,7 @@
 
 /**
  * Méthode testCollision: teste la collision entre tous les colladas d'un groupe et les autres objets de la scène.
- * @param: objectBranch: groupe.
+ * @param: object: groupe.
  * @return: un tableau dont les éléments sont des tableaux à 2 éléments, noms des colladas en collision.
  */
 	M3D.MOTEUR.testCollision = function(object){
@@ -93,8 +93,11 @@
 		}
 		return list;
 	},
-	
-	// test uniquement entre des objets descendants de fils différents de la scène
+
+/**
+ * Méthode testAllCollision: teste la collision entre des objets descendants de fils différents de la scène.
+ * @return: un tableau dont les éléments sont des tableaux à 2 éléments, noms des colladas en collision.
+ */	
 	M3D.MOTEUR.testAllCollision = function(){
 		var sceneAllSon = M3D.MOTEUR.getChildren("mainscene");
 		var sceneObjectSon = sceneAllSon[0];	

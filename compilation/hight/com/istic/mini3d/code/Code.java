@@ -867,8 +867,11 @@ public class Code {
     //clearInterval(id_of_setinterval)
     /**
      * 
-     * @param id
-     * @return
+     * 
+     * Méthode qui génère la fonction JavaScript clearInterval()
+     * 
+     * @param id Identifiant de l'interval affecté avec setInterval()
+     * @return code JavaScript de clearInterval(id)
      */
     public static Code genClearInterval(String id) {
         Code c = new Code();
@@ -882,10 +885,11 @@ public class Code {
 
     //setInterval(code,millisec
     /**
+     * Méthode qui génère la fonction JavaScript setInterval()
      * 
-     * @param cod
-     * @param t
-     * @return
+     * @param cod Représentation en String de la fonction à lancer 
+     * @param t   Temps entre les lancement
+     * @return Code JavaScript de setInterval(func, timer)
      */
     public static Code genSetInterval(String cod, String t) {
         Code c = new Code();
@@ -906,7 +910,7 @@ public class Code {
      * Méthode qui génère la Boucle de rafraichissement.
      * @param tab tableau des signatures des méthodes a lancer en cas de déplacement de la sourris
      * @param clavier booleen permettant de savoir si des commandes au clavier/clic de sourris sont a gérer
-     * @return code de la boucle de rafraichissement
+     * @return Code de la boucle de rafraichissement
      */
     public static Code genRefreshLoop(Code [] tab, boolean clavier) {
         boolean com = false;
@@ -990,11 +994,11 @@ public class Code {
     
     //setTimeout(code,millisec)
     /**
-     * 
-     * @param cod
-     * @param time
-     * @param timeUnit
-     * @return
+     * Méthode qui génère la fonction JavaScript setTimeout.
+     * @param Représentation String de la fonction à lancer
+     * @param Représentation String du timer de lancement de la fonction
+     * @param Unité de temps du timer(millisecondes, secondes, minutes)
+     * @return Code JavaScript de setTimeout(func, time, timeUnit)
      */
     public static Code genSetTimeout(Code cod , Code time , String timeUnit){
     	Code c = new Code();
@@ -1030,8 +1034,9 @@ public class Code {
     
     /**
      * 
-     * @param n
-     * @return
+     * Méthode qui génère le code argn
+     * @param n Numéro a générer après arg
+     * @return Code de argn
      */
     public static Code genArg(int n){
     	Code c = new Code();	

@@ -183,46 +183,49 @@ public class Model implements Symbol {
 	} catch (Exception e) {
 	    System.out.println("Rate");
 	}
-
-	List listmodel = racine.getChildren("model");
-
-	//On cree un Iterator sur notre liste
-	Iterator i = listmodel.iterator();
-	while (i.hasNext()) {
-	    Element courant = (Element) i.next();
-	    Model m;
-	    Element e = courant.getChild("inheritance");
-	    if (e == null) {
-		m = new Model(courant.getChild("name").getText());
-	    } else {
-		Symbol he = st.get(courant.getChild("inheritance").getAttributeValue("value"));
-		m = new Model(courant.getChild("name").getText(), (Model) he);
-	    }
-
-	    st.add(m.getName(), m);
-
-
-	    List listAttribute = courant.getChildren("attribute");
-	    Iterator i2 = listAttribute.iterator();
-	    while (i2.hasNext()) {
-		Element attr = (Element) i2.next();
-		if (attr.getAttributeValue("type").equals("String")) {
-		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(attr.getAttributeValue("value")));
-		} else if (attr.getAttributeValue("type").equals("number")) {
-		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Float.valueOf(attr.getAttributeValue("value"))));
-		} else if (attr.getAttributeValue("type").equals("boolean")) {
-		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Boolean.valueOf(attr.getAttributeValue("value"))));
-		} else if (attr.getAttributeValue("type").equals("array")) {
-		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(AttributeValue.Type.ARRAY));
-		} else if (attr.getAttributeValue("type").equals("List")) {
-		} else if (attr.getAttributeValue("type").equals("Enum")) {
-		} else if (attr.getAttributeValue("type").equals("Empty")) {
-		} else if (attr.getAttributeValue("type").equals("Object")) {
-		} else if (attr.getAttributeValue("type").equals("time")) {
-		    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(new Duration(Float.valueOf(attr.getAttributeValue("value")), attr.getAttributeValue("unit"))));
+	if(racine!=null){
+		List listmodel = racine.getChildren("model");
+	
+		//On cree un Iterator sur notre liste
+		Iterator i = listmodel.iterator();
+		while (i.hasNext()) {
+		    Element courant = (Element) i.next();
+		    Model m;
+		    Element e = courant.getChild("inheritance");
+		    if (e == null) {
+			m = new Model(courant.getChild("name").getText());
+		    } else {
+			Symbol he = st.get(courant.getChild("inheritance").getAttributeValue("value"));
+			m = new Model(courant.getChild("name").getText(), (Model) he);
+		    }
+	
+		    st.add(m.getName(), m);
+	
+	
+		    List listAttribute = courant.getChildren("attribute");
+		    Iterator i2 = listAttribute.iterator();
+		    while (i2.hasNext()) {
+			Element attr = (Element) i2.next();
+			if (attr.getAttributeValue("type").equals("String")) {
+			    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(attr.getAttributeValue("value")));
+			} else if (attr.getAttributeValue("type").equals("number")) {
+			    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Float.valueOf(attr.getAttributeValue("value"))));
+			} else if (attr.getAttributeValue("type").equals("boolean")) {
+			    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(Boolean.valueOf(attr.getAttributeValue("value"))));
+			} else if (attr.getAttributeValue("type").equals("array")) {
+			    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(AttributeValue.Type.ARRAY));
+			} else if (attr.getAttributeValue("type").equals("List")) {
+			} else if (attr.getAttributeValue("type").equals("Enum")) {
+			} else if (attr.getAttributeValue("type").equals("Empty")) {
+			} else if (attr.getAttributeValue("type").equals("Object")) {
+			} else if (attr.getAttributeValue("type").equals("time")) {
+			    m.addAttribute(attr.getAttributeValue("name"), new AttributeValue(new Duration(Float.valueOf(attr.getAttributeValue("value")), attr.getAttributeValue("unit"))));
+			}
+		    }
+		    st.add(m.getName(), m);
 		}
-	    }
-	    st.add(m.getName(), m);
+	}else{
+		 System.out.println("Rate");
 	}
     }
 }

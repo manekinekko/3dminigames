@@ -4,12 +4,12 @@
  */
 (function(M3D){
  
-if(!window.M3D){
-	window.M3D={};	
+if(!window["M3D"]){
+	window["M3D"]={};	
 }
 
-if (!window.M3D.DB){
-		window.M3D.DB={};
+if (!window["M3D"].DB){
+		window["M3D"].DB={};
 }
 var db;
 	
@@ -136,7 +136,7 @@ function idbCreate_grammar(name) {	// grammar
 			try {
 				db.createObjectStore('grammar', {keyPath: 'id'});
 				log("Object store grammar created");
-				var ini='/* Game created by 3DWIGS */\n/* On '+(new Date()).toGMTString()+' */\n\ngame has name at "'+name+'" ;\n';
+				var ini='// Game created by 3DWIGS\n// On '+(new Date()).toGMTString()+'\n\ngame has name at "'+name+'";\n';
 				M3D.DB.setGrammar(ini);
 				M3D.Editor.initDB(ini);
 				

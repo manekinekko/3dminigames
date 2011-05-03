@@ -108,7 +108,7 @@
         <attribute name="defense" type="number" value="0" description="La défense du personnage."/>
         <attribute name="maxJumpsInTheAir" type="number" value="0" description="le nombre de sauts maximum que le personnage peut effectuer en l'air."/>
         <attribute name="money" type="number" value="0" description="L'argent quepossède le personnage."/>
-        <attribute name="class" type="String" value="'Class1'" description="La classe du personnage (sert pour les affichages)."/>
+        <attribute name="job" type="String" value="'job1'" description="Le métier(classe) du personnage (sert pour les affichages)."/>
         <attribute name="race" type="String" value="'Race1'" description="La race du personnage (sert pour les affichages)."/>
         <attribute name="acceleration" type="number" value="1" description="Un attribut permettant de connaitre l'accélération du personnage (en lien avec sa vitesse)."/>
         <attribute name="inventories" type="List" subType="Inventory" value="null" description="Les inventaires du personnage (il peut en avoir plusieurs pour classer ses possessions, ex : armes, potions...)."/>

@@ -909,10 +909,10 @@ public class Code {
     /**
      * Méthode qui génère la Boucle de rafraichissement.
      * @param tab tableau des signatures des méthodes a lancer en cas de déplacement de la sourris
-     * @param clavier booleen permettant de savoir si des commandes au clavier/clic de sourris sont a gérer
+     * @param list_event liste des objets controls du clavier et de la souris
      * @return Code de la boucle de rafraichissement
      */
-    public static Code genRefreshLoop(Code [] tab, boolean clavier) {
+    public static Code genRefreshLoop(Code [] tab, ArrayList <Control> list_event) {
         boolean com = false;
         Code c = new Code();
         for(int v = 0; v < tab.length;v++){
@@ -922,9 +922,24 @@ public class Code {
             }
         }
         /* ************* Bool Array -> command ************************* */
-        if(clavier){
+        if(!list_event.isEmpty()){
+            int taille = list_event.size();
             c.append("/* Array of commands */\n");
             c.append("var tabCMD = new Array();\n\n");
+            c.append("for(var i = 0; i<" + taille + ";i++) {\n");
+            c.append("\t tabCMD[i] = new Array();\n");
+            c.append("\t tabCMD[i][0] = false;\n");
+            c.append("\t tabCMD[i][1] = true;\n");
+            c.append("}\n");
+            int i = 0;
+            Iterator <Control> ite = list_event.iterator();
+            while(ite.hasNext()){
+                Control co = ite.next();
+                c.append("tabCMD["+i+"][2] = "+co.getCommande()+";\n");
+                i ++;
+
+            }
+
         }
 
         /* ************	Global refresh variable ************************ */
@@ -960,7 +975,7 @@ public class Code {
             c.append("var soux;\n");
             c.append("var souy;\n");
         }
-        if(clavier){
+        if(!list_event.isEmpty()){
             c.append("\tfor(var i = 0; i< tabCMD.length;i++) {\n");
             c.append("\t\t if(tabCMD[i][0]&&tabCMD[i][1]){\n");
             c.append("\t\t\t CMDExec(i);\n");

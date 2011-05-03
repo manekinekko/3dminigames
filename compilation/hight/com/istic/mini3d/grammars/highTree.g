@@ -610,7 +610,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
                 System.out.println(v.getCode());
             }
        }
-       c.append(Code.genRefreshLoop(tab,clavier));
+       c.append(Code.genRefreshLoop(tab,list_event));
        c.append(Code.genEventListener(clavier,false,false));
        c.append(Code.genCMDKeyDown(list_event));
        c.append(Code.genCMDKeyUp(list_event));

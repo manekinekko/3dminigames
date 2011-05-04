@@ -188,8 +188,10 @@ $(function(){
 		// the name of the new entity is a time stamp
 		var _nameElement = $('#name');
 		var _name = _nameElement.val();
-		if (M3D.GUI.validateFields( _btn ) && !M3D.DB.containsObj( _name )) 
+		if (M3D.GUI.validateFields( _btn ) && M3D.GUI.isUnique( _name )) 
 		{
+			
+			_nameElement.removeClass('warning');
 			
 			M3D.GUI.updateEntityListAndAddToDB();
 			M3D.GUI.addObjectToScene();
@@ -210,7 +212,7 @@ $(function(){
 			});
 		}
 		else {
-			_nameElement.addClass('required');
+			_nameElement.addClass('warning');
 		}
 		
 	});
@@ -226,7 +228,7 @@ $(function(){
 		var _btn = $(this);
 		var _el = $('#game-name');
 		var _name = _el.val();
-		if ( M3D.GUI.validateFields( _el ) && M3D.GUI.isUnique( _name )){
+		if ( M3D.GUI.validateFields( _el )){
 
 			_btn.val('saving...');
 			M3D.Editor.setGameInfo(_name, function(){

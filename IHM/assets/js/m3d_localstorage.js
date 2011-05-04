@@ -2,6 +2,7 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @namespace M3D.DB
  * @file assets/js/m3d_localstorage.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_localstorage.js
  * @projectDescription This file contains all the necessary Local Storage functions.
  */
 (function(M3D){

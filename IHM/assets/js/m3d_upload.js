@@ -1,8 +1,9 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @namespace M3D.Upload
  * @file assets/js/m3d_upload.js
- *
- * Upload files to the server using HTML 5 Drag and drop the folders on your local computer
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_upload.js
+ * @projectDescription Upload files to the server using HTML 5 Drag and drop the folders on your local computer
  *
  * Tested on:
  * Mozilla Firefox 3.6.12

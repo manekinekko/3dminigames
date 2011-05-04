@@ -1,6 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_init.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_init.js
  * @projectDescription This file initializes all the necessary namespaces and some global variables.
  */
 

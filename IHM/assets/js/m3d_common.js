@@ -2,6 +2,7 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @namespace M3D.Common
  * @file assets/js/m3d_common.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_common.js
  * @projectDescription This file includes some convenient functions.
  */
 (function(M3D) {

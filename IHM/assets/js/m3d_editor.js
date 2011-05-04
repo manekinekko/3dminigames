@@ -2,6 +2,7 @@
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @namespace M3D.Editor
  * @file assets/js/m3d_editor.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_editor.js
  * @projectDescription This file contains all necessary functions that are used by the editor.
  */
 (function(M3D){

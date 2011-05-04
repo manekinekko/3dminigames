@@ -60,7 +60,11 @@ $(function(){
 	 * Allow picking 3D models from the select box
 	 * @see M3D.GUI.pickObjectFromSelect
 	 */
-	$('#select-model').bind('change', M3D.GUI.pickObjectFromSelect);
+	$('#select-model').bind('change', function(e){
+		
+		M3D.GUI.pickObjectFromSelect(e);
+		
+	});
 	
 	/**
 	 * Bind the mouse scroll event to the wheel function.
@@ -72,6 +76,8 @@ $(function(){
 	/**
 	 * Bind the live update of the 3D model position/rotation/scale's values.
 	 * @see M3D.GUI.updateInputValuesFromObject
+	 * @see M3D.GUI.checkEditor
+	 * @see M3D.DB.updateSelectedObject
 	 */
 	$('input[type="number"]:not([disabled])').bind('keypress', function(){ 
 		M3D.GUI.updateObjectValues(this);
@@ -179,9 +185,8 @@ $(function(){
 		// the name of the new entity is a time stamp
 		var _nameElement = $('#name');
 		var _name = _nameElement.val();
-		if (M3D.GUI.validateFields(this) && !M3D.DB.containsObj( _name )) {
-			
-			_nameElement.removeClass('required');
+		if (M3D.GUI.validateFields( _btn ) && !M3D.DB.containsObj( _name )) 
+		{
 			
 			M3D.GUI.updateEntityListAndAddToDB();
 			M3D.GUI.addObjectToScene();
@@ -190,7 +195,13 @@ $(function(){
 			_name = M3D.Common.ucfirst(_name);
 			
 			_btn.val('Saving ...');
-			M3D.Editor.setDefaultContent([_name], function(){
+			
+			var _o = {
+				name :  _name,
+				url : $('#importUrl').val() /* the url of the last imported model */
+			}
+			
+			M3D.Editor.setDefaultContent([_o], function(){
 				_btn.val('Save');
 				M3D.GUI.hidePopup();
 			}); // an array of names
@@ -212,12 +223,12 @@ $(function(){
 		var _btn = $(this);
 		var _el = $('#game-name');
 		var _name = _el.val();
-		if ( M3D.GUI.validateFields( _el ) ){
+		if ( M3D.GUI.validateFields( _el ) && M3D.GUI.isUnique( _name )){
 
 			_btn.val('saving...');
 			M3D.Editor.setGameInfo(_name, function(){
-				M3D.GUI.hidePopup('game-info');
-				_btn.val('save');				
+				M3D.GUI.hidePopup();
+				_btn.val('save');
 			});		
 			
 		}
@@ -267,13 +278,13 @@ $(function(){
 		M3D.DB.clear();
 		M3D.Editor.empty(function(){
 			
-			M3D.GUI.hidePopup('confirmation-clear');
+			M3D.GUI.hidePopup();
 			button.val('YES');
 			
 			// delay 
 			setTimeout(function(){
 				M3D.GUI.showPopup('game-info', null, true);
-			}, 1000);
+			}, 100);
 		});
 		
 	});
@@ -296,7 +307,7 @@ $(function(){
 		_b.val('loading...');
 		M3D.DB.load(function(){
 			_b.val('load');
-			M3D.GUI.hidePopup('confirmation-load');
+			M3D.GUI.hidePopup();
 		});
 
 	});
@@ -306,10 +317,10 @@ $(function(){
 	 * @see M3D.GUI.showPopup
 	 */
 	 $('#confirm-no-load-content').bind('click', function(){
-	 	// delay the fn call better performance
-		setTimeout(function(){
-			M3D.GUI.showPopup('game-info');
-		}, 1000);
+		
+		// execute the action associated to this event
+	 	$('#confirm-clear-canvas').trigger('click');
+
 	 });
 
 	/**

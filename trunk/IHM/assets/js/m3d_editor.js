@@ -93,23 +93,27 @@
 	
 	/**
 	 * Set the default content of the editor
-	 * @param {Array} names An array of names of the objects to be added
+	 * @param {Array} o An array of names and urls of the objects to be added
 	 */
-	M3D.Editor.setDefaultContent = function(names, cb){
-		var _name, _str = [], _old = [];
+	M3D.Editor.setDefaultContent = function(o, cb){
+		var _name, _url, _str = [], _old = [];
 		
-		if ( M3D.Editor.getContent() !== null ) {
+		if ( M3D.Editor.getContent() !== null ) 
+		{
 			_str.push(M3D.Editor.getContent());
 			_str.push('\n');
 		}
 		
-		for(var i=0; i<names.length; i++){
+		for(var i=0; i<o.length; i++)
+		{
 			
-			_name = names[i];
+			_name = o[i].name;
+			_url = o[i].url;
 			_str.push('type '+_name+' is Object ;\n'+
 								_name+' has position at 0.00 0.00 0.00 ;\n'+
 								_name+' has rotation at 0.00 0.00 0.00 ;\n'+
-								_name+' has scale at 0.00 0.00 0.00 ;\n');
+								_name+' has scale at 0.00 0.00 0.00 ;\n'+
+								_name+' has url at "'+_url+'" ;\n');
 			
 		}
 		
@@ -136,21 +140,27 @@
 	 * @param {Object} o An object containing the id string of the 3D model, its position, rotation and scale X/Y/Z values.
 	 */
 	M3D.Editor.updateObjectAttributes = function(o, cb){
+		
 		var NEWLINE = '\n';
 		var content = M3D.Editor.getContent().split(NEWLINE);
-		for(var i=0; i<content.length; i++){
+		
+		for(var i=0; i<content.length; i++)
+		{
 			
-			if ( (new RegExp(o.id+' has position')).test(content[i]) ){
+			if ( (new RegExp(o.id+' has position')).test(content[i]) )
+			{
 				var p = o.position;
 				content[i] = content[i].replace(/position at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
 												'position at '+p.x+' '+p.y+' '+p.z);
 			}
-			else if ( (new RegExp(o.id+' has scale')).test(content[i]) ){
+			else if ( (new RegExp(o.id+' has scale')).test(content[i]) )
+			{
 				var s = o.scale;
 				content[i] = content[i].replace(/scale at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
 												'scale at '+s.x+' '+s.y+' '+s.z);
 			}
-			else if ( (new RegExp(o.id+' has rotation')).test(content[i]) ){
+			else if ( (new RegExp(o.id+' has rotation')).test(content[i]) )
+			{
 				var r = o.rotation;
 				content[i] = content[i].replace(/rotation at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
 												'rotation at '+r.x+' '+r.y+' '+r.z);

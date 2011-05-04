@@ -256,9 +256,9 @@ public class CodeTest extends TestCase {
 		e1.addAttribute("orY", new AttributeValue("val5"));
 		e1.addAttribute("orZ", new AttributeValue("val6"));
 		e1.addAttribute("sizeX", new AttributeValue("val7"));
-		c41 = Code.genAddObject(e1);
+		c41 = Code.genAddObject(e1,true,e1);		//Changement de signature
 		e1.addAttribute("sizeX", new AttributeValue("val8"));
-		c42 = Code.genAddObject(e1);
+		c42 = Code.genAddObject(e1,false,e1);		//Changement de signature
 		assertNotSame(c41.getCode(), c42.getCode());
 	}
 	

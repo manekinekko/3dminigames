@@ -1,6 +1,6 @@
 grammar high;
 
-options {
+options { 
     output=AST;
     ASTLabelType=CommonTree; // type of $stat.tree ref etc...
 }
@@ -38,7 +38,7 @@ tokens {
     import java.util.LinkedList;
 }
 
-@lexer::header {
+@lexer::header { 
     package com.istic.mini3d.grammars;
 }
 
@@ -62,7 +62,7 @@ tokens {
 game :
     (gameData FIN)?
     (newType FIN)*
-    (init FIN)+
+    (init FIN)+ 
     (definition FIN)*
     (commande FIN)+
     (reglesJeu FIN)+
@@ -87,10 +87,10 @@ attributGame :
     | NAME_KW^  AT! name
     ;
 
-mapType : GENERIC | GRID | RIBBON;
+mapType : GENERIC | GRID | RIBBON; 
 
-name : IDENT;
-
+name : IDENT;  
+ 
 /* Inheritance, creation of type */
 newType :
     TYPE IDENT IS subType (AND subType)*
@@ -199,7 +199,7 @@ actionObjet :
     | EQUIP^ (accesLocal | NEXT | PREVIOUS)
     ;
   
-actionCommandePressee :
+actionCommandePressee :  
     JUMP^ operation
     ;
   

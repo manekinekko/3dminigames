@@ -4,7 +4,7 @@ options {
     tokenVocab=high;
     ASTLabelType=CommonTree;
 } 
-
+ 
 @header {
     package com.istic.mini3d.grammars;
     import com.istic.mini3d.Main;
@@ -17,7 +17,7 @@ options {
     import java.util.Enumeration;
 }
 
-@members { 
+@members {   
     private int INT_DUPLICABLE=10;
     private Hashtable<String, String> aggreg = new Hashtable<String, String>();
     private ErrorHandler handler = ErrorHandler.getInstance();
@@ -394,7 +394,10 @@ consequ [SymbolTable st,Definition d] returns [Code c]
 
 action [SymbolTable st] returns [Code c]
     @init{ c = new Code();}:
-    accesClass[st] actionObjet[st]
+    ent = accesClass[st] act = actionObjet[st,ent]
+    {
+      c.append(act);
+    }
     |^(ENDS_KW IDENT IDENT?)
     |^(ENDS_KW GAME IDENT?)
     |^(STARTS_KW IDENT IDENT?)
@@ -424,15 +427,15 @@ action [SymbolTable st] returns [Code c]
 	    if(!((Entity)e).getDuplicable() && (e.getGenerate()>=1)){
 		handler.add(ErrorHandler.ErrorType.FATAL, 0, e.getName() + " n'est pas duplicable!");
 	    }
-	    if(td!=null){
+	    if(td!=null){  
 		e.getAttribute("posX").setCode(td.getX());
 		e.getAttribute("posY").setCode(td.getY());
 		e.getAttribute("posZ").setCode(td.getZ());
-	    }
+	    }  
 	    e.toGenerate();
 	    c.append("\t");		c.append(Code.genEntity((Entity) e));
-	    c.append("\t");		c.append(Code.genAddObject((Entity) e));
-	}
+	    c.append("\t");		c.append(Code.genAddObject((Entity) e,false,null));
+	} 
     }
     |^(WAIT_KW op=operation[st] t=timeUnit[st] cons=consequences[st,new Definition()])
     {
@@ -455,12 +458,15 @@ typeDestination [SymbolTable st] returns [Coordonnees coord]:
     accesClass[st]
     | coo=coordinates[st]{coord=coo;};
 
-actionObjet [SymbolTable st] returns [Code c]:
+actionObjet [SymbolTable st,List<Symbol> l] returns [Code c]@init{c=new Code();}:
     DIES_KW
     | actionCommandePressee[st]
-    | actionCommandeMaintenue[st]
-    |^(DURING actionCommandeMaintenue[st] operation[st] timeUnit[st])
-    |^(UNTIL actionCommandeMaintenue[st] conditions[st])
+    | act = actionCommandeMaintenue[st,l]
+    {
+      c.append(act);
+    }
+    |^(DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st])
+    |^(UNTIL actionCommandeMaintenue[st,l] conditions[st])
     |^(EQUIP accesClass[st])
     |^(EQUIP NEXT)
     |^(EQUIP PREVIOUS)
@@ -468,10 +474,28 @@ actionObjet [SymbolTable st] returns [Code c]:
 
 actionCommandePressee [SymbolTable st] returns [Code c]:
   ^(JUMP operation[st])
-  ;
+  ; 
 
-actionCommandeMaintenue [SymbolTable st] returns [Code c]:
-  ^(MOVE (LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN) operation[st])
+actionCommandeMaintenue [SymbolTable st,List<Symbol> ls] returns [Code c]@init{c = new Code();List<Integer> l = new ArrayList();int x=0,y=0,z=0;}:
+  ^(MOVE (LEFT {x=-1;}| RIGHT {x=1;}| FORWARD {y=1;}| BACKWARD {y=-1;}| WUP {z=1;}| WDOWN{z=-1;}) val = operation[st]
+  {
+    int v = 1;
+      try{
+        v = Integer.parseInt(val.getCode());  
+      }
+      catch(Exception e){
+        e.printStackTrace(); 
+      } 
+
+    x *= v; y *= v; z *= v;
+    l.add(x); l.add(y); l.add(z);
+  
+    for(Iterator<Symbol> it = ls.iterator() ; it.hasNext();){
+      Symbol s = it.next();
+      c.append(Code.genTranslate(s.getName(),l, "false",s.getName()));
+    }
+  }
+  ) //DONE
   | ^(TURN (LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE) operation[st])
   | ^(ACCELERATE operation[st])
   | ^(BRAKE operation[st])

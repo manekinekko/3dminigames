@@ -1,6 +1,8 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @namespace M3D.Config
  * @file assets/js/m3d_config.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_config.js
  * @projectDescription This script loads a configuration data from an XML file.
  */
 $(document).ready(function()

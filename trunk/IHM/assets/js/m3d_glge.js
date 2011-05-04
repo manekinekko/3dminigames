@@ -1,6 +1,7 @@
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
  * @file assets/js/m3d_glge.js
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_glge.js
  * @projectDescription This file handles the GLGE environment initialization. 
  */
 doc.onLoad = function() {

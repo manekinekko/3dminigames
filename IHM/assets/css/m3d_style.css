@@ -82,6 +82,9 @@ em {
 #canvas-container {
 	width:800px;
 }
+#canvas:hover {
+	box-shadow:0 0 5px #08ADFF;
+}
 #tools-panel, #viewmenu {
 	display:none;
 }
@@ -157,9 +160,10 @@ li.separator {
 	display:none;
 }
 #upload-model {
+	
 }
-.qq-upload-drop-area, .qq-upload-drop-area-active {
-	border: 2px dashed #AAAAAA;
+#upload-model, .qq-upload-drop-area, .qq-upload-drop-area-active {
+	border: 2px dashed #eee;
 	border-radius: 10px 10px 10px 10px;
 	height: 100px;
 	width: 100%;
@@ -169,6 +173,7 @@ li.separator {
 }
 .qq-upload-drop-area-active {
 	background-color:#fffacd;
+	border-color:#aaa;
 }
 #loading {
     background: url("img/ajax-loader.gif") no-repeat scroll left center transparent;
@@ -216,7 +221,7 @@ li.separator {
     z-index: 110;
 }
 #attributes-panel-body {
-	height: 450px;
+	height:403px;
 	overflow: auto;
 	margin: 4px;
 }

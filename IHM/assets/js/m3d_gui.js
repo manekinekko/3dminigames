@@ -103,37 +103,62 @@
 
 		for(var i=0; i<_models.length; i++) {
 
-			if ( _models[i] && _models[i]['name'] ) {
-				_attrHTML.push('<h3>'+_models[i]['name']+'</h3>');
+			if ( typeof(_models[i]) === 'object' && _models[i]['name'] ) {
+				_attrHTML.push('<h3>Entity: <i>'+_models[i]['name']+'</i></h3>');
 			}
 
-			if ( _models[i] && _models[i]['attribute'] ) {
+			if ( typeof(_models[i]) === 'object' && _models[i]['attribute'] ) {
+				
 				_attributes = _models[i]['attribute'];
 
-				for(var j=0; j<_attributes.length; j++) {
+				// check if the current item is an array (of objects)
+				if ( _attributes.length ){
+					for(var j=0; j<_attributes.length; j++) {
 
-					if ( _attributes[i] && _attributes[i]['@attributes'] ) {
-
-						_name = _attributes[j]['@attributes']['name'];
-						_type = _attributes[j]['@attributes']['type'] || 'N/A';
-						_dflt = _attributes[j]['@attributes']['value'] || 'N/A';
-						_desc = _attributes[j]['@attributes']['description'] || 'N/A';
-
-						_attrHTML.push('<div class="attributes-details">'+
-						'<div class="attributes-name">'+
-						'<span>'+_name+'</span>'+
-						'</div>'+
-						'<div class="attributes-desc">'+
-						'<b>Type</b>&nbsp;'+_type+'<br/>'+
-						'<b>Default</b>&nbsp;'+_dflt+'<br/>'+
-						'<b>Description</b>&nbsp;'+_desc+'<br/>'+
-						'</div>'+
-						'</div>');
-
+						if ( typeof(_attributes[j]) === 'object' && _attributes[j]['@attributes'] ) {
+	
+							_name = _attributes[j]['@attributes']['name'];
+							_type = _attributes[j]['@attributes']['type'] || 'N/A';
+							_dflt = _attributes[j]['@attributes']['value'] || 'N/A';
+							_desc = _attributes[j]['@attributes']['description'] || 'N/A';
+	
+							_attrHTML.push('<div class="attributes-details">'+
+							'<div class="attributes-name">'+
+							'<span>'+_name+'</span>'+
+							'</div>'+
+							'<div class="attributes-desc">'+
+							'<b>Type</b>&nbsp;'+_type+'<br/>'+
+							'<b>Default</b>&nbsp;'+_dflt+'<br/>'+
+							'<b>Description</b>&nbsp;'+_desc+'<br/>'+
+							'</div>'+
+							'</div>');
+	
+						}
+	
 					}
 
 				}
+				
+				// check if the current item is an object but not an array
+				else if ( typeof(_attributes) === 'object' && !_attributes.length ) {
+					_name = _attributes['@attributes']['name'];
+					_type = _attributes['@attributes']['type'] || 'N/A';
+					_dflt = _attributes['@attributes']['value'] || 'N/A';
+					_desc = _attributes['@attributes']['description'] || 'N/A';
 
+					_attrHTML.push('<div class="attributes-details">'+
+					'<div class="attributes-name">'+
+					'<span>'+_name+'</span>'+
+					'</div>'+
+					'<div class="attributes-desc">'+
+					'<b>Type</b>&nbsp;'+_type+'<br/>'+
+					'<b>Default</b>&nbsp;'+_dflt+'<br/>'+
+					'<b>Description</b>&nbsp;'+_desc+'<br/>'+
+					'</div>'+
+					'</div>');
+				}
+
+				
 			}
 
 		}

@@ -107,10 +107,10 @@
 						<li class="separator"></li>
 
 						<li>
-							<div id="create-game" class="button">Create My Game</div>
+							<div id="clear-canvas" class="button" >Clear Canvas</div>
 						</li>
 						<li>
-							<div id="clear-canvas" class="button" >Clear Canvas</div>
+							<div id="create-game" class="button">Create My Game</div>
 						</li>
 	
 						<li style="float:right">
@@ -183,8 +183,9 @@
 				<div id="entity-info" class="window box-shadow closed">
 					<h2>Entity information</h2>
 					<label for="name">Name<em>*</em></label>
-					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" />
+					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" required />
 					<br/>
+					<em>(Only Alpha-numerics, dashes and underscores are allowed!)</em>
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
 						<input type="button" class="validate" id="save-entity-info" value="Save" name="save" />
@@ -193,10 +194,11 @@
 				
 				<div id="game-info" class="window box-shadow closed">
 					<h2>Welcome <?php echo $session->get('login'); ?>!</h2>
-					<p>Please create your game.</p>
+					<p>Please enter a name for your game to begin.</p>
 					<label for="game-name">Game name<em>*</em></label>
-					<input type="text" class="alphanumeric required" name="game-name" id="game-name" value="" placeholder="Game name" />
+					<input type="text" class="alphanumeric required" name="game-name" id="game-name" value="" placeholder="Game name" required />
 					<br/>
+					<em>(Only Alpha-numerics, dashes and underscores are allowed!)</em>
 					<div id="window-buttons">
 						<input type="button" class="validate" id="save-game-info" value="Save" name="save" />
 					</div>

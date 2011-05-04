@@ -306,7 +306,7 @@
 					// set a new one
 					M3D.DB.setEditor({
 						'uid': 'edwigs', 
-						'value': ' '	
+						'value': '#'	
 					});
 					
 				}

@@ -240,14 +240,11 @@
 				
 				var parent = objects[i].parent;
 				if (parent.uid === uidSelect) {
-					
+					 
 					// update the global obj var
 					obj = parent;
 					
 					M3D.GUI.setMaterialEmit(0.1);
-					
-					scene.camera.setLookat(obj.getPosition());
-					
 					M3D.GUI.updateInputValuesFromObject();
 					
 					found = true;
@@ -259,6 +256,7 @@
 			}
 		}
 		
+		return true;
 	};
 	
 	
@@ -363,42 +361,39 @@
 			// clear all inputs
 			M3D.GUI.clearInputs();
 		}
-		
-		if ( name == "entity-info" ){
-			var nameValue = $('.window #name').attr('uid', uid);
-		}
-		
-		//$('#viewmenu ul').fadeOut(100);
 	
-		//$('#entity-info').show();
-	
-		$('#modal').show(100, function(){
+		$('#modal').show('fast', function(){
 			
 			var _window = $('.window.opened'); 
 			if ( _window.length > 0 ){
 				
 				
-				// the window we want is hidden, so show it!
-				if ( _window.attr('id') != name ){
+				// the window we want is hidden, so show it! ag it as closed ...
+				if ( _window.attr('id') !== name ){
 					
-					// close the opened one ...
-					_window.animate({ top: M3D.GUI.ANIMATE_WINDOW_CLOSE_POS }, function(){
-						
-						// ... tag it as closed ...
-						$(this).removeClass('opened').addClass('closed');
+					// close the opened one ... tag it as closed ...
+					_window
+						.removeClass('opened')
+						.addClass('closed')
+						.css({ top: M3D.GUI.ANIMATE_WINDOW_CLOSE_POS });
 	
-						// ... then open the new one.
-						$('#'+name).addClass('opened').removeClass('closed').animate({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS }, M3D.GUI.ANIMATE_WINDOW_SPEED);
-						
-						
-					});
+					// ... then wait a bit and open the new one.
+					setTimeout(function(){
+						$('#'+name)
+							.addClass('opened')
+							.removeClass('closed')
+							.css({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS });
+					}, 100);
 					
 				}
 				
 			}
 			else {
 				// ... open the new window
-				$('#'+name).addClass('opened').removeClass('closed').animate({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS }, M3D.GUI.ANIMATE_WINDOW_SPEED);
+				$('#'+name)
+					.addClass('opened')
+					.removeClass('closed')
+					.css({ top:M3D.GUI.ANIMATE_WINDOW_OPEN_POS });
 			}
 			
 		});
@@ -410,20 +405,19 @@
 	M3D.GUI.hidePopup = function(){
 		
 		
-		$('.window.opened').animate({ top:M3D.GUI.ANIMATE_WINDOW_CLOSE_POS }, function(){
-			
-			$(this).removeClass('opened').addClass('closed');
-			//$('#viewmenu ul').fadeIn(100);
-			$('#modal').hide(100);
-		});
+		$('.window.opened')
+			.css({ top:M3D.GUI.ANIMATE_WINDOW_CLOSE_POS })
+			.removeClass('opened')
+			.addClass('closed');
 		
+		$('#modal').hide('fast');
 		
 	};
 	
 	M3D.GUI.updateEntityListAndAddToDB = function(){
             
 	    var _nameElement = $('#name');
-	    var uid = _nameElement.attr('uid');
+	    var uid = (new Date()).getTime();
 	    var name  = _nameElement.val();
 	            
 	    M3D.GUI.addOptionToSelectBox({'uid':uid, 'name':name});
@@ -548,6 +542,8 @@
 		
 		// we don't need this reference anymore
 		M3D.lastImportedModel = null;
+		
+		$('#select-model option[value="'+v.uid+'"]').attr('selected', true);
 		
 	};
 	
@@ -723,46 +719,69 @@
 	
 	/**
 	 * Validate the a given input and all of its siblings
-	 * @param {DOM} el The input field
+	 * @param {jQuery} el The jQuery input field
 	 * @return True if ALL fields are valid, False otherwise
 	 * @type {Boolean}
 	 */
 	M3D.GUI.validateFields = function(el){
 		
 		var isOK = false;
-		var parent = $(el).closest('.window');
-		var inputs = parent.find('input[type="text"]:visible, select:visible');
-		var current, val;
+		var parent = el.closest('.window.opened');
+		var inputs = parent.find('input[type="text"], select');
+		var current, val, ln = inputs.length;
 		
-		inputs.each(function(){
-			
-			current = $(this);
+		for(var i=0; i<ln; i++){
+			current = $(inputs[i]);
 			val = current.val();
 			
-			// handle required fields for now
-			if ( current.hasClass('required') && M3D.Common.isAlphanumeric(val) )
+			if ( current.hasClass('required') || current.attr('required') )
 			{
-				isOK = true;
-				current.removeClass('warning');
-			}
-			else {
-				isOK = false;
-				current.addClass('warning');
-			}
-		});
-		
+				
+				if ( M3D.Common.isAlphanumeric(val) )
+				{
+					isOK = true;
+					current.removeClass('warning');
+				}
+				else {
+					isOK = false;
+					current.addClass('warning');
+				}
+				
+			};			
+		}
+
 		return isOK;
 		
 	};
 	
 	
 	M3D.GUI.clearInputs = function(){
-		$('.required').removeClass('required');
 		$('.window').find('input[type="text"], select').each(function(){
 			$(this).val('');
 		});
 	};
 	
+	/**
+	 * Check if the given entity name is unique or not
+	 * @param {String} val The entity name
+	 * @return True if val is unique, False if not
+	 * @type {Boolean}
+	 */
+	M3D.GUI.isUnique = function(val){
+		
+		var _opt = $('#select-model option');
+		
+		for(var i=0; i<_opt.length; i++)
+		{
+			if ( val === $(_opt[i]).text() )
+			{
+				return false;
+			}
+		}
+		
+		return true;
+		
+	}
 	
 	
 	// -- TO DO: to bug fix
@@ -1054,7 +1073,7 @@
 			
 			var _obj = obj.parent;
 			M3D.Editor.updateObjectAttributes({
-				id: M3D.Common.getObjectId(_obj.uid),
+				id: M3D.Common.getObjectId( obj.uid ),
 				position:{
 							x:_float(_obj.getLocX()), 
 							y:_float(_obj.getLocY()), 

@@ -168,7 +168,9 @@ $(function(){
 	 * Bind "cancel" buttons.
 	 * @see M3D.GUI.hidePopup
 	 */
-	$('.cancel').bind('click', M3D.GUI.hidePopup);
+	$('.cancel').bind('click', function(){
+		M3D.GUI.hidePopup();
+	});
 	
 	/**
 	 * Bind the save entity info event.
@@ -204,7 +206,7 @@ $(function(){
 			M3D.Editor.setDefaultContent([_o], function(){
 				_btn.val('Save');
 				M3D.GUI.hidePopup();
-			}); // an array of names
+			});
 		}
 		else {
 			_nameElement.addClass('required');

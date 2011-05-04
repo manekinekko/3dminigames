@@ -230,39 +230,6 @@
 	/**
 	 *
 	 */
-	// -- pick up an object based on its UID
-	M3D.GUI.pickObjectFromSelect = function(e) {
-
-		var _uidSelect = $('#select-model').val();
-
-		var _objects = scene.getObjects();
-
-		if ( _uidSelect === "" ) {
-			M3D.GUI.unpickObject();
-		} else {
-			for (var i = 0; i < _objects.length; i++) {
-
-				var _parent = _objects[i].parent;
-				if (_parent.uid && _parent.uid === _uidSelect) {
-
-					// update the global obj var
-					obj = _parent;
-
-					M3D.GUI.setMaterialEmit(0.1);
-					M3D.GUI.updateInputValuesFromObject();
-
-					// exit this function
-					return;
-
-				}
-
-			}
-		}
-
-	};
-	/**
-	 *
-	 */
 	// -- handle mouse wheel
 	M3D.GUI.handleMouseWheel = function(delta) {
 
@@ -333,7 +300,7 @@
 			} else {
 				// ask for entity info
 				var uid = docCollada.uid ? docCollada.uid : (new Date()).getTime();
-				M3D.GUI.showPopup('entity-info', uid);
+				M3D.GUI.showPopup('entity-info', uid, true);
 			}
 
 			M3D.GUI.hideWaiting();
@@ -1204,6 +1171,41 @@
 	/**
 	 *
 	 */
+	// -- pick up an object based on its UID
+	M3D.GUI.pickObjectFromSelect = function(e) {
+		
+		// unpick any object that has been picked previously!!
+		M3D.GUI.unpickObject();
+
+		var _uidSelect = $('#select-model').val();
+
+		var _objects = scene.getObjects();
+
+		if ( _uidSelect === "" ) {
+			M3D.GUI.unpickObject();
+		} else {
+			for (var i = 0; i < _objects.length; i++) {
+
+				var _parent = _objects[i].parent;
+				if (_parent.uid && _parent.uid === _uidSelect) {
+
+					// update the global obj var
+					obj = _parent;
+
+					M3D.GUI.setMaterialEmit(0.1);
+					M3D.GUI.updateInputValuesFromObject();
+
+					// exit this function
+					return;
+
+				}
+			}
+		}
+
+	};
+	/**
+	 *
+	 */
 	// -- unpick an object
 	M3D.GUI.unpickObject = function() {
 
@@ -1214,17 +1216,9 @@
 		hoverobj = null;
 		obj = null;
 
-		// hide object info
-		$('#info-bottom').animate({
-			top:M3D.GUI.ANIMATE_BOTTOM_START_POS
-		}, 150);
-		$('#info-right').animate({
-			right: M3D.GUI.ANIMATE_RIGHT_START_POS
-		}, 150);
-
 		$('#slider').hide();
 
-		$('#select-model').val("");
+		//$('#select-model').val("");
 
 	};
 	/**

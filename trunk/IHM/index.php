@@ -19,7 +19,7 @@
 		<link href="assets/css/m3d_style.css" rel='stylesheet' type='text/css' media="all" />
 		<!-- end: css parsing -->
 	</head>
-	<body onload="M3D.Upload.AJAXUpload(); new M3D.Upload.uploader('upload-model', 'status', M3D.Config.uploader, null, doc);">
+	<body onload="M3D.Upload.AJAXUpload();">
 		
 		<div id="modal" ></div>
 				
@@ -53,6 +53,7 @@
 				<div id="editor">
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
 					<div id="attributes-panel">
+						<h2 class="text-center">The Default Attributes</h2>
 						<div id="attributes-panel-body"></div>
 						<div id="attributes-panel-footer"></div>
 					</div>
@@ -246,10 +247,9 @@
 				<div id="upload-form" class="window box-shadow closed"  >
 					<h2>Upload form</h2>
 					<p class="text-center">
-						Click on the area below or just drag &amp; drop your file to upload your model</i>
+						Drag &amp; drop your Collada file here.</i>
 					</p>
-					<div id="upload-model" class="pointer"></div>
-					<br />
+					<a id='upload-model' href='#'>Note: you can use the browser uploader instead.</a>
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
 					</div>

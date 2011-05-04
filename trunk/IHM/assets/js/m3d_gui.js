@@ -758,7 +758,6 @@
 	 */
 	M3D.GUI.validateFields = function(el) {
 
-		var isOK = false;
 		var parent = el.closest('.window.opened');
 		var inputs = parent.find('input[type="text"], select');
 		var current, val, ln = inputs.length;
@@ -769,18 +768,14 @@
 
 			if ( current.hasClass('required') || current.attr('required') ) {
 
-				if ( M3D.Common.isAlphanumeric(val) ) {
-					isOK = true;
-					current.removeClass('warning');
-				} else {
-					isOK = false;
-					current.addClass('warning');
-				}
+				if ( ! M3D.Common.isAlphanumeric(val) ) {
+					return false;					
+				} 
 
-			};
+			}
 		}
 
-		return isOK;
+		return true;
 
 	};
 	/**

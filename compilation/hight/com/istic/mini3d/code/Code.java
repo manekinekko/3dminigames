@@ -807,36 +807,47 @@ public class Code {
     
     /* Appel de la fonction addObject du moteur3D
     MOTEUR3D.addObject(idObject,urlObject, tabCoord, idParent)
+    M3D.MOTEUR.addObject = function(gObject, testCollision, idParent)
      */
     /**
      * Méthode qui génère la commande pour ajouter une entité au moteur 3D.
      * @param ent Entité à ajouter au moteur 3D
      * @return code JavaScript de l'ajout de l'entité au moteur 3D.
      */
-    public static Code genAddObject(Entity ent) {
+    public static Code genAddObject(Entity ent,boolean col,Entity idParent) {
 
-        Code c = new Code("MOTEUR3D.addObject(");
+        Code c = new Code("M3D.MOTEUR.addObject(");
         String name = ent.getName();
 
         c.append(name + ",");
-        c.append(name + ".obj" + ",");
-        c.append("new Array(");
-        c.append(ent.getAttribute("posX").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("posY").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("posZ").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("orX").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("orY").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("orZ").getCode());
-        c.append(",");
-        c.append(ent.getAttribute("sizeX").getCode()); //TODO à vérifier si c'est bien sizeX.
-        c.append(")");
-        c.append(")\n");
-
+        c.append(String.valueOf(col));
+        
+        if(idParent != null){
+        	c.append(",");
+        	c.append(idParent.getName());
+        }
+        
+        
+        /*
+	        c.append("new Array(");
+	        c.append(ent.getAttribute("posX").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("posY").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("posZ").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("orX").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("orY").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("orZ").getCode());
+	        c.append(",");
+	        c.append(ent.getAttribute("sizeX").getCode()); //TODO à vérifier si c'est bien sizeX.
+	       
+        */
+	    c.append(")\n");
+        
+        
         return c;
     }
     /*
@@ -1171,4 +1182,49 @@ public class Code {
         c.append("}\n\n");
         return c;
     }
+    
+    
+    /**
+     * Génère le code Javascript M3D.MOTEUR.translate(gObject,tabVector,testCollision,idRef) 
+     * Permet de translater un objet de tabVector (tableau à 3 composantes) dans le référentiel donné par idRef
+     *  en considérant ou non les collisions.
+     * 
+     * @param idObj Identifiant de l'objet a translater
+     * @param listVect Liste des 3 composantes (x,y,z) de la translation
+     * @param col représentation String d'un booleen autorisant ou non les collision
+     * @param idRef Identifiant de l'objet réferentiel de translation. Si null, le référentiel est absolu.
+     * @return Le code javascript de la fonction M3D.MOTEUR.translate
+     */
+    
+    //M3D.MOTEUR.translate(gObject,tabVector,testCollision,idRef);
+    public static Code genTranslate(String idObj, List<Integer> listVect, String col,String idRef){
+    	Code c = new Code();
+    	
+    	c.append("M3D.MOTEUR.translate(");
+    	c.append(idObj);
+    	c.append(",");
+    	c.append("new Array(");
+    	int n = listVect.size();
+    	for(int i = 0; i<n;i++){
+    		c.append(String.valueOf(listVect.get(i)));
+    		
+    		if(i<n-1){
+    			c.append(",");
+    		}
+    	}
+    	
+    	c.append("),");
+    	c.append(col);
+    	
+    	
+    	if(idRef!=null){
+    		c.append(",");
+    		c.append(idRef);
+    	}
+    	c.append(");\n");
+
+    	return c;
+    }
+    
+    
 }

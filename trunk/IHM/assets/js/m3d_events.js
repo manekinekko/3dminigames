@@ -379,7 +379,7 @@ $(function(){
 	/**
 	 * Bind the camera operations: move, ratation and zoom.
 	 */
-	$('.cursor').bind('click', function(){
+	$('.cursor').not('.single-click').bind('click', function(){
 		
 		if ( $(this).hasClass('active') ) {
 			$(this).removeClass('active');
@@ -428,6 +428,39 @@ $(function(){
 		
 	});
 
+	$('.single-click').bind('click', function(){
+		
+		$('#status').show().text('Saving ...');
+		
+		M3D.DB.saveEditor({
+			'uid': 'edwigs',
+			'value': M3D.Editor.getContent()
+		});
+		
+		setTimeout(function(){
+			$('#status').hide().text('');
+		}, 2000);
+	});
+
+	/**
+	 * Bind the autosave process
+	 */
+	var _autosave = null;
+	$("#editor").mouseenter(function(){
+      
+      _autosave = setIntervale(function(){
+      	
+      	$('.single-click').trigger('click');
+		
+      }, 10000);
+
+    }).mouseleave(function(){
+      
+      clearIntervale(_autosave);
+      
+    });
+
+	
 	
 	/**
 	 * Bind the logout operation.

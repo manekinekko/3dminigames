@@ -28,7 +28,7 @@
 	 */
 	M3D.GUI.init = function() {
 		log('initializating the GUI...');
-		M3D.GUI.drawGrid();
+		//M3D.GUI.drawGrid();
 	};
 	/**
 	 *

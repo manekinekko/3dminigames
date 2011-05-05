@@ -53,6 +53,9 @@
 				<!-- start: editor -->
 				<div id="editor">
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
+					<div id="editor-menu">
+						<span class="cursor single-click action-save" title="Save your scenario">&nbsp;</span >
+					</div>
 					<div id="attributes-panel">
 						<h2 class="text-center">The Default Attributes</h2>
 						<div id="attributes-panel-body"></div>

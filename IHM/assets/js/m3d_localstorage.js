@@ -275,7 +275,8 @@
 	};
 		
 	/**
-	 * 
+	 * An alias to M3D.DB.setEditor
+	 * @see M3D.DB.setEditor
 	 */
 	M3D.DB.saveEditor = function(data){
 		M3D.DB.setEditor(data);

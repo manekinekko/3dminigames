@@ -27,7 +27,8 @@
 			
 			<!-- start: canvas container -->
 			<div id="container" class="box-shadow">
-				<div id="loading-message">Loading 3DWIGS UI. Please wait...</div>
+				<div id="loading-message" class="loading-container">Loading 3DWIGS UI. Please wait...</div>
+				<div id="saving-message" class="loading-container hidden">Saving in progress. Please wait...</div>
 				<div id="loading"></div>
 				<div id="title" >
 					<h1><span>3D</span>WIGS</h1>
@@ -254,7 +255,7 @@
 						<input type="button" class="cancel" value="Cancel" name="cancel">
 					</div>
 				</div>
-				
+
 				<div id="about" class="window box-shadow closed">
 					<h2>About</h2>
 					<p>

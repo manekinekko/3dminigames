@@ -93,7 +93,7 @@ em {
 	background: #fff;
 	z-index: 10;
 }
-#loading-message {
+.loading-container {
 	border:1px solid #aaa;
 	width:250px;
 	left:450px;

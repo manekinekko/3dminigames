@@ -48,7 +48,7 @@ $(function(){
 				_this.hide().removeClass('pointer').text('');
 			}, 2000);
 			M3D.DB.saveEditor({
-				'uid': 'm3d',
+				'uid': 'edwigs',
 				'value': M3D.Editor.getContent()
 			});
 			
@@ -434,7 +434,18 @@ $(function(){
 	 */
 	 $('#logout').bind('click', function(){
 	 	
-		window.location.href = 'logout.php';
+	 	$('#modal, #saving-message').show('fast');
+	 	
+		M3D.DB.saveEditor({
+			'uid': 'edwigs',
+			'value': M3D.Editor.getContent()
+		});
+		
+		setTimeout(function(){
+			$('#saving-message').hide('fast');
+			window.location.href = 'logout.php';
+		}, 3000);
+		
 		
 	 });
 	

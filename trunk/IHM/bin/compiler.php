@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file bin/compiler.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/compiler.php
+ * @projectDescription This script runs the compiler.
+ */
 require_once('config.php');
 
 $scenario = isset($_POST['s']) && !empty($_POST['s']) ? $_POST['s'] : false;

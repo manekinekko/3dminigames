@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file bin/validatecollada.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/validatecollada.php
+ * @projectDescription This script checks and *tries* to validate the collada files. This script is intended to be used internally!!
+ */
 define('PATH', str_replace('bin', '', dirname(__FILE__)));
 define('BIN', PATH.'bin');
 define('DAE', PATH.'assets\dae\presets\\');

@@ -283,6 +283,66 @@
 	}
 	
 	/**
+	 * Compare the current properties of the selected object with
+	 * the stored properties
+	 * @param {String} The object UID
+	 * @return True if there is at least one different properties, False if no
+	 * changes are made
+	 * @type {Boolean}
+	 */
+	M3D.DB.checkProperties = function(_name){
+		
+		var _diff = false;
+		if ( obj ){
+			var NEWLINE = '\n';
+			var _ed = M3D.DB.getEditor('edwigs').split(NEWLINE); // array of string
+			var _o = obj; // object
+			
+			for( var i = 0; !_diff && i<_ed.length; i++ ){
+				
+				// test for "gamename has position at X Y Z"
+				if ( (new RegExp(_name+' has position')).test(_ed[i]) )
+				{
+					// we will try to get the 3 coordinates
+					var _prop = M3D.Common.extractPropertiesFromRule(_ed[i]);
+					if ( _prop !== null ){
+						_diff = _prop.x != _o.getLocX().toFixed(2) 
+								|| _prop.y != _o.getLocY().toFixed(2) 
+								|| _prop.z != _o.getLocZ().toFixed(2);
+					}
+				}
+				
+				// test for "gamename has scale at X Y Z"
+				else if ( (new RegExp(_name+' has scale')).test(_ed[i]) )
+				{
+					// we will try to get the 3 coordinates
+					var _prop = M3D.Common.extractPropertiesFromRule(_ed[i]);
+					if ( _prop !== null ){
+						_diff = _prop.x != _o.getScaleX().toFixed(2) 
+								|| _prop.y != _o.getScaleY().toFixed(2) 
+								|| _prop.z != _o.getScaleZ().toFixed(2);
+					}
+				}
+				
+				// test for "gamename has rotation at X Y Z"
+				else if ( (new RegExp(_name+' has rotation')).test(_ed[i]) )
+				{
+					// we will try to get the 3 coordinates
+					var _prop = M3D.Common.extractPropertiesFromRule(_ed[i]);
+					if ( _prop !== null ){
+						_diff = _prop.x != _o.getRotX().toFixed(2) 
+								|| _prop.y != _o.getRotY().toFixed(2) 
+								|| _prop.z != _o.getRotZ().toFixed(2);
+					}
+				}
+			}
+			
+		}
+		
+		return _diff; 
+	}
+	
+	/**
 	 * Update data ... ??? 
 	 * @param {Object} modifiedData ???
 	 * @deprecated This function is not yet implemented

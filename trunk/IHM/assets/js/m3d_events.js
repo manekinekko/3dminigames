@@ -121,8 +121,7 @@ $(function(){
 			M3D.GUI.updateObjectValues(_lastSeletcedInput);
 		},
 		stop: function(event, ui) {
-			M3D.GUI.checkEditor();
-			M3D.DB.updateSelectedObject();
+			$('#canvas').trigger('mouseup');
 		}
 	});
 	//*/
@@ -438,7 +437,12 @@ $(function(){
 		});
 		
 		setTimeout(function(){
-			$('#status').hide().text('');
+			$('#status').text('Saved');
+			
+			setTimeout(function(){
+				$('#status').hide().text('');
+			}, 1000);
+			
 		}, 2000);
 	});
 

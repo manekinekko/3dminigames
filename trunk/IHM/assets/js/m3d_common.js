@@ -113,6 +113,7 @@
 	 * @param {Array} Unlimited String parameters where the 1st is the format.
 	 * The format string is composed of zero or more directives
 	 * @return The string produced according to the formatting string format
+	 * @type {String}
 	 */
 	M3D.Common.sprintf = function () {
 		var _str = arguments[0];
@@ -120,5 +121,27 @@
 			_str = _str.replace('%s', arguments[i])
 		}
 		return _str;
+	}
+	/**
+	 * Extract the X, Y and Z properties from the game rule
+	 * @param {String} str The game rule
+	 * @return NULL if no properties were found. An object with x, y 
+	 * and z properties otherwise
+	 * @type {Object}
+	 */
+	M3D.Common.extractPropertiesFromRule = function(str){
+		var _index = str.search(' at ');
+		var _end = str.search(';');
+		var _coo = [];
+		if ( _index !== -1 ){
+			_coo = $.trim(str.substring(_index+4, _end)).split(' '); // array of string
+			return {
+				x: _coo[0],
+				y: _coo[1],
+				z: _coo[2]
+			};
+		}
+		
+		return null;
 	}
 })(window.M3D);

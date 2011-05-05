@@ -2,8 +2,10 @@
 
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file bin/xml_to_json.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/xml_to_json.php
+ * @projectDescription This script converts an XML file to a JSON content.
  */
-
 header('Content-Type: text/javascript; charset=utf8');
  
 $file = isset($_POST['filename']) ? $_POST['filename'] : '';

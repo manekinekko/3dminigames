@@ -2,10 +2,10 @@
   
 /**
  * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
- * @author Thomas
+ * @file bin/xml_gen.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/xml_gen.php
+ * @projectDescription This script generates a level.xml from the current UI state. This file is needed by GLGE
  */
-
-
 function genXML($data) {
 	//print_r($data); exit();
   	

@@ -1046,7 +1046,7 @@
 			var _float = function(v) {
 				return parseFloat(v).toFixed(2);
 			};
-			var _obj = obj.parent;
+			var _obj = obj;
 
 			if (_obj.getLocX && _obj.getLocY && _obj.getLocZ &&
 			obj.getScaleX && obj.getScaleY && obj.getScaleZ &&
@@ -1097,8 +1097,8 @@
 		if ( obj ) {
 			var _obj = obj.parent;
 			var _name = M3D.Common.getObjectId(_obj.uid);
-			if ( M3D.Editor.findString(_name) ) {
-				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+			if ( M3D.Editor.findString(_name) && M3D.DB.checkProperties(_name) ) {
+ 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 			} else {
 				$('#status').removeClass('ui-state-error').text('').hide();
 			}

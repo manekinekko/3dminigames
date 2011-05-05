@@ -1,35 +1,15 @@
 <?php
-
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file bin/upload.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/upload.php
+ * @projectDescription This script handles the upload process.
+ */
 
 ini_set("memory_limit","128M");
 	
 // Destination folder for downloaded files
 $upload_folder = '../assets/dae/custom/';
-//
-//// If the browser supports sendAsBinary () can use the array $ _FILES
-//if(count($_FILES)>0) { 
-//
-//	if( move_uploaded_file( $_FILES['upload']['tmp_name'] , $upload_folder.'/'.$_FILES['upload']['name'] ) ) {
-//		echo 'OK';
-//	}
-//	exit();
-//	
-//} else if(isset($_GET['up'])) {
-//	
-//	// If the browser does not support sendAsBinary ()
-//	if(isset($_GET['base64'])) {
-//		$content = base64_decode(file_get_contents('php://input'));
-//	} else {
-//		$content = file_get_contents('php://input');
-//	}
-//
-//	
-//	if(file_put_contents($upload_folder.'/'.$_GET['filename'], $content)) {
-//		echo 'OK';
-//	}
-//		
-//	exit();
-//}
 
 /**
  * Handle file uploads via XMLHttpRequest

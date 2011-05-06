@@ -253,7 +253,6 @@
 			
 			var uid = obj.uid;
 			var _obj = obj.parent;
-			var uid = _obj.uid;
 			
 			var updateobj = M3D.DB.getObject(uid);
 			if (updateobj){
@@ -266,6 +265,7 @@
 				updateobj.rotation.X = _obj.getRotX();
 				updateobj.rotation.Y = _obj.getRotY();
 				updateobj.rotation.Z = _obj.getRotZ();
+				
 				M3D.DB.setObject({
 					'uid': uid, 
 					'value': updateobj

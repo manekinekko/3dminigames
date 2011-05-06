@@ -80,10 +80,10 @@ $(function(){
 	 * @see M3D.GUI.checkEditor
 	 * @see M3D.DB.updateSelectedObject
 	 */
-	$('input[type="number"]:not([disabled])').bind('change', function(){ 
+	$('input[type="number"]').bind('change', function(){ 
 		M3D.GUI.updateObjectValues(this);
-		M3D.GUI.checkEditor();
 		M3D.DB.updateSelectedObject();
+		$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 	});
 	/**
 	 * Bind the slider insert/remove
@@ -92,7 +92,7 @@ $(function(){
 	 */
 	/*
 	var _lastSeletcedInput;
-	$('#info-bottom input[type="number"]:not([disabled])').bind('focus', function(){
+	$('#info-bottom input[type="number"]').bind('focus', function(){
 		
 		// remember this input
 		_lastSeletcedInput = this;
@@ -187,7 +187,7 @@ $(function(){
 		// the name of the new entity is a time stamp
 		var _nameElement = $('#name');
 		var _name = _nameElement.val();
-		if (M3D.GUI.validateFields( _btn ) && M3D.GUI.isUnique( _name )) 
+		if (M3D.GUI.validateFields( _btn ) && M3D.GUI.isUniqueEntityName( _name )) 
 		{
 			
 			_nameElement.removeClass('warning');
@@ -441,7 +441,7 @@ $(function(){
       	
       	$('.single-click').trigger('click');
 		
-      }, 10000);
+      }, 20000); // 20 sec
 
     }).mouseleave(function(){
       

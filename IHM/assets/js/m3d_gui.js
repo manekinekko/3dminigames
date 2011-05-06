@@ -4,6 +4,10 @@
  * @file assets/js/m3d_gui.js
  * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_gui.js
  * @projectDescription This file contains all the necessary GUI functions.
+ * 
+ * NOTE: the "obj" variable is a global reference to the currently selected GLGE object.
+ * 				DON'T MESS WITH IT :p
+ * 
  */
 (function(M3D) {
 
@@ -24,14 +28,14 @@
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 
 	/**
-	 *
+	 * The initialization function
 	 */
 	M3D.GUI.init = function() {
 		log('initializating the GUI...');
-		//M3D.GUI.drawGrid();
+		M3D.GUI.drawGrid();
 	};
 	/**
-	 *
+	 * This function draws the grid dynamically
 	 */
 	M3D.GUI.drawGrid = function() {
 
@@ -68,20 +72,23 @@
 		}
 
 		var black=doc.getElement( "dark-gray" );
-		/**
-		 create new object and mesh and set the positions we've previously calculated
-		 **/
+	
+		// create new object and mesh and set the positions we've previously calculated
 		var _o = new GLGE.Object();
 		var _m = new GLGE.Mesh();
-		var line=_o.setDrawType(GLGE.DRAW_LINES);
-		line.setMesh(_m.setPositions(positions));
-		line.setMaterial(black);
-		line.setId('grid');
-		sn.addObject(line);
-		grid = line;
+		var lines = _o.setDrawType(GLGE.DRAW_LINES);
+		lines.setMesh(_m.setPositions(positions));
+		lines.setMaterial(black);
+		lines.setId('grid');
+		sn.addObject(lines);
+		
+		/**
+		 * @global
+		 */
+		grid = lines;
 	};
 	/**
-	 *
+	 * This function allows the user to show/hide the grid
 	 */
 	M3D.GUI.toggleGrid = function() {
 		if ( grid ) {
@@ -290,6 +297,7 @@
 	 */
 	// -- import models
 	M3D.lastImportedModel = null;
+	M3D.lastGeneratedUID = null;
 	M3D.GUI.importModel = function(data) {
 
 		M3D.GUI.showWaiting();
@@ -325,7 +333,14 @@
 			} else {
 				// ask for entity info
 				var uid = docCollada.uid ? docCollada.uid : (new Date()).getTime();
-				M3D.GUI.showPopup('entity-info', uid, true);
+				
+				/**
+				 * @global
+				 */
+				M3D.lastGeneratedUID = uid;
+				
+				M3D.GUI.showPopup('entity-info', true);
+				
 			}
 
 			M3D.GUI.hideWaiting();
@@ -350,7 +365,7 @@
 	 *
 	 */
 	// -- show a pop up window
-	M3D.GUI.showPopup = function(name, uid, clearInput) {
+	M3D.GUI.showPopup = function(name, clearInput) {
 
 		if (clearInput) {
 			// clear all inputs
@@ -417,7 +432,7 @@
 	M3D.GUI.updateEntityListAndAddToDB = function() {
 
 		var _nameElement = $('#name');
-		var uid = (new Date()).getTime();
+		var uid = M3D.lastGeneratedUID;
 		var name  = _nameElement.val();
 
 		M3D.GUI.addOptionToSelectBox({
@@ -544,7 +559,7 @@
 		// set the uid of the current object.
 		// NOTE: this uid is set to the collada document
 		var objects = M3D.lastImportedModel.getObjects();
-		objects[0].parent.uid = v.uid ? v.uid : $('#entity-info #name').attr('uid');
+		objects[0].parent.uid = v.uid ? v.uid : M3D.lastGeneratedUID;
 
 		// set the new scale to this collada children, so they have to right value!
 		for(var i in objects) {
@@ -608,6 +623,12 @@
 						_obj.setScaleX(value);
 						_obj.setScaleY(value);
 						_obj.setScaleZ(value);
+						
+						var parent = $(el).closest("tr");
+						parent.find("input[type='number']").not(el).each( function() {
+							$(this).val(value);
+						});
+						
 					} else {
 						if (el.attr('name') === "scaleX" && value > 0) {
 							_obj.setScaleX(value);
@@ -647,6 +668,7 @@
 			}
 
 			$("#slider").slider('value', [value]);
+			
 		}
 
 	};
@@ -659,13 +681,15 @@
 
 		//blocs 1 to 4 = face sup, 5 to 8 = face inf, 9 to 12 = faces verticales
 
-		var dims = obj.getBoundingVolume().dims;
+		var _obj = obj.parent;
+
+		var dims = _obj.getBoundingVolume().dims;
 		var dimsX = dims[0];
 		var dimsY = dims[1];
 		var dimsZ = dims[2];
 
-		var loc = obj.getPosition();
-		var rot = obj.getRotation();
+		var loc = _obj.getPosition();
+		var rot = _obj.getRotation();
 
 		var posX = loc.x;
 		var posY = loc.y;
@@ -1043,34 +1067,39 @@
 	M3D.GUI.updateInputValuesFromObject = function(n) {
 
 		if (n===undefined) {
-			var _float = function(v) {
-				return parseFloat(v).toFixed(2);
-			};
-			var _obj = obj;
+			
+			if( obj ){
+				
+				var _float = function(v) {
+					return parseFloat(v).toFixed(2);
+				};
+				var _obj = obj.parent;
 
-			if (_obj.getLocX && _obj.getLocY && _obj.getLocZ &&
-			obj.getScaleX && obj.getScaleY && obj.getScaleZ &&
-			_obj.getRotX && _obj.getRotY && _obj.getRotZ) {
-
-				$('#scaleX').val(_float(_obj.getScaleX()));
-				$('#scaleY').val(_float(_obj.getScaleY()));
-				$('#scaleZ').val(_float(_obj.getScaleZ()));
-
-				$('#posX').val(_float(_obj.getLocX()));
-				$('#posY').val(_float(_obj.getLocY()));
-				$('#posZ').val(_float(_obj.getLocZ()));
-
-				$('#rotX').val(_float(_obj.getRotX()));
-				$('#rotY').val(_float(_obj.getRotY()));
-				$('#rotZ').val(_float(_obj.getRotZ()));
-
-				if ( _obj.boundingVolume ) {
-					$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
-					$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
-					$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
+				if (_obj.getLocX && _obj.getLocY && _obj.getLocZ &&
+				_obj.getScaleX && _obj.getScaleY && _obj.getScaleZ &&
+				_obj.getRotX && _obj.getRotY && _obj.getRotZ) {
+	
+					$('#scaleX').val(_float(_obj.getScaleX()));
+					$('#scaleY').val(_float(_obj.getScaleY()));
+					$('#scaleZ').val(_float(_obj.getScaleZ()));
+	
+					$('#posX').val(_float(_obj.getLocX()));
+					$('#posY').val(_float(_obj.getLocY()));
+					$('#posZ').val(_float(_obj.getLocZ()));
+	
+					$('#rotX').val(_float(_obj.getRotX()));
+					$('#rotY').val(_float(_obj.getRotY()));
+					$('#rotZ').val(_float(_obj.getRotZ()));
+	
+					if ( _obj.boundingVolume ) {
+						$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
+						$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
+						$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
+					}
+	
 				}
-
 			}
+			
 
 		} else {
 			$("#id").val( null );
@@ -1097,10 +1126,12 @@
 		if ( obj ) {
 			var _obj = obj.parent;
 			var _name = M3D.Common.getObjectId(_obj.uid);
-			if ( M3D.Editor.findString(_name) && M3D.DB.checkProperties(_name) ) {
- 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
-			} else {
-				$('#status').removeClass('ui-state-error').text('').hide();
+			if (_name !== ''){
+				if ( M3D.DB.checkProperties(_name) ) {
+	 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+				} else {
+					$('#status').removeClass('ui-state-error').text('').hide();
+				}
 			}
 		}
 	};
@@ -1166,11 +1197,16 @@
 	// -- picking objects
 	M3D.GUI.pickObject = function(e, canvas) {
 
+		/**
+		 * CETTE FONCTION NE FONCTIONNE PAS TRES BIEN; IL SERAIT IDEAL DE LA REMPLACER PAR UNE NOUVELLE
+		 * IMPLEMENTATION, VOIR METTRE GLGE A JOUR!!
+		 */
 		obj = scene.pick(e.clientX-canvas.parentNode.offsetLeft,e.clientY-canvas.parentNode.offsetTop).object;
+		/*  */
 
 		if(obj && obj !== hoverobj) {
 
-			var _obj = obj.parent; // groupe
+			var _obj = obj.parent; // get the parent
 
 			if(_obj.getId()!=="mainscene") {
 
@@ -1206,8 +1242,9 @@
 		} else {
 			for (var i = 0; i < _objects.length; i++) {
 
-				var _parent = _objects[i].parent;
-				if (_parent.uid && _parent.uid === _uidSelect) {
+				var _parent = _objects[i].parent; // get the parent
+				
+				if ( _parent !== 'graph' && _parent.uid && _parent.uid === _uidSelect) {
 
 					// update the global obj var
 					obj = _parent;
@@ -1248,10 +1285,11 @@
 	M3D.GUI.scaleObject = function(d) {
 		if ( obj ) {
 			var delta = d * 0.02; // reduce the delta coz 1 is too high for scaling!
-
-			obj.setScaleX( parseFloat(obj.getScaleX())+delta );
-			obj.setScaleY( parseFloat(obj.getScaleY())+delta );
-			obj.setScaleZ( parseFloat(obj.getScaleZ())+delta );
+			var _obj = obj.parent;
+			
+			_obj.setScaleX( parseFloat(_obj.getScaleX())+delta );
+			_obj.setScaleY( parseFloat(_obj.getScaleY())+delta );
+			_obj.setScaleZ( parseFloat(_obj.getScaleZ())+delta );
 
 			M3D.GUI.updateInputValuesFromObject();
 		}

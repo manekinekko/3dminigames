@@ -80,17 +80,17 @@ $(function(){
 	 * @see M3D.GUI.checkEditor
 	 * @see M3D.DB.updateSelectedObject
 	 */
-	$('input[type="number"]:not([disabled])').bind('keypress', function(){ 
+	$('input[type="number"]:not([disabled])').bind('change', function(){ 
 		M3D.GUI.updateObjectValues(this);
 		M3D.GUI.checkEditor();
 		M3D.DB.updateSelectedObject();
 	});
 	/**
 	 * Bind the slider insert/remove
-	 * @deprecated Forget about this feature for now. We'll release
-	 * it for the next update!
+	 * @deprecated Forget about this feature for now. 
+	 * We'll release it for the next update!
 	 */
-	//*
+	/*
 	var _lastSeletcedInput;
 	$('#info-bottom input[type="number"]:not([disabled])').bind('focus', function(){
 		
@@ -287,7 +287,7 @@ $(function(){
 			
 			// delay 
 			setTimeout(function(){
-				M3D.GUI.showPopup('game-info', null, true);
+				M3D.GUI.showPopup('game-info', true);
 			}, 100);
 		});
 		
@@ -327,23 +327,6 @@ $(function(){
 
 	 });
 
-	/**
-	 * Bind the editor content storing into the DB.
-	 * @see M3D.DB.update_grammar (indexedDB)
-	 * @deprecated This binding is not really done yet!
-	 */
-	$('#editor iframe').live('keypress', function (e){
-		alert(e);
-		k = e.keyCode ? e.keyCode : e.which;
-		if (k==13)	//13 = enter
-		{
-			alert("ici");
-			if ( M3D.DB.update_grammar() ) {
-				M3D.DB.update_grammar(M3D.Editor.getContent());
-			}
-		}
-	});
-	
 	/**
 	 * Bind the attributes description toggling
 	 */
@@ -429,6 +412,7 @@ $(function(){
 
 	$('.single-click').bind('click', function(){
 		
+		$('.single-click').fadeOut(100);
 		$('#status').show().text('Saving ...');
 		
 		M3D.DB.saveEditor({
@@ -441,6 +425,7 @@ $(function(){
 			
 			setTimeout(function(){
 				$('#status').hide().text('');
+				$('.single-click').fadeIn(100);
 			}, 1000);
 			
 		}, 2000);
@@ -452,7 +437,7 @@ $(function(){
 	var _autosave = null;
 	$("#editor").mouseenter(function(){
       
-      _autosave = setIntervale(function(){
+      _autosave = setInterval(function(){
       	
       	$('.single-click').trigger('click');
 		
@@ -460,7 +445,7 @@ $(function(){
 
     }).mouseleave(function(){
       
-      clearIntervale(_autosave);
+      clearInterval(_autosave);
       
     });
 

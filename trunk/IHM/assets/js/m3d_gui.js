@@ -314,6 +314,7 @@
 			M3D.lastImportedModel = docCollada;
 
 			if ( data.autoAddToScene ) {
+				
 				M3D.GUI.addObjectToScene({
 					'uid': data.uid,
 					'scaleX': data.scaleX,
@@ -330,15 +331,17 @@
 					'uid':data.uid,
 					'name':data.name
 				});
+				
 			} else {
-				// ask for entity info
-				var uid = docCollada.uid ? docCollada.uid : (new Date()).getTime();
+				
+				var uid = (new Date()).getTime();
 				
 				/**
 				 * @global
 				 */
-				M3D.lastGeneratedUID = uid;
+				M3D.lastGeneratedUID = uid+''; // copy it as a string
 				
+				// ask for entity info
 				M3D.GUI.showPopup('entity-info', true);
 				
 			}
@@ -551,15 +554,13 @@
 		var tmp_rotY = v.rotY ? v.rotY : 0;
 		var tmp_rotZ = v.rotZ ? v.rotZ : 0;
 
-		M3D.lastImportedModel
-		.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
-		.setLoc(tmp_locX, tmp_locY, tmp_locZ)
-		.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
-
 		// set the uid of the current object.
-		// NOTE: this uid is set to the collada document
+		// NOTE: this uid is set to the Group
 		var objects = M3D.lastImportedModel.getObjects();
 		objects[0].parent.uid = v.uid ? v.uid : M3D.lastGeneratedUID;
+		objects[0].parent.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+							.setLoc(tmp_locX, tmp_locY, tmp_locZ)
+							.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
 
 		// set the new scale to this collada children, so they have to right value!
 		for(var i in objects) {
@@ -841,7 +842,7 @@
 	 * @return True if val is unique, False if not
 	 * @type {Boolean}
 	 */
-	M3D.GUI.isUnique = function(val) {
+	M3D.GUI.isUniqueEntityName = function(val) {
 
 		var _opt = $('#select-model option');
 
@@ -1097,24 +1098,16 @@
 						$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
 					}
 	
+	
+					$('#posX, #posY, #posZ, #rotX, #rotY, #rotZ, #scaleX, #scaleY, #scaleZ, #bboxX, #bboxY, #bboxZ, #scaleLock, #switchBbox').attr('disabled', false);
+				
 				}
 			}
 			
 
 		} else {
-			$("#id").val( null );
-			$("#posX").val( null );
-			$("#posY").val( null );
-			$("#posZ").val( null );
-			$('#rotX').val( null );
-			$('#rotY').val( null );
-			$('#rotZ').val( null );
-			$("#scaleX").val( null );
-			$("#scaleY").val( null );
-			$("#scaleZ").val( null );
-			$('#bboxX').val( null );
-			$('#bboxY').val( null );
-			$('#bboxZ').val( null );
+			$('#posX, #posY, #posZ, #rotX, #rotY, #rotZ, #scaleX, #scaleY, #scaleZ, #bboxX, #bboxY, #bboxZ, #scaleLock, #switchBbox').attr('disabled', true);
+			$('#posX, #posY, #posZ, #rotX, #rotY, #rotZ, #scaleX, #scaleY, #scaleZ, #bboxX, #bboxY, #bboxZ').val( null );
 		}
 	};
 	/**
@@ -1229,25 +1222,26 @@
 	 */
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
-		
-		// unpick any object that has been picked previously!!
-		M3D.GUI.unpickObject();
-
-		var _uidSelect = $('#select-model').val();
-
-		var _objects = scene.getObjects();
 
 		if ( _uidSelect === "" ) {
 			M3D.GUI.unpickObject();
 		} else {
+			
+			// unpick any object that has been picked previously!!
+			M3D.GUI.unpickObject();
+			
+			var _uidSelect = $('#select-model').val();
+			var _objects = scene.getObjects();
+			
 			for (var i = 0; i < _objects.length; i++) {
 
 				var _parent = _objects[i].parent; // get the parent
 				
-				if ( _parent !== 'graph' && _parent.uid && _parent.uid === _uidSelect) {
+				if ( _parent.id !== 'graph' && _parent.uid && _parent.uid === _uidSelect ) {
 
 					// update the global obj var
-					obj = _parent;
+					obj = _objects[i];
+					obj.parent = _parent;
 
 					M3D.GUI.setMaterialEmit(0.1);
 					M3D.GUI.updateInputValuesFromObject();

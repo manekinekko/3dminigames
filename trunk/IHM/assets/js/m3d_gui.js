@@ -1223,6 +1223,8 @@
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
 
+		var _uidSelect = $('#select-model').val();
+
 		if ( _uidSelect === "" ) {
 			M3D.GUI.unpickObject();
 		} else {
@@ -1230,14 +1232,13 @@
 			// unpick any object that has been picked previously!!
 			M3D.GUI.unpickObject();
 			
-			var _uidSelect = $('#select-model').val();
 			var _objects = scene.getObjects();
 			
 			for (var i = 0; i < _objects.length; i++) {
 
 				var _parent = _objects[i].parent; // get the parent
 				
-				if ( _parent.id !== 'graph' && _parent.id !== 'mainscene' && _parent.uid && _parent.uid === _uidSelect ) {
+				if ( _parent.uid && _parent.uid === _uidSelect ) {
 
 					// update the global obj var
 					obj = _objects[i];

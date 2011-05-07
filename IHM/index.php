@@ -142,9 +142,9 @@
 							<tbody>
 								<tr>
 									<td>Position</td>
-									<td><input disabled="true" type="number" name="posX" id="posX" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="posY" id="posY" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="posZ" id="posZ" value="" placeholder="#" min="-10000" max="10000" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="posX" id="posX" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
+									<td><input disabled="true" type="number" name="posY" id="posY" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
+									<td><input disabled="true" type="number" name="posZ" id="posZ" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
 									<td></td>
 								</tr>
 								<tr>
@@ -156,9 +156,9 @@
 								</tr>
 								<tr>
 									<td>Scale</td>
-									<td><input disabled="true" type="number" name="scaleX" id="scaleX" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="scaleY" id="scaleY" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="scaleZ" id="scaleZ" value="" placeholder="#" min="0.001" max="1" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="scaleX" id="scaleX" value="" placeholder="#" min="0.001" max="4" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="scaleY" id="scaleY" value="" placeholder="#" min="0.001" max="4" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="scaleZ" id="scaleZ" value="" placeholder="#" min="0.001" max="4" step="0.0001"/></td>
 									<td><input disabled="true" type="checkbox" name="scaleLock" id="scaleLock" checked="true"/>Lock Scale</td>
 								</tr>
 								<tr>

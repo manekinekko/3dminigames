@@ -87,10 +87,9 @@ $(function(){
 	});
 	/**
 	 * Bind the slider insert/remove
-	 * @deprecated Forget about this feature for now. 
-	 * We'll release it for the next update!
+	 * @deprecated Forget about this feature for now.
 	 */
-	/*
+	//*
 	var _lastSeletcedInput;
 	$('#info-bottom input[type="number"]').bind('focus', function(){
 		
@@ -104,10 +103,7 @@ $(function(){
 				'max': parseFloat($(_lastSeletcedInput).attr('max'), 4),
 				'min': parseFloat($(_lastSeletcedInput).attr('min'), 4),
 				'step': parseFloat($(_lastSeletcedInput).attr('step'), 4)
-			}).show().css({
-				'top':_pos.top-20,
-				'left':_pos.left
-			});
+			}).show();
 		}
 		
 	}).bind('blur', function(){
@@ -116,6 +112,7 @@ $(function(){
 	// Bind the slider logic
 	$("#slider").slider({
 		animate: true,
+		orientation: "vertical",
 		slide: function(event, ui) {
 			M3D.GUI.updateInputValuesFromSlider(_lastSeletcedInput, ui.value);
 			M3D.GUI.updateObjectValues(_lastSeletcedInput);

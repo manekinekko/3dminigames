@@ -9,3 +9,8 @@ Il faut que ce soit de la forme :
 {{{
 aaa is Object ;
 }}}
+
+Il faudrait aussi que le scale soit directement à :
+{{{
+minotaure has scale at 1.00 1.00 1.00 ;
+}}}

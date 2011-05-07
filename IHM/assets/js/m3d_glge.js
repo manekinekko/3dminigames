@@ -35,6 +35,7 @@ doc.onLoad = function() {
 	// finish initialisation
 	setTimeout(function(){
 		$('#info-bottom').slideDown('slow', function(){
+			$('#editor-menu').fadeIn('slow');
 			$('#tools-panel').fadeIn('slow', function(){
 				$('#loading-message, #modal').hide();	
 			});

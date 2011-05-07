@@ -242,7 +242,7 @@ M3D.DB.containsObj = function(name){
 	var select = document.getElementById("select-model");
 	
 	while(typeof(select.options[i])!="undefined"){
-		var str = select.options[i].toString();// a modif ! faut gére une astuce pour récupe l'affichagedu nom.
+		var str = select.options[i].toString();// a modif ! faut gï¿½re une astuce pour rï¿½cupe l'affichagedu nom.
 		log(str);
 		str = str.substring(0,str.length-9);
 		var tab=str.split("\">");
@@ -323,7 +323,7 @@ M3D.DB.remove = function(key) {
 	} else {
 	  var request = objectStore.remove(key);
 	}
-}
+};
 
   //--------------------------------------------------
   //------------	Restart indexedDB	--------------
@@ -365,6 +365,6 @@ M3D.DB.clear = function(){
 			log("Error: IndexedDB clear");
 		}
 	}
-}
+};
 
 })(window.M3D);

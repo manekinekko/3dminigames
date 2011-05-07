@@ -131,7 +131,9 @@
 				<!-- start: bottom info panel -->
 				<div id="info-bottom" class="animate">
 					<div class="column">
-						<table summary="3D Model values">
+						<fieldset>
+							<legend>Object Properties</legend>
+							<table summary="3D Model values">
 							<thead>
 								<tr>
 									<th></th>
@@ -172,6 +174,13 @@
 								</tr>
 							</tbody>
 						</table>
+						</fieldset>
+					</div>
+					<div class="column">
+						<fieldset style="height:150px;">
+							<legend>Slider</legend>
+							<div id="slider"></div>
+						</fieldset>
 					</div>
 					<br class="clear"/>
 				</div>
@@ -280,8 +289,6 @@
 				</div>
 				
 			</div>
-			
-			<div id="slider"></div>
 			<!-- end: windows container -->
 
 		</div>

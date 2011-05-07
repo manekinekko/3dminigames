@@ -1129,7 +1129,7 @@
 
 		if ( obj ) {
 			var _obj = obj.parent;
-			var _name = M3D.Common.getObjectId(_obj.uid);
+			var _name = M3D.GUI.getObjectId(_obj.uid);
 			if (_name !== ''){
 				if ( M3D.DB.checkProperties(_name) ) {
 	 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
@@ -1138,6 +1138,15 @@
 				}
 			}
 		}
+	};
+	/**
+	 * Get the object's ID given its UID
+	 * @param {String} The Object's UID
+	 * @return The Object's ID uppercased
+	 * @type {String}
+	 */
+	M3D.GUI.getObjectId = function(uid) {
+		return M3D.DB.getObject(uid).name;
 	};
 	/**
 	 *
@@ -1150,7 +1159,7 @@
 			};
 			var _obj = obj.parent;
 			M3D.Editor.updateObjectAttributes({
-				id: M3D.Common.getObjectId( obj.uid ),
+				id: M3D.GUI.getObjectId( _obj.uid ),
 				position: {
 					x:_float(_obj.getLocX()),
 					y:_float(_obj.getLocY()),
@@ -1234,9 +1243,11 @@
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
 			
-		$('#status').removeClass('ui-state-error').text('').hide();
-
 		var _uidSelect = $('#select-model').val();
+		var _nameSelect = M3D.Common.ucfirst($('#select-model option[value="'+_uidSelect+'"]').text());
+
+		$('#editor-status').removeClass('ui-state-error').text('').hide();
+		$('#info-bottom legend:eq(0)').text(_nameSelect+' Properties');
 
 		if ( _uidSelect === "" ) {
 			M3D.GUI.unpickObject();
@@ -1279,7 +1290,7 @@
 		obj = null;
 
 		$('#slider').hide();
-
+		$('#info-bottom legend:eq(0)').text('Object Properties');
 		//$('#select-model').val("");
 
 	};

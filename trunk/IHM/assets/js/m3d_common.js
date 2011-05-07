@@ -17,7 +17,7 @@
 	 * Print a log text. This function taks an infinite number of parameters.
 	 * @param {Mixed} An unlimited number of parameters
 	 */
-	M3D.Common.log = log = function() {
+	M3D.Common.log = window.log = function() {
 		if (console) {
 			var script = "console.info('[3DWIGS]', arguments[0]";
 			for(var i=1;i<arguments.length;i++) {
@@ -98,15 +98,6 @@
 		}
 		var _first = value.substring(0,1).toUpperCase();
 		return _first+value.substring(1);
-	};
-	/**
-	 * Get the object's ID given its UID
-	 * @param {String} The Object's UID
-	 * @return The Object's ID uppercased
-	 * @type {String}
-	 */
-	M3D.Common.getObjectId = function(uid) {
-		return M3D.Common.ucfirst($('#select-model option[value="'+uid+'"]').text());
 	};
 	/**
 	 * Minimal implementation of the sprintf function of PHP

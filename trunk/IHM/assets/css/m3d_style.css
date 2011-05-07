@@ -205,6 +205,7 @@ li.separator {
 	overflow:hidden;
 }
 #editor-menu {
+	display: none;
     height: 40px;
     left: 352px;
     position: absolute;
@@ -487,18 +488,10 @@ input[type=button] {
 }
 /* slider */
 #slider {
-	position: absolute;
+	margin: 9px 0 0 9px;
 	display: none;
 	z-index: 1000;
-	top: 585px;
-	left: 380px;
 	height: 114px;
-}
-.ui-slider-horizontal {
-	height:30px;
-	background:#fff;
-	border:1px solid #aaa;
-	height:4px;
 }
 .ui-slider-handle {
 	cursor:pointer !important;

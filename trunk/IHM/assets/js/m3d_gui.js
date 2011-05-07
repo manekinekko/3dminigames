@@ -272,7 +272,7 @@
 			M3D.GUI.updateInputValuesFromObject();
 		} else {
 
-			delta *= 2; // tweak the delta
+			delta *= 10; // tweak the delta
 
 			if ( keys.isKeyPressed(GLGE.KI_X) ) {
 				scene.camera.setDLocX( parseFloat(scene.camera.getDLocX()) + delta);

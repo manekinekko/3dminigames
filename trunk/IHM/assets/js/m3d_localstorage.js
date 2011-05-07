@@ -365,11 +365,6 @@
 					
 					// remove the old editor entry
 					M3D.DB.remove(i);
-					// set a new one
-					M3D.DB.setEditor({
-						'uid': 'edwigs', 
-						'value': '#'	
-					});
 					
 				}
 				// if attributes entry, continue

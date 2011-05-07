@@ -142,9 +142,9 @@
 							<tbody>
 								<tr>
 									<td>Position</td>
-									<td><input disabled="true" type="number" name="posX" id="posX" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
-									<td><input disabled="true" type="number" name="posY" id="posY" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
-									<td><input disabled="true" type="number" name="posZ" id="posZ" value="" placeholder="#" min="-10000" max="10000" step="0.001"/></td>
+									<td><input disabled="true" type="number" name="posX" id="posX" value="" placeholder="#" min="-100" max="100" step="0.001"/></td>
+									<td><input disabled="true" type="number" name="posY" id="posY" value="" placeholder="#" min="-100" max="100" step="0.001"/></td>
+									<td><input disabled="true" type="number" name="posZ" id="posZ" value="" placeholder="#" min="-100" max="100" step="0.001"/></td>
 									<td></td>
 								</tr>
 								<tr>
@@ -163,9 +163,9 @@
 								</tr>
 								<tr>
 									<td>Bounding Box</td>
-									<td><input disabled="true" type="number" name="bboxX" id="bboxX" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="bboxY" id="bboxY" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="bboxZ" id="bboxZ" value="" placeholder="#" min="0.0001" max="10000" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="bboxX" id="bboxX" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="bboxY" id="bboxY" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="bboxZ" id="bboxZ" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
 									<td><input disabled="true" type="checkbox" name="switchBbox" id="switchBbox" />Show/Hide</td>
 								</tr>
 							</tbody>

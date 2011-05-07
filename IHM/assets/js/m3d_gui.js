@@ -1229,9 +1229,6 @@
 			M3D.GUI.unpickObject();
 		} else {
 			
-			// unpick any object that has been picked previously!!
-			M3D.GUI.unpickObject();
-			
 			var _objects = scene.getObjects();
 			
 			for (var i = 0; i < _objects.length; i++) {
@@ -1270,7 +1267,7 @@
 
 		$('#slider').hide();
 
-		$('#select-model').val("");
+		//$('#select-model').val("");
 
 	};
 	/**

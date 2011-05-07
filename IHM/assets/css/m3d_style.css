@@ -474,7 +474,7 @@ input[type=button] {
 	position: absolute;
 	display: none;
 	z-index: 1000;
-	top: 580px;
+	top: 585px;
 	left: 380px;
 	height: 114px;
 }

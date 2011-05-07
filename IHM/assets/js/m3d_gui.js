@@ -1285,9 +1285,8 @@
 
 	};
 	/**
-	 *
+	 * Unpick (deselect) an object that was previously selected
 	 */
-	// -- unpick an object
 	M3D.GUI.unpickObject = function() {
 
 		M3D.GUI.setMaterialEmit(null);
@@ -1303,9 +1302,8 @@
 
 	};
 	/**
-	 *
+	 * Scaling the imported model
 	 */
-	// -- scaling
 	M3D.GUI.scaleObject = function(d) {
 		if ( obj ) {
 			var delta = d * 0.02; // reduce the delta coz 1 is too high for scaling!
@@ -1319,7 +1317,7 @@
 		}
 	};
 	/**
-	 *
+	 * Clear All the imported model from the canvas
 	 */
 	M3D.GUI.clearCanvas = function() {
 		var o = scene.getObjects();
@@ -1329,14 +1327,13 @@
 			&& o[i].getId() != 'xaxis'
 			&& o[i].getId() != 'yaxis'
 			&& o[i].getId() != 'zaxis' ) {
-				scene.removeChild(o[i]);
+				o[i].parent.removeChild(o[i]);
 			}
 		}
 	};
 	/**
-	 *
+	 * The camera controller
 	 */
-	// -- camera controler
 	M3D.GUI.CameraController = function(element) {
 		var controller = this;
 		this.onchange = null;

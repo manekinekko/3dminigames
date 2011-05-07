@@ -110,11 +110,11 @@
 			
 			_name = o[i].name;
 			_url = o[i].url;
-			_str.push('type '+_name+' is Object ;\n'+
-								_name+' has position at 0.00 0.00 0.00 ;\n'+
-								_name+' has rotation at 0.00 0.00 0.00 ;\n'+
-								_name+' has scale at 0.00 0.00 0.00 ;\n'+
-								_name+' has url at "'+_url+'" ;\n');
+			_str.push(_name+' is Object ;\n'+
+						_name+' has position at 0.00 0.00 0.00 ;\n'+
+						_name+' has rotation at 0.00 0.00 0.00 ;\n'+
+						_name+' has scale at 1.00 1.00 1.00 ;\n'+
+						_name+' has url at "'+_url+'" ;\n');
 			
 		}
 		

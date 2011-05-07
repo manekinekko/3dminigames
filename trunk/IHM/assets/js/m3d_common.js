@@ -10,7 +10,7 @@
 	/**
 	 * Global constants
 	 */
-	M3D.REGEX_ALPHANUMERIC = /^[A-Za-z0-9_\-]+$/g;
+	M3D.REGEX_ALPHANUMERIC = /^[A-Za-z]{1}[A-Za-z0-9_\-]+$/g;
 	M3D.REGEX_NUMBER = /^[0-9]+$/g;
 
 	/**

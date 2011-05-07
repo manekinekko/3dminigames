@@ -196,7 +196,6 @@ $(function(){
 			M3D.GUI.addObjectToScene();
 			
 			_name = $(this).closest('.window').find('#name').val();
-			_name = M3D.Common.ucfirst(_name);
 			
 			_btn.val('Saving ...');
 			

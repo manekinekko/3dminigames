@@ -1237,7 +1237,7 @@
 
 				var _parent = _objects[i].parent; // get the parent
 				
-				if ( _parent.id !== 'graph' && _parent.uid && _parent.uid === _uidSelect ) {
+				if ( _parent.id !== 'graph' && _parent.id !== 'mainscene' && _parent.uid && _parent.uid === _uidSelect ) {
 
 					// update the global obj var
 					obj = _objects[i];
@@ -1269,7 +1269,7 @@
 
 		$('#slider').hide();
 
-		//$('#select-model').val("");
+		$('#select-model').val("");
 
 	};
 	/**

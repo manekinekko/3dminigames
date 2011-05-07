@@ -37,13 +37,13 @@ $(function(){
 	});
 	
 	
-	$('#status').bind('click', function(){
+	$('#editor-status').bind('click', function(){
 		var _this = $(this);
 		
 		_this.text('Updating scenario.Please wait...');
 		
 		M3D.GUI.updateEditor(function(){
-			_this.removeClass('ui-state-error').addClass('ui-state-highlight').text('Your scenario was updated!');
+			_this.removeClass('ui-state-error').addClass('ui-state-highlight').text('Your scenario has been synchronized!');
 			setTimeout(function(){
 				_this.hide().removeClass('pointer').text('');
 			}, 2000);
@@ -87,7 +87,7 @@ $(function(){
 	$('input[type="number"]').bind('change', function(){ 
 		M3D.GUI.updateObjectValues(this);
 		M3D.DB.updateSelectedObject();
-		$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+		$('#editor-status').addClass('ui-state-error pointer').text('Please click here to synchronize your scenario!').show();
 	});
 	/**
 	 * Bind the slider insert/remove
@@ -122,7 +122,7 @@ $(function(){
 			M3D.GUI.updateObjectValues(_lastSeletcedInput);
 		},
 		stop: function(event, ui) {
-			$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+			$('#editor-status').addClass('ui-state-error pointer').text('Please click here to synchronize your scenario!').show();
 		}
 	});
 	//*/
@@ -415,10 +415,9 @@ $(function(){
 		$('.grid-toggle').toggleClass('active');
 	})
 
-	$('.single-click').bind('click', function(){
+	$('.action-save').not('.saving').bind('click', function(){
 		
-		$('.single-click').fadeOut(100);
-		$('#status').show().text('Saving ...');
+		$('.action-save').addClass('saving');
 		
 		M3D.DB.saveEditor({
 			'uid': 'edwigs',
@@ -426,11 +425,9 @@ $(function(){
 		});
 		
 		setTimeout(function(){
-			$('#status').text('Saved');
 			
 			setTimeout(function(){
-				$('#status').hide().text('');
-				$('.single-click').fadeIn(100);
+				$('.action-save').removeClass('saving');
 			}, 1000);
 			
 		}, 2000);

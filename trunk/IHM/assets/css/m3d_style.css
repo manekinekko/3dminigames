@@ -138,14 +138,11 @@ li.separator {
 	border-right:1px solid #aaa;
 	background:#eee;
 }
-#status {
+#status, #editor-status {
 	font-size: 1em;
 	text-align: center;
-	width: 250px;
 	height: 16px;
 	position: absolute;
-	top: 5px;
-	left:600px;
 	z-index: 1000;
 	padding:2px;
 	-webkit-border-radius: 10px;
@@ -155,6 +152,19 @@ li.separator {
 	-webkit-box-shadow:0 0 4px #aaa;
 	box-shadow:0 0 4px #aaa;
 	display:none;
+}
+#status {
+	width: 250px;
+	top: 5px;
+	left:600px;
+}
+#editor-status {
+	width: 370px;
+	top: 470px;
+	left: 30px;
+	background-image: url('img/icon-refresh.png');
+	background-repeat: no-repeat;
+	background-position: 56px center;
 }
 #upload-model ul {
 	display:none;
@@ -463,6 +473,9 @@ input[type=button] {
 }
 .action-save {
 	background:transparent url('img/icon-save.png') no-repeat center center scroll;
+}
+.saving {
+	background: #fff url('img/ajax-loader3.gif') center center scroll no-repeat !important;
 }
 .grid-toggle {
 	background:transparent url('img/cursor-grid.png') no-repeat center center scroll;

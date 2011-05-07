@@ -30,6 +30,7 @@
 				<div id="loading-message" class="loading-container">Loading 3DWIGS UI. Please wait...</div>
 				<div id="saving-message" class="loading-container hidden">Saving in progress. Please wait...</div>
 				<div id="loading"></div>
+				
 				<div id="title" >
 					<h1><span>3D</span>WIGS</h1>
 					<span class="def">3D Web Interactive Game Studio</span>
@@ -52,6 +53,7 @@
 				
 				<!-- start: editor -->
 				<div id="editor">
+					<div id="editor-status"></div>
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
 					<div id="editor-menu">
 						<span class="cursor single-click action-save" title="Save your scenario">&nbsp;</span >

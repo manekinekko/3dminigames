@@ -44,7 +44,7 @@
 						<span class="cursor camera-zoom" title="Zoom Camera">&nbsp;</span>
 						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
 						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
-						<span class="cursor grid-toggle" title="Show/Hide Grid">&nbsp;</span>
+						<span class="cursor grid-toggle active" title="Show/Hide Grid">&nbsp;</span>
 						<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>
 					</div>
 					

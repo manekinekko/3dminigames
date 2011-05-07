@@ -464,6 +464,9 @@ input[type=button] {
 .action-save {
 	background:transparent url('img/icon-save.png') no-repeat center center scroll;
 }
+.grid-toggle {
+	background:transparent url('img/cursor-grid.png') no-repeat center center scroll;
+}
 .box-shadow {
 	-webkit-box-shadow: 0 0 10px #000;
 	-moz-box-shadow: 0 0 10px #000;

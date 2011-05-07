@@ -361,7 +361,7 @@ $(function(){
 	/**
 	 * Bind the camera operations: move, ratation and zoom.
 	 */
-	$('.cursor').not('.single-click').bind('click', function(){
+	$('.cursor').not('.single-click').not('.grid-toggle').bind('click', function(){
 		
 		if ( $(this).hasClass('active') ) {
 			$(this).removeClass('active');
@@ -409,6 +409,11 @@ $(function(){
 		}
 		
 	});
+
+	$('.grid-toggle').bind('click', function(){
+		M3D.GUI.toggleGrid();
+		$('.grid-toggle').toggleClass('active');
+	})
 
 	$('.single-click').bind('click', function(){
 		

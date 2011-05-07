@@ -92,7 +92,18 @@
 	 */
 	M3D.GUI.toggleGrid = function() {
 		if ( grid ) {
-			alert('Toggling the grid is not implemented yet!');
+			var _o = scene.getObjects();
+			for(var i=0; i<_o.length; i++) {
+				if ( _o[i].id && _o[i].id === 'grid' ) {
+					scene.removeChild(_o[i]);
+					grid = null;
+					return false;
+				}
+			}
+		}
+		else {
+			M3D.GUI.drawGrid();
+			return true;
 		}
 	};
 	/**
@@ -1222,6 +1233,8 @@
 	 */
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
+			
+		$('#status').removeClass('ui-state-error').text('').hide();
 
 		var _uidSelect = $('#select-model').val();
 

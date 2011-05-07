@@ -239,6 +239,7 @@
 	 * @param {String} objectName The given key's name of the entry to be removed
 	 */
 	M3D.DB.remove = function( objectName ){
+		log('Removing the entry ['+objectName+'] from the localStorage.');
 		localStorage.removeItem( objectName );
 	};
 	
@@ -361,7 +362,7 @@
 				// if editor entry, clear its content
 				if (  _regex(DB_PATTERN_EDITOR).test(i)  ) {
 					
-					log('clearing the editor entry ...');
+					log('clearing the editor entry ['+i+']...');
 					
 					// remove the old editor entry
 					M3D.DB.remove(i);

@@ -69,15 +69,13 @@
 					
 				});
 				
-				
-				
 				test("Clearing the Database", function() {
 				
 					M3D.DB.clear();
 					
 					expect(3);
-					ok( M3D.DB.contains('edwigs'+DB_PATTERN_EDITOR), "The DB still contains the editor" );
-					ok( M3D.DB.contains('default'+DB_PATTERN_ATTR), "The DB still contains the default attributes" );
+					equals( M3D.DB.contains('edwigs'+DB_PATTERN_EDITOR), false, "The editor entry was removed from the DB" );
+					equals( M3D.DB.contains('default'+DB_PATTERN_ATTR), true, "The DB still contains the default attributes" );
 					equals( M3D.DB.containsObj(), false, "All OBJs were removed from the DB" );
 					
 				});	

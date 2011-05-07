@@ -63,6 +63,10 @@ $(function(){
 	 */
 	$('#select-model').bind('change', function(e){
 		
+		// unpick any object that has been picked previously!!
+		M3D.GUI.unpickObject();
+		
+		// pick the new object
 		M3D.GUI.pickObjectFromSelect(e);
 		
 	});
@@ -118,7 +122,7 @@ $(function(){
 			M3D.GUI.updateObjectValues(_lastSeletcedInput);
 		},
 		stop: function(event, ui) {
-			$('#canvas').trigger('mouseup');
+			$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 		}
 	});
 	//*/

@@ -808,6 +808,7 @@
 		line.setRot(rotX, rotY, rotZ);
 		line.setZtransparent(true);
 		line.pickable = false;
+		line.id = "bbox";
 		obj.parent.addObject(line);
 
 	};
@@ -1062,8 +1063,15 @@
 
 			} else {
 
-				var bbox = obj.parent[0];
-				scene.removeChild(bbox);
+				var _parent = obj.parent;
+				var _children = _parent.children;
+				
+				for(var i=0; i<_children.length; i++){
+					if ( _children[i].id && _children[i].id === 'bbox' ) {
+						_parent.removeChild(_children[i]);
+						return;
+					}	
+				}
 
 			}
 

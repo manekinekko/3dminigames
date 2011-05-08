@@ -75,7 +75,11 @@
 									<option value="">--select model--</option>
 							</select>
 						</li>
-				
+						
+						<li>
+							<div id="remove-object" class="button disabled">Remove</div>
+						</li>
+						
 						<li class="separator"></li>
 	
 						<li>
@@ -84,8 +88,6 @@
 								</optgroup>
 								<optgroup label="Free models">
 									<option value="assets/dae/free/duck.dae" selected="true">Duck</option>
-									<option value="assets/dae/free/f.dae" >Girl</option>
-									<option value="assets/dae/free/avion.dae" >Plane</option>
 								</optgroup>
 								<optgroup label="Presets">
 									<option value="assets/dae/presets/cube.dae">Cube</option>
@@ -201,6 +203,11 @@
 					<label for="name">Name<em>*</em></label>
 					<input type="text" class="alphanumeric required" name="name" id="name" value="" placeholder="Entity name" required />
 					<br/>
+					<label for="name">Insert Rules</label>
+					<input type="checkbox" name="auto-update-editor" checked='true' id="auto-update-editor" value="" />
+					Check to insert the default rules for this entity.
+					<br/>
+					<br/>
 					<em>(Only Alpha-numerics, dashes and underscores are allowed!)</em>
 					<div id="window-buttons">
 						<input type="button" class="cancel" value="Cancel" name="cancel">
@@ -240,7 +247,7 @@
 				<div id="confirmation-clear" class="window box-shadow closed">
 					<h2>Confirmation!</h2>
 					<div>Do you really want to clear the canvas?<br/>
-					<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
+						<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
 					</div>
 					<div id="window-buttons">
 						<input type="button" class="validate" value="clear content" name="confirm-clear-canvas" id="confirm-clear-canvas">
@@ -248,6 +255,17 @@
 					</div>
 				</div>
 				
+				<div id="confirmation-remove" class="window box-shadow closed">
+					<h2>Confirmation!</h2>
+					<div>Do you really want to remove this model ?<br/>
+						<b style="color:red;">NOTE: Please do not forget to update you scenario manually!</b>
+					</div>
+					<div id="window-buttons">
+						<input type="button" class="validate" value="Remove Model" name="confirm-remove-object" id="confirm-remove-object">
+						<input type="button" class="cancel" value="NO" name="cancel">
+					</div>
+				</div>
+								
 				<div id="confirmation-load" class="window box-shadow closed">
 					<h2>Welcome back, <?php echo $session->get('login'); ?>!</h2>
 					<div>Do you want to load your previous content ?<br/>

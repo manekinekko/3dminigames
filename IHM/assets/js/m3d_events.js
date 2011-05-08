@@ -159,6 +159,22 @@ $(function(){
 	});
 	
 	/**
+	 * 
+	 */
+	$('#remove-object').bind('click', function(){
+		if ( ! $(this).is('.disabled') ) {
+			M3D.GUI.showPopup('confirmation-remove');
+		}
+	});
+	
+	/**
+	 * 
+	 */
+	$('#confirm-remove-object').bind('click', function(){
+		M3D.GUI.removeObject();
+	});
+	
+	/**
 	 * Bind the game creation
 	 * @see M3D.GUI.createGame
 	 */
@@ -206,10 +222,18 @@ $(function(){
 				url : $('#importUrl').val() /* the url of the last imported model */
 			}
 			
-			M3D.Editor.setDefaultContent([_o], function(){
+			if ( true ) {
+				M3D.Editor.setDefaultContent([_o], function(){
+					_btn.val('Save');
+					M3D.GUI.hidePopup();
+				});
+			}
+			else {
 				_btn.val('Save');
-				M3D.GUI.hidePopup();
-			});
+				M3D.GUI.hidePopup();;
+			}
+			
+			
 		}
 		else {
 			_nameElement.addClass('warning');

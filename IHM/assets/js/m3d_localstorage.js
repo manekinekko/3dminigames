@@ -244,6 +244,15 @@
 	};
 	
 	/**
+	 * 
+	 */
+	M3D.DB.removeObject = function( objectName ){
+		var _entry = objectName+DB_PATTERN_OBJ;
+		log('Removing the entry ['+_entry+'] from the localStorage.');
+		localStorage.removeItem( _entry );
+	}
+	
+	/**
 	 * Update Datas as we move one object
 	 * @param {Object} object The given key of the entry that needs to be updated
 	 * @deprecated This function is not yet implemented

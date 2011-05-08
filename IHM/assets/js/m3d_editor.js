@@ -121,6 +121,33 @@
 	};
 	
 	/**
+	 * 
+	 */
+	M3D.Editor.commentLines = function(o, cb) {
+		
+		var NEWLINE = '\n';
+		var content = M3D.Editor.getContent().split(NEWLINE);
+		var _name = M3D.GUI.getObjectId(obj.uid);
+		
+		for(var i=0; i<content.length; i++)
+		{
+			
+			if ( content[i] === '' ) {
+				continue;
+			}
+			else if ( (new RegExp(_name)).test(content[i]) )
+			{
+				if ( /;$/.test(content[i]) ) {
+					content[i] = '// ' + content[i];
+				}
+			}
+		
+		}
+		
+		_setAndClearContent( content.join(NEWLINE), cb );
+	}
+	
+	/**
 	 * This function append the new content to the old one.
 	 * Or set the new content of the empty editor.
 	 * @param {String} value The new content

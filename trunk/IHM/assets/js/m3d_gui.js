@@ -117,17 +117,25 @@
 		var _models = M3D.DB.getAttributes('default').model;
 
 		var _attributes = [];
-		var _name = '', _type = '', _desc = '', _dflt = '';
+		var _name = '', _type = '', _desc = '', _dflt = '', _inheritance = '';
 
 		for(var i=0; i<_models.length; i++) {
 
-			if ( typeof(_models[i]) === 'object' && _models[i]['name'] ) {
-				_attrHTML.push('<h3>Entity: <i>'+_models[i]['name']+'</i></h3>');
+			if ( typeof(_models[i]) === 'object' && _models[i].name ) {
+				
+				if ( _models[i].inheritance ) {
+					_inheritance = '{ '+ _models[i].inheritance['@attributes'].value +' }';
+				}
+				else {
+					_inheritance = '';
+				}
+				
+				_attrHTML.push('<h3>Entity: <i>'+_models[i].name+' '+_inheritance+'</i></h3>');
 			}
 
-			if ( typeof(_models[i]) === 'object' && _models[i]['attribute'] ) {
+			if ( typeof(_models[i]) === 'object' && _models[i].attribute ) {
 				
-				_attributes = _models[i]['attribute'];
+				_attributes = _models[i].attribute;
 
 				// check if the current item is an array (of objects)
 				if ( _attributes.length ){
@@ -135,10 +143,10 @@
 
 						if ( typeof(_attributes[j]) === 'object' && _attributes[j]['@attributes'] ) {
 	
-							_name = _attributes[j]['@attributes']['name'];
-							_type = _attributes[j]['@attributes']['type'] || 'N/A';
-							_dflt = _attributes[j]['@attributes']['value'] || 'N/A';
-							_desc = _attributes[j]['@attributes']['description'] || 'N/A';
+							_name = _attributes[j]['@attributes'].name;
+							_type = _attributes[j]['@attributes'].type || 'N/A';
+							_dflt = _attributes[j]['@attributes'].value || 'N/A';
+							_desc = _attributes[j]['@attributes'].description || 'N/A';
 	
 							_attrHTML.push('<div class="attributes-details">'+
 							'<div class="attributes-name">'+
@@ -159,10 +167,10 @@
 				
 				// check if the current item is an object but not an array
 				else if ( typeof(_attributes) === 'object' && !_attributes.length ) {
-					_name = _attributes['@attributes']['name'];
-					_type = _attributes['@attributes']['type'] || 'N/A';
-					_dflt = _attributes['@attributes']['value'] || 'N/A';
-					_desc = _attributes['@attributes']['description'] || 'N/A';
+					_name = _attributes['@attributes'].name;
+					_type = _attributes['@attributes'].type || 'N/A';
+					_dflt = _attributes['@attributes'].value || 'N/A';
+					_desc = _attributes['@attributes'].description || 'N/A';
 
 					_attrHTML.push('<div class="attributes-details">'+
 					'<div class="attributes-name">'+
@@ -440,6 +448,24 @@
 		$('#modal').hide(100);
 
 	};
+	/**
+	 * 
+	 */
+	M3D.GUI.removeObject = function(){
+		if ( obj ){
+			M3D.Editor.commentLines(obj, function(){
+				
+				log('Removing ['+M3D.GUI.getObjectId(obj.uid)+'] ...');
+				scene.removeChild(obj);
+				
+				$('#select-model option[value="'+obj.uid+'"]').remove();
+				
+				M3D.DB.removeObject(obj.uid);
+				M3D.GUI.hidePopup();
+
+			});
+		}
+	}
 	/**
 	 *
 	 */
@@ -1277,6 +1303,7 @@
 
 					M3D.GUI.setMaterialEmit(0.1);
 					M3D.GUI.updateInputValuesFromObject();
+					$('#remove-object').removeClass('disabled');
 
 					// exit this function
 					return;
@@ -1301,6 +1328,7 @@
 		$('#slider').hide();
 		$('#info-bottom legend:eq(0)').text('Object Properties');
 		$('#editor-status').removeClass('ui-state-error').text('').hide();
+		$('#remove-object').addClass('disabled');
 
 	};
 	/**

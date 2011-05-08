@@ -206,11 +206,11 @@ li.separator {
 }
 #editor-menu {
 	display: none;
-    height: 40px;
-    left: 352px;
-    position: absolute;
-    top: 0;
-    width: 45px;
+	height: 40px;
+	left: 332px;
+	position: absolute;
+	top: 0;
+	width: 45px;
 }
 #editor textarea {
 	width: 390px;
@@ -394,11 +394,11 @@ select {
 input[type=button] {
 	height:25px;
 }
-.button:disabled, input[type=button]:disabled {
+.button.disabled, input[type=button]:disabled {
 	background:#aaa;
 	cursor:default;
 }
-.button:not(:disabled):hover, input[type=submit]:not(:disabled):hover, input[type=button]:not(:disabled):hover {
+.button:not(.disabled):hover, input[type=submit]:not(:disabled):hover, input[type=button]:not(:disabled):hover {
 	background:#0459b7;
 	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
 	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
@@ -407,7 +407,7 @@ input[type=button] {
 	color:white;
 	box-shadow: 0 0 26px #80BDE9;
 }
-.button:not(:disabled):active, input[type=button]:not(:disabled):active, input[type=button]:not(:disabled):focus {
+.button:not(.disabled):active, input[type=button]:not(:disabled):active, input[type=button]:not(:disabled):focus {
 	background:#0459b7;
 	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
 	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
@@ -416,6 +416,9 @@ input[type=button] {
 }
 .button, input[type="button"], select {
 	cursor: pointer;
+}
+.button.disabled {
+	background: #AAA;
 }
 #tools-panel {
 	position:absolute;

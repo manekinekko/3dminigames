@@ -95,7 +95,7 @@
 	 * Set the default content of the editor
 	 * @param {Array} o An array of names and urls of the objects to be added
 	 */
-	M3D.Editor.setDefaultContent = function(o, cb){
+	M3D.Editor.setDefaultContent = function(o, t, cb){
 		var _name, _url, _str = [], _old = [];
 		
 		if ( M3D.Editor.getContent() !== null ) 
@@ -109,11 +109,18 @@
 			
 			_name = o[i].name;
 			_url = o[i].url;
-			_str.push(_name+' is Object ;\n'+
-						_name+' has position at 0.00 0.00 0.00 ;\n'+
-						_name+' has rotation at 0.00 0.00 0.00 ;\n'+
-						_name+' has scale at 1.00 1.00 1.00 ;\n'+
-						_name+' has url at \n   "'+_url+'" ;\n');
+			_str.push(_name+' is Object ;\n');
+			
+			
+			if ( t ) {
+				_str.push(_name+' has position at 0.00 0.00 0.00 ;\n'+
+									_name+' has rotation at 0.00 0.00 0.00 ;\n'+
+									_name+' has scale at 1.00 1.00 1.00 ;\n'+
+									_name+' has url at \n   "'+_url+'" ;\n');
+			}
+			else {
+				_str.push('// add attributes here ;\n');
+			}
 			
 		}
 		

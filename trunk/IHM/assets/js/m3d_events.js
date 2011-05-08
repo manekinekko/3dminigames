@@ -222,17 +222,12 @@ $(function(){
 				url : $('#importUrl').val() /* the url of the last imported model */
 			}
 			
-			if ( true ) {
-				M3D.Editor.setDefaultContent([_o], function(){
-					_btn.val('Save');
-					M3D.GUI.hidePopup();
-				});
-			}
-			else {
-				_btn.val('Save');
-				M3D.GUI.hidePopup();;
-			}
+			var _t = $('#auto-update-editor').is(':checked');
 			
+			M3D.Editor.setDefaultContent([_o], _t, function(){
+				_btn.val('Save');
+				M3D.GUI.hidePopup();
+			});
 			
 		}
 		else {

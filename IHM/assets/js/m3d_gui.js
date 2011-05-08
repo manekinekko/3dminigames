@@ -386,7 +386,7 @@
 			M3D.GUI.clearInputs();
 		}
 
-		$('#modal').show('fast', function() {
+		$('#modal').show(100, function() {
 
 			var _window = $('.window.opened');
 			if ( _window.length > 0 ) {
@@ -437,7 +437,7 @@
 		.removeClass('opened')
 		.addClass('closed');
 
-		$('#modal').hide('fast');
+		$('#modal').hide(100);
 
 	};
 	/**
@@ -1203,7 +1203,7 @@
 
 		var tmp = obj || hoverobj;
 		if( tmp ) {
-			var child = tmp.children;
+			var child = tmp.parent.children;
 			for( i in child) {
 				if (child[i].className === "Object") {
 					child[i].getMaterial().setEmit(v);

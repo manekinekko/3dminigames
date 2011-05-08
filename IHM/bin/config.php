@@ -17,6 +17,9 @@ if($config_file) {
 	// define constantes below
 	$arr = $config_file->xpath('/m3d/config/item[contains(name,"tmp_dir")]/url');
 	define('TMP_DIR', APPPATH . '/' . $arr[0]);
+	
+	$version = $config_file->xpath('/m3d/version');
+	define('VERSION', $version[0][0]);
 	// ...
 
 } else {

@@ -37,10 +37,6 @@
 	 */
 	M3D.Editor.setGameInfo = function(name, cb){
 		
-		if ( !cb ){
-			var cb = function(){};
-		}
-		
 		if(indexed){
 			M3D.DB.start(name);
 			cb();
@@ -85,9 +81,6 @@
 	 * @param {Function} cb The function to be executed after the editor is cleared
 	 */
 	M3D.Editor.clear = function(cb){
-		if ( !cb ){
-			var cb = function(){};
-		}
 		_setAndClearContent(_getInitialTemplate(), cb);
 	};
 	
@@ -210,10 +203,7 @@
 	 * @param {Function} cb The callback function 
 	 */
 	M3D.Editor.empty = function(cb){
-		if ( !cb ){
-			var cb = function(){};
-		}
-		edwigs.edit( '', 'edwigs', cb );
+		edwigs.edit( '   ', 'edwigs', cb );
 	}
 	
 	/**
@@ -246,7 +236,8 @@
 			'uid': 'edwigs', 
 			'value': val	
 		});
-		edwigs.edit( val, 'edwigs', cb );
+		edwigs.edit( val, 'edwigs', cb);
+		
 	};
 	
 })(window.M3D);

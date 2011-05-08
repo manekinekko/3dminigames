@@ -262,7 +262,7 @@ $(function(){
 			_el.addClass('warning');
 		}
 	});
-
+	
 	/**
 	 * Bind showing the help window
 	 * @see M3D.GUI.showPopup
@@ -299,20 +299,33 @@ $(function(){
 	});
 	$('#confirm-clear-canvas').bind('click', function(){
 		
-		var button = $(this);
+		var button = $('#confirm-clear-canvas');
 		button.val('clearing content...');
 		
-		M3D.Editor.empty(function(){
-			M3D.GUI.clearCanvas();
-			M3D.GUI.clearSelectBox();
-			M3D.DB.clear();
-			M3D.GUI.hidePopup();
-			button.val('YES');
+		M3D.GUI.clearCanvas();
+		M3D.GUI.clearSelectBox();
+		M3D.DB.clear();
+		M3D.Editor.clear(function(){
 			
-			// delay 
-			setTimeout(function(){
+			button.val('clear content');
+			
+			/**
+			 * Bug fix: This is actually a work around rather than a bug fix
+			 * but, I could not findt the origin of this bug.
+			 * 
+			 * The bug is: The M3D.GUI.showPopup('game-info', true) is called endlessly !!!
+			 * I think that this has a to do with the codepress edit process.
+			 * 
+			 * REALLY SORRY !!!
+			 */
+			if ( ! M3D.DB.checkEditorContentFromDB() ) {
 				M3D.GUI.showPopup('game-info', true);
-			}, 100);
+			}
+			else {
+				log('Game info already set ...');
+			}
+			/**/
+			
 		});
 		
 	});
@@ -344,19 +357,16 @@ $(function(){
 	 * Bind NOT to load the previous saved content.
 	 * @see M3D.GUI.showPopup
 	 */
-	 $('#confirm-no-load-content').bind('click', function(){
-		
-		M3D.Editor.empty(function(){
+	 $('#confirm-no-load-content').one('click', function(){
+						
 			M3D.GUI.clearCanvas();
 			M3D.GUI.clearSelectBox();
 			M3D.DB.clear();
-			M3D.GUI.hidePopup();
-			
-			// delay 
-			setTimeout(function(){
+			M3D.Editor.clear(function(){
+				
 				M3D.GUI.showPopup('game-info', true);
-			}, 100);
-		});
+				
+			});
 
 	 });
 
@@ -372,8 +382,9 @@ $(function(){
 	});
 	
 	/**
-	 * Bind the keypress events
+	 * Bind the global keypress events
 	 */
+	//*
 	$(document).bind('keypress', function(){
 		
 		var _w = $('.window.opened');
@@ -390,6 +401,7 @@ $(function(){
 		}
 		
 	});
+	/**/
 	
 	/**
 	 * Bind the camera operations: move, ratation and zoom.
@@ -466,6 +478,10 @@ $(function(){
 		}, 1000);
 	});
 
+	$('.action-help').bind('click', function(){
+		window.open('http://code.google.com/p/3dminigames/wiki/Keywords', 'height=200,width=180');
+	});
+
 	/**
 	 * Bind the autosave process
 	 */
@@ -474,7 +490,7 @@ $(function(){
       
       _autosave = setInterval(function(){
       	
-      	$('.single-click').trigger('click');
+      	$('.ation-save').trigger('click');
 		
       }, 20000); // 20 sec
 

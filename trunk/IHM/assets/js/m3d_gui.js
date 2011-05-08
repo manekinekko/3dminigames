@@ -5,7 +5,7 @@
  * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/assets/js/m3d_gui.js
  * @projectDescription This file contains all the necessary GUI functions.
  * 
- * NOTE: the "obj" variable is a global reference to the currently selected GLGE object.
+ * NOTE: the "obj" variable is a global reference to the currently selected GLGE Groupe.
  * 				DON'T MESS WITH IT :p
  * 
  */
@@ -27,12 +27,16 @@
 	// values in ms
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 
+	// emit light
+	M3D.GUI.DEFAULT_MATERIAL_EMIT = 0.001;
+	M3D.GUI.SELECT_MATERIAL_EMIT = 0.8;
 	/**
 	 * The initialization function
 	 */
 	M3D.GUI.init = function() {
 		log('initializating the GUI...');
 		M3D.GUI.drawGrid();
+		M3D.GUI.drawAxes();
 	};
 	/**
 	 * This function draws the grid dynamically
@@ -91,7 +95,7 @@
 		grid = _grp;
 	};
 	/**
-	 * 
+	 * This function draws the X, Y and Z axes dynamically
 	 */
 	M3D.GUI.drawAxes = function(){
 
@@ -667,6 +671,15 @@
 				.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
 				
 		_grp.addChild(M3D.lastImportedModel);
+		
+		/**
+		 * Bug fix: increase the light emit of the object
+		 */
+		obj = _grp;
+		M3D.GUI.setMaterialEmit(M3D.GUI.DEFAULT_MATERIAL_EMIT);
+		obj = null;
+		/**/
+		
 		scene.addChild(_grp);
 		
 		// we don't need this reference anymore
@@ -1297,10 +1310,11 @@
 
 		var tmp = obj || hoverobj;
 		if( tmp ) {
-			var child = tmp.children;
+			var child = tmp.getObjects();
 			for( i in child) {
 				if (child[i].className === "Object") {
 					child[i].getMaterial().setEmit(v);
+					child[i].getMaterial().setShadow(true)
 				}
 			}
 		}
@@ -1326,7 +1340,7 @@
 
 			if(_obj.getId()!=="mainscene") {
 
-				M3D.GUI.setMaterialEmit(0.1);
+				M3D.GUI.setMaterialEmit(M3D.GUI.SELECT_MATERIAL_EMIT);
 				M3D.GUI.updateInputValuesFromObject();
 
 				$('#select-model').val(_obj.uid);
@@ -1385,7 +1399,7 @@
 	 */
 	M3D.GUI.unpickObject = function() {
 
-		M3D.GUI.setMaterialEmit(null);
+		M3D.GUI.setMaterialEmit(M3D.GUI.DEFAULT_MATERIAL_EMIT);
 
 		M3D.GUI.updateInputValuesFromObject(false);
 

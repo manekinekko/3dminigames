@@ -27,6 +27,10 @@ M3D.Upload.AJAXUpload = function(){
 			
 			if ( responseJSON.success ){
 				var url = 'assets/dae/custom/'+fileName;
+				
+				var _f = fileName.split('.');
+				fileName = _f[0];
+				
 				document.getElementById('myModels').innerHTML += "<option value='"+url+"' selected='true'>"+fileName+"</option>";
 				$('#status').show().text(fileName+' uploaded!');
 				M3D.GUI.importModel({

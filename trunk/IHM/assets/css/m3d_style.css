@@ -442,12 +442,9 @@ input[type=button] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-}
-.cursor:hover, .cursor:active {
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
 	background-color:#fff !important;
+}
+.cursor:hover {
 	border-color:#aaa !important;
 	-moz-box-shadow:0 0 5px #aaa;
 	-webkit-box-shadow:0 0 5px #aaa;
@@ -458,7 +455,6 @@ input[type=button] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	background-color:#fff !important;
 }
 .cursor.camera-move {
 	background:transparent url('img/cursor-hand.png') no-repeat center center scroll;

@@ -226,17 +226,17 @@ li.separator {
 	visibility:hidden;
 }
 #attributes-panel {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #AAAAAA;
-    box-shadow: 0 0 10px #AAAAAA;
-    display: none;
-    height: 460px;
-    left: 125px;
-    margin-left: 390px;
-    position: absolute;
-    top: 40px;
-    width: 300px;
-    z-index: 110;
+	background: none repeat scroll 0 0 white;
+	border: 1px solid #AAA;
+	box-shadow: 0 0 10px #AAA;
+	display: none;
+	height: 458px;
+	left: 170px;
+	margin-left: 390px;
+	position: absolute;
+	top: 40px;
+	width: 300px;
+	z-index: 110;
 }
 #attributes-panel-body {
 	height:403px;

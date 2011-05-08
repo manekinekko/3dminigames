@@ -1240,7 +1240,8 @@
 
 			hoverobj = _obj;
 
-		} else if(hoverobj && obj!==hoverobj) {
+		} else if(obj!==hoverobj) {
+			$('#select-model').val("");
 			M3D.GUI.unpickObject();
 		}
 
@@ -1254,7 +1255,6 @@
 		var _uidSelect = $('#select-model').val();
 		var _nameSelect = M3D.Common.ucfirst($('#select-model option[value="'+_uidSelect+'"]').text());
 
-		$('#editor-status').removeClass('ui-state-error').text('').hide();
 		$('#info-bottom legend:eq(0)').text(_nameSelect+' Properties');
 
 		if ( _uidSelect === "" ) {
@@ -1298,7 +1298,7 @@
 
 		$('#slider').hide();
 		$('#info-bottom legend:eq(0)').text('Object Properties');
-		//$('#select-model').val("");
+		$('#editor-status').removeClass('ui-state-error').text('').hide();
 
 	};
 	/**

@@ -113,7 +113,7 @@
 						_name+' has position at 0.00 0.00 0.00 ;\n'+
 						_name+' has rotation at 0.00 0.00 0.00 ;\n'+
 						_name+' has scale at 1.00 1.00 1.00 ;\n'+
-						_name+' has url at "'+_url+'" ;\n');
+						_name+' has url at \n   "'+_url+'" ;\n');
 			
 		}
 		

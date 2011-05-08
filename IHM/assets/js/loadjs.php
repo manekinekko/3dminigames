@@ -18,15 +18,16 @@ $files = array(
 				'lib/json.min.js',
 				'lib/codepress/codepress.js',
 
+/*
 				'lib/glge_v0.5.2/glge_math.js',
 				'lib/glge_v0.5.2/glge.js',
 				'lib/glge_v0.5.2/glge_collada.js',
 				'lib/glge_v0.5.2/glge_input.js',
 				'lib/glge_v0.5.2/patches/glge.js',
 				'lib/glge_v0.5.2/patches/glge_collada.js',
-
-//				'lib/glge_v0.8/glge.js',
-				
+/**/
+				'lib/glge_v0.8/glge.js',
+/**/				
 				/* Please in this order */
 				'm3d_init.js',
 				'm3d_config.js',

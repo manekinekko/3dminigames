@@ -123,6 +123,7 @@ $(function(){
 		},
 		stop: function(event, ui) {
 			$('#editor-status').addClass('ui-state-error pointer').text('Please click here to synchronize your scenario!').show();
+			M3D.DB.updateSelectedObject();
 		}
 	});
 	//*/

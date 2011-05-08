@@ -46,7 +46,7 @@
 						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
 						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
 						<span class="cursor grid-toggle active" title="Show/Hide Grid">&nbsp;</span>
-						<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>
+						<!--<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>-->
 					</div>
 					
 				</div>
@@ -269,7 +269,7 @@
 				<div id="confirmation-load" class="window box-shadow closed">
 					<h2>Welcome back, <?php echo $session->get('login'); ?>!</h2>
 					<div>Do you want to load your previous content ?<br/>
-					<b style="color:red;">NOTE: by clicking NO your previous content will be <u>lost</u>!</b>
+					<b style="color:red;">NOTE: if you click NO, your previous content will be <u>lost</u>!</b>
 					</div>
 					<div id="window-buttons">
 						<input type="button" class="validate" value="load" name="confirm-load-content" id="confirm-load-content">

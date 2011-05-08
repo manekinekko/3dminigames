@@ -463,7 +463,7 @@ $(function(){
 				$('.action-save').removeClass('saving');
 			}, 1000);
 			
-		}, 2000);
+		}, 1000);
 	});
 
 	/**

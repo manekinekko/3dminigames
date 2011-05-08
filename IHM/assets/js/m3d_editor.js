@@ -11,7 +11,7 @@
 	/**
 	 * Initializes the editor. 
 	 * This function is called once the document is loaded.
-	 * @deprecated This function is never called anymore!
+	 * @deprecated This function is never called anymore! Do not forget to remove it
 	 */
 	var indexed=false;	//Permet de differencier localStorage et IndexedDB
 	M3D.Editor.init = function(){	

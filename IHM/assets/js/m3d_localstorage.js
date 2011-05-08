@@ -193,6 +193,7 @@
 		var key = null;
 		var value = null;
 		var _editor_loaded = false;
+		var _selectOption = [];
 		
 		for( var i=0; i<localStorage.length; i++ ){
 			
@@ -222,16 +223,21 @@
 					'autoAddToScene': true
 				});
 				
+				_selectOption.push("<option value='"+value.url+"'>"+value.name+"</option>");
+				
 			}
 			
 			// load the editor
 			else if ( !_editor_loaded && e.test(key) ) {
+				log('initializating the editor...');
 				editor = M3D.DB.getEditor(key);
 				M3D.Editor.setContent(editor, cb);
 				_editor_loaded = true;
 			}
 			
 		}
+		
+		$('#myModels').append(_selectOption.join(''));
 	};
 	
 	/**

@@ -48,7 +48,6 @@
 			var _str = [];
 			_str.push(_getInitialTemplate());
 			_str.push('game has name at "'+name+'" ;\n');
-			M3D.Editor.empty();
 			M3D.Editor.setContent(_str.join(''), cb);
 		}
 	};
@@ -207,18 +206,12 @@
 	var _setAndClearContent = function(val, cb){
 		// wrap the callback function with a new one
 		// coz' we need to update the DB content!
-		var _cb = function(){
-			
-			M3D.DB.setEditor({
-				'uid': 'edwigs', 
-				'value': val	
-			});
-			
-			if ( cb ){
-				cb();
-			}
-		}
-		edwigs.edit( val, 'edwigs', _cb );
+
+		M3D.DB.setEditor({
+			'uid': 'edwigs', 
+			'value': val	
+		});
+		edwigs.edit( val, 'edwigs', cb );
 	};
 	
 })(window.M3D);

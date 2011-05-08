@@ -228,13 +228,18 @@ $(function(){
 		var _el = $('#game-name');
 		var _name = _el.val();
 		if ( M3D.GUI.validateFields( _el )){
-
+			
+			_el.removeClass('warning');
+			
 			_btn.val('saving...');
 			M3D.Editor.setGameInfo(_name, function(){
 				M3D.GUI.hidePopup();
 				_btn.val('save');
 			});		
 			
+		}
+		else {
+			_el.addClass('warning');
 		}
 	});
 
@@ -277,11 +282,10 @@ $(function(){
 		var button = $(this);
 		button.val('clearing content...');
 		
-		M3D.GUI.clearCanvas();
-		M3D.GUI.clearSelectBox();
-		M3D.DB.clear();
 		M3D.Editor.empty(function(){
-			
+			M3D.GUI.clearCanvas();
+			M3D.GUI.clearSelectBox();
+			M3D.DB.clear();
 			M3D.GUI.hidePopup();
 			button.val('YES');
 			
@@ -322,8 +326,17 @@ $(function(){
 	 */
 	 $('#confirm-no-load-content').bind('click', function(){
 		
-		// execute the action associated to this event
-	 	$('#confirm-clear-canvas').trigger('click');
+		M3D.Editor.empty(function(){
+			M3D.GUI.clearCanvas();
+			M3D.GUI.clearSelectBox();
+			M3D.DB.clear();
+			M3D.GUI.hidePopup();
+			
+			// delay 
+			setTimeout(function(){
+				M3D.GUI.showPopup('game-info', true);
+			}, 100);
+		});
 
 	 });
 

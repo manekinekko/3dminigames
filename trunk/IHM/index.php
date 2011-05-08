@@ -167,9 +167,9 @@
 								</tr>
 								<tr>
 									<td>Bounding Box</td>
-									<td><input disabled="true" type="number" name="bboxX" id="bboxX" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="bboxY" id="bboxY" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="bboxZ" id="bboxZ" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/></td>
+									<td><!--<input disabled="true" type="number" name="bboxX" id="bboxX" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/>--></td>
+									<td><!--<input disabled="true" type="number" name="bboxY" id="bboxY" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/>--></td>
+									<td><!--<input disabled="true" type="number" name="bboxZ" id="bboxZ" value="" placeholder="#" min="0.0001" max="100" step="0.0001"/>--></td>
 									<td><input disabled="true" type="checkbox" name="switchBbox" id="switchBbox" />Show/Hide</td>
 								</tr>
 							</tbody>

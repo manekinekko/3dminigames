@@ -480,6 +480,7 @@
 		};
 
 		// handle the bbox
+		/*
 		var _bbox = {
 			'X':'#',
 			'Y':'#',
@@ -494,8 +495,10 @@
 			};
 		}
 		element.value.bbox = _bbox;
-
+		*/
+		
 		M3D.DB.setObject(element);
+		
 		// [/DB]
 
 	};
@@ -553,7 +556,6 @@
 	M3D.GUI.addObjectToScene = function( values ) {
 
 		// tweak the new object position and scale
-		var bbox = M3D.lastImportedModel.getBoundingVolume().dims;
 		var v = values ? values : {};
 		var tmp_scale_x = v.scaleX ? v.scaleX : 1;
 		var tmp_scale_y = v.scaleY ? v.scaleY : 1;
@@ -565,21 +567,15 @@
 		var tmp_rotY = v.rotY ? v.rotY : 0;
 		var tmp_rotZ = v.rotZ ? v.rotZ : 0;
 
-		// set the uid of the current object.
-		// NOTE: this uid is set to the Group
-		var objects = M3D.lastImportedModel.getObjects();
-		objects[0].parent.uid = v.uid ? v.uid : M3D.lastGeneratedUID;
-		objects[0].parent.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
-							.setLoc(tmp_locX, tmp_locY, tmp_locZ)
-							.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
-
-		// set the new scale to this collada children, so they have to right value!
-		for(var i in objects) {
-			objects[i].setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z);
-		}
-
-		scene.addChild(M3D.lastImportedModel);
-
+		var _grp = new GLGE.Group();
+		_grp.uid = v.uid ? v.uid : M3D.lastGeneratedUID;
+		_grp.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
+				.setLoc(tmp_locX, tmp_locY, tmp_locZ)
+				.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
+				
+		_grp.addChild(M3D.lastImportedModel);
+		scene.addChild(_grp);
+		
 		// we don't need this reference anymore
 		M3D.lastImportedModel = null;
 
@@ -613,7 +609,7 @@
 		var value = parseFloat(el.val());
 
 		if( obj && !isNaN(value) ) {
-			var _obj = obj.parent;
+			var _obj = obj;//.parent;
 			var locked = $('#scaleLock').is(':checked');
 
 			switch( el.attr('name') ) {
@@ -693,12 +689,12 @@
 
 		//blocs 1 to 4 = face sup, 5 to 8 = face inf, 9 to 12 = faces verticales
 
-		var _obj = obj.parent;
+		var _obj = obj;//.parent;
 
-		var dims = _obj.getBoundingVolume().dims;
-		var dimsX = dims[0];
-		var dimsY = dims[1];
-		var dimsZ = dims[2];
+		var dims = _obj.getBoundingVolume().limits;
+		var dimsX = Math.abs(dims[0])+Math.abs(dims[1]);
+		var dimsY = Math.abs(dims[2])+Math.abs(dims[3]);
+		var dimsZ = Math.abs(dims[4])+Math.abs(dims[5]);
 
 		var loc = _obj.getPosition();
 		var rot = _obj.getRotation();
@@ -809,7 +805,7 @@
 		line.setZtransparent(true);
 		line.pickable = false;
 		line.id = "bbox";
-		obj.parent.addObject(line);
+		obj/*.parent.*/.addObject(line);
 
 	};
 	/**
@@ -935,30 +931,32 @@
 		var newRotY = ( parseFloat(scene.camera.getRotY()) + yRot );
 
 		if ( obj ) {
-
+			
+			var _obj = obj;//.parent;
+			
 			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_X) ) {
 
-				obj.parent.setLocX( -newRotX * deltaLocObject );
+				_obj.setLocX( -newRotX * deltaLocObject );
 
 			} else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_Y) ) {
-				obj.parent.setLocY( newRotY * deltaLocObject );
+				_obj.setLocY( newRotY * deltaLocObject );
 
 			} else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_Z) ) {
 
-				obj.parent.setLocZ( newRotY * deltaLocObject );
+				_obj.setLocZ( newRotY * deltaLocObject );
 
 			} else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE && keys.isKeyPressed(GLGE.KI_Y)) {
 
-				obj.parent.setRotY( newRotY * deltaRot );
+				_obj.setRotY( newRotY * deltaRot );
 
 			} else if (M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE && keys.isKeyPressed(GLGE.KI_X)) {
 
-				obj.parent.setRotX( newRotY * deltaRot );
+				_obj.setRotX( newRotY * deltaRot );
 
 			} else if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_ROTATE ) {
 
-				obj.parent.setRotX( newRotX * deltaRot );
-				obj.parent.setRotY( newRotY * deltaRot );
+				_obj.setRotX( newRotX * deltaRot );
+				_obj.setRotY( newRotY * deltaRot );
 
 			}
 
@@ -1063,7 +1061,7 @@
 
 			} else {
 
-				var _parent = obj.parent;
+				var _parent = obj;//.parent;
 				var _children = _parent.children;
 				
 				for(var i=0; i<_children.length; i++){
@@ -1093,7 +1091,7 @@
 				var _float = function(v) {
 					return parseFloat(v).toFixed(2);
 				};
-				var _obj = obj.parent;
+				var _obj = obj;//.parent;
 
 				if (_obj.getLocX && _obj.getLocY && _obj.getLocZ &&
 				_obj.getScaleX && _obj.getScaleY && _obj.getScaleZ &&
@@ -1112,9 +1110,12 @@
 					$('#rotZ').val(_float(_obj.getRotZ()));
 	
 					if ( _obj.boundingVolume ) {
-						$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
-						$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
-						$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
+						
+						//see new version of GLGE for better implementation of the BoundingVolume !!
+						
+						//$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
+						//$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
+						//$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
 					}
 	
 	
@@ -1136,7 +1137,7 @@
 	M3D.GUI.checkEditor = function() {
 
 		if ( obj ) {
-			var _obj = obj.parent;
+			var _obj = obj;//.parent;
 			var _name = M3D.GUI.getObjectId(_obj.uid);
 			if (_name !== ''){
 				if ( M3D.DB.checkProperties(_name) ) {
@@ -1165,7 +1166,7 @@
 			var _float = function(v) {
 				return parseFloat(v).toFixed(2);
 			};
-			var _obj = obj.parent;
+			var _obj = obj;//.parent;
 			M3D.Editor.updateObjectAttributes({
 				id: M3D.GUI.getObjectId( _obj.uid ),
 				position: {
@@ -1203,7 +1204,7 @@
 
 		var tmp = obj || hoverobj;
 		if( tmp ) {
-			var child = tmp.parent.children;
+			var child = tmp.children;
 			for( i in child) {
 				if (child[i].className === "Object") {
 					child[i].getMaterial().setEmit(v);
@@ -1222,12 +1223,13 @@
 		 * CETTE FONCTION NE FONCTIONNE PAS TRES BIEN; IL SERAIT IDEAL DE LA REMPLACER PAR UNE NOUVELLE
 		 * IMPLEMENTATION, VOIR METTRE GLGE A JOUR!!
 		 */
-		obj = scene.pick(e.clientX-canvas.parentNode.offsetLeft,e.clientY-canvas.parentNode.offsetTop).object;
+		var _g = scene.pick(e.clientX-canvas.parentNode.offsetLeft,e.clientY-canvas.parentNode.offsetTop);
+		obj = _g ? _g.object : null;
 		/*  */
 
 		if(obj && obj !== hoverobj) {
 
-			var _obj = obj.parent; // get the parent
+			var _obj = obj;//.parent; // get the parent
 
 			if(_obj.getId()!=="mainscene") {
 
@@ -1261,17 +1263,17 @@
 			M3D.GUI.unpickObject();
 		} else {
 			
-			var _objects = scene.getObjects();
+			var _objects = scene.getChildren();
 			
 			for (var i = 0; i < _objects.length; i++) {
 
-				var _parent = _objects[i].parent; // get the parent
+				var _parent = _objects[i];//.parent; // get the parent
 				
 				if ( _parent.uid && _parent.uid === _uidSelect ) {
 
 					// update the global obj var
 					obj = _objects[i];
-					obj.parent = _parent;
+					//obj.parent = _parent;
 
 					M3D.GUI.setMaterialEmit(0.1);
 					M3D.GUI.updateInputValuesFromObject();
@@ -1307,7 +1309,7 @@
 	M3D.GUI.scaleObject = function(d) {
 		if ( obj ) {
 			var delta = d * 0.02; // reduce the delta coz 1 is too high for scaling!
-			var _obj = obj.parent;
+			var _obj = obj;//.parent;
 			
 			_obj.setScaleX( parseFloat(_obj.getScaleX())+delta );
 			_obj.setScaleY( parseFloat(_obj.getScaleY())+delta );

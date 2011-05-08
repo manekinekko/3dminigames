@@ -252,8 +252,8 @@
 		
 		if ( obj ){
 			
-			var uid = obj.uid;
-			var _obj = obj.parent;
+			var _obj = obj;
+			var uid = _obj.uid;
 			
 			var updateobj = M3D.DB.getObject(uid);
 			if (updateobj){

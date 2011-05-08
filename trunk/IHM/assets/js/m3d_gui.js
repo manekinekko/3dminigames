@@ -79,31 +79,98 @@
 		var lines = _o.setDrawType(GLGE.DRAW_LINES);
 		lines.setMesh(_m.setPositions(positions));
 		lines.setMaterial(black);
-		lines.setId('grid');
-		sn.addObject(lines);
+		
+		var _grp = new GLGE.Group();
+		_grp.addObject(lines);
+		_grp.setId('grid');
+		sn.addObject(_grp);
 		
 		/**
 		 * @global
 		 */
-		grid = lines;
+		grid = _grp;
 	};
 	/**
+	 * 
+	 */
+	M3D.GUI.drawAxes = function(){
+
+		var _grp = new GLGE.Group();
+
+		// add x axe
+		var _xaxis = new GLGE.Object();
+		var _xlines = _xaxis.setDrawType(GLGE.DRAW_LINES);
+		var _xpositions = [];
+		_xpositions.push(-100000.0);
+		_xpositions.push(0.0);
+		_xpositions.push(0.0);
+		_xpositions.push(100000.0);
+		_xpositions.push(0.0);
+		_xpositions.push(0.0);		
+		var _xm = new GLGE.Mesh();
+		_xlines.setMesh(_xm.setPositions(_xpositions));
+		var red = doc.getElement( "red" );
+		_xlines.setMaterial(red);
+		_xlines.setId('xaxis');
+		_grp.addObject(_xaxis);
+
+		// add y axe
+		var _yaxis = new GLGE.Object();
+		var _ylines = _yaxis.setDrawType(GLGE.DRAW_LINES);
+		var _ypositions = [];
+		_ypositions.push(0.0);
+		_ypositions.push(-100000.0);
+		_ypositions.push(0.0);
+		_ypositions.push(0.0);
+		_ypositions.push(100000.0);
+		_ypositions.push(0.0);
+		var _ym = new GLGE.Mesh();
+		_ylines.setMesh(_ym.setPositions(_ypositions));
+		var green = doc.getElement( "green" );
+		_ylines.setMaterial(green);
+		_ylines.setId('yaxis');
+		_grp.addObject(_yaxis);
+		
+		// add z axe
+		var _zaxis = new GLGE.Object();
+		var _zlines = _zaxis.setDrawType(GLGE.DRAW_LINES);
+		var _zpositions = [];
+		_zpositions.push(0.0);
+		_zpositions.push(0.0);
+		_zpositions.push(-100000.0);
+		_zpositions.push(0.0);
+		_zpositions.push(0.0);		
+		_zpositions.push(100000.0);
+		var _zm = new GLGE.Mesh();
+		_ylines.setMesh(_zm.setPositions(_zpositions));
+		var blue = doc.getElement( "blue" );
+		_ylines.setMaterial(blue);
+		_ylines.setId('zaxis');	
+		_grp.addObject(_zaxis);
+		
+		// add group to scene
+		_grp.setId('xyzaxes');
+		scene.addObject(_grp);
+		
+	}
+	/**
 	 * This function allows the user to show/hide the grid
+	 * NOTE: This function was not optimized, because it removes and add children to the scene.
+	 * And this is costs a lot of memory !!
 	 */
 	M3D.GUI.toggleGrid = function() {
 		if ( grid ) {
-			var _o = scene.getObjects();
+			var _o = scene.getChildren();
 			for(var i=0; i<_o.length; i++) {
-				if ( _o[i].id && _o[i].id === 'grid' ) {
+				if ( _o[i].id && (_o[i].id === 'grid' || _o[i].id === 'xyzaxes') ) {
 					scene.removeChild(_o[i]);
 					grid = null;
-					return false;
 				}
 			}
 		}
 		else {
 			M3D.GUI.drawGrid();
-			return true;
+			M3D.GUI.drawAxes();
 		}
 	};
 	/**

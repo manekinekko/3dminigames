@@ -43,7 +43,7 @@
         
 		<!--<collada id="xyzaxis" document="assets/dae/presets/XYZaxis.dae" scale="1" />-->
         
-		<group id="graph">
+		<group id="xyzaxes">
             <object id="xaxis" draw_type="DRAW_LINES" line_width="2" mesh="#xline" material="#red"/>
             <object id="yaxis" draw_type="DRAW_LINES" line_width="2" mesh="#yline" material="#green"/>
             <object id="zaxis" draw_type="DRAW_LINES" line_width="2" mesh="#zline" material="#blue"/>

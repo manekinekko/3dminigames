@@ -1,5 +1,6 @@
 <?php
 	
+	require_once('bin/config.php');
 	require_once('bin/includes/global.fn.php');
 	require_once('bin/includes/Session.class.php');
 	
@@ -57,6 +58,7 @@
 					<textarea id="edwigs" class="codepress wrap edwigs"></textarea>
 					<div id="editor-menu">
 						<span class="cursor single-click action-save" title="Save your scenario">&nbsp;</span >
+						<span class="cursor single-click action-help" title="See Help">&nbsp;</span>
 					</div>
 					<div id="attributes-panel">
 						<h2 class="text-center">The Default Attributes</h2>
@@ -179,7 +181,7 @@
 						</fieldset>
 					</div>
 					<div class="column">
-						<fieldset style="height:150px;">
+						<fieldset>
 							<legend>Slider</legend>
 							<div id="slider"></div>
 						</fieldset>
@@ -246,8 +248,8 @@
 				
 				<div id="confirmation-clear" class="window box-shadow closed">
 					<h2>Confirmation!</h2>
-					<div>Do you really want to clear the canvas?<br/>
-						<b style="color:red;">NOTE: you will loose all your unsaved work!</b>
+					<div>Do you really want to clear your content ?<br/>
+						<b style="color:red;">NOTE: you will lose all your unsaved work!</b>
 					</div>
 					<div id="window-buttons">
 						<input type="button" class="validate" value="clear content" name="confirm-clear-canvas" id="confirm-clear-canvas">
@@ -280,7 +282,7 @@
 				<div id="upload-form" class="window box-shadow closed"  >
 					<h2>Upload form</h2>
 					<p class="text-center">
-						Drag &amp; drop your Collada file here.</i>
+						Drag &amp; drop your model here (only Collada files are allowed).</i>
 					</p>
 					<a id='upload-model' href='#'>Note: you can use the browser uploader instead.</a>
 					<div id="window-buttons">
@@ -293,6 +295,7 @@
 					<p>
 						<strong>3DWIGS</strong> - 3D Web Interactive Game Studio is a new way of creating 3D mini-games for the web.<br/>
 					</p>
+					<p><strong>Build</strong>&nbsp;<?php echo VERSION;  ?></p>
 					<p>
 						<strong>Author: </strong>Doctor R&eacute;mi Cozot.
 						<strong>Developers: </strong>Berlon Antoine, Bouzillard Jer&ocirc;me, Chegham Wassim, Clergeau Thomas, Faghihi Afshin,

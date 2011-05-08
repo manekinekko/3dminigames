@@ -190,9 +190,9 @@ li.separator {
     border-radius: 18px 18px 18px 18px;
     display: none;
     height: 24px;
-    left: 1040px;
-    position: absolute;
-    top: 6px;
+	left: 1030px;
+	position: absolute;
+	top: 8px;
     width: 24px;
     z-index: 100;
 }  
@@ -207,10 +207,13 @@ li.separator {
 #editor-menu {
 	display: none;
 	height: 40px;
-	left: 332px;
+	left: 302px;
 	position: absolute;
 	top: 0;
-	width: 45px;
+	width: 95px;
+}
+#editor-menu span {
+	float:left;
 }
 #editor textarea {
 	width: 390px;
@@ -316,6 +319,9 @@ td:first-child {
 	float: left;
 	position: relative;
 	margin-right: 20px;
+}
+.column fieldset {
+	height:150px;
 }
 .clear {
 	clear: both;
@@ -473,6 +479,9 @@ input[type=button] {
 }
 .action-save {
 	background:transparent url('img/icon-save.png') no-repeat center center scroll;
+}
+.action-help {
+	background:transparent url('img/icon-help.png') no-repeat center center scroll;
 }
 .saving {
 	background: #fff url('img/ajax-loader3.gif') center center scroll no-repeat !important;

@@ -508,16 +508,22 @@
 	 *
 	 */
 	M3D.GUI.hidePopup = function() {
+		var _w = $('.window.opened');
+		
+		if ( _w.length === 1 ) {
 
-		$('.window.opened')
-		.css({
-			top:M3D.GUI.ANIMATE_WINDOW_CLOSE_POS
-		})
-		.removeClass('opened')
-		.addClass('closed');
-
-		$('#modal').hide(100);
-
+			_w.css({
+				top:M3D.GUI.ANIMATE_WINDOW_CLOSE_POS
+			})
+			.removeClass('opened')
+			.addClass('closed');
+			
+			$('#modal').hide(100);
+			
+			log('Hiding popup [ '+_w.attr('id')+' ]...');
+			
+		}
+	
 	};
 	/**
 	 * 
@@ -932,9 +938,12 @@
 
 			if ( current.hasClass('required') || current.attr('required') ) {
 
-				if ( ! M3D.Common.isAlphanumeric(val) ) {
-					return false;					
+				if ( M3D.Common.isAlphanumeric(val) ) {
+					continue;					
 				} 
+				else {
+					return false;
+				}
 
 			}
 		}

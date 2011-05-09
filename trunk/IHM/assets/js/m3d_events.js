@@ -24,12 +24,14 @@ $(function(){
 	 * @see M3D.GUI.pickObject
 	 * @see updateSelectedObject
 	 * @see M3D.DB.updateSelectedObject
+	 * 
+	 * Forget about this for this moment
+	 * untill we find a better implementation !!
 	 */
+	 /*
 	$('#canvas').bind('mousedown', function(e){
 
-		// Forget about this for this moment
-		// untill we find a better implementation !!
-		//M3D.GUI.pickObject(e, this);
+		M3D.GUI.pickObject(e, this);
 
 	}).bind('mouseup', function(){
 		
@@ -37,7 +39,7 @@ $(function(){
 		M3D.DB.updateSelectedObject();
 	
 	});
-	
+	/**/
 	
 	$('#editor-status').bind('click', function(){
 		var _this = $(this);

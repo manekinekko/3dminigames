@@ -37,6 +37,9 @@
 	 */
 	M3D.Editor.setGameInfo = function(name, cb){
 		
+		M3D.Config.game = {};
+		M3D.Config.game.name = name;
+		
 		if(indexed){
 			M3D.DB.start(name);
 			cb();

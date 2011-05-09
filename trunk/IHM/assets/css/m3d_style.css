@@ -74,7 +74,7 @@ em {
 #modal {
 	position: absolute;
 	background: #eee;
-	opacity: 0.5;
+	opacity: 0.8;
 	z-index: 10000;
 	width:100%;
 	height:100%;
@@ -100,7 +100,7 @@ em {
 	position:absolute;
 	top:200px;
 	font-size:0.9em;
-	color:#aaa;
+	color:#131313;
 	background:#fff  url('img/ajax-loader2.gif') no-repeat center 30px scroll;
 	padding:10px 0 30px 0;
 	text-align:center;
@@ -367,7 +367,7 @@ input[type="text"], input[type="number"], textarea, select {
 input[type="text"], input[type="number"], textarea {
 	width: 60px;
 }
-.button, input[type=button], select {
+.button, input[type=button], input[type=submit], select {
 	background:#08adff;
 	background:-moz-linear-gradient(90deg, #0459b7, #08adff);
 	/* Firefox */
@@ -391,7 +391,7 @@ select {
 	padding:3px 6px !important;
 }
 .button, input[type=submit], input[type=button] {
-	color:black;
+	color:#aaa;
 	text-align:center;
 	font-size:0.9em;
 	margin:0 2px 0 2px;

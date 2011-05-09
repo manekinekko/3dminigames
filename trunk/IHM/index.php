@@ -268,7 +268,33 @@
 						<input type="button" class="cancel" value="NO" name="cancel">
 					</div>
 				</div>
-								
+				
+				<div id="creating-game" class="window box-shadow closed">
+					<h2>Game Creation</h2>
+					<p></p>
+				</div>
+				
+				<div id="creating-game-done" class="window box-shadow closed">
+					<h2>Game Creation Done!</h2>
+					<p>Your game has been created successfully!</p>
+					
+					<div id="window-buttons">
+						<form id="new-game-url" method="post" action="#" target='_blank'>
+							<input type="submit" value="Launch my game" name="submit">
+							<input type="button" class="cancel" value="Kepp editing" name="cancel">
+						</form>
+					</div>
+				</div>
+
+				<div id="creating-game-failed" class="window box-shadow closed">
+					<h2>Game Creation Failed!</h2>
+					<h3>Your game has NOT been created!</h3>
+					<p><em></em></p>
+					<div id="window-buttons">
+						<input type="button" class="cancel" value="Kepp editing" name="cancel">
+					</div>
+				</div>
+
 				<div id="confirmation-load" class="window box-shadow closed">
 					<h2>Welcome back, <?php echo $session->get('login'); ?>!</h2>
 					<div>Do you want to load your previous content ?<br/>

@@ -1,7 +1,7 @@
-//Game created by 3DWIGS
+//Gamecreated by 3DWIGS
 // On Mon, 09 May 2011 14:37:08 GMT
 
-game has name has "Jeu_Du_Lapin" ;
+game has name at "Jeu_Du_Lapin" ;
 
 sol is Ground  ;
 sol has position at 0.00 0.00 -1.20 ;

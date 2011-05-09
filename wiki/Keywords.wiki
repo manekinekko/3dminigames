@@ -1,6 +1,4 @@
 #labels Featured,Phase-Implementation
-[Keywords#other other à regarder impérativement!!!]
-
 =Glossaire des mots-clés=
 
 ===Organisation du jeu===

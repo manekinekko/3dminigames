@@ -41,12 +41,12 @@
   * Mise en place de slider permettant une mise à jour simple des valeurs
   * Ajout d'un fichier XML de configuration
   * *Génération d'un fichier scenrario exploitable par le compilation*
+  * Synchronisation du contenu de l'éditeur avec l'IndexedDB
+  * Synchronisation du contenu de l'éditeur avec le Local Storage
+  * Gestion de la caméra (à la Sketchup)
 
 ==En cours==
-  * Gestion de la caméra (à la Sketchup) *(T)*
-  * Synchronisation de l'IHM avec l'éditeur *(W)*
-  * Synchronisation du contenu de l'éditeur avec l'IndexedDB *(D)*
-  * Synchronisation du contenu de l'éditeur avec le Local Storage *(A)*
+  * 
 
 ==A venir==
 ===Par ordre de priorité===
@@ -56,6 +56,7 @@
   # Possibilité d'importer des modèles *avec textures*
   # proposition de modèles sous forme de vignette (??)
   # positionnement de la camera par rapport à un objet
+  # Synchronisation de l'IHM avec l'éditeur
 
 ----
 =Moteur 3D=

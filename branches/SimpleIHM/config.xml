@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m3d>
+	
+	<!-- Some extra information -->
+	<version>1.0-alpha</version>
+	
+	<!-- the configuration section -->
+	<config>
+
+		<item>
+			<name>compiler</name>
+			<url>bin/compiler.php</url>
+		</item>
+		
+		<item>
+			<name>uploader</name>
+			<url>bin/upload.php</url>
+		</item>	
+		
+		<item>
+			<name>tmp_dir</name>
+			<url>tmp</url>
+		</item>	
+		
+	</config>	
+	
+</m3d>

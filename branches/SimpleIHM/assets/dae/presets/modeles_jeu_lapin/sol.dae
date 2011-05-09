@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_lapin/jeu_chasseur_lapin.blend</source_data>
+		</contributor>
+		<created>2011-02-15T20:48:35.807115</created>
+		<modified>2011-02-15T20:48:35.807158</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="Material-fx" name="Material-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<lambert>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.34155 0.34155 0.34155 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.68310 0.68310 0.68310 1</color>
+						</diffuse>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</lambert>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Material" name="Material">
+			<instance_effect url="#Material-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="Sol_003" name="Sol_003">
+			<mesh>
+				<source id="Sol_003-Position">
+					<float_array count="12" id="Sol_003-Position-array">-23.79999 18.20000 0.00000 4.20000 18.20000 0.00000 4.20000 -18.20000 0.00000 -23.80000 -18.20000 0.00000</float_array>
+					<technique_common>
+						<accessor count="4" source="#Sol_003-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Sol_003-Normals">
+					<float_array count="3" id="Sol_003-Normals-array">0.00000 0.00000 1.00000</float_array>
+					<technique_common>
+						<accessor count="1" source="#Sol_003-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Sol_003-UV">
+					<float_array count="8" id="Sol_003-UV-array">0.00000 0.00000 1.00000 0.00000 1.00000 1.00000 0.00000 1.00000</float_array>
+					<technique_common>
+						<accessor count="4" source="#Sol_003-UV-array" stride="2">
+							<param type="float" name="S"></param>
+							<param type="float" name="T"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Sol_003-Vertex">
+					<input semantic="POSITION" source="#Sol_003-Position"/>
+				</vertices>
+				<polygons count="1" material="Material">
+					<input offset="0" semantic="VERTEX" source="#Sol_003-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Sol_003-Normals"/>
+					<input offset="2" semantic="TEXCOORD" source="#Sol_003-UV"/>
+					<p>0 0 0 3 0 1 2 0 2 1 0 3</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L11" id="Sol" name="Sol">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Sol_003">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material" target="#Material">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="Sol-PhysicsMaterial" name="Sol-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="Sol-RigidBody" sid="Sol-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#Sol-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#Sol_003"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="Sol-RigidBody" target="#Sol"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

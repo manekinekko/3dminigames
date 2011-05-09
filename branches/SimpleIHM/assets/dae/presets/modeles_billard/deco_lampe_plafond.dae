@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_billard/billard.blend</source_data>
+		</contributor>
+		<created>2011-02-15T21:41:20.041553</created>
+		<modified>2011-02-15T21:41:20.041583</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="lampe-fx" name="lampe-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.12275 0.33349 0.25465 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.24550 0.66698 0.50929 1</color>
+						</diffuse>
+						<specular>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</specular>
+						<shininess>
+							<float>12.5</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="lampe_001-fx" name="lampe_001-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.44040 0.44040 0.44040 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.88080 0.88080 0.88080 1</color>
+						</diffuse>
+						<specular>
+							<color>1.00086 1.00086 1.00086 1</color>
+						</specular>
+						<shininess>
+							<float>10.75</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="lampe_002-fx" name="lampe_002-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.27433 0.27433 0.27433 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.54866 0.54866 0.54866 1</color>
+						</diffuse>
+						<specular>
+							<color>1.00086 1.00086 1.00086 1</color>
+						</specular>
+						<shininess>
+							<float>10.75</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="deco-fx" name="deco-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.58494 0.58494 0.58494 1</color>
+						</emission>
+						<ambient>
+							<color>0.46390 0.50000 0.16427 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.92781 1.00000 0.32854 1</color>
+						</diffuse>
+						<specular>
+							<color>1.03033 1.03033 1.03033 1</color>
+						</specular>
+						<shininess>
+							<float>0.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="lampe" name="lampe">
+			<instance_effect url="#lampe-fx"/>
+		</material>
+		<material id="lampe_001" name="lampe_001">
+			<instance_effect url="#lampe_001-fx"/>
+		</material>
+		<material id="lampe_002" name="lampe_002">
+			<instance_effect url="#lampe_002-fx"/>
+		</material>
+		<material id="deco" name="deco">
+			<instance_effect url="#deco-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="deco_lampe_plafond-Geometry" name="deco_lampe_plafond-Geometry">
+			<mesh>
+				<source id="deco_lampe_plafond-Geometry-Position">
+					<float_array count="273" id="deco_lampe_plafond-Geometry-Position-array">2.54558 10.54559 -3.55371 3.60000 8.00001 -3.55371 2.54558 5.45442 -3.55371 -0.00000 4.40001 -3.55371 -2.54558 5.45442 -3.55371 -3.60000 8.00001 -3.55371 -2.54558 10.54559 -3.55371 -0.00000 11.60001 -3.55371 1.78191 9.78191 -2.35371 2.52000 8.00001 -2.35371 1.78191 6.21810 -2.35371 -0.00000 5.48001 -2.35371 -1.78191 6.21810 -2.35371 -2.52000 8.00001 -2.35371 -1.78191 9.78191 -2.35371 -0.00000 10.52001 -2.35371 -0.00000 8.00001 -1.74868 2.54558 -5.45441 -3.55371 3.60000 -7.99999 -3.55371 2.54558 -10.54558 -3.55371 -0.00000 -11.59999 -3.55371 -2.54558 -10.54558 -3.55371 -3.60000 -7.99999 -3.55371 -2.54558 -5.45441 -3.55371 -0.00000 -4.39999 -3.55371 1.78191 -6.21809 -2.35371 2.52000 -7.99999 -2.35371 1.78191 -9.78190 -2.35371 -0.00000 -10.51999 -2.35371 -1.78191 -9.78190 -2.35371 -2.52000 -7.99999 -2.35371 -1.78191 -6.21809 -2.35371 -0.00000 -5.47999 -2.35371 -0.00000 -7.99999 -1.74868 0.16800 9.12321 0.16800 0.16800 9.12321 -0.16800 -0.16800 9.12321 -0.16800 -0.16800 9.12321 0.16800 0.16800 -9.12321 0.16800 0.16800 -9.12321 -0.16800 -0.16800 -9.12321 -0.16800 -0.16800 -9.12321 0.16800 0.06000 -7.94000 -0.10615 0.06000 -7.94000 -1.87284 -0.06000 -7.94000 -1.87284 -0.06000 -7.94000 -0.10615 0.06000 -8.06000 -0.10615 0.06000 -8.06000 -1.87284 -0.06000 -8.06000 -1.87284 -0.06000 -8.06000 -0.10615 -0.06000 7.94000 -0.10615 -0.06000 7.94000 -1.87284 0.06000 7.94000 -1.87284 0.06000 7.94000 -0.10615 -0.06000 8.06000 -0.10615 -0.06000 8.06000 -1.87284 0.06000 8.06000 -1.87284 0.06000 8.06000 -0.10615 -0.24000 7.76000 -3.32046 -0.24000 8.24000 -3.32046 0.24000 7.76000 -3.32046 0.24000 8.24000 -3.32046 -0.45000 8.45000 -2.23971 -0.45000 7.55000 -2.23971 0.45000 7.55000 -2.23971 0.45000 8.45000 -2.23971 0.45000 -7.55000 -2.23971 0.45000 -8.45000 -2.23971 -0.45000 -8.45000 -2.23971 -0.45000 -7.55000 -2.23971 0.24000 -7.76000 -3.32046 0.24000 -8.24000 -3.32046 -0.24000 -7.76000 -3.32046 -0.24000 -8.24000 -3.32046 0.10973 0.10973 6.34294 0.10973 0.10973 -0.00011 -0.10973 0.10973 -0.00011 -0.10973 0.10973 6.34294 0.10973 -0.10973 6.34294 0.10973 -0.10973 -0.00011 -0.10973 -0.10973 -0.00010 -0.10973 -0.10973 6.34294 0.00000 -0.00001 6.16178 1.27504 1.27504 7.27717 1.80318 -0.00001 7.27717 1.27504 -1.27505 7.27717 -0.00000 -1.80319 7.27717 -1.27504 -1.27505 7.27717 -1.80318 -0.00000 7.27717 -1.27504 1.27504 7.27717 -0.00000 1.80318 7.27717</float_array>
+					<technique_common>
+						<accessor count="91" source="#deco_lampe_plafond-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="deco_lampe_plafond-Geometry-Normals">
+					<float_array count="744" id="deco_lampe_plafond-Geometry-Normals-array">0.52556 0.52556 0.66894 0.35777 0.35777 0.86254 0.50594 0.00000 0.86254 0.74328 0.00000 0.66894 0.52556 -0.52556 0.66894 0.74328 0.00000 0.66894 0.50594 0.00000 0.86254 0.35777 -0.35777 0.86254 0.00000 -0.74328 0.66894 0.52556 -0.52556 0.66894 0.35777 -0.35777 0.86254 0.00000 -0.50594 0.86254 0.00000 -0.74328 0.66894 0.00000 -0.50594 0.86254 -0.35777 -0.35777 0.86254 -0.52556 -0.52556 0.66894 -0.74328 0.00000 0.66894 -0.52556 -0.52556 0.66894 -0.35777 -0.35777 0.86254 -0.50594 0.00000 0.86254 -0.74328 0.00000 0.66894 -0.50594 0.00000 0.86254 -0.35777 0.35777 0.86254 -0.52556 0.52556 0.66894 0.00000 0.74328 0.66894 -0.52556 0.52556 0.66894 -0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 0.52556 0.52556 0.66894 0.00000 0.74328 0.66894 0.00000 0.50594 0.86254 0.35777 0.35777 0.86254 0.35777 0.35777 0.86254 0.00000 0.00000 1.00000 0.50594 0.00000 0.86254 0.35777 -0.35777 0.86254 0.50594 0.00000 0.86254 0.00000 0.00000 1.00000 0.00000 -0.50594 0.86254 0.35777 -0.35777 0.86254 0.00000 0.00000 1.00000 0.00000 -0.50594 0.86254 0.00000 0.00000 1.00000 -0.35777 -0.35777 0.86254 -0.50594 0.00000 0.86254 -0.35777 -0.35777 0.86254 0.00000 0.00000 1.00000 -0.50594 0.00000 0.86254 0.00000 0.00000 1.00000 -0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 -0.35777 0.35777 0.86254 0.00000 0.00000 1.00000 0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 0.00000 0.00000 1.00000 0.52556 0.52556 0.66894 0.35777 0.35777 0.86254 0.50594 0.00000 0.86254 0.74328 0.00000 0.66894 0.52556 -0.52556 0.66894 0.74328 0.00000 0.66894 0.50594 0.00000 0.86254 0.35777 -0.35777 0.86254 0.00000 -0.74328 0.66894 0.52556 -0.52556 0.66894 0.35777 -0.35777 0.86254 0.00000 -0.50594 0.86254 0.00000 -0.74328 0.66894 0.00000 -0.50594 0.86254 -0.35777 -0.35777 0.86254 -0.52556 -0.52556 0.66894 -0.74328 0.00000 0.66894 -0.52556 -0.52556 0.66894 -0.35777 -0.35777 0.86254 -0.50594 0.00000 0.86254 -0.74328 0.00000 0.66894 -0.50594 0.00000 0.86254 -0.35777 0.35777 0.86254 -0.52556 0.52556 0.66894 0.00000 0.74328 0.66894 -0.52556 0.52556 0.66894 -0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 0.52556 0.52556 0.66894 0.00000 0.74328 0.66894 0.00000 0.50594 0.86254 0.35777 0.35777 0.86254 0.35777 0.35777 0.86254 0.00000 0.00000 1.00000 0.50594 0.00000 0.86254 0.35777 -0.35777 0.86254 0.50594 0.00000 0.86254 0.00000 0.00000 1.00000 0.00000 -0.50594 0.86254 0.35777 -0.35777 0.86254 0.00000 0.00000 1.00000 0.00000 -0.50594 0.86254 0.00000 0.00000 1.00000 -0.35777 -0.35777 0.86254 -0.50594 0.00000 0.86254 -0.35777 -0.35777 0.86254 0.00000 0.00000 1.00000 -0.50594 0.00000 0.86254 0.00000 0.00000 1.00000 -0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 -0.35777 0.35777 0.86254 0.00000 0.00000 1.00000 0.35777 0.35777 0.86254 0.00000 0.50594 0.86254 0.00000 0.00000 1.00000 -0.57735 0.57735 -0.57735 -0.57735 0.57735 0.57735 0.57735 0.57735 0.57735 0.57735 0.57735 -0.57735 0.57735 -0.57735 0.57735 -0.57735 -0.57735 0.57735 -0.57735 -0.57735 -0.57735 0.57735 -0.57735 -0.57735 0.57735 0.57735 0.57735 0.57735 -0.57735 0.57735 0.57735 -0.57735 -0.57735 0.57735 0.57735 -0.57735 0.57735 0.57735 -0.57735 0.57735 -0.57735 -0.57735 -0.57735 -0.57735 -0.57735 -0.57735 0.57735 -0.57735 -0.57735 0.57735 -0.57735 -0.57735 -0.57735 -0.57735 -0.57735 -0.57735 0.57735 -0.57735 0.57735 0.57735 -0.57735 0.57735 0.57735 -0.57735 -0.57735 0.57735 0.57735 -0.57735 0.57735 0.57735 0.57735 0.57735 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.50121 0.50121 -0.70537 0.50121 -0.50121 -0.70537 -0.50121 -0.50121 -0.70537 -0.50121 0.50121 -0.70537 -0.68181 0.68181 -0.26496 -0.50121 0.50121 -0.70537 -0.50121 -0.50121 -0.70537 -0.68181 -0.68181 -0.26496 0.68181 -0.68181 -0.26496 0.50121 -0.50121 -0.70537 0.50121 0.50121 -0.70537 0.68181 0.68181 -0.26496 -0.68181 -0.68181 -0.26496 -0.50121 -0.50121 -0.70537 0.50121 -0.50121 -0.70537 0.68181 -0.68181 -0.26496 0.68181 0.68181 -0.26496 0.50121 0.50121 -0.70537 -0.50121 0.50121 -0.70537 -0.68181 0.68181 -0.26496 0.68181 0.68181 -0.26496 0.50121 0.50121 -0.70537 -0.50121 0.50121 -0.70537 -0.68181 0.68181 -0.26496 -0.68181 -0.68181 -0.26496 -0.50121 -0.50121 -0.70537 0.50121 -0.50121 -0.70537 0.68181 -0.68181 -0.26496 0.68181 -0.68181 -0.26496 0.50121 -0.50121 -0.70537 0.50121 0.50121 -0.70537 0.68181 0.68181 -0.26496 -0.68181 0.68181 -0.26496 -0.50121 0.50121 -0.70537 -0.50121 -0.50121 -0.70537 -0.68181 -0.68181 -0.26496 0.50121 0.50121 -0.70537 0.50121 -0.50121 -0.70537 -0.50121 -0.50121 -0.70537 -0.50121 0.50121 -0.70537 -0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 -0.70708 0.00000 0.70708 0.70708 0.00000 -0.70708 0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 -0.70708 0.00000 -0.70708 0.70708 0.00000 0.00000 0.00000 -1.00000 0.37196 0.37196 -0.85043 0.52605 0.00000 -0.85043 0.00000 0.00000 -1.00000 0.52605 0.00000 -0.85043 0.37196 -0.37196 -0.85043 0.00000 0.00000 -1.00000 0.37196 -0.37196 -0.85043 0.00000 -0.52605 -0.85043 0.00000 0.00000 -1.00000 0.00000 -0.52605 -0.85043 -0.37196 -0.37196 -0.85043 0.00000 0.00000 -1.00000 -0.37196 -0.37196 -0.85043 -0.52605 0.00000 -0.85043 0.00000 0.00000 -1.00000 -0.52605 0.00000 -0.85043 -0.37196 0.37196 -0.85043 0.00000 0.00000 -1.00000 -0.37196 0.37196 -0.85043 0.00000 0.52605 -0.85043 0.00000 0.00000 -1.00000 0.00000 0.52605 -0.85043 0.37196 0.37196 -0.85043</float_array>
+					<technique_common>
+						<accessor count="248" source="#deco_lampe_plafond-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="deco_lampe_plafond-Geometry-Vertex">
+					<input semantic="POSITION" source="#deco_lampe_plafond-Geometry-Position"/>
+				</vertices>
+				<polygons count="32" material="lampe">
+					<input offset="0" semantic="VERTEX" source="#deco_lampe_plafond-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#deco_lampe_plafond-Geometry-Normals"/>
+					<p>0 0 8 1 9 2 1 3</p>
+					<p>2 4 1 5 9 6 10 7</p>
+					<p>3 8 2 9 10 10 11 11</p>
+					<p>3 12 11 13 12 14 4 15</p>
+					<p>5 16 4 17 12 18 13 19</p>
+					<p>5 20 13 21 14 22 6 23</p>
+					<p>7 24 6 25 14 26 15 27</p>
+					<p>0 28 7 29 15 30 8 31</p>
+					<p>8 32 16 33 9 34</p>
+					<p>10 35 9 36 16 37</p>
+					<p>11 38 10 39 16 40</p>
+					<p>11 41 16 42 12 43</p>
+					<p>13 44 12 45 16 46</p>
+					<p>13 47 16 48 14 49</p>
+					<p>15 50 14 51 16 52</p>
+					<p>8 53 15 54 16 55</p>
+					<p>17 56 25 57 26 58 18 59</p>
+					<p>19 60 18 61 26 62 27 63</p>
+					<p>20 64 19 65 27 66 28 67</p>
+					<p>20 68 28 69 29 70 21 71</p>
+					<p>22 72 21 73 29 74 30 75</p>
+					<p>22 76 30 77 31 78 23 79</p>
+					<p>24 80 23 81 31 82 32 83</p>
+					<p>17 84 24 85 32 86 25 87</p>
+					<p>25 88 33 89 26 90</p>
+					<p>27 91 26 92 33 93</p>
+					<p>28 94 27 95 33 96</p>
+					<p>28 97 33 98 29 99</p>
+					<p>30 100 29 101 33 102</p>
+					<p>30 103 33 104 31 105</p>
+					<p>32 106 31 107 33 108</p>
+					<p>25 109 32 110 33 111</p>
+				</polygons>
+				<polygons count="26" material="lampe_001">
+					<input offset="0" semantic="VERTEX" source="#deco_lampe_plafond-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#deco_lampe_plafond-Geometry-Normals"/>
+					<p>36 112 37 113 34 114 35 115</p>
+					<p>38 116 41 117 40 118 39 119</p>
+					<p>34 120 38 121 39 122 35 123</p>
+					<p>35 124 39 125 40 126 36 127</p>
+					<p>36 128 40 129 41 130 37 131</p>
+					<p>37 132 41 133 38 134 34 135</p>
+					<p>44 136 45 137 42 138 43 139</p>
+					<p>46 140 49 141 48 142 47 143</p>
+					<p>42 144 46 145 47 146 43 147</p>
+					<p>44 148 48 149 49 150 45 151</p>
+					<p>55 152 51 153 50 154 54 155</p>
+					<p>57 156 53 157 52 158 56 159</p>
+					<p>53 160 50 161 51 162 52 163</p>
+					<p>55 164 54 165 57 166 56 167</p>
+					<p>76 208 77 209 74 210 75 211</p>
+					<p>78 212 81 213 80 214 79 215</p>
+					<p>74 216 78 217 79 218 75 219</p>
+					<p>76 220 80 221 81 222 77 223</p>
+					<p>82 224 83 225 84 226</p>
+					<p>82 227 84 228 85 229</p>
+					<p>82 230 85 231 86 232</p>
+					<p>82 233 86 234 87 235</p>
+					<p>82 236 87 237 88 238</p>
+					<p>82 239 88 240 89 241</p>
+					<p>82 242 89 243 90 244</p>
+					<p>82 245 90 246 83 247</p>
+				</polygons>
+				<polygons count="10" material="deco">
+					<input offset="0" semantic="VERTEX" source="#deco_lampe_plafond-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#deco_lampe_plafond-Geometry-Normals"/>
+					<p>61 168 60 169 58 170 59 171</p>
+					<p>62 172 59 173 58 174 63 175</p>
+					<p>64 176 60 177 61 178 65 179</p>
+					<p>63 180 58 181 60 182 64 183</p>
+					<p>65 184 61 185 59 186 62 187</p>
+					<p>66 188 70 189 72 190 69 191</p>
+					<p>68 192 73 193 71 194 67 195</p>
+					<p>67 196 71 197 70 198 66 199</p>
+					<p>69 200 72 201 73 202 68 203</p>
+					<p>70 204 71 205 73 206 72 207</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L15" id="deco_lampe_plafond" name="deco_lampe_plafond">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#deco_lampe_plafond-Geometry">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="lampe" target="#lampe">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="lampe_001" target="#lampe_001">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="lampe_002" target="#lampe_002">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="deco" target="#deco">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="deco_lampe_plafond-PhysicsMaterial" name="deco_lampe_plafond-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="deco_lampe_plafond-RigidBody" sid="deco_lampe_plafond-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#deco_lampe_plafond-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#deco_lampe_plafond-Geometry"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="deco_lampe_plafond-RigidBody" target="#deco_lampe_plafond"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

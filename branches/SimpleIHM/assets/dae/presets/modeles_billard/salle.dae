@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.161</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file:///media/Donnees/M1%20info/Projet%20mini%203D/Jeux_formalises/modeles_billard/billard.blend</source_data>
+		</contributor>
+		<created>2011-02-15T21:39:04.580051</created>
+		<modified>2011-02-15T21:39:04.580084</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="Material_007-fx" name="Material_007-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.13579 0.10716 0.04569 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.27157 0.21433 0.09137 1</color>
+						</diffuse>
+						<specular>
+							<color>0.29376 0.29376 0.29376 1</color>
+						</specular>
+						<shininess>
+							<float>1.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_008-fx" name="Material_008-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.20301 0.02014 0.02014 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.40601 0.04028 0.04028 1</color>
+						</diffuse>
+						<specular>
+							<color>0.29376 0.29376 0.29376 1</color>
+						</specular>
+						<shininess>
+							<float>18.25</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Material_009-fx" name="Material_009-fx">
+			<profile_COMMON>
+				<technique sid="blender">
+					<lambert>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.00926 0.00809 0.00809 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.01852 0.01619 0.01619 1</color>
+						</diffuse>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</lambert>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Material_007" name="Material_007">
+			<instance_effect url="#Material_007-fx"/>
+		</material>
+		<material id="Material_008" name="Material_008">
+			<instance_effect url="#Material_008-fx"/>
+		</material>
+		<material id="Material_009" name="Material_009">
+			<instance_effect url="#Material_009-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="salle_001" name="salle_001">
+			<mesh>
+				<source id="salle_001-Position">
+					<float_array count="60" id="salle_001-Position-array">49.61320 69.45849 -9.49033 49.61320 -69.45849 -9.49033 -49.61320 -69.45849 -9.49033 -49.61319 69.45850 -9.49033 49.61322 69.45845 24.18640 49.61318 -69.45853 24.18640 -49.61324 -69.45845 24.18640 -49.61318 69.45851 24.18640 22.54510 69.12029 12.94519 22.54510 69.12029 -9.49481 10.18001 69.12029 -9.49481 10.18001 69.12029 12.94520 21.70992 68.45094 1.48101 21.70992 69.01662 0.91532 21.14423 69.41663 1.31533 21.14423 68.85094 1.88101 21.14423 68.05093 1.08101 21.14423 68.61662 0.51532 20.57854 69.01662 0.91533 20.57854 68.45094 1.48101</float_array>
+					<technique_common>
+						<accessor count="20" source="#salle_001-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="salle_001-Normals">
+					<float_array count="93" id="salle_001-Normals-array">0.00000 -0.00000 1.00000 0.00000 0.00000 -1.00000 -1.00000 0.00000 -0.00000 0.00000 1.00000 0.00000 1.00000 -0.00000 0.00000 -0.00000 -1.00000 -0.00000 0.00000 -1.00000 -0.00000 0.00000 0.98560 0.16910 0.00000 0.16907 0.98560 0.81649 -0.40825 0.40822 0.81649 0.40825 -0.40825 0.00000 -0.98560 -0.16910 -0.81649 -0.40825 0.40825 -0.81649 0.40825 -0.40822 0.00000 -0.16907 -0.98560 0.81649 -0.40825 0.40822 0.00000 -0.98560 -0.16910 0.00000 -0.16907 -0.98560 0.81649 0.40825 -0.40825 0.81649 0.40825 -0.40825 0.00000 -0.16907 -0.98560 -0.81649 0.40825 -0.40822 0.00000 0.98560 0.16910 0.00000 0.98560 0.16910 -0.81649 0.40825 -0.40822 -0.81649 -0.40825 0.40825 0.00000 0.16907 0.98560 0.00000 0.16907 0.98560 -0.81649 -0.40825 0.40825 0.00000 -0.98560 -0.16910 0.81649 -0.40825 0.40822</float_array>
+					<technique_common>
+						<accessor count="31" source="#salle_001-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="salle_001-Vertex">
+					<input semantic="POSITION" source="#salle_001-Position"/>
+				</vertices>
+				<polygons count="8" material="Material_007">
+					<input offset="0" semantic="VERTEX" source="#salle_001-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#salle_001-Normals"/>
+					<p>0 0 3 0 2 0 1 0</p>
+					<p>10 6 9 6 8 6 11 6</p>
+					<p>14 7 15 8 12 9 13 10</p>
+					<p>16 11 19 12 18 13 17 14</p>
+					<p>12 15 16 16 17 17 13 18</p>
+					<p>13 19 17 20 18 21 14 22</p>
+					<p>14 23 18 24 19 25 15 26</p>
+					<p>15 27 19 28 16 29 12 30</p>
+				</polygons>
+				<polygons count="4" material="Material_008">
+					<input offset="0" semantic="VERTEX" source="#salle_001-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#salle_001-Normals"/>
+					<p>0 2 1 2 5 2 4 2</p>
+					<p>1 3 2 3 6 3 5 3</p>
+					<p>2 4 3 4 7 4 6 4</p>
+					<p>3 5 0 5 4 5 7 5</p>
+				</polygons>
+				<polygons count="1" material="Material_009">
+					<input offset="0" semantic="VERTEX" source="#salle_001-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#salle_001-Normals"/>
+					<p>4 1 5 1 6 1 7 1</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L12" id="salle" name="salle">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 -0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#salle_001">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material_007" target="#Material_007">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_008" target="#Material_008">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+							<instance_material symbol="Material_009" target="#Material_009">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="salle-PhysicsMaterial" name="salle-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="salle-RigidBody" sid="salle-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#salle-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#salle_001"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="salle-RigidBody" target="#salle"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

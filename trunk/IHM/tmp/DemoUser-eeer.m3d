@@ -1,0 +1,46 @@
+//Game created by 3DWIGS
+// On Mon, 09 May 2011 14:37:08 GMT
+
+game has name has "Jeu_Du_Lapin" ;
+
+sol is Ground  ;
+sol has position at 0.00 0.00 -1.20 ;
+sol has rotation at 1.57 0.00 0.00 ;
+sol has scale at 20.00 20.00 20.00 ;
+sol has url at 
+  "assets/dae/custom/sol.dae" ;
+
+chasseur is Character  ;
+chasseur has position at 0.00 0.00 0.00 ;
+chasseur has rotation at 0.00 0.00 0.00 ;
+chasseur has scale at 1.00 1.00 1.00 ;
+chasseur has url at 
+  "assets/dae/custom/chasseur.dae" ;
+
+jeep is Vehicle  ;
+jeep has position at 0.00 0.00 0.00 ;
+jeep has rotation at 1.57 0.01 0.00 ;
+jeep has scale at 1.50 1.50 1.50 ;
+jeep has url at 
+  "assets/dae/custom/jeep.dae" ;
+
+bazooka is Weapon ;
+bazooka has position at 0.00 0.00 0.00 ;
+bazooka has rotation at 0.00 0.00 0.00 ;
+bazooka has scale at 1.00 1.00 1.00 ;
+bazooka has url at 
+  "assets/dae/custom/bazooka.dae" ;
+
+missile is Projectile  ;
+missile has position at 0.00 0.00 0.00 ;
+missile has rotation at 0.00 0.00 0.00 ;
+missile has scale at 1.00 1.00 1.00 ;
+missile has url at 
+  "assets/dae/custom/missile.dae" ;
+
+lapin is Character ;
+lapin has position at 50.00 0.00 0.00 ;
+lapin has rotation at 0.00 1.57 0.00 ;
+lapin has scale at 1.00 1.00 1.00 ;
+lapin has url at 
+  "assets/dae/custom/lapin.dae" ;

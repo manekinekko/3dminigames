@@ -84,7 +84,7 @@ attributGame [SymbolTable st] returns [Code c]:
 	| ^(TURNBASED_KW ('true'|'false'))
 	| ^(WORLD_KW mapType)
 	| ^(GRIDSIZE_KW FLOAT)
-	| ^(NAME_KW name)
+	| ^(NAME_KW TEXTE)
 	;
 
 mapType returns [Integer i]:
@@ -338,6 +338,16 @@ valAggregation [SymbolTable st] returns [AttributeValue c]:
         }
     }
     |^(AGGREGATION_KW i=IDENT)
+    {
+	String value = i.getText();
+	try {
+	    float tmp = Float.parseFloat(value);
+	    c = new AttributeValue(tmp);
+	} catch(NumberFormatException e) {
+	    c = new AttributeValue(value);
+	}
+    }
+    |^(AGGREGATION_KW i =TEXTE)
     {
 	String value = i.getText();
 	try {

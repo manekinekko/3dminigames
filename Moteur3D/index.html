@@ -7,13 +7,13 @@
 	<div>
 		<div style="width:900px;margin:auto;position:relative" id="container">
 			<canvas id="canvas" width="900" height="500"></canvas>
-			<div id="framerate" style="position:absolute; left: 750px; top: 20px; background-color: #000; opacity: 0.5;height: 30px; width: 130px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
+			<div id="framerate" style="position:absolute; left: 750px; top: 20px; background-color: #000; opacity: 0.5;height: 100px; width: 130px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
 				<div id="debug" style="padding: 5px"></div>
+				<div id="victoire" style="padding: 5px"></div>
 			</div>
-			<div style="padding: 5px;position:absolute; left: 20px; top: 370px; background-color: #000; opacity: 0.5;height: 100px; width: 400px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
-				<h2 style="margin:0;padding:0;padding-bottom: 5px;font-size: 20px">Demo du moteur3d de 3DWIGS</h2>
-				<p style="margin:0;padding:0;padding-bottom: 5px;">Le jeu du lapin </p>
-			</div>
+		<!--	<div style="padding: 5px;position:absolute; left: 20px; top: 370px; background-color: #000; opacity: 0.5;height: 100px; width: 400px; border-radius: 5px;	-moz-border-radius5px;-webkit-border-radius:5px;border: 1px solid #fff;">
+				
+			</div> -->
 		</div>
 	</div>
 	
@@ -26,13 +26,14 @@
         <script type="text/javascript" src="js/moteur3d.js"></script>
 	   
 		<script type="text/javascript">
+			var test = true;
+			var texte = "jeu en cours";
 			
 			var numeroMissile = 0;
 			var Missile = [];
-			var bazookaCharge = false;
+			var bazookaCharge = false;		
 			var gravityObject = [];
-			
-			
+						
 			initObject = function(gObject){
 				gObject.posX = 0;
 				gObject.posY = 0;
@@ -50,72 +51,102 @@
 			sol.id = "sol";
 			sol.url = "dae/sol.dae";
 			sol.posY = -1.2;
-			sol.sizeX = 50;
-			sol.sizeY = 50;
-			sol.sizeZ = 50;
+			sol.sizeX = 20;
+			sol.sizeY = 20;
+			sol.sizeZ = 20;
 			
 			var voiture = new Array;
+			initObject(voiture);
 			voiture.vitesse = [0,0,0];
 			voiture.id = "voiture";
 			voiture.acceleration = [0,0,0];
 			voiture.masse = 100;
-			initObject(voiture);
 			voiture.url= "dae/jeep.dae";
-			voiture.posY = 10;
-			voiture.posZ = 1;
-			
+			voiture.orY = 1.57;
+			voiture.posX = 0;
+			voiture.posY = 0;
+			voiture.posZ = 0;
+			voiture.sizeX = 1.5;
+			voiture.sizeY = 1.5;
+			voiture.sizeZ = 1.5;
+						
 			var chasseur = new Array;
 			initObject(chasseur);
 			chasseur.id = "chasseur";
 			chasseur.url = "dae/chasseur.dae";
 			chasseur.posX = 1;
 			chasseur.posY = 0.0;
-			chasseur.posZ = 0.5;
+			chasseur.posZ = -0.5;
 			
 			var bazooka = new Array;
 			initObject(bazooka);
 			bazooka.id = "bazooka";
 			bazooka.url = "dae/bazooka.dae"
-			bazooka.orY = -1.57;
-			bazooka.posX = 0.5;
-			bazooka.posY = 1.25;
-			bazooka.posZ = 0.75;
+			bazooka.orY = 1.57;
 			bazooka.sizeX = 0.5;
 			bazooka.sizeY = 0.5;
 			bazooka.sizeZ = 0.5;
 			
-			var lapin = new Array;
-			initObject(lapin);
-			lapin.id = "lapin";
-			lapin.url = "dae/lapin.dae";
+			var lapin1 = new Array;
+			initObject(lapin1);
+			lapin1.id = "lapin1";
+			lapin1.url = "dae/lapin.dae";
+			lapin1.posX = 5;
+			lapin1.posY = 0;
+			lapin1.posZ = 5
+			lapin1.sizeX = 1;
+			lapin1.sizeY = 1;
+			lapin1.sizeZ = 1;
+		/*
+			var lapin2 = new Array;
+			initObject(lapin2);
+			lapin2.id = "lapin2";
+			lapin2.url = "dae/lapin.dae";
+			lapin2.posX = 55;
+			lapin2.posY = 0;
+			lapin2.posZ = 55
+			lapin2.sizeX = 1;
+			lapin2.sizeY = 1;
+			lapin2.sizeZ = 1;
 			
+			var lapin3 = new Array;
+			initObject(lapin3);
+			lapin3.id = "lapin3";
+			lapin3.url = "dae/lapin.dae";
+			lapin3.posX = -35;
+			lapin3.posY = 0;
+			lapin3.posZ = -65
+			lapin3.sizeX = 1;
+			lapin3.sizeY = 1;
+			lapin3.sizeZ = 1;
+		*/
 			var camera = new Array;
 			initObject(camera);
-			camera.posX = 2;
-			camera.posY = 5;
-			camera.posZ = 50;
 			camera.id = "maincamera";
 			
 			gravityObject.push(voiture);
-
+			
 			initScene = function(){
 				M3D.MOTEUR.addObject(sol,false);
 				
 				M3D.MOTEUR.addObject(voiture,false);
-	
+		
 				M3D.MOTEUR.addObject(chasseur,false,voiture.id);
 
 				M3D.MOTEUR.addObject(bazooka,false,chasseur.id);
-				M3D.MOTEUR.setPosition(bazooka,[0,1.5,1],false,chasseur.id);
+				M3D.MOTEUR.setPosition(bazooka,[-0.50,1.25,0.75],false,chasseur.id);
 
-				M3D.MOTEUR.addObject(lapin,false);
-				M3D.MOTEUR.setPosition(lapin,[10,1,0],false);
-				
+				M3D.MOTEUR.addObject(lapin1,false);
+			/*	M3D.MOTEUR.addObject(lapin2,false);
+				M3D.MOTEUR.addObject(lapin3,false); */
+						
 				M3D.MOTEUR.addCamera(camera);
 				M3D.MOTEUR.activeCamera(camera.id);
 				
 				M3D.MOTEUR.setGravite([0,-9.81/60000,0]);
 				M3D.MOTEUR.setCoefFrottement(0.01);
+				
+				//cam = M3D.MOTEUR.getCamera(camera.id);
 				setInterval(rendu,10);
 			}
 
@@ -124,23 +155,18 @@
 			panelControl = function(){			
 				//if(KEY_Z) M3D.MOTEUR.translate("voiture1",[0.1,0,0],true,"voiture1");
 				//if(KEY_S) M3D.MOTEUR.translate("voiture1",[-0.5,0,0],true,"voiture1");
-				if(KEY_Z) {if(voiture.vitesse[0]<1) voiture.acceleration[0] = 0.05;}
-				if(KEY_S) {if(voiture.vitesse[0]>-1) voiture.acceleration[0] = -0.05;}
-				if(KEY_Q) M3D.MOTEUR.rotate(voiture,[0,0.05*voiture.vitesse[0],0],false);
-				if(KEY_D) M3D.MOTEUR.rotate(voiture,[0,-0.05*voiture.vitesse[0],0],false);
-
-				if(KEY_O) M3D.MOTEUR.translateCamera(camera,[1,0,0],"maincamera");
-				if(KEY_L) M3D.MOTEUR.translateCamera(camera,[-1,0,0],"maincamera");
-				if(KEY_U) M3D.MOTEUR.translateCamera(camera,[0,0,1],"maincamera");
-				if(KEY_N) M3D.MOTEUR.translateCamera(camera,[0,0,-0.01 ],"maincamera");
-				if(KEY_K) M3D.MOTEUR.rotateCamera(camera,[0,0.05,0]);
-				if(KEY_M) M3D.MOTEUR.rotateCamera(camera,[0,-0.05,0]);
+				if(KEY_Z) {if(voiture.vitesse[0]<1) voiture.acceleration[0] = 0.05;	}
 				
-				if(KEY_SPACE) lancer();
-				if(KEY_X) charger();
-				if(KEY_W) alert(M3D.MOTEUR.getGlobalPosition(chasseur.id));
+				if(KEY_S) {if(voiture.vitesse[0]>-1) voiture.acceleration[0] = -0.05;}
+				
+				if(KEY_D) { M3D.MOTEUR.rotate(voiture,[0,-0.05*voiture.vitesse[0],0],false); }
+				
+				if(KEY_Q) {	M3D.MOTEUR.rotate(voiture,[0,0.05*voiture.vitesse[0],0],false); }
+	
+				if(KEY_SPACE){charger(); lancer();}
+				
+				M3D.MOTEUR.fps(camera, voiture, [0,5,50], [0,0,0]);
 			}
-
 			
 			charger = function(){
 				if(!bazookaCharge){
@@ -150,6 +176,7 @@
 					Missile[numeroMissile].vitesse = [0,0,0];
 					Missile[numeroMissile].masse = 20;
 					Missile[numeroMissile].id = "missile"+numeroMissile;
+					Missile[numeroMissile].orX = 1.57;
 					initObject(Missile[numeroMissile]);							
 					Missile[numeroMissile].url = "dae/missile.dae";
 					M3D.MOTEUR.addObject(Missile[numeroMissile],false,bazooka.id);
@@ -163,7 +190,7 @@
 				if(bazookaCharge){
 					var num = numeroMissile-1;
 					bazookaCharge = false;
-					Missile[num].vitesse = [0,0,-3];
+					Missile[num].vitesse = [0,0,3];
 					gravityObject.push(Missile[num]);
 					M3D.MOTEUR.changeParent(Missile[num]);
 				}			
@@ -181,6 +208,7 @@
 				M3D.MOTEUR.removeObject(idMissile);
 			}
 			
+			
 			rendu = function(){
 				voiture.acceleration = [0,0,0];
 				panelControl();
@@ -191,10 +219,20 @@
 					if(x[i].length > 0){
 						if(i==0){ // la voiture peut entrer en collision avec n'importe quoi
 							for(var j = 0 ; j<x[i].length ; j++){
+								supprime = false;
 								if(x[i][j][1]=="sol"){
 									voiture.vitesse[1]=0;
 									M3D.MOTEUR.translate(voiture,[0,-M3D.MOTEUR.ecart(voiture.id,sol.id,2),0],false,voiture.id);
-								}
+								} else if(x[i][j][1] == "lapin1"){
+									supprime = true;
+									M3D.MOTEUR.removeObject("lapin1");
+								} /*else if(x[i][j][1] == "lapin2"){
+									supprime = true;
+									M3D.MOTEUR.removeObject("lapin2");
+								} else if(x[i][j][1] == "lapin3"){
+									supprime = true;
+									M3D.MOTEUR.removeObject("lapin3");
+								}*/
 							}
 							M3D.MOTEUR.translate(voiture,voiture.vitesse,false,voiture.id);
 						}
@@ -204,11 +242,19 @@
 								if(x[i][j][1]=="sol"){
 									supprime = true;
 									supprimerMissile(x[i][j][0]);
-								}else if(x[i][j][1]=="lapin"){
+								} else if(x[i][j][1]=="lapin1"){
 									supprime = true;
 									supprimerMissile(x[i][j][0]);
-									M3D.MOTEUR.removeObject("lapin");
-								}
+									M3D.MOTEUR.removeObject("lapin1");
+								}/* else if(x[i][j][1]=="lapin2"){
+									supprime = true;
+									supprimerMissile(x[i][j][0]);
+									M3D.MOTEUR.removeObject("lapin2");
+								} else if(x[i][j][1]=="lapin3"){
+									supprime = true;
+									supprimerMissile(x[i][j][0]);
+									M3D.MOTEUR.removeObject("lapin3");
+								}*/
 							}
 							if(!supprime){
 								M3D.MOTEUR.translate(gravityObject[k],gravityObject[k].vitesse,false,gravityObject[k].id);
@@ -217,7 +263,15 @@
 						}
 					}				
 				}
+				
+				if( test && M3D.MOTEUR.getObject(lapin1.id) == -1 ){
+					test = false;
+					texte = "Victory of joueur!";
+				}
+				document.getElementById("victoire").innerHTML= texte;
+				
 				M3D.MOTEUR.render();
+						
 			}
 			
 			window.addEventListener('load', function () {

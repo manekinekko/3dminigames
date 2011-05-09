@@ -134,6 +134,33 @@
 		}else{
 			M3D.MOTEUR.setAngle(gCamera,tabRot,false,idRef);
 		}
-	};
+	},
 
+	
+	M3D.MOTEUR.fps = function(camera, object, dist, rot){
+		cam = M3D.MOTEUR.getCamera(camera.id);
+		cam.setLoc(object.posX+dist[0], object.posY+dist[1], object.posZ+dist[2]);
+		// MARCHE PAS, getPosition() merde complètement je pense.
+	/*	cam = M3D.MOTEUR.getCamera(camera.id);
+		camPos = cam.getPosition();
+		objet = M3D.MOTEUR.getObject(object.id);
+		objPosX = objet.getLocX();
+		objPosY = objet.getLocY();
+		objPosZ = objet.getLocZ();
+		obj = objet.getRotMatrix(); //(matrice 16 valeurs 4*4)
+	
+		posX = object.posX - obj[2];
+		posY = object.posY - 20*obj[6];
+		posZ = object.posZ - obj[10];
+		
+		cam.setLocX(posX);
+		cam.setLocY(posY);
+		cam.setLocZ(posZ);
+		
+		cam.setLookat([object.posX, object.posY, object.posZ]);		
+		
+		camera.posX = cam.getLocX();
+		camera.posY = cam.getLocY();
+		camera.posZ = cam.getLocZ();*/
+	};
 })(window.M3D);

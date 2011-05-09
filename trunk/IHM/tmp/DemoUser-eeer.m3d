@@ -1,46 +1,110 @@
-//Gamecreated by 3DWIGS
-// On Mon, 09 May 2011 14:37:08 GMT
+//Gamecreatedby3DWIGS
+//OnMon, 09 May 2011 14:37:08 GMT
+// 1) Description du jeu
 
-game has name at "Jeu_Du_Lapin" ;
+game has name at "Jeu_du_lapin" ;
+game has gravity at 9.81 ;
 
-sol is Ground  ;
-sol has position at 0.00 0.00 -1.20 ;
-sol has rotation at 1.57 0.00 0.00 ;
-sol has scale at 20.00 20.00 20.00 ;
-sol has url at 
-  "assets/dae/custom/sol.dae" ;
+// 2) Déclaration de nouveaux types (on s'en fout)
 
-chasseur is Character  ;
-chasseur has position at 0.00 0.00 0.00 ;
-chasseur has rotation at 0.00 0.00 0.00 ;
-chasseur has scale at 1.00 1.00 1.00 ;
-chasseur has url at 
-  "assets/dae/custom/chasseur.dae" ;
+// 3) Initialisations (pas d'attributs, c'est déjà assez compliqué !)
+player is Player solo ;
+player has controller at human ;
 
-jeep is Vehicle  ;
-jeep has position at 0.00 0.00 0.00 ;
-jeep has rotation at 1.57 0.01 0.00 ;
-jeep has scale at 1.50 1.50 1.50 ;
-jeep has url at 
-  "assets/dae/custom/jeep.dae" ;
-
-bazooka is Weapon ;
-bazooka has position at 0.00 0.00 0.00 ;
-bazooka has rotation at 0.00 0.00 0.00 ;
-bazooka has scale at 1.00 1.00 1.00 ;
-bazooka has url at 
-  "assets/dae/custom/bazooka.dae" ;
-
-missile is Projectile  ;
-missile has position at 0.00 0.00 0.00 ;
-missile has rotation at 0.00 0.00 0.00 ;
-missile has scale at 1.00 1.00 1.00 ;
-missile has url at 
-  "assets/dae/custom/missile.dae" ;
+//contenu généré avec les positions, orientations et tailles :
+sol is Ground ;
+sol has position at 0.00 0.00 -17.00 ;
+sol has orientation at 1.57 0.00 0.00 ;
+sol has size at 200 200 200 ;
+sol has url at "/dae/sol.dae" ;
 
 lapin is Character ;
-lapin has position at 50.00 0.00 0.00 ;
-lapin has rotation at 0.00 1.57 0.00 ;
-lapin has scale at 1.00 1.00 1.00 ;
-lapin has url at 
-  "assets/dae/custom/lapin.dae" ;
+lapin has position at -20.00 -60.00 -10.00 ;
+lapin has orientation at 1.57 4.71 0.00 ;
+lapin has size at 10 10 10 ;
+lapin has url at "/dae/lapin.dae" ;
+
+jeep is Vehicle ;
+jeep has position at 0.00 0.00 0.00 ;
+jeep has orientation at 1.57 0.00 0.00 ;
+jeep has size at 15 15 15 ;
+jeep has url at "/dae/jeep.dae" ;
+
+chasseur is Character ;
+chasseur has position at 15.00 10.00 0.00 ;
+chasseur has orientation at 1.57 0.00 0.00 ;
+chasseur has size at 15 15 15 ;
+chasseur has url at "/dae/chasseur.dae" ;
+
+bazooka is Weapon ;
+bazooka has position at 10.00 0.00 20.00 ;
+bazooka has orientation at 1.57 1.57 0.00 ;
+bazooka has size at 7 7 7 ;
+bazooka has url at "/dae/bazooka.dae" ;
+
+missile is Projectile duplicable ;
+missile has position at 0.00 0.00 20.00 ;
+missile has orientation at 0.00 1.57 0.00 ;
+missile has size at 10 10 10 ;
+missile has url at "/dae/missile.dae" ;
+
+
+cam is Camera ;
+
+jeep has chasseur ;
+chasseur has bazooka ;
+bazooka has missile ;
+
+chasseur has cam ;
+
+// 4) Définitions
+definition initialisation means
+    generate sol,
+    generate lapin,
+    generate chasseur,
+    generate bazooka,
+    generate missile,
+    generate jeep ;
+
+definition tirer means
+    bazooka expels missile by 100,
+    generate missile;
+
+definition tournerDroite means
+    jeep turns right by 5 ;
+
+definition tournerGauche means
+    jeep turns left by 5 ;
+
+definition accelerer means
+    jeep accelerates by 10 ;
+
+
+definition freiner means
+    jeep brakes by 10 ;
+
+definition lapinTouche means
+    lapin dies,
+    victory of joueur,
+
+    game ends;
+
+// 5) Commandes
+command for player is
+    key Z for accelerer,
+    key Q for tournerGauche,
+    key S for freiner,
+    key D for tournerDroite,
+    key space for tirer ;
+
+// 6) Règles du jeu
+rule game starts then
+    initialisation;
+
+rule missile touches lapin then
+    lapinTouche;
+
+rule jeep touches lapin then
+    lapinTouche;
+
+// 7) Intelligence Artificielle (yen a pas) 

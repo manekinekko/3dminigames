@@ -5,15 +5,15 @@
  */
 
 (function(M3D){
-/*  Merde depuis la nouvelle version du moteur
+
 	// pour le débug des bounding box
 	var red=doc.getElement( "red" );
 	var line=(new GLGE.Object).setDrawType(GLGE.DRAW_LINES);
 	var positions = [];
 	
 	drawBB = function(obj){ 
-        var pos = obj.getPosition();
-        var bbox = obj.getBoundingVolume().getCornerPoints();
+        var pos = [obj.posX, obj.posY, obj.posZ];
+        var bbox = tabObject[obj.id].getBoundingVolume().getCornerPoints();
         //bas gauche devant
         positions.push(bbox[0][0]);
         positions.push(bbox[0][1]);
@@ -114,7 +114,11 @@
         line.setMesh((new GLGE.Mesh).setPositions(positions));
         line.setMaterial(red);
         line.setZtransparent(true);
-        gameScene.addObject(line);
+        gameScene.addChild(line);
 	}
-*/
+	debuggerBox = function(){
+		positions = [];
+		gameScene.removeChild(line);
+	};
+
 })(window.M3D);

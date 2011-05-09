@@ -1250,9 +1250,9 @@
 			var _name = M3D.GUI.getObjectId(_obj.uid);
 			if (_name !== ''){
 				if ( M3D.DB.checkProperties(_name) ) {
-					$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+					$('#editor-status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 				} else {
-					$('#status').removeClass('ui-state-error').text('').hide();
+					$('#editor-status').removeClass('ui-state-error').text('').hide();
 				}
 			}
 		}

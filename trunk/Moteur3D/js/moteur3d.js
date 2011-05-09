@@ -28,7 +28,8 @@ var lasttime=0;
 var frameratebuffer=60;
 start=parseInt(new Date().getTime());
 var now;
-
+var test = true;
+var texte = "jeu en cours";
 
 // PHYSIQUE
 var coefFrottement = 1;
@@ -56,7 +57,7 @@ var coefFrottement = 1;
 	M3D.MOTEUR.includeJS = function(jsFile){
 		document.write('<script type="text/javascript" src="'+jsFile+'.js"></script>')
 	},
-	
+
 /**
  * Méthode includeAllJS : charge tous les fichiers javascripts du moteur
  */
@@ -100,9 +101,15 @@ var coefFrottement = 1;
 			now=parseInt(new Date().getTime());
 			frameratebuffer=Math.round(((frameratebuffer*9)+1000/(now-lasttime))/10);
 			document.getElementById("debug").innerHTML="Frame Rate:"+frameratebuffer;
+			
+			if( test && M3D.MOTEUR.getObject(lapin1.id) == -1 ){
+					test = false;
+					texte = "Victory of joueur!";
+			}
+			document.getElementById("victoire").innerHTML= texte;
 			gameRenderer.render();
 			lasttime=now;
 		}
 	};
 	
-})(M3D);
+})(M3D)

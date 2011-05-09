@@ -33,7 +33,7 @@
     <material id="black" specular="0" color="#000" emit="1"/>
     <material id="cyan" specular="0" color="#00FFFF" alpha="0.3" emit="1"/>
     
-    <camera id="mainCamera1" fov_y="10" rot_x="0.3" rot_y="0" rot_z="0" loc_x="-15" loc_y="-230" loc_z="850"/>/>
+    <camera id="mainCamera1" fov_y="60" rot_x="0.3" rot_y="0" rot_z="0" loc_x="-15" loc_y="-230" loc_z="850"/>
 
     <scene id="mainscene" camera="#mainCamera1" fog_type="FOG_NONE">
         

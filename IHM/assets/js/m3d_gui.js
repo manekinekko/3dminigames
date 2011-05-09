@@ -29,7 +29,7 @@
 
 	// emit light
 	M3D.GUI.DEFAULT_MATERIAL_EMIT = 0.001;
-	M3D.GUI.SELECT_MATERIAL_EMIT = 0.8;
+	M3D.GUI.SELECT_MATERIAL_EMIT = 1;
 	/**
 	 * The initialization function
 	 */
@@ -1116,22 +1116,39 @@
 	// fonction modifiée par Tom le 16/02
 	M3D.GUI.cameraRotate = function() {
 
+		//deplacement horizontal et vertical
 		var horizontal = mouseRecord.x - mouseRecordOld.x;
-		var vertical = mouseRecord.y - mouseRecordOld.y;
-
-		var camera = scene.camera;		
-
+		var vertical   = mouseRecord.y - mouseRecordOld.y;
+	
+		// rotation selon position souris
+		var camera = scene.camera;
+		var camPosInit = camera.getPosition();
+		//orientation de la camera vers l'objet selectionné
 		if(!camera.lookAt) {
-			camera.setLookat([0,0,0]);
+		if ( obj ) {
+		var x = obj.getLocX();
+		var y = obj.getLocY();
+		var z = obj.getLocZ();
+		camera.setLookat([x,y,z]);
 		}
-
-		var cam = camera.getRotMatrix();
-
-		camera.setLocX(camera.getLocX()+horizontal*2*cam[0]);
-		camera.setLocY(camera.getLocY()+horizontal*2*cam[4]);
-
-
-	};
+		else 
+		camera.setLookat([0,0,0]);
+		}
+		cam = camera.getRotMatrix();
+		camera.setLocX(parseInt(camera.getLocX())+parseInt(cam[0]*horizontal*2)+parseInt(cam[1]*vertical*3));
+		camera.setLocY(parseInt(camera.getLocY())+parseInt(cam[4]*horizontal*2)+parseInt(cam[5]*vertical*3));
+		camera.setLocZ(parseInt(camera.getLocZ())+parseInt(cam[9]*vertical*3));
+		var camPos = camera.getPosition();
+		var dist = Math.sqrt(camPosInit.x*camPosInit.x+camPosInit.y*camPosInit.y+camPosInit.z*camPosInit.z)/Math.sqrt(camPos.x*camPos.x+camPos.y*camPos.y+camPos.z*camPos.z);
+		var posX = camPos.x*dist;
+		var posY = camPos.y*dist;
+		var posZ = camPos.z*dist;
+	
+		camera.setLocX(posX);
+		camera.setLocY(posY);
+		camera.setLocZ(posZ);
+	
+		};
 	/**
 	 *
 	 */

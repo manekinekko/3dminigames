@@ -84,7 +84,7 @@ attributGame :
     | TURNBASED_KW^ AT! ('true'|'false')
     | WORLD_KW^ AT! mapType
     | GRIDSIZE_KW^ AT! FLOAT
-    | NAME_KW^  AT! name
+    | NAME_KW^  AT! TEXTE
     ;
 
 mapType : GENERIC | GRID | RIBBON; 
@@ -154,6 +154,8 @@ valAggregation :
 	  -> ^(AGGREGATION_KW operation timeUnit?)
 	| IDENT
 	  -> ^(AGGREGATION_KW IDENT)
+        | TEXTE
+          -> ^(AGGREGATION_KW TEXTE)
 	| 'true'
 	| 'false'
 	;
@@ -620,9 +622,10 @@ TYPES_TELEPORTABLES
 	:	 'typesTeleportables';
 	
 
+TEXTE : '\"'IDENT'\"';
 LETTER	: 'a'..'z'|'A'..'Z';
 FLOAT	: ('0'..'9')+ ('.' ('0'..'9')+)?;
-IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@')*;
+IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@'|'/')*;
 WS  :   ( ' '  
            | '\t'  
            | '\r'  

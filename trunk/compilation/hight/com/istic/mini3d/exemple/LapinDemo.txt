@@ -1,6 +1,6 @@
 
 // 1) Description du jeu
-game has name at Jeu_du_lapin ;
+game has name at "Jeu_du_lapin" ;
 game has gravity at 9.81 ;
 
 // 2) D�claration de nouveaux types (on s'en fout)
@@ -18,8 +18,8 @@ missile is Projectile duplicable ;
 
 sol is Ground ;
 
-//cam is Camera ;
-
+cam is Camera ;
+jeep has url at "tamaman/prout";
 jeep has chasseur ;
 chasseur has bazooka ;
 bazooka has missile ;
@@ -54,7 +54,7 @@ definition freiner means
 definition lapinTouche means
     lapin dies,
     victory of joueur,
-    game ends ;
+    game ends;
 
 // 5) Commandes
 command for player is

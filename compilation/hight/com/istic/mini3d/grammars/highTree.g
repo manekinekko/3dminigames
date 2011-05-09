@@ -47,7 +47,7 @@ options {
 game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
     ^(GAME_KW 
-    gd=gameData[st]?
+    gd=gameData[st]*
     {}
     newType[st]*
     in=initialization[st]
@@ -168,21 +168,23 @@ initialization [SymbolTable st] returns [Code c]:
 init [SymbolTable st] returns [Code c]:
     ^(INIT_IS_KW i=IDENT d=declarationObjet[st])
     {
-	String id = i.getText();
-        Symbol verif = st.get(id);
-	if(verif != null) {
-	    handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Elément \""+id+"\" déjà déclaré.");
-	} else {
-	    int mode = d.getSecond();
+        if(d!=null){
+            String id = i.getText();
+            Symbol verif = st.get(id);
+            if(verif != null) {
+                handler.add(ErrorHandler.ErrorType.FATAL, this.getLine(i), "Elément \""+id+"\" déjà déclaré.");
+            } else {
+                int mode = d.getSecond();
 	    
-	    Entity t = new Entity(id,d.getFirst());
-	    d.getFirst().toGenerate();
+                Entity t = new Entity(id,d.getFirst());
+                d.getFirst().toGenerate();
 
-	    if(mode == INT_DUPLICABLE)
-		t.setDuplicable();
+                if(mode == INT_DUPLICABLE)
+                    t.setDuplicable();
 
-	    st.add(id,t);
-	}
+                st.add(id,t);
+            }
+        }
     }
     | ^(INIT_HAS_KW ac=accesClass[st] ao=affectationObjet_list[st])
     {
@@ -240,6 +242,7 @@ declarationObjet [SymbolTable st] returns [Pair<Model, Integer> p]
     }
     | ^(CAMERA_KW PERSON view[st])
     | ^(CAMERA_KW FREE)
+    | ^(CAMERA_KW ON)
     | ^(MEDIA_KW LOOP)
     | ^(MEDIA_KW ONCE) 						 // sound, music or video played in loop or once
     | ^(IN_KW IDENT)									  // ident of a list to add an element

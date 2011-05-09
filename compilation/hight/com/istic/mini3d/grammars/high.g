@@ -60,7 +60,7 @@ tokens {
 
 
 game :
-    (gameData FIN)?
+    (gameData FIN)*
     (newType FIN)*
     (init FIN)+ 
     (definition FIN)*
@@ -119,7 +119,7 @@ declarationObjet :
       -> ^(DEC IDENT dupli?)   // interaction is neutral by default
     | LIST_KW (OF (operation)? (IDENT) (',' (operation)? (IDENT))* )?  //operation if the object is duplicable
       ->^(LIST_KW (operation? IDENT)+)
-    | CAMERA (view PERSON -> ^(CAMERA_KW PERSON view) | FREE -> ^(CAMERA_KW FREE))?
+    | CAMERA (view PERSON -> ^(CAMERA_KW PERSON view) | FREE -> ^(CAMERA_KW FREE) | ->^(CAMERA_KW ON))
     | MEDIA (LOOP ->^(MEDIA_KW LOOP) | ONCE ->^(MEDIA_KW ONCE))? 						 // sound, music or video played in loop or once
     | IN IDENT -> ^(IN_KW IDENT)
     | PLAYER SOLO?								  // ident of a list to add an element
@@ -589,9 +589,9 @@ JUMP : 'jump';
 MOVE : 'move';
 FORWARD : 'forward';
 BACKWARD : 'backward';
-TURN : 'turn';
-ACCELERATE : 'accelerate';
-BRAKE : 'brake';
+TURN : 'turns';
+ACCELERATE : 'accelerates';
+BRAKE : 'brakes';
 
 
 CAMERA	: 'Camera';

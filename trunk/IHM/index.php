@@ -157,9 +157,9 @@
 								</tr>
 								<tr>
 									<td>Rotation</td>
-									<td><input disabled="true" type="number" name="rotX" id="rotX" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="rotY" id="rotY" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
-									<td><input disabled="true" type="number" name="rotZ" id="rotZ" value="" placeholder="#" min="0" max="6.2832" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="rotX" id="rotX" value="" placeholder="#" min="0" max="360" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="rotY" id="rotY" value="" placeholder="#" min="0" max="360" step="0.0001"/></td>
+									<td><input disabled="true" type="number" name="rotZ" id="rotZ" value="" placeholder="#" min="0" max="360" step="0.0001"/></td>
 									<td></td>
 								</tr>
 								<tr>

@@ -27,7 +27,9 @@ $(function(){
 	 */
 	$('#canvas').bind('mousedown', function(e){
 
-		M3D.GUI.pickObject(e, this);
+		// Forget about this for this moment
+		// untill we find a better implementation !!
+		//M3D.GUI.pickObject(e, this);
 
 	}).bind('mouseup', function(){
 		

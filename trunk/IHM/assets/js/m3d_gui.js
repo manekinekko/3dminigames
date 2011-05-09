@@ -76,19 +76,19 @@
 		}
 
 		var black=doc.getElement( "dark-gray" );
-	
+
 		// create new object and mesh and set the positions we've previously calculated
 		var _o = new GLGE.Object();
 		var _m = new GLGE.Mesh();
 		var lines = _o.setDrawType(GLGE.DRAW_LINES);
 		lines.setMesh(_m.setPositions(positions));
 		lines.setMaterial(black);
-		
+
 		var _grp = new GLGE.Group();
 		_grp.addObject(lines);
 		_grp.setId('grid');
 		sn.addObject(_grp);
-		
+
 		/**
 		 * @global
 		 */
@@ -134,7 +134,7 @@
 		_ylines.setMaterial(green);
 		_ylines.setId('yaxis');
 		_grp.addObject(_yaxis);
-		
+
 		// add z axe
 		var _zaxis = new GLGE.Object();
 		var _zlines = _zaxis.setDrawType(GLGE.DRAW_LINES);
@@ -151,11 +151,11 @@
 		_ylines.setMaterial(blue);
 		_ylines.setId('zaxis');	
 		_grp.addObject(_zaxis);
-		
+
 		// add group to scene
 		_grp.setId('xyzaxes');
 		scene.addObject(_grp);
-		
+
 	}
 	/**
 	 * This function allows the user to show/hide the grid
@@ -193,19 +193,19 @@
 		for(var i=0; i<_models.length; i++) {
 
 			if ( typeof(_models[i]) === 'object' && _models[i].name ) {
-				
+
 				if ( _models[i].inheritance ) {
 					_inheritance = '{ '+ _models[i].inheritance['@attributes'].value +' }';
 				}
 				else {
 					_inheritance = '';
 				}
-				
+
 				_attrHTML.push('<h3>Entity: <i>'+_models[i].name+' '+_inheritance+'</i></h3>');
 			}
 
 			if ( typeof(_models[i]) === 'object' && _models[i].attribute ) {
-				
+
 				_attributes = _models[i].attribute;
 
 				// check if the current item is an array (of objects)
@@ -213,12 +213,12 @@
 					for(var j=0; j<_attributes.length; j++) {
 
 						if ( typeof(_attributes[j]) === 'object' && _attributes[j]['@attributes'] ) {
-	
+
 							_name = _attributes[j]['@attributes'].name;
 							_type = _attributes[j]['@attributes'].type || 'N/A';
 							_dflt = _attributes[j]['@attributes'].value || 'N/A';
 							_desc = _attributes[j]['@attributes'].description || 'N/A';
-	
+
 							_attrHTML.push('<div class="attributes-details">'+
 							'<div class="attributes-name">'+
 							'<span>'+_name+'</span>'+
@@ -229,13 +229,13 @@
 							'<b>Description</b>&nbsp;'+_desc+'<br/>'+
 							'</div>'+
 							'</div>');
-	
+
 						}
-	
+
 					}
 
 				}
-				
+
 				// check if the current item is an object but not an array
 				else if ( typeof(_attributes) === 'object' && !_attributes.length ) {
 					_name = _attributes['@attributes'].name;
@@ -255,7 +255,7 @@
 					'</div>');
 				}
 
-				
+
 			}
 
 		}
@@ -404,7 +404,7 @@
 			M3D.lastImportedModel = docCollada;
 
 			if ( data.autoAddToScene ) {
-				
+
 				M3D.GUI.addObjectToScene({
 					'uid': data.uid,
 					'scaleX': data.scaleX,
@@ -421,19 +421,19 @@
 					'uid':data.uid,
 					'name':data.name
 				});
-				
+
 			} else {
-				
+
 				var uid = (new Date()).getTime();
-				
+
 				/**
 				 * @global
 				 */
 				M3D.lastGeneratedUID = uid+''; // copy it as a string
-				
+
 				// ask for entity info
 				M3D.GUI.showPopup('entity-info', true);
-				
+
 			}
 
 			M3D.GUI.hideWaiting();
@@ -509,7 +509,7 @@
 	 */
 	M3D.GUI.hidePopup = function() {
 		var _w = $('.window.opened');
-		
+
 		if ( _w.length === 1 ) {
 
 			_w.css({
@@ -517,13 +517,13 @@
 			})
 			.removeClass('opened')
 			.addClass('closed');
-			
+
 			$('#modal').hide(100);
-			
+
 			log('Hiding popup [ '+_w.attr('id')+' ]...');
-			
+
 		}
-	
+
 	};
 	/**
 	 * 
@@ -531,12 +531,12 @@
 	M3D.GUI.removeObject = function(){
 		if ( obj ){
 			M3D.Editor.commentLines(obj, function(){
-				
+
 				log('Removing ['+M3D.GUI.getObjectId(obj.uid)+'] ...');
 				scene.removeChild(obj);
-				
+
 				$('#select-model option[value="'+obj.uid+'"]').remove();
-				
+
 				M3D.DB.removeObject(obj.uid);
 				M3D.GUI.hidePopup();
 
@@ -599,9 +599,9 @@
 		}
 		element.value.bbox = _bbox;
 		*/
-		
+
 		M3D.DB.setObject(element);
-		
+
 		// [/DB]
 
 	};
@@ -675,9 +675,9 @@
 		_grp.setScale(tmp_scale_x, tmp_scale_y, tmp_scale_z)
 				.setLoc(tmp_locX, tmp_locY, tmp_locZ)
 				.setRot(tmp_rotX, tmp_rotY, tmp_rotZ);
-				
+
 		_grp.addChild(M3D.lastImportedModel);
-		
+
 		/**
 		 * Bug fix: increase the light emit of the object
 		 */
@@ -685,9 +685,9 @@
 		M3D.GUI.setMaterialEmit(M3D.GUI.DEFAULT_MATERIAL_EMIT);
 		obj = null;
 		/**/
-		
+
 		scene.addChild(_grp);
-		
+
 		// we don't need this reference anymore
 		M3D.lastImportedModel = null;
 
@@ -743,12 +743,12 @@
 						_obj.setScaleX(value);
 						_obj.setScaleY(value);
 						_obj.setScaleZ(value);
-						
+
 						var parent = $(el).closest("tr");
 						parent.find("input[type='number']").not(el).each( function() {
 							$(this).val(value);
 						});
-						
+
 					} else {
 						if (el.attr('name') === "scaleX" && value > 0) {
 							_obj.setScaleX(value);
@@ -764,7 +764,7 @@
 				case 'rotX':
 
 					if (value > 0) {
-						_obj.setRotX(value);
+						_obj.setRotX(M3D.Common.degreeToRadian(value));
 					}
 
 					break;
@@ -772,7 +772,7 @@
 				case 'rotY':
 
 					if (value > 0) {
-						_obj.setRotY(value);
+						_obj.setRotY(M3D.Common.degreeToRadian(value));
 					}
 
 					break;
@@ -780,7 +780,7 @@
 				case 'rotZ':
 
 					if (value > 0) {
-						_obj.setRotZ(value);
+						_obj.setRotZ(M3D.Common.degreeToRadian(value));
 					}
 
 					break;
@@ -788,7 +788,7 @@
 			}
 
 			$("#slider").slider('value', [value]);
-			
+
 		}
 
 	};
@@ -1046,9 +1046,9 @@
 		var newRotY = ( parseFloat(scene.camera.getRotY()) + yRot );
 
 		if ( obj ) {
-			
+
 			var _obj = obj;//.parent;
-			
+
 			if ( M3D.GUI.CAMERA_STATE === M3D.GUI.MODEL_MOVE && keys.isKeyPressed(GLGE.KI_X) ) {
 
 				_obj.setLocX( -newRotX * deltaLocObject );
@@ -1116,52 +1116,21 @@
 	// fonction modifiée par Tom le 16/02
 	M3D.GUI.cameraRotate = function() {
 
-		var mousepos = mouseGlobale.getMousePosition();
-		//var height = document.getElementById('canvas').offsetHeight;
+		var horizontal = mouseRecord.x - mouseRecordOld.x;
+		var vertical = mouseRecord.y - mouseRecordOld.y;
 
-		// Position souris gauche ou droite .. haut ou bas?
-		var gauche = mousepos.x <= mouseRecord.x;
-		//var mouvVerti = 0;
-		//if(mousepos.x <= height/3){mouvVerti = 1;}else if(mousepos.x >= (height*0.66)){mouvVerti = -1;}
+		var camera = scene.camera;		
 
-		// rotation selon position souris
-		var cam = scene.camera;
-		var camPos = cam.getPosition();
-		var sens = 0;
-		if (gauche) {
-			sens = 1;
-		} else {
-			sens = -1;
+		if(!camera.lookAt) {
+			camera.setLookat([0,0,0]);
 		}
 
-		if(!cam.lookAt) {
-			cam.setLookat([0,0,0]);
-		}
+		var cam = camera.getRotMatrix();
 
-		var abs = camPos.x - cam.lookAt[0];
-		var ord = camPos.y - cam.lookAt[1];
-		var carreA = Math.pow(abs,2);
-		var carreO = Math.pow(ord,2);
-		var hypo = Math.sqrt(carreA+carreO);
-		var div = ord/hypo;
-		var angle = Math.acos(div);
-		var newAngle = (angle+(0.08*sens))%(2*Math.PI);
-		console.log(Math.sin(angle)+" ... "+Math.sin(newAngle));
-		var newAbs = Math.sin(newAngle)*hypo;
-		var newOrd = Math.cos(newAngle)*hypo;
-		//console.log(newOrd+" ... "+newAbs);
-		var cotesin = 1;
-		var cotecos = -1;
-		if (Math.sin(newAngle) <= 0) {
-			cotesin = -1;
-		};
-		//if (Math.cos(newAngle) >= 0){cotecos = +1;};
-		cam.setLocX(cam.lookAt[0] + (cotesin*newAbs));
-		cam.setLocY(cam.lookAt[1] + (/*cotecos**/newOrd));
+		camera.setLocX(camera.getLocX()+horizontal*2*cam[0]);
+		camera.setLocY(camera.getLocY()+horizontal*2*cam[4]);
 
-		//	cam.setLocZ(camPos.z + mouvVerti);
 
-		mouseRecord = mouseGlobale.getMousePosition ();	// ajoutee par Tom
 	};
 	/**
 	 *
@@ -1178,7 +1147,7 @@
 
 				var _parent = obj;//.parent;
 				var _children = _parent.children;
-				
+
 				for(var i=0; i<_children.length; i++){
 					if ( _children[i].id && _children[i].id === 'bbox' ) {
 						_parent.removeChild(_children[i]);
@@ -1200,9 +1169,9 @@
 	M3D.GUI.updateInputValuesFromObject = function(n) {
 
 		if (n===undefined) {
-			
+
 			if( obj ){
-				
+
 				var _float = function(v) {
 					return parseFloat(v).toFixed(2);
 				};
@@ -1211,34 +1180,34 @@
 				if (_obj.getLocX && _obj.getLocY && _obj.getLocZ &&
 				_obj.getScaleX && _obj.getScaleY && _obj.getScaleZ &&
 				_obj.getRotX && _obj.getRotY && _obj.getRotZ) {
-	
+
 					$('#scaleX').val(_float(_obj.getScaleX()));
 					$('#scaleY').val(_float(_obj.getScaleY()));
 					$('#scaleZ').val(_float(_obj.getScaleZ()));
-	
+
 					$('#posX').val(_float(_obj.getLocX()));
 					$('#posY').val(_float(_obj.getLocY()));
 					$('#posZ').val(_float(_obj.getLocZ()));
-	
+
 					$('#rotX').val(_float(_obj.getRotX()));
 					$('#rotY').val(_float(_obj.getRotY()));
 					$('#rotZ').val(_float(_obj.getRotZ()));
-	
+
 					if ( _obj.boundingVolume ) {
-						
+
 						//see new version of GLGE for better implementation of the BoundingVolume !!
-						
+
 						//$('#bboxX').val(_float(_obj.boundingVolume.dims[0]));
 						//$('#bboxY').val(_float(_obj.boundingVolume.dims[1]));
 						//$('#bboxZ').val(_float(_obj.boundingVolume.dims[2]));
 					}
-	
-	
+
+
 					$('#posX, #posY, #posZ, #rotX, #rotY, #rotZ, #scaleX, #scaleY, #scaleZ, #bboxX, #bboxY, #bboxZ, #scaleLock, #switchBbox').attr('disabled', false);
-				
+
 				}
 			}
-			
+
 
 		} else {
 			$('#posX, #posY, #posZ, #rotX, #rotY, #rotZ, #scaleX, #scaleY, #scaleZ, #bboxX, #bboxY, #bboxZ, #scaleLock, #switchBbox').attr('disabled', true);
@@ -1256,7 +1225,7 @@
 			var _name = M3D.GUI.getObjectId(_obj.uid);
 			if (_name !== ''){
 				if ( M3D.DB.checkProperties(_name) ) {
-	 				$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
+					$('#status').addClass('ui-state-error pointer').text('Please click here to update your scenario!').show();
 				} else {
 					$('#status').removeClass('ui-state-error').text('').hide();
 				}
@@ -1369,7 +1338,7 @@
 	 */
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
-			
+
 		var _uidSelect = $('#select-model').val();
 		var _nameSelect = M3D.Common.ucfirst($('#select-model option[value="'+_uidSelect+'"]').text());
 
@@ -1378,13 +1347,13 @@
 		if ( _uidSelect === "" ) {
 			M3D.GUI.unpickObject();
 		} else {
-			
+
 			var _objects = scene.getChildren();
-			
+
 			for (var i = 0; i < _objects.length; i++) {
 
 				var _parent = _objects[i];//.parent; // get the parent
-				
+
 				if ( _parent.uid && _parent.uid === _uidSelect ) {
 
 					// update the global obj var
@@ -1428,7 +1397,7 @@
 		if ( obj ) {
 			var delta = d * 0.02; // reduce the delta coz 1 is too high for scaling!
 			var _obj = obj;//.parent;
-			
+
 			_obj.setScaleX( parseFloat(_obj.getScaleX())+delta );
 			_obj.setScaleY( parseFloat(_obj.getScaleY())+delta );
 			_obj.setScaleZ( parseFloat(_obj.getScaleZ())+delta );

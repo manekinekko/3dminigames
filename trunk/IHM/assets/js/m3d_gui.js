@@ -1074,7 +1074,13 @@
 				_obj.setRotY( newRotY * deltaRot );
 
 			}
+			else if (M3D.GUI.CAMERA_STATE === M3D.GUI.CAMERA_ROTATE) {
 
+				//mouseRecord = mouseGlobale.getMousePosition();
+				M3D.GUI.cameraRotate();
+
+			}
+			
 			M3D.GUI.updateInputValuesFromObject();
 
 		} else {
@@ -1123,30 +1129,32 @@
 		// rotation selon position souris
 		var camera = scene.camera;
 		var camPosInit = camera.getPosition();
+		
 		//orientation de la camera vers l'objet selectionné
 		if(!camera.lookAt) {
-		if ( obj ) {
-		var x = obj.getLocX();
-		var y = obj.getLocY();
-		var z = obj.getLocZ();
-		camera.setLookat([x,y,z]);
-		}
-		else 
-		camera.setLookat([0,0,0]);
-		}
-		cam = camera.getRotMatrix();
-		camera.setLocX(parseInt(camera.getLocX())+parseInt(cam[0]*horizontal*2)+parseInt(cam[1]*vertical*3));
-		camera.setLocY(parseInt(camera.getLocY())+parseInt(cam[4]*horizontal*2)+parseInt(cam[5]*vertical*3));
-		camera.setLocZ(parseInt(camera.getLocZ())+parseInt(cam[9]*vertical*3));
-		var camPos = camera.getPosition();
-		var dist = Math.sqrt(camPosInit.x*camPosInit.x+camPosInit.y*camPosInit.y+camPosInit.z*camPosInit.z)/Math.sqrt(camPos.x*camPos.x+camPos.y*camPos.y+camPos.z*camPos.z);
-		var posX = camPos.x*dist;
-		var posY = camPos.y*dist;
-		var posZ = camPos.z*dist;
+			if ( obj ) {
+				var x = obj.getLocX();
+				var y = obj.getLocY();
+				var z = obj.getLocZ();
+				camera.setLookat([x,y,z]);
+			}
+			else 
+				camera.setLookat([0,0,0]);
+			}
+			
+			cam = camera.getRotMatrix();
+			camera.setLocX(parseInt(camera.getLocX())+parseInt(cam[0]*horizontal*2)+parseInt(cam[1]*vertical*3));
+			camera.setLocY(parseInt(camera.getLocY())+parseInt(cam[4]*horizontal*2)+parseInt(cam[5]*vertical*3));
+			camera.setLocZ(parseInt(camera.getLocZ())+parseInt(cam[9]*vertical*3));
+			var camPos = camera.getPosition();
+			var dist = Math.sqrt(camPosInit.x*camPosInit.x+camPosInit.y*camPosInit.y+camPosInit.z*camPosInit.z)/Math.sqrt(camPos.x*camPos.x+camPos.y*camPos.y+camPos.z*camPos.z);
+			var posX = camPos.x*dist;
+			var posY = camPos.y*dist;
+			var posZ = camPos.z*dist;
 	
-		camera.setLocX(posX);
-		camera.setLocY(posY);
-		camera.setLocZ(posZ);
+			camera.setLocX(posX);
+			camera.setLocY(posY);
+			camera.setLocZ(posZ);
 	
 		};
 	/**
@@ -1356,6 +1364,7 @@
 	// -- pick up an object based on its UID
 	M3D.GUI.pickObjectFromSelect = function(e) {
 
+		scene.camera.setLookat(null);
 		var _uidSelect = $('#select-model').val();
 		var _nameSelect = M3D.Common.ucfirst($('#select-model option[value="'+_uidSelect+'"]').text());
 

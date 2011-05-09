@@ -21,6 +21,7 @@ if($config_file) {
 	$version = $config_file->xpath('/m3d/version');
 	define('VERSION', $version[0][0]);
 	// ...
+	define('USER', '..\\u');
 
 } else {
 	exit('Please check that "/config.xml" exists  and is a valid XML file!');

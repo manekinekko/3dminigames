@@ -27,12 +27,12 @@ if( ! function_exists('copy_dir') )
 		}
 		
 		while(false !== ( $file = readdir($dir)) ) { 
-			if (( $file != '.' ) && ( $file != '..' )) { 
+			if (( $file != '.' ) && ( $file != '..' ) ) { 
 				if ( is_dir($src . '/' . $file) ) { 
 					copy_dir($src . '/' . $file,$dst . '/' . $file); 
 				} 
 				else { 
-					if ( ! copy($src . '/' . $file,$dst . '/' . $file) ){
+					if ( ! @copy($src . '/' . $file, $dst . '/' . $file) ){
 						return false;
 					} 
 				} 

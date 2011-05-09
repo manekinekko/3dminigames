@@ -16,9 +16,30 @@ if ($scenario != false){
 	
 	file_put_contents($file, $scenario);
 	
+	$ctn = "/**
+	 * file: edwigs-game.js
+	 * version: 0.1
+	 */
+	 
+	 ";
+	
+	$game_file = USER.'/demoUser/DemoGame/assets/js/edwigs-game-'.$name.'.js';
+	file_put_contents($game_file, $ctn);
+	
+	$x = shell_exec('java -jar 3dwigs.jar '.$file.' >> '.$game_file);
+	
 	header('Content-Type:text/javascript');
-	echo json_encode(array('s'=>file_get_contents($file)));
-	shell_exec('java -jar  3dwigs.jar >> ../u/demoUser/DemoGame/assets/js/edwigs-game.js');
+	
+	if ( $x === NULL  ) {
+	
+		echo json_encode(array('s'=>'OK'));
+	
+	}
+	else {
+		
+		echo json_encode(array('s'=>'NOK'));
+	
+	}
 }
 else {
 	echo '<pre>'; echo shell_exec('java -splash:dae/images/glgelogo.png'); echo '</pre>';

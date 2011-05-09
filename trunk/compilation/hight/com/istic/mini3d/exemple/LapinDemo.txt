@@ -1,0 +1,77 @@
+
+// 1) Description du jeu
+game has name at Jeu_du_lapin ;
+game has gravity at 9.81 ;
+
+// 2) D�claration de nouveaux types (on s'en fout)
+
+// 3) Initialisations (pas d'attributs, c'est d�j� assez compliqu� !)
+player is Player solo ;
+player has controller at human ;
+
+//contenu g�n�r� avec les positions, orientations et tailles :
+lapin is Character ;
+chasseur is Character ;
+jeep is Vehicle ;
+bazooka is Weapon ;
+missile is Projectile duplicable ;
+
+sol is Ground ;
+
+//cam is Camera ;
+
+jeep has chasseur ;
+chasseur has bazooka ;
+bazooka has missile ;
+
+chasseur has cam ;
+
+// 4) D�finitions
+definition initialisation means
+    generate sol,
+    generate lapin,
+    generate chasseur,
+    generate bazooka,
+    generate missile,
+    generate jeep ;
+
+definition tirer means
+    bazooka expels missile by 100,
+    generate missile;
+
+definition tournerDroite means
+    jeep turns right by 5 ;
+
+definition tournerGauche means
+    jeep turns left by 5 ;
+
+definition accelerer means
+    jeep accelerates by 10 ;
+
+definition freiner means
+    jeep brakes by 10 ;
+
+definition lapinTouche means
+    lapin dies,
+    victory of joueur,
+    game ends ;
+
+// 5) Commandes
+command for player is
+    key Z for accelerer,
+    key Q for tournerGauche,
+    key S for freiner,
+    key D for tournerDroite,
+    key space for tirer ;
+
+// 6) R�gles du jeu
+rule game starts then
+    initialisation;
+
+rule missile touches lapin then
+    lapinTouche;
+
+rule jeep touches lapin then
+    lapinTouche;
+
+// 7) Intelligence Artificielle (� voir si Ludovic fait bouger le lapin)

@@ -17,7 +17,7 @@ public class Model implements Symbol {
     /**
      * Constante qui défini le chemin vers le fichier xml des attributs prédéfinis.
      */
-    public static String xml = "./attributesv2.xml"; //Linux (Fonctionne aussi sous windows)
+    public static String xml = "./attributes.xml"; //Linux (Fonctionne aussi sous windows)
     private /*public pour JUnit tests*/ static List<Model> generated;
     private String name;
     private /*public pour JUnit tests*/ Map<String, AttributeValue> attributs; //Les objet Attributes contiennent les valeurs des attributs et non leur nom.
@@ -225,7 +225,7 @@ public class Model implements Symbol {
 		    st.add(m.getName(), m);
 		}
 	}else{
-		 System.out.println("Rate");
+		 System.out.println("Echec de l'initialisation des modèles par défaut.");
 	}
     }
 }

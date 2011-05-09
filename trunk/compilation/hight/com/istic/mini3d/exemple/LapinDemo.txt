@@ -6,7 +6,7 @@ game has gravity at 9.81 ;
 
 // 3) Initialisations (pas d'attributs, c'est déjà assez compliqué !)
 player is Player solo ;
-player has controller at human ;
+player has controller at human;
 
 //contenu généré avec les positions, orientations et tailles :
 sol is Ground ;

@@ -47,7 +47,7 @@
 						<span class="cursor model-move" title="Move Mdel">&nbsp;</span>
 						<span class="cursor model-rotate" title="Rotate Model">&nbsp;</span>
 						<span class="cursor grid-toggle active" title="Show/Hide Grid">&nbsp;</span>
-						<!--<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>-->
+						<span class="cursor camera-position" title="Get Camera Position">&nbsp;</span>
 					</div>
 					
 				</div>
@@ -226,6 +226,7 @@
 					<em>(Only Alpha-numerics, dashes and underscores are allowed!)</em>
 					<div id="window-buttons">
 						<input type="button" class="validate" id="save-game-info" value="Save" name="save" />
+						<input type="button" class="cancel" value="cancel" name="cancel" />
 					</div>
 				</div>
 				

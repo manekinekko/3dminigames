@@ -28,7 +28,7 @@
 	M3D.GUI.ANIMATE_WINDOW_SPEED = 150;
 
 	// emit light
-	M3D.GUI.DEFAULT_MATERIAL_EMIT = 0.001;
+	M3D.GUI.DEFAULT_MATERIAL_EMIT = 0;
 	M3D.GUI.SELECT_MATERIAL_EMIT = 1;
 	/**
 	 * The initialization function
@@ -146,10 +146,10 @@
 		_zpositions.push(0.0);		
 		_zpositions.push(100000.0);
 		var _zm = new GLGE.Mesh();
-		_ylines.setMesh(_zm.setPositions(_zpositions));
+		_zlines.setMesh(_zm.setPositions(_zpositions));
 		var blue = doc.getElement( "blue" );
-		_ylines.setMaterial(blue);
-		_ylines.setId('zaxis');	
+		_zlines.setMaterial(blue);
+		_zlines.setId('zaxis');	
 		_grp.addObject(_zaxis);
 
 		// add group to scene
@@ -1214,9 +1214,9 @@
 					$('#posY').val(_float(_obj.getLocY()));
 					$('#posZ').val(_float(_obj.getLocZ()));
 
-					$('#rotX').val(_float(_obj.getRotX()));
-					$('#rotY').val(_float(_obj.getRotY()));
-					$('#rotZ').val(_float(_obj.getRotZ()));
+					$('#rotX').val(_float(M3D.Common.radianToDegree(_obj.getRotX())));
+					$('#rotY').val(_float(M3D.Common.radianToDegree(_obj.getRotY())));
+					$('#rotZ').val(_float(M3D.Common.radianToDegree(_obj.getRotZ())));
 
 					if ( _obj.boundingVolume ) {
 

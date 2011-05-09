@@ -141,6 +141,14 @@
 	M3D.Common.degreeToRadian = function(val) {
 		var pi = Math.PI;
 		var de_ra = (val)*(pi/180);
-		return de_ra;
+		return parseFloat(de_ra).toFixed(4);
+	};
+	/**
+	 *
+	 */
+	M3D.Common.radianToDegree = function (val) {
+		var pi = Math.PI;
+		var ra_de = (val)*(180/pi);
+		return parseFloat(ra_de).toFixed(4);
 	};
 })(window.M3D);

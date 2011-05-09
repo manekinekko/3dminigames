@@ -5,10 +5,6 @@
  * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/includes/Session.class.php
  * @projectDescription This PHP classe handles the session environment.
  */
- 
-define('DS', DIRECTORY_SEPARATOR);
-define('APPPATH', str_replace('bin'.DS.'includes', '', dirname(__FILE__)));
-
 class Session
 {
 

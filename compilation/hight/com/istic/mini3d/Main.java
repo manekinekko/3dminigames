@@ -46,6 +46,11 @@ public class Main {
             }
         }
 
+        if(m3dFile == null){
+                System.out.println("Veuillez passer le nom du fichier a compiler en argument.");
+                System.exit(-1);
+            }
+
         File m3d;
 
         FileReader m3dReader;

@@ -20,7 +20,7 @@ $(document).ready(function()
 			  M3D.Config.version = _xml.find('version').text();
 			  M3D.Config.uploader = _xml.find('name:contains("uploader")').parent().find('url').text();
 			  M3D.Config.compiler = _xml.find('name:contains("compiler")').parent().find('url').text();
-
+			  M3D.Config.error = null;
 
 	},
 	complete: function(){

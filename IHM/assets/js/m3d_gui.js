@@ -269,36 +269,46 @@
 	M3D.GUI.createGame = function() {
 		var _scenario = M3D.Editor.getContent();
 
-		if ( _scenario === "" || !/game has name at/.test(_scenario)) {
+		if ( _scenario === "" || !/game/.test(_scenario)) {
 
-			$('#status').show().text('Your scenario is empty!');
-			setTimeout( function() {
-				$('#status').hide().text('');
-			}, 2000);
+			$('#creating-game-failed p > em').html('Your scenario is empty!');
+			M3D.GUI.showPopup('creating-game-failed');
+			
 		} else {
-			var _gameName = "edwigs_game_"+(new Date()).getTime();
+			var _ts = (new Date()).getTime();
 			$.ajax({
-				url: M3D.Config.compiler,
+				url: M3D.Config.compiler+'?'+(new Date()).getTime(),
 				dataType: 'json',
 				type:'POST',
 				data: {
-					'n':_gameName,
-					's':_scenario
+					's':_scenario,
+					'gn':M3D.DB.getGameInfo().name,
+					'ts':_ts
 				},
 				beforeSend: function() {
-					$('#status').show().text('creating game ...');
+					$('#creating-game p').html('creating game. Please wait ...');
+					M3D.GUI.showPopup('creating-game');
 				},
 				success: function(d) {
-					$('#status').show().text('Game created');
+					
+					if ( d.s && d.s === 200 ) {
+						$('#new-game-url').attr('action', window.location.pathname.replace('index.php', '')+d.url);
+						M3D.GUI.showPopup('creating-game-done');
+					}
+					else {
+						$('#creating-game-failed p > em').html('<em>An error has occured!</em><br/>'+
+																'Line: '+d.error.line+'<br/>'+
+																'Message: '+d.error.message);
+						M3D.GUI.showPopup('creating-game-failed');
+						M3D.Config.error = d.error;
+					}
 				},
-				complete: function(e) {
-					setTimeout( function() {
-						$('#status').hide().text('');
-					}, 2000);
+				complete: function(d) {
+					
 				},
 				error: function (xhr, ajaxOptions, thrownError) {
-					alert(xhr.status);
-					alert(thrownError);
+					$('#creating-game-failed p > em').html(thrownError)
+					M3D.GUI.showPopup('creating-game-failed');
 				}
 			});
 		}

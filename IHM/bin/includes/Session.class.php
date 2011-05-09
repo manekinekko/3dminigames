@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * @author CHEGHAM Wassim <wassim.chegham@gmail.com>
+ * @file bin/includes/Session.class.php
+ * @url http://code.google.com/p/3dminigames/source/browse/trunk/IHM/bin/includes/Session.class.php
+ * @projectDescription This PHP classe handles the session environment.
+ */
+ 
 class Session
 {
 
@@ -17,7 +23,7 @@ class Session
 
 		$_SESSION['error'] = "";
 
-		$this->_users_folder = 'u';
+		$this->_users_folder = 'C:\Program Files\EasyPHP-5.3.2i\www\m3d_total\IHM\u';
 		$this->_users_file = $this->_users_folder.'/users.txt';
 
 		$this->users = $this->_fileToArray($this->_users_file);

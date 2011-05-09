@@ -154,6 +154,23 @@
 	};
 	
 	/**
+	 *
+	 */
+	M3D.DB.setGameInfo = function(value){
+		var _o= {};
+		_o.uid = 'game';
+		_o.value = value;
+		return _set(_o);
+	}
+	
+	/**
+	 *
+	 */
+	M3D.DB.getGameInfo = function(){
+		return _get('game');
+	}
+	
+	/**
 	 * Get all stored types info from the local storage.
 	 * @return {Object} (see _getAll)
 	 * @see Object._getAll
@@ -423,7 +440,7 @@
 	 * return True if so, False if not
 	 */
 	M3D.DB.checkEditorContentFromDB = function(){
-		return /game has name at/.test(M3D.DB.getEditor('edwigs'));
+		return /game/.test(M3D.DB.getEditor('edwigs'));
 	}
 	
 	/**

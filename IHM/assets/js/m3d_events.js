@@ -257,6 +257,9 @@ $(function(){
 			
 			_btn.val('saving...');
 			M3D.Editor.setGameInfo(_name, function(){
+				
+				M3D.DB.setGameInfo({'name':_name});
+				
 				M3D.GUI.hidePopup();
 				_btn.val('save');
 			});		

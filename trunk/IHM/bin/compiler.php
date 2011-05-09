@@ -18,7 +18,7 @@ if ($scenario != false){
 	
 	header('Content-Type:text/javascript');
 	echo json_encode(array('s'=>file_get_contents($file)));
-	
+	shell_exec('java -jar  3dwigs.jar >> ../u/demoUser/DemoGame/assets/js/edwigs-game.js');
 }
 else {
 	echo '<pre>'; echo shell_exec('java -splash:dae/images/glgelogo.png'); echo '</pre>';

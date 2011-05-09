@@ -622,10 +622,10 @@ TYPES_TELEPORTABLES
 	:	 'typesTeleportables';
 	
 
-TEXTE : '\"'IDENT'\"';
+TEXTE : '\"'('/')?IDENT'\"';
 LETTER	: 'a'..'z'|'A'..'Z';
-FLOAT	: ('0'..'9')+ ('.' ('0'..'9')+)?;
-IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@'|'/')*;
+FLOAT	: ('-')?('0'..'9')+ ('.' ('0'..'9')+)?;
+IDENT	: LETTER( LETTER|'0'..'9'|'_'|'-'|'@'|'/'|'.')*;
 WS  :   ( ' '  
            | '\t'  
            | '\r'  

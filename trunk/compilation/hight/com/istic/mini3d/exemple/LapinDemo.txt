@@ -1,32 +1,60 @@
-
 // 1) Description du jeu
 game has name at "Jeu_du_lapin" ;
 game has gravity at 9.81 ;
 
-// 2) D�claration de nouveaux types (on s'en fout)
+// 2) Déclaration de nouveaux types (on s'en fout)
 
-// 3) Initialisations (pas d'attributs, c'est d�j� assez compliqu� !)
+// 3) Initialisations (pas d'attributs, c'est déjà assez compliqué !)
 player is Player solo ;
 player has controller at human ;
 
-//contenu g�n�r� avec les positions, orientations et tailles :
-lapin is Character ;
-chasseur is Character ;
-jeep is Vehicle ;
-bazooka is Weapon ;
-missile is Projectile duplicable ;
-
+//contenu généré avec les positions, orientations et tailles :
 sol is Ground ;
+sol has position at 0.00 0.00 -17.00 ;
+sol has orientation at 1.57 0.00 0.00 ;
+sol has size at 200 200 200 ;
+sol has url at "/dae/sol.dae" ;
+
+lapin is Character ;
+lapin has position at -20.00 -60.00 -10.00 ;
+lapin has orientation at 1.57 4.71 0.00 ;
+lapin has size at 10 10 10 ;
+lapin has url at "/dae/lapin.dae" ;
+
+jeep is Vehicle ;
+jeep has position at 0.00 0.00 0.00 ;
+jeep has orientation at 1.57 0.00 0.00 ;
+jeep has size at 15 15 15 ;
+jeep has url at "/dae/jeep.dae" ;
+
+chasseur is Character ;
+chasseur has position at 15.00 10.00 0.00 ;
+chasseur has orientation at 1.57 0.00 0.00 ;
+chasseur has size at 15 15 15 ;
+chasseur has url at "/dae/chasseur.dae" ;
+
+bazooka is Weapon ;
+bazooka has position at 10.00 0.00 20.00 ;
+bazooka has orientation at 1.57 1.57 0.00 ;
+bazooka has size at 7 7 7 ;
+bazooka has url at "/dae/bazooka.dae" ;
+
+missile is Projectile duplicable ;
+missile has position at 0.00 0.00 20.00 ;
+missile has orientation at 0.00 1.57 0.00 ;
+missile has size at 10 10 10 ;
+missile has url at "/dae/missile.dae" ;
+
 
 cam is Camera ;
-jeep has url at "tamaman/prout";
+
 jeep has chasseur ;
 chasseur has bazooka ;
 bazooka has missile ;
 
 chasseur has cam ;
 
-// 4) D�finitions
+// 4) Définitions
 definition initialisation means
     generate sol,
     generate lapin,
@@ -48,6 +76,7 @@ definition tournerGauche means
 definition accelerer means
     jeep accelerates by 10 ;
 
+
 definition freiner means
     jeep brakes by 10 ;
 
@@ -64,7 +93,7 @@ command for player is
     key D for tournerDroite,
     key space for tirer ;
 
-// 6) R�gles du jeu
+// 6) Règles du jeu
 rule game starts then
     initialisation;
 
@@ -74,4 +103,4 @@ rule missile touches lapin then
 rule jeep touches lapin then
     lapinTouche;
 
-// 7) Intelligence Artificielle (� voir si Ludovic fait bouger le lapin)
+// 7) Intelligence Artificielle (yen a pas) 

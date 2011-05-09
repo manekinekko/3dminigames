@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-05-09 17:20:18
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g 2011-05-09 21:09:10
 
     package com.istic.mini3d.grammars;
     import java.util.LinkedList;
@@ -260,7 +260,7 @@ public class highParser extends Parser {
     }
 
     public String[] getTokenNames() { return highParser.tokenNames; }
-    public String getGrammarFileName() { return "H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g"; }
 
 
         private List<String> errors = new LinkedList<String>();
@@ -284,7 +284,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "game"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:62:1: game : ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:62:1: game : ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) ;
     public final highParser.game_return game() throws RecognitionException {
         highParser.game_return retval = new highParser.game_return();
         retval.start = input.LT(1);
@@ -329,10 +329,10 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_commande=new RewriteRuleSubtreeStream(adaptor,"rule commande");
         RewriteRuleSubtreeStream stream_iaBasique=new RewriteRuleSubtreeStream(adaptor,"rule iaBasique");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:62:6: ( ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:5: ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:62:6: ( ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )* -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:5: ( gameData FIN )* ( newType FIN )* ( init FIN )+ ( definition FIN )* ( commande FIN )+ ( reglesJeu FIN )+ ( iaBasique FIN )*
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:5: ( gameData FIN )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:5: ( gameData FIN )*
             loop1:
             do {
                 int alt1=2;
@@ -345,7 +345,7 @@ public class highParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:6: gameData FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:63:6: gameData FIN
             	    {
             	    pushFollow(FOLLOW_gameData_in_game246);
             	    gameData1=gameData();
@@ -365,7 +365,7 @@ public class highParser extends Parser {
                 }
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:64:5: ( newType FIN )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:64:5: ( newType FIN )*
             loop2:
             do {
                 int alt2=2;
@@ -378,7 +378,7 @@ public class highParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:64:6: newType FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:64:6: newType FIN
             	    {
             	    pushFollow(FOLLOW_newType_in_game257);
             	    newType3=newType();
@@ -398,7 +398,7 @@ public class highParser extends Parser {
                 }
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:65:5: ( init FIN )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:65:5: ( init FIN )+
             int cnt3=0;
             loop3:
             do {
@@ -412,7 +412,7 @@ public class highParser extends Parser {
 
                 switch (alt3) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:65:6: init FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:65:6: init FIN
             	    {
             	    pushFollow(FOLLOW_init_in_game268);
             	    init5=init();
@@ -436,7 +436,7 @@ public class highParser extends Parser {
                 cnt3++;
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:66:5: ( definition FIN )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:66:5: ( definition FIN )*
             loop4:
             do {
                 int alt4=2;
@@ -449,7 +449,7 @@ public class highParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:66:6: definition FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:66:6: definition FIN
             	    {
             	    pushFollow(FOLLOW_definition_in_game280);
             	    definition7=definition();
@@ -469,7 +469,7 @@ public class highParser extends Parser {
                 }
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:67:5: ( commande FIN )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:67:5: ( commande FIN )+
             int cnt5=0;
             loop5:
             do {
@@ -483,7 +483,7 @@ public class highParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:67:6: commande FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:67:6: commande FIN
             	    {
             	    pushFollow(FOLLOW_commande_in_game291);
             	    commande9=commande();
@@ -507,7 +507,7 @@ public class highParser extends Parser {
                 cnt5++;
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:68:5: ( reglesJeu FIN )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:68:5: ( reglesJeu FIN )+
             int cnt6=0;
             loop6:
             do {
@@ -521,7 +521,7 @@ public class highParser extends Parser {
 
                 switch (alt6) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:68:6: reglesJeu FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:68:6: reglesJeu FIN
             	    {
             	    pushFollow(FOLLOW_reglesJeu_in_game302);
             	    reglesJeu11=reglesJeu();
@@ -545,7 +545,7 @@ public class highParser extends Parser {
                 cnt6++;
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:69:5: ( iaBasique FIN )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:69:5: ( iaBasique FIN )*
             loop7:
             do {
                 int alt7=2;
@@ -558,7 +558,7 @@ public class highParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:69:6: iaBasique FIN
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:69:6: iaBasique FIN
             	    {
             	    pushFollow(FOLLOW_iaBasique_in_game313);
             	    iaBasique13=iaBasique();
@@ -581,7 +581,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: init, gameData, commande, reglesJeu, definition, iaBasique, newType
+            // elements: iaBasique, commande, gameData, reglesJeu, init, newType, definition
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -593,18 +593,18 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 70:7: -> ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:10: ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:10: ^( GAME_KW ( gameData )? ( newType )* ( init )+ ( definition )* ( commande )+ ( reglesJeu )+ ( iaBasique )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(GAME_KW, "GAME_KW"), root_1);
 
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:20: ( gameData )?
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:20: ( gameData )?
                 if ( stream_gameData.hasNext() ) {
                     adaptor.addChild(root_1, stream_gameData.nextTree());
 
                 }
                 stream_gameData.reset();
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:30: ( newType )*
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:30: ( newType )*
                 while ( stream_newType.hasNext() ) {
                     adaptor.addChild(root_1, stream_newType.nextTree());
 
@@ -618,7 +618,7 @@ public class highParser extends Parser {
 
                 }
                 stream_init.reset();
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:45: ( definition )*
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:45: ( definition )*
                 while ( stream_definition.hasNext() ) {
                     adaptor.addChild(root_1, stream_definition.nextTree());
 
@@ -640,7 +640,7 @@ public class highParser extends Parser {
 
                 }
                 stream_reglesJeu.reset();
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:78: ( iaBasique )*
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:70:78: ( iaBasique )*
                 while ( stream_iaBasique.hasNext() ) {
                     adaptor.addChild(root_1, stream_iaBasique.nextTree());
 
@@ -679,7 +679,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "gameData"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:74:1: gameData : GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:74:1: gameData : GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) ;
     public final highParser.gameData_return gameData() throws RecognitionException {
         highParser.gameData_return retval = new highParser.gameData_return();
         retval.start = input.LT(1);
@@ -702,8 +702,8 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_VIRG=new RewriteRuleTokenStream(adaptor,"token VIRG");
         RewriteRuleSubtreeStream stream_attributGame=new RewriteRuleSubtreeStream(adaptor,"rule attributGame");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:74:10: ( GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:5: GAME HAS attributGame ( VIRG attributGame )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:74:10: ( GAME HAS attributGame ( VIRG attributGame )* -> ^( GAME_ATTRIBUT_KW ( attributGame )+ ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:5: GAME HAS attributGame ( VIRG attributGame )*
             {
             GAME15=(Token)match(input,GAME,FOLLOW_GAME_in_gameData369);  
             stream_GAME.add(GAME15);
@@ -717,7 +717,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             stream_attributGame.add(attributGame17.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:27: ( VIRG attributGame )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:27: ( VIRG attributGame )*
             loop8:
             do {
                 int alt8=2;
@@ -730,7 +730,7 @@ public class highParser extends Parser {
 
                 switch (alt8) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:28: VIRG attributGame
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:75:28: VIRG attributGame
             	    {
             	    VIRG18=(Token)match(input,VIRG,FOLLOW_VIRG_in_gameData376);  
             	    stream_VIRG.add(VIRG18);
@@ -765,7 +765,7 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 76:7: -> ^( GAME_ATTRIBUT_KW ( attributGame )+ )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:76:10: ^( GAME_ATTRIBUT_KW ( attributGame )+ )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:76:10: ^( GAME_ATTRIBUT_KW ( attributGame )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(GAME_ATTRIBUT_KW, "GAME_ATTRIBUT_KW"), root_1);
@@ -811,7 +811,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "attributGame"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:79:1: attributGame : ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | TURNBASED_KW AT ( 'true' | 'false' ) | WORLD_KW AT mapType | GRIDSIZE_KW AT FLOAT | NAME_KW AT TEXTE );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:79:1: attributGame : ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | TURNBASED_KW AT ( 'true' | 'false' ) | WORLD_KW AT mapType | GRIDSIZE_KW AT FLOAT | NAME_KW AT TEXTE );
     public final highParser.attributGame_return attributGame() throws RecognitionException {
         highParser.attributGame_return retval = new highParser.attributGame_return();
         retval.start = input.LT(1);
@@ -860,7 +860,7 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_FLOAT=new RewriteRuleTokenStream(adaptor,"token FLOAT");
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:79:14: ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | TURNBASED_KW AT ( 'true' | 'false' ) | WORLD_KW AT mapType | GRIDSIZE_KW AT FLOAT | NAME_KW AT TEXTE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:79:14: ( GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) ) | TURNBASED_KW AT ( 'true' | 'false' ) | WORLD_KW AT mapType | GRIDSIZE_KW AT FLOAT | NAME_KW AT TEXTE )
             int alt10=5;
             switch ( input.LA(1) ) {
             case GRAVITY_KW:
@@ -897,7 +897,7 @@ public class highParser extends Parser {
 
             switch (alt10) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:5: GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:5: GRAVITY_KW AT ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
                     {
                     GRAVITY_KW20=(Token)match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame412);  
                     stream_GRAVITY_KW.add(GRAVITY_KW20);
@@ -905,7 +905,7 @@ public class highParser extends Parser {
                     AT21=(Token)match(input,AT,FOLLOW_AT_in_attributGame414);  
                     stream_AT.add(AT21);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:19: ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:19: ( FLOAT -> ^( GRAVITY_KW FLOAT ) | FLOAT FLOAT FLOAT -> ^( GRAVITY_KW FLOAT FLOAT FLOAT ) )
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -933,7 +933,7 @@ public class highParser extends Parser {
                     }
                     switch (alt9) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:20: FLOAT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:80:20: FLOAT
                             {
                             FLOAT22=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame417);  
                             stream_FLOAT.add(FLOAT22);
@@ -953,7 +953,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 81:7: -> ^( GRAVITY_KW FLOAT )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:81:10: ^( GRAVITY_KW FLOAT )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:81:10: ^( GRAVITY_KW FLOAT )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot(stream_GRAVITY_KW.nextNode(), root_1);
@@ -969,7 +969,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:82:7: FLOAT FLOAT FLOAT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:82:7: FLOAT FLOAT FLOAT
                             {
                             FLOAT23=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_attributGame439);  
                             stream_FLOAT.add(FLOAT23);
@@ -983,7 +983,7 @@ public class highParser extends Parser {
 
 
                             // AST REWRITE
-                            // elements: FLOAT, FLOAT, GRAVITY_KW, FLOAT
+                            // elements: FLOAT, FLOAT, FLOAT, GRAVITY_KW
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -995,7 +995,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 83:7: -> ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:83:10: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:83:10: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot(stream_GRAVITY_KW.nextNode(), root_1);
@@ -1019,7 +1019,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:84:7: TURNBASED_KW AT ( 'true' | 'false' )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:84:7: TURNBASED_KW AT ( 'true' | 'false' )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1043,7 +1043,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:85:7: WORLD_KW AT mapType
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:85:7: WORLD_KW AT mapType
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1062,7 +1062,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:86:7: GRIDSIZE_KW AT FLOAT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:86:7: GRIDSIZE_KW AT FLOAT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1079,7 +1079,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:87:7: NAME_KW AT TEXTE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:87:7: NAME_KW AT TEXTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1121,7 +1121,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "mapType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:90:1: mapType : ( GENERIC | GRID | RIBBON );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:90:1: mapType : ( GENERIC | GRID | RIBBON );
     public final highParser.mapType_return mapType() throws RecognitionException {
         highParser.mapType_return retval = new highParser.mapType_return();
         retval.start = input.LT(1);
@@ -1133,8 +1133,8 @@ public class highParser extends Parser {
         CommonTree set38_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:90:9: ( GENERIC | GRID | RIBBON )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:90:9: ( GENERIC | GRID | RIBBON )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -1176,7 +1176,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "name"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:1: name : IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:1: name : IDENT ;
     public final highParser.name_return name() throws RecognitionException {
         highParser.name_return retval = new highParser.name_return();
         retval.start = input.LT(1);
@@ -1188,8 +1188,8 @@ public class highParser extends Parser {
         CommonTree IDENT39_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:6: ( IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:8: IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:6: ( IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:92:8: IDENT
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -1224,7 +1224,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "newType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:95:1: newType : TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:95:1: newType : TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) ;
     public final highParser.newType_return newType() throws RecognitionException {
         highParser.newType_return retval = new highParser.newType_return();
         retval.start = input.LT(1);
@@ -1250,8 +1250,8 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_TYPE=new RewriteRuleTokenStream(adaptor,"token TYPE");
         RewriteRuleSubtreeStream stream_subType=new RewriteRuleSubtreeStream(adaptor,"rule subType");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:95:9: ( TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:5: TYPE IDENT IS subType ( AND subType )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:95:9: ( TYPE IDENT IS subType ( AND subType )* -> ^( TYPE IDENT subType ( subType )* ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:5: TYPE IDENT IS subType ( AND subType )*
             {
             TYPE40=(Token)match(input,TYPE,FOLLOW_TYPE_in_newType571);  
             stream_TYPE.add(TYPE40);
@@ -1268,7 +1268,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             stream_subType.add(subType43.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:27: ( AND subType )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:27: ( AND subType )*
             loop11:
             do {
                 int alt11=2;
@@ -1281,7 +1281,7 @@ public class highParser extends Parser {
 
                 switch (alt11) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:28: AND subType
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:96:28: AND subType
             	    {
             	    AND44=(Token)match(input,AND,FOLLOW_AND_in_newType580);  
             	    stream_AND.add(AND44);
@@ -1304,7 +1304,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: subType, TYPE, subType, IDENT
+            // elements: TYPE, subType, subType, IDENT
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1316,14 +1316,14 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 97:7: -> ^( TYPE IDENT subType ( subType )* )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:97:10: ^( TYPE IDENT subType ( subType )* )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:97:10: ^( TYPE IDENT subType ( subType )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(stream_TYPE.nextNode(), root_1);
 
                 adaptor.addChild(root_1, stream_IDENT.nextNode());
                 adaptor.addChild(root_1, stream_subType.nextTree());
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:97:31: ( subType )*
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:97:31: ( subType )*
                 while ( stream_subType.hasNext() ) {
                     adaptor.addChild(root_1, stream_subType.nextTree());
 
@@ -1362,7 +1362,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "subType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:100:1: subType : IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:100:1: subType : IDENT ;
     public final highParser.subType_return subType() throws RecognitionException {
         highParser.subType_return retval = new highParser.subType_return();
         retval.start = input.LT(1);
@@ -1374,8 +1374,8 @@ public class highParser extends Parser {
         CommonTree IDENT46_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:100:9: ( IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:101:5: IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:100:9: ( IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:101:5: IDENT
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -1410,7 +1410,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "init"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:107:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) | INSERT_KW IDENT IN IDENT ( NUM operation )? | REMOVE_KW ( IDENT | NUM operation ) FROM IDENT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:107:1: init : ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) | INSERT_KW IDENT IN IDENT ( NUM operation )? | REMOVE_KW ( IDENT | NUM operation ) FROM IDENT );
     public final highParser.init_return init() throws RecognitionException {
         highParser.init_return retval = new highParser.init_return();
         retval.start = input.LT(1);
@@ -1466,7 +1466,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_allocationObject=new RewriteRuleSubtreeStream(adaptor,"rule allocationObject");
         RewriteRuleSubtreeStream stream_declarationObjet=new RewriteRuleSubtreeStream(adaptor,"rule declarationObjet");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:107:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) | INSERT_KW IDENT IN IDENT ( NUM operation )? | REMOVE_KW ( IDENT | NUM operation ) FROM IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:107:6: ( IDENT IS declarationObjet -> ^( INIT_IS_KW IDENT declarationObjet ) | accesClasse HAS allocationObject ( VIRG allocationObject )* -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ ) | INSERT_KW IDENT IN IDENT ( NUM operation )? | REMOVE_KW ( IDENT | NUM operation ) FROM IDENT )
             int alt15=4;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -1513,7 +1513,7 @@ public class highParser extends Parser {
 
             switch (alt15) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:108:5: IDENT IS declarationObjet
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:108:5: IDENT IS declarationObjet
                     {
                     IDENT47=(Token)match(input,IDENT,FOLLOW_IDENT_in_init647);  
                     stream_IDENT.add(IDENT47);
@@ -1530,7 +1530,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: declarationObjet, IDENT
+                    // elements: IDENT, declarationObjet
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1542,7 +1542,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 109:7: -> ^( INIT_IS_KW IDENT declarationObjet )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:109:10: ^( INIT_IS_KW IDENT declarationObjet )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:109:10: ^( INIT_IS_KW IDENT declarationObjet )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INIT_IS_KW, "INIT_IS_KW"), root_1);
@@ -1559,7 +1559,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:7: accesClasse HAS allocationObject ( VIRG allocationObject )*
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:7: accesClasse HAS allocationObject ( VIRG allocationObject )*
                     {
                     pushFollow(FOLLOW_accesClasse_in_init675);
                     accesClasse50=accesClasse();
@@ -1576,7 +1576,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     stream_allocationObject.add(allocationObject52.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:40: ( VIRG allocationObject )*
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:40: ( VIRG allocationObject )*
                     loop12:
                     do {
                         int alt12=2;
@@ -1589,7 +1589,7 @@ public class highParser extends Parser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:41: VIRG allocationObject
+                    	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:110:41: VIRG allocationObject
                     	    {
                     	    VIRG53=(Token)match(input,VIRG,FOLLOW_VIRG_in_init682);  
                     	    stream_VIRG.add(VIRG53);
@@ -1612,7 +1612,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesClasse, allocationObject
+                    // elements: allocationObject, accesClasse
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1624,7 +1624,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 111:7: -> ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:111:10: ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:111:10: ^( INIT_HAS_KW accesClasse ( allocationObject )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(INIT_HAS_KW, "INIT_HAS_KW"), root_1);
@@ -1648,7 +1648,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:7: INSERT_KW IDENT IN IDENT ( NUM operation )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:7: INSERT_KW IDENT IN IDENT ( NUM operation )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1665,7 +1665,7 @@ public class highParser extends Parser {
                     IDENT58_tree = (CommonTree)adaptor.create(IDENT58);
                     adaptor.addChild(root_0, IDENT58_tree);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:34: ( NUM operation )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:34: ( NUM operation )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -1674,7 +1674,7 @@ public class highParser extends Parser {
                     }
                     switch (alt13) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:35: NUM operation
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:112:35: NUM operation
                             {
                             NUM59=(Token)match(input,NUM,FOLLOW_NUM_in_init723); 
                             pushFollow(FOLLOW_operation_in_init726);
@@ -1693,7 +1693,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:7: REMOVE_KW ( IDENT | NUM operation ) FROM IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:7: REMOVE_KW ( IDENT | NUM operation ) FROM IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1701,7 +1701,7 @@ public class highParser extends Parser {
                     REMOVE_KW61_tree = (CommonTree)adaptor.create(REMOVE_KW61);
                     root_0 = (CommonTree)adaptor.becomeRoot(REMOVE_KW61_tree, root_0);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:18: ( IDENT | NUM operation )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:18: ( IDENT | NUM operation )
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1719,7 +1719,7 @@ public class highParser extends Parser {
                     }
                     switch (alt14) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:19: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:19: IDENT
                             {
                             IDENT62=(Token)match(input,IDENT,FOLLOW_IDENT_in_init742); 
                             IDENT62_tree = (CommonTree)adaptor.create(IDENT62);
@@ -1729,7 +1729,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:25: NUM operation
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:113:25: NUM operation
                             {
                             NUM63=(Token)match(input,NUM,FOLLOW_NUM_in_init744); 
                             pushFollow(FOLLOW_operation_in_init747);
@@ -1778,7 +1778,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "declarationObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:117:1: declarationObjet : ( IDENT ( dupli )? -> ^( DEC IDENT ( dupli )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) ) | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) | PLAYER ( SOLO )? );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:117:1: declarationObjet : ( IDENT ( dupli )? -> ^( DEC IDENT ( dupli )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) ) | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) | PLAYER ( SOLO )? );
     public final highParser.declarationObjet_return declarationObjet() throws RecognitionException {
         highParser.declarationObjet_return retval = new highParser.declarationObjet_return();
         retval.start = input.LT(1);
@@ -1841,7 +1841,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_dupli=new RewriteRuleSubtreeStream(adaptor,"rule dupli");
         RewriteRuleSubtreeStream stream_view=new RewriteRuleSubtreeStream(adaptor,"rule view");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:117:18: ( IDENT ( dupli )? -> ^( DEC IDENT ( dupli )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) ) | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) | PLAYER ( SOLO )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:117:18: ( IDENT ( dupli )? -> ^( DEC IDENT ( dupli )? ) | LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )? -> ^( LIST_KW ( ( operation )? IDENT )+ ) | CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) ) | MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )? | IN IDENT -> ^( IN_KW IDENT ) | PLAYER ( SOLO )? )
             int alt24=6;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -1883,12 +1883,12 @@ public class highParser extends Parser {
 
             switch (alt24) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:5: IDENT ( dupli )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:5: IDENT ( dupli )?
                     {
                     IDENT67=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet771);  
                     stream_IDENT.add(IDENT67);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:11: ( dupli )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:11: ( dupli )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -1897,7 +1897,7 @@ public class highParser extends Parser {
                     }
                     switch (alt16) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:11: dupli
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:118:11: dupli
                             {
                             pushFollow(FOLLOW_dupli_in_declarationObjet773);
                             dupli68=dupli();
@@ -1926,13 +1926,13 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 119:7: -> ^( DEC IDENT ( dupli )? )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:119:10: ^( DEC IDENT ( dupli )? )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:119:10: ^( DEC IDENT ( dupli )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DEC, "DEC"), root_1);
 
                         adaptor.addChild(root_1, stream_IDENT.nextNode());
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:119:22: ( dupli )?
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:119:22: ( dupli )?
                         if ( stream_dupli.hasNext() ) {
                             adaptor.addChild(root_1, stream_dupli.nextTree());
 
@@ -1948,12 +1948,12 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:7: LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:7: LIST_KW ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )?
                     {
                     LIST_KW69=(Token)match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet802);  
                     stream_LIST_KW.add(LIST_KW69);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:15: ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:15: ( OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )* )?
                     int alt20=2;
                     int LA20_0 = input.LA(1);
 
@@ -1962,12 +1962,12 @@ public class highParser extends Parser {
                     }
                     switch (alt20) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:16: OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )*
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:16: OF ( operation )? ( IDENT ) ( ',' ( operation )? ( IDENT ) )*
                             {
                             OF70=(Token)match(input,OF,FOLLOW_OF_in_declarationObjet805);  
                             stream_OF.add(OF70);
 
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:19: ( operation )?
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:19: ( operation )?
                             int alt17=2;
                             int LA17_0 = input.LA(1);
 
@@ -1983,7 +1983,7 @@ public class highParser extends Parser {
                             }
                             switch (alt17) {
                                 case 1 :
-                                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:20: operation
+                                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:20: operation
                                     {
                                     pushFollow(FOLLOW_operation_in_declarationObjet808);
                                     operation71=operation();
@@ -1997,8 +1997,8 @@ public class highParser extends Parser {
 
                             }
 
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:32: ( IDENT )
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:33: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:32: ( IDENT )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:33: IDENT
                             {
                             IDENT72=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet813);  
                             stream_IDENT.add(IDENT72);
@@ -2006,7 +2006,7 @@ public class highParser extends Parser {
 
                             }
 
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:40: ( ',' ( operation )? ( IDENT ) )*
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:40: ( ',' ( operation )? ( IDENT ) )*
                             loop19:
                             do {
                                 int alt19=2;
@@ -2019,12 +2019,12 @@ public class highParser extends Parser {
 
                                 switch (alt19) {
                             	case 1 :
-                            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:41: ',' ( operation )? ( IDENT )
+                            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:41: ',' ( operation )? ( IDENT )
                             	    {
                             	    char_literal73=(Token)match(input,VIRG,FOLLOW_VIRG_in_declarationObjet817);  
                             	    stream_VIRG.add(char_literal73);
 
-                            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:45: ( operation )?
+                            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:45: ( operation )?
                             	    int alt18=2;
                             	    int LA18_0 = input.LA(1);
 
@@ -2040,7 +2040,7 @@ public class highParser extends Parser {
                             	    }
                             	    switch (alt18) {
                             	        case 1 :
-                            	            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:46: operation
+                            	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:46: operation
                             	            {
                             	            pushFollow(FOLLOW_operation_in_declarationObjet820);
                             	            operation74=operation();
@@ -2054,8 +2054,8 @@ public class highParser extends Parser {
 
                             	    }
 
-                            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:58: ( IDENT )
-                            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:59: IDENT
+                            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:58: ( IDENT )
+                            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:120:59: IDENT
                             	    {
                             	    IDENT75=(Token)match(input,IDENT,FOLLOW_IDENT_in_declarationObjet825);  
                             	    stream_IDENT.add(IDENT75);
@@ -2081,7 +2081,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: operation, LIST_KW, IDENT
+                    // elements: LIST_KW, operation, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2093,7 +2093,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 121:7: -> ^( LIST_KW ( ( operation )? IDENT )+ )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:121:9: ^( LIST_KW ( ( operation )? IDENT )+ )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:121:9: ^( LIST_KW ( ( operation )? IDENT )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(stream_LIST_KW.nextNode(), root_1);
@@ -2102,7 +2102,7 @@ public class highParser extends Parser {
                             throw new RewriteEarlyExitException();
                         }
                         while ( stream_IDENT.hasNext() ) {
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:121:20: ( operation )?
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:121:20: ( operation )?
                             if ( stream_operation.hasNext() ) {
                                 adaptor.addChild(root_1, stream_operation.nextTree());
 
@@ -2122,12 +2122,12 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:7: CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:7: CAMERA ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) )
                     {
                     CAMERA76=(Token)match(input,CAMERA,FOLLOW_CAMERA_in_declarationObjet860);  
                     stream_CAMERA.add(CAMERA76);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:14: ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:14: ( view PERSON -> ^( CAMERA_KW PERSON view ) | FREE -> ^( CAMERA_KW FREE ) | -> ^( CAMERA_KW ON ) )
                     int alt21=3;
                     switch ( input.LA(1) ) {
                     case FIRST:
@@ -2155,7 +2155,7 @@ public class highParser extends Parser {
 
                     switch (alt21) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:15: view PERSON
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:15: view PERSON
                             {
                             pushFollow(FOLLOW_view_in_declarationObjet863);
                             view77=view();
@@ -2169,7 +2169,7 @@ public class highParser extends Parser {
 
 
                             // AST REWRITE
-                            // elements: view, PERSON
+                            // elements: PERSON, view
                             // token labels: 
                             // rule labels: retval
                             // token list labels: 
@@ -2181,7 +2181,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 122:27: -> ^( CAMERA_KW PERSON view )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:30: ^( CAMERA_KW PERSON view )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:30: ^( CAMERA_KW PERSON view )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAMERA_KW, "CAMERA_KW"), root_1);
@@ -2198,7 +2198,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:57: FREE
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:57: FREE
                             {
                             FREE79=(Token)match(input,FREE,FOLLOW_FREE_in_declarationObjet879);  
                             stream_FREE.add(FREE79);
@@ -2218,7 +2218,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 122:62: -> ^( CAMERA_KW FREE )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:65: ^( CAMERA_KW FREE )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:65: ^( CAMERA_KW FREE )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAMERA_KW, "CAMERA_KW"), root_1);
@@ -2234,7 +2234,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:85: 
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:85: 
                             {
 
                             // AST REWRITE
@@ -2250,7 +2250,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 122:85: -> ^( CAMERA_KW ON )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:87: ^( CAMERA_KW ON )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:122:87: ^( CAMERA_KW ON )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAMERA_KW, "CAMERA_KW"), root_1);
@@ -2272,12 +2272,12 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:7: MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:7: MEDIA ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
                     {
                     MEDIA80=(Token)match(input,MEDIA,FOLLOW_MEDIA_in_declarationObjet905);  
                     stream_MEDIA.add(MEDIA80);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:13: ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:13: ( LOOP -> ^( MEDIA_KW LOOP ) | ONCE -> ^( MEDIA_KW ONCE ) )?
                     int alt22=3;
                     int LA22_0 = input.LA(1);
 
@@ -2289,7 +2289,7 @@ public class highParser extends Parser {
                     }
                     switch (alt22) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:14: LOOP
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:14: LOOP
                             {
                             LOOP81=(Token)match(input,LOOP,FOLLOW_LOOP_in_declarationObjet908);  
                             stream_LOOP.add(LOOP81);
@@ -2309,7 +2309,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 123:19: -> ^( MEDIA_KW LOOP )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:21: ^( MEDIA_KW LOOP )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:21: ^( MEDIA_KW LOOP )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MEDIA_KW, "MEDIA_KW"), root_1);
@@ -2325,7 +2325,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:40: ONCE
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:40: ONCE
                             {
                             ONCE82=(Token)match(input,ONCE,FOLLOW_ONCE_in_declarationObjet919);  
                             stream_ONCE.add(ONCE82);
@@ -2345,7 +2345,7 @@ public class highParser extends Parser {
                             root_0 = (CommonTree)adaptor.nil();
                             // 123:45: -> ^( MEDIA_KW ONCE )
                             {
-                                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:47: ^( MEDIA_KW ONCE )
+                                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:123:47: ^( MEDIA_KW ONCE )
                                 {
                                 CommonTree root_1 = (CommonTree)adaptor.nil();
                                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MEDIA_KW, "MEDIA_KW"), root_1);
@@ -2367,7 +2367,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:124:7: IN IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:124:7: IN IDENT
                     {
                     IN83=(Token)match(input,IN,FOLLOW_IN_in_declarationObjet944);  
                     stream_IN.add(IN83);
@@ -2390,7 +2390,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 124:16: -> ^( IN_KW IDENT )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:124:19: ^( IN_KW IDENT )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:124:19: ^( IN_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(IN_KW, "IN_KW"), root_1);
@@ -2406,7 +2406,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:7: PLAYER ( SOLO )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:7: PLAYER ( SOLO )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2414,7 +2414,7 @@ public class highParser extends Parser {
                     PLAYER85_tree = (CommonTree)adaptor.create(PLAYER85);
                     adaptor.addChild(root_0, PLAYER85_tree);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:14: ( SOLO )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:14: ( SOLO )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -2423,7 +2423,7 @@ public class highParser extends Parser {
                     }
                     switch (alt23) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:14: SOLO
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:125:14: SOLO
                             {
                             SOLO86=(Token)match(input,SOLO,FOLLOW_SOLO_in_declarationObjet964); 
                             SOLO86_tree = (CommonTree)adaptor.create(SOLO86);
@@ -2464,7 +2464,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "typeEntity"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:128:1: typeEntity : IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:128:1: typeEntity : IDENT ;
     public final highParser.typeEntity_return typeEntity() throws RecognitionException {
         highParser.typeEntity_return retval = new highParser.typeEntity_return();
         retval.start = input.LT(1);
@@ -2476,8 +2476,8 @@ public class highParser extends Parser {
         CommonTree IDENT87_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:128:12: ( IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:129:5: IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:128:12: ( IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:129:5: IDENT
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -2512,7 +2512,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "dupli"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:132:1: dupli : DUPLICABLE ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:132:1: dupli : DUPLICABLE ;
     public final highParser.dupli_return dupli() throws RecognitionException {
         highParser.dupli_return retval = new highParser.dupli_return();
         retval.start = input.LT(1);
@@ -2524,8 +2524,8 @@ public class highParser extends Parser {
         CommonTree DUPLICABLE88_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:132:7: ( DUPLICABLE )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:133:5: DUPLICABLE
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:132:7: ( DUPLICABLE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:133:5: DUPLICABLE
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -2560,7 +2560,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "view"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:136:1: view : ( FIRST | THIRD );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:136:1: view : ( FIRST | THIRD );
     public final highParser.view_return view() throws RecognitionException {
         highParser.view_return retval = new highParser.view_return();
         retval.start = input.LT(1);
@@ -2572,8 +2572,8 @@ public class highParser extends Parser {
         CommonTree set89_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:136:6: ( FIRST | THIRD )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:136:6: ( FIRST | THIRD )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -2615,7 +2615,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "allocationObject"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:141:1: allocationObject : ( ( IDENT | 'value' ) ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:141:1: allocationObject : ( ( IDENT | 'value' ) ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) );
     public final highParser.allocationObject_return allocationObject() throws RecognitionException {
         highParser.allocationObject_return retval = new highParser.allocationObject_return();
         retval.start = input.LT(1);
@@ -2662,7 +2662,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_typeCoordonnees=new RewriteRuleSubtreeStream(adaptor,"rule typeCoordonnees");
         RewriteRuleSubtreeStream stream_coordinates=new RewriteRuleSubtreeStream(adaptor,"rule coordinates");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:141:18: ( ( IDENT | 'value' ) ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:141:18: ( ( IDENT | 'value' ) ( AT valAggregation )? -> ^( ALLOCATION_KW IDENT ( valAggregation )? ) | typeCoordonnees AT coordinates -> ^( ALLOCATION_KW typeCoordonnees coordinates ) | attributListeOuObjet AT IDENT -> ^( ALLOCATION_KW attributListeOuObjet IDENT ) | attributTps AT operation timeUnit -> ^( ALLOCATION_KW attributTps operation timeUnit ) )
             int alt27=4;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -2711,9 +2711,9 @@ public class highParser extends Parser {
 
             switch (alt27) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:5: ( IDENT | 'value' ) ( AT valAggregation )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:5: ( IDENT | 'value' ) ( AT valAggregation )?
                     {
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:5: ( IDENT | 'value' )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:5: ( IDENT | 'value' )
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
@@ -2731,7 +2731,7 @@ public class highParser extends Parser {
                     }
                     switch (alt25) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:6: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:6: IDENT
                             {
                             IDENT90=(Token)match(input,IDENT,FOLLOW_IDENT_in_allocationObject1053);  
                             stream_IDENT.add(IDENT90);
@@ -2740,7 +2740,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:14: 'value'
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:14: 'value'
                             {
                             string_literal91=(Token)match(input,VALUE,FOLLOW_VALUE_in_allocationObject1057);  
                             stream_VALUE.add(string_literal91);
@@ -2751,7 +2751,7 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:23: ( AT valAggregation )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:23: ( AT valAggregation )?
                     int alt26=2;
                     int LA26_0 = input.LA(1);
 
@@ -2760,7 +2760,7 @@ public class highParser extends Parser {
                     }
                     switch (alt26) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:24: AT valAggregation
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:142:24: AT valAggregation
                             {
                             AT92=(Token)match(input,AT,FOLLOW_AT_in_allocationObject1061);  
                             stream_AT.add(AT92);
@@ -2792,13 +2792,13 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 143:7: -> ^( ALLOCATION_KW IDENT ( valAggregation )? )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:143:10: ^( ALLOCATION_KW IDENT ( valAggregation )? )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:143:10: ^( ALLOCATION_KW IDENT ( valAggregation )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_IDENT.nextNode());
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:143:33: ( valAggregation )?
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:143:33: ( valAggregation )?
                         if ( stream_valAggregation.hasNext() ) {
                             adaptor.addChild(root_1, stream_valAggregation.nextTree());
 
@@ -2814,7 +2814,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:144:7: typeCoordonnees AT coordinates
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:144:7: typeCoordonnees AT coordinates
                     {
                     pushFollow(FOLLOW_typeCoordonnees_in_allocationObject1099);
                     typeCoordonnees94=typeCoordonnees();
@@ -2834,7 +2834,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: coordinates, typeCoordonnees
+                    // elements: typeCoordonnees, coordinates
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2846,7 +2846,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 145:7: -> ^( ALLOCATION_KW typeCoordonnees coordinates )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:145:10: ^( ALLOCATION_KW typeCoordonnees coordinates )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:145:10: ^( ALLOCATION_KW typeCoordonnees coordinates )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2863,7 +2863,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:146:7: attributListeOuObjet AT IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:146:7: attributListeOuObjet AT IDENT
                     {
                     pushFollow(FOLLOW_attributListeOuObjet_in_allocationObject1140);
                     attributListeOuObjet97=attributListeOuObjet();
@@ -2892,7 +2892,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 147:7: -> ^( ALLOCATION_KW attributListeOuObjet IDENT )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:147:10: ^( ALLOCATION_KW attributListeOuObjet IDENT )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:147:10: ^( ALLOCATION_KW attributListeOuObjet IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2909,7 +2909,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:148:7: attributTps AT operation timeUnit
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:148:7: attributTps AT operation timeUnit
                     {
                     pushFollow(FOLLOW_attributTps_in_allocationObject1182);
                     attributTps100=attributTps();
@@ -2935,7 +2935,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: timeUnit, attributTps, operation
+                    // elements: timeUnit, operation, attributTps
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2947,7 +2947,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 149:7: -> ^( ALLOCATION_KW attributTps operation timeUnit )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:149:10: ^( ALLOCATION_KW attributTps operation timeUnit )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:149:10: ^( ALLOCATION_KW attributTps operation timeUnit )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ALLOCATION_KW, "ALLOCATION_KW"), root_1);
@@ -2990,7 +2990,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "valAggregation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:152:1: valAggregation : ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | TEXTE -> ^( AGGREGATION_KW TEXTE ) | 'true' | 'false' );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:152:1: valAggregation : ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | TEXTE -> ^( AGGREGATION_KW TEXTE ) | 'true' | 'false' );
     public final highParser.valAggregation_return valAggregation() throws RecognitionException {
         highParser.valAggregation_return retval = new highParser.valAggregation_return();
         retval.start = input.LT(1);
@@ -3015,7 +3015,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         RewriteRuleSubtreeStream stream_timeUnit=new RewriteRuleSubtreeStream(adaptor,"rule timeUnit");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:152:16: ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | TEXTE -> ^( AGGREGATION_KW TEXTE ) | 'true' | 'false' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:152:16: ( operation ( timeUnit )? -> ^( AGGREGATION_KW operation ( timeUnit )? ) | IDENT -> ^( AGGREGATION_KW IDENT ) | TEXTE -> ^( AGGREGATION_KW TEXTE ) | 'true' | 'false' )
             int alt29=5;
             switch ( input.LA(1) ) {
             case FLOAT:
@@ -3074,7 +3074,7 @@ public class highParser extends Parser {
 
             switch (alt29) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:2: operation ( timeUnit )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:2: operation ( timeUnit )?
                     {
                     pushFollow(FOLLOW_operation_in_valAggregation1230);
                     operation104=operation();
@@ -3082,7 +3082,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     stream_operation.add(operation104.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:12: ( timeUnit )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:12: ( timeUnit )?
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
@@ -3091,7 +3091,7 @@ public class highParser extends Parser {
                     }
                     switch (alt28) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:13: timeUnit
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:153:13: timeUnit
                             {
                             pushFollow(FOLLOW_timeUnit_in_valAggregation1233);
                             timeUnit105=timeUnit();
@@ -3108,7 +3108,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: operation, timeUnit
+                    // elements: timeUnit, operation
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3120,13 +3120,13 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 154:4: -> ^( AGGREGATION_KW operation ( timeUnit )? )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:154:7: ^( AGGREGATION_KW operation ( timeUnit )? )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:154:7: ^( AGGREGATION_KW operation ( timeUnit )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(AGGREGATION_KW, "AGGREGATION_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_operation.nextTree());
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:154:34: ( timeUnit )?
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:154:34: ( timeUnit )?
                         if ( stream_timeUnit.hasNext() ) {
                             adaptor.addChild(root_1, stream_timeUnit.nextTree());
 
@@ -3142,7 +3142,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:155:4: IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:155:4: IDENT
                     {
                     IDENT106=(Token)match(input,IDENT,FOLLOW_IDENT_in_valAggregation1255);  
                     stream_IDENT.add(IDENT106);
@@ -3162,7 +3162,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 156:4: -> ^( AGGREGATION_KW IDENT )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:156:7: ^( AGGREGATION_KW IDENT )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:156:7: ^( AGGREGATION_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(AGGREGATION_KW, "AGGREGATION_KW"), root_1);
@@ -3178,7 +3178,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:157:11: TEXTE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:157:11: TEXTE
                     {
                     TEXTE107=(Token)match(input,TEXTE,FOLLOW_TEXTE_in_valAggregation1278);  
                     stream_TEXTE.add(TEXTE107);
@@ -3198,7 +3198,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 158:11: -> ^( AGGREGATION_KW TEXTE )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:158:14: ^( AGGREGATION_KW TEXTE )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:158:14: ^( AGGREGATION_KW TEXTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(AGGREGATION_KW, "AGGREGATION_KW"), root_1);
@@ -3214,7 +3214,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:159:4: 'true'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:159:4: 'true'
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3226,7 +3226,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:160:4: 'false'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:160:4: 'false'
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3263,7 +3263,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "definition"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:1: definition : DEFINITION_KW IDENT MEANS consequences ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:1: definition : DEFINITION_KW IDENT MEANS consequences ;
     public final highParser.definition_return definition() throws RecognitionException {
         highParser.definition_return retval = new highParser.definition_return();
         retval.start = input.LT(1);
@@ -3281,8 +3281,8 @@ public class highParser extends Parser {
         CommonTree MEANS112_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:12: ( DEFINITION_KW IDENT MEANS consequences )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:14: DEFINITION_KW IDENT MEANS consequences
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:12: ( DEFINITION_KW IDENT MEANS consequences )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:164:14: DEFINITION_KW IDENT MEANS consequences
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -3328,7 +3328,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "consequences"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:166:1: consequences : consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:166:1: consequences : consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) ;
     public final highParser.consequences_return consequences() throws RecognitionException {
         highParser.consequences_return retval = new highParser.consequences_return();
         retval.start = input.LT(1);
@@ -3345,8 +3345,8 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_VIRG=new RewriteRuleTokenStream(adaptor,"token VIRG");
         RewriteRuleSubtreeStream stream_consequ=new RewriteRuleSubtreeStream(adaptor,"rule consequ");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:166:14: ( consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:5: consequ ( VIRG consequ )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:166:14: ( consequ ( VIRG consequ )* -> ^( CONSEQUENCES_KW ( consequ )+ ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:5: consequ ( VIRG consequ )*
             {
             pushFollow(FOLLOW_consequ_in_consequences1339);
             consequ114=consequ();
@@ -3354,7 +3354,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             stream_consequ.add(consequ114.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:13: ( VIRG consequ )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:13: ( VIRG consequ )*
             loop30:
             do {
                 int alt30=2;
@@ -3367,7 +3367,7 @@ public class highParser extends Parser {
 
                 switch (alt30) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:14: VIRG consequ
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:167:14: VIRG consequ
             	    {
             	    VIRG115=(Token)match(input,VIRG,FOLLOW_VIRG_in_consequences1342);  
             	    stream_VIRG.add(VIRG115);
@@ -3402,7 +3402,7 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 168:7: -> ^( CONSEQUENCES_KW ( consequ )+ )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:168:9: ^( CONSEQUENCES_KW ( consequ )+ )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:168:9: ^( CONSEQUENCES_KW ( consequ )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CONSEQUENCES_KW, "CONSEQUENCES_KW"), root_1);
@@ -3448,7 +3448,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "consequ"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:171:1: consequ : ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW OF IDENT ( DBP IDENT )? | DEFEAT_KW OF IDENT ( DBP IDENT )? );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:171:1: consequ : ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW OF IDENT ( DBP IDENT )? | DEFEAT_KW OF IDENT ( DBP IDENT )? );
     public final highParser.consequ_return consequ() throws RecognitionException {
         highParser.consequ_return retval = new highParser.consequ_return();
         retval.start = input.LT(1);
@@ -3488,7 +3488,7 @@ public class highParser extends Parser {
         CommonTree IDENT131_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:171:9: ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW OF IDENT ( DBP IDENT )? | DEFEAT_KW OF IDENT ( DBP IDENT )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:171:9: ( siAlors | action | affectation | activCommande | IDENT | VICTORY_KW OF IDENT ( DBP IDENT )? | DEFEAT_KW OF IDENT ( DBP IDENT )? )
             int alt33=7;
             switch ( input.LA(1) ) {
             case IF_KW:
@@ -3565,7 +3565,7 @@ public class highParser extends Parser {
 
             switch (alt33) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:172:5: siAlors
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:172:5: siAlors
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3579,7 +3579,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:173:7: action
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:173:7: action
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3593,7 +3593,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:174:7: affectation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:174:7: affectation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3607,7 +3607,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:175:7: activCommande
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:175:7: activCommande
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3621,7 +3621,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:176:7: IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:176:7: IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3633,7 +3633,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:7: VICTORY_KW OF IDENT ( DBP IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:7: VICTORY_KW OF IDENT ( DBP IDENT )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3646,7 +3646,7 @@ public class highParser extends Parser {
                     IDENT124_tree = (CommonTree)adaptor.create(IDENT124);
                     adaptor.addChild(root_0, IDENT124_tree);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:29: ( DBP IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:29: ( DBP IDENT )?
                     int alt31=2;
                     int LA31_0 = input.LA(1);
 
@@ -3655,7 +3655,7 @@ public class highParser extends Parser {
                     }
                     switch (alt31) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:30: DBP IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:177:30: DBP IDENT
                             {
                             DBP125=(Token)match(input,DBP,FOLLOW_DBP_in_consequ1427); 
                             DBP125_tree = (CommonTree)adaptor.create(DBP125);
@@ -3675,7 +3675,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:7: DEFEAT_KW OF IDENT ( DBP IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:7: DEFEAT_KW OF IDENT ( DBP IDENT )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3688,7 +3688,7 @@ public class highParser extends Parser {
                     IDENT129_tree = (CommonTree)adaptor.create(IDENT129);
                     adaptor.addChild(root_0, IDENT129_tree);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:28: ( DBP IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:28: ( DBP IDENT )?
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
@@ -3697,7 +3697,7 @@ public class highParser extends Parser {
                     }
                     switch (alt32) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:29: DBP IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:178:29: DBP IDENT
                             {
                             DBP130=(Token)match(input,DBP,FOLLOW_DBP_in_consequ1448); 
                             DBP130_tree = (CommonTree)adaptor.create(DBP130);
@@ -3742,7 +3742,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "action"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:181:1: action : ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )? | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW | NEXTURN_KW IDENT | IDENT GRASPS_KW IDENT | IDENT EXPELS_KW IDENT BY operation | IDENT INGESTS_KW IDENT IN IDENT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:181:1: action : ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )? | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW | NEXTURN_KW IDENT | IDENT GRASPS_KW IDENT | IDENT EXPELS_KW IDENT BY operation | IDENT INGESTS_KW IDENT IN IDENT );
     public final highParser.action_return action() throws RecognitionException {
         highParser.action_return retval = new highParser.action_return();
         retval.start = input.LT(1);
@@ -3852,12 +3852,12 @@ public class highParser extends Parser {
         CommonTree IDENT181_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:181:8: ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )? | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW | NEXTURN_KW IDENT | IDENT GRASPS_KW IDENT | IDENT EXPELS_KW IDENT BY operation | IDENT INGESTS_KW IDENT IN IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:181:8: ( accesClasse actionObjet | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )? | ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT | BLOCK_KW transformation OF accesClasse coordinates | ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )? | WAIT_KW operation timeUnit THEN consequences ENDWAIT | SAVE_KW | NEXTURN_KW IDENT | IDENT GRASPS_KW IDENT | IDENT EXPELS_KW IDENT BY operation | IDENT INGESTS_KW IDENT IN IDENT )
             int alt41=11;
             alt41 = dfa41.predict(input);
             switch (alt41) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:182:5: accesClasse actionObjet
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:182:5: accesClasse actionObjet
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3877,7 +3877,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:7: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:7: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW | PAUSE_KW ) ( ':' IDENT )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3892,7 +3892,7 @@ public class highParser extends Parser {
                         throw mse;
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:22: ( ENDS_KW | STARTS_KW | PAUSE_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:22: ( ENDS_KW | STARTS_KW | PAUSE_KW )
                     int alt34=3;
                     switch ( input.LA(1) ) {
                     case ENDS_KW:
@@ -3919,7 +3919,7 @@ public class highParser extends Parser {
 
                     switch (alt34) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:23: ENDS_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:23: ENDS_KW
                             {
                             ENDS_KW135=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1489); 
                             ENDS_KW135_tree = (CommonTree)adaptor.create(ENDS_KW135);
@@ -3929,7 +3929,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:34: STARTS_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:34: STARTS_KW
                             {
                             STARTS_KW136=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1494); 
                             STARTS_KW136_tree = (CommonTree)adaptor.create(STARTS_KW136);
@@ -3939,7 +3939,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:47: PAUSE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:47: PAUSE_KW
                             {
                             PAUSE_KW137=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1499); 
                             PAUSE_KW137_tree = (CommonTree)adaptor.create(PAUSE_KW137);
@@ -3951,7 +3951,7 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:58: ( ':' IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:58: ( ':' IDENT )?
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -3960,7 +3960,7 @@ public class highParser extends Parser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:59: ':' IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:183:59: ':' IDENT
                             {
                             char_literal138=(Token)match(input,DBP,FOLLOW_DBP_in_action1504); 
                             char_literal138_tree = (CommonTree)adaptor.create(char_literal138);
@@ -3980,11 +3980,11 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:7: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:7: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW ) IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:7: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:7: ( PAUSE_KW | MUTE_KW ( ON | OFF ) | PLAY_KW | STOP_KW )
                     int alt36=4;
                     switch ( input.LA(1) ) {
                     case PAUSE_KW:
@@ -4016,7 +4016,7 @@ public class highParser extends Parser {
 
                     switch (alt36) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:8: PAUSE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:8: PAUSE_KW
                             {
                             PAUSE_KW140=(Token)match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1519); 
                             PAUSE_KW140_tree = (CommonTree)adaptor.create(PAUSE_KW140);
@@ -4026,7 +4026,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:20: MUTE_KW ( ON | OFF )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:20: MUTE_KW ( ON | OFF )
                             {
                             MUTE_KW141=(Token)match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1524); 
                             MUTE_KW141_tree = (CommonTree)adaptor.create(MUTE_KW141);
@@ -4047,7 +4047,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:42: PLAY_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:42: PLAY_KW
                             {
                             PLAY_KW143=(Token)match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1537); 
                             PLAY_KW143_tree = (CommonTree)adaptor.create(PLAY_KW143);
@@ -4057,7 +4057,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:53: STOP_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:184:53: STOP_KW
                             {
                             STOP_KW144=(Token)match(input,STOP_KW,FOLLOW_STOP_KW_in_action1542); 
                             STOP_KW144_tree = (CommonTree)adaptor.create(STOP_KW144);
@@ -4077,7 +4077,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:185:7: BLOCK_KW transformation OF accesClasse coordinates
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:185:7: BLOCK_KW transformation OF accesClasse coordinates
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4108,11 +4108,11 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:7: ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:7: ( EFFACE_KW | GENERATE_KW ) ( ( operation )? accesLocal ) ( ( IN | ON ) accesLocal | AT coordinates )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:7: ( EFFACE_KW | GENERATE_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:7: ( EFFACE_KW | GENERATE_KW )
                     int alt37=2;
                     int LA37_0 = input.LA(1);
 
@@ -4130,7 +4130,7 @@ public class highParser extends Parser {
                     }
                     switch (alt37) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:8: EFFACE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:8: EFFACE_KW
                             {
                             EFFACE_KW151=(Token)match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1574); 
                             EFFACE_KW151_tree = (CommonTree)adaptor.create(EFFACE_KW151);
@@ -4140,7 +4140,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:21: GENERATE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:21: GENERATE_KW
                             {
                             GENERATE_KW152=(Token)match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1579); 
                             GENERATE_KW152_tree = (CommonTree)adaptor.create(GENERATE_KW152);
@@ -4152,10 +4152,10 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:35: ( ( operation )? accesLocal )
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: ( operation )? accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:35: ( ( operation )? accesLocal )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: ( operation )? accesLocal
                     {
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: ( operation )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: ( operation )?
                     int alt38=2;
                     int LA38_0 = input.LA(1);
 
@@ -4171,7 +4171,7 @@ public class highParser extends Parser {
                     }
                     switch (alt38) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: operation
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:36: operation
                             {
                             pushFollow(FOLLOW_operation_in_action1584);
                             operation153=operation();
@@ -4194,7 +4194,7 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:59: ( ( IN | ON ) accesLocal | AT coordinates )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:59: ( ( IN | ON ) accesLocal | AT coordinates )?
                     int alt40=3;
                     int LA40_0 = input.LA(1);
 
@@ -4206,9 +4206,9 @@ public class highParser extends Parser {
                     }
                     switch (alt40) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:60: ( IN | ON ) accesLocal
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:60: ( IN | ON ) accesLocal
                             {
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:60: ( IN | ON )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:60: ( IN | ON )
                             int alt39=2;
                             int LA39_0 = input.LA(1);
 
@@ -4226,14 +4226,14 @@ public class highParser extends Parser {
                             }
                             switch (alt39) {
                                 case 1 :
-                                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:61: IN
+                                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:61: IN
                                     {
                                     IN155=(Token)match(input,IN,FOLLOW_IN_in_action1592); 
 
                                     }
                                     break;
                                 case 2 :
-                                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:65: ON
+                                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:65: ON
                                     {
                                     ON156=(Token)match(input,ON,FOLLOW_ON_in_action1595); 
 
@@ -4252,7 +4252,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:83: AT coordinates
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:186:83: AT coordinates
                             {
                             AT158=(Token)match(input,AT,FOLLOW_AT_in_action1603); 
                             pushFollow(FOLLOW_coordinates_in_action1606);
@@ -4271,7 +4271,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:187:7: WAIT_KW operation timeUnit THEN consequences ENDWAIT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:187:7: WAIT_KW operation timeUnit THEN consequences ENDWAIT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4303,7 +4303,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:188:7: SAVE_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:188:7: SAVE_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4315,7 +4315,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:189:7: NEXTURN_KW IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:189:7: NEXTURN_KW IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4331,7 +4331,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:191:7: IDENT GRASPS_KW IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:191:7: IDENT GRASPS_KW IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4351,7 +4351,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:192:7: IDENT EXPELS_KW IDENT BY operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:192:7: IDENT EXPELS_KW IDENT BY operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4378,7 +4378,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 11 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:193:7: IDENT INGESTS_KW IDENT IN IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:193:7: IDENT INGESTS_KW IDENT IN IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4428,7 +4428,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "actionObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:197:1: actionObjet : ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )? | EQUIP ( accesLocal | NEXT | PREVIOUS ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:197:1: actionObjet : ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )? | EQUIP ( accesLocal | NEXT | PREVIOUS ) );
     public final highParser.actionObjet_return actionObjet() throws RecognitionException {
         highParser.actionObjet_return retval = new highParser.actionObjet_return();
         retval.start = input.LT(1);
@@ -4464,7 +4464,7 @@ public class highParser extends Parser {
         CommonTree PREVIOUS194_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:197:13: ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )? | EQUIP ( accesLocal | NEXT | PREVIOUS ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:197:13: ( DIES_KW | actionCommandePressee | actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )? | EQUIP ( accesLocal | NEXT | PREVIOUS ) )
             int alt44=4;
             switch ( input.LA(1) ) {
             case DIES_KW:
@@ -4499,7 +4499,7 @@ public class highParser extends Parser {
 
             switch (alt44) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:198:5: DIES_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:198:5: DIES_KW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4511,7 +4511,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:199:7: actionCommandePressee
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:199:7: actionCommandePressee
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4525,7 +4525,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:7: actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:7: actionCommandeMaintenue ( DURING operation timeUnit | UNTIL conditions HAPPENS )?
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4535,7 +4535,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     adaptor.addChild(root_0, actionCommandeMaintenue184.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:31: ( DURING operation timeUnit | UNTIL conditions HAPPENS )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:31: ( DURING operation timeUnit | UNTIL conditions HAPPENS )?
                     int alt42=3;
                     int LA42_0 = input.LA(1);
 
@@ -4547,7 +4547,7 @@ public class highParser extends Parser {
                     }
                     switch (alt42) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:32: DURING operation timeUnit
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:32: DURING operation timeUnit
                             {
                             DURING185=(Token)match(input,DURING,FOLLOW_DURING_in_actionObjet1808); 
                             DURING185_tree = (CommonTree)adaptor.create(DURING185);
@@ -4569,7 +4569,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:61: UNTIL conditions HAPPENS
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:200:61: UNTIL conditions HAPPENS
                             {
                             UNTIL188=(Token)match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1817); 
                             UNTIL188_tree = (CommonTree)adaptor.create(UNTIL188);
@@ -4592,7 +4592,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:7: EQUIP ( accesLocal | NEXT | PREVIOUS )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:7: EQUIP ( accesLocal | NEXT | PREVIOUS )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4600,7 +4600,7 @@ public class highParser extends Parser {
                     EQUIP191_tree = (CommonTree)adaptor.create(EQUIP191);
                     root_0 = (CommonTree)adaptor.becomeRoot(EQUIP191_tree, root_0);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:14: ( accesLocal | NEXT | PREVIOUS )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:14: ( accesLocal | NEXT | PREVIOUS )
                     int alt43=3;
                     switch ( input.LA(1) ) {
                     case IDENT:
@@ -4629,7 +4629,7 @@ public class highParser extends Parser {
 
                     switch (alt43) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:15: accesLocal
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:15: accesLocal
                             {
                             pushFollow(FOLLOW_accesLocal_in_actionObjet1837);
                             accesLocal192=accesLocal();
@@ -4641,7 +4641,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:28: NEXT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:28: NEXT
                             {
                             NEXT193=(Token)match(input,NEXT,FOLLOW_NEXT_in_actionObjet1841); 
                             NEXT193_tree = (CommonTree)adaptor.create(NEXT193);
@@ -4651,7 +4651,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:35: PREVIOUS
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:201:35: PREVIOUS
                             {
                             PREVIOUS194=(Token)match(input,PREVIOUS,FOLLOW_PREVIOUS_in_actionObjet1845); 
                             PREVIOUS194_tree = (CommonTree)adaptor.create(PREVIOUS194);
@@ -4692,7 +4692,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "actionCommandePressee"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:204:1: actionCommandePressee : JUMP operation ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:204:1: actionCommandePressee : JUMP operation ;
     public final highParser.actionCommandePressee_return actionCommandePressee() throws RecognitionException {
         highParser.actionCommandePressee_return retval = new highParser.actionCommandePressee_return();
         retval.start = input.LT(1);
@@ -4706,8 +4706,8 @@ public class highParser extends Parser {
         CommonTree JUMP195_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:204:23: ( JUMP operation )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:205:5: JUMP operation
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:204:23: ( JUMP operation )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:205:5: JUMP operation
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4748,7 +4748,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "actionCommandeMaintenue"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:208:1: actionCommandeMaintenue : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation | TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation | ACCELERATE BY operation | BRAKE BY operation );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:208:1: actionCommandeMaintenue : ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation | TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation | ACCELERATE BY operation | BRAKE BY operation );
     public final highParser.actionCommandeMaintenue_return actionCommandeMaintenue() throws RecognitionException {
         highParser.actionCommandeMaintenue_return retval = new highParser.actionCommandeMaintenue_return();
         retval.start = input.LT(1);
@@ -4786,7 +4786,7 @@ public class highParser extends Parser {
         CommonTree BY209_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:208:25: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation | TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation | ACCELERATE BY operation | BRAKE BY operation )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:208:25: ( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation | TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation | ACCELERATE BY operation | BRAKE BY operation )
             int alt45=4;
             switch ( input.LA(1) ) {
             case MOVE:
@@ -4818,7 +4818,7 @@ public class highParser extends Parser {
 
             switch (alt45) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:209:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:209:3: MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) BY operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4848,7 +4848,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:210:5: TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:210:5: TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) BY operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4878,7 +4878,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:211:5: ACCELERATE BY operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:211:5: ACCELERATE BY operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4897,7 +4897,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:212:5: BRAKE BY operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:212:5: BRAKE BY operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4941,7 +4941,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "transformation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:215:1: transformation : ( TRANSLATION | ROTATION | SCALE );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:215:1: transformation : ( TRANSLATION | ROTATION | SCALE );
     public final highParser.transformation_return transformation() throws RecognitionException {
         highParser.transformation_return retval = new highParser.transformation_return();
         retval.start = input.LT(1);
@@ -4953,8 +4953,8 @@ public class highParser extends Parser {
         CommonTree set211_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:215:16: ( TRANSLATION | ROTATION | SCALE )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:215:16: ( TRANSLATION | ROTATION | SCALE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4996,7 +4996,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "coordinates"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:221:1: coordinates : operation operation operation -> ^( COORDINATE_KW operation operation operation ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:221:1: coordinates : operation operation operation -> ^( COORDINATE_KW operation operation operation ) ;
     public final highParser.coordinates_return coordinates() throws RecognitionException {
         highParser.coordinates_return retval = new highParser.coordinates_return();
         retval.start = input.LT(1);
@@ -5012,8 +5012,8 @@ public class highParser extends Parser {
 
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:221:13: ( operation operation operation -> ^( COORDINATE_KW operation operation operation ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:222:5: operation operation operation
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:221:13: ( operation operation operation -> ^( COORDINATE_KW operation operation operation ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:222:5: operation operation operation
             {
             pushFollow(FOLLOW_operation_in_coordinates2026);
             operation212=operation();
@@ -5048,7 +5048,7 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 223:7: -> ^( COORDINATE_KW operation operation operation )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:223:10: ^( COORDINATE_KW operation operation operation )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:223:10: ^( COORDINATE_KW operation operation operation )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(COORDINATE_KW, "COORDINATE_KW"), root_1);
@@ -5089,7 +5089,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "commande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:228:1: commande : COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:228:1: commande : COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )* ;
     public final highParser.commande_return commande() throws RecognitionException {
         highParser.commande_return retval = new highParser.commande_return();
         retval.start = input.LT(1);
@@ -5113,8 +5113,8 @@ public class highParser extends Parser {
         CommonTree VIRG220_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:228:10: ( COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:5: COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:228:10: ( COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:5: COMMAND_KW FOR player_list IS actionCommande ( VIRG actionCommande )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5136,7 +5136,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, actionCommande219.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:53: ( VIRG actionCommande )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:53: ( VIRG actionCommande )*
             loop46:
             do {
                 int alt46=2;
@@ -5149,7 +5149,7 @@ public class highParser extends Parser {
 
                 switch (alt46) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:54: VIRG actionCommande
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:229:54: VIRG actionCommande
             	    {
             	    VIRG220=(Token)match(input,VIRG,FOLLOW_VIRG_in_commande2083); 
             	    pushFollow(FOLLOW_actionCommande_in_commande2086);
@@ -5194,7 +5194,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "player_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:232:1: player_list : IDENT ( VIRG IDENT )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:232:1: player_list : IDENT ( VIRG IDENT )* ;
     public final highParser.player_list_return player_list() throws RecognitionException {
         highParser.player_list_return retval = new highParser.player_list_return();
         retval.start = input.LT(1);
@@ -5210,8 +5210,8 @@ public class highParser extends Parser {
         CommonTree IDENT224_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:232:12: ( IDENT ( VIRG IDENT )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:5: IDENT ( VIRG IDENT )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:232:12: ( IDENT ( VIRG IDENT )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:5: IDENT ( VIRG IDENT )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5219,7 +5219,7 @@ public class highParser extends Parser {
             IDENT222_tree = (CommonTree)adaptor.create(IDENT222);
             adaptor.addChild(root_0, IDENT222_tree);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:11: ( VIRG IDENT )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:11: ( VIRG IDENT )*
             loop47:
             do {
                 int alt47=2;
@@ -5232,7 +5232,7 @@ public class highParser extends Parser {
 
                 switch (alt47) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:12: VIRG IDENT
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:233:12: VIRG IDENT
             	    {
             	    VIRG223=(Token)match(input,VIRG,FOLLOW_VIRG_in_player_list2108); 
             	    IDENT224=(Token)match(input,IDENT,FOLLOW_IDENT_in_player_list2111); 
@@ -5275,7 +5275,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "actionCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:236:1: actionCommande : ( MOUSE souris ( commandMode )? FOR definitionId -> ^( MOUSE_KW souris ( commandMode )? definitionId ) | KEY clavier ( commandMode )? FOR definitionId -> ^( KEY_KW clavier ( commandMode )? definitionId ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:236:1: actionCommande : ( MOUSE souris ( commandMode )? FOR definitionId -> ^( MOUSE_KW souris ( commandMode )? definitionId ) | KEY clavier ( commandMode )? FOR definitionId -> ^( KEY_KW clavier ( commandMode )? definitionId ) );
     public final highParser.actionCommande_return actionCommande() throws RecognitionException {
         highParser.actionCommande_return retval = new highParser.actionCommande_return();
         retval.start = input.LT(1);
@@ -5311,7 +5311,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_clavier=new RewriteRuleSubtreeStream(adaptor,"rule clavier");
         RewriteRuleSubtreeStream stream_definitionId=new RewriteRuleSubtreeStream(adaptor,"rule definitionId");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:236:16: ( MOUSE souris ( commandMode )? FOR definitionId -> ^( MOUSE_KW souris ( commandMode )? definitionId ) | KEY clavier ( commandMode )? FOR definitionId -> ^( KEY_KW clavier ( commandMode )? definitionId ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:236:16: ( MOUSE souris ( commandMode )? FOR definitionId -> ^( MOUSE_KW souris ( commandMode )? definitionId ) | KEY clavier ( commandMode )? FOR definitionId -> ^( KEY_KW clavier ( commandMode )? definitionId ) )
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -5329,7 +5329,7 @@ public class highParser extends Parser {
             }
             switch (alt50) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:5: MOUSE souris ( commandMode )? FOR definitionId
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:5: MOUSE souris ( commandMode )? FOR definitionId
                     {
                     MOUSE225=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_actionCommande2130);  
                     stream_MOUSE.add(MOUSE225);
@@ -5340,7 +5340,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     stream_souris.add(souris226.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:18: ( commandMode )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:18: ( commandMode )?
                     int alt48=2;
                     int LA48_0 = input.LA(1);
 
@@ -5349,7 +5349,7 @@ public class highParser extends Parser {
                     }
                     switch (alt48) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:19: commandMode
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:237:19: commandMode
                             {
                             pushFollow(FOLLOW_commandMode_in_actionCommande2135);
                             commandMode227=commandMode();
@@ -5375,7 +5375,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: definitionId, commandMode, souris
+                    // elements: commandMode, definitionId, souris
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -5387,13 +5387,13 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 238:7: -> ^( MOUSE_KW souris ( commandMode )? definitionId )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:238:10: ^( MOUSE_KW souris ( commandMode )? definitionId )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:238:10: ^( MOUSE_KW souris ( commandMode )? definitionId )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MOUSE_KW, "MOUSE_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_souris.nextTree());
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:238:28: ( commandMode )?
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:238:28: ( commandMode )?
                         if ( stream_commandMode.hasNext() ) {
                             adaptor.addChild(root_1, stream_commandMode.nextTree());
 
@@ -5410,7 +5410,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:7: KEY clavier ( commandMode )? FOR definitionId
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:7: KEY clavier ( commandMode )? FOR definitionId
                     {
                     KEY230=(Token)match(input,KEY,FOLLOW_KEY_in_actionCommande2170);  
                     stream_KEY.add(KEY230);
@@ -5421,7 +5421,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     stream_clavier.add(clavier231.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:19: ( commandMode )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:19: ( commandMode )?
                     int alt49=2;
                     int LA49_0 = input.LA(1);
 
@@ -5430,7 +5430,7 @@ public class highParser extends Parser {
                     }
                     switch (alt49) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:20: commandMode
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:239:20: commandMode
                             {
                             pushFollow(FOLLOW_commandMode_in_actionCommande2175);
                             commandMode232=commandMode();
@@ -5456,7 +5456,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: definitionId, clavier, commandMode
+                    // elements: commandMode, clavier, definitionId
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -5468,13 +5468,13 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 240:7: -> ^( KEY_KW clavier ( commandMode )? definitionId )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:240:10: ^( KEY_KW clavier ( commandMode )? definitionId )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:240:10: ^( KEY_KW clavier ( commandMode )? definitionId )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(KEY_KW, "KEY_KW"), root_1);
 
                         adaptor.addChild(root_1, stream_clavier.nextTree());
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:240:27: ( commandMode )?
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:240:27: ( commandMode )?
                         if ( stream_commandMode.hasNext() ) {
                             adaptor.addChild(root_1, stream_commandMode.nextTree());
 
@@ -5516,7 +5516,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "commandMode"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:243:1: commandMode : ( PRESSED_KW | HELD_KW | RELEASED_KW );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:243:1: commandMode : ( PRESSED_KW | HELD_KW | RELEASED_KW );
     public final highParser.commandMode_return commandMode() throws RecognitionException {
         highParser.commandMode_return retval = new highParser.commandMode_return();
         retval.start = input.LT(1);
@@ -5528,8 +5528,8 @@ public class highParser extends Parser {
         CommonTree set235_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:243:13: ( PRESSED_KW | HELD_KW | RELEASED_KW )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:243:13: ( PRESSED_KW | HELD_KW | RELEASED_KW )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5571,7 +5571,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "definitionId"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:247:1: definitionId : IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:247:1: definitionId : IDENT ;
     public final highParser.definitionId_return definitionId() throws RecognitionException {
         highParser.definitionId_return retval = new highParser.definitionId_return();
         retval.start = input.LT(1);
@@ -5583,8 +5583,8 @@ public class highParser extends Parser {
         CommonTree IDENT236_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:247:14: ( IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:248:5: IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:247:14: ( IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:248:5: IDENT
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5619,7 +5619,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "souris"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:251:1: souris : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:251:1: souris : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
     public final highParser.souris_return souris() throws RecognitionException {
         highParser.souris_return retval = new highParser.souris_return();
         retval.start = input.LT(1);
@@ -5631,8 +5631,8 @@ public class highParser extends Parser {
         CommonTree set237_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:251:8: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:251:8: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5674,7 +5674,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "clavier"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:255:1: clavier : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:255:1: clavier : ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
     public final highParser.clavier_return clavier() throws RecognitionException {
         highParser.clavier_return retval = new highParser.clavier_return();
         retval.start = input.LT(1);
@@ -5686,8 +5686,8 @@ public class highParser extends Parser {
         CommonTree set238_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:255:9: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:255:9: ( LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5729,7 +5729,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "activCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:259:1: activCommande : ( ACTIVATE_KW | DISABLE_KW ) typeCommand ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:259:1: activCommande : ( ACTIVATE_KW | DISABLE_KW ) typeCommand ;
     public final highParser.activCommande_return activCommande() throws RecognitionException {
         highParser.activCommande_return retval = new highParser.activCommande_return();
         retval.start = input.LT(1);
@@ -5745,12 +5745,12 @@ public class highParser extends Parser {
         CommonTree DISABLE_KW240_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:259:15: ( ( ACTIVATE_KW | DISABLE_KW ) typeCommand )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:5: ( ACTIVATE_KW | DISABLE_KW ) typeCommand
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:259:15: ( ( ACTIVATE_KW | DISABLE_KW ) typeCommand )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:5: ( ACTIVATE_KW | DISABLE_KW ) typeCommand
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:5: ( ACTIVATE_KW | DISABLE_KW )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:5: ( ACTIVATE_KW | DISABLE_KW )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -5768,7 +5768,7 @@ public class highParser extends Parser {
             }
             switch (alt51) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:6: ACTIVATE_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:6: ACTIVATE_KW
                     {
                     ACTIVATE_KW239=(Token)match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande2371); 
                     ACTIVATE_KW239_tree = (CommonTree)adaptor.create(ACTIVATE_KW239);
@@ -5778,7 +5778,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:21: DISABLE_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:260:21: DISABLE_KW
                     {
                     DISABLE_KW240=(Token)match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande2376); 
                     DISABLE_KW240_tree = (CommonTree)adaptor.create(DISABLE_KW240);
@@ -5823,7 +5823,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "typeCommand"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:263:1: typeCommand : ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:263:1: typeCommand : ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD );
     public final highParser.typeCommand_return typeCommand() throws RecognitionException {
         highParser.typeCommand_return retval = new highParser.typeCommand_return();
         retval.start = input.LT(1);
@@ -5857,7 +5857,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_souris=new RewriteRuleSubtreeStream(adaptor,"rule souris");
         RewriteRuleSubtreeStream stream_clavier=new RewriteRuleSubtreeStream(adaptor,"rule clavier");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:263:13: ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:263:13: ( COMMANDS | MOUSE ( souris ( VIRG souris )* )? -> ^( MOUSE_KW ( souris )* ) | KEY clavier ( VIRG clavier )* -> ^( KEY_KW ( clavier )+ ) | KEYBOARD )
             int alt55=4;
             switch ( input.LA(1) ) {
             case COMMANDS:
@@ -5889,7 +5889,7 @@ public class highParser extends Parser {
 
             switch (alt55) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:264:5: COMMANDS
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:264:5: COMMANDS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -5901,12 +5901,12 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:7: MOUSE ( souris ( VIRG souris )* )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:7: MOUSE ( souris ( VIRG souris )* )?
                     {
                     MOUSE243=(Token)match(input,MOUSE,FOLLOW_MOUSE_in_typeCommand2405);  
                     stream_MOUSE.add(MOUSE243);
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:13: ( souris ( VIRG souris )* )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:13: ( souris ( VIRG souris )* )?
                     int alt53=2;
                     int LA53_0 = input.LA(1);
 
@@ -5915,7 +5915,7 @@ public class highParser extends Parser {
                     }
                     switch (alt53) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:14: souris ( VIRG souris )*
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:14: souris ( VIRG souris )*
                             {
                             pushFollow(FOLLOW_souris_in_typeCommand2408);
                             souris244=souris();
@@ -5923,7 +5923,7 @@ public class highParser extends Parser {
                             state._fsp--;
 
                             stream_souris.add(souris244.getTree());
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:21: ( VIRG souris )*
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:21: ( VIRG souris )*
                             loop52:
                             do {
                                 int alt52=2;
@@ -5942,7 +5942,7 @@ public class highParser extends Parser {
 
                                 switch (alt52) {
                             	case 1 :
-                            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:22: VIRG souris
+                            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:265:22: VIRG souris
                             	    {
                             	    VIRG245=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand2411);  
                             	    stream_VIRG.add(VIRG245);
@@ -5983,12 +5983,12 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 266:7: -> ^( MOUSE_KW ( souris )* )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:266:10: ^( MOUSE_KW ( souris )* )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:266:10: ^( MOUSE_KW ( souris )* )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(MOUSE_KW, "MOUSE_KW"), root_1);
 
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:266:21: ( souris )*
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:266:21: ( souris )*
                         while ( stream_souris.hasNext() ) {
                             adaptor.addChild(root_1, stream_souris.nextTree());
 
@@ -6004,7 +6004,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:7: KEY clavier ( VIRG clavier )*
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:7: KEY clavier ( VIRG clavier )*
                     {
                     KEY247=(Token)match(input,KEY,FOLLOW_KEY_in_typeCommand2440);  
                     stream_KEY.add(KEY247);
@@ -6015,7 +6015,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     stream_clavier.add(clavier248.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:19: ( VIRG clavier )*
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:19: ( VIRG clavier )*
                     loop54:
                     do {
                         int alt54=2;
@@ -6034,7 +6034,7 @@ public class highParser extends Parser {
 
                         switch (alt54) {
                     	case 1 :
-                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:20: VIRG clavier
+                    	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:267:20: VIRG clavier
                     	    {
                     	    VIRG249=(Token)match(input,VIRG,FOLLOW_VIRG_in_typeCommand2445);  
                     	    stream_VIRG.add(VIRG249);
@@ -6069,7 +6069,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 268:7: -> ^( KEY_KW ( clavier )+ )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:268:10: ^( KEY_KW ( clavier )+ )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:268:10: ^( KEY_KW ( clavier )+ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(KEY_KW, "KEY_KW"), root_1);
@@ -6092,7 +6092,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:269:7: KEYBOARD
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:269:7: KEYBOARD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6129,7 +6129,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "reglesJeu"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:271:1: reglesJeu : RULE_KW declencheur THEN definitionId ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:271:1: reglesJeu : RULE_KW declencheur THEN definitionId ;
     public final highParser.reglesJeu_return reglesJeu() throws RecognitionException {
         highParser.reglesJeu_return retval = new highParser.reglesJeu_return();
         retval.start = input.LT(1);
@@ -6147,8 +6147,8 @@ public class highParser extends Parser {
         CommonTree THEN254_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:271:11: ( RULE_KW declencheur THEN definitionId )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:272:5: RULE_KW declencheur THEN definitionId
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:271:11: ( RULE_KW declencheur THEN definitionId )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:272:5: RULE_KW declencheur THEN definitionId
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -6196,7 +6196,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "declencheur"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:275:1: declencheur : ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | VICTORY_KW OF ( PLAYER | IDENT ) | DEFEAT_KW OF ( PLAYER | IDENT ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:275:1: declencheur : ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | VICTORY_KW OF ( PLAYER | IDENT ) | DEFEAT_KW OF ( PLAYER | IDENT ) );
     public final highParser.declencheur_return declencheur() throws RecognitionException {
         highParser.declencheur_return retval = new highParser.declencheur_return();
         retval.start = input.LT(1);
@@ -6242,7 +6242,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_varOuNB=new RewriteRuleSubtreeStream(adaptor,"rule varOuNB");
         RewriteRuleSubtreeStream stream_variable=new RewriteRuleSubtreeStream(adaptor,"rule variable");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:275:13: ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | VICTORY_KW OF ( PLAYER | IDENT ) | DEFEAT_KW OF ( PLAYER | IDENT ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:275:13: ( accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT ) | ( IDENT | GAME ) ( ENDS_KW | STARTS_KW ) | variable BECOMES varOuNB -> ^( BECOMES_VAR_KW variable varOuNB ) | VICTORY_KW OF ( PLAYER | IDENT ) | DEFEAT_KW OF ( PLAYER | IDENT ) )
             int alt58=5;
             switch ( input.LA(1) ) {
             case NUM:
@@ -6322,7 +6322,7 @@ public class highParser extends Parser {
 
             switch (alt58) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:5: accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:5: accesClasse ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6332,7 +6332,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     adaptor.addChild(root_0, accesClasse256.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:17: ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:17: ( MOVES_KW | DIES_KW | declencheurTK | declencheurKT )
                     int alt56=4;
                     switch ( input.LA(1) ) {
                     case MOVES_KW:
@@ -6370,7 +6370,7 @@ public class highParser extends Parser {
 
                     switch (alt56) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:18: MOVES_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:18: MOVES_KW
                             {
                             MOVES_KW257=(Token)match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur2513); 
                             MOVES_KW257_tree = (CommonTree)adaptor.create(MOVES_KW257);
@@ -6380,7 +6380,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:29: DIES_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:29: DIES_KW
                             {
                             DIES_KW258=(Token)match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur2517); 
                             DIES_KW258_tree = (CommonTree)adaptor.create(DIES_KW258);
@@ -6390,7 +6390,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:39: declencheurTK
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:39: declencheurTK
                             {
                             pushFollow(FOLLOW_declencheurTK_in_declencheur2521);
                             declencheurTK259=declencheurTK();
@@ -6402,7 +6402,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:55: declencheurKT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:276:55: declencheurKT
                             {
                             pushFollow(FOLLOW_declencheurKT_in_declencheur2525);
                             declencheurKT260=declencheurKT();
@@ -6420,7 +6420,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:7: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:7: ( IDENT | GAME ) ( ENDS_KW | STARTS_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6435,7 +6435,7 @@ public class highParser extends Parser {
                         throw mse;
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:22: ( ENDS_KW | STARTS_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:22: ( ENDS_KW | STARTS_KW )
                     int alt57=2;
                     int LA57_0 = input.LA(1);
 
@@ -6453,7 +6453,7 @@ public class highParser extends Parser {
                     }
                     switch (alt57) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:23: ENDS_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:23: ENDS_KW
                             {
                             ENDS_KW262=(Token)match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur2543); 
                             ENDS_KW262_tree = (CommonTree)adaptor.create(ENDS_KW262);
@@ -6463,7 +6463,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:33: STARTS_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:277:33: STARTS_KW
                             {
                             STARTS_KW263=(Token)match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur2547); 
                             STARTS_KW263_tree = (CommonTree)adaptor.create(STARTS_KW263);
@@ -6479,7 +6479,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:278:7: variable BECOMES varOuNB
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:278:7: variable BECOMES varOuNB
                     {
                     pushFollow(FOLLOW_variable_in_declencheur2567);
                     variable264=variable();
@@ -6499,7 +6499,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: variable, varOuNB
+                    // elements: varOuNB, variable
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6511,7 +6511,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 279:7: -> ^( BECOMES_VAR_KW variable varOuNB )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:279:10: ^( BECOMES_VAR_KW variable varOuNB )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:279:10: ^( BECOMES_VAR_KW variable varOuNB )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(BECOMES_VAR_KW, "BECOMES_VAR_KW"), root_1);
@@ -6528,7 +6528,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:280:7: VICTORY_KW OF ( PLAYER | IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:280:7: VICTORY_KW OF ( PLAYER | IDENT )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6552,7 +6552,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:281:7: DEFEAT_KW OF ( PLAYER | IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:281:7: DEFEAT_KW OF ( PLAYER | IDENT )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6601,7 +6601,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "varOuNB"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:284:1: varOuNB : ( variable | FLOAT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:284:1: varOuNB : ( variable | FLOAT );
     public final highParser.varOuNB_return varOuNB() throws RecognitionException {
         highParser.varOuNB_return retval = new highParser.varOuNB_return();
         retval.start = input.LT(1);
@@ -6615,7 +6615,7 @@ public class highParser extends Parser {
         CommonTree FLOAT274_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:284:9: ( variable | FLOAT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:284:9: ( variable | FLOAT )
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -6633,7 +6633,7 @@ public class highParser extends Parser {
             }
             switch (alt59) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:285:5: variable
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:285:5: variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6647,7 +6647,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:285:16: FLOAT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:285:16: FLOAT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6684,7 +6684,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "declencheurTK"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:287:1: declencheurTK : ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:287:1: declencheurTK : ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal ) ;
     public final highParser.declencheurTK_return declencheurTK() throws RecognitionException {
         highParser.declencheurTK_return retval = new highParser.declencheurTK_return();
         retval.start = input.LT(1);
@@ -6706,12 +6706,12 @@ public class highParser extends Parser {
         CommonTree OTHER279_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:287:15: ( ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:5: ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:287:15: ( ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:5: ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW ) ( ( OTHER )? accesLocal )
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:5: ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:5: ( TOUCHES_KW | KILLS_KW | OWNES_KW | NOTOWNES_KW )
             int alt60=4;
             switch ( input.LA(1) ) {
             case TOUCHES_KW:
@@ -6743,7 +6743,7 @@ public class highParser extends Parser {
 
             switch (alt60) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:6: TOUCHES_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:6: TOUCHES_KW
                     {
                     TOUCHES_KW275=(Token)match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2660); 
                     TOUCHES_KW275_tree = (CommonTree)adaptor.create(TOUCHES_KW275);
@@ -6753,7 +6753,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:20: KILLS_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:20: KILLS_KW
                     {
                     KILLS_KW276=(Token)match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2665); 
                     KILLS_KW276_tree = (CommonTree)adaptor.create(KILLS_KW276);
@@ -6763,7 +6763,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:32: OWNES_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:32: OWNES_KW
                     {
                     OWNES_KW277=(Token)match(input,OWNES_KW,FOLLOW_OWNES_KW_in_declencheurTK2670); 
                     OWNES_KW277_tree = (CommonTree)adaptor.create(OWNES_KW277);
@@ -6773,7 +6773,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:44: NOTOWNES_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:44: NOTOWNES_KW
                     {
                     NOTOWNES_KW278=(Token)match(input,NOTOWNES_KW,FOLLOW_NOTOWNES_KW_in_declencheurTK2675); 
                     NOTOWNES_KW278_tree = (CommonTree)adaptor.create(NOTOWNES_KW278);
@@ -6785,10 +6785,10 @@ public class highParser extends Parser {
 
             }
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:58: ( ( OTHER )? accesLocal )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:59: ( OTHER )? accesLocal
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:58: ( ( OTHER )? accesLocal )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:59: ( OTHER )? accesLocal
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:59: ( OTHER )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:59: ( OTHER )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -6797,7 +6797,7 @@ public class highParser extends Parser {
             }
             switch (alt61) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:60: OTHER
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:288:60: OTHER
                     {
                     OTHER279=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2681); 
                     OTHER279_tree = (CommonTree)adaptor.create(OTHER279);
@@ -6845,7 +6845,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "declencheurKT"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:290:1: declencheurKT : ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )? ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:290:1: declencheurKT : ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )? ;
     public final highParser.declencheurKT_return declencheurKT() throws RecognitionException {
         highParser.declencheurKT_return retval = new highParser.declencheurKT_return();
         retval.start = input.LT(1);
@@ -6869,12 +6869,12 @@ public class highParser extends Parser {
         CommonTree OTHER286_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:290:15: ( ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )? )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:5: ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:290:15: ( ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:5: ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW ) ( BY ( ( OTHER )? accesLocal ) )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:5: ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:5: ( KILLED_KW | TOUCHED_KW | OWNED_KW | NOTOWNED_KW )
             int alt62=4;
             switch ( input.LA(1) ) {
             case KILLED_KW:
@@ -6906,7 +6906,7 @@ public class highParser extends Parser {
 
             switch (alt62) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:6: KILLED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:6: KILLED_KW
                     {
                     KILLED_KW281=(Token)match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2700); 
                     KILLED_KW281_tree = (CommonTree)adaptor.create(KILLED_KW281);
@@ -6916,7 +6916,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:19: TOUCHED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:19: TOUCHED_KW
                     {
                     TOUCHED_KW282=(Token)match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2705); 
                     TOUCHED_KW282_tree = (CommonTree)adaptor.create(TOUCHED_KW282);
@@ -6926,7 +6926,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:33: OWNED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:33: OWNED_KW
                     {
                     OWNED_KW283=(Token)match(input,OWNED_KW,FOLLOW_OWNED_KW_in_declencheurKT2710); 
                     OWNED_KW283_tree = (CommonTree)adaptor.create(OWNED_KW283);
@@ -6936,7 +6936,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:45: NOTOWNED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:45: NOTOWNED_KW
                     {
                     NOTOWNED_KW284=(Token)match(input,NOTOWNED_KW,FOLLOW_NOTOWNED_KW_in_declencheurKT2715); 
                     NOTOWNED_KW284_tree = (CommonTree)adaptor.create(NOTOWNED_KW284);
@@ -6948,7 +6948,7 @@ public class highParser extends Parser {
 
             }
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:59: ( BY ( ( OTHER )? accesLocal ) )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:59: ( BY ( ( OTHER )? accesLocal ) )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -6957,13 +6957,13 @@ public class highParser extends Parser {
             }
             switch (alt64) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:60: BY ( ( OTHER )? accesLocal )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:60: BY ( ( OTHER )? accesLocal )
                     {
                     BY285=(Token)match(input,BY,FOLLOW_BY_in_declencheurKT2720); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:64: ( ( OTHER )? accesLocal )
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:65: ( OTHER )? accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:64: ( ( OTHER )? accesLocal )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:65: ( OTHER )? accesLocal
                     {
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:65: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:65: ( OTHER )?
                     int alt63=2;
                     int LA63_0 = input.LA(1);
 
@@ -6972,7 +6972,7 @@ public class highParser extends Parser {
                     }
                     switch (alt63) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:66: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:291:66: OTHER
                             {
                             OTHER286=(Token)match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2725); 
                             OTHER286_tree = (CommonTree)adaptor.create(OTHER286);
@@ -7026,7 +7026,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "siAlors"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:294:1: siAlors : IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:294:1: siAlors : IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF ;
     public final highParser.siAlors_return siAlors() throws RecognitionException {
         highParser.siAlors_return retval = new highParser.siAlors_return();
         retval.start = input.LT(1);
@@ -7050,8 +7050,8 @@ public class highParser extends Parser {
         CommonTree ENDIF294_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:294:9: ( IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:5: IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:294:9: ( IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:5: IF_KW conditions THEN consequences ( ELSE consequences )? ENDIF
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -7072,7 +7072,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, consequences291.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:42: ( ELSE consequences )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:42: ( ELSE consequences )?
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -7081,7 +7081,7 @@ public class highParser extends Parser {
             }
             switch (alt65) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:43: ELSE consequences
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:295:43: ELSE consequences
                     {
                     ELSE292=(Token)match(input,ELSE,FOLLOW_ELSE_in_siAlors2759); 
                     pushFollow(FOLLOW_consequences_in_siAlors2762);
@@ -7124,7 +7124,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "conditions"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:298:1: conditions : ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:298:1: conditions : ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) ;
     public final highParser.conditions_return conditions() throws RecognitionException {
         highParser.conditions_return retval = new highParser.conditions_return();
         retval.start = input.LT(1);
@@ -7139,10 +7139,10 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_NOT=new RewriteRuleTokenStream(adaptor,"token NOT");
         RewriteRuleSubtreeStream stream_conditionOu=new RewriteRuleSubtreeStream(adaptor,"rule conditionOu");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:298:12: ( ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:5: ( NOT )? conditionOu
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:298:12: ( ( NOT )? conditionOu -> ^( CONDITION_KW ( NOT )? conditionOu ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:5: ( NOT )? conditionOu
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:5: ( NOT )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:5: ( NOT )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -7151,7 +7151,7 @@ public class highParser extends Parser {
             }
             switch (alt66) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:6: NOT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:299:6: NOT
                     {
                     NOT295=(Token)match(input,NOT,FOLLOW_NOT_in_conditions2785);  
                     stream_NOT.add(NOT295);
@@ -7171,7 +7171,7 @@ public class highParser extends Parser {
 
 
             // AST REWRITE
-            // elements: NOT, conditionOu
+            // elements: conditionOu, NOT
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7183,12 +7183,12 @@ public class highParser extends Parser {
             root_0 = (CommonTree)adaptor.nil();
             // 300:7: -> ^( CONDITION_KW ( NOT )? conditionOu )
             {
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:300:10: ^( CONDITION_KW ( NOT )? conditionOu )
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:300:10: ^( CONDITION_KW ( NOT )? conditionOu )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CONDITION_KW, "CONDITION_KW"), root_1);
 
-                // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:300:25: ( NOT )?
+                // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:300:25: ( NOT )?
                 if ( stream_NOT.hasNext() ) {
                     adaptor.addChild(root_1, stream_NOT.nextNode());
 
@@ -7228,7 +7228,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "conditionOu"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:303:1: conditionOu : conditionEt ( OR conditionEt )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:303:1: conditionOu : conditionEt ( OR conditionEt )* ;
     public final highParser.conditionOu_return conditionOu() throws RecognitionException {
         highParser.conditionOu_return retval = new highParser.conditionOu_return();
         retval.start = input.LT(1);
@@ -7244,8 +7244,8 @@ public class highParser extends Parser {
         CommonTree OR298_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:303:13: ( conditionEt ( OR conditionEt )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:5: conditionEt ( OR conditionEt )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:303:13: ( conditionEt ( OR conditionEt )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:5: conditionEt ( OR conditionEt )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -7255,7 +7255,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, conditionEt297.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:17: ( OR conditionEt )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:17: ( OR conditionEt )*
             loop67:
             do {
                 int alt67=2;
@@ -7268,7 +7268,7 @@ public class highParser extends Parser {
 
                 switch (alt67) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:18: OR conditionEt
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:304:18: OR conditionEt
             	    {
             	    OR298=(Token)match(input,OR,FOLLOW_OR_in_conditionOu2826); 
             	    OR298_tree = (CommonTree)adaptor.create(OR298);
@@ -7316,7 +7316,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "conditionEt"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:307:1: conditionEt : cond ( AND cond )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:307:1: conditionEt : cond ( AND cond )* ;
     public final highParser.conditionEt_return conditionEt() throws RecognitionException {
         highParser.conditionEt_return retval = new highParser.conditionEt_return();
         retval.start = input.LT(1);
@@ -7332,8 +7332,8 @@ public class highParser extends Parser {
         CommonTree AND301_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:307:13: ( cond ( AND cond )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:5: cond ( AND cond )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:307:13: ( cond ( AND cond )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:5: cond ( AND cond )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -7343,7 +7343,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, cond300.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:10: ( AND cond )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:10: ( AND cond )*
             loop68:
             do {
                 int alt68=2;
@@ -7356,7 +7356,7 @@ public class highParser extends Parser {
 
                 switch (alt68) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:11: AND cond
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:308:11: AND cond
             	    {
             	    AND301=(Token)match(input,AND,FOLLOW_AND_in_conditionEt2851); 
             	    AND301_tree = (CommonTree)adaptor.create(AND301);
@@ -7404,7 +7404,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "cond"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:311:1: cond : ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD | IDENT CONTAINS_KW IDENT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:311:1: cond : ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD | IDENT CONTAINS_KW IDENT );
     public final highParser.cond_return cond() throws RecognitionException {
         highParser.cond_return retval = new highParser.cond_return();
         retval.start = input.LT(1);
@@ -7446,7 +7446,7 @@ public class highParser extends Parser {
         CommonTree IDENT318_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:311:6: ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD | IDENT CONTAINS_KW IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:311:6: ( etat | COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation | PG conditions PD | IDENT CONTAINS_KW IDENT )
             int alt70=4;
             switch ( input.LA(1) ) {
             case GAME:
@@ -7496,7 +7496,7 @@ public class highParser extends Parser {
 
             switch (alt70) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:312:5: etat
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:312:5: etat
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7510,7 +7510,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:7: COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:7: COMP operation ( EQUALS | INF | SUP | INFEG | SUPED | DIFF ) operation
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7521,7 +7521,7 @@ public class highParser extends Parser {
                     state._fsp--;
 
                     adaptor.addChild(root_0, operation305.getTree());
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:23: ( EQUALS | INF | SUP | INFEG | SUPED | DIFF )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:23: ( EQUALS | INF | SUP | INFEG | SUPED | DIFF )
                     int alt69=6;
                     switch ( input.LA(1) ) {
                     case EQUALS:
@@ -7563,7 +7563,7 @@ public class highParser extends Parser {
 
                     switch (alt69) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:24: EQUALS
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:24: EQUALS
                             {
                             EQUALS306=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_cond2887); 
                             EQUALS306_tree = (CommonTree)adaptor.create(EQUALS306);
@@ -7573,7 +7573,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:34: INF
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:34: INF
                             {
                             INF307=(Token)match(input,INF,FOLLOW_INF_in_cond2892); 
                             INF307_tree = (CommonTree)adaptor.create(INF307);
@@ -7583,7 +7583,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:41: SUP
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:41: SUP
                             {
                             SUP308=(Token)match(input,SUP,FOLLOW_SUP_in_cond2897); 
                             SUP308_tree = (CommonTree)adaptor.create(SUP308);
@@ -7593,7 +7593,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:48: INFEG
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:48: INFEG
                             {
                             INFEG309=(Token)match(input,INFEG,FOLLOW_INFEG_in_cond2902); 
                             INFEG309_tree = (CommonTree)adaptor.create(INFEG309);
@@ -7603,7 +7603,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:57: SUPED
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:57: SUPED
                             {
                             SUPED310=(Token)match(input,SUPED,FOLLOW_SUPED_in_cond2907); 
                             SUPED310_tree = (CommonTree)adaptor.create(SUPED310);
@@ -7613,7 +7613,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:66: DIFF
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:313:66: DIFF
                             {
                             DIFF311=(Token)match(input,DIFF,FOLLOW_DIFF_in_cond2912); 
                             DIFF311_tree = (CommonTree)adaptor.create(DIFF311);
@@ -7635,7 +7635,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:314:7: PG conditions PD
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:314:7: PG conditions PD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7657,7 +7657,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:315:7: IDENT CONTAINS_KW IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:315:7: IDENT CONTAINS_KW IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7702,7 +7702,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "etat"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:318:1: etat : ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW OF IDENT | DEFEAT_KW OF IDENT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:318:1: etat : ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW OF IDENT | DEFEAT_KW OF IDENT );
     public final highParser.etat_return etat() throws RecognitionException {
         highParser.etat_return retval = new highParser.etat_return();
         retval.start = input.LT(1);
@@ -7768,7 +7768,7 @@ public class highParser extends Parser {
         CommonTree IDENT346_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:318:6: ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW OF IDENT | DEFEAT_KW OF IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:318:6: ( accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW ) | ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW ) | VICTORY_KW OF IDENT | DEFEAT_KW OF IDENT )
             int alt76=4;
             switch ( input.LA(1) ) {
             case NUM:
@@ -7863,7 +7863,7 @@ public class highParser extends Parser {
 
             switch (alt76) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:5: accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:5: accesClasse IS ( NOT )? ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7874,7 +7874,7 @@ public class highParser extends Parser {
 
                     adaptor.addChild(root_0, accesClasse319.getTree());
                     IS320=(Token)match(input,IS,FOLLOW_IS_in_etat2972); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:21: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:21: ( NOT )?
                     int alt71=2;
                     int LA71_0 = input.LA(1);
 
@@ -7883,7 +7883,7 @@ public class highParser extends Parser {
                     }
                     switch (alt71) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:22: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:22: NOT
                             {
                             NOT321=(Token)match(input,NOT,FOLLOW_NOT_in_etat2976); 
                             NOT321_tree = (CommonTree)adaptor.create(NOT321);
@@ -7895,7 +7895,7 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:28: ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:28: ( DEAD_KW | ALIVE_KW | EFFACED_KW | GENERATED_KW | TOUCHING_KW ( ( OTHER )? accesLocal ) | MOVING_KW | WAITING_KW )
                     int alt73=7;
                     switch ( input.LA(1) ) {
                     case DEAD_KW:
@@ -7942,7 +7942,7 @@ public class highParser extends Parser {
 
                     switch (alt73) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:29: DEAD_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:29: DEAD_KW
                             {
                             DEAD_KW322=(Token)match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat2981); 
                             DEAD_KW322_tree = (CommonTree)adaptor.create(DEAD_KW322);
@@ -7952,7 +7952,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:40: ALIVE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:40: ALIVE_KW
                             {
                             ALIVE_KW323=(Token)match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat2986); 
                             ALIVE_KW323_tree = (CommonTree)adaptor.create(ALIVE_KW323);
@@ -7962,7 +7962,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:52: EFFACED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:52: EFFACED_KW
                             {
                             EFFACED_KW324=(Token)match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat2991); 
                             EFFACED_KW324_tree = (CommonTree)adaptor.create(EFFACED_KW324);
@@ -7972,7 +7972,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:66: GENERATED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:66: GENERATED_KW
                             {
                             GENERATED_KW325=(Token)match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat2996); 
                             GENERATED_KW325_tree = (CommonTree)adaptor.create(GENERATED_KW325);
@@ -7982,16 +7982,16 @@ public class highParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:82: TOUCHING_KW ( ( OTHER )? accesLocal )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:82: TOUCHING_KW ( ( OTHER )? accesLocal )
                             {
                             TOUCHING_KW326=(Token)match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat3001); 
                             TOUCHING_KW326_tree = (CommonTree)adaptor.create(TOUCHING_KW326);
                             root_0 = (CommonTree)adaptor.becomeRoot(TOUCHING_KW326_tree, root_0);
 
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:95: ( ( OTHER )? accesLocal )
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:96: ( OTHER )? accesLocal
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:95: ( ( OTHER )? accesLocal )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:96: ( OTHER )? accesLocal
                             {
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:96: ( OTHER )?
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:96: ( OTHER )?
                             int alt72=2;
                             int LA72_0 = input.LA(1);
 
@@ -8000,7 +8000,7 @@ public class highParser extends Parser {
                             }
                             switch (alt72) {
                                 case 1 :
-                                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:97: OTHER
+                                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:97: OTHER
                                     {
                                     OTHER327=(Token)match(input,OTHER,FOLLOW_OTHER_in_etat3006); 
                                     OTHER327_tree = (CommonTree)adaptor.create(OTHER327);
@@ -8025,7 +8025,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:119: MOVING_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:119: MOVING_KW
                             {
                             MOVING_KW329=(Token)match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat3015); 
                             MOVING_KW329_tree = (CommonTree)adaptor.create(MOVING_KW329);
@@ -8035,7 +8035,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 7 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:132: WAITING_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:319:132: WAITING_KW
                             {
                             WAITING_KW330=(Token)match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat3020); 
                             WAITING_KW330_tree = (CommonTree)adaptor.create(WAITING_KW330);
@@ -8051,7 +8051,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:7: ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:7: ( IDENT | GAME ) IS ( NOT )? ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8067,7 +8067,7 @@ public class highParser extends Parser {
                     }
 
                     IS332=(Token)match(input,IS,FOLLOW_IS_in_etat3040); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:26: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:26: ( NOT )?
                     int alt74=2;
                     int LA74_0 = input.LA(1);
 
@@ -8076,7 +8076,7 @@ public class highParser extends Parser {
                     }
                     switch (alt74) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:27: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:27: NOT
                             {
                             NOT333=(Token)match(input,NOT,FOLLOW_NOT_in_etat3044); 
                             NOT333_tree = (CommonTree)adaptor.create(NOT333);
@@ -8088,7 +8088,7 @@ public class highParser extends Parser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:33: ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:33: ( FINISHED_KW | STARTED_KW | PAUSED_KW | MUTED_KW ( ON | OFF ) | PLAYED_KW | STOPPED_KW )
                     int alt75=6;
                     switch ( input.LA(1) ) {
                     case FINISHED_KW:
@@ -8130,7 +8130,7 @@ public class highParser extends Parser {
 
                     switch (alt75) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:34: FINISHED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:34: FINISHED_KW
                             {
                             FINISHED_KW334=(Token)match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat3049); 
                             FINISHED_KW334_tree = (CommonTree)adaptor.create(FINISHED_KW334);
@@ -8140,7 +8140,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:48: STARTED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:48: STARTED_KW
                             {
                             STARTED_KW335=(Token)match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat3053); 
                             STARTED_KW335_tree = (CommonTree)adaptor.create(STARTED_KW335);
@@ -8150,7 +8150,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:62: PAUSED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:62: PAUSED_KW
                             {
                             PAUSED_KW336=(Token)match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat3058); 
                             PAUSED_KW336_tree = (CommonTree)adaptor.create(PAUSED_KW336);
@@ -8160,7 +8160,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:75: MUTED_KW ( ON | OFF )
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:75: MUTED_KW ( ON | OFF )
                             {
                             MUTED_KW337=(Token)match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat3063); 
                             MUTED_KW337_tree = (CommonTree)adaptor.create(MUTED_KW337);
@@ -8181,7 +8181,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:98: PLAYED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:98: PLAYED_KW
                             {
                             PLAYED_KW339=(Token)match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat3076); 
                             PLAYED_KW339_tree = (CommonTree)adaptor.create(PLAYED_KW339);
@@ -8191,7 +8191,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:111: STOPPED_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:320:111: STOPPED_KW
                             {
                             STOPPED_KW340=(Token)match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat3081); 
                             STOPPED_KW340_tree = (CommonTree)adaptor.create(STOPPED_KW340);
@@ -8207,7 +8207,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:322:7: VICTORY_KW OF IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:322:7: VICTORY_KW OF IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8224,7 +8224,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:323:7: DEFEAT_KW OF IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:323:7: DEFEAT_KW OF IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8266,7 +8266,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "affectation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:326:1: affectation : ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:326:1: affectation : ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable );
     public final highParser.affectation_return affectation() throws RecognitionException {
         highParser.affectation_return retval = new highParser.affectation_return();
         retval.start = input.LT(1);
@@ -8296,7 +8296,7 @@ public class highParser extends Parser {
         CommonTree WITH355_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:326:13: ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:326:13: ( ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable | INVERT_KW variable WITH variable )
             int alt78=2;
             int LA78_0 = input.LA(1);
 
@@ -8314,14 +8314,14 @@ public class highParser extends Parser {
             }
             switch (alt78) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation ) FOR variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation )
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:4: ( ASSIGN_KW | ADD_KW | SUB_KW ) operation
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:3: ( ( ASSIGN_KW | ADD_KW | SUB_KW ) operation )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:4: ( ASSIGN_KW | ADD_KW | SUB_KW ) operation
                     {
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:4: ( ASSIGN_KW | ADD_KW | SUB_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:4: ( ASSIGN_KW | ADD_KW | SUB_KW )
                     int alt77=3;
                     switch ( input.LA(1) ) {
                     case ASSIGN_KW:
@@ -8348,7 +8348,7 @@ public class highParser extends Parser {
 
                     switch (alt77) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:5: ASSIGN_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:5: ASSIGN_KW
                             {
                             ASSIGN_KW347=(Token)match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation3138); 
                             ASSIGN_KW347_tree = (CommonTree)adaptor.create(ASSIGN_KW347);
@@ -8358,7 +8358,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:18: ADD_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:18: ADD_KW
                             {
                             ADD_KW348=(Token)match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation3143); 
                             ADD_KW348_tree = (CommonTree)adaptor.create(ADD_KW348);
@@ -8368,7 +8368,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:28: SUB_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:327:28: SUB_KW
                             {
                             SUB_KW349=(Token)match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation3148); 
                             SUB_KW349_tree = (CommonTree)adaptor.create(SUB_KW349);
@@ -8400,7 +8400,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:328:5: INVERT_KW variable WITH variable
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:328:5: INVERT_KW variable WITH variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8450,7 +8450,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "iaBasique"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:333:1: iaBasique : IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:333:1: iaBasique : IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )* ;
     public final highParser.iaBasique_return iaBasique() throws RecognitionException {
         highParser.iaBasique_return retval = new highParser.iaBasique_return();
         retval.start = input.LT(1);
@@ -8472,8 +8472,8 @@ public class highParser extends Parser {
         CommonTree VIRG361_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:333:11: ( IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:5: IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:333:11: ( IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:5: IA_KW IDENT IS reglesJeu ( VIRG reglesJeu )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -8492,7 +8492,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, reglesJeu360.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:32: ( VIRG reglesJeu )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:32: ( VIRG reglesJeu )*
             loop79:
             do {
                 int alt79=2;
@@ -8505,7 +8505,7 @@ public class highParser extends Parser {
 
                 switch (alt79) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:33: VIRG reglesJeu
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:334:33: VIRG reglesJeu
             	    {
             	    VIRG361=(Token)match(input,VIRG,FOLLOW_VIRG_in_iaBasique3204); 
             	    pushFollow(FOLLOW_reglesJeu_in_iaBasique3207);
@@ -8550,7 +8550,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "operation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:338:1: operation : ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:338:1: operation : ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus );
     public final highParser.operation_return operation() throws RecognitionException {
         highParser.operation_return retval = new highParser.operation_return();
         retval.start = input.LT(1);
@@ -8572,7 +8572,7 @@ public class highParser extends Parser {
         CommonTree AND367_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:338:11: ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:338:11: ( operationPlus | RANDOM_KW BETWEEN operationPlus AND operationPlus )
             int alt80=2;
             int LA80_0 = input.LA(1);
 
@@ -8590,7 +8590,7 @@ public class highParser extends Parser {
             }
             switch (alt80) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:339:5: operationPlus
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:339:5: operationPlus
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8604,7 +8604,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:340:7: RANDOM_KW BETWEEN operationPlus AND operationPlus
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:340:7: RANDOM_KW BETWEEN operationPlus AND operationPlus
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -8655,7 +8655,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "operationPlus"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:343:1: operationPlus : operationMul ( ( PLUS | MINUS ) operationMul )* ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:343:1: operationPlus : operationMul ( ( PLUS | MINUS ) operationMul )* ;
     public final highParser.operationPlus_return operationPlus() throws RecognitionException {
         highParser.operationPlus_return retval = new highParser.operationPlus_return();
         retval.start = input.LT(1);
@@ -8673,8 +8673,8 @@ public class highParser extends Parser {
         CommonTree MINUS371_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:343:15: ( operationMul ( ( PLUS | MINUS ) operationMul )* )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:5: operationMul ( ( PLUS | MINUS ) operationMul )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:343:15: ( operationMul ( ( PLUS | MINUS ) operationMul )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:5: operationMul ( ( PLUS | MINUS ) operationMul )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -8684,7 +8684,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, operationMul369.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:18: ( ( PLUS | MINUS ) operationMul )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:18: ( ( PLUS | MINUS ) operationMul )*
             loop82:
             do {
                 int alt82=2;
@@ -8697,9 +8697,9 @@ public class highParser extends Parser {
 
                 switch (alt82) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:19: ( PLUS | MINUS ) operationMul
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:19: ( PLUS | MINUS ) operationMul
             	    {
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:19: ( PLUS | MINUS )
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:19: ( PLUS | MINUS )
             	    int alt81=2;
             	    int LA81_0 = input.LA(1);
 
@@ -8717,7 +8717,7 @@ public class highParser extends Parser {
             	    }
             	    switch (alt81) {
             	        case 1 :
-            	            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:20: PLUS
+            	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:20: PLUS
             	            {
             	            PLUS370=(Token)match(input,PLUS,FOLLOW_PLUS_in_operationPlus3266); 
             	            PLUS370_tree = (CommonTree)adaptor.create(PLUS370);
@@ -8727,7 +8727,7 @@ public class highParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:28: MINUS
+            	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:344:28: MINUS
             	            {
             	            MINUS371=(Token)match(input,MINUS,FOLLOW_MINUS_in_operationPlus3271); 
             	            MINUS371_tree = (CommonTree)adaptor.create(MINUS371);
@@ -8781,7 +8781,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "operationMul"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:347:1: operationMul : operationPow ( ( MUL | DIV | MOD ) operationPow )? ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:347:1: operationMul : operationPow ( ( MUL | DIV | MOD ) operationPow )? ;
     public final highParser.operationMul_return operationMul() throws RecognitionException {
         highParser.operationMul_return retval = new highParser.operationMul_return();
         retval.start = input.LT(1);
@@ -8801,8 +8801,8 @@ public class highParser extends Parser {
         CommonTree MOD376_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:347:14: ( operationPow ( ( MUL | DIV | MOD ) operationPow )? )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:5: operationPow ( ( MUL | DIV | MOD ) operationPow )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:347:14: ( operationPow ( ( MUL | DIV | MOD ) operationPow )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:5: operationPow ( ( MUL | DIV | MOD ) operationPow )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -8812,7 +8812,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, operationPow373.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:18: ( ( MUL | DIV | MOD ) operationPow )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:18: ( ( MUL | DIV | MOD ) operationPow )?
             int alt84=2;
             int LA84_0 = input.LA(1);
 
@@ -8821,9 +8821,9 @@ public class highParser extends Parser {
             }
             switch (alt84) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:19: ( MUL | DIV | MOD ) operationPow
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:19: ( MUL | DIV | MOD ) operationPow
                     {
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:19: ( MUL | DIV | MOD )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:19: ( MUL | DIV | MOD )
                     int alt83=3;
                     switch ( input.LA(1) ) {
                     case MUL:
@@ -8850,7 +8850,7 @@ public class highParser extends Parser {
 
                     switch (alt83) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:20: MUL
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:20: MUL
                             {
                             MUL374=(Token)match(input,MUL,FOLLOW_MUL_in_operationMul3298); 
                             MUL374_tree = (CommonTree)adaptor.create(MUL374);
@@ -8860,7 +8860,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:27: DIV
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:27: DIV
                             {
                             DIV375=(Token)match(input,DIV,FOLLOW_DIV_in_operationMul3303); 
                             DIV375_tree = (CommonTree)adaptor.create(DIV375);
@@ -8870,7 +8870,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:34: MOD
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:348:34: MOD
                             {
                             MOD376=(Token)match(input,MOD,FOLLOW_MOD_in_operationMul3308); 
                             MOD376_tree = (CommonTree)adaptor.create(MOD376);
@@ -8921,7 +8921,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "operationPow"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:351:1: operationPow : operationBracket ( POW operationBracket )? ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:351:1: operationPow : operationBracket ( POW operationBracket )? ;
     public final highParser.operationPow_return operationPow() throws RecognitionException {
         highParser.operationPow_return retval = new highParser.operationPow_return();
         retval.start = input.LT(1);
@@ -8937,8 +8937,8 @@ public class highParser extends Parser {
         CommonTree POW379_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:351:14: ( operationBracket ( POW operationBracket )? )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:5: operationBracket ( POW operationBracket )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:351:14: ( operationBracket ( POW operationBracket )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:5: operationBracket ( POW operationBracket )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -8948,7 +8948,7 @@ public class highParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, operationBracket378.getTree());
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:22: ( POW operationBracket )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:22: ( POW operationBracket )?
             int alt85=2;
             int LA85_0 = input.LA(1);
 
@@ -8957,7 +8957,7 @@ public class highParser extends Parser {
             }
             switch (alt85) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:23: POW operationBracket
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:352:23: POW operationBracket
                     {
                     POW379=(Token)match(input,POW,FOLLOW_POW_in_operationPow3336); 
                     POW379_tree = (CommonTree)adaptor.create(POW379);
@@ -9002,7 +9002,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "operationBracket"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:355:1: operationBracket : ( PG operation PD | variable | FLOAT | ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:355:1: operationBracket : ( PG operation PD | variable | FLOAT | ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT );
     public final highParser.operationBracket_return operationBracket() throws RecognitionException {
         highParser.operationBracket_return retval = new highParser.operationBracket_return();
         retval.start = input.LT(1);
@@ -9034,7 +9034,7 @@ public class highParser extends Parser {
         CommonTree IDENT391_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:355:18: ( PG operation PD | variable | FLOAT | ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:355:18: ( PG operation PD | variable | FLOAT | ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT )
             int alt87=4;
             switch ( input.LA(1) ) {
             case PG:
@@ -9072,7 +9072,7 @@ public class highParser extends Parser {
 
             switch (alt87) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:356:5: PG operation PD
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:356:5: PG operation PD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -9088,7 +9088,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:357:7: variable
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:357:7: variable
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -9102,7 +9102,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:358:7: FLOAT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:358:7: FLOAT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -9114,11 +9114,11 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:7: ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:7: ( DISTANCE_KW | ANGLE_KW ) BETWEEN IDENT AND IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:7: ( DISTANCE_KW | ANGLE_KW )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:7: ( DISTANCE_KW | ANGLE_KW )
                     int alt86=2;
                     int LA86_0 = input.LA(1);
 
@@ -9136,7 +9136,7 @@ public class highParser extends Parser {
                     }
                     switch (alt86) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:8: DISTANCE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:8: DISTANCE_KW
                             {
                             DISTANCE_KW386=(Token)match(input,DISTANCE_KW,FOLLOW_DISTANCE_KW_in_operationBracket3391); 
                             DISTANCE_KW386_tree = (CommonTree)adaptor.create(DISTANCE_KW386);
@@ -9146,7 +9146,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:22: ANGLE_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:359:22: ANGLE_KW
                             {
                             ANGLE_KW387=(Token)match(input,ANGLE_KW,FOLLOW_ANGLE_KW_in_operationBracket3395); 
                             ANGLE_KW387_tree = (CommonTree)adaptor.create(ANGLE_KW387);
@@ -9197,7 +9197,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "variable"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:362:1: variable : ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:362:1: variable : ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) );
     public final highParser.variable_return variable() throws RecognitionException {
         highParser.variable_return retval = new highParser.variable_return();
         retval.start = input.LT(1);
@@ -9249,7 +9249,7 @@ public class highParser extends Parser {
         RewriteRuleSubtreeStream stream_accesLocal=new RewriteRuleSubtreeStream(adaptor,"rule accesLocal");
         RewriteRuleSubtreeStream stream_attributTps=new RewriteRuleSubtreeStream(adaptor,"rule attributTps");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:362:10: ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:362:10: ( ( X | Y | Z ) OF typeCoordonnees OF accesLocal | IDENT OF accesLocal -> ^( VAR_I_KW IDENT accesLocal ) | SCORE OF GAME -> GAME_SCORE_KW | VALUE OF attributTps OF accesLocal -> ^( VALUE_KW attributTps accesLocal ) )
             int alt89=4;
             switch ( input.LA(1) ) {
             case X:
@@ -9283,11 +9283,11 @@ public class highParser extends Parser {
 
             switch (alt89) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:5: ( X | Y | Z ) OF typeCoordonnees OF accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:5: ( X | Y | Z ) OF typeCoordonnees OF accesLocal
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:5: ( X | Y | Z )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:5: ( X | Y | Z )
                     int alt88=3;
                     switch ( input.LA(1) ) {
                     case X:
@@ -9314,7 +9314,7 @@ public class highParser extends Parser {
 
                     switch (alt88) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:6: X
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:6: X
                             {
                             X392=(Token)match(input,X,FOLLOW_X_in_variable3426); 
                             X392_tree = (CommonTree)adaptor.create(X392);
@@ -9324,7 +9324,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:11: Y
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:11: Y
                             {
                             Y393=(Token)match(input,Y,FOLLOW_Y_in_variable3431); 
                             Y393_tree = (CommonTree)adaptor.create(Y393);
@@ -9334,7 +9334,7 @@ public class highParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:16: Z
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:363:16: Z
                             {
                             Z394=(Token)match(input,Z,FOLLOW_Z_in_variable3436); 
                             Z394_tree = (CommonTree)adaptor.create(Z394);
@@ -9364,7 +9364,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:364:7: IDENT OF accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:364:7: IDENT OF accesLocal
                     {
                     IDENT399=(Token)match(input,IDENT,FOLLOW_IDENT_in_variable3456);  
                     stream_IDENT.add(IDENT399);
@@ -9381,7 +9381,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: IDENT, accesLocal
+                    // elements: accesLocal, IDENT
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9393,7 +9393,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 365:7: -> ^( VAR_I_KW IDENT accesLocal )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:365:10: ^( VAR_I_KW IDENT accesLocal )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:365:10: ^( VAR_I_KW IDENT accesLocal )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(VAR_I_KW, "VAR_I_KW"), root_1);
@@ -9410,7 +9410,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:366:7: SCORE OF GAME
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:366:7: SCORE OF GAME
                     {
                     SCORE402=(Token)match(input,SCORE,FOLLOW_SCORE_in_variable3504);  
                     stream_SCORE.add(SCORE402);
@@ -9444,7 +9444,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:368:7: VALUE OF attributTps OF accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:368:7: VALUE OF attributTps OF accesLocal
                     {
                     VALUE405=(Token)match(input,VALUE,FOLLOW_VALUE_in_variable3526);  
                     stream_VALUE.add(VALUE405);
@@ -9470,7 +9470,7 @@ public class highParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: accesLocal, attributTps
+                    // elements: attributTps, accesLocal
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9482,7 +9482,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 369:7: -> ^( VALUE_KW attributTps accesLocal )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:369:10: ^( VALUE_KW attributTps accesLocal )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:369:10: ^( VALUE_KW attributTps accesLocal )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(VALUE_KW, "VALUE_KW"), root_1);
@@ -9524,7 +9524,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "accesClasse"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:372:1: accesClasse : ( ALL -> ^( ACCESS_KW ALL ) | accesLocal );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:372:1: accesClasse : ( ALL -> ^( ACCESS_KW ALL ) | accesLocal );
     public final highParser.accesClasse_return accesClasse() throws RecognitionException {
         highParser.accesClasse_return retval = new highParser.accesClasse_return();
         retval.start = input.LT(1);
@@ -9539,7 +9539,7 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_ALL=new RewriteRuleTokenStream(adaptor,"token ALL");
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:372:13: ( ALL -> ^( ACCESS_KW ALL ) | accesLocal )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:372:13: ( ALL -> ^( ACCESS_KW ALL ) | accesLocal )
             int alt90=2;
             int LA90_0 = input.LA(1);
 
@@ -9557,7 +9557,7 @@ public class highParser extends Parser {
             }
             switch (alt90) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:373:3: ALL
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:373:3: ALL
                     {
                     ALL410=(Token)match(input,ALL,FOLLOW_ALL_in_accesClasse3566);  
                     stream_ALL.add(ALL410);
@@ -9577,7 +9577,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 374:5: -> ^( ACCESS_KW ALL )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:374:8: ^( ACCESS_KW ALL )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:374:8: ^( ACCESS_KW ALL )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9593,7 +9593,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:375:5: accesLocal
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:375:5: accesLocal
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -9632,7 +9632,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "accesLocal"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:378:1: accesLocal : ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:378:1: accesLocal : ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) );
     public final highParser.accesLocal_return accesLocal() throws RecognitionException {
         highParser.accesLocal_return retval = new highParser.accesLocal_return();
         retval.start = input.LT(1);
@@ -9658,7 +9658,7 @@ public class highParser extends Parser {
         RewriteRuleTokenStream stream_NUM=new RewriteRuleTokenStream(adaptor,"token NUM");
         RewriteRuleSubtreeStream stream_operation=new RewriteRuleSubtreeStream(adaptor,"rule operation");
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:378:12: ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:378:12: ( IDENT -> ^( ACCESS_KW IDENT ) | NUM operation IN IDENT -> ^( ACCESS_KW IDENT operation ) | PLAYER -> ^( ACCESS_KW PLAYER ) )
             int alt91=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -9685,7 +9685,7 @@ public class highParser extends Parser {
 
             switch (alt91) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:379:3: IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:379:3: IDENT
                     {
                     IDENT412=(Token)match(input,IDENT,FOLLOW_IDENT_in_accesLocal3597);  
                     stream_IDENT.add(IDENT412);
@@ -9705,7 +9705,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 380:5: -> ^( ACCESS_KW IDENT )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:380:8: ^( ACCESS_KW IDENT )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:380:8: ^( ACCESS_KW IDENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9721,7 +9721,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:381:5: NUM operation IN IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:381:5: NUM operation IN IDENT
                     {
                     NUM413=(Token)match(input,NUM,FOLLOW_NUM_in_accesLocal3615);  
                     stream_NUM.add(NUM413);
@@ -9753,7 +9753,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 382:5: -> ^( ACCESS_KW IDENT operation )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:382:8: ^( ACCESS_KW IDENT operation )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:382:8: ^( ACCESS_KW IDENT operation )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9770,7 +9770,7 @@ public class highParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:383:5: PLAYER
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:383:5: PLAYER
                     {
                     PLAYER417=(Token)match(input,PLAYER,FOLLOW_PLAYER_in_accesLocal3641);  
                     stream_PLAYER.add(PLAYER417);
@@ -9790,7 +9790,7 @@ public class highParser extends Parser {
                     root_0 = (CommonTree)adaptor.nil();
                     // 384:5: -> ^( ACCESS_KW PLAYER )
                     {
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:384:8: ^( ACCESS_KW PLAYER )
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:384:8: ^( ACCESS_KW PLAYER )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ACCESS_KW, "ACCESS_KW"), root_1);
@@ -9831,7 +9831,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "typeCoordonnees"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:387:1: typeCoordonnees : ( POSITION | ORIENTATION | SIZE );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:387:1: typeCoordonnees : ( POSITION | ORIENTATION | SIZE );
     public final highParser.typeCoordonnees_return typeCoordonnees() throws RecognitionException {
         highParser.typeCoordonnees_return retval = new highParser.typeCoordonnees_return();
         retval.start = input.LT(1);
@@ -9843,8 +9843,8 @@ public class highParser extends Parser {
         CommonTree set418_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:387:17: ( POSITION | ORIENTATION | SIZE )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:387:17: ( POSITION | ORIENTATION | SIZE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9886,7 +9886,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "timeUnit"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:391:1: timeUnit : ( MIN | SEC | MS | FRAME );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:391:1: timeUnit : ( MIN | SEC | MS | FRAME );
     public final highParser.timeUnit_return timeUnit() throws RecognitionException {
         highParser.timeUnit_return retval = new highParser.timeUnit_return();
         retval.start = input.LT(1);
@@ -9898,8 +9898,8 @@ public class highParser extends Parser {
         CommonTree set419_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:391:10: ( MIN | SEC | MS | FRAME )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:391:10: ( MIN | SEC | MS | FRAME )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9941,7 +9941,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "attributTps"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:400:1: attributTps : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:400:1: attributTps : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
     public final highParser.attributTps_return attributTps() throws RecognitionException {
         highParser.attributTps_return retval = new highParser.attributTps_return();
         retval.start = input.LT(1);
@@ -9953,8 +9953,8 @@ public class highParser extends Parser {
         CommonTree set420_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:400:13: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:400:13: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9996,7 +9996,7 @@ public class highParser extends Parser {
     };
 
     // $ANTLR start "attributListeOuObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:406:1: attributListeOuObjet : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:406:1: attributListeOuObjet : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
     public final highParser.attributListeOuObjet_return attributListeOuObjet() throws RecognitionException {
         highParser.attributListeOuObjet_return retval = new highParser.attributListeOuObjet_return();
         retval.start = input.LT(1);
@@ -10008,8 +10008,8 @@ public class highParser extends Parser {
         CommonTree set421_tree=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:406:22: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:406:22: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\high.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 

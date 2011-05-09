@@ -15,6 +15,7 @@ options {
     import java.util.Iterator;
     import java.util.Hashtable;
     import java.util.Enumeration;
+    import java.util.Date;
 }
 
 @members {   
@@ -48,13 +49,15 @@ game [SymbolTable st] returns [Code c]
     @init{c = new Code();}:
     ^(GAME_KW 
     gd=gameData[st]*
-    {}
+    {   Date d = new Date();
+        c.append("/**\n* THIS FILE WAS GENERATED AUTOMATICALLY.\n* Please do not modify.\n* \n* file: edwigs-game.js\n* version: "+d.toLocaleString()+"\n*/\n\n");}
     newType[st]*
     in=initialization[st]
     {
 	//st.print();
         //System.out.println(in.getCode());
         c.append(in);
+        c.append("/*Definitions*/ \n");
     }
      
     (def=definition[st]
@@ -354,6 +357,7 @@ valAggregation [SymbolTable st] returns [AttributeValue c]:
 	    float tmp = Float.parseFloat(value);
 	    c = new AttributeValue(tmp);
 	} catch(NumberFormatException e) {
+            value = value.substring(1,value.length()-1);
 	    c = new AttributeValue(value);
 	}
     }
@@ -550,7 +554,6 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
        }
 
        if(!list_event.isEmpty()){
-            System.out.println("Event");
             present = true;
             Iterator<Control> ei = list_event.iterator();
             while(ei.hasNext()){
@@ -598,7 +601,6 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
        }
        if(!list_save.isEmpty()){
 
-           System.out.println("Position");
             Iterator<Control> ei = list_save.iterator();
             while(ei.hasNext()){
                 Control ctrl = ei.next();
@@ -648,6 +650,7 @@ commande [SymbolTable st] returns [Code c]@init{int nbCommande = 0;c = new Code(
             }
        }
        c.append(Code.genRefreshLoop(tab,list_event));
+       c.append("/*Commands*/ \n");
        c.append(Code.genEventListener(clavier,false,false));
        c.append(Code.genCMDKeyDown(list_event));
        c.append(Code.genCMDKeyUp(list_event));

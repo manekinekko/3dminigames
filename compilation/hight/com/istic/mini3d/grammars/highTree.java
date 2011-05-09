@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g 2011-05-09 17:20:21
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g 2011-05-09 21:09:17
 
     package com.istic.mini3d.grammars;
     import com.istic.mini3d.Main;
@@ -9,6 +9,7 @@
     import java.util.Iterator;
     import java.util.Hashtable;
     import java.util.Enumeration;
+    import java.util.Date;
 
 
 import org.antlr.runtime.*;
@@ -256,7 +257,7 @@ public class highTree extends TreeParser {
         
 
     public String[] getTokenNames() { return highTree.tokenNames; }
-    public String getGrammarFileName() { return "H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g"; }
 
        
         private int INT_DUPLICABLE=10;
@@ -283,7 +284,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "game"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:47:1: game[SymbolTable st] returns [Code c] : ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:48:1: game[SymbolTable st] returns [Code c] : ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) ;
     public final Code game(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -302,13 +303,13 @@ public class highTree extends TreeParser {
 
         c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:48:27: ( ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:49:5: ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:49:27: ( ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:50:5: ^( GAME_KW (gd= gameData[st] )* ( newType[st] )* in= initialization[st] (def= definition[st] )* (com= commande[st] )+ (reg= reglesJeu[st] )+ (ia= iaBasique[st] )* )
             {
             match(input,GAME_KW,FOLLOW_GAME_KW_in_game72); 
 
             match(input, Token.DOWN, null); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:50:7: (gd= gameData[st] )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:51:7: (gd= gameData[st] )*
             loop1:
             do {
                 int alt1=2;
@@ -321,7 +322,7 @@ public class highTree extends TreeParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:50:7: gd= gameData[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:51:7: gd= gameData[st]
             	    {
             	    pushFollow(FOLLOW_gameData_in_game81);
             	    gd=gameData(st);
@@ -337,8 +338,9 @@ public class highTree extends TreeParser {
                 }
             } while (true);
 
-
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:52:5: ( newType[st] )*
+               Date d = new Date();
+                    c.append("/**\n* THIS FILE WAS GENERATED AUTOMATICALLY.\n* Please do not modify.\n* \n* file: edwigs-game.js\n* version: "+d.toLocaleString()+"\n*/\n\n");
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:54:5: ( newType[st] )*
             loop2:
             do {
                 int alt2=2;
@@ -351,7 +353,7 @@ public class highTree extends TreeParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:52:5: newType[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:54:5: newType[st]
             	    {
             	    pushFollow(FOLLOW_newType_in_game95);
             	    newType(st);
@@ -376,8 +378,9 @@ public class highTree extends TreeParser {
             	//st.print();
                     //System.out.println(in.getCode());
                     c.append(in);
+                    c.append("/*Definitions*/ \n");
                 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:60:5: (def= definition[st] )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:63:5: (def= definition[st] )*
             loop3:
             do {
                 int alt3=2;
@@ -390,7 +393,7 @@ public class highTree extends TreeParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:60:6: def= definition[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:63:6: def= definition[st]
             	    {
             	    pushFollow(FOLLOW_definition_in_game127);
             	    def=definition(st);
@@ -410,7 +413,7 @@ public class highTree extends TreeParser {
                 }
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:67:8: (com= commande[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:70:8: (com= commande[st] )+
             int cnt4=0;
             loop4:
             do {
@@ -424,7 +427,7 @@ public class highTree extends TreeParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:67:8: com= commande[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:70:8: com= commande[st]
             	    {
             	    pushFollow(FOLLOW_commande_in_game150);
             	    com=commande(st);
@@ -445,7 +448,7 @@ public class highTree extends TreeParser {
             } while (true);
 
             c.append(com);
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:69:8: (reg= reglesJeu[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:72:8: (reg= reglesJeu[st] )+
             int cnt5=0;
             loop5:
             do {
@@ -459,7 +462,7 @@ public class highTree extends TreeParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:69:8: reg= reglesJeu[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:72:8: reg= reglesJeu[st]
             	    {
             	    pushFollow(FOLLOW_reglesJeu_in_game166);
             	    reg=reglesJeu(st);
@@ -479,7 +482,7 @@ public class highTree extends TreeParser {
                 cnt5++;
             } while (true);
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:69:26: (ia= iaBasique[st] )*
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:72:26: (ia= iaBasique[st] )*
             loop6:
             do {
                 int alt6=2;
@@ -492,7 +495,7 @@ public class highTree extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:69:26: ia= iaBasique[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:72:26: ia= iaBasique[st]
             	    {
             	    pushFollow(FOLLOW_iaBasique_in_game172);
             	    ia=iaBasique(st);
@@ -526,13 +529,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "gameData"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:75:1: gameData[SymbolTable st] returns [Code c] : ^( GAME_ATTRIBUT_KW attributGame_list[st] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:78:1: gameData[SymbolTable st] returns [Code c] : ^( GAME_ATTRIBUT_KW attributGame_list[st] ) ;
     public final Code gameData(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:75:43: ( ^( GAME_ATTRIBUT_KW attributGame_list[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:76:5: ^( GAME_ATTRIBUT_KW attributGame_list[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:78:43: ( ^( GAME_ATTRIBUT_KW attributGame_list[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:79:5: ^( GAME_ATTRIBUT_KW attributGame_list[st] )
             {
             match(input,GAME_ATTRIBUT_KW,FOLLOW_GAME_ATTRIBUT_KW_in_gameData203); 
 
@@ -560,15 +563,15 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "attributGame_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:78:1: attributGame_list[SymbolTable st] returns [Code c] : ( attributGame[st] )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:81:1: attributGame_list[SymbolTable st] returns [Code c] : ( attributGame[st] )+ ;
     public final Code attributGame_list(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:78:52: ( ( attributGame[st] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:79:5: ( attributGame[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:81:52: ( ( attributGame[st] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:82:5: ( attributGame[st] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:79:5: ( attributGame[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:82:5: ( attributGame[st] )+
             int cnt7=0;
             loop7:
             do {
@@ -582,7 +585,7 @@ public class highTree extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:79:5: attributGame[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:82:5: attributGame[st]
             	    {
             	    pushFollow(FOLLOW_attributGame_in_attributGame_list225);
             	    attributGame(st);
@@ -618,17 +621,17 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "attributGame"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:81:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:84:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) );
     public final Code attributGame(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:81:47: ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:84:47: ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) )
             int alt8=6;
             alt8 = dfa8.predict(input);
             switch (alt8) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:82:2: ^( GRAVITY_KW FLOAT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:85:2: ^( GRAVITY_KW FLOAT )
                     {
                     match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame243); 
 
@@ -640,7 +643,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:83:4: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:86:4: ^( GRAVITY_KW FLOAT FLOAT FLOAT )
                     {
                     match(input,GRAVITY_KW,FOLLOW_GRAVITY_KW_in_attributGame252); 
 
@@ -654,7 +657,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:84:4: ^( TURNBASED_KW ( 'true' | 'false' ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:87:4: ^( TURNBASED_KW ( 'true' | 'false' ) )
                     {
                     match(input,TURNBASED_KW,FOLLOW_TURNBASED_KW_in_attributGame265); 
 
@@ -674,7 +677,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:85:4: ^( WORLD_KW mapType )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:88:4: ^( WORLD_KW mapType )
                     {
                     match(input,WORLD_KW,FOLLOW_WORLD_KW_in_attributGame278); 
 
@@ -690,7 +693,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:86:4: ^( GRIDSIZE_KW FLOAT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:89:4: ^( GRIDSIZE_KW FLOAT )
                     {
                     match(input,GRIDSIZE_KW,FOLLOW_GRIDSIZE_KW_in_attributGame287); 
 
@@ -702,7 +705,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:87:4: ^( NAME_KW TEXTE )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:90:4: ^( NAME_KW TEXTE )
                     {
                     match(input,NAME_KW,FOLLOW_NAME_KW_in_attributGame296); 
 
@@ -728,13 +731,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "mapType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:90:1: mapType returns [Integer i] : ( GENERIC | GRID | RIBBON );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:93:1: mapType returns [Integer i] : ( GENERIC | GRID | RIBBON );
     public final Integer mapType() throws RecognitionException {
         Integer i = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:90:28: ( GENERIC | GRID | RIBBON )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:93:28: ( GENERIC | GRID | RIBBON )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( (input.LA(1)>=GENERIC && input.LA(1)<=RIBBON) ) {
                 input.consume();
@@ -761,15 +764,15 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "name"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:96:1: name returns [String s] : i= IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:99:1: name returns [String s] : i= IDENT ;
     public final String name() throws RecognitionException {
         String s = null;
 
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:96:24: (i= IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:97:5: i= IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:99:24: (i= IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:100:5: i= IDENT
             {
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_name354); 
             s = i.getText();
@@ -789,20 +792,20 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "newType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:101:1: newType[SymbolTable st] : ^( TYPE i= IDENT ( subType[st,sub] )+ ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:104:1: newType[SymbolTable st] : ^( TYPE i= IDENT ( subType[st,sub] )+ ) ;
     public final void newType(SymbolTable st) throws RecognitionException {
         CommonTree i=null;
 
         List<Model> sub = new ArrayList<Model>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:102:54: ( ^( TYPE i= IDENT ( subType[st,sub] )+ ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:103:5: ^( TYPE i= IDENT ( subType[st,sub] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:105:54: ( ^( TYPE i= IDENT ( subType[st,sub] )+ ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:106:5: ^( TYPE i= IDENT ( subType[st,sub] )+ )
             {
             match(input,TYPE,FOLLOW_TYPE_in_newType390); 
 
             match(input, Token.DOWN, null); 
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_newType394); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:103:20: ( subType[st,sub] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:106:20: ( subType[st,sub] )+
             int cnt9=0;
             loop9:
             do {
@@ -816,7 +819,7 @@ public class highTree extends TreeParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:103:20: subType[st,sub]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:106:20: subType[st,sub]
             	    {
             	    pushFollow(FOLLOW_subType_in_newType396);
             	    subType(st, sub);
@@ -865,13 +868,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "subType"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:117:1: subType[SymbolTable st, List<Model> sub] : i= IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:120:1: subType[SymbolTable st, List<Model> sub] : i= IDENT ;
     public final void subType(SymbolTable st, List<Model> sub) throws RecognitionException {
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:117:43: (i= IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:118:5: i= IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:120:43: (i= IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:121:5: i= IDENT
             {
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_subType426); 
 
@@ -901,15 +904,15 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "initialization"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:132:1: initialization[SymbolTable st] returns [Code c] : ( init[st] )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:135:1: initialization[SymbolTable st] returns [Code c] : ( init[st] )+ ;
     public final Code initialization(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:132:49: ( ( init[st] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:133:5: ( init[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:135:49: ( ( init[st] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:136:5: ( init[st] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:133:5: ( init[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:136:5: ( init[st] )+
             int cnt10=0;
             loop10:
             do {
@@ -923,7 +926,7 @@ public class highTree extends TreeParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:133:5: init[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:136:5: init[st]
             	    {
             	    pushFollow(FOLLOW_init_in_initialization454);
             	    init(st);
@@ -991,7 +994,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "init"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:168:1: init[SymbolTable st] returns [Code c] : ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) | ^( INSERT_KW IDENT IDENT ( operation[st] )? ) | ^( REMOVE_KW ( IDENT | operation[st] ) IDENT ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:171:1: init[SymbolTable st] returns [Code c] : ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) | ^( INSERT_KW IDENT IDENT ( operation[st] )? ) | ^( REMOVE_KW ( IDENT | operation[st] ) IDENT ) );
     public final Code init(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -1004,7 +1007,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:168:39: ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) | ^( INSERT_KW IDENT IDENT ( operation[st] )? ) | ^( REMOVE_KW ( IDENT | operation[st] ) IDENT ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:171:39: ( ^( INIT_IS_KW i= IDENT d= declarationObjet[st] ) | ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] ) | ^( INSERT_KW IDENT IDENT ( operation[st] )? ) | ^( REMOVE_KW ( IDENT | operation[st] ) IDENT ) )
             int alt13=4;
             switch ( input.LA(1) ) {
             case INIT_IS_KW:
@@ -1036,7 +1039,7 @@ public class highTree extends TreeParser {
 
             switch (alt13) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:169:5: ^( INIT_IS_KW i= IDENT d= declarationObjet[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:172:5: ^( INIT_IS_KW i= IDENT d= declarationObjet[st] )
                     {
                     match(input,INIT_IS_KW,FOLLOW_INIT_IS_KW_in_init485); 
 
@@ -1072,7 +1075,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:189:7: ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:192:7: ^( INIT_HAS_KW ac= accesClass[st] ao= affectationObjet_list[st] )
                     {
                     match(input,INIT_HAS_KW,FOLLOW_INIT_HAS_KW_in_init510); 
 
@@ -1127,14 +1130,14 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:224:7: ^( INSERT_KW IDENT IDENT ( operation[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:227:7: ^( INSERT_KW IDENT IDENT ( operation[st] )? )
                     {
                     match(input,INSERT_KW,FOLLOW_INSERT_KW_in_init536); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_init538); 
                     match(input,IDENT,FOLLOW_IDENT_in_init540); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:224:31: ( operation[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:227:31: ( operation[st] )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1143,7 +1146,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt11) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:224:31: operation[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:227:31: operation[st]
                             {
                             pushFollow(FOLLOW_operation_in_init542);
                             operation(st);
@@ -1162,12 +1165,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:225:7: ^( REMOVE_KW ( IDENT | operation[st] ) IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:228:7: ^( REMOVE_KW ( IDENT | operation[st] ) IDENT )
                     {
                     match(input,REMOVE_KW,FOLLOW_REMOVE_KW_in_init554); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:225:19: ( IDENT | operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:228:19: ( IDENT | operation[st] )
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -1185,14 +1188,14 @@ public class highTree extends TreeParser {
                     }
                     switch (alt12) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:225:20: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:228:20: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_init557); 
 
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:225:26: operation[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:228:26: operation[st]
                             {
                             pushFollow(FOLLOW_operation_in_init559);
                             operation(st);
@@ -1226,7 +1229,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "declarationObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:229:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:232:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? );
     public final Pair<Model, Integer> declarationObjet(SymbolTable st) throws RecognitionException {
         Pair<Model, Integer> p = null;
 
@@ -1238,12 +1241,12 @@ public class highTree extends TreeParser {
 
         d=null;s=null;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:230:26: ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:233:26: ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? )
             int alt16=9;
             alt16 = dfa16.predict(input);
             switch (alt16) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:231:5: ^( DEC t= typeEntity[st] (d= dupli )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:234:5: ^( DEC t= typeEntity[st] (d= dupli )? )
                     {
                     match(input,DEC,FOLLOW_DEC_in_declarationObjet596); 
 
@@ -1253,7 +1256,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:231:28: (d= dupli )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:234:28: (d= dupli )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1262,7 +1265,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt14) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:231:29: d= dupli
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:234:29: d= dupli
                             {
                             pushFollow(FOLLOW_dupli_in_declarationObjet606);
                             d=dupli();
@@ -1287,7 +1290,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:238:7: ^( LIST_KW list_declaration[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:241:7: ^( LIST_KW list_declaration[st] )
                     {
                     match(input,LIST_KW,FOLLOW_LIST_KW_in_declarationObjet624); 
 
@@ -1307,7 +1310,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:243:7: ^( CAMERA_KW PERSON view[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:246:7: ^( CAMERA_KW PERSON view[st] )
                     {
                     match(input,CAMERA_KW,FOLLOW_CAMERA_KW_in_declarationObjet643); 
 
@@ -1324,7 +1327,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:244:7: ^( CAMERA_KW FREE )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:247:7: ^( CAMERA_KW FREE )
                     {
                     match(input,CAMERA_KW,FOLLOW_CAMERA_KW_in_declarationObjet658); 
 
@@ -1336,7 +1339,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:245:7: ^( CAMERA_KW ON )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:248:7: ^( CAMERA_KW ON )
                     {
                     match(input,CAMERA_KW,FOLLOW_CAMERA_KW_in_declarationObjet670); 
 
@@ -1348,7 +1351,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:246:7: ^( MEDIA_KW LOOP )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:249:7: ^( MEDIA_KW LOOP )
                     {
                     match(input,MEDIA_KW,FOLLOW_MEDIA_KW_in_declarationObjet682); 
 
@@ -1360,7 +1363,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:247:7: ^( MEDIA_KW ONCE )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:250:7: ^( MEDIA_KW ONCE )
                     {
                     match(input,MEDIA_KW,FOLLOW_MEDIA_KW_in_declarationObjet694); 
 
@@ -1372,7 +1375,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:248:7: ^( IN_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:251:7: ^( IN_KW IDENT )
                     {
                     match(input,IN_KW,FOLLOW_IN_KW_in_declarationObjet714); 
 
@@ -1384,10 +1387,10 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:249:7: PLAYER (s= SOLO )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:252:7: PLAYER (s= SOLO )?
                     {
                     match(input,PLAYER,FOLLOW_PLAYER_in_declarationObjet736); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:249:14: (s= SOLO )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:252:14: (s= SOLO )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -1396,7 +1399,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt15) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:249:15: s= SOLO
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:252:15: s= SOLO
                             {
                             s=(CommonTree)match(input,SOLO,FOLLOW_SOLO_in_declarationObjet741); 
 
@@ -1429,7 +1432,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "list_declaration"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:258:1: list_declaration[SymbolTable st] returns [Code c] : ( (o= operation[st] )? i= IDENT )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:261:1: list_declaration[SymbolTable st] returns [Code c] : ( (o= operation[st] )? i= IDENT )+ ;
     public final Code list_declaration(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -1439,10 +1442,10 @@ public class highTree extends TreeParser {
 
         o = null;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:259:21: ( ( (o= operation[st] )? i= IDENT )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:260:5: ( (o= operation[st] )? i= IDENT )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:262:21: ( ( (o= operation[st] )? i= IDENT )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:263:5: ( (o= operation[st] )? i= IDENT )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:260:5: ( (o= operation[st] )? i= IDENT )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:263:5: ( (o= operation[st] )? i= IDENT )+
             int cnt18=0;
             loop18:
             do {
@@ -1456,9 +1459,9 @@ public class highTree extends TreeParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:260:6: (o= operation[st] )? i= IDENT
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:263:6: (o= operation[st] )? i= IDENT
             	    {
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:260:6: (o= operation[st] )?
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:263:6: (o= operation[st] )?
             	    int alt17=2;
             	    int LA17_0 = input.LA(1);
 
@@ -1467,7 +1470,7 @@ public class highTree extends TreeParser {
             	    }
             	    switch (alt17) {
             	        case 1 :
-            	            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:260:7: o= operation[st]
+            	            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:263:7: o= operation[st]
             	            {
             	            pushFollow(FOLLOW_operation_in_list_declaration783);
             	            o=operation(st);
@@ -1517,15 +1520,15 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "typeEntity"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:270:1: typeEntity[SymbolTable st] returns [Model t] : i= IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:273:1: typeEntity[SymbolTable st] returns [Model t] : i= IDENT ;
     public final Model typeEntity(SymbolTable st) throws RecognitionException {
         Model t = null;
 
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:270:46: (i= IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:271:5: i= IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:273:46: (i= IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:274:5: i= IDENT
             {
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_typeEntity823); 
 
@@ -1553,13 +1556,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "dupli"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:283:1: dupli returns [Integer i] : DUPLICABLE ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:286:1: dupli returns [Integer i] : DUPLICABLE ;
     public final Integer dupli() throws RecognitionException {
         Integer i = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:283:26: ( DUPLICABLE )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:284:5: DUPLICABLE
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:286:26: ( DUPLICABLE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:287:5: DUPLICABLE
             {
             match(input,DUPLICABLE,FOLLOW_DUPLICABLE_in_dupli849); 
             i=INT_DUPLICABLE;
@@ -1579,13 +1582,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "view"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:288:1: view[SymbolTable st] returns [Code c] : ( FIRST | THIRD );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:291:1: view[SymbolTable st] returns [Code c] : ( FIRST | THIRD );
     public final Code view(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:288:39: ( FIRST | THIRD )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:291:39: ( FIRST | THIRD )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( (input.LA(1)>=FIRST && input.LA(1)<=THIRD) ) {
                 input.consume();
@@ -1612,7 +1615,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "affectationObjet_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:292:1: affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : (a= affectationObjet[st] )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:295:1: affectationObjet_list[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : (a= affectationObjet[st] )+ ;
     public final ArrayList<Pair<String,AttributeValue>> affectationObjet_list(SymbolTable st) throws RecognitionException {
         ArrayList<Pair<String,AttributeValue>> c = null;
 
@@ -1621,10 +1624,10 @@ public class highTree extends TreeParser {
 
         c = new ArrayList<Pair<String,AttributeValue>>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:293:62: ( (a= affectationObjet[st] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:294:5: (a= affectationObjet[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:296:62: ( (a= affectationObjet[st] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:5: (a= affectationObjet[st] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:294:5: (a= affectationObjet[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:5: (a= affectationObjet[st] )+
             int cnt19=0;
             loop19:
             do {
@@ -1638,7 +1641,7 @@ public class highTree extends TreeParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:294:6: a= affectationObjet[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:6: a= affectationObjet[st]
             	    {
             	    pushFollow(FOLLOW_affectationObjet_in_affectationObjet_list915);
             	    a=affectationObjet(st);
@@ -1675,7 +1678,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "affectationObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:296:1: affectationObjet[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:299:1: affectationObjet[SymbolTable st] returns [ArrayList<Pair<String,AttributeValue>> c] : ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) );
     public final ArrayList<Pair<String,AttributeValue>> affectationObjet(SymbolTable st) throws RecognitionException {
         ArrayList<Pair<String,AttributeValue>> c = null;
 
@@ -1695,7 +1698,7 @@ public class highTree extends TreeParser {
 
         c = new ArrayList<Pair<String,AttributeValue>>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:296:142: ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:299:142: ( ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? ) | ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] ) | ^( ALLOCATION_KW attributListeOuObjet[st] IDENT ) | ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] ) )
             int alt21=4;
             int LA21_0 = input.LA(1);
 
@@ -1763,13 +1766,13 @@ public class highTree extends TreeParser {
             }
             switch (alt21) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:5: ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:300:5: ^( ALLOCATION_KW i= IDENT (t= valAggregation[st] )? )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet943); 
 
                     match(input, Token.DOWN, null); 
                     i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_affectationObjet947); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:31: (t= valAggregation[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:300:31: (t= valAggregation[st] )?
                     int alt20=2;
                     int LA20_0 = input.LA(1);
 
@@ -1778,7 +1781,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt20) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:297:31: t= valAggregation[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:300:31: t= valAggregation[st]
                             {
                             pushFollow(FOLLOW_valAggregation_in_affectationObjet951);
                             t=valAggregation(st);
@@ -1805,7 +1808,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:306:7: ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:309:7: ^( ALLOCATION_KW tc= typeCoordonnees[st] coo= coordinates[st] )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet970); 
 
@@ -1842,7 +1845,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:323:7: ^( ALLOCATION_KW attributListeOuObjet[st] IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:326:7: ^( ALLOCATION_KW attributListeOuObjet[st] IDENT )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet997); 
 
@@ -1859,7 +1862,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:324:7: ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:327:7: ^( ALLOCATION_KW att= attributTps[st] v= operation[st] u= timeUnit[st] )
                     {
                     match(input,ALLOCATION_KW,FOLLOW_ALLOCATION_KW_in_affectationObjet1013); 
 
@@ -1902,7 +1905,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "valAggregation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:331:1: valAggregation[SymbolTable st] returns [AttributeValue c] : ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | ^( AGGREGATION_KW i= TEXTE ) | 'true' | 'false' );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:334:1: valAggregation[SymbolTable st] returns [AttributeValue c] : ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | ^( AGGREGATION_KW i= TEXTE ) | 'true' | 'false' );
     public final AttributeValue valAggregation(SymbolTable st) throws RecognitionException {
         AttributeValue c = null;
 
@@ -1913,7 +1916,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:331:59: ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | ^( AGGREGATION_KW i= TEXTE ) | 'true' | 'false' )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:334:59: ( ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? ) | ^( AGGREGATION_KW i= IDENT ) | ^( AGGREGATION_KW i= TEXTE ) | 'true' | 'false' )
             int alt23=5;
             switch ( input.LA(1) ) {
             case AGGREGATION_KW:
@@ -1985,7 +1988,7 @@ public class highTree extends TreeParser {
 
             switch (alt23) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:332:5: ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:335:5: ^( AGGREGATION_KW o= operation[st] (t= timeUnit[st] )? )
                     {
                     match(input,AGGREGATION_KW,FOLLOW_AGGREGATION_KW_in_valAggregation1064); 
 
@@ -1995,7 +1998,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:332:39: (t= timeUnit[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:335:39: (t= timeUnit[st] )?
                     int alt22=2;
                     int LA22_0 = input.LA(1);
 
@@ -2004,7 +2007,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt22) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:332:39: t= timeUnit[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:335:39: t= timeUnit[st]
                             {
                             pushFollow(FOLLOW_timeUnit_in_valAggregation1073);
                             t=timeUnit(st);
@@ -2030,7 +2033,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:340:6: ^( AGGREGATION_KW i= IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:343:6: ^( AGGREGATION_KW i= IDENT )
                     {
                     match(input,AGGREGATION_KW,FOLLOW_AGGREGATION_KW_in_valAggregation1090); 
 
@@ -2051,7 +2054,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:350:6: ^( AGGREGATION_KW i= TEXTE )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:353:6: ^( AGGREGATION_KW i= TEXTE )
                     {
                     match(input,AGGREGATION_KW,FOLLOW_AGGREGATION_KW_in_valAggregation1109); 
 
@@ -2065,6 +2068,7 @@ public class highTree extends TreeParser {
                     	    float tmp = Float.parseFloat(value);
                     	    c = new AttributeValue(tmp);
                     	} catch(NumberFormatException e) {
+                                value = value.substring(1,value.length()-1);
                     	    c = new AttributeValue(value);
                     	}
                         
@@ -2072,7 +2076,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:360:7: 'true'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:364:7: 'true'
                     {
                     match(input,222,FOLLOW_222_in_valAggregation1129); 
                     c = new AttributeValue(true);
@@ -2080,7 +2084,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:361:7: 'false'
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:365:7: 'false'
                     {
                     match(input,223,FOLLOW_223_in_valAggregation1139); 
                     c = new AttributeValue(false);
@@ -2102,7 +2106,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "definition"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:366:1: definition[SymbolTable st] returns [Code c] : ^( DEFINITION_KW i= IDENT cons= consequences[st,d] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:370:1: definition[SymbolTable st] returns [Code c] : ^( DEFINITION_KW i= IDENT cons= consequences[st,d] ) ;
     public final Code definition(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2112,8 +2116,8 @@ public class highTree extends TreeParser {
 
          Definition d = new Definition(); c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:366:102: ( ^( DEFINITION_KW i= IDENT cons= consequences[st,d] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:367:5: ^( DEFINITION_KW i= IDENT cons= consequences[st,d] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:370:102: ( ^( DEFINITION_KW i= IDENT cons= consequences[st,d] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:371:5: ^( DEFINITION_KW i= IDENT cons= consequences[st,d] )
             {
             match(input,DEFINITION_KW,FOLLOW_DEFINITION_KW_in_definition1173); 
 
@@ -2154,7 +2158,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "consequences"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:382:1: consequences[SymbolTable st , Definition d] returns [Code c] : ^( CONSEQUENCES_KW conslist= consequ_list[st,d] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:386:1: consequences[SymbolTable st , Definition d] returns [Code c] : ^( CONSEQUENCES_KW conslist= consequ_list[st,d] ) ;
     public final Code consequences(SymbolTable st, Definition d) throws RecognitionException {
         Code c = null;
 
@@ -2163,8 +2167,8 @@ public class highTree extends TreeParser {
 
          c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:383:29: ( ^( CONSEQUENCES_KW conslist= consequ_list[st,d] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:384:5: ^( CONSEQUENCES_KW conslist= consequ_list[st,d] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:387:29: ( ^( CONSEQUENCES_KW conslist= consequ_list[st,d] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:388:5: ^( CONSEQUENCES_KW conslist= consequ_list[st,d] )
             {
             match(input,CONSEQUENCES_KW,FOLLOW_CONSEQUENCES_KW_in_consequences1221); 
 
@@ -2195,7 +2199,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "consequ_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:390:1: consequ_list[SymbolTable st , Definition d] returns [Code c] : (cons= consequ[st,d] )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:394:1: consequ_list[SymbolTable st , Definition d] returns [Code c] : (cons= consequ[st,d] )+ ;
     public final Code consequ_list(SymbolTable st, Definition d) throws RecognitionException {
         Code c = null;
 
@@ -2204,10 +2208,10 @@ public class highTree extends TreeParser {
 
          c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:391:29: ( (cons= consequ[st,d] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:392:5: (cons= consequ[st,d] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:395:29: ( (cons= consequ[st,d] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:396:5: (cons= consequ[st,d] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:392:5: (cons= consequ[st,d] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:396:5: (cons= consequ[st,d] )+
             int cnt24=0;
             loop24:
             do {
@@ -2221,7 +2225,7 @@ public class highTree extends TreeParser {
 
                 switch (alt24) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:392:6: cons= consequ[st,d]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:396:6: cons= consequ[st,d]
             	    {
             	    pushFollow(FOLLOW_consequ_in_consequ_list1267);
             	    cons=consequ(st, d);
@@ -2258,7 +2262,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "consequ"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:395:1: consequ[SymbolTable st,Definition d] returns [Code c] : (i= siAlors[st] | act= action[st] | a= affectation[st,d] | activCommande[st] | id= IDENT | ^( VICTORY_KW IDENT ( IDENT )? ) | ^( DEFEAT_KW IDENT ( IDENT )? ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:399:1: consequ[SymbolTable st,Definition d] returns [Code c] : (i= siAlors[st] | act= action[st] | a= affectation[st,d] | activCommande[st] | id= IDENT | ^( VICTORY_KW IDENT ( IDENT )? ) | ^( DEFEAT_KW IDENT ( IDENT )? ) );
     public final Code consequ(SymbolTable st, Definition d) throws RecognitionException {
         Code c = null;
 
@@ -2272,7 +2276,7 @@ public class highTree extends TreeParser {
 
          c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:396:29: (i= siAlors[st] | act= action[st] | a= affectation[st,d] | activCommande[st] | id= IDENT | ^( VICTORY_KW IDENT ( IDENT )? ) | ^( DEFEAT_KW IDENT ( IDENT )? ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:400:29: (i= siAlors[st] | act= action[st] | a= affectation[st,d] | activCommande[st] | id= IDENT | ^( VICTORY_KW IDENT ( IDENT )? ) | ^( DEFEAT_KW IDENT ( IDENT )? ) )
             int alt27=7;
             switch ( input.LA(1) ) {
             case IF_KW:
@@ -2338,7 +2342,7 @@ public class highTree extends TreeParser {
 
             switch (alt27) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:397:5: i= siAlors[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:401:5: i= siAlors[st]
                     {
                     pushFollow(FOLLOW_siAlors_in_consequ1307);
                     i=siAlors(st);
@@ -2350,7 +2354,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:399:7: act= action[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:403:7: act= action[st]
                     {
                     pushFollow(FOLLOW_action_in_consequ1324);
                     act=action(st);
@@ -2362,7 +2366,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:401:7: a= affectation[st,d]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:405:7: a= affectation[st,d]
                     {
                     pushFollow(FOLLOW_affectation_in_consequ1341);
                     a=affectation(st, d);
@@ -2374,7 +2378,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:402:7: activCommande[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:406:7: activCommande[st]
                     {
                     pushFollow(FOLLOW_activCommande_in_consequ1352);
                     activCommande(st);
@@ -2386,7 +2390,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:403:7: id= IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:407:7: id= IDENT
                     {
                     id=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_consequ1365); 
                     	c.append(id.getText());c.append("\n");
@@ -2394,13 +2398,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:404:7: ^( VICTORY_KW IDENT ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:408:7: ^( VICTORY_KW IDENT ( IDENT )? )
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_consequ1375); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_consequ1377); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:404:26: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:408:26: ( IDENT )?
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
@@ -2409,7 +2413,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt25) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:404:26: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:408:26: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_consequ1379); 
 
@@ -2424,13 +2428,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:405:7: ^( DEFEAT_KW IDENT ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:409:7: ^( DEFEAT_KW IDENT ( IDENT )? )
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_consequ1390); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_consequ1392); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:405:25: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:409:25: ( IDENT )?
                     int alt26=2;
                     int LA26_0 = input.LA(1);
 
@@ -2439,7 +2443,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt26) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:405:25: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:409:25: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_consequ1394); 
 
@@ -2468,7 +2472,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "action"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:408:1: action[SymbolTable st] returns [Code c] : (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:412:1: action[SymbolTable st] returns [Code c] : (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) );
     public final Code action(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -2489,12 +2493,12 @@ public class highTree extends TreeParser {
 
          c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:409:28: (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:413:28: (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) )
             int alt36=19;
             alt36 = dfa36.predict(input);
             switch (alt36) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:410:5: ent= accesClass[st] act= actionObjet[st,ent]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:414:5: ent= accesClass[st] act= actionObjet[st,ent]
                     {
                     pushFollow(FOLLOW_accesClass_in_action1430);
                     ent=accesClass(st);
@@ -2513,13 +2517,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:414:6: ^( ENDS_KW IDENT ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:6: ^( ENDS_KW IDENT ( IDENT )? )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1452); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_action1454); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:414:22: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:22: ( IDENT )?
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
@@ -2528,7 +2532,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt28) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:414:22: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:22: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1456); 
 
@@ -2543,13 +2547,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:415:6: ^( ENDS_KW GAME ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:6: ^( ENDS_KW GAME ( IDENT )? )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_action1466); 
 
                     match(input, Token.DOWN, null); 
                     match(input,GAME,FOLLOW_GAME_in_action1468); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:415:21: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:21: ( IDENT )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -2558,7 +2562,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt29) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:415:21: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:21: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1470); 
 
@@ -2573,13 +2577,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:416:6: ^( STARTS_KW IDENT ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:420:6: ^( STARTS_KW IDENT ( IDENT )? )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1480); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_action1482); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:416:24: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:420:24: ( IDENT )?
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
@@ -2588,7 +2592,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt30) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:416:24: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:420:24: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1484); 
 
@@ -2603,13 +2607,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:417:6: ^( STARTS_KW GAME ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:421:6: ^( STARTS_KW GAME ( IDENT )? )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_action1494); 
 
                     match(input, Token.DOWN, null); 
                     match(input,GAME,FOLLOW_GAME_in_action1496); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:417:23: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:421:23: ( IDENT )?
                     int alt31=2;
                     int LA31_0 = input.LA(1);
 
@@ -2618,7 +2622,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt31) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:417:23: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:421:23: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1498); 
 
@@ -2633,13 +2637,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:6: ^( PAUSE_KW IDENT ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:422:6: ^( PAUSE_KW IDENT ( IDENT )? )
                     {
                     match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1508); 
 
                     match(input, Token.DOWN, null); 
                     match(input,IDENT,FOLLOW_IDENT_in_action1510); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:23: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:422:23: ( IDENT )?
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
@@ -2648,7 +2652,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt32) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:418:23: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:422:23: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1512); 
 
@@ -2663,13 +2667,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:6: ^( PAUSE_KW GAME ( IDENT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:423:6: ^( PAUSE_KW GAME ( IDENT )? )
                     {
                     match(input,PAUSE_KW,FOLLOW_PAUSE_KW_in_action1522); 
 
                     match(input, Token.DOWN, null); 
                     match(input,GAME,FOLLOW_GAME_in_action1524); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:22: ( IDENT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:423:22: ( IDENT )?
                     int alt33=2;
                     int LA33_0 = input.LA(1);
 
@@ -2678,7 +2682,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt33) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:419:22: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:423:22: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_action1526); 
 
@@ -2702,7 +2706,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:429:6: ^( MUTE_KW mode_mute[st] IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:433:6: ^( MUTE_KW mode_mute[st] IDENT )
                     {
                     match(input,MUTE_KW,FOLLOW_MUTE_KW_in_action1542); 
 
@@ -2719,7 +2723,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:430:6: ^( PLAY_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:434:6: ^( PLAY_KW IDENT )
                     {
                     match(input,PLAY_KW,FOLLOW_PLAY_KW_in_action1556); 
 
@@ -2731,7 +2735,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:431:6: ^( STOP_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:435:6: ^( STOP_KW IDENT )
                     {
                     match(input,STOP_KW,FOLLOW_STOP_KW_in_action1567); 
 
@@ -2743,7 +2747,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:432:6: ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:436:6: ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] )
                     {
                     match(input,BLOCK_KW,FOLLOW_BLOCK_KW_in_action1578); 
 
@@ -2769,7 +2773,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:433:6: ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:437:6: ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? )
                     {
                     match(input,EFFACE_KW,FOLLOW_EFFACE_KW_in_action1596); 
 
@@ -2779,7 +2783,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:433:32: ( typeDestination[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:437:32: ( typeDestination[st] )?
                     int alt34=2;
                     int LA34_0 = input.LA(1);
 
@@ -2788,7 +2792,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt34) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:433:32: typeDestination[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:437:32: typeDestination[st]
                             {
                             pushFollow(FOLLOW_typeDestination_in_action1601);
                             typeDestination(st);
@@ -2807,7 +2811,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:434:6: ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:438:6: ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? )
                     {
                     match(input,GENERATE_KW,FOLLOW_GENERATE_KW_in_action1612); 
 
@@ -2817,7 +2821,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:434:39: (td= typeDestination[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:438:39: (td= typeDestination[st] )?
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -2826,7 +2830,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:434:39: td= typeDestination[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:438:39: td= typeDestination[st]
                             {
                             pushFollow(FOLLOW_typeDestination_in_action1621);
                             td=typeDestination(st);
@@ -2863,7 +2867,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:453:6: ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:457:6: ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] )
                     {
                     match(input,WAIT_KW,FOLLOW_WAIT_KW_in_action1638); 
 
@@ -2892,14 +2896,14 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 15 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:457:6: SAVE_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:461:6: SAVE_KW
                     {
                     match(input,SAVE_KW,FOLLOW_SAVE_KW_in_action1668); 
 
                     }
                     break;
                 case 16 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:458:6: ^( NEXTURN_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:462:6: ^( NEXTURN_KW IDENT )
                     {
                     match(input,NEXTURN_KW,FOLLOW_NEXTURN_KW_in_action1676); 
 
@@ -2911,7 +2915,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 17 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:460:6: ^( GRASPS_KW IDENT IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:464:6: ^( GRASPS_KW IDENT IDENT )
                     {
                     match(input,GRASPS_KW,FOLLOW_GRASPS_KW_in_action1692); 
 
@@ -2924,7 +2928,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 18 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:461:6: ^( EXPELS_KW IDENT IDENT operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:465:6: ^( EXPELS_KW IDENT IDENT operation[st] )
                     {
                     match(input,EXPELS_KW,FOLLOW_EXPELS_KW_in_action1705); 
 
@@ -2942,7 +2946,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 19 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:462:6: ^( INGESTS_KW IDENT IDENT IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:466:6: ^( INGESTS_KW IDENT IDENT IDENT )
                     {
                     match(input,INGESTS_KW,FOLLOW_INGESTS_KW_in_action1721); 
 
@@ -2970,7 +2974,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "typeAcces"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:465:1: typeAcces[SymbolTable st] returns [ArrayList<Symbol> l] : (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:469:1: typeAcces[SymbolTable st] returns [ArrayList<Symbol> l] : (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) );
     public final ArrayList<Symbol> typeAcces(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> l = null;
 
@@ -2978,7 +2982,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:465:57: (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:469:57: (ac= accesClass[st] | operation[st] ( IDENT | accesClass[st] ) )
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -2996,7 +3000,7 @@ public class highTree extends TreeParser {
             }
             switch (alt38) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:466:5: ac= accesClass[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:470:5: ac= accesClass[st]
                     {
                     pushFollow(FOLLOW_accesClass_in_typeAcces1752);
                     ac=accesClass(st);
@@ -3008,14 +3012,14 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:467:7: operation[st] ( IDENT | accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:471:7: operation[st] ( IDENT | accesClass[st] )
                     {
                     pushFollow(FOLLOW_operation_in_typeAcces1763);
                     operation(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:467:21: ( IDENT | accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:471:21: ( IDENT | accesClass[st] )
                     int alt37=2;
                     int LA37_0 = input.LA(1);
 
@@ -3033,14 +3037,14 @@ public class highTree extends TreeParser {
                     }
                     switch (alt37) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:467:22: IDENT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:471:22: IDENT
                             {
                             match(input,IDENT,FOLLOW_IDENT_in_typeAcces1767); 
 
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:467:30: accesClass[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:471:30: accesClass[st]
                             {
                             pushFollow(FOLLOW_accesClass_in_typeAcces1771);
                             accesClass(st);
@@ -3071,7 +3075,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "typeDestination"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:470:1: typeDestination[SymbolTable st] returns [Coordonnees coord] : ( accesClass[st] | coo= coordinates[st] );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:474:1: typeDestination[SymbolTable st] returns [Coordonnees coord] : ( accesClass[st] | coo= coordinates[st] );
     public final Coordonnees typeDestination(SymbolTable st) throws RecognitionException {
         Coordonnees coord = null;
 
@@ -3079,7 +3083,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:470:61: ( accesClass[st] | coo= coordinates[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:474:61: ( accesClass[st] | coo= coordinates[st] )
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -3097,7 +3101,7 @@ public class highTree extends TreeParser {
             }
             switch (alt39) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:471:5: accesClass[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:475:5: accesClass[st]
                     {
                     pushFollow(FOLLOW_accesClass_in_typeDestination1798);
                     accesClass(st);
@@ -3108,7 +3112,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:472:7: coo= coordinates[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:476:7: coo= coordinates[st]
                     {
                     pushFollow(FOLLOW_coordinates_in_typeDestination1809);
                     coo=coordinates(st);
@@ -3134,7 +3138,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "actionObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:474:1: actionObjet[SymbolTable st,List<Symbol> l] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:478:1: actionObjet[SymbolTable st,List<Symbol> l] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );
     public final Code actionObjet(SymbolTable st, List<Symbol> l) throws RecognitionException {
         Code c = null;
 
@@ -3143,19 +3147,19 @@ public class highTree extends TreeParser {
 
         c=new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:474:81: ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:478:81: ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) )
             int alt40=8;
             alt40 = dfa40.predict(input);
             switch (alt40) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:475:5: DIES_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:479:5: DIES_KW
                     {
                     match(input,DIES_KW,FOLLOW_DIES_KW_in_actionObjet1831); 
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:476:7: actionCommandePressee[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:480:7: actionCommandePressee[st]
                     {
                     pushFollow(FOLLOW_actionCommandePressee_in_actionObjet1839);
                     actionCommandePressee(st);
@@ -3166,7 +3170,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:477:7: act= actionCommandeMaintenue[st,l]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:481:7: act= actionCommandeMaintenue[st,l]
                     {
                     pushFollow(FOLLOW_actionCommandeMaintenue_in_actionObjet1852);
                     act=actionCommandeMaintenue(st, l);
@@ -3180,7 +3184,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:481:6: ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:485:6: ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] )
                     {
                     match(input,DURING,FOLLOW_DURING_in_actionObjet1867); 
 
@@ -3206,7 +3210,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:482:6: ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:486:6: ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] )
                     {
                     match(input,UNTIL,FOLLOW_UNTIL_in_actionObjet1885); 
 
@@ -3227,7 +3231,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:483:6: ^( EQUIP accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:487:6: ^( EQUIP accesClass[st] )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1900); 
 
@@ -3243,7 +3247,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:484:6: ^( EQUIP NEXT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:488:6: ^( EQUIP NEXT )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1912); 
 
@@ -3255,7 +3259,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:485:6: ^( EQUIP PREVIOUS )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:489:6: ^( EQUIP PREVIOUS )
                     {
                     match(input,EQUIP,FOLLOW_EQUIP_in_actionObjet1923); 
 
@@ -3281,13 +3285,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "actionCommandePressee"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:488:1: actionCommandePressee[SymbolTable st] returns [Code c] : ^( JUMP operation[st] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:492:1: actionCommandePressee[SymbolTable st] returns [Code c] : ^( JUMP operation[st] ) ;
     public final Code actionCommandePressee(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:488:56: ( ^( JUMP operation[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:489:3: ^( JUMP operation[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:492:56: ( ^( JUMP operation[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:3: ^( JUMP operation[st] )
             {
             match(input,JUMP,FOLLOW_JUMP_in_actionCommandePressee1947); 
 
@@ -3315,7 +3319,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "actionCommandeMaintenue"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:492:1: actionCommandeMaintenue[SymbolTable st,List<Symbol> ls] returns [Code c] : ( ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] ) | ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] ) | ^( ACCELERATE operation[st] ) | ^( BRAKE operation[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:496:1: actionCommandeMaintenue[SymbolTable st,List<Symbol> ls] returns [Code c] : ( ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] ) | ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] ) | ^( ACCELERATE operation[st] ) | ^( BRAKE operation[st] ) );
     public final Code actionCommandeMaintenue(SymbolTable st, List<Symbol> ls) throws RecognitionException {
         Code c = null;
 
@@ -3324,7 +3328,7 @@ public class highTree extends TreeParser {
 
         c = new Code();List<Integer> l = new ArrayList();int x=0,y=0,z=0;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:492:146: ( ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] ) | ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] ) | ^( ACCELERATE operation[st] ) | ^( BRAKE operation[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:496:146: ( ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] ) | ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] ) | ^( ACCELERATE operation[st] ) | ^( BRAKE operation[st] ) )
             int alt42=4;
             switch ( input.LA(1) ) {
             case MOVE:
@@ -3356,12 +3360,12 @@ public class highTree extends TreeParser {
 
             switch (alt42) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:3: ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:3: ^( MOVE ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN ) val= operation[st] )
                     {
                     match(input,MOVE,FOLLOW_MOVE_in_actionCommandeMaintenue1974); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:10: ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:10: ( LEFT | RIGHT | FORWARD | BACKWARD | WUP | WDOWN )
                     int alt41=6;
                     switch ( input.LA(1) ) {
                     case LEFT:
@@ -3403,7 +3407,7 @@ public class highTree extends TreeParser {
 
                     switch (alt41) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:11: LEFT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:11: LEFT
                             {
                             match(input,LEFT,FOLLOW_LEFT_in_actionCommandeMaintenue1977); 
                             x=-1;
@@ -3411,7 +3415,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:25: RIGHT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:25: RIGHT
                             {
                             match(input,RIGHT,FOLLOW_RIGHT_in_actionCommandeMaintenue1982); 
                             x=1;
@@ -3419,7 +3423,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:39: FORWARD
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:39: FORWARD
                             {
                             match(input,FORWARD,FOLLOW_FORWARD_in_actionCommandeMaintenue1987); 
                             y=1;
@@ -3427,7 +3431,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:55: BACKWARD
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:55: BACKWARD
                             {
                             match(input,BACKWARD,FOLLOW_BACKWARD_in_actionCommandeMaintenue1992); 
                             y=-1;
@@ -3435,7 +3439,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 5 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:73: WUP
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:73: WUP
                             {
                             match(input,WUP,FOLLOW_WUP_in_actionCommandeMaintenue1997); 
                             z=1;
@@ -3443,7 +3447,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 6 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:493:85: WDOWN
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:497:85: WDOWN
                             {
                             match(input,WDOWN,FOLLOW_WDOWN_in_actionCommandeMaintenue2002); 
                             z=-1;
@@ -3481,7 +3485,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:512:5: ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:516:5: ^( TURN ( LEFT | RIGHT | WUP | WDOWN | CLOCKWISE | ANTICLOCKWISE ) operation[st] )
                     {
                     match(input,TURN,FOLLOW_TURN_in_actionCommandeMaintenue2027); 
 
@@ -3506,7 +3510,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:513:5: ^( ACCELERATE operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:517:5: ^( ACCELERATE operation[st] )
                     {
                     match(input,ACCELERATE,FOLLOW_ACCELERATE_in_actionCommandeMaintenue2062); 
 
@@ -3522,7 +3526,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:514:5: ^( BRAKE operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:518:5: ^( BRAKE operation[st] )
                     {
                     match(input,BRAKE,FOLLOW_BRAKE_in_actionCommandeMaintenue2073); 
 
@@ -3552,13 +3556,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "transformation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:517:1: transformation[SymbolTable st] returns [Code c] : ( TRANSLATION | ROTATION | SCALE );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:521:1: transformation[SymbolTable st] returns [Code c] : ( TRANSLATION | ROTATION | SCALE );
     public final Code transformation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:517:49: ( TRANSLATION | ROTATION | SCALE )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:521:49: ( TRANSLATION | ROTATION | SCALE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( (input.LA(1)>=TRANSLATION && input.LA(1)<=SCALE) ) {
                 input.consume();
@@ -3585,7 +3589,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "coordinates"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:523:1: coordinates[SymbolTable st] returns [Coordonnees coo] : ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:527:1: coordinates[SymbolTable st] returns [Coordonnees coo] : ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) ;
     public final Coordonnees coordinates(SymbolTable st) throws RecognitionException {
         Coordonnees coo = null;
 
@@ -3597,8 +3601,8 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:523:55: ( ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:524:5: ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:527:55: ( ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:528:5: ^( COORDINATE_KW x= operation[st] y= operation[st] z= operation[st] )
             {
             match(input,COORDINATE_KW,FOLLOW_COORDINATE_KW_in_coordinates2139); 
 
@@ -3639,7 +3643,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "commande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:533:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:537:1: commande[SymbolTable st] returns [Code c] : ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] ) ;
     public final Code commande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -3650,8 +3654,8 @@ public class highTree extends TreeParser {
 
         int nbCommande = 0;c = new Code();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:533:85: ( ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:534:5: ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:537:85: ( ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:538:5: ^( COMMAND_KW listplay= player_list[st] listCommand= actionCommande_list[st] )
             {
             match(input,COMMAND_KW,FOLLOW_COMMAND_KW_in_commande2192); 
 
@@ -3686,7 +3690,6 @@ public class highTree extends TreeParser {
                    }
 
                    if(!list_event.isEmpty()){
-                        System.out.println("Event");
                         present = true;
                         Iterator<Control> ei = list_event.iterator();
                         while(ei.hasNext()){
@@ -3734,7 +3737,6 @@ public class highTree extends TreeParser {
                    }
                    if(!list_save.isEmpty()){
 
-                       System.out.println("Position");
                         Iterator<Control> ei = list_save.iterator();
                         while(ei.hasNext()){
                             Control ctrl = ei.next();
@@ -3784,6 +3786,7 @@ public class highTree extends TreeParser {
                         }
                    }
                    c.append(Code.genRefreshLoop(tab,list_event));
+                   c.append("/*Commands*/ \n");
                    c.append(Code.genEventListener(clavier,false,false));
                    c.append(Code.genCMDKeyDown(list_event));
                    c.append(Code.genCMDKeyUp(list_event));
@@ -3805,7 +3808,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "player_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:658:1: player_list[SymbolTable st] returns [ArrayList<Symbol> list] : (i= IDENT )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:661:1: player_list[SymbolTable st] returns [ArrayList<Symbol> list] : (i= IDENT )+ ;
     public final ArrayList<Symbol> player_list(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> list = null;
 
@@ -3813,10 +3816,10 @@ public class highTree extends TreeParser {
 
         list = new ArrayList<Symbol>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:658:101: ( (i= IDENT )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:659:5: (i= IDENT )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:661:101: ( (i= IDENT )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:662:5: (i= IDENT )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:659:5: (i= IDENT )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:662:5: (i= IDENT )+
             int cnt43=0;
             loop43:
             do {
@@ -3830,7 +3833,7 @@ public class highTree extends TreeParser {
 
                 switch (alt43) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:659:6: i= IDENT
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:662:6: i= IDENT
             	    {
             	    i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_player_list2238); 
             	    String e = i.getText();Symbol m = st.get(e);
@@ -3872,7 +3875,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "actionCommande_list"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:671:1: actionCommande_list[SymbolTable st] returns [ArrayList <Control> c_list] : (c= actionCommande[st] )+ ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:674:1: actionCommande_list[SymbolTable st] returns [ArrayList <Control> c_list] : (c= actionCommande[st] )+ ;
     public final ArrayList <Control> actionCommande_list(SymbolTable st) throws RecognitionException {
         ArrayList <Control> c_list = null;
 
@@ -3881,10 +3884,10 @@ public class highTree extends TreeParser {
 
         c_list = new ArrayList<Control>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:671:115: ( (c= actionCommande[st] )+ )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:672:2: (c= actionCommande[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:674:115: ( (c= actionCommande[st] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:675:2: (c= actionCommande[st] )+
             {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:672:2: (c= actionCommande[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:675:2: (c= actionCommande[st] )+
             int cnt44=0;
             loop44:
             do {
@@ -3898,7 +3901,7 @@ public class highTree extends TreeParser {
 
                 switch (alt44) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:672:3: c= actionCommande[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:675:3: c= actionCommande[st]
             	    {
             	    pushFollow(FOLLOW_actionCommande_in_actionCommande_list2267);
             	    c=actionCommande(st);
@@ -3935,7 +3938,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "actionCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:675:1: actionCommande[SymbolTable st] returns [Control c] : ( ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] ) | ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:678:1: actionCommande[SymbolTable st] returns [Control c] : ( ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] ) | ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] ) );
     public final Control actionCommande(SymbolTable st) throws RecognitionException {
         Control c = null;
 
@@ -3947,7 +3950,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:675:52: ( ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] ) | ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:678:52: ( ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] ) | ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] ) )
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -3965,7 +3968,7 @@ public class highTree extends TreeParser {
             }
             switch (alt47) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:676:5: ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:679:5: ^( MOUSE_KW v= souris[st] (n= commandMode )? d= definitionId[st] )
                     {
                     match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_actionCommande2292); 
 
@@ -3975,7 +3978,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:676:30: (n= commandMode )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:679:30: (n= commandMode )?
                     int alt45=2;
                     int LA45_0 = input.LA(1);
 
@@ -3984,7 +3987,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt45) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:676:30: n= commandMode
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:679:30: n= commandMode
                             {
                             pushFollow(FOLLOW_commandMode_in_actionCommande2301);
                             n=commandMode();
@@ -4019,7 +4022,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:688:6: ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:691:6: ^( KEY_KW v= clavier[st] (n= commandMode )? d= definitionId[st] )
                     {
                     match(input,KEY_KW,FOLLOW_KEY_KW_in_actionCommande2322); 
 
@@ -4029,7 +4032,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:688:30: (n= commandMode )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:691:30: (n= commandMode )?
                     int alt46=2;
                     int LA46_0 = input.LA(1);
 
@@ -4038,7 +4041,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt46) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:688:30: n= commandMode
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:691:30: n= commandMode
                             {
                             pushFollow(FOLLOW_commandMode_in_actionCommande2331);
                             n=commandMode();
@@ -4087,12 +4090,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "commandMode"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:702:1: commandMode returns [Control.Mode m] : ( PRESSED_KW | HELD_KW | RELEASED_KW );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:705:1: commandMode returns [Control.Mode m] : ( PRESSED_KW | HELD_KW | RELEASED_KW );
     public final Control.Mode commandMode() throws RecognitionException {
         Control.Mode m = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:702:37: ( PRESSED_KW | HELD_KW | RELEASED_KW )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:705:37: ( PRESSED_KW | HELD_KW | RELEASED_KW )
             int alt48=3;
             switch ( input.LA(1) ) {
             case PRESSED_KW:
@@ -4119,7 +4122,7 @@ public class highTree extends TreeParser {
 
             switch (alt48) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:703:5: PRESSED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:706:5: PRESSED_KW
                     {
                     match(input,PRESSED_KW,FOLLOW_PRESSED_KW_in_commandMode2369); 
                     m = Control.Mode.PRESSED;
@@ -4127,7 +4130,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:703:45: HELD_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:706:45: HELD_KW
                     {
                     match(input,HELD_KW,FOLLOW_HELD_KW_in_commandMode2374); 
                     m = Control.Mode.HELD;
@@ -4135,7 +4138,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:703:79: RELEASED_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:706:79: RELEASED_KW
                     {
                     match(input,RELEASED_KW,FOLLOW_RELEASED_KW_in_commandMode2379); 
                     m = Control.Mode.RELEASED;
@@ -4157,15 +4160,15 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "definitionId"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:706:1: definitionId[SymbolTable st] returns [Definition d] : i= IDENT ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:709:1: definitionId[SymbolTable st] returns [Definition d] : i= IDENT ;
     public final Definition definitionId(SymbolTable st) throws RecognitionException {
         Definition d = null;
 
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:706:53: (i= IDENT )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:707:5: i= IDENT
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:709:53: (i= IDENT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:710:5: i= IDENT
             {
             i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_definitionId2405); 
             String nom = i.getText(); Symbol s = st.get(nom);
@@ -4193,12 +4196,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "souris"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:718:1: souris[SymbolTable st] returns [String c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:721:1: souris[SymbolTable st] returns [String c] : ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN );
     public final String souris(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:718:43: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:721:43: ( WUP | WDOWN | LEFT | RIGHT | CLICK_LEFT | CLICK_MIDDLE | CLICK_RIGHT | SCROLL_UP | SCROLL_DOWN )
             int alt49=9;
             switch ( input.LA(1) ) {
             case WUP:
@@ -4255,7 +4258,7 @@ public class highTree extends TreeParser {
 
             switch (alt49) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:5: WUP
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:5: WUP
                     {
                     match(input,WUP,FOLLOW_WUP_in_souris2430); 
                     c = "UP";
@@ -4263,7 +4266,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:22: WDOWN
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:22: WDOWN
                     {
                     match(input,WDOWN,FOLLOW_WDOWN_in_souris2435); 
                     c = "DOWN";
@@ -4271,7 +4274,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:43: LEFT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:43: LEFT
                     {
                     match(input,LEFT,FOLLOW_LEFT_in_souris2440); 
                     c = "LEFT";
@@ -4279,7 +4282,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:63: RIGHT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:63: RIGHT
                     {
                     match(input,RIGHT,FOLLOW_RIGHT_in_souris2445); 
                     c = "RIGHT";
@@ -4287,7 +4290,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:85: CLICK_LEFT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:85: CLICK_LEFT
                     {
                     match(input,CLICK_LEFT,FOLLOW_CLICK_LEFT_in_souris2450); 
                     c = "CLK_LEFT";
@@ -4295,7 +4298,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:115: CLICK_MIDDLE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:115: CLICK_MIDDLE
                     {
                     match(input,CLICK_MIDDLE,FOLLOW_CLICK_MIDDLE_in_souris2455); 
                     c = "CLK_MIDDLE";
@@ -4303,7 +4306,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:149: CLICK_RIGHT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:149: CLICK_RIGHT
                     {
                     match(input,CLICK_RIGHT,FOLLOW_CLICK_RIGHT_in_souris2460); 
                     c = "CLK_RIGHT";
@@ -4311,7 +4314,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:181: SCROLL_UP
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:181: SCROLL_UP
                     {
                     match(input,SCROLL_UP,FOLLOW_SCROLL_UP_in_souris2465); 
                     c = "SCR_UP";
@@ -4319,7 +4322,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:719:208: SCROLL_DOWN
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:208: SCROLL_DOWN
                     {
                     match(input,SCROLL_DOWN,FOLLOW_SCROLL_DOWN_in_souris2470); 
                     c = "SCR_UP";
@@ -4341,14 +4344,14 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "clavier"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:1: clavier[SymbolTable st] returns [String l] : (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:725:1: clavier[SymbolTable st] returns [String l] : (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER );
     public final String clavier(SymbolTable st) throws RecognitionException {
         String l = null;
 
         CommonTree i=null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:722:44: (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:725:44: (i= LETTER | WUP | WDOWN | LEFT | RIGHT | SPACE | ESCAPE | ENTER )
             int alt50=8;
             switch ( input.LA(1) ) {
             case LETTER:
@@ -4400,7 +4403,7 @@ public class highTree extends TreeParser {
 
             switch (alt50) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:5: i= LETTER
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:5: i= LETTER
                     {
                     i=(CommonTree)match(input,LETTER,FOLLOW_LETTER_in_clavier2496); 
                     l = i.getText();l=l.toLowerCase();l=String.valueOf(new Character(l.charAt(0)).hashCode());
@@ -4408,7 +4411,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:108: WUP
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:108: WUP
                     {
                     match(input,WUP,FOLLOW_WUP_in_clavier2501); 
                     l="38";
@@ -4416,7 +4419,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:123: WDOWN
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:123: WDOWN
                     {
                     match(input,WDOWN,FOLLOW_WDOWN_in_clavier2506); 
                     l="40";
@@ -4424,7 +4427,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:140: LEFT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:140: LEFT
                     {
                     match(input,LEFT,FOLLOW_LEFT_in_clavier2511); 
                     l="37";
@@ -4432,7 +4435,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:156: RIGHT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:156: RIGHT
                     {
                     match(input,RIGHT,FOLLOW_RIGHT_in_clavier2516); 
                     l="39";
@@ -4440,7 +4443,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:173: SPACE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:173: SPACE
                     {
                     match(input,SPACE,FOLLOW_SPACE_in_clavier2521); 
                     l="32";
@@ -4448,7 +4451,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:190: ESCAPE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:190: ESCAPE
                     {
                     match(input,ESCAPE,FOLLOW_ESCAPE_in_clavier2526); 
                     l="27";
@@ -4456,7 +4459,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:723:208: ENTER
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:208: ENTER
                     {
                     match(input,ENTER,FOLLOW_ENTER_in_clavier2531); 
                     l="13";
@@ -4478,12 +4481,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "activCommande"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:729:1: activCommande[SymbolTable st] returns [Code c] : ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) );
     public final Code activCommande(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:726:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:729:48: ( ^( ACTIVATE_KW typeCommand[st] ) | ^( DISABLE_KW typeCommand[st] ) )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -4501,7 +4504,7 @@ public class highTree extends TreeParser {
             }
             switch (alt51) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:727:5: ^( ACTIVATE_KW typeCommand[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:730:5: ^( ACTIVATE_KW typeCommand[st] )
                     {
                     match(input,ACTIVATE_KW,FOLLOW_ACTIVATE_KW_in_activCommande2567); 
 
@@ -4517,7 +4520,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:728:6: ^( DISABLE_KW typeCommand[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:731:6: ^( DISABLE_KW typeCommand[st] )
                     {
                     match(input,DISABLE_KW,FOLLOW_DISABLE_KW_in_activCommande2579); 
 
@@ -4547,12 +4550,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "typeCommand"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:731:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:734:1: typeCommand[SymbolTable st] returns [Code c] : ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD );
     public final Code typeCommand(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:731:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:734:46: ( COMMANDS | ^( MOUSE_KW ( souris[st] )* ) | ^( KEY_KW ( clavier[st] )+ ) | KEYBOARD )
             int alt54=4;
             switch ( input.LA(1) ) {
             case COMMANDS:
@@ -4584,20 +4587,20 @@ public class highTree extends TreeParser {
 
             switch (alt54) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:732:5: COMMANDS
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:735:5: COMMANDS
                     {
                     match(input,COMMANDS,FOLLOW_COMMANDS_in_typeCommand2605); 
 
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:733:7: ^( MOUSE_KW ( souris[st] )* )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:736:7: ^( MOUSE_KW ( souris[st] )* )
                     {
                     match(input,MOUSE_KW,FOLLOW_MOUSE_KW_in_typeCommand2614); 
 
                     if ( input.LA(1)==Token.DOWN ) {
                         match(input, Token.DOWN, null); 
-                        // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:733:18: ( souris[st] )*
+                        // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:736:18: ( souris[st] )*
                         loop52:
                         do {
                             int alt52=2;
@@ -4610,7 +4613,7 @@ public class highTree extends TreeParser {
 
                             switch (alt52) {
                         	case 1 :
-                        	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:733:18: souris[st]
+                        	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:736:18: souris[st]
                         	    {
                         	    pushFollow(FOLLOW_souris_in_typeCommand2616);
                         	    souris(st);
@@ -4633,12 +4636,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:734:7: ^( KEY_KW ( clavier[st] )+ )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:737:7: ^( KEY_KW ( clavier[st] )+ )
                     {
                     match(input,KEY_KW,FOLLOW_KEY_KW_in_typeCommand2628); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:734:16: ( clavier[st] )+
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:737:16: ( clavier[st] )+
                     int cnt53=0;
                     loop53:
                     do {
@@ -4652,7 +4655,7 @@ public class highTree extends TreeParser {
 
                         switch (alt53) {
                     	case 1 :
-                    	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:734:16: clavier[st]
+                    	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:737:16: clavier[st]
                     	    {
                     	    pushFollow(FOLLOW_clavier_in_typeCommand2630);
                     	    clavier(st);
@@ -4678,7 +4681,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:735:7: KEYBOARD
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:738:7: KEYBOARD
                     {
                     match(input,KEYBOARD,FOLLOW_KEYBOARD_in_typeCommand2641); 
 
@@ -4699,18 +4702,18 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "reglesJeu"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:737:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:740:1: reglesJeu[SymbolTable st] returns [Code c] : ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) ;
     public final Code reglesJeu(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:737:44: ( ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:738:5: ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:740:44: ( ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:741:5: ^( RULE_KW ( IDENT )? declencheur[st] definitionId[st] )
             {
             match(input,RULE_KW,FOLLOW_RULE_KW_in_reglesJeu2661); 
 
             match(input, Token.DOWN, null); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:738:15: ( IDENT )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:741:15: ( IDENT )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4719,7 +4722,7 @@ public class highTree extends TreeParser {
             }
             switch (alt55) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:738:15: IDENT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:741:15: IDENT
                     {
                     match(input,IDENT,FOLLOW_IDENT_in_reglesJeu2663); 
 
@@ -4756,12 +4759,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "declencheur"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:741:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:744:1: declencheur[SymbolTable st] returns [Code c] : ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) );
     public final Code declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:741:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:744:46: ( accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] ) | ^( ENDS_KW type_declencheur[st] ) | ^( STARTS_KW type_declencheur[st] ) | ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] ) | ^( VICTORY_KW ( PLAYER | IDENT ) ) | ^( DEFEAT_KW ( PLAYER | IDENT ) ) )
             int alt57=6;
             switch ( input.LA(1) ) {
             case ACCESS_KW:
@@ -4803,14 +4806,14 @@ public class highTree extends TreeParser {
 
             switch (alt57) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:5: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:5: accesClass[st] ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     {
                     pushFollow(FOLLOW_accesClass_in_declencheur2694);
                     accesClass(st);
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:20: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:20: ( MOVES_KW | DIES_KW | declencheurTK[st] | declencheurKT[st] )
                     int alt56=4;
                     switch ( input.LA(1) ) {
                     case MOVES_KW:
@@ -4848,21 +4851,21 @@ public class highTree extends TreeParser {
 
                     switch (alt56) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:21: MOVES_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:21: MOVES_KW
                             {
                             match(input,MOVES_KW,FOLLOW_MOVES_KW_in_declencheur2698); 
 
                             }
                             break;
                         case 2 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:32: DIES_KW
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:32: DIES_KW
                             {
                             match(input,DIES_KW,FOLLOW_DIES_KW_in_declencheur2702); 
 
                             }
                             break;
                         case 3 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:42: declencheurTK[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:42: declencheurTK[st]
                             {
                             pushFollow(FOLLOW_declencheurTK_in_declencheur2706);
                             declencheurTK(st);
@@ -4873,7 +4876,7 @@ public class highTree extends TreeParser {
                             }
                             break;
                         case 4 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:742:62: declencheurKT[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:62: declencheurKT[st]
                             {
                             pushFollow(FOLLOW_declencheurKT_in_declencheur2711);
                             declencheurKT(st);
@@ -4890,7 +4893,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:743:6: ^( ENDS_KW type_declencheur[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:746:6: ^( ENDS_KW type_declencheur[st] )
                     {
                     match(input,ENDS_KW,FOLLOW_ENDS_KW_in_declencheur2721); 
 
@@ -4906,7 +4909,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:744:6: ^( STARTS_KW type_declencheur[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:747:6: ^( STARTS_KW type_declencheur[st] )
                     {
                     match(input,STARTS_KW,FOLLOW_STARTS_KW_in_declencheur2733); 
 
@@ -4922,7 +4925,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:745:6: ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:748:6: ^( BECOMES_VAR_KW variable[st,new Definition()] varOuNB[st] )
                     {
                     match(input,BECOMES_VAR_KW,FOLLOW_BECOMES_VAR_KW_in_declencheur2755); 
 
@@ -4943,7 +4946,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:746:6: ^( VICTORY_KW ( PLAYER | IDENT ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:749:6: ^( VICTORY_KW ( PLAYER | IDENT ) )
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_declencheur2770); 
 
@@ -4963,7 +4966,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:747:6: ^( DEFEAT_KW ( PLAYER | IDENT ) )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:750:6: ^( DEFEAT_KW ( PLAYER | IDENT ) )
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_declencheur2787); 
 
@@ -4997,13 +5000,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "type_declencheur"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:750:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:753:1: type_declencheur[SymbolTable st] returns [Code c] : ( IDENT | GAME );
     public final Code type_declencheur(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:750:51: ( IDENT | GAME )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:753:51: ( IDENT | GAME )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( input.LA(1)==GAME||input.LA(1)==IDENT ) {
                 input.consume();
@@ -5030,12 +5033,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "varOuNB"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:753:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st,new Definition()] | FLOAT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:756:1: varOuNB[SymbolTable st] returns [Code c] : ( variable[st,new Definition()] | FLOAT );
     public final Code varOuNB(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:753:42: ( variable[st,new Definition()] | FLOAT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:756:42: ( variable[st,new Definition()] | FLOAT )
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -5053,7 +5056,7 @@ public class highTree extends TreeParser {
             }
             switch (alt58) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:754:5: variable[st,new Definition()]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:757:5: variable[st,new Definition()]
                     {
                     pushFollow(FOLLOW_variable_in_varOuNB2840);
                     variable(st, new Definition());
@@ -5064,7 +5067,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:754:37: FLOAT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:757:37: FLOAT
                     {
                     match(input,FLOAT,FOLLOW_FLOAT_in_varOuNB2845); 
 
@@ -5085,12 +5088,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "declencheurTK"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:756:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:759:1: declencheurTK[SymbolTable st] returns [Code c] : ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurTK(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:756:49: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:759:49: ( ^( TOUCHES_KW ( OTHER )? accesClass[st] ) | ^( KILLS_KW ( OTHER )? accesClass[st] ) | ^( OWNES_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNES_KW ( OTHER )? accesClass[st] ) )
             int alt63=4;
             switch ( input.LA(1) ) {
             case TOUCHES_KW:
@@ -5122,12 +5125,12 @@ public class highTree extends TreeParser {
 
             switch (alt63) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:757:5: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:5: ^( TOUCHES_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHES_KW,FOLLOW_TOUCHES_KW_in_declencheurTK2864); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:757:18: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:18: ( OTHER )?
                     int alt59=2;
                     int LA59_0 = input.LA(1);
 
@@ -5136,7 +5139,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt59) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:757:19: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:19: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2867); 
 
@@ -5156,12 +5159,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:758:7: ^( KILLS_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:761:7: ^( KILLS_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,KILLS_KW,FOLLOW_KILLS_KW_in_declencheurTK2882); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:758:18: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:761:18: ( OTHER )?
                     int alt60=2;
                     int LA60_0 = input.LA(1);
 
@@ -5170,7 +5173,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt60) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:758:19: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:761:19: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2885); 
 
@@ -5190,12 +5193,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:759:7: ^( OWNES_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:762:7: ^( OWNES_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,OWNES_KW,FOLLOW_OWNES_KW_in_declencheurTK2900); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:759:18: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:762:18: ( OTHER )?
                     int alt61=2;
                     int LA61_0 = input.LA(1);
 
@@ -5204,7 +5207,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt61) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:759:19: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:762:19: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2903); 
 
@@ -5224,12 +5227,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:7: ^( NOTOWNES_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:763:7: ^( NOTOWNES_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,NOTOWNES_KW,FOLLOW_NOTOWNES_KW_in_declencheurTK2918); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:21: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:763:21: ( OTHER )?
                     int alt62=2;
                     int LA62_0 = input.LA(1);
 
@@ -5238,7 +5241,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt62) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:760:22: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:763:22: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurTK2921); 
 
@@ -5272,12 +5275,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "declencheurKT"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:765:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:768:1: declencheurKT[SymbolTable st] returns [Code c] : ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) );
     public final Code declencheurKT(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:765:49: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:768:49: ( ^( KILLED_KW ( OTHER )? accesClass[st] ) | ^( TOUCHED_KW ( OTHER )? accesClass[st] ) | ^( OWNED_KW ( OTHER )? accesClass[st] ) | ^( NOTOWNED_KW ( OTHER )? accesClass[st] ) )
             int alt68=4;
             switch ( input.LA(1) ) {
             case KILLED_KW:
@@ -5309,12 +5312,12 @@ public class highTree extends TreeParser {
 
             switch (alt68) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:766:5: ^( KILLED_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:5: ^( KILLED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,KILLED_KW,FOLLOW_KILLED_KW_in_declencheurKT2955); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:766:17: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:17: ( OTHER )?
                     int alt64=2;
                     int LA64_0 = input.LA(1);
 
@@ -5323,7 +5326,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt64) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:766:18: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:18: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2958); 
 
@@ -5343,12 +5346,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:767:7: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:770:7: ^( TOUCHED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHED_KW,FOLLOW_TOUCHED_KW_in_declencheurKT2973); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:767:20: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:770:20: ( OTHER )?
                     int alt65=2;
                     int LA65_0 = input.LA(1);
 
@@ -5357,7 +5360,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt65) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:767:21: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:770:21: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2976); 
 
@@ -5377,12 +5380,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:768:7: ^( OWNED_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:771:7: ^( OWNED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,OWNED_KW,FOLLOW_OWNED_KW_in_declencheurKT2991); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:768:18: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:771:18: ( OTHER )?
                     int alt66=2;
                     int LA66_0 = input.LA(1);
 
@@ -5391,7 +5394,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt66) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:768:19: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:771:19: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT2994); 
 
@@ -5411,12 +5414,12 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:7: ^( NOTOWNED_KW ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:772:7: ^( NOTOWNED_KW ( OTHER )? accesClass[st] )
                     {
                     match(input,NOTOWNED_KW,FOLLOW_NOTOWNED_KW_in_declencheurKT3009); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:21: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:772:21: ( OTHER )?
                     int alt67=2;
                     int LA67_0 = input.LA(1);
 
@@ -5425,7 +5428,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt67) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:769:22: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:772:22: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_declencheurKT3012); 
 
@@ -5459,7 +5462,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "siAlors"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:773:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:776:1: siAlors[SymbolTable st] returns [Code c] : ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? ) ;
     public final Code siAlors(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -5471,8 +5474,8 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:773:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:774:5: ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:776:42: ( ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:777:5: ^( IF_KW cond= conditions[st] r1= consequences[st,new Definition()] (r2= consequences[st,new Definition()] )? )
             {
             match(input,IF_KW,FOLLOW_IF_KW_in_siAlors3046); 
 
@@ -5487,7 +5490,7 @@ public class highTree extends TreeParser {
 
             state._fsp--;
 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:774:72: (r2= consequences[st,new Definition()] )?
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:777:72: (r2= consequences[st,new Definition()] )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -5496,7 +5499,7 @@ public class highTree extends TreeParser {
             }
             switch (alt69) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:774:72: r2= consequences[st,new Definition()]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:777:72: r2= consequences[st,new Definition()]
                     {
                     pushFollow(FOLLOW_consequences_in_siAlors3060);
                     r2=consequences(st, new Definition());
@@ -5528,7 +5531,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "conditions"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:778:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:781:1: conditions[SymbolTable st] returns [Code c] : ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] );
     public final Code conditions(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -5542,7 +5545,7 @@ public class highTree extends TreeParser {
 
         not=null;
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:779:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:782:21: ( ^( CONDITION_KW (not= NOT )? cond= conditions[st] ) | ^( OR cond1= conditions[st] cond2= conditions[st] ) | ^( AND cond1= conditions[st] cond2= conditions[st] ) | ^( EQUALS cond1= operation[st] cond2= operation[st] ) | ^( INF cond1= operation[st] cond2= operation[st] ) | ^( SUP cond1= operation[st] cond2= operation[st] ) | ^( INFEG cond1= operation[st] cond2= operation[st] ) | ^( SUPED cond1= operation[st] cond2= operation[st] ) | ^( DIFF cond1= operation[st] cond2= operation[st] ) | etat[st] )
             int alt71=10;
             switch ( input.LA(1) ) {
             case CONDITION_KW:
@@ -5618,12 +5621,12 @@ public class highTree extends TreeParser {
 
             switch (alt71) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:780:5: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:783:5: ^( CONDITION_KW (not= NOT )? cond= conditions[st] )
                     {
                     match(input,CONDITION_KW,FOLLOW_CONDITION_KW_in_conditions3100); 
 
                     match(input, Token.DOWN, null); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:780:20: (not= NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:783:20: (not= NOT )?
                     int alt70=2;
                     int LA70_0 = input.LA(1);
 
@@ -5632,7 +5635,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt70) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:780:21: not= NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:783:21: not= NOT
                             {
                             not=(CommonTree)match(input,NOT,FOLLOW_NOT_in_conditions3105); 
 
@@ -5659,7 +5662,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:788:6: ^( OR cond1= conditions[st] cond2= conditions[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:791:6: ^( OR cond1= conditions[st] cond2= conditions[st] )
                     {
                     match(input,OR,FOLLOW_OR_in_conditions3127); 
 
@@ -5683,7 +5686,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:792:6: ^( AND cond1= conditions[st] cond2= conditions[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:795:6: ^( AND cond1= conditions[st] cond2= conditions[st] )
                     {
                     match(input,AND,FOLLOW_AND_in_conditions3152); 
 
@@ -5707,7 +5710,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:796:6: ^( EQUALS cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:799:6: ^( EQUALS cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,EQUALS,FOLLOW_EQUALS_in_conditions3177); 
 
@@ -5731,7 +5734,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:800:6: ^( INF cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:803:6: ^( INF cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,INF,FOLLOW_INF_in_conditions3202); 
 
@@ -5755,7 +5758,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:804:6: ^( SUP cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:807:6: ^( SUP cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,SUP,FOLLOW_SUP_in_conditions3227); 
 
@@ -5779,7 +5782,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:808:6: ^( INFEG cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:811:6: ^( INFEG cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,INFEG,FOLLOW_INFEG_in_conditions3252); 
 
@@ -5803,7 +5806,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:812:6: ^( SUPED cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:815:6: ^( SUPED cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,SUPED,FOLLOW_SUPED_in_conditions3277); 
 
@@ -5827,7 +5830,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:816:6: ^( DIFF cond1= operation[st] cond2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:819:6: ^( DIFF cond1= operation[st] cond2= operation[st] )
                     {
                     match(input,DIFF,FOLLOW_DIFF_in_conditions3302); 
 
@@ -5851,7 +5854,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:820:7: etat[st]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:823:7: etat[st]
                     {
                     pushFollow(FOLLOW_etat_in_conditions3327);
                     etat(st);
@@ -5876,12 +5879,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "etat"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:823:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:1: etat[SymbolTable st] returns [Code c] : ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) );
     public final Code etat(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:823:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:39: ( ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] ) | ^( FINISHED_KW type_declencheur[st] ( NOT )? ) | ^( STARTED_KW type_declencheur[st] ( NOT )? ) | ^( PAUSED_KW type_declencheur[st] ( NOT )? ) | ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] ) | ^( PLAYED_KW type_declencheur[st] ( NOT )? ) | ^( STOPPED_KW type_declencheur[st] ( NOT )? ) | ^( VICTORY_KW IDENT ) | ^( DEFEAT_KW IDENT ) )
             int alt92=15;
             switch ( input.LA(1) ) {
             case DEAD_KW:
@@ -5968,7 +5971,7 @@ public class highTree extends TreeParser {
 
             switch (alt92) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:824:5: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:5: ^( DEAD_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,DEAD_KW,FOLLOW_DEAD_KW_in_etat3349); 
 
@@ -5978,7 +5981,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:824:30: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:30: ( NOT )?
                     int alt72=2;
                     int LA72_0 = input.LA(1);
 
@@ -5987,7 +5990,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt72) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:824:31: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:31: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3355); 
 
@@ -5996,7 +5999,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:824:37: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:37: ( OTHER )?
                     int alt73=2;
                     int LA73_0 = input.LA(1);
 
@@ -6005,7 +6008,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt73) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:824:38: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:38: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3360); 
 
@@ -6025,7 +6028,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:825:7: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:7: ^( ALIVE_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,ALIVE_KW,FOLLOW_ALIVE_KW_in_etat3375); 
 
@@ -6035,7 +6038,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:825:33: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:33: ( NOT )?
                     int alt74=2;
                     int LA74_0 = input.LA(1);
 
@@ -6044,7 +6047,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt74) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:825:34: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:34: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3381); 
 
@@ -6053,7 +6056,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:825:40: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:40: ( OTHER )?
                     int alt75=2;
                     int LA75_0 = input.LA(1);
 
@@ -6062,7 +6065,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt75) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:825:41: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:41: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3386); 
 
@@ -6082,7 +6085,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:7: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:7: ^( EFFACED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,EFFACED_KW,FOLLOW_EFFACED_KW_in_etat3401); 
 
@@ -6092,7 +6095,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:35: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:35: ( NOT )?
                     int alt76=2;
                     int LA76_0 = input.LA(1);
 
@@ -6101,7 +6104,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt76) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:36: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:36: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3407); 
 
@@ -6110,7 +6113,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:42: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:42: ( OTHER )?
                     int alt77=2;
                     int LA77_0 = input.LA(1);
 
@@ -6119,7 +6122,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt77) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:826:43: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:43: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3412); 
 
@@ -6139,7 +6142,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:7: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:7: ^( GENERATED_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,GENERATED_KW,FOLLOW_GENERATED_KW_in_etat3427); 
 
@@ -6149,7 +6152,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:37: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:37: ( NOT )?
                     int alt78=2;
                     int LA78_0 = input.LA(1);
 
@@ -6158,7 +6161,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt78) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:38: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:38: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3433); 
 
@@ -6167,7 +6170,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:44: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:44: ( OTHER )?
                     int alt79=2;
                     int LA79_0 = input.LA(1);
 
@@ -6176,7 +6179,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt79) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:827:45: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:45: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3438); 
 
@@ -6196,7 +6199,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:7: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:7: ^( TOUCHING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,TOUCHING_KW,FOLLOW_TOUCHING_KW_in_etat3453); 
 
@@ -6206,7 +6209,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:36: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:36: ( NOT )?
                     int alt80=2;
                     int LA80_0 = input.LA(1);
 
@@ -6215,7 +6218,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt80) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:37: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:37: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3459); 
 
@@ -6224,7 +6227,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:43: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:43: ( OTHER )?
                     int alt81=2;
                     int LA81_0 = input.LA(1);
 
@@ -6233,7 +6236,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt81) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:828:44: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:44: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3464); 
 
@@ -6253,7 +6256,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:7: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:7: ^( MOVING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,MOVING_KW,FOLLOW_MOVING_KW_in_etat3479); 
 
@@ -6263,7 +6266,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:34: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:34: ( NOT )?
                     int alt82=2;
                     int LA82_0 = input.LA(1);
 
@@ -6272,7 +6275,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt82) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:35: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:35: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3485); 
 
@@ -6281,7 +6284,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:41: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:41: ( OTHER )?
                     int alt83=2;
                     int LA83_0 = input.LA(1);
 
@@ -6290,7 +6293,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt83) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:829:42: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:42: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3490); 
 
@@ -6310,7 +6313,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:7: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:7: ^( WAITING_KW accesClass[st] ( NOT )? ( OTHER )? accesClass[st] )
                     {
                     match(input,WAITING_KW,FOLLOW_WAITING_KW_in_etat3505); 
 
@@ -6320,7 +6323,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:35: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:35: ( NOT )?
                     int alt84=2;
                     int LA84_0 = input.LA(1);
 
@@ -6329,7 +6332,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt84) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:36: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:36: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3511); 
 
@@ -6338,7 +6341,7 @@ public class highTree extends TreeParser {
 
                     }
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:42: ( OTHER )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:42: ( OTHER )?
                     int alt85=2;
                     int LA85_0 = input.LA(1);
 
@@ -6347,7 +6350,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt85) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:830:43: OTHER
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:43: OTHER
                             {
                             match(input,OTHER,FOLLOW_OTHER_in_etat3516); 
 
@@ -6367,7 +6370,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:7: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:7: ^( FINISHED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,FINISHED_KW,FOLLOW_FINISHED_KW_in_etat3531); 
 
@@ -6377,7 +6380,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:42: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:42: ( NOT )?
                     int alt86=2;
                     int LA86_0 = input.LA(1);
 
@@ -6386,7 +6389,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt86) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:831:43: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:43: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3537); 
 
@@ -6401,7 +6404,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:7: ^( STARTED_KW type_declencheur[st] ( NOT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:7: ^( STARTED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,STARTED_KW,FOLLOW_STARTED_KW_in_etat3549); 
 
@@ -6411,7 +6414,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:40: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:40: ( NOT )?
                     int alt87=2;
                     int LA87_0 = input.LA(1);
 
@@ -6420,7 +6423,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt87) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:832:41: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:41: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3554); 
 
@@ -6435,7 +6438,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:7: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:7: ^( PAUSED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,PAUSED_KW,FOLLOW_PAUSED_KW_in_etat3566); 
 
@@ -6445,7 +6448,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:39: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:39: ( NOT )?
                     int alt88=2;
                     int LA88_0 = input.LA(1);
 
@@ -6454,7 +6457,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt88) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:833:40: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:40: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3571); 
 
@@ -6469,7 +6472,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:7: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:837:7: ^( MUTED_KW type_declencheur[st] ( NOT )? mode_mute[st] )
                     {
                     match(input,MUTED_KW,FOLLOW_MUTED_KW_in_etat3583); 
 
@@ -6479,7 +6482,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:39: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:837:39: ( NOT )?
                     int alt89=2;
                     int LA89_0 = input.LA(1);
 
@@ -6488,7 +6491,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt89) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:834:40: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:837:40: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3589); 
 
@@ -6508,7 +6511,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:7: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:838:7: ^( PLAYED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,PLAYED_KW,FOLLOW_PLAYED_KW_in_etat3604); 
 
@@ -6518,7 +6521,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:40: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:838:40: ( NOT )?
                     int alt90=2;
                     int LA90_0 = input.LA(1);
 
@@ -6527,7 +6530,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt90) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:835:41: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:838:41: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3610); 
 
@@ -6542,7 +6545,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:7: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:839:7: ^( STOPPED_KW type_declencheur[st] ( NOT )? )
                     {
                     match(input,STOPPED_KW,FOLLOW_STOPPED_KW_in_etat3622); 
 
@@ -6552,7 +6555,7 @@ public class highTree extends TreeParser {
 
                     state._fsp--;
 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:41: ( NOT )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:839:41: ( NOT )?
                     int alt91=2;
                     int LA91_0 = input.LA(1);
 
@@ -6561,7 +6564,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt91) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:836:42: NOT
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:839:42: NOT
                             {
                             match(input,NOT,FOLLOW_NOT_in_etat3628); 
 
@@ -6576,7 +6579,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:838:7: ^( VICTORY_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:841:7: ^( VICTORY_KW IDENT )
                     {
                     match(input,VICTORY_KW,FOLLOW_VICTORY_KW_in_etat3645); 
 
@@ -6588,7 +6591,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 15 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:839:7: ^( DEFEAT_KW IDENT )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:842:7: ^( DEFEAT_KW IDENT )
                     {
                     match(input,DEFEAT_KW,FOLLOW_DEFEAT_KW_in_etat3657); 
 
@@ -6614,13 +6617,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "mode_mute"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:842:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:845:1: mode_mute[SymbolTable st] returns [Code c] : ( ON | OFF );
     public final Code mode_mute(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:842:44: ( ON | OFF )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:845:44: ( ON | OFF )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( (input.LA(1)>=ON && input.LA(1)<=OFF) ) {
                 input.consume();
@@ -6647,7 +6650,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "affectation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:845:1: affectation[SymbolTable st , Definition d] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] ) | ^( ADD_KW o= operation[st] v= variable[st,d] ) | ^( SUB_KW op= operation[st] var= variable[st,d] ) | ^( INVERT_KW variable[st,d] variable[st,d] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:848:1: affectation[SymbolTable st , Definition d] returns [Code c] : ( ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] ) | ^( ADD_KW o= operation[st] v= variable[st,d] ) | ^( SUB_KW op= operation[st] var= variable[st,d] ) | ^( INVERT_KW variable[st,d] variable[st,d] ) );
     public final Code affectation(SymbolTable st, Definition d) throws RecognitionException {
         Code c = null;
 
@@ -6665,7 +6668,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:845:61: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] ) | ^( ADD_KW o= operation[st] v= variable[st,d] ) | ^( SUB_KW op= operation[st] var= variable[st,d] ) | ^( INVERT_KW variable[st,d] variable[st,d] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:848:61: ( ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] ) | ^( ADD_KW o= operation[st] v= variable[st,d] ) | ^( SUB_KW op= operation[st] var= variable[st,d] ) | ^( INVERT_KW variable[st,d] variable[st,d] ) )
             int alt93=4;
             switch ( input.LA(1) ) {
             case ASSIGN_KW:
@@ -6697,7 +6700,7 @@ public class highTree extends TreeParser {
 
             switch (alt93) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:846:5: ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:849:5: ^( ASSIGN_KW i1= operation[st] i2= variable[st,d] )
                     {
                     match(input,ASSIGN_KW,FOLLOW_ASSIGN_KW_in_affectation3706); 
 
@@ -6721,7 +6724,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:850:6: ^( ADD_KW o= operation[st] v= variable[st,d] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:853:6: ^( ADD_KW o= operation[st] v= variable[st,d] )
                     {
                     match(input,ADD_KW,FOLLOW_ADD_KW_in_affectation3731); 
 
@@ -6745,7 +6748,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:854:6: ^( SUB_KW op= operation[st] var= variable[st,d] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:857:6: ^( SUB_KW op= operation[st] var= variable[st,d] )
                     {
                     match(input,SUB_KW,FOLLOW_SUB_KW_in_affectation3756); 
 
@@ -6769,7 +6772,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:858:6: ^( INVERT_KW variable[st,d] variable[st,d] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:861:6: ^( INVERT_KW variable[st,d] variable[st,d] )
                     {
                     match(input,INVERT_KW,FOLLOW_INVERT_KW_in_affectation3782); 
 
@@ -6807,19 +6810,19 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "iaBasique"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:864:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW IDENT ( reglesJeu[st] )+ ) ;
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:867:1: iaBasique[SymbolTable st] returns [Code c] : ^( IA_KW IDENT ( reglesJeu[st] )+ ) ;
     public final Code iaBasique(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:864:44: ( ^( IA_KW IDENT ( reglesJeu[st] )+ ) )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:865:5: ^( IA_KW IDENT ( reglesJeu[st] )+ )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:867:44: ( ^( IA_KW IDENT ( reglesJeu[st] )+ ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:868:5: ^( IA_KW IDENT ( reglesJeu[st] )+ )
             {
             match(input,IA_KW,FOLLOW_IA_KW_in_iaBasique3821); 
 
             match(input, Token.DOWN, null); 
             match(input,IDENT,FOLLOW_IDENT_in_iaBasique3823); 
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:865:19: ( reglesJeu[st] )+
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:868:19: ( reglesJeu[st] )+
             int cnt94=0;
             loop94:
             do {
@@ -6833,7 +6836,7 @@ public class highTree extends TreeParser {
 
                 switch (alt94) {
             	case 1 :
-            	    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:865:19: reglesJeu[st]
+            	    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:868:19: reglesJeu[st]
             	    {
             	    pushFollow(FOLLOW_reglesJeu_in_iaBasique3825);
             	    reglesJeu(st);
@@ -6871,7 +6874,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "operation"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:869:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st,new Definition()] | f= FLOAT );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:872:1: operation[SymbolTable st] returns [Code c] : ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st,new Definition()] | f= FLOAT );
     public final Code operation(SymbolTable st) throws RecognitionException {
         Code c = null;
 
@@ -6884,7 +6887,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:869:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st,new Definition()] | f= FLOAT )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:872:44: ( ^( RANDOM_KW c1= operation[st] c2= operation[st] ) | ^( PLUS operation[st] operation[st] ) | ^( MINUS operation[st] operation[st] ) | ^( MUL operation[st] operation[st] ) | ^( DIV operation[st] operation[st] ) | ^( MOD operation[st] operation[st] ) | ^( POW operation[st] operation[st] ) | v= variable[st,new Definition()] | f= FLOAT )
             int alt95=9;
             switch ( input.LA(1) ) {
             case RANDOM_KW:
@@ -6946,7 +6949,7 @@ public class highTree extends TreeParser {
 
             switch (alt95) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:870:5: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:873:5: ^( RANDOM_KW c1= operation[st] c2= operation[st] )
                     {
                     match(input,RANDOM_KW,FOLLOW_RANDOM_KW_in_operation3849); 
 
@@ -6968,7 +6971,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:872:6: ^( PLUS operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:875:6: ^( PLUS operation[st] operation[st] )
                     {
                     match(input,PLUS,FOLLOW_PLUS_in_operation3876); 
 
@@ -6990,7 +6993,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:874:6: ^( MINUS operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:877:6: ^( MINUS operation[st] operation[st] )
                     {
                     match(input,MINUS,FOLLOW_MINUS_in_operation3897); 
 
@@ -7012,7 +7015,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:876:6: ^( MUL operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:879:6: ^( MUL operation[st] operation[st] )
                     {
                     match(input,MUL,FOLLOW_MUL_in_operation3918); 
 
@@ -7034,7 +7037,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:878:6: ^( DIV operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:881:6: ^( DIV operation[st] operation[st] )
                     {
                     match(input,DIV,FOLLOW_DIV_in_operation3939); 
 
@@ -7056,7 +7059,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:880:6: ^( MOD operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:883:6: ^( MOD operation[st] operation[st] )
                     {
                     match(input,MOD,FOLLOW_MOD_in_operation3960); 
 
@@ -7078,7 +7081,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:882:6: ^( POW operation[st] operation[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:885:6: ^( POW operation[st] operation[st] )
                     {
                     match(input,POW,FOLLOW_POW_in_operation3981); 
 
@@ -7100,7 +7103,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:884:6: v= variable[st,new Definition()]
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:887:6: v= variable[st,new Definition()]
                     {
                     pushFollow(FOLLOW_variable_in_operation4005);
                     v=variable(st, new Definition());
@@ -7112,7 +7115,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:886:6: f= FLOAT
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:889:6: f= FLOAT
                     {
                     f=(CommonTree)match(input,FLOAT,FOLLOW_FLOAT_in_operation4023); 
                     c = new Code(f.getText());
@@ -7134,7 +7137,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "variable"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:891:1: variable[SymbolTable st , Definition d] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:894:1: variable[SymbolTable st , Definition d] returns [Code c] : ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) );
     public final Code variable(SymbolTable st, Definition d) throws RecognitionException {
         Code c = null;
 
@@ -7151,7 +7154,7 @@ public class highTree extends TreeParser {
 
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:891:58: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:894:58: ( ^( X tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Y tc= typeCoordonnees[st] sb= accesClass[st] ) | ^( Z typeCoordonnees[st] sb= accesClass[st] ) | ^( VAR_I_KW i= IDENT e= accesClass[st] ) | GAME_SCORE_KW | ^( VALUE_KW at= attributTps[st] ac= accesClass[st] ) )
             int alt96=6;
             switch ( input.LA(1) ) {
             case X:
@@ -7193,7 +7196,7 @@ public class highTree extends TreeParser {
 
             switch (alt96) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:892:5: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:895:5: ^( X tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,X,FOLLOW_X_in_variable4054); 
 
@@ -7224,7 +7227,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:903:6: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:906:6: ^( Y tc= typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,Y,FOLLOW_Y_in_variable4079); 
 
@@ -7255,7 +7258,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:914:6: ^( Z typeCoordonnees[st] sb= accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:917:6: ^( Z typeCoordonnees[st] sb= accesClass[st] )
                     {
                     match(input,Z,FOLLOW_Z_in_variable4105); 
 
@@ -7286,7 +7289,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:925:6: ^( VAR_I_KW i= IDENT e= accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:928:6: ^( VAR_I_KW i= IDENT e= accesClass[st] )
                     {
                     match(input,VAR_I_KW,FOLLOW_VAR_I_KW_in_variable4128); 
 
@@ -7345,14 +7348,14 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:968:6: GAME_SCORE_KW
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:971:6: GAME_SCORE_KW
                     {
                     match(input,GAME_SCORE_KW,FOLLOW_GAME_SCORE_KW_in_variable4151); 
 
                     }
                     break;
                 case 6 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:969:6: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:972:6: ^( VALUE_KW at= attributTps[st] ac= accesClass[st] )
                     {
                     match(input,VALUE_KW,FOLLOW_VALUE_KW_in_variable4159); 
 
@@ -7396,7 +7399,7 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "accesClass"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:981:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:984:1: accesClass[SymbolTable st] returns [ArrayList<Symbol> sb] : ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) );
     public final ArrayList<Symbol> accesClass(SymbolTable st) throws RecognitionException {
         ArrayList<Symbol> sb = null;
 
@@ -7406,7 +7409,7 @@ public class highTree extends TreeParser {
 
         sb = new ArrayList<Symbol>();
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:982:42: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:985:42: ( ^( ACCESS_KW ALL ) | ^( ACCESS_KW i= IDENT (co= operation[st] )? ) | ^( ACCESS_KW PLAYER ) )
             int alt98=3;
             int LA98_0 = input.LA(1);
 
@@ -7453,7 +7456,7 @@ public class highTree extends TreeParser {
             }
             switch (alt98) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:983:5: ^( ACCESS_KW ALL )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:986:5: ^( ACCESS_KW ALL )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4209); 
 
@@ -7468,13 +7471,13 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:987:7: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:990:7: ^( ACCESS_KW i= IDENT (co= operation[st] )? )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4227); 
 
                     match(input, Token.DOWN, null); 
                     i=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_accesClass4231); 
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:987:29: (co= operation[st] )?
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:990:29: (co= operation[st] )?
                     int alt97=2;
                     int LA97_0 = input.LA(1);
 
@@ -7483,7 +7486,7 @@ public class highTree extends TreeParser {
                     }
                     switch (alt97) {
                         case 1 :
-                            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:987:29: co= operation[st]
+                            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:990:29: co= operation[st]
                             {
                             pushFollow(FOLLOW_operation_in_accesClass4235);
                             co=operation(st);
@@ -7510,7 +7513,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:996:7: ^( ACCESS_KW PLAYER )
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:999:7: ^( ACCESS_KW PLAYER )
                     {
                     match(input,ACCESS_KW,FOLLOW_ACCESS_KW_in_accesClass4254); 
 
@@ -7539,12 +7542,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "typeCoordonnees"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1002:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1005:1: typeCoordonnees[SymbolTable st] returns [Code c] : ( POSITION | ORIENTATION | SIZE );
     public final Code typeCoordonnees(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1002:50: ( POSITION | ORIENTATION | SIZE )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1005:50: ( POSITION | ORIENTATION | SIZE )
             int alt99=3;
             switch ( input.LA(1) ) {
             case POSITION:
@@ -7571,7 +7574,7 @@ public class highTree extends TreeParser {
 
             switch (alt99) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1003:2: POSITION
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1006:2: POSITION
                     {
                     match(input,POSITION,FOLLOW_POSITION_in_typeCoordonnees4284); 
                     c = new Code("position");
@@ -7579,7 +7582,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1003:40: ORIENTATION
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1006:40: ORIENTATION
                     {
                     match(input,ORIENTATION,FOLLOW_ORIENTATION_in_typeCoordonnees4289); 
                     c = new Code("angle");
@@ -7587,7 +7590,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1003:78: SIZE
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1006:78: SIZE
                     {
                     match(input,SIZE,FOLLOW_SIZE_in_typeCoordonnees4294); 
                     c = new Code("taille");
@@ -7609,12 +7612,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "timeUnit"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1006:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1009:1: timeUnit[SymbolTable st] returns [String c] : ( MIN | SEC | MS | FRAME );
     public final String timeUnit(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1006:45: ( MIN | SEC | MS | FRAME )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1009:45: ( MIN | SEC | MS | FRAME )
             int alt100=4;
             switch ( input.LA(1) ) {
             case MIN:
@@ -7646,7 +7649,7 @@ public class highTree extends TreeParser {
 
             switch (alt100) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1007:2: MIN
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1010:2: MIN
                     {
                     match(input,MIN,FOLLOW_MIN_in_timeUnit4312); 
                     c = "MIN";
@@ -7654,7 +7657,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1008:4: SEC
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1011:4: SEC
                     {
                     match(input,SEC,FOLLOW_SEC_in_timeUnit4319); 
                     c = "SEC";
@@ -7662,7 +7665,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1009:4: MS
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1012:4: MS
                     {
                     match(input,MS,FOLLOW_MS_in_timeUnit4325); 
                     c = "MS";
@@ -7670,7 +7673,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1010:4: FRAME
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1013:4: FRAME
                     {
                     match(input,FRAME,FOLLOW_FRAME_in_timeUnit4331); 
 
@@ -7691,12 +7694,12 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "attributTps"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1013:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1016:1: attributTps[SymbolTable st] returns [String c] : ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME );
     public final String attributTps(SymbolTable st) throws RecognitionException {
         String c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1013:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1016:48: ( BOOST_INTERVAL | SHOOT_INTERVAL | RELOAD_TIME )
             int alt101=3;
             switch ( input.LA(1) ) {
             case BOOST_INTERVAL:
@@ -7723,7 +7726,7 @@ public class highTree extends TreeParser {
 
             switch (alt101) {
                 case 1 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1014:2: BOOST_INTERVAL
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1017:2: BOOST_INTERVAL
                     {
                     match(input,BOOST_INTERVAL,FOLLOW_BOOST_INTERVAL_in_attributTps4347); 
                     c ="boostInterval";
@@ -7731,7 +7734,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1015:4: SHOOT_INTERVAL
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1018:4: SHOOT_INTERVAL
                     {
                     match(input,SHOOT_INTERVAL,FOLLOW_SHOOT_INTERVAL_in_attributTps4353); 
                     c = "shootInterval";
@@ -7739,7 +7742,7 @@ public class highTree extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1016:4: RELOAD_TIME
+                    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1019:4: RELOAD_TIME
                     {
                     match(input,RELOAD_TIME,FOLLOW_RELOAD_TIME_in_attributTps4368); 
                     c = "reloadTime";
@@ -7761,13 +7764,13 @@ public class highTree extends TreeParser {
 
 
     // $ANTLR start "attributListeOuObjet"
-    // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1019:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
+    // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1022:1: attributListeOuObjet[SymbolTable st] returns [Code c] : ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES );
     public final Code attributListeOuObjet(SymbolTable st) throws RecognitionException {
         Code c = null;
 
         try {
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1019:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
-            // H:\\M1\\PROJET\\svn\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:1022:55: ( INVENTORY | EQUIPED_OBJECT | ENTRANCES | EXITS | DAMAGE_ZONE | COLLECTORS | TYPES_COLLECTORS | GENERATORS | TYPE_GENERATORS | BREAKERS | TYPES_BREAKERS | TELEPORTABLES | TYPES_TELEPORTABLES )
+            // C:\\Users\\Beben\\Desktop\\cours\\projet\\projet\\compilation\\hight\\com\\istic\\mini3d\\grammars\\highTree.g:
             {
             if ( (input.LA(1)>=INVENTORY && input.LA(1)<=TYPES_TELEPORTABLES) ) {
                 input.consume();
@@ -7854,7 +7857,7 @@ public class highTree extends TreeParser {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "81:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) );";
+            return "84:1: attributGame[SymbolTable st] returns [Code c] : ( ^( GRAVITY_KW FLOAT ) | ^( GRAVITY_KW FLOAT FLOAT FLOAT ) | ^( TURNBASED_KW ( 'true' | 'false' ) ) | ^( WORLD_KW mapType ) | ^( GRIDSIZE_KW FLOAT ) | ^( NAME_KW TEXTE ) );";
         }
     }
     static final String DFA16_eotS =
@@ -7916,7 +7919,7 @@ public class highTree extends TreeParser {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "229:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? );";
+            return "232:1: declarationObjet[SymbolTable st] returns [Pair<Model, Integer> p] : ( ^( DEC t= typeEntity[st] (d= dupli )? ) | ^( LIST_KW list_declaration[st] ) | ^( CAMERA_KW PERSON view[st] ) | ^( CAMERA_KW FREE ) | ^( CAMERA_KW ON ) | ^( MEDIA_KW LOOP ) | ^( MEDIA_KW ONCE ) | ^( IN_KW IDENT ) | PLAYER (s= SOLO )? );";
         }
     }
     static final String DFA36_eotS =
@@ -7992,7 +7995,7 @@ public class highTree extends TreeParser {
             this.transition = DFA36_transition;
         }
         public String getDescription() {
-            return "408:1: action[SymbolTable st] returns [Code c] : (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) );";
+            return "412:1: action[SymbolTable st] returns [Code c] : (ent= accesClass[st] act= actionObjet[st,ent] | ^( ENDS_KW IDENT ( IDENT )? ) | ^( ENDS_KW GAME ( IDENT )? ) | ^( STARTS_KW IDENT ( IDENT )? ) | ^( STARTS_KW GAME ( IDENT )? ) | ^( PAUSE_KW IDENT ( IDENT )? ) | ^( PAUSE_KW GAME ( IDENT )? ) | ^( MUTE_KW mode_mute[st] IDENT ) | ^( PLAY_KW IDENT ) | ^( STOP_KW IDENT ) | ^( BLOCK_KW transformation[st] accesClass[st] coordinates[st] ) | ^( EFFACE_KW typeAcces[st] ( typeDestination[st] )? ) | ^( GENERATE_KW ta= typeAcces[st] (td= typeDestination[st] )? ) | ^( WAIT_KW op= operation[st] t= timeUnit[st] cons= consequences[st,new Definition()] ) | SAVE_KW | ^( NEXTURN_KW IDENT ) | ^( GRASPS_KW IDENT IDENT ) | ^( EXPELS_KW IDENT IDENT operation[st] ) | ^( INGESTS_KW IDENT IDENT IDENT ) );";
         }
     }
     static final String DFA40_eotS =
@@ -8052,7 +8055,7 @@ public class highTree extends TreeParser {
             this.transition = DFA40_transition;
         }
         public String getDescription() {
-            return "474:1: actionObjet[SymbolTable st,List<Symbol> l] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );";
+            return "478:1: actionObjet[SymbolTable st,List<Symbol> l] returns [Code c] : ( DIES_KW | actionCommandePressee[st] | act= actionCommandeMaintenue[st,l] | ^( DURING actionCommandeMaintenue[st,l] operation[st] timeUnit[st] ) | ^( UNTIL actionCommandeMaintenue[st,l] conditions[st] ) | ^( EQUIP accesClass[st] ) | ^( EQUIP NEXT ) | ^( EQUIP PREVIOUS ) );";
         }
     }
  

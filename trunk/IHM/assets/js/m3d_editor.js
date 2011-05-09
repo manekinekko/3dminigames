@@ -126,7 +126,7 @@
 	 */
 	M3D.Editor.commentLines = function(o, cb) {
 		
-		var NEWLINE = '\n';
+		var NEWLINE = ';';
 		var content = M3D.Editor.getContent().split(NEWLINE);
 		var _name = M3D.GUI.getObjectId(obj.uid);
 		
@@ -139,6 +139,13 @@
 			else if ( (new RegExp(_name)).test(content[i]) )
 			{
 				if ( /;$/.test(content[i]) ) {
+					
+					
+					// TODO 
+					var _split = content[i].split('\n');
+					var _ln = _split.length;
+					
+					
 					content[i] = '// ' + content[i];
 				}
 			}

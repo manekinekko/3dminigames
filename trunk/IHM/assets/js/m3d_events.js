@@ -449,7 +449,7 @@ $(function(){
 			}
 			else if ( _c('camera-position') ) {
 				var _cam = scene.camera;
-				alert('Camera Pos('+_cam.getLocX()+' '+_cam.getLocY()+' '+_cam.getLocZ()+')');
+				alert('Camera Pos('+_cam.getLocX()+' '+_cam.getLocY()+' '+_cam.getLocZ()+' '+_cam.getFar()+')');
 			}
 			else {
 				M3D.GUI.CAMERA_STATE = null;

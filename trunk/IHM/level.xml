@@ -37,9 +37,11 @@
 
     <scene id="mainscene" camera="#mainCamera1" fog_type="FOG_NONE">
         
-		<light id="mainlight1" loc_x="-25" loc_y="20" loc_z="10" rot_x="0.2"  type="L_SPOT" />
-	  	<light id="mainlight2" loc_x="-20" loc_y="20" loc_z="20" rot_x="0"  type="L_SPOT" />
-	  	<light id="mainlight3" loc_x="-30" loc_y="20" loc_z="30" rot_x="-0.2"  type="L_SPOT" />
+		<light id="mainlight1" rot_x="0.2" type="L_DIR" />
+        <light id="mainlight2" rot_x="3.34" type="L_DIR" />
+	  	<!--
+	  	<light id="mainlight3" loc_x="-30" loc_y="20" loc_z="30" rot_x="-0.2"  type="L_DIR" />
+        -->
         
 		<!--<collada id="xyzaxis" document="assets/dae/presets/XYZaxis.dae" scale="1" />-->
         

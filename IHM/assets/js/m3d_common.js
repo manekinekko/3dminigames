@@ -134,5 +134,13 @@
 		}
 		
 		return null;
-	}
+	};
+	/**
+	 *
+	 */
+	M3D.Common.degreeToRadian = function(val) {
+		var pi = Math.PI;
+		var de_ra = (val)*(pi/180);
+		return de_ra;
+	};
 })(window.M3D);

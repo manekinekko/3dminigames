@@ -6,6 +6,9 @@
  * @projectDescription This PHP classe handles the session environment.
  */
  
+define('DS', DIRECTORY_SEPARATOR);
+define('APPPATH', str_replace('bin'.DS.'includes', '', dirname(__FILE__)));
+
 class Session
 {
 
@@ -23,7 +26,7 @@ class Session
 
 		$_SESSION['error'] = "";
 
-		$this->_users_folder = 'C:\Program Files\EasyPHP-5.3.2i\www\m3d_total\IHM\u';
+		$this->_users_folder = APPPATH.DS.'u';
 		$this->_users_file = $this->_users_folder.'/users.txt';
 
 		$this->users = $this->_fileToArray($this->_users_file);

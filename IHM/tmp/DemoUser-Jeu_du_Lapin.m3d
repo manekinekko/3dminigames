@@ -1,0 +1,111 @@
+
+// Game created by 3DWIGS
+// On Tue, 10 May 2011 07:21:01 GMT
+
+game has name at "Jeu_Du_Lapin" ;
+
+
+player is Player solo;
+player has 
+
+sol is Ground ;
+sol has position at 0.00 0.00 -13.42 ;
+sol has orientation at 157.08 0.00 0.00 ;
+sol has size at 200.00 200.00 200.00 ;
+sol has url at 
+  "assets/dae/custom/sol.dae" ;
+
+laoin is Character ;
+laoin has position at 0.00 0.00 0.00 ;
+laoin has orientation at 1.57 4.71 0.00 ;
+laoin has size at 15.00 15.00 15.00 ;
+laoin has url at 
+  "assets/dae/custom/lapin.dae" ;
+
+jeep is Vehicle ;
+jeep has position at 0.00 0.00 0.00 ;
+jeep has orientation at 0.00 0.00 0.00 ;
+jeep has size at 1.00 1.00 1.00 ;
+jeep has url at 
+  "assets/dae/custom/jeep.dae" ;
+
+chasseur is Character ;
+chasseur has position at 15.00 4.47 0.00 ;
+chasseur has orientation at 1.57 4.71 0.00 ;
+chasseur has size at 15.00 15.00 15.00 ;
+chasseur has url at 
+  "assets/dae/custom/chasseur.dae" ;
+
+bazooka is Weapon ;
+bazooka has position at 10.00 0.00 20.00 ;
+bazooka has orientation at 1.57 1.57 0.00 ;
+bazooka has size at 7.00 7.00 7.00 ;
+bazooka has url at 
+  "assets/dae/custom/bazooka.dae" ;
+
+missile is Projectile  duplicable ;
+missile has position at 0.00 0.00 20.00 ;
+missile has orientation at 0.00 1.57 0.00 ;
+missile has size at 10.00 10.00 10.00 ;
+missile has url at 
+  "assets/dae/custom/missile.dae" ;
+
+cam is Camera;
+jeep has chasseur;
+chasseur has bazooka;
+bazooka has missile;
+
+
+
+
+definition initialisation means
+    generate sol,
+    generate lapin,
+    generate chasseur,
+    generate bazooka,
+    generate missile,
+    generate jeep ;
+
+definition tirer means
+    bazooka expels missile by 100,
+    generate missile;
+
+definition tournerDroite means
+    jeep turns right by 5 ;
+
+definition tournerGauche means
+    jeep turns left by 5 ;
+
+definition accelerer means
+    jeep accelerates by 10 ;
+
+
+definition freiner means
+    jeep brakes by 10 ;
+
+definition lapinTouche means
+    lapin dies,
+    victory of joueur,
+
+    game ends;
+
+
+command for player is
+    key Z for accelerer,
+    key Q for tournerGauche,
+    key S for freiner,
+    key D for tournerDroite,
+    key space for tirer ;
+
+
+rule game starts then
+    initialisation;
+
+rule missile touches lapin then
+    lapinTouche;
+
+rule jeep touches lapin then
+    lapinTouche;
+
+
+

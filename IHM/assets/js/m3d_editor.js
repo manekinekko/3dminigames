@@ -191,17 +191,17 @@
 				content[i] = content[i].replace(/position at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
 												'position at '+p.x+' '+p.y+' '+p.z);
 			}
-			else if ( (new RegExp(o.id+' has scale')).test(content[i]) )
+			else if ( (new RegExp(o.id+' has size')).test(content[i]) )
 			{
 				var s = o.scale;
-				content[i] = content[i].replace(/scale at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
-												'scale at '+s.x+' '+s.y+' '+s.z);
+				content[i] = content[i].replace(/size at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
+												'size at '+s.x+' '+s.y+' '+s.z);
 			}
-			else if ( (new RegExp(o.id+' has rotation')).test(content[i]) )
+			else if ( (new RegExp(o.id+' has orientation')).test(content[i]) )
 			{
 				var r = o.rotation;
-				content[i] = content[i].replace(/rotation at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
-												'rotation at '+r.x+' '+r.y+' '+r.z);
+				content[i] = content[i].replace(/orientation at -?\d+.\d{2} -?\d+.\d{2} -?\d+.\d{2}/gi, 
+												'orientation at '+r.x+' '+r.y+' '+r.z);
 			}
 		}
 		_setAndClearContent( content.join(NEWLINE), cb );

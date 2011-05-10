@@ -1,0 +1,13 @@
+Directories explanation
+
+* compilation : this directory contians all the compiler source code.
+* documentation : this directory contains all the necessary documentation for 
+					the two oral presentations.
+* Moteur3D : all the JavaScript files for the 3D game engine + a sample game to 
+				the engine.
+* IHM : this is the UI web app.
+		Note: You may find the compiler under IHM/bin/3dwigs.jar
+		
+* Planning_orgnisation: some extra info about the project organisation.
+
+see http://code.google.com/p/3dminigames/w/list for more details.

@@ -281,9 +281,9 @@
 				dataType: 'json',
 				type:'POST',
 				data: {
-					's':_scenario,
-					'gn':M3D.DB.getGameInfo().name,
-					'ts':_ts
+					's': '\n'+_scenario,
+					'gn': M3D.DB.getGameInfo().name,
+					'ts': _ts
 				},
 				beforeSend: function() {
 					$('#creating-game p').html('creating game. Please wait ...');

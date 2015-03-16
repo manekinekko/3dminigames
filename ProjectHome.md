@@ -1,0 +1,1 @@
+A 1st year Master degree project for creating 3D mini games for the Web using **WebGL** (and all the power of HTML5: IndexedDB, LocalStorage, File API, D&D).
